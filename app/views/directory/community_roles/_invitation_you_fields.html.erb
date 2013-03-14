@@ -1,0 +1,14 @@
+<p class="fields">
+  <ul>
+      <li><strong>You take on this Role ...</strong></li>
+      <li><%= f.label :status, "Do You want to take this Role?" %>
+      <%= f.check_box :status %></li>
+      <li><%= f.label :send_date, "Date Accepted" %>
+      <%= f.date_select :send_date %></li>
+      <br />
+      <%= f.text_field :youCentricCenter_id, :hidden => true %></li>
+  </ul>
+
+<%= f.link_to_remove "Un-assign" %>
+</p>
+

@@ -1,0 +1,40 @@
+<% title "Youcentric Object" %>
+
+<p>
+  <strong>Service:</strong>
+  <%= @youcentric_object.service_id %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @youcentric_object.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @youcentric_object.description %>
+</p>
+<p>
+  <strong>Script:</strong>
+  <%= @youcentric_object.script %>
+</p>
+<p>
+  <strong>State Url:</strong>
+  <%= @youcentric_object.state_url %>
+</p>
+<p>
+  <strong>Youcentric Object Parent:</strong>
+  <%= @youcentric_object.youcentric_object_parent_id %>
+</p>
+<p>
+  <strong>Design Notes:</strong>
+  <%= @youcentric_object.design_notes %>
+</p>
+<p>
+  <strong>Conformance Profile:</strong>
+  <%= @youcentric_object.conformance_profile %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_youcentric_object_path(@youcentric_object) %> |
+  <%= link_to "Destroy", @youcentric_object, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", youcentric_objects_path %>
+</p>

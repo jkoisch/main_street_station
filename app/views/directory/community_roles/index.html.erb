@@ -1,0 +1,21 @@
+<% title "Community Roles" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Community</th>
+  </tr>
+  <% for community_role in @community_roles %>
+    <tr>
+      <td><%= community_role.name %></td>
+      <td><%= community_role.description %></td>
+      <td><%= community_role.community_id %></td>
+      <td><%= link_to "Show", community_role %></td>
+      <td><%= link_to "Edit", edit_community_role_path(community_role) %></td>
+      <td><%= link_to "Destroy", community_role, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Community Role", new_community_role_path %></p>

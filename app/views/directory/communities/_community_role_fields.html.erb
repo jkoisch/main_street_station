@@ -1,0 +1,24 @@
+<p class="fields">
+
+<strong>Role: </strong><br />
+<ul>
+    <%= f.label :name, "Role Name" %>
+    <%= f.text_field :name %>
+    <br />
+    <%= f.label :description, "Role Description" %>
+    <%= f.text_field :description %>
+    <br />
+    <%= f.label :role_kind, "Role Type" %>
+    <%= f.select :role_kind, Directory::CommunityRoleKind.all.collect{ |r| [r.name, r.id]} %>
+
+  <br />
+    <%= f.link_to_remove "Remove this Role" %>
+ </ul>
+
+<%= f.fields_for :services %>
+<p>
+	<%= f.link_to_add "See how this Role shares information", :services %>
+</p>
+
+</p>
+

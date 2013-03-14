@@ -1,0 +1,21 @@
+<% title "Parties" %>
+
+<table>
+  <tr>
+    <th>Community Role</th>
+    <th>Signature</th>
+    <th>Youcentriccenter</th>
+  </tr>
+  <% for party in @parties %>
+    <tr>
+      <td><%= party.community_role_id %></td>
+      <td><%= party.signature %></td>
+      <td><%= party.youCentricCenter_id %></td>
+      <td><%= link_to "Show", party %></td>
+      <td><%= link_to "Edit", edit_party_path(party) %></td>
+      <td><%= link_to "Destroy", party, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Party", new_party_path %></p>

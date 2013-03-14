@@ -1,0 +1,78 @@
+<% title "Network: " + @community.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @community.description %>
+</p>
+<p>
+  <strong>Objective:</strong>
+  <%= @community.objective %>
+</p>
+
+<br />
+<table border="3">
+  <tr>
+    <td width="300"><strong>Roles:</strong></td>
+    <td width="100"><strong>Type:</strong></td>
+    <td width="300"><strong>Services:</strong></td>
+  </tr>
+  <tr>
+    <% for community_role in @community.community_roles do %>
+        <tr>
+        <td>
+          <strong><%=h community_role.name %></strong>
+          <ul>
+            <%=h community_role.description %>
+          </ul>
+        </td>
+        <td>
+          <strong>
+            <% for thisHash in @community_role_kinds.select{|v| v["id"] == community_role.role_kind.to_i} do %>
+                <%= thisHash['name'] %>
+            <% end %>
+          </strong>
+        </td>
+				<td>
+					<ul>
+					<% for service in community_role.services do %>
+
+						<li>Name: <%= service.name %></li>
+						<li>Description: <%= service.description %></li>
+
+							<% for operation in service.youcentric_operations %>
+									<ul>
+										<li>Operation: </li>
+										<ul>
+											<li>Name: <%= operation.name %></li>
+											<li>Description: <%= operation.description %></li>
+											<li>Verb: <%= Directory::Verb.find(operation.verb_id).name unless operation.verb_id.nil? %></li>
+										</ul>
+									</ul>
+							<% end %>
+
+							<% for info in service.youcentric_objects %>
+									<ul>
+										<li>Information: </li>
+										<ul>
+											<li>Name: <%= info.name %></li>
+											<li>Description: <%= info.description %></li>
+											<li>Parent Object: <%= Directory::YoucentricObject.find(info.youcentric_object_parent_id).name unless info.youcentric_object_parent_id.nil? %></li>
+											<li>Notes: <%= info.design_notes %></li>
+											<li>Conformance: <%= info.conformance_profile %></li>
+										</ul>
+									</ul>
+							<% end %>
+					<% end %>
+					</ul>
+				</td>
+        </tr>
+    <% end %>
+  </tr>
+</table>
+
+
+<p>
+  <%= link_to "Edit", edit_directory_community_path(@community) %> |
+  <%= link_to "Destroy", @community, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", directory_communities_path %>
+</p>

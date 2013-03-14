@@ -1,0 +1,21 @@
+<%= form_for @party do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :community_role_id %><br />
+    <%= f.number_field :community_role_id %>
+  </p>
+  <p>
+    <%= f.label :signature %><br />
+    <%= f.text_area :signature %>
+  </p>
+  <p>
+    <%= f.label :youCentricCenter_id %><br />
+    <%= f.number_field :youCentricCenter_id %>
+  </p>
+
+
+    <%= f.link_to_add "Assign This Role", :parties %>
+
+    <%= f.fields_for :parties %>
+  <p><%= f.submit %></p>
+<% end %>

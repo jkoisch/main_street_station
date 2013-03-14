@@ -1,0 +1,43 @@
+<h1>Listing registration_whitelabels</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Contact</th>
+    <th>Contact phone</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip postal code</th>
+    <th>Work phone</th>
+    <th>Email primary</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @registration_whitelabels.each do |registration_whitelabel| %>
+  <tr>
+    <td><%= registration_whitelabel.name %></td>
+    <td><%= registration_whitelabel.description %></td>
+    <td><%= registration_whitelabel.contact_id %></td>
+    <td><%= registration_whitelabel.contact_phone %></td>
+    <td><%= registration_whitelabel.address1 %></td>
+    <td><%= registration_whitelabel.address2 %></td>
+    <td><%= registration_whitelabel.city %></td>
+    <td><%= registration_whitelabel.state %></td>
+    <td><%= registration_whitelabel.zip_postal_code %></td>
+    <td><%= registration_whitelabel.work_phone %></td>
+    <td><%= registration_whitelabel.email_primary %></td>
+    <td><%= link_to 'Show', registration_whitelabel %></td>
+    <td><%= link_to 'Edit', edit_registration_whitelabel_path(registration_whitelabel) %></td>
+    <td><%= link_to 'Destroy', registration_whitelabel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Whitelabel', new_registration_whitelabel_path %>

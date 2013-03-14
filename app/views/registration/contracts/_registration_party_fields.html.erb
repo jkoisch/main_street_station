@@ -1,0 +1,18 @@
+<p class="fields">
+
+	<strong>Party: </strong><br />
+<ul>
+	<li><%= f.label :community_role_id, "Community Role" %>
+		<%= f.select :id, Directory::CommunityRole.all.collect{ |r| [r.name, r.id]} %></li>
+	<li><%= f.label :user_id, "User" %>
+		<%= f.text_field :user_id %></li>
+	<li><%= f.label :user_id, "Address" %>
+		<%= f.text_field :address %></li>
+	<li><%= f.label :user_id, "Status" %>
+		<%= f.text_field :invitation_status %></li>
+	<li><%= f.label :user_id, "Signature" %>
+		<%= f.text_field :signature %></li>
+	<li><%= f.link_to_remove "Remove this Party" %></li>
+</ul>
+</p>
+

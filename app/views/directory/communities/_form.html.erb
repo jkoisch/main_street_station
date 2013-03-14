@@ -1,0 +1,21 @@
+<%= nested_form_for @community do |f| %>
+  <%= f.error_messages %>
+  Community: <br />
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :objective %><br />
+    <%= f.text_field :objective %>
+  </p>
+  <%= f.fields_for :community_roles %>
+  <p>
+    <%= f.link_to_add "Add a Role", :community_roles %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

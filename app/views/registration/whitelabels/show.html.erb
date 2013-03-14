@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @registration_whitelabel.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @registration_whitelabel.description %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%= @registration_whitelabel.contact_id %>
+</p>
+
+<p>
+  <b>Contact phone:</b>
+  <%= @registration_whitelabel.contact_phone %>
+</p>
+
+<p>
+  <b>Address1:</b>
+  <%= @registration_whitelabel.address1 %>
+</p>
+
+<p>
+  <b>Address2:</b>
+  <%= @registration_whitelabel.address2 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @registration_whitelabel.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @registration_whitelabel.state %>
+</p>
+
+<p>
+  <b>Zip postal code:</b>
+  <%= @registration_whitelabel.zip_postal_code %>
+</p>
+
+<p>
+  <b>Work phone:</b>
+  <%= @registration_whitelabel.work_phone %>
+</p>
+
+<p>
+  <b>Email primary:</b>
+  <%= @registration_whitelabel.email_primary %>
+</p>
+
+
+<%= link_to 'Edit', edit_registration_whitelabel_path(@registration_whitelabel) %> |
+<%= link_to 'Back', registration_whitelabels_path %>

@@ -1,0 +1,31 @@
+<%= semantic_nested_form_for @registration_whitelabel do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :contact_id %>
+    <%= f.input :contact_phone %>
+    <%= f.input :address1 %>
+    <%= f.input :address2 %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+    <%= f.input :zip_postal_code %>
+    <%= f.input :work_phone %>
+    <%= f.input :email_primary %>
+
+
+		Communities:<br />
+		<% Directory::Community.all.each do |community| %>
+
+			<%= check_box_tag :directory_community_ids, community.id, @registration_whitelabel.directory_communities.include?(community), :name => 'registration_whitelabel[directory_community_ids][]' %>
+			<%= label_tag :directory_community_ids, community.name %>
+			<br />
+		<% end %>
+
+
+
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+<% end %>

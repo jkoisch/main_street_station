@@ -1,0 +1,21 @@
+<p class="fields">
+<strong> Assign Roles: </strong> <br />
+<br />
+<ul>
+<%= f.fields_for :invitation_yous %>
+
+  <%= f.link_to_add "Do You want to take on this Role?", :invitation_yous %>
+
+  <br />
+
+<%= f.fields_for :invitation_ids %>
+
+  <%= f.link_to_add "Assign this Role when you know their YouCentric Number?", :invitation_ids %>
+
+  <br />
+
+<%= f.fields_for :invitation_emails %>
+
+  <%= f.link_to_add "Assign this Role when you know their YouCentric email?", :invitation_emails %>
+</ul>
+</p>

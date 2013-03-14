@@ -1,0 +1,23 @@
+<% title "Youcentric Operations" %>
+
+<table>
+  <tr>
+    <th>Service</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Verb</th>
+  </tr>
+  <% for youcentric_operation in @youcentric_operations %>
+    <tr>
+      <td><%= youcentric_operation.service_id %></td>
+      <td><%= youcentric_operation.name %></td>
+      <td><%= youcentric_operation.description %></td>
+      <td><%= youcentric_operation.verb_id %></td>
+      <td><%= link_to "Show", youcentric_operation %></td>
+      <td><%= link_to "Edit", edit_youcentric_operation_path(youcentric_operation) %></td>
+      <td><%= link_to "Destroy", youcentric_operation, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Youcentric Operation", new_youcentric_operation_path %></p>

@@ -1,0 +1,31 @@
+<% title "Youcentric Objects" %>
+
+<table>
+  <tr>
+    <th>Service</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Script</th>
+    <th>State Url</th>
+    <th>Youcentric Object Parent</th>
+    <th>Design Notes</th>
+    <th>Conformance Profile</th>
+  </tr>
+  <% for youcentric_object in @youcentric_objects %>
+    <tr>
+      <td><%= youcentric_object.service_id %></td>
+      <td><%= youcentric_object.name %></td>
+      <td><%= youcentric_object.description %></td>
+      <td><%= youcentric_object.script %></td>
+      <td><%= youcentric_object.state_url %></td>
+      <td><%= youcentric_object.youcentric_object_parent_id %></td>
+      <td><%= youcentric_object.design_notes %></td>
+      <td><%= youcentric_object.conformance_profile %></td>
+      <td><%= link_to "Show", youcentric_object %></td>
+      <td><%= link_to "Edit", edit_youcentric_object_path(youcentric_object) %></td>
+      <td><%= link_to "Destroy", youcentric_object, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Youcentric Object", new_youcentric_object_path %></p>

@@ -1,0 +1,43 @@
+<% title "Party" %>
+
+<p>
+  <strong>Community Role:</strong>
+  <%= @party.community_role_id %>
+</p>
+<p>
+  <strong>Signature:</strong>
+  <%= @party.signature %>
+</p>
+<p>
+  <strong>Youcentriccenter:</strong>
+  <%= @party.youCentricCenter_id %>
+</p>
+<td>
+	<strong>
+		<% for party in community_role.parties do %>
+
+			<% for invitation_e in party.invitation_emails do %>
+				Invitation Email <%=statusText invitation_e.status%> <%= invitation_e.email %>
+			<% end %>
+
+			<% for invitation_y in party.invitation_yous do %>
+				Invitation <%=statusText invitation_y.status%> you
+			<% end %>
+
+			<% for invitation_i in party.invitation_ids do %>
+				Invitation <%=statusText invitation_i.status%> <%= invitation_i.youCentricCenter_id %>
+			<% end %>
+		<% end %>
+	</strong>
+	<br />
+	<ul>
+		<%= link_to "More ... (e.g., who fills it in your network)", yellow_pages_community_community_role_path(@community, community_role) %>
+
+	</ul>
+</td>
+
+<p>
+  <%= link_to "Edit", edit_party_path(@party) %> |
+  <%= link_to "Destroy", @party, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", parties_path %>
+</p>

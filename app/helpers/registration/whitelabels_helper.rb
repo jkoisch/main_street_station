@@ -1,0 +1,2 @@
+module Registration::WhitelabelsHelper
+end

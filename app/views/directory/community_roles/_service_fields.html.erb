@@ -1,0 +1,46 @@
+<p class="fields">
+<strong> YouCentric Service: </strong> <br />
+<br />
+<table>
+  <tr>
+    <td>
+      <%=  f.label :name %>
+    </td>
+    <td>
+      <%=  f.text_field :name %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%=  f.label :description %>
+    </td>
+    <td>
+      <%=  f.text_field :description %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%=  f.label :address %>
+    </td>
+    <td>
+      <%=  f.text_field :address %>
+    </td>
+  </tr>
+</table>
+
+<%= f.fields_for :youcentric_operations %>
+<p>
+<%= f.link_to_add "Add an Operation?", :youcentric_operations %>
+</p>
+
+<%= f.fields_for :youcentric_objects %>
+<p>
+<%= f.link_to_add "Add an Object?", :youcentric_objects %>
+</p>
+<%= f.link_to_remove "Remove Service" %>
+</p>
+
+
+
+
+

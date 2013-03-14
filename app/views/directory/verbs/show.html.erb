@@ -1,0 +1,12 @@
+<% title "Verb" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @verb.name %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_verb_path(@verb) %> |
+  <%= link_to "Destroy", @verb, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", verbs_path %>
+</p>

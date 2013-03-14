@@ -1,0 +1,20 @@
+<%= form_for @service do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :community_role_id %><br />
+    <%= f.number_field :community_role_id %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_area :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_area :address %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,24 @@
+<% title "Service" %>
+
+<p>
+  <strong>Community Role:</strong>
+  <%= @service.community_role_id %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @service.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @service.description %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @service.address %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_service_path(@service) %> |
+  <%= link_to "Destroy", @service, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", services_path %>
+</p>

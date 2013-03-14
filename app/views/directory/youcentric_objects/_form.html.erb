@@ -1,0 +1,36 @@
+<%= form_for @youcentric_object do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :service_id %><br />
+    <%= f.number_field :service_id %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_area :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :script %><br />
+    <%= f.text_area :script %>
+  </p>
+  <p>
+    <%= f.label :state_url %><br />
+    <%= f.text_area :state_url %>
+  </p>
+  <p>
+    <%= f.label :youcentric_object_parent_id %><br />
+    <%= f.number_field :youcentric_object_parent_id %>
+  </p>
+  <p>
+    <%= f.label :design_notes %><br />
+    <%= f.text_area :design_notes %>
+  </p>
+  <p>
+    <%= f.label :conformance_profile %><br />
+    <%= f.text_area :conformance_profile %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,17 @@
+<% title "YouCentric Networks" %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Objective</th>
+  </tr>
+  <% for community in @communities %>
+    <tr>
+      <td><%= community.name %></td>
+      <td><%= community.objective %></td>
+      <td><%= link_to "Show", directory_communities_path %></td>
+      <td><%= link_to "Edit", edit_directory_community_path(community) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Community", new_directory_community_path %></p>

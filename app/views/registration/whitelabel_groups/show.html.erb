@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Whitelabel:</b>
+  <%= @registration_whitelabel_group.whitelabel_id %>
+</p>
+
+<p>
+  <b>Community:</b>
+  <%= @registration_whitelabel_group.community_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_registration_whitelabel_group_path(@registration_whitelabel_group) %> |
+<%= link_to 'Back', registration_whitelabel_groups_path %>

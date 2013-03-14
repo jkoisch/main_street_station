@@ -1,0 +1,21 @@
+<%= nested_form_for @registration_contract do |f| %>
+	<p>
+		<%= f.label :community_id %><br />
+		<%= f.text_field :community_id %>
+	</p>
+	<p>
+		<%= f.label :status %><br />
+		<%= f.text_field :status %>
+	</p>
+	<p>
+		<%= f.label :whitelabel %><br />
+		<%= f.select :registration_whitelabel_id, Registration::Whitelabel.all.map{|w| [w.name, w.id]} %>
+	</p>
+	<p>
+		<%= f.fields_for :registration_parties %>
+	</p>
+	<p>
+		<%= f.link_to_add "Add a Party", :registration_parties %>
+	</p>
+  <%= f.submit %>
+<% end %>

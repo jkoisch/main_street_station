@@ -1,0 +1,24 @@
+<% title "Youcentric Operation" %>
+
+<p>
+  <strong>Service:</strong>
+  <%= @youcentric_operation.service_id %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @youcentric_operation.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @youcentric_operation.description %>
+</p>
+<p>
+  <strong>Verb:</strong>
+  <%= @youcentric_operation.verb_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_youcentric_operation_path(@youcentric_operation) %> |
+  <%= link_to "Destroy", @youcentric_operation, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", youcentric_operations_path %>
+</p>

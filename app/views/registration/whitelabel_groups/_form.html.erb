@@ -1,0 +1,10 @@
+<%= semantic_form_for @whitelabel_group do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :whitelabel_id %>
+    <%= f.input :community_id %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+<% end %>
