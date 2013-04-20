@@ -4,39 +4,37 @@
         "active": {
             "value": "true"
         },
-        "details": {
-            "birthDate": {
-                "value": "1954-09-15"
-            },
-            "gender": {
-                "code": {
-                    "value": "F"
-                },
-                "display": {
-                    "value": "Female"
-                },
-                "system": {
-                    "value": "http://hl7.org/fhir/sid/v2-0001"
-                }
-            },
-            "name": [
-                {
-                    "family": [
-                        {
-                            "value": "Fletcher"
-                        }
-                    ],
-                    "given": [
-                        {
-                            "value": "Brenda"
-                        }
-                    ],
-                    "use": {
-                        "value": "official"
-                    }
-                }
-            ]
+        "birthDate": {
+            "value": "1954-09-15"
         },
+        "gender": {
+            "code": {
+                "value": "F"
+            },
+            "display": {
+                "value": "Female"
+            },
+            "system": {
+                "value": "http://hl7.org/fhir/sid/v2-0001"
+            }
+        },
+        "name": [
+            {
+                "family": [
+                    {
+                        "value": "Fletcher"
+                    }
+                ],
+                "given": [
+                    {
+                        "value": "Brenda"
+                    }
+                ],
+                "use": {
+                    "value": "official"
+                }
+            }
+        ],
         "identifier": [
             {
                 "id": {
