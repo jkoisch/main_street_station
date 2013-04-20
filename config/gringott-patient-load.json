@@ -1,5 +1,5 @@
 {
-    "patient": {
+    "client": {
         "id": "http://hl7.org/fhir/patient/@71",
         "active": {
             "value": "true"
