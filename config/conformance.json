@@ -1,0 +1,40 @@
+{"Conformance": {
+    "acceptUnknown": {"value": "true"},
+    "text": {
+        "status": {"value": "generated"},
+        "div": "<div><p>The FHIR Interface Server in Mainstreet supports the following transactions for the resource Patient: read, search(name,gender), create and updates.<\/p><\/div>"
+    },
+    "format": [
+        {"value": "xml"},
+        {"value": "json"}
+    ],
+    "date": {"value": "2013-05-13"},
+    "version": {"value": "sex-comedy"},
+    "publisher": {"value": "YouCentric"},
+    "software": {
+        "name": {"value": "Mainstreet"},
+        "version": {"value": "0.00.010.0001"}
+    },
+    "document": [],
+    "fhirVersion": {"value": "0.07"},
+    "telecom": [{
+        "system": {"value": "email"},
+        "value": {"value": "the_black_dot@youcentric.com"}
+    }],
+    "messaging": [],
+    "rest": [{
+        "type": {"value": "Patient"},
+        "mode": {"value": "server"},
+        "history": {"value": "false"},
+        "profile": {"value": "http://fhir.hl7.org/base/profile/@7896271d-57f6-4231-89dc-dcc91eab2416"}
+        "batch": {"value": "false"},
+        "resource": [{
+            "operation": [
+                {"code": {"value": "read"}},
+                {"code": {"value": "update"}},
+                {"code": {"value": "create"}}
+            ]
+        }]
+    }],
+    "identifier": {"value": "mainstreet-fhir-profile-1"}
+}}
