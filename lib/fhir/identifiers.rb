@@ -20,7 +20,7 @@ module FHIR
       new_identifier.label = json_dtl[:label][:value] unless json_dtl[:label].nil?
       new_identifier.period = Period.parse_json_array(json_dtl[:period]) unless json_dtl[:period].nil?
       new_identifier.system = json_dtl[:system][:value] unless json_dtl[:system].nil?
-      new_identifier.use = json_dtl[:use][:value] unless json_dtl[:use].nil?
+      new_identifier.use = json_dtl[:use][:value] unless json_dtl[:use][:value].nil?
 
       new_identifier
     end

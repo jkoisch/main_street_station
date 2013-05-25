@@ -17,22 +17,20 @@ module FHIR
       end
     end
 
-    def self.init_from_ember(json_struct, source)
+    def self.init_from_ember(json_dtl, source={})
       patient = self.new()
 
       #TODO: text and Narrative type - see resources - http://www.hl7.org/implement/standards/fhir/resources.htm#content
 
-      usage = case source
-                when 'fhir' then :Patient
-                #when 'gringotts' then :client
-                else :client
-              end
-
-      json_dtl = json_struct[usage]
+      json_dtl = case source
+                  when 'fhir' then json_dtl[:Patient]
+                  when 'gringotts' then json_dtl[:client]
+                  else json_dtl
+                 end
 
       patient.id = json_dtl[:id] unless json_dtl[:id].nil?
       patient.active = json_dtl[:active][:value] unless json_dtl[:active].nil?
-      patient.animal = json_dtl[:animal] unless json_struct[ usage][:animal].nil?
+      patient.animal = json_dtl[:animal] unless json_dtl[:animal].nil?
 
       unless json_dtl[:contact].nil?
         json_dtl[:contact].each do |associate|
@@ -44,14 +42,14 @@ module FHIR
       patient.text = Text.parse_json_array(json_dtl[:text]) unless json_dtl[:text].nil?
 
       if json_dtl[:details].nil? && json_dtl[:name]
-        patient.details = Details.parse_json_array(json_dtl, usage)
+        patient.details = Details.parse_json_array(json_dtl)
       else
-        patient.details = Details.parse_json_array(json_dtl[:details], usage)
+        patient.details = Details.parse_json_array(json_dtl[:details])
       end
 
-      patient.diet = CodeableConcept.parse_json_array(json_dtl[:diet]) unless json_dtl[:diet].nil?
+      #patient.diet = CodeableConcept.parse_json_array(json_dtl[:diet]) unless json_dtl[:diet].nil?
 
-      unless json_dtl[:identifier].nil?
+      unless json_dtl[:identifier].nil? || json_dtl[:identifier].empty?
         patient.identifiers = []
         json_dtl[:identifier].each {|identifier|
           patient.identifiers << Identifiers.parse_json_array(identifier)
@@ -65,12 +63,26 @@ module FHIR
         }
       end
 
-      patient.multipleBirth = json_dtl[:multipleBirth] unless json_dtl[:multipleBirth].nil?
+      #patient.multipleBirth = json_dtl[:multipleBirth] unless json_dtl[:multipleBirth].nil?
       patient.provider = Resource.parse_json_array(json_dtl[:provider]) unless json_dtl[:provider].nil?
 
       return patient
     end
 
+    def self.search_patient(search_params)
+
+      supported_params = [:name]
+
+      if search_params[:id] == "search"
+        conditions = {}
+        search_params.slice(*supported_params).each do |scope, value|
+        conditions[scope] = value
+        end
+      elsif search_params[:id] = "/^(@\d{1,36}+$)/"
+
+      end
+
+    end
   end
 end
 

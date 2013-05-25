@@ -28,7 +28,7 @@ module FHIR
             }
         end
 
-        unless json_dtl[:given].nil?
+        unless json_dtl[:given].nil? || json_dtl[:given].empty?
           new_name.given = []
           json_dtl[:given].each {|given|
             new_name.given << given

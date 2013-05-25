@@ -11,7 +11,7 @@
       <% end %>
       </text>
       <% end %>
-        <active value="<%= @patient.active %>"/>
+      <active value="<%= @patient.active %>"/>
       <% @patient.identifiers.each do |identifier| -%>
         <identifier>
         <% unless identifier.label.nil? %>
@@ -44,12 +44,11 @@
         <% @patient.details.names.each do |name| -%>
           <name>
           <% unless name.use.nil? %>
-            <use value="<%= name.use %>"/>
+            <use value="<%= name.use[:value] %>"/>
           <% end %>
           <% unless name.text.nil? %>
             <text value="<%= name.text[:value] %>" />
           <% end %>
-
           <% name.family.each do |cnt| %>
             <% if cnt[:value].is_a? Array %>
             <% cnt[:value].each do |fam| %>
@@ -59,7 +58,6 @@
             <family value="<%= cnt[:value] %>"/>
           <% end %>
           <% end %>
-
           <% name.given.each do |cnt| %>
             <% if cnt[:value].is_a? Array %>
             <% cnt[:value].each do |give| %>
@@ -69,7 +67,6 @@
             <given value="<%=	cnt[:value] %>"/>
             <%end %>
           <% end unless name.given.nil? %>
-
          <% name.prefix.each do |cnt| %>
             <% if name.prefix.count == 1 %>
             <prefix value="<%= cnt %>"/>

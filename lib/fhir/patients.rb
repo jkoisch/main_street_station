@@ -3,7 +3,7 @@ require_relative 'patient'
 module FHIR
   class Patients
 
-    attr_accessor :patient
+    #attr_accessor :patient
 
     def initialize(attributes = {})
     end
@@ -11,8 +11,8 @@ module FHIR
     def self.init_from_ember(json_dtl)
       patients = []
 
-      json_dtl.each { |pnt|
-         patients << Patient.init_from_ember(pnt, 'fhir')
+      json_dtl[:clients].each { |pnt|
+         patients << Patient.init_from_ember(pnt)
       }
 
       return patients

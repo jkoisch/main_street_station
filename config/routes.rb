@@ -4,7 +4,14 @@ MainStreetStation::Application.routes.draw do
 
   #resource :patients
 
-  namespace :fhir do resources :patients, :constraint => { :id => /^(@\d{1,36}+$)/} end
+  namespace :fhir do
+    resources :patients, :constraint => { :id => /^(@\d{1,36}+$)/} do
+
+      collection do
+        get 'search'
+      end
+    end
+  end
 
   namespace :registration do resources :whitelabel_groups end
 
