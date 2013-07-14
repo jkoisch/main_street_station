@@ -28,7 +28,7 @@ atom_feed({:id => "urn:uuid: #{uuid.generate}"}) do |feed|
           unless patient.text.nil?
             pnt.text do
               pnt.status patient.text.status
-              pnt.div patient.text.div.html_safe, xmlns: "http://www.w3.org/1999/xhtml"
+              pnt.div "<b>foo</b>".html_safe, :type => 'html'  #patient.text.div, :type => "html", xmlns: "http://www.w3.org/1999/xhtml"
             end
           end
 
