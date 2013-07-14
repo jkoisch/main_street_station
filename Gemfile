@@ -29,8 +29,8 @@ gem 'foreman'
 gem 'rabl'
 gem 'json'
 gem 'rest-client'
-
 gem "nifty-generators", :group => :development
+gem 'uuid'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

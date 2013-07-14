@@ -5,19 +5,14 @@ require 'net/http'
 class Fhir::PatientsController < ApplicationController
 
   def index
-    #gringotts.all
       patient_data = get_patient_json_from_external_server()
       gringotts_json_struct = JSON.parse(patient_data, opts={:symbolize_names => true})
       @patients = FHIR::Patients.init_from_ember(gringotts_json_struct)
 
-    #fhir_json_struct = JSON.parse(patient_data, opts={:symbolize_names => true})
-    #fhir_json_struct = JSON.parse(@patients.body, opts={:symbolize_names => true})
-    #@patients = FHIR::Patients.init_from_ember(fhir_json_struct[:clients])
-
     respond_to do |format|
       format.html
       format.atom
-      format.json #{ render json: @patients }
+      format.json
       format.xml
     end
   end
@@ -29,7 +24,9 @@ class Fhir::PatientsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json #{ render json: @patient }
+      format.json do
+        render :json => custom_json_for(@patient)
+      end
       format.xml
     end
   end
@@ -46,8 +43,6 @@ class Fhir::PatientsController < ApplicationController
 
     uri = URI('http://gringotts.dev/clients/')
     Net::HTTP.get(uri)
-    #file = File.open(location)
-    #data = file.read
 
   end
 
@@ -71,6 +66,6 @@ class Fhir::PatientsController < ApplicationController
     end
 
     Net::HTTP.get_response(uri)
-
   end
+
 end
