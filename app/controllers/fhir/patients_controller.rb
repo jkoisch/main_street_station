@@ -34,7 +34,8 @@ class Fhir::PatientsController < ApplicationController
   def search
     @patients = search_gringotts(params)
 
-    render index
+    render json: @patients.body
+
   end
 
   private
@@ -55,17 +56,18 @@ class Fhir::PatientsController < ApplicationController
 
   def search_gringotts(params)
 
-    supported_params = [:name]
+    supported_params = [:name, :birthdate_before, :birthdate_after, :family, :given]
 
     uri = URI('http://gringotts.dev/clients/')
 
     search_params = ""
     params.slice(*supported_params).each do |scope, value|
-      search_params << "query[name_search]=#{value}"
+      search_params << "query[#{scope}_search]=#{value}"
+      #search_params << "query[#{scope}]=#{value}" #for birthdate_before and birthdate_after
       uri.query = URI.encode(search_params)
     end
-
     Net::HTTP.get_response(uri)
+
   end
 
 end
