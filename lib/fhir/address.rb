@@ -19,6 +19,7 @@ module FHIR
         new_addr.text = json_dtl[:text][:div] unless json_dtl[:text][:div].nil?
 
         unless json_dtl[:line].nil?
+          new_addr.line = []
           json_dtl[:line].each do |street|
             new_addr.line = street
           end

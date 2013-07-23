@@ -1,6 +1,6 @@
 require "fhir/patient"
 require "fhir/patients"
-require 'net/http'
+require "net/http"
 
 class Fhir::PatientsController < ApplicationController
 
@@ -36,6 +36,7 @@ class Fhir::PatientsController < ApplicationController
 
     render json: @patients.body
 
+
   end
 
   private
@@ -56,16 +57,34 @@ class Fhir::PatientsController < ApplicationController
 
   def search_gringotts(params)
 
-    supported_params = [:name, :birthdate_before, :birthdate_after, :family, :given]
+    supported_params = [:name, :birthdate_before, :birthdate_after, :family, :given, :gender, :id, :system]
 
     uri = URI('http://gringotts.dev/clients/')
 
     search_params = ""
     params.slice(*supported_params).each do |scope, value|
-      search_params << "query[#{scope}_search]=#{value}"
-      #search_params << "query[#{scope}]=#{value}" #for birthdate_before and birthdate_after
-      uri.query = URI.encode(search_params)
+
+      case scope
+        when "birthdate_after", "birthdate_before"
+          search_params << "query[#{scope}]=#{value}"
+        when "id", "system"
+          if search_params.empty?
+            search_params << "query[id_search][#{scope}]=#{value}"
+          else
+            search_params << ";query[id_search][#{scope}]=#{value}"
+          end
+        else
+          if scope == "gender"
+            #todo regex for m, f, un (undifferentiated), and unk (unknown) only and to do upper
+            value = value.upcase
+          end
+
+          search_params << "query[#{scope}_search]=#{value}"
+      end
+
     end
+
+    uri.query = URI.encode(search_params)
     Net::HTTP.get_response(uri)
 
   end

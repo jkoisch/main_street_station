@@ -12,7 +12,7 @@
       </text>
       <% end %>
       <active value="<%= @patient.active %>"/>
-      <% @patient.identifiers.each do |identifier| -%>
+      <% @patient.identifier.each do |identifier| -%>
         <identifier>
         <% unless identifier.label.nil? %>
           <label value="<%= identifier.label %>"/>
@@ -20,8 +20,8 @@
         <% unless identifier.system.nil? %>
           <system value="<%= identifier.system %>"/>
         <% end %>
-        <% unless identifier.id.nil? %>
-          <id value="<%= identifier.id %>"/>
+        <% unless identifier.key.nil? %>
+          <id value="<%= identifier.key %>"/>
         <% end %>
         <% unless identifier.assigner.nil? %>
           <assigner value="<%= identifier.assigner %>"/>
@@ -33,15 +33,14 @@
           <period value="<%= identifier.period %>"/>
         <% end %>
         </identifier>
-        <% end unless @patient.identifiers.nil? %>
-        <details>
-          <% unless @patient.details.birthDate.nil? %>
-          <birthDate value="<%=	@patient.details.birthDate[:value] %>"/>
-          <% end %>
-          <% unless @patient.details.maritalStatus.nil? %>
-          <maritalStatus value="<%=	@patient.details.maritalStatus[:value] %>"/>
-          <% end %>
-        <% @patient.details.names.each do |name| -%>
+        <% end unless @patient.identifier.nil? %>
+        <% unless @patient.birthDate.nil? %>
+        <birthDate value="<%=	@patient.birthDate[:value] %>"/>
+        <% end %>
+        <% unless @patient.maritalStatus.nil? %>
+        <maritalStatus value="<%=	@patient.maritalStatus[:value] %>"/>
+        <% end %>
+        <% @patient.name.each do |name| -%>
           <name>
           <% unless name.use.nil? %>
             <use value="<%= name.use[:value] %>"/>
@@ -81,8 +80,8 @@
             <period value="<%= name.period[:value] %>" />
           <% end %>
           </name>
-        <% end unless @patient.details.names.nil? %>
-        <% @patient.details.telecoms.each do |telecom| -%>
+        <% end unless @patient.name.nil? %>
+        <% @patient.telecom.each do |telecom| -%>
           <telecom>
           <% unless telecom.system.nil? %>
             <system value="<%= telecom.system %>"/>
@@ -97,25 +96,25 @@
             <period value="<% telecom.period %>" />
           <% end %>
           </telecom>
-        <% end unless @patient.details.telecoms.nil? %>
-        <% unless @patient.details.gender.nil? %>
+        <% end unless @patient.telecom.nil? %>
+        <% unless @patient.gender.nil? %>
           <gender>
-          <% unless @patient.details.gender.code.nil? %>
-            <code value="<%= @patient.details.gender.code %>"/>
+          <% unless @patient.gender.code.nil? %>
+            <code value="<%= @patient.gender.code %>"/>
           <% end %>
-          <% unless @patient.details.gender.display.nil? %>
-            <display value="<%= @patient.details.gender.display %>" />
+          <% unless @patient.gender.display.nil? %>
+            <display value="<%= @patient.gender.display %>" />
           <% end %>
-          <% unless @patient.details.gender.system.nil? %>
-            <system value="<%= @patient.details.gender.system %>"/>
+          <% unless @patient.gender.system.nil? %>
+            <system value="<%= @patient.gender.system %>"/>
           <% end %>
           </gender>
         <% end %>
-        <% @patient.details.addresses.each do |address| %>
+        <% @patient.address.each do |address| %>
           <address>
-          <%  unless address.use.nil? %>
+          <% unless address.use.nil? %>
             <use value="<%= address.use[:value] %>"/>
-          <%	end %>
+          <% end %>
           <% unless address.text.nil? %>
             <text value="<%= address.text %>"/>
           <% end %>
@@ -138,8 +137,7 @@
             <period value="<%= address.period[:value] %>" />
           <% end %>
           </address>
-        <% end unless @patient.details.addresses.nil? %>
-        </details>
+        <% end unless @patient.address.nil? %>
       <% unless @patient.links.nil? %>
         <% @patient.links.each do |link| %>
           <link>

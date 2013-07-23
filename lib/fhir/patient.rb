@@ -1,15 +1,18 @@
-require_relative 'animal'
+require_relative 'address'
 require_relative 'codeable_concept'
 require_relative 'contacts'
-require_relative 'details'
+require_relative 'gender'
+require_relative 'human_name'
 require_relative 'identifiers'
 require_relative 'resource'
 require_relative 'text'
+require_relative 'telecom_contacts'
 
 module FHIR
   class Patient
 
-    attr_accessor :id, :active, :animal, :contacts, :deceasedDate, :details, :diet, :identifiers, :links, :multipleBirth, :provider, :text
+    attr_accessor :id, :active, :address, :animal, :birthDate, :contact, :deceased, :gender, :identifier,
+                  :links, :maritalStatus, :multipleBirth, :name, :provider, :resource, :telecom, :text
 
     def initialize(accessors = {})
       accessors.each do |name, value|
@@ -29,42 +32,78 @@ module FHIR
                  end
 
       patient.id = json_dtl[:id] unless json_dtl[:id].nil?
-      patient.active = json_dtl[:active][:value] unless json_dtl[:active].nil?
-      patient.animal = json_dtl[:animal] unless json_dtl[:animal].nil?
+      patient.text = Text.parse_json_array(json_dtl[:text]) unless json_dtl[:text].nil?
+
+      unless json_dtl[:identifier].nil? || json_dtl[:identifier].empty?
+        patient.identifier = []
+        json_dtl[:identifier].each {|identifier|
+          patient.identifier << Identifiers.parse_json_array(identifier)
+        }
+      end
+
+      unless json_dtl[:name].nil? || json_dtl[:name].empty?
+        patient.name = []
+        json_dtl[:name].each {|json_name|
+          patient.name << HumanName.parse_json_array(json_name);
+        }
+      end
+
+      unless json_dtl[:telecom].nil? || json_dtl[:telecom].empty?
+        patient.telecom = []
+        json_dtl[:telecom].each {|telecom|
+          patient.telecom << TelecomContacts.parse_json_array(telecom)
+        }
+      end
+
+      #todo fhir def has CodeableConcept, examples have coding type
+      #unless json_dtl[:gender][:system].nil? && json_dtl[:gender][:code].nil? && json_dtl[:gender][:display].nil?
+        #patient.gender = Gender.parse_json_array(json_dtl[:gender]) unless json_dtl[:gender].nil?
+        #patient.gender = CodeableConcept.parse_json_array(json_dtl[:gender]) unless json_dtl[:gender].nil?
+      #end
+
+      patient.birthDate =  json_dtl[:birthDate] unless json_dtl[:birthDate].nil?
+
+      #todo <deceased[Boolean/DateTime] value=""/>
+      #patient.deceased = json_dtl[:deceased] unless json_dtl[:deceased].nil?
+
+      unless json_dtl[:address].nil? || json_dtl[:address].empty?
+        patient.address = []
+        json_dtl[:address].each {|addr|
+          patient.address << Address.parse_json_array(addr)
+        }
+      end
+
+      #if usage == 'Patient'
+      patient.maritalStatus = CodeableConcept.parse_json_array(json_dtl[:maritalStatus]) unless json_dtl[:maritalStatus].nil?
+
+      #todo <multipleBirth[Boolean/Integer] value=""/>
+      #patient.multipleBirth = json_dtl[:multipleBirth] unless json_dtl[:multipleBirth].nil?
 
       unless json_dtl[:contact].nil?
+        patient.contact = []
         json_dtl[:contact].each do |associate|
-          patient.contacts = Contacts.parse_json_array(associate)
+          patient.contact = Contacts.parse_json_array(associate)
         end
       end
 
-      patient.deceasedDate = json_dtl[:deceasedDate] unless json_dtl[:deceasedDate].nil?
-      patient.text = Text.parse_json_array(json_dtl[:text]) unless json_dtl[:text].nil?
+      #todo communication from gringotts
+      #unless json_dtl[:communication].nil? || json_dtl[:communication].empty?
+      #  patient.communication = []
+      #  json_dtl[:communication].each {|comm|
+      #    patient.communication << CodeableConcept.parse_json_array(comm)
+      #    }
+      #end
 
-      if json_dtl[:details].nil? && json_dtl[:name]
-        patient.details = Details.parse_json_array(json_dtl)
-      else
-        patient.details = Details.parse_json_array(json_dtl[:details])
-      end
-
-      #patient.diet = CodeableConcept.parse_json_array(json_dtl[:diet]) unless json_dtl[:diet].nil?
-
-      unless json_dtl[:identifier].nil? || json_dtl[:identifier].empty?
-        patient.identifiers = []
-        json_dtl[:identifier].each {|identifier|
-          patient.identifiers << Identifiers.parse_json_array(identifier)
-        }
-      end
+      patient.provider = Resource.parse_json_array(json_dtl[:provider]) unless json_dtl[:provider].nil?
 
       unless json_dtl[:link].nil?
-        patient.links = []
+        patient.link = []
         json_dtl[:link].each {|link|
-          patient.links = Resource.parse_json_array(link)
+          patient.link = Resource.parse_json_array(link)
         }
       end
 
-      #patient.multipleBirth = json_dtl[:multipleBirth] unless json_dtl[:multipleBirth].nil?
-      patient.provider = Resource.parse_json_array(json_dtl[:provider]) unless json_dtl[:provider].nil?
+      patient.active = json_dtl[:active][:value] unless json_dtl[:active].nil?
 
       return patient
     end
@@ -83,6 +122,9 @@ module FHIR
       end
 
     end
+
   end
 end
+
+
 

@@ -4,7 +4,7 @@ require_relative 'resource'
 module FHIR
   class Identifiers
 
-    attr_accessor :id, :assigner, :label, :period, :system, :use
+    attr_accessor :key, :assigner, :label, :period, :system, :use
 
     def initialize(attributes={})
       attributes.each do |name, value|
@@ -15,7 +15,7 @@ module FHIR
     def self.parse_json_array(json_dtl)
       new_identifier = Identifiers.new()
 
-      new_identifier.id = json_dtl[:identifier][:value] unless json_dtl[:identifier].nil?
+      new_identifier.key = json_dtl[:identifier][:value] unless json_dtl[:identifier].nil?
       new_identifier.assigner = Resource.parse_json_array(json_dtl[:assigner]) unless json_dtl[:assigner].nil?
       new_identifier.label = json_dtl[:label][:value] unless json_dtl[:label].nil?
       new_identifier.period = Period.parse_json_array(json_dtl[:period]) unless json_dtl[:period].nil?

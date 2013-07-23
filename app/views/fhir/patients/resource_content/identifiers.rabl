@@ -1,5 +1,5 @@
-node :id, :unless => lambda {|i| i.id.nil?} do |i|
-  {:value => i.id}
+node :key, :unless => lambda {|i| i.key.nil?} do |i|
+  {:value => i.key}
 end
 
 node :assigner, :unless => lambda {|i| i.assigner.nil?} do |i|

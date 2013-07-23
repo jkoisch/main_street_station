@@ -12,6 +12,7 @@ atom_feed({:id => "urn:uuid: #{uuid.generate}"}) do |feed|
       entry.category :scheme => 'http://localhost:3000/fhir/resource-types', :term => 'Patient'
       entry.link :rel => "self", :href => "http://localhost:3000/fhir/patients/@#{patient.id}"
       entry.updated Time.now
+
       entry.author do
         entry.name "imported from gringotts"
       end
@@ -35,7 +36,7 @@ atom_feed({:id => "urn:uuid: #{uuid.generate}"}) do |feed|
           unless patient.identifiers.nil?
             patient.identifiers.each do |identifier|
               pnt.identifiers do |identity|
-                identity.id :value => identifier.id
+                identity.key :value => identifier.identifier
                 identity.label :value => identifier.label
                 identity.system :value => identifier.system
                 identity.use :value => identifier.use
@@ -43,87 +44,72 @@ atom_feed({:id => "urn:uuid: #{uuid.generate}"}) do |feed|
             end
           end
 
-          pnt.details do |detail|
-            detail.birthDate patient.details.birthDate
+          pnt.birthDate patient.birthDate
 
-            unless patient.details.gender.nil?
-              pnt.gender do
-                pnt.coding do
-                  pnt.code :value => patient.details.gender.code
-                  pnt.display :value => patient.details.gender.display
-                  pnt.system :value => patient.details.gender.system
-                end
-              end
+          unless patient.gender.nil?
+            pnt.gender do
+              pnt.coding :value => patient.gender.coding
+              pnt.primary :value => patient.gender.primary
+              pnt.text :value => patient.gender.text
             end
-
-            unless patient.details.identifiers.nil?
-              patient.details.identifiers.each do |identifier|
-                pnt.identifiers do |identity|
-                  identity.id :value => identifier.id
-                  identity.label :value => identifier.label
-                  identity.system :value => identifier.system
-                  identity.use :value => identifier.use
-                end
-              end
-            end
-
-            unless patient.details.telecoms.nil?
-              patient.details.telecoms.each do |telecom|
-                pnt.telecom do |comm|
-                  comm.value :value => telecom.value
-                  comm.system :value => telecom.system
-                  comm.use :value => telecom.use
-                end
-              end
-            end
-
-            unless patient.details.addresses.nil?
-              patient.details.addresses.each do |address|
-                pnt.address do |addr|
-                  addr.city address.city
-                  addr.country address.country
-                  addr.line address.line
-                  addr.state address.state
-                  addr.text :value => address.text
-                  addr.use  address.use
-                  addr.zip address.zip
-                end
-              end
-            end
-
-            unless patient.details.names.nil?
-              patient.details.names.each do |name|
-                pnt.name do |_name|
-                  unless name.family.nil?
-                    name.family.each do |kin|
-                      _name.family kin
-                    end
-                  end
-
-                  unless name.prefix.nil?
-                    name.prefix.each do |pre|
-                      _name.prefix :value => pre
-                    end
-                  end
-
-                  _name.use name.use
-                end
-              end
-            end
-
           end
 
+          unless patient.telecoms.nil?
+            patient.telecoms.each do |telecom|
+              pnt.telecom do |comm|
+                comm.value :value => telecom.value
+                comm.system :value => telecom.system
+                comm.use :value => telecom.use
+              end
+            end
+          end
+
+          unless patient.addresses.nil?
+            patient.addresses.each do |address|
+              pnt.address do |addr|
+                addr.city address.city
+                addr.country address.country
+                addr.line address.line
+                addr.state address.state
+                addr.text :value => address.text
+                addr.use  address.use
+                addr.zip address.zip
+              end
+            end
+          end
+
+          unless patient.names.nil?
+            patient.names.each do |name|
+              pnt.name do |_name|
+                unless name.family.nil?
+                  name.family.each do |kin|
+                    _name.family kin
+                  end
+                end
+
+                unless name.prefix.nil?
+                  name.prefix.each do |pre|
+                    _name.prefix :value => pre
+                  end
+                end
+
+                _name.use name.use
+              end
+            end
+          end
 
         end
       end
 
       entry.summary :type => 'xhtml' do
         entry.div :xmlns => 'http://www.w3.org/1999/xhtml' do
-          "#{patient.details.names[0].family[0]} - whatever"
+          "#{patient.names[0].family[0]} - whatever"
         end
       end
+
       #entry.tag!('app:edited', Time.now) #custom tags
       #entry.tag!('xmlns', 'http://www.w3.org/2005/AtomTest')  #custom tags just in case
+
     end
   end
 
