@@ -98,6 +98,14 @@ atom_feed({:id => "urn:uuid: #{uuid.generate}"}) do |feed|
             end
           end
 
+          unless patient.communication.nil?
+            pnt.communication do
+              pnt.coding :value => patient.communication.coding
+              pnt.primary :value => patient.communication.primary
+              pnt.text :value => patient.communication.text
+            end
+          end
+
         end
       end
 

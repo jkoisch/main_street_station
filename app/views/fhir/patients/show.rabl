@@ -134,12 +134,16 @@ object @patient => :patient
       child :relationships, :unless => lambda {|c| c.relationships.nil?} do
         extends "fhir/patients/resource_content/codeable_concept"
       end
-   end
+    end
 
-   child({ :provider => :provider}, :unless => lambda {|r| r.provider.nil?}) do
-     extends "fhir/patients/resource_content/resource"
-   end
+    child({ :provider => :provider}, :unless => lambda {|r| r.provider.nil?}) do
+        extends "fhir/patients/resource_content/resource"
+    end
 
-   node :birthDate, :unless => lambda {|d| d.birthDate.nil?} do |d|
-     d.birthDate
-   end
+    node :birthDate, :unless => lambda {|d| d.birthDate.nil?} do |d|
+        d.birthDate
+    end
+
+    node :communication, :unless => lambda {|l| l.communication.nil?} do |l|
+        extends "fhir/patients/resource_content/codeable_concept"
+    end

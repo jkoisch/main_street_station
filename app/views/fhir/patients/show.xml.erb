@@ -163,5 +163,10 @@
         <% end %>
         </provider>
       <% end %>
+      <% unless @patient.communication.nil? %>
+        <coding value="<%= @patient.communication.coding[:value] %>"/>
+        <text value="<%=	@patient.communication.text[:value] %>"/>
+        <primary value="<%=	@patient.communication.primary[:value] %>"/>
+      <% end %>
       </Patient>
 </document>

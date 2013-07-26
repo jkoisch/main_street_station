@@ -11,8 +11,9 @@ require_relative 'telecom_contacts'
 module FHIR
   class Patient
 
-    attr_accessor :id, :active, :address, :animal, :birthDate, :contact, :deceased, :gender, :identifier,
-                  :links, :maritalStatus, :multipleBirth, :name, :provider, :resource, :telecom, :text
+    attr_accessor :id, :active, :address, :animal, :birthDate, :communication, :contact, :deceased,
+                  :gender, :identifier, :links, :maritalStatus, :multipleBirth, :name, :provider,
+                  :resource, :telecom, :text
 
     def initialize(accessors = {})
       accessors.each do |name, value|
@@ -75,6 +76,8 @@ module FHIR
 
       #if usage == 'Patient'
       patient.maritalStatus = CodeableConcept.parse_json_array(json_dtl[:maritalStatus]) unless json_dtl[:maritalStatus].nil?
+
+      patient.communication = CodeableConcept.parse_json_array(json_dtl[:language]) unless json_dtl[:language].nil?
 
       #todo <multipleBirth[Boolean/Integer] value=""/>
       #patient.multipleBirth = json_dtl[:multipleBirth] unless json_dtl[:multipleBirth].nil?
