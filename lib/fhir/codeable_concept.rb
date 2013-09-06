@@ -13,15 +13,20 @@ module FHIR
       unless json_dtl.nil?
         concepts = []
 
-        json_dtl.each do |detail|
-          new_concept = CodeableConcept.new()
+        new_concept = CodeableConcept.new()
 
-          new_concept.coding = Coding.parse_json_array(detail[:coding]) unless detail[:coding].nil?
-          new_concept.primary = detail[:primary] unless detail[:primary].nil?
-          new_concept.text = detail[:text] unless detail[:text].nil?
+        json_dtl[:coding].each do |item|
+          new_concept.coding = Coding.parse_json_array(item)
+        end unless json_dtl[:coding].nil?
 
-          concepts << new_concept
-        end
+        #json_dtl[:coding].each_with_index do |item, index|
+        #  new_concept.coding = Coding.parse_json_array(item)
+        #end unless json_dtl[:coding].nil?
+
+        new_concept.primary = json_dtl[:primary] unless json_dtl[:primary].nil?
+        new_concept.text = json_dtl[:text] unless json_dtl[:text].nil?
+
+        concepts << new_concept
       end
     end
 

@@ -17,9 +17,9 @@ module FHIR
 
         new_name = self.new()
 
-        new_name.text = json_dtl[:text][:value] unless json_dtl[:text][:value].nil?
+        new_name.text = json_dtl[:text][:value] unless json_dtl[:text].nil?
         new_name.period = Period.parse_json_array(json_dtl[:period]) unless json_dtl[:period].nil?
-        new_name.use = json_dtl[:use] unless json_dtl[:use].nil?
+        new_name.use = json_dtl[:use][:value] unless json_dtl[:use].nil?
 
         unless json_dtl[:family].nil?
           new_name.family = []

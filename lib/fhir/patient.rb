@@ -56,13 +56,14 @@ module FHIR
         }
       end
 
-      #todo fhir def has CodeableConcept, examples have coding type
+      patient.gender = CodeableConcept.parse_json_array(json_dtl[:gender]) unless json_dtl[:gender].nil?
+
       #unless json_dtl[:gender][:system].nil? && json_dtl[:gender][:code].nil? && json_dtl[:gender][:display].nil?
         #patient.gender = Gender.parse_json_array(json_dtl[:gender]) unless json_dtl[:gender].nil?
         #patient.gender = CodeableConcept.parse_json_array(json_dtl[:gender]) unless json_dtl[:gender].nil?
       #end
 
-      patient.birthDate =  json_dtl[:birthDate] unless json_dtl[:birthDate].nil?
+      patient.birthDate =  json_dtl[:birthDate][:value] unless json_dtl[:birthDate].nil?
 
       #todo <deceased[Boolean/DateTime] value=""/>
       #patient.deceased = json_dtl[:deceased] unless json_dtl[:deceased].nil?
@@ -77,7 +78,9 @@ module FHIR
       #if usage == 'Patient'
       patient.maritalStatus = CodeableConcept.parse_json_array(json_dtl[:maritalStatus]) unless json_dtl[:maritalStatus].nil?
 
-      patient.communication = CodeableConcept.parse_json_array(json_dtl[:language]) unless json_dtl[:language].nil?
+      json_dtl[:language].each do |communication|
+        patient.communication = CodeableConcept.parse_json_array(communication)
+      end unless json_dtl[:language][:coding].empty?
 
       #todo <multipleBirth[Boolean/Integer] value=""/>
       #patient.multipleBirth = json_dtl[:multipleBirth] unless json_dtl[:multipleBirth].nil?

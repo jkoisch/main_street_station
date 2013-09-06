@@ -8,11 +8,11 @@ object @patient => :patient
      extends "fhir/patients/resource_content/text"
    end
 
-   child({:identifiers => :identifiers}, :unless => lambda {|r| r.identifiers.nil?}) do
+   child({:identifier => :identifier}, :unless => lambda {|r| r.identifier.nil?}) do
      extends "fhir/patients/resource_content/identifiers"
    end
 
-   child({ :names => :name}, :unless => lambda {|d| d.names.nil?}) do |d|
+   child({ :name => :name}, :unless => lambda {|d| d.name.nil?}) do |d|
 
      node :given, :unless => lambda {|n| n.given.nil?} do |n|
        n.given
@@ -43,42 +43,15 @@ object @patient => :patient
      end
    end
 
-    child({ :telecoms => :telecom}, :unless => lambda {|d| d.telecoms.nil?}) do |d|
-
-      node :system, :unless => lambda {|t| t.system.nil?} do |t|
-        {:value => t.system}
-      end
-
-      node :value, :unless => lambda {|t| t.value.nil?} do |t|
-        {:value => t.value}
-      end
-
-      node :use, :unless => lambda {|t| t.use.nil?} do |t|
-        {:value => t.use}
-      end
-
-      child :period, :unless => lambda {|t| t.period.nil?} do
-        extends "fhir/patients/resource_content/period"
-      end
+    child({ :telecom => :telecom}, :unless => lambda {|d| d.telecom.nil?}) do |d|
+      extends "fhir/patients/resource_content/contact"
     end
 
     child({ :gender => :gender }, :unless => lambda {|d| d.gender.nil?}) do
-
-      node :system, :unless => lambda {|g| g.system.nil?} do |g|
-        {:value => g.system}
-      end
-
-      node :display, :unless => lambda {|g| g.display.nil?} do |g|
-        {:value => g.display}
-      end
-
-      node :code, :unless => lambda {|g| g.code.nil?} do |g|
-        {:value => g.code}
-      end
-
+      extends "fhir/patients/resource_content/codeable_concept"
     end
 
-    child({ :addresses => :addresses}, :unless => lambda {|d| d.addresses.nil?}) do |d|
+    child({ :address => :address}, :unless => lambda {|d| d.address.nil?}) do |d|
 
       node :use, :unless => lambda {|a| a.use.nil?} do |a|
         a.use
@@ -121,7 +94,7 @@ object @patient => :patient
       {:value => ERB::Util.h(r.active)}
     end
 
-    child :contacts, :unless => lambda {|r| r.contacts.nil?} do
+    child :contact, :unless => lambda {|r| r.contact.nil?} do
 
       child :details, :unless => lambda {|c| c.details.nil?} do
         extends "fhir/patients/resource_content/details"

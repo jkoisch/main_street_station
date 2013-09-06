@@ -1,3 +1,0 @@
-class Fhir::Patient
-
-end

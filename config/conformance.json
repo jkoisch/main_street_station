@@ -26,7 +26,7 @@
         "type": {"value": "Patient"},
         "mode": {"value": "server"},
         "history": {"value": "false"},
-        "profile": {"value": "http://fhir.hl7.org/base/profile/@7896271d-57f6-4231-89dc-dcc91eab2416"}
+        "profile": {"value": "http://fhir.hl7.org/base/profile/@7896271d-57f6-4231-89dc-dcc91eab2416"},
         "batch": {"value": "false"},
         "resource": [{
             "operation": [
