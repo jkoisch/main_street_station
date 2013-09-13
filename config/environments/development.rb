@@ -15,6 +15,7 @@ MainStreetStation::Application.configure do
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -34,4 +35,11 @@ MainStreetStation::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Added for Devise when deploying to Heroku: forcing application to not access the DB
+  # or load models when precompiling your assets.
+  config.assets.initialize_on_precompile = false
+
+  config.gringotts_url = 'http://gringotts.dev/clients/'
+  config.home_url = '/Users/drodriguez/FHIR-Patient_Files/Ewout_Patients_All.json'
 end

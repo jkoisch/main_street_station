@@ -1,0 +1,2 @@
+module Trust::AuthenticationHelper
+end

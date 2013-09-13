@@ -1,11 +1,30 @@
 require 'yellow_pages'
 
 MainStreetStation::Application.routes.draw do
+  #match 'auth/:provider/callback', to: 'omniauth_callbacks#create'
+  #match 'auth/failure', to: redirect('/')
+  #match 'logout', to: 'omniauth_callbacks#destroy', as: 'logout'
 
-  #resource :patients
+  namespace :trust do
+    #resources :authentication
+    #root :to => "authentication#index"
+    get 'authentication', to: 'authentication#index'
+    get 'authentication/:id', to: 'authentication#show'
+  end
+
+  #get "/logout", :to => "devise/sessions#destroy"
+  devise_scope :users do
+    match "/logout" => "devise/sessions#destroy"
+  end
+
+  devise_for :users, path_names: { sign_in: "login", sign_out: "logout" },
+             controllers: {omniauth_callbacks: "omniauth_callbacks"}
+
+  #resources :trust, controller: 'authentication'
+
+  #root to: 'fhir/patients#index'
 
   namespace :fhir do
-
     resources :patients, :constraint => { :id => /^(@\d{1,36}+$)/} do
       collection do
         get 'search'
@@ -15,13 +34,13 @@ MainStreetStation::Application.routes.draw do
     resources :conformance
   end
 
-  namespace :registration do resources :whitelabel_groups end
-
-  namespace :registration do resources :whitelabels end
+  namespace :registration do
+    resources :whitelabel_groups
+    resources :whitelabels
+    resources :contracts
+  end
 
   resources :whitelabel_groups
-
-  namespace :registration do resources :contracts end
 
   match "/yellow_pages" => YellowPages, :anchor => false
 
@@ -88,7 +107,6 @@ MainStreetStation::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
