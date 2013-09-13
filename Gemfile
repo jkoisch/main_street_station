@@ -32,19 +32,6 @@ gem 'rest-client'
 gem "nifty-generators", :group => :development
 gem 'uuid'
 gem 'nokogiri'
-gem 'devise'
-gem 'omniauth-facebook'
-gem 'omniauth'
-gem 'oauth2'
-
-group :test, :development do
-  gem 'guard'
-  gem 'rspec-rails'
-  gem 'database_cleaner'
-  gem 'faker'
-  gem 'cucumber-rails', :require => false #, '0.3.2'
-  gem 'machinist', '>= 2.0.0.beta2'
-end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
