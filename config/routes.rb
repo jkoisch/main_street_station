@@ -6,13 +6,11 @@ MainStreetStation::Application.routes.draw do
   #match 'logout', to: 'omniauth_callbacks#destroy', as: 'logout'
 
   namespace :trust do
-    #resources :authentication
-    #root :to => "authentication#index"
+    root :to => "trust/authentication#index"
     get 'authentication', to: 'authentication#index'
     get 'authentication/:id', to: 'authentication#show'
   end
 
-  #get "/logout", :to => "devise/sessions#destroy"
   devise_scope :users do
     match "/logout" => "devise/sessions#destroy"
   end

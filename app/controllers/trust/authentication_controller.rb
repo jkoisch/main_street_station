@@ -1,8 +1,8 @@
 class Trust::AuthenticationController < ApplicationController
-  before_filter :authenticate_user! #, except: [:index, :show]
+  before_filter :authenticate_user! , except: [:index]  #, :show]
 
   def index
-    @title = "Here's the authentication index"
+    @title = "Home Index"
   end
 
   def show
@@ -14,4 +14,8 @@ class Trust::AuthenticationController < ApplicationController
     end
   end
 
+  def destroy
+    session[:user_id] = nil
+    redirect_to login_url
+  end
 end
