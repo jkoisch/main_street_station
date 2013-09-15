@@ -18,12 +18,8 @@ MainStreetStation::Application.routes.draw do
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout" },
              controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
-  #resources :trust, controller: 'authentication'
-
-  #root to: 'fhir/patients#index'
-
   namespace :fhir do
-    resources :patients, :constraint => { :id => /^(@\d{1,36}+$)/} do
+    resources :patients, :constraint => { :id => /^(@\d[1,36]+$)/} do
       collection do
         get 'search'
       end
