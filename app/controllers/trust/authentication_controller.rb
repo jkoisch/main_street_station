@@ -18,4 +18,11 @@ class Trust::AuthenticationController < ApplicationController
     session[:user_id] = nil
     redirect_to trust_root_path
   end
+
+  private
+
+  def use_https?
+    false
+  end
+
 end

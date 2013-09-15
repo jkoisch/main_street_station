@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  #before_filter :https_redirect,
   before_filter :authenticate_user! #, except: [ :index, :show ]
   protect_from_forgery
 
@@ -15,4 +16,19 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource_or_scope)
     trust_authentication_path(User)
   end
+
+  def https_redirect
+    #if ENV["ENABLE_HTTPS"] == "yes"
+      if request.ssl? && !use_https? || !request.ssl? && use_https?
+        protocol = request.ssl? ? "http" : "https"
+        flash.keep
+        redirect_to protocol: "#{protocol}://", status: :moved_permanently
+      end
+    #end
+  end
+
+  def use_https
+    true  #override in other controllers
+  end
+
 end
