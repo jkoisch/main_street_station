@@ -8,7 +8,7 @@
         {"value": "xml"},
         {"value": "json"}
     ],
-    "date": {"value": "2013-05-13"},
+    "date": {"value": "2013-09-21"},
     "version": {"value": "sex-comedy"},
     "publisher": {"value": "YouCentric"},
     "software": {
@@ -16,7 +16,7 @@
         "version": {"value": "0.00.010.0001"}
     },
     "document": [],
-    "fhirVersion": {"value": "0.07"},
+    "fhirVersion": {"value": "0.11"},
     "telecom": [{
         "system": {"value": "email"},
         "value": {"value": "the_black_dot@youcentric.com"}

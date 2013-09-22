@@ -5,6 +5,13 @@ require "net/http"
 class Fhir::PatientsController < ApplicationController
   #http_basic_authenticate_with name: "admin", password: "secret";
 
+  #def create
+  #
+  #  url = URI.parse(MainStreetStation::Application.config.external_url)
+  #  req = Net::HTTP::Post.new(url.path)
+  #
+  #end
+
   def index
 
     patient_data = get_patient_json_from_external_server()
