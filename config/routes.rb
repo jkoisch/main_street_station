@@ -26,6 +26,7 @@ MainStreetStation::Application.routes.draw do
     end
 
     resources :conformance
+    resources :observances
   end
 
   namespace :registration do

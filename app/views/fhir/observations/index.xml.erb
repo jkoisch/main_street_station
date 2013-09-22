@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<document>
+  <% @observations.each do |observation| %>
+  <Observation xmlns="http://hl7.org/fhir">
+    <text>
+      <% unless observation.text.status.nil? %>
+      <status value="<%= observation.text.status[:value] %>"/>
+      <% end %>
+      <% unless observation.text.div.nil? %>
+      <div xmlns="http://www.w3.org/1999/xhtml"><%= observation.text.div.html_safe %></div>
+      <% end %>
+    </text>
+    <name>
+      <coding>
+        <system value="<%= observation.name.coding.system %>"/>
+        <code value="<%= observation.name.coding.code %>"/>
+        <dispaly value="<%= observation.name.coding.display %>"/>
+      </coding>
+    </name>
+    <valueQuantity>
+      <value value="<%=	observation.value.quantity.value %>"/>
+      <units value="<%=	observation.value.quantity.units %>"/>
+      <system value="<%= observation.value.quantity.system %>"/>
+      <code value="<%= observation.value.quantity.code %>"/>
+    </valueQuantity>
+    <% unless observation.interpretation.nil? %>
+    <interpretation>
+      <coding>
+        <system value="<%= observation.interpretation.coding.system %>"/>
+        <code value="<%= observation.interpretation.coding.code %>"/>
+        <dispaly value="<%= observation.interpretation.coding.display %>"/>
+      </coding>
+    </interpretation>
+    <% end %>
+    <% unless observation.comments.nil? %>
+      <comments value="<%= observation.comments %>"/>
+    <% end %>
+    <% unless observation.applies.nil? %>
+      <appliesDateTime value="<%= observation.applies %>"/>
+    <% end %>
+    <% unless observation.issued.nil? %>
+      <issued value="<%= observation.issued %>"/>
+    <% end %>
+    <status value="final"/>
+    <reliability value="<%=	observation.reliability %>"/>
+    <% unless observation.bodySite.nil? %>
+    <bodySite>
+      <coding>
+        <system value="<%= observation.bodySite.coding.system %>"/>
+        <code value="<%= observation.bodySite.coding.code %>"/>
+        <dispaly value="<%= observation.bodySite.coding.display %>"/>
+      </coding>
+    </bodySite>
+    <% end %>
+    <% unless observation.method.nil? %>
+    <method>
+      <coding>
+        <system value="<%= observation.method.coding.system %>"/>
+        <code value="<%= observation.method.coding.code %>"/>
+        <dispaly value="<%= observation.method.coding.display %>"/>
+      </coding>
+    </method>
+    <% end %>
+    <% unless observation.identifier.nil? %>
+    <identifier>
+      <% unless observation.identifier.use.nil? %>
+      <use value="<%=	observation.identifier.use %>"/>
+      <% end %>
+      <% unless observation.identifier.label.nil? %>
+      <label value="<%=	observation.identifier.label %>"/>
+      <% end %>
+      <% unless observation.identifier.system.nil? %>
+      <system value="<%=	observation.identifier.system %>"/>
+      <% end %>
+      <% unless observation.identifier.key.nil? %>
+      <key value="<%=	observation.identifier.key %>"/>
+      <% end %>
+      <% unless observation.identifier.period.nil? %>
+      <use value="<%=	observation.identifier.period %>"/>
+      <% end %>
+      <% unless observation.identifier.assigner.nil? %>
+      <use value="<%=	observation.identifier.assigner %>"/>
+      <% end %>
+    </identifier>
+    <% end %>
+    <% unless observation.subject.nil? %>
+    <subject>
+      <% unless observation.subject.type.nil? %>
+      <type value="<%=	observation.subject.type %>"/>
+      <% end %>
+      <% unless observation.subject.reference.nil? %>
+      <reference value="<%=	observation.subject.reference %>"/>
+      <% end %>
+      <% unless observation.subject.display.nil? %>
+      <display value="<%=	observation.subject.display %>"/>
+      <% end %>
+    </subject>
+    <% end %>
+    <% unless observation.performer.nil? %>
+    <performer>
+      <% unless observation.performer.type.nil? %>
+      <type value="<%=	observation.performer.type %>"/>
+      <% end %>
+      <% unless observation.performer.reference.nil? %>
+      <reference value="<%=	observation.performer.reference %>"/>
+      <% end %>
+      <% unless observation.performer.display.nil? %>
+      <display value="<%=	observation.performer.display %>"/>
+      <% end %>
+    </performer>
+    <% end %>
+    <% observation.referenceRange.each do |range| %>
+    <referenceRange>
+      <% unless range.meaning.nil? %>
+      <moment>
+        <coding>
+          <system value="<%= range.coding.system %>"/>
+          <code value="<%= range.coding.code %>"/>
+          <dispaly value="<%= range.coding.display %>"/>
+        </coding>
+      </moment>
+      <% end %>
+      <range>
+      </range>
+    </referenceRange>
+    <% end unless observation.referenceRange.nil? %>
+    <% observation.component.each do |component| %>
+    <component>
+      <name>
+        <coding>
+          <system value="<%= component.coding.system %>"/>
+          <code value="<%= component.coding.code %>"/>
+          <dispaly value="<%= component.coding.display %>"/>
+        </coding>
+      </name>
+      <valueQuantity>
+        <% unless component.quantity.value.nil? %>
+        <value value="<%=	component.quantity.value %>"/>
+        <% end %>
+        <% unless component.quantity.comparator.nil? %>
+        <comparator value="<%=	component.quantity.comparator %>"/>
+        <% end %>
+        <% unless component.quantity.units.nil? %>
+        <units value="<%=	component.quantity.units %>"/>
+        <% end %>
+        <% unless component.quantity.system.nil? %>
+        <system value="<%=	component.quantity.system %>"/>
+        <% end %>
+        <% unless component.quantity.code.nil? %>
+        <code value="<%=	component.quantity.code %>"/>
+        <% end %>
+      </valueQuantity>
+    </component>
+    <% end unless observation.component.nil? %>
+  </Observation>
+  <% end %>
+</document>

@@ -21,8 +21,16 @@ class Fhir::PatientsController < ApplicationController
 
   def show
 
-    client_data = get_client_json_by_id(params[:id][1..-1])
-    gringotts_json_struct = JSON.parse(client_data, opts={:symbolize_names => true})
+    client_response = get_client_json_by_id(params[:id][1..-1])
+    if client_response.is_a?(Net::HTTPSuccess)
+      logger.debug 'success'
+    else
+      logger.debug client_response
+    end
+    logger.debug client_response.body.size
+    logger.debug client_response
+
+    gringotts_json_struct = JSON.parse(client_response.body, opts={:symbolize_names => true})
     @patient = FHIR::Patient.init_from_ember(gringotts_json_struct, 'gringotts')
 
     respond_to do |format|
@@ -42,14 +50,20 @@ class Fhir::PatientsController < ApplicationController
 
   private
 
+  def use_https?
+    true
+  end
+
   def get_patient_json_from_external_server()
     uri = URI(MainStreetStation::Application.config.gringotts_url)
     Net::HTTP.get(uri)
   end
 
   def get_client_json_by_id(id)
-    uri = URI('http://gringotts.dev/clients/' + id)
-    Net::HTTP.get(uri)
+    #uri = URI('http://gringotts.dev/clients/' + id)
+    uri = URI('http://protected-garden-4145.herokuapp.com/clients/' + id)
+    res = Net::HTTP.get_response(uri)
+    #Net::HTTP.get(uri)
   end
 
   def search_gringotts(params)

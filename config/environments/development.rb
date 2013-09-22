@@ -1,6 +1,6 @@
 MainStreetStation::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-  config.force_ssl = true
+  #config.force_ssl = true
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -41,6 +41,8 @@ MainStreetStation::Application.configure do
   # or load models when precompiling your assets.
   config.assets.initialize_on_precompile = false
 
-  config.gringotts_url = 'http://gringotts.dev/clients/'
+  #config.gringotts_url = 'http://gringotts.dev/clients/'
+  config.gringotts_url = 'http://protected-garden-4145.heroku.com/clients/'
+  #config.gringotts_url = 'http://spark.furore.com/fhir'
   config.home_url = '/Users/drodriguez/FHIR-Patient_Files/Ewout_Patients_All.json'
 end

@@ -8,23 +8,23 @@ module FHIR
     def initialize(attributes={})
     end
 
-    def self.parse_json_array(json_dtl)
+    def self.parse_json_array(dtl)
 
-      unless json_dtl.nil?
+      unless dtl.nil?
         concepts = []
 
         new_concept = CodeableConcept.new()
 
-        json_dtl[:coding].each do |item|
+        dtl[:coding].each do |item|
           new_concept.coding = Coding.parse_json_array(item)
-        end unless json_dtl[:coding].nil?
+        end unless dtl[:coding].nil?
 
-        #json_dtl[:coding].each_with_index do |item, index|
+        #dtl[:coding].each_with_index do |item, index|
         #  new_concept.coding = Coding.parse_json_array(item)
-        #end unless json_dtl[:coding].nil?
+        #end unless dtl[:coding].nil?
 
-        new_concept.primary = json_dtl[:primary] unless json_dtl[:primary].nil?
-        new_concept.text = json_dtl[:text] unless json_dtl[:text].nil?
+        new_concept.primary = dtl[:primary] unless dtl[:primary].nil?
+        new_concept.text = dtl[:text] unless dtl[:text].nil?
 
         concepts << new_concept
       end

@@ -78,9 +78,9 @@ module FHIR
       #if usage == 'Patient'
       patient.maritalStatus = CodeableConcept.parse_json_array(json_dtl[:maritalStatus]) unless json_dtl[:maritalStatus].nil?
 
-      json_dtl[:language].each do |communication|
-        patient.communication = CodeableConcept.parse_json_array(communication)
-      end unless json_dtl[:language][:coding].empty?
+      #json_dtl[:language].each do |communication|
+      #  patient.communication = CodeableConcept.parse_json_array(communication)
+      #end unless json_dtl[:language][:coding].empty?
 
       #todo <multipleBirth[Boolean/Integer] value=""/>
       #patient.multipleBirth = json_dtl[:multipleBirth] unless json_dtl[:multipleBirth].nil?

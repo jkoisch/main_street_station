@@ -19,10 +19,10 @@ class Trust::AuthenticationController < ApplicationController
     redirect_to trust_root_path
   end
 
-  private
-
-  def use_https?
-    false
-  end
+  #private
+  #
+  #def use_https?
+  #  false
+  #end
 
 end

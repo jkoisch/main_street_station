@@ -2,7 +2,7 @@
     "acceptUnknown": {"value": "true"},
     "text": {
         "status": {"value": "generated"},
-        "div": "<div><p>The FHIR Interface Server in Mainstreet supports the following transactions for the resource Patient: read, search(name,gender), create and updates.<\/p><\/div>"
+        "div": "<div><p>The FHIR Interface Server in Mainstreet supports the following transactions for the resources - Patient: read, search(name,gender), create and updates; Observation: read<\/p><\/div>"
     },
     "format": [
         {"value": "xml"},
@@ -33,6 +33,30 @@
                 {"code": {"value": "read"}},
                 {"code": {"value": "update"}},
                 {"code": {"value": "create"}}
+            ],
+            "searchParam":[
+              {"name": {"value": "name"}},
+              {"source": {"value": "http://hl7.org/fhir/Patient/search#name"}},
+              {"type": {"value": "string"}},
+              {"documentation": {"value": "a portion of either family or given name of the patient"}}
+            ],
+            "searchParam":[
+              {"name": {"value": "gender"}},
+              {"source": {"value": "http://hl7.org/fhir/Patient/search#gender"}},
+              {"type": {"value": "string"}},
+              {"documentation": {"value": "patient gender"}}
+            ],
+            "searchParam":[
+              {"name": {"value": "birthdate_before"}},
+              {"source": {"value": "http://hl7.org/fhir/Patient/search#birthdate_before"}},
+              {"type": {"value": "date"}},
+              {"documentation": {"value": "patient date of birth before given date"}}
+            ],
+            "searchParam":[
+              {"name": {"value": "birthdate_after"}},
+              {"source": {"value": "http://hl7.org/fhir/Patient/search#birthdate_after"}},
+              {"type": {"value": "date"}},
+              {"documentation": {"value": "patient date of birth after given date"}}
             ]
         }]
     }],
