@@ -1,0 +1,2 @@
+module Fhir::ObservationsHelper
+end
