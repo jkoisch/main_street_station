@@ -42,7 +42,7 @@ MainStreetStation::Application.configure do
   config.assets.initialize_on_precompile = false
 
   #config.gringotts_url = 'http://gringotts.dev/clients/'
-  config.gringotts_url = 'http://protected-garden-4145.heroku.com/clients/'
+  config.gringotts_url = 'http://protected-garden-4145.herokuapp.com/clients/'
   #config.gringotts_url = 'http://spark.furore.com/fhir/'
   config.external_url = 'http://hl7connect.healthintersections.com.au/svc/fhir/patient/'
   config.home_url = '/Users/drodriguez/FHIR-Patient_Files/Ewout_Patients_All.json'

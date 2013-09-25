@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  #before_filter :https_redirect
-  before_filter :https_redirect, :authenticate_user! #, except: [ :index, :show ]
+  before_filter :https_redirect, except: [:index]
+  before_filter :authenticate_user! #, except: [ :index, :show ]
   protect_from_forgery
 
   def after_sign_in_path_for(resource)
@@ -19,16 +19,16 @@ class ApplicationController < ActionController::Base
 
   def https_redirect
     if ENV["ENABLE_HTTPS"] == "yes"
-    if request.ssl? && !use_https? || !request.ssl? && use_https?
-      protocol = request.ssl? ? "http" : "https"
-      flash.keep
-      redirect_to protocol: "#{protocol}://", status: :moved_permanently
-    end
+      if request.ssl? && !use_https? || !request.ssl? && use_https?
+        protocol = request.ssl? ? "http" : "https"
+        flash.keep
+        redirect_to protocol: "#{protocol}://", status: :moved_permanently
+      end
     end
   end
 
-  def use_https
-    true  #override in other controllers
+  def use_https?
+    false  #override in other controllers
   end
 
 end

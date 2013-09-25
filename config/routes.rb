@@ -5,8 +5,22 @@ MainStreetStation::Application.routes.draw do
   #match 'auth/failure', to: redirect('/')
   #match 'logout', to: 'omniauth_callbacks#destroy', as: 'logout'
 
+  root :controller => "fhir::conformance", :action => "index"  # :to => "fhir/conformance#index"
+
+  namespace :fhir do
+
+    resources :patients, :constraint => [{ :id => /^(@\d[1,36]+$)/}, { :protocol => "https" }] do
+      collection do
+        get 'search'
+      end
+    end
+
+    resources :conformance, {:protocol => 'http'}
+    resources :observances
+
+  end
+
   namespace :trust do
-    root :to => "trust/authentication#index"
     get 'authentication', to: 'authentication#index'
     get 'authentication/:id', to: 'authentication#show'
   end
@@ -17,17 +31,6 @@ MainStreetStation::Application.routes.draw do
 
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout" },
              controllers: {omniauth_callbacks: "omniauth_callbacks"}
-
-  namespace :fhir do
-    resources :patients, :constraint => { :id => /^(@\d[1,36]+$)/} do
-      collection do
-        get 'search'
-      end
-    end
-
-    resources :conformance
-    resources :observances
-  end
 
   namespace :registration do
     resources :whitelabel_groups
@@ -101,7 +104,7 @@ MainStreetStation::Application.routes.draw do
   #   end
 
   # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
+  # just remember to delete public/index.htmlx.
 
   # See how all your routes lay out with "rake routes"
 

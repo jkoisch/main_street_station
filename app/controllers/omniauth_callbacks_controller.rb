@@ -1,5 +1,5 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-
+  before_filter :https_redirect
   def all
     user = User.from_omniauth(request.env["omniauth.auth"])
 
@@ -15,5 +15,11 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   alias_method :facebook, :all
+
+  private
+
+  def use_https?
+    true
+  end
 
 end

@@ -1,0 +1,59 @@
+<%= simple_form_for @patient, :html => { :class => 'container-fluid' } do |f| %>
+
+  <table>
+    <tr>
+      <td>
+        <%= f.input :name_text,
+                    :as => :string,
+                    :label => false,
+                    :inline_label => true %>
+      </td>
+      <td>
+        <%= f.input :name_use,
+                    :as => :string,
+                    :label => false,
+                    :inline_label => true %>
+      </td>
+      <td>
+        <%= f.input :name_family,
+                    :as => :string,
+                    :label => false,
+                    :inline_label => true %>
+      </td>
+      <td>
+        <%= f.input :name_given,
+                    :as => :string,
+                    :label => false,
+                    :inline_label => true %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.input :birthDate,
+                    :as => :date,
+                    :label => false,
+                    :inline_label => true %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.input :identifier_system,
+                    :as => :string,
+                    :label => false,
+                    :inline_label => true %>
+      </td>
+      <td>
+        <%= f.input :identifier_key,
+                    :as => :string,
+                    :label => false,
+                    :inline_label => true %>
+      </td>
+    </tr>
+  </table>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+  </div>
+
+<% end %>
+

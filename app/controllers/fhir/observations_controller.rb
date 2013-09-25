@@ -1,5 +1,4 @@
 require "fhir/observation"
-#require "fhir/observations"
 require "net/http"
 
 class Fhir::ObservationsController < ApplicationController

@@ -7,7 +7,6 @@ class Trust::AuthenticationController < ApplicationController
 
   def show
     @title = "This is the show authentication"
-    #@user = User.find(params[:id])
 
     respond_to do |format|
       format.html
@@ -19,10 +18,10 @@ class Trust::AuthenticationController < ApplicationController
     redirect_to trust_root_path
   end
 
-  #private
-  #
-  #def use_https?
-  #  false
-  #end
+  private
+
+  def use_https?
+    true
+  end
 
 end
