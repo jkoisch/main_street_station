@@ -9,7 +9,7 @@ MainStreetStation::Application.routes.draw do
 
   namespace :fhir do
 
-    resources :patients, :constraint => [{ :id => /^(@\d[1,36]+$)/}, { :protocol => "https" }] do
+    resources :patients, :constraint => [{ :id => /^(@\d[1,36]+$)/}, { :protocol => "http" }] do
       collection do
         get 'search'
       end

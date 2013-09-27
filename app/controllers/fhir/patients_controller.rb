@@ -3,7 +3,7 @@ require "fhir/patients"
 require "net/http"
 
 class Fhir::PatientsController < ApplicationController
-  before_filter :https_redirect, :authenticate_user!
+  #before_filter :https_redirect, :authenticate_user!
 
   def index
 
@@ -20,7 +20,7 @@ class Fhir::PatientsController < ApplicationController
   end
 
   def show
-    if request.ssl?
+    #if request.ssl?
       client_response = get_data_by_id(params[:id][1..-1])
       if client_response.is_a?(Net::HTTPSuccess)
         logger.debug 'success in patient_controller show method'
@@ -37,7 +37,7 @@ class Fhir::PatientsController < ApplicationController
         format.xml
       end
 
-    end
+    #end
   end
 
   def search
