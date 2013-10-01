@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
     stored_location_for(resource) ||
         if resource.is_a?(User)
           flash[:notice] = "user logged in native"
-          trust_authentication_path(User)
+          new_user_session_url = root_url
+          #trust_authentication_path(User)
         else
           super
         end

@@ -1,4 +1,4 @@
-require 'yellow_pages'
+#require 'yellow_pages'
 
 MainStreetStation::Application.routes.draw do
   #match 'auth/:provider/callback', to: 'omniauth_callbacks#create'
@@ -15,7 +15,12 @@ MainStreetStation::Application.routes.draw do
       end
     end
 
-    resources :conformance, {:protocol => 'http'}
+    resources :conformance, {:protocol => 'http'} do
+      collection do
+        get 'download'
+        get 'index'
+      end
+    end
     resources :observances
 
   end
@@ -32,6 +37,7 @@ MainStreetStation::Application.routes.draw do
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout" },
              controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
+=begin
   namespace :registration do
     resources :whitelabel_groups
     resources :whitelabels
@@ -55,6 +61,8 @@ MainStreetStation::Application.routes.draw do
     resources :community_role_kinds
     resources :verbs
   end
+
+=end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

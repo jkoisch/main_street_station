@@ -1,10 +1,27 @@
 class Fhir::ConformanceController < ApplicationController
-  before_filter :authenticate_user! , except: [:index]  #, :show]
+  before_filter :authenticate_user! , except: [:index, :download]
 
   def index
-    @conformance = File.read("#{Rails.root}/config/conformance.json")
-    @data = JSON.parse(@conformance)
-    render json: @conformance
+    @main_conformance = Nokogiri::XML(File.open("#{Rails.root}/config/conformance.xml"))
+    @sin = @main_conformance.css("text/div").inner_html
+    #@xml_data = JSON.parse(@main_conformance)
+
+    #@sin = '<input type="btn"
+    respond_to do |format|
+      format.html do
+        render :html => @sin
+      end
+      format.json do
+        render :json => @main_conformance
+      end
+      format.xml do
+        render :xml => @xml_data
+      end
+    end
+  end
+
+  def download
+    send_file 'config/conformance.' + params[:type], :type => "text/xml"
   end
 
   private

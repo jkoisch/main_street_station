@@ -10,7 +10,7 @@ gem 'pg'
 gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
 gem "formtastic"
 gem 'sinatra'
-
+gem 'twitter-bootstrap-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
