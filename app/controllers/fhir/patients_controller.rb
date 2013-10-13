@@ -1,6 +1,6 @@
 require "fhir/patient"
 require "fhir/patients"
-require "net/http"
+require 'net/http'
 
 class Fhir::PatientsController < ApplicationController
   #before_filter :https_redirect, :authenticate_user!
@@ -45,7 +45,42 @@ class Fhir::PatientsController < ApplicationController
     render json: @patients.body
   end
 
+  def create
+    ext = params['_format']
+    url = URI.parse(MainStreetStation::Application.config.grahame_url + ext)
+
+    http = Net::HTTP.new(url.host, url.port)
+    req = Net::HTTP::Post.new(url.path)
+    req.body = get_test_data_to_export(ext)
+    req['Content-Type'] = "application/fhir+" + ext + "; charset=UTF-8"
+
+    response = http.request(req)
+
+    case response
+      when Net::HTTPSuccess then response
+      when Net::HTTPRedirection then fetch(response['location'], limit - 1)
+    else
+        response.error!
+    end
+    render :action => "show"
+  end
+
   private
+
+  def get_test_data_to_export(ext)
+    f = File.read("#{Rails.root}/config/gringotts_test." + ext)
+
+    case ext
+      when "xml"
+        #f = File.open("#{Rails.root}/config/gringotts_test." + ext)
+        doc = Nokogiri::XML(f)
+        #f.close
+        return doc.to_s
+      when "json"
+        doc = JSON.parse(f)
+        return doc.to_json
+    end
+  end
 
   def get_data_from_external_server()
     uri = URI(MainStreetStation::Application.config.gringotts_url)
@@ -53,8 +88,8 @@ class Fhir::PatientsController < ApplicationController
   end
 
   def get_data_by_id(id)
-    #uri = URI(MainStreetStation::Application.config.gringotts_url + id)
-    uri = URI(ENV['GRINGOTTS_URL'] + id)
+    uri = URI(MainStreetStation::Application.config.gringotts_url + id)
+    #uri = URI(ENV['GRINGOTTS_URL'] + id)
     res = Net::HTTP.get_response(uri)
   end
 

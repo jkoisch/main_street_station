@@ -14,7 +14,6 @@
           <div class="nav-collapse">
             <ul class="nav">
             <% if user_signed_in? %>
-              <li>Logged in as <strong><%= current_user.email %></strong>.</li>
               <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
               <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
             <% else %>
@@ -24,11 +23,11 @@
             <% end %>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                FHIR Conformance Statement
+                FHIR Conformance
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <li><a><%= link_to "View", root_path, :method => :index %></a></li>
+                <li><a><%= link_to "View Statement", root_path, :method => :index %></a></li>
                 <li><a><%= link_to "Export xml", download_fhir_conformance_index_path(:type => 'xml')%></a></li>
                 <li><a><%= link_to "Export json", download_fhir_conformance_index_path(:type => 'json')%></a></li>
               </ul>
@@ -38,12 +37,21 @@
       </div>
     </div>
 
-    <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, id: "flash_#{name}" %>
-    <% end %>
-
     <div class="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, id: "flash_#{name}" %>
+      <% end %>
+      <div>
+        <% if user_signed_in? %>
+          <span>Welcome <strong><%= current_user.email %></strong>!</span>
+        <% end %>
+      </div>
       <%= yield %>
+      <div>
+        <button class="btn" type="submit" value="Submit">
+          <%= link_to "Create New Patient", fhir_patients_url, :method => :create %>
+        </button>
+      </div>
     </div>
   </body>
 </html>
