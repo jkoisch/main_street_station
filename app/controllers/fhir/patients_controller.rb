@@ -88,8 +88,8 @@ class Fhir::PatientsController < ApplicationController
   end
 
   def get_data_by_id(id)
-    uri = URI(MainStreetStation::Application.config.gringotts_url + id)
-    #uri = URI(ENV['GRINGOTTS_URL'] + id)
+    #uri = URI(MainStreetStation::Application.config.gringotts_url + id)
+    uri = URI(ENV['GRINGOTTS_URL'] + id)
     res = Net::HTTP.get_response(uri)
   end
 
