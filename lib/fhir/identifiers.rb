@@ -13,16 +13,16 @@ module FHIR
     end
 
     def self.parse_json_array(json_dtl)
-      new_identifier = Identifiers.new()
+      identifier = Identifiers.new()
 
-      new_identifier.key = json_dtl[:identifier][:value] unless json_dtl[:identifier].nil?
-      new_identifier.assigner = Resource.parse_json_array(json_dtl[:assigner]) unless json_dtl[:assigner].nil?
-      new_identifier.label = json_dtl[:label][:value] unless json_dtl[:label].nil?
-      new_identifier.period = Period.parse_json_array(json_dtl[:period]) unless json_dtl[:period].nil?
-      new_identifier.system = json_dtl[:system][:value] unless json_dtl[:system].nil?
-      new_identifier.use = json_dtl[:use][:value] unless json_dtl[:use][:value].nil?
+      identifier.key = json_dtl[:identifier][:value] unless json_dtl[:identifier].nil?
+      identifier.assigner = Resource.parse_json_array(json_dtl[:assigner]) unless json_dtl[:assigner].nil?
+      identifier.label = json_dtl[:label][:value] unless json_dtl[:label].nil?
+      identifier.period = Period.parse_json_array(json_dtl[:period]) unless json_dtl[:period].nil?
+      identifier.system = json_dtl[:system][:value] unless json_dtl[:system].nil?
+      identifier.use = json_dtl[:use][:value] unless json_dtl[:use][:value].nil?
 
-      new_identifier
+      identifier
     end
 
   end

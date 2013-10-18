@@ -4,49 +4,40 @@ require_relative 'identifiers'
 require_relative 'resource'
 
 module FHIR
-  class Devise
-    attr_accessor :type, :manufacturer, :model, :version, :expiry, :identity,
-                  :gtin, :lot, :serialNumber, :owner, :assignedId, :location,
-                  :patient, :contact, :url
+  class Device
+    attr_accessor :type, :manufacturer, :model, :version, :expiry, 
+                  :udi, :lotNumber, :owner, :location, :patient,
+                  :contact, :url
 
     def initialize(attributes = {})
     end
 
     def self.parse_input(dtl)
-      devise = Devise.new()
+      device = device.new()
 
-      devise.type = CodeableConcept.parse_json_array(dtl[:type]) unless dtl[:type].nil?
-      devise.manufacturer = dtl[:manufacturer] unless dtl[:manufacturer].nil?
-      devise.model =  dtl[:model] unless dtl[:model].nil?
-      devise.version = dtl[:version] unless dtl[:version].nil?
-      devise.expiry = dtl[:expiry] unless dtl[:expiry].nil?
-
-      #unless dtl[:identity].nil?
-      #end
-
-      devise.owner = Resource.parse_json_array(dtl[:owner]) unless dtl[:owner].nil?
+      device.type = CodeableConcept.parse_json_array(dtl[:type]) unless dtl[:type].nil?
+      device.manufacturer = dtl[:manufacturer] unless dtl[:manufacturer].nil?
+      device.model =  dtl[:model] unless dtl[:model].nil?
+      device.version = dtl[:version] unless dtl[:version].nil?
+      device.expiry = dtl[:expiry] unless dtl[:expiry].nil?
+      device.udi = dtl[:udi] unless dtl[:udi].nil?
+      device.lotNumber = dtl[:lotNumber] unless dtl[:lotNumber].nil?
+      device.owner = Resource.parse_json_array(dtl[:owner]) unless dtl[:owner].nil?
 
       dtl[:assignedId].each do |assignedId|
-        devise.assignedId = Indentifiers.parse_json_array(assignedId)
+        device.assignedId = Indentifiers.parse_json_array(assignedId)
       end unless dtl[:assignedId].nil?
 
-      #unless dtl[:assignedId].nil?
-      #  devise.assignedId = []
-      #  dtl[:assignedId].each {|assignedId|
-      #    devise.assignedId << Identifiers.parse_json_array(assignedId)
-      #  }
-      #end
-
-      devise.location = Resource.parse_json_array(dtl[:location]) unless dtl[:location].nil?
-      devise.patient = Resource.parse_json_array(dtl[:patient]) unless dtl[:patient].nil?
+      device.location = Resource.parse_json_array(dtl[:location]) unless dtl[:location].nil?
+      device.patient = Resource.parse_json_array(dtl[:patient]) unless dtl[:patient].nil?
 
       dtl[:contact].each do |contact|
-        devise.contact = Contacts.parse_json_array(contact)
+        device.contact = Contacts.parse_json_array(contact)
       end unless dtl[:contact].nil?
 
-      devise.url = dtl[:url] unless dtl[:url].nil?
+      device.url = dtl[:url] unless dtl[:url].nil?
 
-      devise
+      device
     end
 
   end

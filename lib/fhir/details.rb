@@ -17,57 +17,57 @@ module FHIR
     end
 
     def self.parse_json_array(json_dtl, usage = 'client')
-        new_dtl = Details.new()
+        detail = Details.new()
 
           unless json_dtl[:identifier].nil? || json_dtl[:identifier].empty?
-            new_dtl.identifiers = []
+            detail.identifiers = []
             json_dtl[:identifier].each {|id|
-              new_dtl.identifiers << Identifiers.parse_json_array(id)
+              detail.identifiers << Identifiers.parse_json_array(id)
             }
           end
 
-        new_dtl.deceased = json_dtl[:deceased] unless json_dtl[:deceased].nil?
+        detail.deceased = json_dtl[:deceased] unless json_dtl[:deceased].nil?
 
         if usage == 'Patient'
-          new_dtl.maritalStatus = CodeableConcept.parse_json_array(json_dtl[:maritalStatus]) unless json_dtl[:maritalStatus].nil?
+          detail.maritalStatus = CodeableConcept.parse_json_array(json_dtl[:maritalStatus]) unless json_dtl[:maritalStatus].nil?
 =begin
           unless json_dtl[:photo].nil?
-            new_dtl.photos = []
+            detail.photos = []
             json_dtl[:photo].each { |photo|
-              new_dtl.photos << Resource.parse_json_array(photo)
+              detail.photos << Resource.parse_json_array(photo)
             }
           end
 =end
         end
 
         unless json_dtl[:telecom].nil? || json_dtl[:telecom].empty?
-          new_dtl.telecoms = []
+          detail.telecoms = []
           json_dtl[:telecom].each {|telecom|
-            new_dtl.telecoms << TelecomContacts.parse_json_array(telecom)
+            detail.telecoms << TelecomContacts.parse_json_array(telecom)
           }
         end
 
         unless json_dtl[:address].nil? || json_dtl[:address].empty?
-          new_dtl.addresses = []
+          detail.addresses = []
           json_dtl[:address].each {|addr|
-            new_dtl.addresses << Address.parse_json_array(addr)
+            detail.addresses << Address.parse_json_array(addr)
           }
         end
 
-        new_dtl.birthDate =  json_dtl[:birthDate] unless json_dtl[:birthDate].nil?
+        detail.birthDate =  json_dtl[:birthDate] unless json_dtl[:birthDate].nil?
 
         unless json_dtl[:gender][:system].nil? && json_dtl[:gender][:code].nil? && json_dtl[:gender][:display].nil?
-          new_dtl.gender = Gender.parse_json_array(json_dtl[:gender]) unless json_dtl[:gender].nil?
+          detail.gender = Gender.parse_json_array(json_dtl[:gender]) unless json_dtl[:gender].nil?
         end
 
         unless json_dtl[:name].nil? || json_dtl[:name].empty?
-          new_dtl.names = []
+          detail.names = []
           json_dtl[:name].each {|json_name|
-            new_dtl.names << HumanName.parse_json_array(json_name);
+            detail.names << HumanName.parse_json_array(json_name);
           }
         end
 
-        new_dtl
+        detail
     end
 
     def fhir_text(field, options={})

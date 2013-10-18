@@ -7,14 +7,14 @@ module FHIR
     end
 
     def self.parse_json_array(json_dtl)
-        new_resource = Resource.new()
+        resource = Resource.new()
 
-        new_resource.type = json_dtl[:type] unless json_dtl[:type].nil?
-        new_resource.reference = json_dtl[:reference] unless json_dtl[:reference].nil?
-        new_resource.display = json_dtl[:display] unless json_dtl[:display].nil?
-        #new_resource.url = json_dtl[:url] unless json_dtl[:url].nil?
+        resource.type = json_dtl[:type] unless json_dtl[:type].nil?
+        resource.reference = json_dtl[:reference] unless json_dtl[:reference].nil?
+        resource.display = json_dtl[:display] unless json_dtl[:display].nil?
+        #resource.url = json_dtl[:url] unless json_dtl[:url].nil?
 
-        new_resource
+        resource
     end
 
   end

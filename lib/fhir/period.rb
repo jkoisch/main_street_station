@@ -12,12 +12,12 @@ module FHIR
     def self.parse_json_array(json_dtl)
 
       unless json_dtl.nil?
-        new_period = self.new()
+        period = self.new()
 
-        new_period.start = json_dtl[:start] unless json_dtl[:start].nil?
-        new_period.end = json_dtl[:end] unless json_dtl[:end].nil?
+        period.start = json_dtl[:start] unless json_dtl[:start].nil?
+        period.end = json_dtl[:end] unless json_dtl[:end].nil?
 
-        new_period
+        period
       end
     end
 

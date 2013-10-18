@@ -13,18 +13,18 @@ module FHIR
       unless dtl.nil?
         concepts = []
 
-        new_concept = CodeableConcept.new()
+        concept = CodeableConcept.new()
 
         dtl[:coding].each do |item|
-          new_concept.coding = Coding.parse_json_array(item)
+          concept.coding = Coding.parse_json_array(item)
         end unless dtl[:coding].nil?
 
         #dtl[:coding].each_with_index do |item, index|
-        #  new_concept.coding = Coding.parse_json_array(item)
+        #  concept.coding = Coding.parse_json_array(item)
         #end unless dtl[:coding].nil?
 
-        new_concept.primary = dtl[:primary] unless dtl[:primary].nil?
-        new_concept.text = dtl[:text] unless dtl[:text].nil?
+        concept.primary = dtl[:primary] unless dtl[:primary].nil?
+        concept.text = dtl[:text] unless dtl[:text].nil?
 
         concepts << new_concept
       end

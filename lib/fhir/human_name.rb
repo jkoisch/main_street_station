@@ -15,43 +15,43 @@ module FHIR
 
       unless json_dtl.nil?
 
-        new_name = self.new()
+        human_Name = self.new()
 
-        new_name.text = json_dtl[:text][:value] unless json_dtl[:text].nil?
-        new_name.period = Period.parse_json_array(json_dtl[:period]) unless json_dtl[:period].nil?
-        new_name.use = json_dtl[:use][:value] unless json_dtl[:use].nil?
+        human_Name.text = json_dtl[:text][:value] unless json_dtl[:text].nil?
+        human_Name.period = Period.parse_json_array(json_dtl[:period]) unless json_dtl[:period].nil?
+        human_Name.use = json_dtl[:use][:value] unless json_dtl[:use].nil?
 
         unless json_dtl[:family].nil?
-          new_name.family = []
+          human_Name.family = []
           json_dtl[:family].each { |family|
-            new_name.family << family
+            human_Name.family << family
             }
         end
 
         unless json_dtl[:given].nil? || json_dtl[:given].empty?
-          new_name.given = []
+          human_Name.given = []
           json_dtl[:given].each {|given|
-            new_name.given << given
+            human_Name.given << given
             }
         end
 
         unless json_dtl[:prefix].nil?
-          new_name.prefix = []
+          human_Name.prefix = []
           json_dtl[:prefix].each {|prefix|
-            new_name.prefix << prefix
+            human_Name.prefix << prefix
           }
         end
 
         unless json_dtl[:suffix].nil?
-          new_name.suffix = []
+          human_Name.suffix = []
           json_dtl[:suffix].each {|suffix|
-            new_name.suffix << suffix
+            human_Name.suffix << suffix
           }
         end
 
       end
 
-      new_name
+      human_Name
     end
 
   end

@@ -7,12 +7,12 @@ module FHIR
     end
 
     def self.parse_json_array(json_dtl)
-      txt = self.new()
+      text = self.new()
 
-      txt.status = json_dtl[:status] unless json_dtl[:status].nil?
-      txt.div = json_dtl[:div] unless json_dtl[:div].nil?
+      text.status = json_dtl[:status] unless json_dtl[:status].nil?
+      text.div = json_dtl[:div] unless json_dtl[:div].nil?
 
-      txt
+      text
     end
 
   end
