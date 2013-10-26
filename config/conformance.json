@@ -2,8 +2,7 @@
     "acceptUnknown": {"value": "true"},
     "text": {
         "status": {"value": "generated"},
-        "div": "<div><p>The FHIR Interface Server in Mainstreet supports the following transactions for the resources - Patient: read, search(name,gender), create and updates; Observation: read<\/p><\/div>"
-    },
+        "div":"<div><h5>HL7 FHIR Server<\/h5><p>The <a href=\"http://hl7.org/fhir\">HL7 FHIR Specification<\/a> Interface Server in Main Street supports the following RESTful transactions based on FHIR v.0.11.<br\/>Released: 2013-09-27 v.0.00.010.0001 supporting JSON and XML formats. <\/p><div class=\"span8\"><table class=\"table table-condensed\"><thead><tr class=\"success\"><td><b>FHIR Resource<\/b><\/td><td><b>Create<\/b><\/td><td><b>Read<\/b><\/td><td><b>Update<\/b><\/td><td><b>Search<\/b><\/td><\/tr><\/thead><tbody><tr><td><a href=\"http://www.hl7.org/implement/standards/fhir/patient.htm\">Patient<\/a><\/td><td><\/td><td class=\"text-center\">*<\/td><td class=\"text-center\">*<\/td><td><ul><li>Gender<\/li><li>Given Name<\/li><li>Family Name<\/li><li>Birthday - Before<\/li><li>Birthday - After<\/li><\/ul><\/td><\/tr><tr><td><a href=\"http://www.hl7.org/implement/standards/fhir/observation.htm\">Observation<\/a><\/td><td><\/td><td>*<\/td><td><\/td><td><\/td><\/tr><\/tbody><\/table><\/div><\/div>"},
     "format": [
         {"value": "xml"},
         {"value": "json"}
@@ -58,7 +57,32 @@
               {"type": {"value": "date"}},
               {"documentation": {"value": "patient date of birth after given date"}}
             ]
+            }]
+        },
+        {
+          "type": {"value": "Observation"},
+          "mode": {"value": "server"},
+          "history": {"value": "false"},
+          "profile": {"value": "http://fhir.hl7.org/base/profile/@7896271d-57f6-4231-89dc-dcc91eab2416"},
+          "batch": {"value": "false"},
+          "resource": [{
+            "operation": [
+              {"code": {"value": "read"}}
+            ]
+          }]
+    },
+      {
+        "type": {"value": "Conformance"},
+        "mode": {"value": "server"},
+        "history": {"value": "false"},
+        "profile": {"value": "http://fhir.hl7.org/base/profile/@7896271d-57f6-4231-89dc-dcc91eab2416"},
+        "batch": {"value": "false"},
+        "resource": [{
+          "operation": [
+            {"code": {"value": "read"}}
+          ]
         }]
-    }],
+      }
+    ],
     "identifier": {"value": "mainstreet-fhir-profile-1"}
 }}

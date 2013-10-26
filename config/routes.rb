@@ -25,7 +25,7 @@ MainStreetStation::Application.routes.draw do
         get 'index'
       end
     end
-    resources :observances
+    resources :observations
 
   end
 

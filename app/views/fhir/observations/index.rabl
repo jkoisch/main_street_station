@@ -1,5 +1,5 @@
-collection @observations => :observation
+collection @observations => :Observation
+extends "fhir/observations/show"
 
-cache @observations
+#cache @observations
 
-extends "fhir/observations/show

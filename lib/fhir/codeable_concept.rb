@@ -26,7 +26,8 @@ module FHIR
         concept.primary = dtl[:primary] unless dtl[:primary].nil?
         concept.text = dtl[:text] unless dtl[:text].nil?
 
-        concepts << new_concept
+        #concepts << new_concept
+        concept
       end
     end
 

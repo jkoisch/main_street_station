@@ -4,46 +4,82 @@
     <date value="2013-09-27" />
     <document />
     <fhirVersion value="0.11"/>
-    <format>
-      <element value="xml" />
-      <element value="json" />
-    </format>
+    <format value="xml" />
+    <format value="json" />
     <identifier value="mainstreet-fhir-profile-1" />
     <messaging />
     <publisher value="YouCentric" />
     <rest>
-      <element>
-        <batch value="false"/>
-        <history value="false"/>
-        <mode value="server"/>
-        <profile value="http://fhir.hl7.org/base/profile/@7896271d-57f6-4231-89dc-dcc91eab2416"/>
-        <resource>
-          <element>
-            <operation>
-              <element>
-                <code value="read"/>
-              </element>
-              <element>
-                <code value="update"/>
-              </element>
-              <element>
-                <code value="create"/>
-              </element>
-            </operation>
-          </element>
-        </resource>
+      <mode value="server" />
+      <documentation value="FHIR Functionality defined in Main Street Station" />
+      <resource>
         <type value="Patient"/>
-      </element>
+        <profile>
+          <type value="Profile" />
+          <profile value="http://fhir.hl7.org/base/profile/@7896271d-57f6-4231-89dc-dcc91eab2416"/>
+        </profile>
+        <operation>
+          <code value="read" />
+        </operation>
+        <operation>
+          <code value="update" />
+        </operation>
+        <operation>
+          <code value="create" />
+        </operation>
+        <searchParam>
+          <name value="name" />
+          <source value="http://hl7.org/fhir/Patient/search#name" />
+          <type value="string" />
+          <documentation value="A portion of either family or given name of the patient" />
+        </searchParam>
+        <searchParam>
+          <name value="gender" />
+          <source value="http://hl7.org/fhir/Patient/search#gender" />
+          <type value="string" />
+          <documentation value="patient gender" />
+        </searchParam>
+        <searchParam>
+          <name value="birthdate_before" />
+          <source value="http://hl7.org/fhir/Patient/search#birthdate_before" />
+          <type value="date" />
+          <documentation value="patient date of birth before given date" />
+        </searchParam>
+        <searchParam>
+          <name value="birthdate_after" />
+          <source value="http://hl7.org/fhir/Patient/search#birthdate_after" />
+          <type value="date" />
+          <documentation value="patient date of birth after given date" />
+        </searchParam>
+      </resource>
+      <resource>
+        <type value="Observation"/>
+        <profile>
+          <type value="Profile" />
+          <profile value="http://fhir.hl7.org/fhir/Observation"/>
+        </profile>
+        <operation>
+          <code value="read" />
+        </operation>
+      </resource>
+      <resource>
+        <type value="Conformance"/>
+        <profile>
+          <type value="Profile" />
+          <profile value="http://fhir.hl7.org/fhir/Conformance"/>
+        </profile>
+        <operation>
+          <code value="read" />
+        </operation>
+      </resource>
     </rest>
     <software>
-      <name value="Mainstreet"/>
+      <name value="Main Street Station"/>
       <version value="0.00.010.0001"/>
     </software>
     <telecom>
-      <element>
-        <system value="email"/>
-        <value value="the_black_dot@youcentric.com"/>
-      </element>
+      <system value="email"/>
+      <value value="the_black_dot@youcentric.com"/>
     </telecom>
     <text>
       <div>

@@ -1,0 +1,16 @@
+<Patient xmlns="http://hl7.org/fhir">
+<name>
+  <use value="official"/>
+  <family value="Cabrera"/>
+  <given value="Manuel"/>
+</name>
+<gender>
+  <coding>
+    <system value="http://hl7.org/fhir/v3/AdministrativeGender"/>
+    <code value="M"/>
+    <display value="Male"/>
+  </coding>
+</gender>
+<birthDate value="1962-07-10"/>
+<active value="true"/>
+</Patient>

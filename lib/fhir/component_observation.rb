@@ -2,19 +2,27 @@ require_relative 'codeable_concept'
 require_relative 'quantity'
 
 module FHIR
-  class ComponentObservation
-    attr_accessor :name, :value
+  class Component_Observation
+
+    attr_accessor :name, :valueQuantity
 
     def initialize(attributes = {})
     end
 
-    def parse_input(dtl)
-      component_Observation = ComponentObservation.new()
+    def self.parse_input(dtl)
+      component = Component_Observation.new()
 
-      component_Observation.name = Codeable_Concept.parse_json_array(dtl[:name]) unless dtl[:name].nil
-      component_Observation.value = Quantity.parse_input(dtl[:range]) unless dtl[:range].nil?
+      component.name = CodeableConcept.parse_json_array(dtl[:name]) unless dtl[:name].nil?
 
-      component_Observation
+      unless dtl[:value].nil?
+        case dtl[:value][:_data_type]
+          when 'Quantity'
+            then component.valueQuantity = Quantity.parse_input(dtl[:value]) unless dtl[:value].nil?
+          else 'nothing'
+        end
+      end
+
+      component
     end
   end
 end

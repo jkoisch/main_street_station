@@ -8,8 +8,10 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       flash.notice = "Signed in!"
       sign_in_and_redirect user
     else
-      session["devise.user_attributes"] = user.attributes
-      #session["devise.facebook_data"] = request.env["omniauth.auth"]
+      #DEV?
+      #session["devise.user_attributes"] = user.attributes
+      #PROD?
+      session["devise.facebook_data"] = request.env["omniauth.auth"]
       redirect_to new_user_registration_url
     end
   end

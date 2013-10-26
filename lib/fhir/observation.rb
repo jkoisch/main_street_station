@@ -10,15 +10,17 @@ module FHIR
                   :reliability, :bodySite, :method, :identifier, :subject, :performer,
                   :referenceRange, :component
 
-    def initialize(attributes = {})
+    def initialize(accessors = {})
+      accessors.each do |name, value|
+        send("#{name}=", value)
+      end
     end
 
-    def parse_input(dtl, source={})
+    def self.init_from_ember(dtl, source={})
       observation = self.new()
 
       json_dtl = case source
-                   #when 'fhir' then json_dtl[:Patient]
-                   when 'gringotts' then dtl[:observation]
+                   when 'gringotts' then dtl  #[:observation]
                    else dtl
                  end
 
@@ -36,12 +38,16 @@ module FHIR
       observation.subject = Resource.parse_json_array(dtl[:subject]) unless dtl[:subject].nil?
       observation.performer = Resource.parse_json_array(dtl[:performer]) unless dtl[:performer].nil?
 
-      dtl[:referenceRange].each do |range|
-        observation.referenceRange = ReferenceRange.parse_input(range)
-      end unless dtl[:referenceRange].nil?
+      #dtl[:referenceRange].each do |range|
+      #  observation.referenceRange = ReferenceRange.parse_input(range)
+      #end unless dtl[:referenceRange].nil?
 
-      dtl[:component].each do |component|
-        observation.component = Component.parse_input(component)
+      unless dtl[:component].nil?
+        observation.component = []
+
+        dtl[:component].each do |component|
+          observation.component << Component_Observation.parse_input(component)
+        end
       end
 
       observation

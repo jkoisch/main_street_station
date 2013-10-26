@@ -9,8 +9,12 @@ module FHIR
     def self.init_from_ember(dtl)
       observations = []
 
-      dtl[:observations].each do |observation|
-        observations << Observation.parse_input(observation)
+      if dtl.count > 1
+        dtl[:observation].each do |observation|
+          observations << Observation.init_from_ember(observation)
+        end
+      else
+        observations << Observation.init_from_ember(dtl[:observation])
       end
 
       observations

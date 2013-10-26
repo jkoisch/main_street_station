@@ -1,4 +1,6 @@
-object @observation => :observation
+#object @observation => :observation do
+#end
+object false
 
   child :name => :name do
     extends "fhir/observations/resource_content/codeable_concept"
@@ -8,7 +10,7 @@ object @observation => :observation
     {:value => ERB::Util.h(r.value)}
   end
 
-  child :interpretation => :interpretation do
+  child :interpretation, :unless => lambda{|r| r.interpretation.nil? } do
     extends "fhir/observations/resource_content/codeable_concept"
   end
 
@@ -32,53 +34,30 @@ object @observation => :observation
     {:value => ERB::Util.h(r.reliability)}
   end
 
-  child :bodySite => :bodySite do
+  child :bodySite, :unless => lambda{|r| r.bodySite.nil? } do
     extends "fhir/observations/resource_content/codeable_concept"
   end
 
-  child :method => :method do
+  child :method, :unless => lambda { |r| r.method.nil? } do
     extends "fhir/observations/resource_content/codeable_concept"
   end
 
-  child :identifier => :identifier do
+  child :identifier, :unless => lambda { |r| r.identifier.nil? } do
     extends "fhir/observations/resource_content/identifiers"
   end
 
-  child :subject => :subject do
-    extends "fhir/observations/resource_content/resource"
+  child({:subject => :subject}, :unless => lambda{ |r| r.subject.nil? }) do
+    extends "fhir/observations/resource_content/resource_observation"
   end
 
-  child :performer => :performer do
-    extends "fhir/observations/resource_content/resource"
+  child({:performer => :performer}, :unless => lambda{ |r| r.performer.nil? }) do
+    extends "fhir/observations/resource_content/resource_observation"
   end
 
-  child({ :referenceRange => :referenceRange}, :unless => lambda{|r| r.referenceRange.nil?} do |r|
-    extends "fhir/patients/resource_content/referenceRange"
+  #child({ :referenceRange => :referenceRange}, :unless => lambda{|r| r.referenceRange.nil?} do |r|
+  #  extends "fhir/patients/resource_content/referenceRange"
+  #end
+
+  child({ :component => :component}, :unless => lambda{|r| r.component.nil?}) do
+    extends "fhir/observations/resource_content/component"
   end
-
-  child({ :components => :components}, :unless => lambda{|r| r.components.nil? do |r|
-    extends "fhir/observations/resource_content/component
-  end
-
-
-
-
-object @patient => :patient
-
-   node :id, :unless => lambda { |r| r.id.nil? } do |r|
-     {:value => ERB::Util.h(r.id)}
-   end
-
-   child :text => :text do
-     extends "fhir/patients/resource_content/text"
-   end
-
-   child({:identifier => :identifier}, :unless => lambda {|r| r.identifier.nil?}) do
-     extends "fhir/patients/resource_content/identifiers"
-   end
-
-   child({ :name => :name}, :unless => lambda {|d| d.name.nil?}) do |d|
-
-     node :given, :unless => lambda {|n| n.given.nil?} do |n|
-       n.given
-     end

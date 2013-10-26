@@ -1,5 +1,5 @@
-child :coding, :unless => lambda {|b| b.coding.nil?} do
-  extends "fhir/observations/resource_content/coding"
+child({:coding => :coding}, :unless => lambda {|r| r.coding.nil?}) do
+   extends "fhir/observations/resource_content/coding"
 end
 
 node :primary, :unless => lambda {|b| b.primary.nil?} do |b|

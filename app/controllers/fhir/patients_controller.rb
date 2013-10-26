@@ -42,7 +42,11 @@ class Fhir::PatientsController < ApplicationController
 
   def search
     @patients = search_gringotts(params)
-    render json: @patients.body
+    respond_to do |format|
+      format.json @patients.body
+      format.xml @patients.body
+    end
+    #render json: @patients.body
   end
 
   def create
@@ -88,8 +92,10 @@ class Fhir::PatientsController < ApplicationController
   end
 
   def get_data_by_id(id)
-    #uri = URI(MainStreetStation::Application.config.gringotts_url + id)
-    uri = URI(ENV['GRINGOTTS_URL'] + id)
+    #--DEV--
+    uri = URI(MainStreetStation::Application.config.gringotts_url + id)
+    #--PROD--
+    #uri = URI(ENV['GRINGOTTS_URL'] + id)
     res = Net::HTTP.get_response(uri)
   end
 
@@ -97,8 +103,10 @@ class Fhir::PatientsController < ApplicationController
 
     supported_params = [:name, :birthdate_before, :birthdate_after, :family, :given, :gender, :id, :system]
 
-    #uri = URI(MainStreetStation::Application.config.gringotts_url)
-    uri = URI(ENV['GRINGOTTS_URL'])
+    #--DEV--
+    uri = URI(MainStreetStation::Application.config.gringotts_url)
+    #--PROD--
+    #uri = URI(ENV['GRINGOTTS_URL'])
     search_params = ""
     params.slice(*supported_params).each do |scope, value|
 
