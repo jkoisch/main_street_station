@@ -18,10 +18,10 @@ module FHIR
 
           resource_type = case json_dtl[:resource]
                           when 'client' then 'patient'
-                          else 'resource'
+                          else json_dtl[:resource]
                         end
 
-          resource.reference = resource_type + "/" + json_dtl[:id].to_s
+          resource.reference = resource_type + "/@" + json_dtl[:id].to_s
         end
 
         resource

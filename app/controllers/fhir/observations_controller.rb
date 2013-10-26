@@ -8,11 +8,10 @@ class Fhir::ObservationsController < ApplicationController
     observation_data = get_data_from_external_source()
     gringotts_struct = JSON.parse(observation_data, opts={:symbolize_names => true})
     @observations = FHIR::Observations.init_from_ember(gringotts_struct)
-    #@observation = FHIR::Observation.parse_input(gringotts_struct, 'gringotts')
 
-    @x = render 'index', :formats => :json
-    create_Deontik_Observation(@x)
-    logger.debug @x
+    @details = render 'index', :formats => :xml
+    #create_Deontik_Observation(@details)
+
     #respond_to do |format|
     #  format.html
     #  format.atom
@@ -23,12 +22,12 @@ class Fhir::ObservationsController < ApplicationController
 
   def create_Deontik_Observation(dtl)
     #ext = params['_format']
-    url = URI.parse(MainStreetStation::Application.config.ewout_url)  #deontik_url)
+    url = URI.parse(MainStreetStation::Application.config.deontik_url)
 
     http = Net::HTTP.new(url.host, url.port)
     req = Net::HTTP::Post.new(url.path)
-    req.body = dtl[0].to_s  #.to_json # get_test_data_to_export(ext)
-    req['Content-Type'] = "application/json+fhir; charset=UTF-8" #"application/json+fhir; charset=UTF-8"
+    req.body = dtl[0].to_s
+    req['Content-Type'] = "application/json+fhir; charset=UTF-8"
 
     response = http.request(req)
 
@@ -58,8 +57,10 @@ class Fhir::ObservationsController < ApplicationController
 
   private
 
+  #right now we just want to read from a file
   def get_data_from_external_source()
-    f = File.read(MainStreetStation::Application.config.observation_home_url)
+    f = File.read("#{Rails.root}/config/gringott-observation-load.json")
+    #f = File.read(MainStreetStation::Application.config.observation_home_url)
     #uri = URI(MainStreetStation::Application.config.observation_home_url)
     #Net::HTTP.get(uri)
   end
