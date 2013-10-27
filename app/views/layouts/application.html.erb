@@ -47,11 +47,6 @@
         <% end %>
       </div>
       <%= yield %>
-      <div>
-        <button class="btn" type="submit" value="Submit">
-          <%= link_to "Create New Patient", fhir_patients_url, :method => :create %>
-        </button>
-      </div>
     </div>
   </body>
 </html>
