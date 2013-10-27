@@ -46,7 +46,7 @@ class Fhir::ObservationsController < ApplicationController
   def show
     observation_data = get_data_by_id(params[:id][1..-1])
     gringotts_struct = JSON.parse(observation_data, opts={:symbolize_names => true})
-    @observation = FHIR::Observation.parse_input(gringotts_struct, 'gringotts')
+    @observation = FHIR::Observation.init_from_ember(gringotts_struct[:observation]) #, 'gringotts')
 
     respond_to do |format|
       format.html

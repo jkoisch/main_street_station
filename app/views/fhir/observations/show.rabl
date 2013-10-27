@@ -1,6 +1,5 @@
-#object @observation => :observation do
-#end
-object false
+object @observation => :observation
+#object false
 
   child :name => :name do
     extends "fhir/observations/resource_content/codeable_concept"

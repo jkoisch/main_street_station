@@ -16,19 +16,19 @@ module FHIR
       end
     end
 
-    def self.init_from_ember(dtl, source={})
+    def self.init_from_ember(dtl) #, source={})
       observation = self.new()
 
-      json_dtl = case source
-                   when 'gringotts' then dtl  #[:observation]
-                   else dtl
-                 end
+      #json_dtl = case source
+      #             when 'gringotts' then dtl  #[:observation]
+      #            else dtl
+      #           end
 
       observation.name = CodeableConcept.parse_json_array(dtl[:name]) unless dtl[:name].nil?
       observation.value = dtl[:value] unless dtl[:value].nil?
       observation.interpretation = CodeableConcept.parse_json_array(dtl[:interpretation]) unless dtl[:interpretation].nil?
       observation.comments = dtl[:comments] unless dtl[:comments].nil?
-      observation.applies = dtl[:applies] unless dtl[:applies].nil?
+      observation.applies = dtl[:applies][:value] unless dtl[:applies][:value].nil?
       observation.issued = dtl[:issued] unless dtl[:issued].nil?
       observation.status = dtl[:status] unless dtl[:status].nil?
       observation.reliability = dtl[:reliability] unless dtl[:reliability].nil?
