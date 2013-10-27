@@ -9,15 +9,16 @@ class Fhir::ObservationsController < ApplicationController
     gringotts_struct = JSON.parse(observation_data, opts={:symbolize_names => true})
     @observations = FHIR::Observations.init_from_ember(gringotts_struct)
 
-    @details = render 'index', :formats => :xml
+    @details = respond_to do |format|
+      format.html
+      #format.atom
+      format.json
+      format.xml
+    end
+
+    #logger.debug @details
     #create_Deontik_Observation(@details)
 
-    #respond_to do |format|
-    #  format.html
-    #  format.atom
-    #  format.json
-    #  format.xml
-    #end
   end
 
   def create_Deontik_Observation(dtl)
@@ -37,7 +38,9 @@ class Fhir::ObservationsController < ApplicationController
       else
         response.error!
     end
+
     render :action => "show"
+
   end
 
   def show
