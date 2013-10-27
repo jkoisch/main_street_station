@@ -12,6 +12,7 @@ MainStreetStation::Application.routes.draw do
     resources :Patients, :Patient, :patient, :patients,
               :controller => "patients",
               :as => "patients",
+              :default => {:format=> :xml},
               :constraint => [{ :id => /^(@\d[1,36]+$)/}, { :protocol => "http" }] do
       collection do
         get 'search'
@@ -25,7 +26,8 @@ MainStreetStation::Application.routes.draw do
         get 'index'
       end
     end
-    resources :observations
+
+    resources :observations, :default => {:format => :xml}
 
   end
 
