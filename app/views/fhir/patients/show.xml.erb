@@ -99,52 +99,52 @@
     <% end unless @patient.telecom.nil? %>
     <% unless @patient.gender.nil? %>
     <gender>
-    <% unless @patient.gender[0].coding.nil? %>
+    <% unless @patient.gender.coding.nil? %>
       <coding>
-      <% unless @patient.gender[0].coding.code.nil? %>
-        <code value="<%= @patient.gender[0].coding.code %>"/>
+      <% unless @patient.gender.coding.code.nil? %>
+        <code value="<%= @patient.gender.coding.code %>"/>
       <% end %>
-      <% unless @patient.gender[0].coding.display.nil? %>
-        <display value="<%= @patient.gender[0].coding.display %>"/>
+      <% unless @patient.gender.coding.display.nil? %>
+        <display value="<%= @patient.gender.coding.display %>"/>
       <% end %>
-      <% unless @patient.gender[0].coding.system.nil? %>
-        <system value="<%= @patient.gender[0].coding.system %>"/>
+      <% unless @patient.gender.coding.system.nil? %>
+        <system value="<%= @patient.gender.coding.system %>"/>
       <% end %>
       </coding>
     <% end %>
-    <% unless @patient.gender[0].text.nil? %>
-      <text value="<%=	@patient.gender[0].text %>"/>
+    <% unless @patient.gender.text.nil? %>
+      <text value="<%=	@patient.gender.text %>"/>
     <% end %>
-    <% unless @patient.gender[0].primary.nil? %>
-      <primary value="<%=	@patient.gender[0].primary %>"/>
+    <% unless @patient.gender.primary.nil? %>
+      <primary value="<%=	@patient.gender.primary %>"/>
     <% end %>
     </gender>
     <% end %>
-    <% unless @patient.address.nil? %>
+    <% @patient.address.each do |address| %>
     <address>
-    <% unless @patient.address[0].use.nil? %>
-      <use value="<%= @patient.address[0].use[:value] %>"/>
+    <% unless address.use.nil? %>
+      <use value="<%= address.use[:value] %>"/>
     <% end %>
-    <% unless @patient.address[0].text.nil? %>
-      <text value="<%= @patient.address[0].text %>"/>
+    <% unless address.text.nil? %>
+      <text value="<%= address.text %>"/>
     <% end %>
-    <% @patient.address[0].line.each do |ln| %>
+    <% address.line.each do |ln| %>
       <line value="<%= ln[1].to_s %>"/>
-    <% end unless @patient.address[0].line.nil? %>
-    <% unless @patient.address[0].city.nil? %>
-      <city value="<%= @patient.address[0].city[:value] %>"/>
+    <% end unless address.line.nil? %>
+    <% unless address.city.nil? %>
+      <city value="<%= address.city[:value] %>"/>
     <% end %>
-    <% unless @patient.address[0].state.nil? %>
-      <state value="<%= @patient.address[0].state[:value] %>"/>
+    <% unless address.state.nil? %>
+      <state value="<%= address.state[:value] %>"/>
     <% end %>
-    <% unless @patient.address[0].zip.nil? %>
-      <zip value="<%= @patient.address[0].zip[:value] %>"/>
+    <% unless address.zip.nil? %>
+      <zip value="<%= address.zip[:value] %>"/>
     <% end %>
-    <% unless @patient.address[0].country.nil? %>
-      <country value="<%= @patient.address[0].country[:value] %>"/>
+    <% unless address.country.nil? %>
+      <country value="<%= address.country[:value] %>"/>
     <% end %>
-    <% unless @patient.address[0].period.nil? %>
-      <period value="<%= @patient.address[0].period[:value] %>"/>
+    <% unless address.period.nil? %>
+      <period value="<%= address.period[:value] %>"/>
     <% end %>
     </address>
     <% end unless @patient.address.nil? %>
