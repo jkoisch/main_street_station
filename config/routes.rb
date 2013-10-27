@@ -27,8 +27,7 @@ MainStreetStation::Application.routes.draw do
       end
     end
 
-    resources :observations, :default => {:format => :xml}
-
+    resources :Observations, :observations, :as => "observations", :default => {:format => :xml}
   end
 
   namespace :trust do
