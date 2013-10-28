@@ -1,7 +1,4 @@
-require_relative 'period'
-require_relative 'resource'
-
-module FHIR
+module Fhir
   class Identifiers
 
     attr_accessor :key, :assigner, :label, :period, :system, :use

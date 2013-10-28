@@ -8,16 +8,12 @@ MainStreetStation::Application.routes.draw do
   root :controller => "fhir::conformance", :action => "index"  # :to => "fhir/conformance#index"
 
   namespace :fhir do
-
     resources :Patients, :Patient, :patient, :patients,
               :controller => "patients",
               :as => "patients",
+              :only => [:index, :show],
               :default => {:format=> :xml},
               :constraint => [{ :id => /^(@\d[1,36]+$)/}, { :protocol => "http" }] do
-      collection do
-        get 'search'
-        get 'create'
-      end
     end
 
     resources :conformance, {:protocol => 'http'} do

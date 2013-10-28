@@ -1,5 +1,5 @@
-module FHIR
-  class Contacts
+module Fhir
+  class Conformance
     attr_accessor :details, :organization, :relationships
 
     def initialize(attributes = {})

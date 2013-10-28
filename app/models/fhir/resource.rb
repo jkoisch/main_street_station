@@ -1,4 +1,4 @@
-module FHIR
+module Fhir
   class Resource
 
     attr_accessor :type, :reference, :display, :resource, :id # :url,

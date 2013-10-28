@@ -1,6 +1,4 @@
-require_relative 'coding'
-
-module FHIR
+module Fhir
   class Gender
 
     def initialize(attributes = {})

@@ -1,6 +1,4 @@
-require_relative 'period'
-
-module FHIR
+module Fhir
   class HumanName
 
     attr_accessor :family, :given, :period, :prefix, :suffix, :text, :use

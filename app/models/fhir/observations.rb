@@ -1,6 +1,4 @@
-require_relative 'observation'
-
-module FHIR
+module Fhir
   class Observations
 
     def initialize(attributes = {})

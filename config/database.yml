@@ -3,8 +3,6 @@ development:
   encoding: unicode
   database: main_street
   pool: 5
-  username: main_street_station
-  password: admin
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -13,8 +11,6 @@ test: &test
   adapter: postgresql
   database: main_street_test
   pool: 5
-  username: main_street_station
-  passwork: admin
 
 production:
   adapter: postgresql

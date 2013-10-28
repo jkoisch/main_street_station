@@ -1,4 +1,4 @@
-module FHIR
+module Fhir
   class Coding
 
     attr_accessor :code, :display, :system

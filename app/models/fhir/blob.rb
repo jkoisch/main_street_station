@@ -1,4 +1,4 @@
-module FHIR
+module Fhir
   class Blob
 
     attr_accessor :mimeType, :content

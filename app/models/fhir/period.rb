@@ -1,4 +1,4 @@
-module FHIR
+module Fhir
   class Period
 
     attr_accessor :start, :end

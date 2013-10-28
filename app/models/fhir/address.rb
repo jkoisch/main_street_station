@@ -1,6 +1,4 @@
-require_relative '../fhir/period'
-
-module FHIR
+module Fhir
   class Address
 
     attr_accessor :use, :text, :line, :city, :state, :zip, :country, :period

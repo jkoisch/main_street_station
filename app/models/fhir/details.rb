@@ -1,13 +1,4 @@
-require_relative 'address'
-require_relative 'codeable_concept'
-require_relative 'contacts'
-require_relative 'gender'
-require_relative 'human_name'
-require_relative 'identifiers'
-require_relative 'resource'
-require_relative 'telecom_contacts'
-
-module FHIR
+module Fhir
   class Details
 
     attr_accessor  :identifiers, :addresses, :birthDate, :deceased, :gender,

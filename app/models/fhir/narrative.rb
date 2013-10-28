@@ -1,5 +1,4 @@
-require_relative 'blob'
-module FHIR
+module Fhir
   class Narrative
 
     attr_accessor :div, :blob, :status

@@ -1,14 +1,4 @@
-require_relative 'address'
-require_relative 'codeable_concept'
-require_relative 'contacts'
-require_relative 'gender'
-require_relative 'human_name'
-require_relative 'identifiers'
-require_relative 'resource'
-require_relative 'text'
-require_relative 'telecom_contacts'
-
-module FHIR
+module Fhir
   class Patient
 
     attr_accessor :id, :active, :address, :animal, :birthDate, :communication, :contact, :deceased,
@@ -21,16 +11,8 @@ module FHIR
       end
     end
 
-    def self.init_from_ember(json_dtl, source={})
+    def self.init_from_ember(json_dtl)
       patient = self.new()
-
-      #TODO: text and Narrative type - see resources - http://www.hl7.org/implement/standards/fhir/resources.htm#content
-
-      json_dtl = case source
-                  when 'fhir' then json_dtl[:Patient]
-                  when 'gringotts' then json_dtl[:client]
-                  else json_dtl
-                 end
 
       patient.id = json_dtl[:id] unless json_dtl[:id].nil?
       patient.text = Text.parse_json_array(json_dtl[:text]) unless json_dtl[:text].nil?

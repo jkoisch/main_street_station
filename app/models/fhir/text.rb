@@ -1,4 +1,4 @@
-module FHIR
+module Fhir
   class Text
 
     attr_accessor :status, :div

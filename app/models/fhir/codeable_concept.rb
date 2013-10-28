@@ -1,6 +1,4 @@
-require_relative '../fhir/coding'
-
-module FHIR
+module Fhir
   class CodeableConcept
 
     attr_accessor :coding, :text, :primary

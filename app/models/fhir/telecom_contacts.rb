@@ -1,6 +1,4 @@
-require_relative 'period'
-
-module FHIR
+module Fhir
   class TelecomContacts
 
     attr_accessor :system, :value, :use, :period

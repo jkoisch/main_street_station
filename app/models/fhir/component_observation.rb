@@ -1,7 +1,4 @@
-require_relative 'codeable_concept'
-require_relative 'quantity'
-
-module FHIR
+module Fhir
   class Component_Observation
 
     attr_accessor :name, :valueQuantity

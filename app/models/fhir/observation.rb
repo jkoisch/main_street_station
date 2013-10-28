@@ -1,10 +1,4 @@
-require_relative 'codeable_concept'
-require_relative 'component_observation'
-require_relative 'identifiers'
-require_relative 'reference_range'
-require_relative 'resource'
-
-module FHIR
+module Fhir
   class Observation
     attr_accessor :name, :value, :interpretation, :comments, :applies, :issued, :status,
                   :reliability, :bodySite, :method, :identifier, :subject, :performer,

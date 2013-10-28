@@ -1,4 +1,4 @@
-module FHIR
+module Fhir
   class Resource_Observation
 
     attr_accessor :type, :reference, :display # :url,

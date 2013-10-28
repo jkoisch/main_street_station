@@ -1,6 +1,4 @@
-require_relative 'resource'
-
-module FHIR
+module Fhir
   class Link
 
     def initialize(attributes = {})

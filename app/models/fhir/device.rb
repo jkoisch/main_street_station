@@ -1,9 +1,4 @@
-require_relative 'codeable_concept'
-require_relative 'contacts'
-require_relative 'identifiers'
-require_relative 'resource'
-
-module FHIR
+module Fhir
   class Device
     attr_accessor :type, :manufacturer, :model, :version, :expiry, 
                   :udi, :lotNumber, :owner, :location, :patient,

@@ -1,6 +1,4 @@
-require_relative '../fhir/codeable_concept'
-
-module FHIR
+module Fhir
   class Animal
 
     attr_accessor :breed, :genderStatus, :species

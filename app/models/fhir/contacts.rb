@@ -1,9 +1,4 @@
-require_relative '../fhir/details'
-require_relative 'codeable_concept'
-require_relative 'resource'
-require_relative 'human_name'
-
-module FHIR
+module Fhir
   class Contacts
 
     attr_accessor :details, :organization, :relationships

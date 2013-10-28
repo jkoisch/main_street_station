@@ -1,6 +1,4 @@
-require_relative 'patient'
-
-module FHIR
+module Fhir
   class Patients
 
     def initialize(attributes = {})
