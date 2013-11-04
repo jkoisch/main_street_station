@@ -5,8 +5,6 @@ MainStreetStation::Application.routes.draw do
   #match 'auth/failure', to: redirect('/')
   #match 'logout', to: 'omniauth_callbacks#destroy', as: 'logout'
 
-  root :controller => "fhir::conformance", :action => "index"  # :to => "fhir/conformance#index"
-
   namespace :fhir do
     resources :Patients, :Patient, :patient, :patients,
               :controller => "patients",
@@ -16,14 +14,9 @@ MainStreetStation::Application.routes.draw do
               :constraint => [{ :id => /^(@\d[1,36]+$)/}, { :protocol => "http" }] do
     end
 
-    resources :conformance, {:protocol => 'http'} do
-      collection do
-        get 'download'
-        get 'index'
-      end
-    end
+    resources :conformance, only: [:index]
 
-    resources :Observations, :observations, :as => "observations", :default => {:format => :xml}
+    resources :Observations, :Observation, :observations, controller: :observations, :default => {:format => :xml}
   end
 
   namespace :trust do
@@ -32,11 +25,13 @@ MainStreetStation::Application.routes.draw do
   end
 
   devise_scope :users do
-    match "/logout" => "devise/sessions#destroy"
+    delete "/logout", to: "devise/sessions#destroy"
   end
 
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout" },
              controllers: {omniauth_callbacks: "omniauth_callbacks"}
+
+  root "fhir/conformance#index" #:controller => "fhir::conformance", :action => "index"  # :to => "fhir/conformance#index"
 
 =begin
   namespace :registration do

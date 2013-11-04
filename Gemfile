@@ -1,27 +1,33 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '4.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 #gem 'sqlite3'
 gem 'pg'
-gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
-gem "formtastic"
+#gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
+#gem "formtastic"
 gem 'sinatra'
 gem 'twitter-bootstrap-rails'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+gem 'sass-rails'
+gem 'coffee-rails', '~> 4.0.0'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+gem 'uglifier', '>= 1.0.3'
 
-  gem 'uglifier', '>= 1.0.3'
+group :test, :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'guard'
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'cucumber-rails', :require => false #, '0.3.2'
+  gem 'machinist', '>= 2.0.0.beta2'
+  gem 'thin'
+  #gem 'taps'
 end
 
 gem 'jquery-rails'

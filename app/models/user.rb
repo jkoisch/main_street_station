@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
          :recoverable, :trackable, :validatable , :rememberable
          #,:omniauth_providers => [:facebook]
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :provider, :uid
+  #attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :provider, :uid
 
   validates_presence_of :email
   validates_uniqueness_of :email

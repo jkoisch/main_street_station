@@ -9,7 +9,7 @@ class Fhir::PatientsController < Fhir::FhirController
     response = get_gringotts_resources(RESOURCE, build_search_params(params))
     if response.is_a?(Net::HTTPSuccess)
       json_data = JSON.parse(response.body, opts={:symbolize_names => true})
-      @patients = FHIR::Patients.init_from_ember(json_data)
+      @patients = Fhir::Patients.init_from_ember(json_data)
 
       respond_to do |format|
         format.html
@@ -26,7 +26,7 @@ class Fhir::PatientsController < Fhir::FhirController
     response = get_resource(RESOURCE, params[:id][1..-1])
     if response.is_a?(Net::HTTPSuccess)
       json_data = JSON.parse(response.body, opts={:symbolize_names => true})
-      @patient = FHIR::Patient.init_from_ember(json_data)
+      @patient = Fhir::Patient.init_from_ember(json_data)
 
       respond_to do |format|
         format.html

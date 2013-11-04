@@ -1,6 +1,4 @@
 class Fhir::ConformanceController < ApplicationController
-  before_filter :authenticate_user! , except: [:index, :download]
-
   def index
     @main_conformance = Nokogiri::XML(File.open("#{Rails.root}/config/conformance.xml"))
     @sin = @main_conformance.css("text/div").inner_html

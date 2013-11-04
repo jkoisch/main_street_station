@@ -2,8 +2,8 @@
 <html>
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-    <%= stylesheet_link_tag "application", "formtastic" %>
-    <%= javascript_include_tag "application", "nested_form" %>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
@@ -28,8 +28,8 @@
               </a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                 <li><a><%= link_to "View Statement", root_path, :method => :index %></a></li>
-                <li><a><%= link_to "Export xml", download_fhir_conformance_index_path(:type => 'xml')%></a></li>
-                <li><a><%= link_to "Export json", download_fhir_conformance_index_path(:type => 'json')%></a></li>
+                <li><a><%= link_to "Download in XML", fhir_conformance_index_path(format: :xml)%></a></li>
+                <li><a><%= link_to "Download JSON", fhir_conformance_index_path(format: :json)%></a></li>
               </ul>
             </ul>
           </div>
