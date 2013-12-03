@@ -53,9 +53,9 @@ module Fhir
 
         unless json_dtl[:name].nil? || json_dtl[:name].empty?
           detail.names = []
-          json_dtl[:name].each {|json_name|
-            detail.names << HumanName.parse_json_array(json_name);
-          }
+          json_dtl[:name].each do |json_name|
+            detail.names << HumanName.parse_json_array(json_name)
+          end
         end
 
         detail

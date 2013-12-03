@@ -26,9 +26,9 @@ module Fhir
 
       unless json_dtl[:name].nil? || json_dtl[:name].empty?
         patient.name = []
-        json_dtl[:name].each {|json_name|
-          patient.name << HumanName.parse_json_array(json_name);
-        }
+        json_dtl[:name].each do |json_name|
+          patient.name << HumanName.parse_json_array(json_name)
+        end
       end
 
       unless json_dtl[:telecom].nil? || json_dtl[:telecom].empty?
@@ -105,7 +105,7 @@ module Fhir
         search_params.slice(*supported_params).each do |scope, value|
         conditions[scope] = value
         end
-      elsif search_params[:id] = "/^(@\d{1,36}+$)/"
+      elsif search_params[:id] =~ /^(@\d{1,36}+$)/
 
       end
 

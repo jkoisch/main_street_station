@@ -5,9 +5,8 @@ class Fhir::ObservationsController < Fhir::FhirController
 
   def index
     response = get_gringotts_resources(RESOURCE)
-    if response.is_a?(Net::HTTPSuccess)
-      json_data = JSON.parse(response.body, opts={:symbolize_names => true})
-      @patients = Fhir::Observation.init_from_ember(json_data)
+    if response.success?
+      @observations = Fhir::Observation.init_from_ember(json_data)
 
       respond_to do |format|
         format.html
@@ -16,6 +15,7 @@ class Fhir::ObservationsController < Fhir::FhirController
         format.xml
       end
     else
+      logger.warn response
       respond :status => 500
     end
   end
@@ -32,12 +32,12 @@ class Fhir::ObservationsController < Fhir::FhirController
         format.xml
       end
     else
-      logger.debug response
+      logger.warn response
       render :status => 500
     end
   end
 
-  def create_Deontik_Observation(dtl)
+  def create_deontik_observation(dtl)
     ##ext = params['_format']
     #url = URI.parse(MainStreetStation::Application.config.deontik_url)
     #

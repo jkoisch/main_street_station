@@ -1,10 +1,33 @@
 class Fhir::ConformanceController < ApplicationController
+  RESOURCE = 'conformance'
+
   def index
+    response = get_gringotts_resources(RESOURCE)
+    if response.successful?
+      json_data = JSON.parse(response.body, opts={:symbolize_names => true})
+      @conformances = Fhir::Conformance.init_from_ember(json_data)
+
+      respond_to do |format|
+        format.html
+        format.atom
+        format.json
+        format.xml
+      end
+    else
+      logger.warn response
+      respond_to do |format|
+        format.html status: 500
+        format.json status: 500
+        format.xml  status: 500
+      end
+    end
+  end
+
+  def index_old
     @main_conformance = Nokogiri::XML(File.open("#{Rails.root}/config/conformance.xml"))
     @sin = @main_conformance.css("text/div").inner_html
     #@xml_data = JSON.parse(@main_conformance)
 
-    #@sin = '<input type="btn"
     respond_to do |format|
       format.html do
         render :html => @sin

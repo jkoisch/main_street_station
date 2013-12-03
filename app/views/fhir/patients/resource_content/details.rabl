@@ -62,7 +62,7 @@
 
   end
 
-  child({ :addresses => :addresses}, :unless => lambda {|d| d.addresses.nil?}) do |d|
+  child({ :addresses => :addresses}, :unless => lambda {|d| d.addresses.nil?}) do
 
     node :use, :unless => lambda {|a| a.use.nil?} do |a|
       a.use
@@ -97,7 +97,7 @@
     end
   end
 
-  child({ :telecoms => :telecom}, :unless => lambda {|d| d.telecoms.nil?}) do |d|
+  child({ :telecoms => :telecom}, :unless => lambda {|d| d.telecoms.nil?}) do
 
     node :system, :unless => lambda {|t| t.system.nil?} do |t|
       {:value => t.system}
@@ -116,7 +116,7 @@
     end
   end
 
-  child :photos, :unless => lambda {|d| d.photos.nil?} do |d|
+  child :photos, :unless => lambda {|d| d.photos.nil?} do
     node :type, :unless => lambda {|p| p.type.nil?} do |t|
       {:value => p.type}
     end

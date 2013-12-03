@@ -22,7 +22,7 @@ class YellowPages < Sinatra::Base
 
   get "/networks/:id" do
     #TODO should be refactored into method
-    @parties = Registration::Party.find_all_by_user_id(params[:id])
+    @parties = Registration::Party.where(user_id: params[:id])
     @contracts = []
     @parties.each do |party|
       @contract = Registration::Contract.find(party.contract_id)
@@ -34,13 +34,13 @@ class YellowPages < Sinatra::Base
 
   get "/whitelabels/:id" do
     #TODO should be refactored
-    @whitelabels = Registration::Whitelabel.find_all_by_contact_id(params[:id])
+    @whitelabels = Registration::Whitelabel.where(contact_id: params[:id])
     Rabl::Renderer.json(@whitelabels, 'registration/whitelabels/index', view_path: 'app/views')
   end
 
   get "/contracts/:id" do
     #TODO should be refactored
-    @contracts = Registration::Contract.find_all_by_community_id(params[:id])
+    @contracts = Registration::Contract.where(contact_id: params[:id])
     Rabl::Renderer.json(@contracts, 'registration/contracts/index', view_path: 'app/views')
   end
 
