@@ -1,88 +1,78 @@
-{"conformance": {
-    "accept_unknown": "true",
-    "text": {
-        "status": {"value": "generated"},
-        "div":"<div><h5>HL7 FHIR Server<\/h5><p>The <a href=\"http://hl7.org/fhir\">HL7 FHIR Specification<\/a> Interface Server in Main Street supports the following RESTful transactions based on FHIR v.0.11.<br\/>Released: 2013-09-27 v.0.00.010.0001 supporting JSON and XML formats. <\/p><div class=\"span8\"><table class=\"table table-condensed\"><thead><tr class=\"success\"><td><b>FHIR Resource<\/b><\/td><td><b>Create<\/b><\/td><td><b>Read<\/b><\/td><td><b>Update<\/b><\/td><td><b>Search<\/b><\/td><\/tr><\/thead><tbody><tr><td><a href=\"http://www.hl7.org/implement/standards/fhir/patient.htm\">Patient<\/a><\/td><td><\/td><td class=\"text-center\">*<\/td><td class=\"text-center\">*<\/td><td><ul><li>Gender<\/li><li>Given Name<\/li><li>Family Name<\/li><li>Birthday - Before<\/li><li>Birthday - After<\/li><\/ul><\/td><\/tr><tr><td><a href=\"http://www.hl7.org/implement/standards/fhir/observation.htm\">Observation<\/a><\/td><td><\/td><td>*<\/td><td><\/td><td><\/td><\/tr><\/tbody><\/table><\/div><\/div>"},
-    "format": [
-        {"value": "xml"},
-        {"value": "json"}
-    ],
-    "date": {"value": "2013-09-21"},
-    "version": {"value": "sex-comedy"},
-    "publisher": {"value": "YouCentric"},
-    "software": {
-        "name": {"value": "Mainstreet"},
-        "version": {"value": "0.00.010.0001"}
-    },
-    "document": [],
-    "fhirVersion": {"value": "0.11"},
-    "telecom": [{
-        "system": {"value": "email"},
-        "value": {"value": "the_black_dot@youcentric.com"}
-    }],
-    "messaging": [],
-    "rest": [{
-        "type": {"value": "Patient"},
-        "mode": {"value": "server"},
-        "history": {"value": "false"},
-        "profile": {"value": "http://fhir.hl7.org/base/profile/@7896271d-57f6-4231-89dc-dcc91eab2416"},
-        "batch": {"value": "false"},
-        "resource": [{
-            "operation": [
-                {"code": {"value": "read"}},
-                {"code": {"value": "update"}},
-                {"code": {"value": "create"}}
-            ],
-            "search_param":[
-              {"name": {"value": "name"}},
-              {"source": {"value": "http://hl7.org/fhir/Patient/search#name"}},
-              {"type": {"value": "string"}},
-              {"documentation": {"value": "a portion of either family or given name of the patient"}}
-            ],
-            "searchParam":[
-              {"name": {"value": "gender"}},
-              {"source": {"value": "http://hl7.org/fhir/Patient/search#gender"}},
-              {"type": {"value": "string"}},
-              {"documentation": {"value": "patient gender"}}
-            ],
-            "searchParam":[
-              {"name": {"value": "birthdate_before"}},
-              {"source": {"value": "http://hl7.org/fhir/Patient/search#birthdate_before"}},
-              {"type": {"value": "date"}},
-              {"documentation": {"value": "patient date of birth before given date"}}
-            ],
-            "searchParam":[
-              {"name": {"value": "birthdate_after"}},
-              {"source": {"value": "http://hl7.org/fhir/Patient/search#birthdate_after"}},
-              {"type": {"value": "date"}},
-              {"documentation": {"value": "patient date of birth after given date"}}
-            ]
-            }]
+{
+    "conformance": {
+        "resource_type" : "Conformance",
+        "identifier": "mainstreet-fhir-profile-1"
+        "text": {
+            "status": "generated",
+            "div":"<div><h5>HL7 FHIR Server<\/h5><p>The <a href=\"http://hl7.org/fhir\">HL7 FHIR Specification<\/a> Interface Server in Main Street supports the following RESTful transactions based on FHIR v.0.11.<br\/>Released: 2013-09-27 v.0.00.010.0001 supporting JSON and XML formats. <\/p><div class=\"span8\"><table class=\"table table-condensed\"><thead><tr class=\"success\"><td><b>FHIR Resource<\/b><\/td><td><b>Create<\/b><\/td><td><b>Read<\/b><\/td><td><b>Update<\/b><\/td><td><b>Search<\/b><\/td><\/tr><\/thead><tbody><tr><td><a href=\"http://www.hl7.org/implement/standards/fhir/patient.htm\">Patient<\/a><\/td><td><\/td><td class=\"text-center\">*<\/td><td class=\"text-center\">*<\/td><td><ul><li>Gender<\/li><li>Given Name<\/li><li>Family Name<\/li><li>Birthday - Before<\/li><li>Birthday - After<\/li><\/ul><\/td><\/tr><tr><td><a href=\"http://www.hl7.org/implement/standards/fhir/observation.htm\">Observation<\/a><\/td><td><\/td><td>*<\/td><td><\/td><td><\/td><\/tr><\/tbody><\/table><\/div><\/div>"
         },
-        {
-          "type": {"value": "Observation"},
-          "mode": {"value": "server"},
-          "history": {"value": "false"},
-          "profile": {"value": "http://fhir.hl7.org/base/profile/@7896271d-57f6-4231-89dc-dcc91eab2416"},
-          "batch": {"value": "false"},
-          "resource": [{
-            "operation": [
-              {"code": {"value": "read"}}
-            ]
-          }]
-    },
-      {
-        "type": {"value": "Conformance"},
-        "mode": {"value": "server"},
-        "history": {"value": "false"},
-        "profile": {"value": "http://fhir.hl7.org/base/profile/@7896271d-57f6-4231-89dc-dcc91eab2416"},
-        "batch": {"value": "false"},
-        "resource": [{
-          "operation": [
-            {"code": {"value": "read"}}
-          ]
-        }]
-      }
-    ],
-    "identifier": {"value": "mainstreet-fhir-profile-1"}
-}}
+        "version": "sex-comedy",
+        "name": ""
+        "publisher": "YouCentric",
+        "telecom": [{
+            "system": "email",
+            "value": "the_black_dot@youcentric.com"
+        }],
+        "software": {
+            "name": "Mainstreet",
+            "version": "0.00.010.0001"
+        },
+        "date": "2013-09-21",
+        "fhir_version": "0.11",
+        "accept_unknown": "true",
+        "format": [ "xml", "json" ],
+        "rest": [
+            {
+                "mode": "server",
+                "resource": [
+                    {
+                        "type": "Patient",
+                        "read_history": "false",
+                        "operation": [
+                            {"code": "read"},
+                            {"code": "update"},
+                            {"code": "create"}
+                        ],
+                        "search_param":[{
+                            "name": "name",
+                            "source": "http://hl7.org/fhir/Patient/search#name",
+                            "type": "string",
+                            "documentation": "a portion of either family or given name of the patient"
+                        },
+                            {
+                                "name": "gender",
+                                "source": "http://hl7.org/fhir/Patient/search#gender",
+                                "type": "string",
+                                "documentation": "patient gender"
+                            },
+                            {
+                                "name": "birthdate_before",
+                                "source": "http://hl7.org/fhir/Patient/search#birthdate_before",
+                                "type": "date",
+                                "documentation": "patient date of birth before given date"
+                            },
+                            {
+                                "name": "birthdate_after",
+                                "source": "http://hl7.org/fhir/Patient/search#birthdate_after",
+                                "type": "date",
+                                "documentation": "patient date of birth after given date"
+                            }]
+                    },
+                    {
+                        "type": "Observation",
+                        "read_history": "false",
+                        "operation": [
+                            {"code": "read"}
+                        ]
+                    },
+                    {
+                        "type": "Conformance",
+                        "read_history": "false",
+                        "operation": [
+                            {"code": "read"}
+                        ]
+                    }
+                ]
+            }]
+    }
+}
