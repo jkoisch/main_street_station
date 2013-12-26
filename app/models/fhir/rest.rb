@@ -1,6 +1,6 @@
 module Fhir
-  class Resource < Base
-    attr_accessor :type, :read_history
+  class Rest < Base
+    attr_accessor :mode, :resource
 
     def initialize(attributes = {})
       attributes.each do |name, value|
@@ -24,14 +24,15 @@ module Fhir
       list
     end
 
-    %w(type read_history).each do |attr|
+    %w(mode).each do |attr|
       define_method("ehmbr_#{attr}=") do |detail|
         send("#{attr}=", detail)
       end
     end
 
-    def ehmbr_operation=(detail)
-      #send("operation=", Operation.parse_ehmbr_list(detail))
+    def ehmbr_resource=(detail)
+      send("resource=", Resource.parse_ehmbr_list(detail))
     end
+
   end
 end

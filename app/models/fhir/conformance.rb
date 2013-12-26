@@ -11,10 +11,11 @@ module Fhir
     end
 
     def self.parse_ehmbr(detail)
-      details.each do |key, value|
-        send("ehmbr_#{key}=", value)
+      new_conformance = Conformance.new
+      detail.each do |key, value|
+        new_conformance.send("ehmbr_#{key}=", value)
       end
-
+      new_conformance
     end
 
     def self.parse_ehmbr_list(details)
@@ -25,16 +26,20 @@ module Fhir
       list
     end
 
+    %w(identifier version name publisher telecom description status
+        date fhir_version accept_unknown format profile software
+        implementation).each do |attr|
+      define_method("ehmbr_#{attr}=") do |detail|
+        send("#{attr}=", detail)
+      end
+    end
+
     def ehmbr_messaging=(detail)
-      @messaging = Messaging.parse_ehmbr(detail)
+      send("messaging=", Messaging.parse_ehmbr(detail))
     end
 
-    def ehmbr_identifier(detail)
-      @identifier = detail
-    end
-
-    def ehmbr_version(detail)
-      @version = detail
+    def ehmbr_rest=(detail)
+      send("rest=", Rest.parse_ehmbr_list(detail))
     end
   end
 end
