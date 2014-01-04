@@ -1,9 +1,12 @@
 module Fhir
-  class Base
+  class BaseResource
+    extend AttributeDefs
+
     attr_accessor :text
 
     def ehmbr_text=(detail)
       @text = detail
     end
+
   end
 end
