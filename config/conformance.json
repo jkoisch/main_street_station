@@ -1,26 +1,77 @@
 {
-    "conformance": {
-        "identifier": "mainstreet-fhir-profile-1",
-        "text": {
-            "status": "generated",
-            "div":"<div><h5>HL7 FHIR Server<\/h5><p>The <a href=\"http://hl7.org/fhir\">HL7 FHIR Specification<\/a> Interface Server in Main Street supports the following RESTful transactions based on FHIR v.0.11.<br\/>Released: 2013-09-27 v.0.00.010.0001 supporting JSON and XML formats. <\/p><div class=\"span8\"><table class=\"table table-condensed\"><thead><tr class=\"success\"><td><b>FHIR Resource<\/b><\/td><td><b>Create<\/b><\/td><td><b>Read<\/b><\/td><td><b>Update<\/b><\/td><td><b>Search<\/b><\/td><\/tr><\/thead><tbody><tr><td><a href=\"http://www.hl7.org/implement/standards/fhir/patient.htm\">Patient<\/a><\/td><td><\/td><td class=\"text-center\">*<\/td><td class=\"text-center\">*<\/td><td><ul><li>Gender<\/li><li>Given Name<\/li><li>Family Name<\/li><li>Birthday - Before<\/li><li>Birthday - After<\/li><\/ul><\/td><\/tr><tr><td><a href=\"http://www.hl7.org/implement/standards/fhir/observation.htm\">Observation<\/a><\/td><td><\/td><td>*<\/td><td><\/td><td><\/td><\/tr><\/tbody><\/table><\/div><\/div>"
-        },
-        "version": "sex-comedy",
-        "name": "",
-        "publisher": "YouCentric",
-        "date": "2013-09-21",
-        "fhir_version": "0.11",
-        "accept_unknown": "true",
-        "format": [ "xml", "json" ],
-        "rest": [
-            {
-                "mode": "server",
-                "resource": [
-                    {
-                        "type": "Conformance",
-                        "read_history": "false"
-                    }
-                ]
-            }]
-    }
+    "resource_type" : "Conformance",
+    "identifier": "mainstreet-fhir-profile-1",
+    "text": {
+        "status": "generated",
+        "div":"<div><h5>HL7 FHIR Server<\/h5><p>The <a href=\"http://hl7.org/fhir\">HL7 FHIR Specification<\/a> Interface Server in Main Street supports the following RESTful transactions based on FHIR v.0.11.<br\/>Released: 2013-09-27 v.0.00.010.0001 supporting JSON and XML formats. <\/p><div class=\"span8\"><table class=\"table table-condensed\"><thead><tr class=\"success\"><td><b>FHIR Resource<\/b><\/td><td><b>Create<\/b><\/td><td><b>Read<\/b><\/td><td><b>Update<\/b><\/td><td><b>Search<\/b><\/td><\/tr><\/thead><tbody><tr><td><a href=\"http://www.hl7.org/implement/standards/fhir/patient.htm\">Patient<\/a><\/td><td><\/td><td class=\"text-center\">*<\/td><td class=\"text-center\">*<\/td><td><ul><li>Gender<\/li><li>Given Name<\/li><li>Family Name<\/li><li>Birthday - Before<\/li><li>Birthday - After<\/li><\/ul><\/td><\/tr><tr><td><a href=\"http://www.hl7.org/implement/standards/fhir/observation.htm\">Observation<\/a><\/td><td><\/td><td>*<\/td><td><\/td><td><\/td><\/tr><\/tbody><\/table><\/div><\/div>"
+    },
+    "version": "sex-comedy",
+    "name": "",
+    "publisher": "YouCentric",
+    "telecom": [{
+        "system": "email",
+        "value": "the_black_dot@youcentric.com"
+    }],
+    "software": {
+        "name": "Mainstreet",
+        "version": "0.00.010.0001"
+    },
+    "date": "2013-09-21",
+    "fhir_version": "0.11",
+    "accept_unknown": "true",
+    "format": [ "xml", "json" ],
+    "rest": [
+        {
+            "mode": "server",
+            "resource": [
+                {
+                    "type": "Patient",
+                    "read_history": "false",
+                    "operation": [
+                        {"code": "read"},
+                        {"code": "update"},
+                        {"code": "create"}
+                    ],
+                    "search_param":[{
+                        "name": "name",
+                        "source": "http://hl7.org/fhir/Patient/search#name",
+                        "type": "string",
+                        "documentation": "a portion of either family or given name of the patient"
+                    },
+                        {
+                            "name": "gender",
+                            "source": "http://hl7.org/fhir/Patient/search#gender",
+                            "type": "string",
+                            "documentation": "patient gender"
+                        },
+                        {
+                            "name": "birthdate_before",
+                            "source": "http://hl7.org/fhir/Patient/search#birthdate_before",
+                            "type": "date",
+                            "documentation": "patient date of birth before given date"
+                        },
+                        {
+                            "name": "birthdate_after",
+                            "source": "http://hl7.org/fhir/Patient/search#birthdate_after",
+                            "type": "date",
+                            "documentation": "patient date of birth after given date"
+                        }]
+                },
+                {
+                    "type": "Observation",
+                    "read_history": "false",
+                    "operation": [
+                        {"code": "read"}
+                    ]
+                },
+                {
+                    "type": "Conformance",
+                    "read_history": "false",
+                    "operation": [
+                        {"code": "read"}
+                    ]
+                }
+            ]
+        }
+    ]
 }

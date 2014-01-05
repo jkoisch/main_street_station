@@ -3,6 +3,9 @@ module Fhir
     def fhir_attribute(attr_name, options={})
       attr_accessor(attr_name)
       if options.has_key?(:type)
+        define_method("ehmbr_#{attr_name}=") do |content|
+          send("#{attr_name}=", options[:type].parse_ehmbr(content))
+        end
       elsif options.has_key?(:list)
         define_method("ehmbr_#{attr_name}=") do |content|
           send("#{attr_name}=", options[:list].parse_ehmbr_list(content))

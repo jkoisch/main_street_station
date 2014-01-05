@@ -18,8 +18,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.0.3'
 
 group :test, :development do
-  gem 'better_errors'
-  gem 'binding_of_caller'
+  #gem 'better_errors'
+  #gem 'binding_of_caller'
   gem 'guard'
   gem 'rspec-rails'
   gem 'database_cleaner'

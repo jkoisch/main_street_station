@@ -2,13 +2,11 @@ module Fhir
   module ConformanceClasses
     class Rest < BaseClass
       fhir_attribute :mode
+      fhir_attribute :documentation
+      fhir_attribute :document_mailbox, array: true
       fhir_attribute :resource, list: ConformanceClasses::Resource
-
-      def initialize(attributes = {})
-        attributes.each do |name, value|
-          send("#{name}=", value)
-        end
-      end
+      fhir_attribute :operation, list: ConformanceClasses::Operation
+      fhir_attribute :query, list: ConformanceClasses::Query
     end
   end
 end

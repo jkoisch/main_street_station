@@ -3,7 +3,7 @@ module Fhir
     class Address < BaseType
       fhir_attribute :use
       fhir_attribute :text
-      fhir_attribute :line, list: String
+      fhir_attribute :line, array: true
       fhir_attribute :city
       fhir_attribute :state
       fhir_attribute :zip
