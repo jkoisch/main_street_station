@@ -1,51 +1,26 @@
 module Fhir
-  class Observation
-    attr_accessor :name, :value, :interpretation, :comments, :applies, :issued, :status,
-                  :reliability, :bodySite, :method, :identifier, :subject, :performer,
-                  :referenceRange, :component
-
-    def initialize(accessors = {})
-      accessors.each do |name, value|
-        send("#{name}=", value)
-      end
-    end
-
-    def self.init_from_ember(dtl) #, source={})
-      observation = self.new()
-
-      #json_dtl = case source
-      #             when 'gringotts' then dtl  #[:observation]
-      #            else dtl
-      #           end
-
-      observation.name = CodeableConcept.parse_json_array(dtl[:name]) unless dtl[:name].nil?
-      observation.value = dtl[:value] unless dtl[:value].nil?
-      observation.interpretation = CodeableConcept.parse_json_array(dtl[:interpretation]) unless dtl[:interpretation].nil?
-      observation.comments = dtl[:comments] unless dtl[:comments].nil?
-      observation.applies = dtl[:applies][:value] unless dtl[:applies][:value].nil?
-      observation.issued = dtl[:issued] unless dtl[:issued].nil?
-      observation.status = dtl[:status] unless dtl[:status].nil?
-      observation.reliability = dtl[:reliability] unless dtl[:reliability].nil?
-      observation.bodySite = CodeableConcept.parse_json_array(dtl[:bodySite]) unless dtl[:bodySite].nil?
-      observation.method = CodeableConcept.parse_json_array(dtl[:method]) unless dtl[:method].nil?
-      observation.identifier = Identifiers.parse_json_array(dtl[:identifier]) unless dtl[:identifier].nil?
-      observation.subject = Resource.parse_json_array(dtl[:subject]) unless dtl[:subject].nil?
-      observation.performer = Resource.parse_json_array(dtl[:performer]) unless dtl[:performer].nil?
-
-      #dtl[:referenceRange].each do |range|
-      #  observation.referenceRange = ReferenceRange.parse_input(range)
-      #end unless dtl[:referenceRange].nil?
-
-      unless dtl[:component].nil?
-        observation.component = []
-
-        dtl[:component].each do |component|
-          observation.component << Component_Observation.parse_input(component)
-        end
-      end
-
-      observation
-    end
-
+  class Observation < BaseResource
+    fhir_attribute :name, type: Types::CodeableConcept
+    fhir_attribute :interpretation, type: Types::CodeableConcept
+    fhir_attribute :comments
+    fhir_attribute :value_quantity, type: Types::Quantity
+    fhir_attribute :value_codeable_concept, type: Types::CodeableConcept
+    fhir_attribute :value_attachment, type: Types::Attachment
+    fhir_attribute :value_ratio, type: Types::Ratio
+    fhir_attribute :value_period, type: Types::Period
+    fhir_attribute :value_sampled_data, type: Types::SampledData
+    fhir_attribute :value_string
+    fhir_attribute :applies_datetime
+    fhir_attribute :applies_period, type: Types::Period
+    fhir_attribute :status
+    fhir_attribute :reliability
+    fhir_attribute :identifier, type: Types::Identifier
+    # TODO: Reference for Subject: Resource(Patient|Group|Device|Location) resource
+    # TODO: Reference for Performer: Resource(Practitioner|Device|Organization) resource
+    fhir_attribute :issued
+    fhir_attribute :body_site, type: Types::CodeableConcept
+    fhir_attribute :method, type: Types::CodeableConcept
+    # TODO: Reference to Resource (Specimen) resource
+    fhir_attribute :reference_range, list: ObservationClasses::ReferenceRange
   end
 end
