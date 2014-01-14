@@ -14,14 +14,14 @@ MainStreetStation::Application.routes.draw do
               :constraint => [{ :id => /^(@\d[1,36]+$)/}, { :protocol => "http" }] do
     end
 
-    resources :conformance, only: [:index]
+    resources :conformance, only: [:index, :show]
 
     resources :Observations, :Observation, :observations, controller: :observations, :default => {:format => :xml}
   end
 
   namespace :trust do
     get 'authentication', to: 'authentication#index'
-    get 'authentication/:id', to: 'authentication#show'
+    get 'authentication/:id', to: 'authentication#show_old'
   end
 
   devise_scope :users do

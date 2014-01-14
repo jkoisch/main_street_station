@@ -1,3 +1,1 @@
-Jbuilder.encode do |json|
-
-end
+json.partial! 'conformance', resource: @conformance

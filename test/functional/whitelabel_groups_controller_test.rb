@@ -24,8 +24,8 @@ class WhitelabelGroupsControllerTest < ActionController::TestCase
     assert_redirected_to whitelabel_group_path(assigns(:whitelabel_group))
   end
 
-  test "should show whitelabel_group" do
-    get :show, id: @whitelabel_group
+  test "should show_old whitelabel_group" do
+    get :show_old, id: @whitelabel_group
     assert_response :success
   end
 

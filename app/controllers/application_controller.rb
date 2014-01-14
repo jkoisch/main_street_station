@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   #before_filter :https_redirect, except: [:index]
-  before_filter :authenticate_user! #, except: [ :index, :show ]
   protect_from_forgery
 
   def after_sign_in_path_for(resource)

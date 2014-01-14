@@ -24,8 +24,8 @@ class Registration::WhitelabelGroupsControllerTest < ActionController::TestCase
     assert_redirected_to registration_whitelabel_group_path(assigns(:registration_whitelabel_group))
   end
 
-  test "should show registration_whitelabel_group" do
-    get :show, id: @registration_whitelabel_group
+  test "should show_old registration_whitelabel_group" do
+    get :show_old, id: @registration_whitelabel_group
     assert_response :success
   end
 

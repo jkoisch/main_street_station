@@ -24,8 +24,8 @@ class Registration::ContractsControllerTest < ActionController::TestCase
     assert_redirected_to registration_contract_path(assigns(:registration_contract))
   end
 
-  test "should show registration_contract" do
-    get :show, id: @registration_contract
+  test "should show_old registration_contract" do
+    get :show_old, id: @registration_contract
     assert_response :success
   end
 

@@ -35,7 +35,8 @@ gem 'foreman'
 gem 'rabl'
 gem 'json'
 gem 'rest-client'
-gem "nifty-generators", :group => :development
+gem "nifty-generators", group: :development
+gem 'quiet_assets', group: :development
 gem 'uuid'
 gem 'nokogiri'
 
@@ -49,7 +50,7 @@ gem 'omniauth-oauth2'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
-# gem 'jbuilder'
+gem 'jbuilder'
 
 # Use unicorn as the app server
 # gem 'unicorn'

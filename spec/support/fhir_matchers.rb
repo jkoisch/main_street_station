@@ -4,9 +4,12 @@ RSpec::Matchers.define :parse_ehmbr_response do |raw_json|
   end
 end
 
-RSpec::Matchers.define :produce_fhir_json do |expected_json|
+RSpec::Matchers.define :produce_fhir_json_like do |expected_json|
   match do |actual|
-    render
+    response = render
+    puts response
+    #rendered == response
+    false
   end
 end
 
