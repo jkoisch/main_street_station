@@ -1,12 +1,12 @@
 class Trust::AuthenticationController < ApplicationController
-  before_filter :authenticate_user! , except: [:index]  #, :show]
+  before_filter :authenticate_user! , except: [:index]  #, :show_old]
 
   def index
     @title = "Home Authentication Index"
   end
 
   def show
-    @title = "This is the show authentication"
+    @title = "This is the show_old authentication"
 
     respond_to do |format|
       format.html
