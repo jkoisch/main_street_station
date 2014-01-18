@@ -11,9 +11,11 @@
   name:
     - !ruby/object:Fhir::Types::HumanName
       value: official
-      family: Chalmers
-      given: Peter
-      given: James
+      family:
+        - Chalmers
+      given:
+        - Peter
+        - James
     - !ruby/object:Fhir::Types::HumanName
       use: usual
       given: Jim
@@ -34,7 +36,8 @@
   address:
     - !ruby/object:Fhir::Types::Address
       use: home
-      line: 534 Erewhon St
+      line:
+        - 534 Erewhon St
       city: PleasantVille
       state: Vic
       zip: 3999
@@ -47,9 +50,11 @@
               system: http://hl7.org/fhir/patient-contact-relationship
               code: partner
       name: !ruby/object:Fhir::Types::HumanName
-          family: du
-          family: Marche
-          given: Benedicte
+          family:
+            - du
+            - Marche
+          given:
+            - Benedicte
       telecom:
         - !ruby/object:Fhir::Types::Contact
           system: phone
