@@ -14,7 +14,6 @@
       family: Chalmers
       given: Peter
       given: James
-  name:
     - !ruby/object:Fhir::Types::HumanName
       use: usual
       given: Jim
@@ -26,8 +25,7 @@
       system: phone
       value: (03) 5555 6473
       use: work
-  gender:
-    - !ruby/object:Fhir::Types::Coding
+  gender: !ruby/object:Fhir::Types::Coding
       system: http://hl7.org/fhir/v3/AdministrativeGender
       code: M
       display: Male
@@ -44,13 +42,12 @@
     - !ruby/object:Fhir::PatientClasses::Contact
       relationship:
         - !ruby/object:Fhir::Types::CodeableConcept
-          coding: !ruby/object:Fhir::Types::Coding
-            system: http://hl7.org/fhir/patient-contact-relationship
-            code: partner
-      name:
-        - !ruby/object:Fhir::Types::HumanName
+          coding:
+            - !ruby/object:Fhir::Types::Coding
+              system: http://hl7.org/fhir/patient-contact-relationship
+              code: partner
+      name: !ruby/object:Fhir::Types::HumanName
           family: du
-            #TODO: extension
           family: Marche
           given: Benedicte
       telecom:
