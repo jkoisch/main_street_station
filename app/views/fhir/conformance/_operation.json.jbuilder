@@ -1,2 +1,2 @@
-json.code      operation.code
-json.operation operation.operation
+json.code      operation.code if operation.code
+json.operation operation.operation if operation.operation

@@ -1,2 +1,2 @@
-json.start period.start
-json.end   period.end
+json.start period.start if period.start
+json.end   period.end if period.end
