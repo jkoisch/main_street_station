@@ -14,7 +14,7 @@ module Fhir
     fhir_attribute :format
     # TODO: Need resource reference to Profile
     fhir_attribute :software, type: ConformanceClasses::Software
-    fhir_attribute :implmentation, type: ConformanceClasses::Implementation
+    fhir_attribute :implementation, type: ConformanceClasses::Implementation
     fhir_attribute :rest, list: ConformanceClasses::Rest
   end
 end

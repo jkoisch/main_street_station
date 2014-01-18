@@ -4,12 +4,32 @@ RSpec::Matchers.define :parse_ehmbr_response do |raw_json|
   end
 end
 
-RSpec::Matchers.define :produce_fhir_json_like do |expected_json|
+RSpec::Matchers.define :produce_fhir_json_like do |json_file|
   match do |actual|
     response = render
-    puts response
-    #rendered == response
+    expected_json = File.read(json_file)
+    response == expected_json
+  end
+  failure_message_for_should do |actual|
+    expected = JSON.parse(File.read(json_file))
+    response = JSON.parse(render)
+    "expected JSON was: #{expected}\n generated: #{response}\n" +
+        " *difference*: #{expected.find_difference(response)}"
+  end
+end
+
+RSpec::Matchers.define :produce_fhir_xml_like do |xml_file|
+  match do |actual|
+    response = render
+    expected_json = File.read(xml_file)
     false
+  end
+  failure_message_for_should do |actual|
+    #expected = JSON.parse(File.read(xml_file))
+    expected = "--"
+    response = render
+    "expected XML was: #{expected}\n generated: #{response}\n"
+       # " *difference*: #{expected.find_difference(response)}"
   end
 end
 

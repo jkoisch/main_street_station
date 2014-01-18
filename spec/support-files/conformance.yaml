@@ -1,0 +1,51 @@
+--- !ruby/object:Fhir::Conformance
+  identifier: test-1
+  name: test
+  version: 0.1
+  publisher: YouCentric
+  telecom:
+    - !ruby/object:Fhir::Types::Contact
+      system: email
+      value: theblackdot@gmail.com
+      period: !ruby/object:Fhir::Types::Period
+        start: 2013-01-01
+  description:
+  status: alpha
+  experimental: true
+  date: 2014-01-01
+  fhir_version: 0.11
+  accept_unknown: true
+  format:
+    - xml
+    - json
+  profile: ~
+  software: !ruby/object:Fhir::ConformanceClasses::Software
+    name:         Mainstreet
+    version:      0.00.010.0001
+    release_date: 2014-01-01
+  implementation: !ruby/object:Fhir::ConformanceClasses::Implementation
+    description: the main point
+    url: http://mainstreet.youcentric.com
+  rest:
+    - !ruby/object:Fhir::ConformanceClasses::Rest
+      mode: server
+      documentation: we serve things
+      resource:
+        - !ruby/object:Fhir::ConformanceClasses::Resource
+          type: Patient
+          profile: ~
+          read_history: false
+          update_create:
+          operation:
+            - !ruby/object:Fhir::ConformanceClasses::Operation
+              code: read
+            - !ruby/object:Fhir::ConformanceClasses::Operation
+              code: update
+        - !ruby/object:Fhir::ConformanceClasses::Resource
+          type: Conformance
+          profile: ~
+          read_history: false
+          update_create: false
+          operation:
+            - !ruby/object:Fhir::ConformanceClasses::Operation
+              code: read
