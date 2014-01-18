@@ -11,12 +11,15 @@
   name:
     - !ruby/object:Fhir::Types::HumanName
       value: official
-      family: Chalmers
-      given: Peter
-      given: James
+      family:
+        - Chalmers
+      given:
+        - Peter
+        - James
     - !ruby/object:Fhir::Types::HumanName
       use: usual
-      given: Jim
+      given:
+        - Jim
   telecom:
     - !ruby/object:Fhir::Types::Contact
     use: home
