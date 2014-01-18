@@ -1,6 +1,6 @@
-json.count      repeat.count
-json.duration   repeat.duration
-json.end        repeat.end
-json.frequency  repeat.frequency
-json.units      repeat.units
-json.when       repeat.when
+json.frequency  repeat.frequency if repeat.frequency
+json.when       repeat.when if repeat.when
+json.duration   repeat.duration if repeat.duration
+json.units      repeat.units if repeat.units
+json.count      repeat.count if repeat.count
+json.end        repeat.end if repeat.end

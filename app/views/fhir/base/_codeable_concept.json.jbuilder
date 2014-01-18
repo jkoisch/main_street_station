@@ -3,4 +3,4 @@ if codeable_concept.coding
     json.partial! 'fhir/base/coding', coding: codeable_concept.coding
   end
 end
-json.text   codeable_concept.text
+json.text   codeable_concept.text if codeable_concept.text

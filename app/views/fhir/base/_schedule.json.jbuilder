@@ -1,6 +1,6 @@
-if schedule.period
+if schedule.event
   json.period do
-    json.partial! 'fhir/base/period', period: schedule.period
+    json.partial! 'fhir/base/period', event: schedule.event
   end
 end
 if schedule.repeat
