@@ -18,7 +18,8 @@
         - James
     - !ruby/object:Fhir::Types::HumanName
       use: usual
-      given: Jim
+      given:
+        - Jim
   telecom:
     - !ruby/object:Fhir::Types::Contact
     use: home
