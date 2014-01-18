@@ -7,7 +7,7 @@
       value: 12345
       period: !ruby/object:Fhir::Types::Period
         start: 2001-05-06
-      #TODO: assigner Resource(Organization)
+      #TODO: assigner Resource(Organization) not defined
   name:
     - !ruby/object:Fhir::Types::HumanName
       value: official
