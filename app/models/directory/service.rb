@@ -1,6 +1,4 @@
 class Directory::Service < ActiveRecord::Base
-  attr_accessible :community_role_id, :name, :description, :youcentric_operations_attributes, :youcentric_objects_attributes
-
   belongs_to :community_role
 
   has_many :youcentric_operations, :dependent => :destroy, :autosave => true

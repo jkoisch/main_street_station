@@ -1,7 +1,4 @@
 class Directory::CommunityRole < ActiveRecord::Base
-
-  attr_accessible :name, :description, :community_id, :role_kind, :parties_attributes, :services_attributes
-
   belongs_to :community
 
   has_many :parties, :dependent => :destroy, :autosave => true
