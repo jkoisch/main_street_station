@@ -1,7 +1,7 @@
 json.resourceType 'Bundle'
 json.type 'Conformance list'
 json.updated DateTime.now
-json.id 'fake-id'
+json.id "urn:uuid: #{UUID.new.generate}"
 json.totalResults @conformances.length
 json.entry @conformances do |conformance|
   json.title 'YouCentric FHIR Conformance'
