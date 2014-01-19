@@ -1,0 +1,1 @@
+json.partial! 'patient', resource: @patient

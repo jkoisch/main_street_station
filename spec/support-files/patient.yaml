@@ -1,6 +1,6 @@
---- !ruby/object:Fhir:Patient
+--- !ruby/object:Fhir::Patient
   identifier:
-    - !ruby/object:Fhir::Types::Indentifer
+    - !ruby/object:Fhir::Types::Identifier
       use: usual
       label: MRN
       system: urn:oid:1.2.36.146.595.217.0.1
@@ -22,8 +22,7 @@
         - Jim
   telecom:
     - !ruby/object:Fhir::Types::Contact
-    use: home
-  telecom:
+      use: home
     - !ruby/object:Fhir::Types::Contact
       system: phone
       value: (03) 5555 6473
