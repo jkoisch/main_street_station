@@ -9,3 +9,6 @@ json.description resource.description if resource.description
 json.status      resource.status
 json.partial! 'software', software: resource.software
 json.partial! 'implementation', implementation: resource.implementation
+json.rest      resource.rest do |rest|
+  json.partial! 'rest', rest: rest
+end if resource.rest && resource.rest.length > 0
