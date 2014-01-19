@@ -4,15 +4,14 @@ module Fhir
 
     def index
       response = get_gringotts_resources(RESOURCE)
-      if response.successful?
-        json_data = JSON.parse(response.body, opts={:symbolize_names => true})
-        @conformances = Fhir::Conformance.init_from_ember(json_data)
+      if response.success?
+        @conformances = Fhir::Conformance.parse_ehmbr_list(response.body)
 
         respond_to do |format|
-          format.html
-          format.atom
+          #format.html
+          #format.atom
           format.json
-          format.xml
+          #format.xml
         end
       else
         logger.warn response
@@ -25,7 +24,7 @@ module Fhir
     end
 
     def show
-      response = get_resource(RESOURCE, params[:id])
+      response = get_resource(RESOURCE, 0)
       @conformance = Fhir::Conformance.parse_ehmbr(response.body)
     end
 

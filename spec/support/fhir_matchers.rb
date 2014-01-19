@@ -6,21 +6,21 @@ end
 
 RSpec::Matchers.define :produce_fhir_json_like do |json_file|
   match do |actual|
-    response = render
+    response = render partial: actual, formats: :json, locals: {resource: resource}
     expected_json = File.read(json_file)
     response == expected_json
   end
   failure_message_for_should do |actual|
     expected = JSON.parse(File.read(json_file))
-    response = JSON.parse(render)
-    "expected JSON was: #{expected}\n generated: #{response}\n" +
-        " *difference*: #{expected.find_difference(response)}"
+    hash_response = JSON.parse(response)
+    "expected JSON was: #{expected}\n generated: #{hash_response}\n" +
+        " *difference*: #{expected.find_difference(hash_response)}"
   end
 end
 
 RSpec::Matchers.define :produce_fhir_xml_like do |xml_file|
   match do |actual|
-    response = render
+    response = render partial: actual, formats: :xml, locals: {resource: resource}
     expected_json = File.read(xml_file)
     false
   end

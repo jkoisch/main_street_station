@@ -19,7 +19,7 @@
     "date": "2013-09-21",
     "fhir_version": "0.11",
     "accept_unknown": "true",
-    "format": [ "json" ],
+    "format": [ "xml", "json" ],
     "rest": [
         {
             "mode": "server",
@@ -28,7 +28,9 @@
                     "type": "Patient",
                     "read_history": "false",
                     "operation": [
-                        {"code": "read"}
+                        {"code": "read"},
+                        {"code": "update"},
+                        {"code": "create"}
                     ],
                     "search_param":[{
                         "name": "name",
@@ -54,6 +56,13 @@
                             "type": "date",
                             "documentation": "patient date of birth after given date"
                         }]
+                },
+                {
+                    "type": "Observation",
+                    "read_history": "false",
+                    "operation": [
+                        {"code": "read"}
+                    ]
                 },
                 {
                     "type": "Conformance",

@@ -1,0 +1,1 @@
+xml.birthDate resource.birth_date

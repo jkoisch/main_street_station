@@ -6,22 +6,25 @@ MainStreetStation::Application.routes.draw do
   #match 'logout', to: 'omniauth_callbacks#destroy', as: 'logout'
 
   namespace :fhir do
-    resources :Patients, :Patient, :patient, :patients,
-              :controller => "patients",
-              :as => "patients",
-              :only => [:index, :show],
-              :default => {:format=> :xml},
-              :constraint => [{ :id => /^(@\d[1,36]+$)/}, { :protocol => "http" }] do
-    end
+    #resources :Patients, :Patient, :patient, :patients,
+    #          :controller => "patients",
+    #          :as => "patients",
+    #          :only => [:index, :show],
+    #          :default => {:format=> :xml},
+    #          :constraint => [{ :id => /^(@\d[1,36]+$)/}, { :protocol => "http" }] do
+    #end
 
-    resources :conformance, only: [:index, :show]
+    resources :Patient, controller: "patients", as: "patients", only: [:index, :show], defaults: {format: :json}
+    resources :conformance, only: [:index, :show], defaults: {format: :json}
 
-    resources :Observations, :Observation, :observations, controller: :observations, :default => {:format => :xml}
+    resources :Observations, :Observation, :observations, controller: :observations, default: {format: :json}
+    get "metadata", to: 'conformance#show', defaults: {format: :json}
+
   end
 
   namespace :trust do
     get 'authentication', to: 'authentication#index'
-    get 'authentication/:id', to: 'authentication#show_old'
+    get 'authentication/:id', to: 'authentication#show'
   end
 
   devise_scope :users do
