@@ -1,5 +1,6 @@
 module Fhir
   class Patient < BaseResource
+    fhir_attribute :id
     fhir_attribute :identifier, list: Types::Identifier
     fhir_attribute :name, list: Types::HumanName
     fhir_attribute :telecom, list: Types::Contact
