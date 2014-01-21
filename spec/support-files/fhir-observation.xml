@@ -1,0 +1,43 @@
+<Observation xmlns="http://hl7.org/fhir">
+  <name>
+    <!--   LOINC - always recommended to have a LOINC code   -->
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="8480-6"/>
+      <display value="Systolic blood pressure"/>
+    </coding>
+    <!--   SNOMED CT Codes - becoming more commonsysto   -->
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="271649006"/>
+      <display value="Systolic blood pressure"/>
+    </coding>
+    <!--   Also, a local code specific to the source system   -->
+    <coding>
+      <system value="http://acme.org/devices/clinical-codes"/>
+      <code value="bp-s"/>
+      <display value="Systolic Blood pressure"/>
+    </coding>
+  </name>
+  <value_quantity>
+    <value value="107"/>
+    <units value="mm[Hg]"/>
+  </value_quantity>
+  <interpretation>
+    <coding>
+      <system value="http://hl7.org/fhir/v2/0078"/>
+      <code value="N"/>
+      <display value="Normal (applies to non-numeric results)"/>
+    </coding>
+  </interpretation>
+  <applies_datetime value="2012-09-17"/>
+  <status value="final"/>
+  <reliability value="ok"/>
+  <identifier>
+    <system value="urn:ietf:rfc:3986"/>
+    <value value="187e0c12-8dd2-67e2-99b2-bf273c878281"/>
+  </identifier>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+</Observation>

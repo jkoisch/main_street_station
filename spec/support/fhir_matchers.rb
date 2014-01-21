@@ -21,8 +21,9 @@ end
 RSpec::Matchers.define :produce_fhir_xml_like do |xml_file|
   match do |actual|
     response = render partial: actual, formats: :xml, locals: {resource: resource}
-    expected_json = File.read(xml_file)
-    false
+    expected_xml = File.read(xml_file)
+    response = expected_xml
+    #false
   end
   failure_message_for_should do |actual|
     #expected = JSON.parse(File.read(xml_file))

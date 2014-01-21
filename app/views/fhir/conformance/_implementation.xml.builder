@@ -1,2 +1,2 @@
-xml.description({value: implementation.description})
-xml.url({value: implementation.url})
+xml.description({value: implementation.description}) unless implementation.description.nil?
+xml.url({value: implementation.url}) unless implementation.url.nil?

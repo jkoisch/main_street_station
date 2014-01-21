@@ -1,1 +1,45 @@
-<?xml>
+<Conformance xmlns="http://hl7.org/fhir">
+  <identifier value="test-1"/>
+  <name value="test"/>
+  <version value="0.1"/>
+  <publisher value="YouCentric"/>
+  <telecom>
+    <system value="email"/>
+    <value value="theblackdot@gmail.com"/>
+    <period>
+      <start value="2013-01-01"/>
+    </period>
+  </telecom>
+  <description value=""/>
+  <status value="alpha"/>
+  <software>
+    <name value="Mainstreet"/>
+    <version value="0.00.010.0001"/>
+    <releaseDate value="2014-01-01"/>
+  </software>
+  <implementation>
+    <description value="the main point"/>
+    <url value="http://mainstreet.youcentric.com"/>
+  </implementation>
+  <rest>
+    <mode value="server"/>
+    <documentation value="we serve things"/>
+    <resource>
+      <type value="Patient"/>
+      <operation>
+        <code value="read"/>
+        <code value="update"/>
+      </operation>
+      <readHistory value="false"/>
+      <updateCreate value="false"/>
+    </resource>
+    <resource>
+      <type value="Conformance"/>
+      <operation>
+        <code value="read"/>
+      </operation>
+      <readHistory value="false"/>
+      <updateCreate value="false"/>
+    </resource>
+  </rest>
+</Conformance>

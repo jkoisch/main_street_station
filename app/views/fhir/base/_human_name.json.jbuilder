@@ -9,4 +9,3 @@ if human_name.period
     json.partial! 'fhir/base/period', period: human_name.period
   end
 end
-

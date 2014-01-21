@@ -1,3 +1,3 @@
-xml.name({value: software.name}) if software.name
-xml.version({value: software.version}) if software.version
-xml.releaseDate({value: software.release_date}) if software.release_date
+xml.name({value: software.name}) unless software.name.nil?
+xml.version({value: software.version}) unless software.version.nil?
+xml.releaseDate({value: software.release_date}) unless software.release_date.nil?

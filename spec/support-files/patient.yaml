@@ -10,7 +10,7 @@
       #TODO: assigner Resource(Organization) not defined
   name:
     - !ruby/object:Fhir::Types::HumanName
-      value: official
+      use: official
       family:
         - Chalmers
       given:
@@ -27,10 +27,12 @@
       system: phone
       value: (03) 5555 6473
       use: work
-  gender: !ruby/object:Fhir::Types::Coding
-      system: http://hl7.org/fhir/v3/AdministrativeGender
-      code: M
-      display: Male
+  gender: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: http://hl7.org/fhir/v3/AdministrativeGender
+        code: M
+        display: Male
   birth_date: 1974-12-25
   deceased_boolean: false
   address:
@@ -50,14 +52,14 @@
               system: http://hl7.org/fhir/patient-contact-relationship
               code: partner
       name: !ruby/object:Fhir::Types::HumanName
-          family:
-            - du
-            - Marche
-          given:
-            - Benedicte
+        family:
+          - du
+          - Marche
+        given:
+          - Benedicte
       telecom:
         - !ruby/object:Fhir::Types::Contact
           system: phone
           value: +33 (237) 998327
   #TODO: managing_organization Resource(Organization)
-  active: true
+  active: "true"

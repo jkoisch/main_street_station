@@ -33,19 +33,17 @@
       resource:
         - !ruby/object:Fhir::ConformanceClasses::Resource
           type: Patient
-          profile: ~
-          read_history: false
-          update_create:
           operation:
             - !ruby/object:Fhir::ConformanceClasses::Operation
               code: read
             - !ruby/object:Fhir::ConformanceClasses::Operation
               code: update
+          read_history: "false"
+          update_create: "false"
         - !ruby/object:Fhir::ConformanceClasses::Resource
           type: Conformance
-          profile: ~
-          read_history: false
-          update_create: false
           operation:
             - !ruby/object:Fhir::ConformanceClasses::Operation
               code: read
+          read_history: "false"
+          update_create: "false"
