@@ -1,6 +1,6 @@
 module Fhir
   module Types
-    class HumanName < BaseType
+    class HumanName < KeyedBaseType
       fhir_attribute :use
       fhir_attribute :text
       fhir_attribute :family, array: true

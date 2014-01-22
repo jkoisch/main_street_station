@@ -1,6 +1,6 @@
 module Fhir
   module Types
-    class Coding < BaseType
+    class Coding < KeyedBaseType
       fhir_attribute :system
       fhir_attribute :version
       fhir_attribute :code

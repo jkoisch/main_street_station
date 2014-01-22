@@ -1,6 +1,6 @@
 module Fhir
   module Types
-    class Address < BaseType
+    class Address < KeyedBaseType
       fhir_attribute :use
       fhir_attribute :text
       fhir_attribute :line, array: true

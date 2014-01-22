@@ -45,7 +45,8 @@ class Fhir::FhirBaseController < ApplicationController
     if response.is_a?(Net::HTTPSuccess)
       GringottResponse.new(true, JSON.parse(response.body))
     else
-      GringottResponse.new(false, JSON.parse())
+      logger.error "Gringotts ERROR #{response.code} #{response.message}"
+      GringottResponse.new(false, {})
     end
   end
 end

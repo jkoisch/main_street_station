@@ -1,6 +1,6 @@
 module Fhir
   module Types
-    class Identifier < BaseType
+    class Identifier < KeyedBaseType
       fhir_attribute :use
       fhir_attribute :label
       fhir_attribute :system
