@@ -8,5 +8,5 @@ json.searchInclude resource.search_include do |search_include|
   json.searchInclude search_include
 end if resource.search_include
 json.searchParam resource.search_param do |search_param|
-  json.partial! 'search_param', searchParam: search_param
+  json.partial! 'search_param', search_param: search_param
 end if resource.search_param
