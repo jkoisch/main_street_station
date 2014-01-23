@@ -1,14 +1,12 @@
-json.use      address.use if address.use
-json.text     address.text if address.text
-json.line     address.line if address.line
-json.city     address.city if address.city
-json.state    address.state if address.state
-json.zip      address.zip.to_s if address.zip
-json.country  address.country if address.country
+json.use      address.use unless address.use.nil?
+json.text     address.text unless address.text.nil?
+json.line     address.line unless address.line.nil?
+json.city     address.city unless address.city.nil?
+json.state    address.state unless address.state.nil?
+json.zip      address.zip.to_s unless address.zip.nil?
+json.country  address.country unless address.country.nil?
 
-if address.period
-  json.period do
-    json.partial! 'fhir/base/period', period: address.period
-  end
-end
+json.period do
+  json.partial! 'fhir/base/period', period: address.period
+end unless address.period.nil?
 

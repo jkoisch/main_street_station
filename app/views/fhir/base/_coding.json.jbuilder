@@ -1,6 +1,5 @@
-json.system   coding.system if coding.system
-json.version  coding.version if coding.version
-json.code     coding.code if coding.code
-json.display  coding.display if coding.display
-json.primary  coding.primary if coding.primary
-# TODO: Resource(valueSet)  json.value_set  coding.value_set
+json.system   coding.system unless coding.system.nil?
+json.version  coding.version unless coding.version.nil?
+json.code     coding.code unless coding.code.nil?
+json.display  coding.display unless coding.display.nil?
+json.primary  coding.primary unless coding.primary.nil?

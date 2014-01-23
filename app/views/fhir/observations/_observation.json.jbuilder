@@ -1,20 +1,19 @@
 json.resourceType 'Observation'
-if resource.name
-  json.name do
-    json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.name
-  end
-end
-json.valueQuantity  resource.value_quantity if resource.value_quantity
-if resource.interpretation
-  json.interpretation do
-    json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.interpretation
-  end
-end
-json.appliesDatetime  resource.applies_datetime if resource.applies_datetime
-json.status resource.status if resource.status
-json.reliability  resource.reliability if resource.reliability
-if resource.identifier
-  json.identifier do
-    json.partial! 'fhir/base/identifier', identifier: resource.identifier
-  end
-end
+
+json.name do
+  json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.name
+end unless resource.name.nil?
+
+json.valueQuantity    resource.value_quantity unless resource.value_quantity.nil?
+
+json.interpretation do
+  json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.interpretation
+end unless resource.interpretation.nil?
+
+json.appliesDatetime  resource.applies_datetime unless resource.applies_datetime.nil?
+json.status           resource.status unless resource.status.nil?
+json.reliability      resource.reliability unless resource.reliability.nil?
+
+json.identifier do
+  json.partial! 'fhir/base/identifier', identifier: resource.identifier
+end unless resource.identifier.nil?

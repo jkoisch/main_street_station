@@ -1,10 +1,8 @@
-json.use    identifier.use if identifier.use
-json.label  identifier.label if identifier.label
-json.system identifier.system if identifier.system
-json.value  identifier.value.to_s if identifier.value
-if identifier.period
-  json.period do
-    json.partial! 'fhir/base/period', period: identifier.period
-  end
-end
-# TODO: Resource(Organization)  json.assigner  identifier.assigner
+json.use    identifier.use unless identifier.use.nil?
+json.label  identifier.label unless identifier.label.nil?
+json.system identifier.system unless identifier.system.nil?
+json.value  identifier.value.to_s unless identifier.value.nil?
+
+json.period do
+  json.partial! 'fhir/base/period', period: identifier.period
+end unless identifier.period.nil?

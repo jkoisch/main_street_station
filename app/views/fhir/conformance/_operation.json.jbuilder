@@ -1,2 +1,2 @@
-json.code      operation.code if operation.code
-json.documentation operation.documentation if operation.documentation
+json.code           operation.code unless operation.code.nil?
+json.documentation  operation.documentation unless operation.documentation.nil?

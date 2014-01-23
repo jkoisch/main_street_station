@@ -1,6 +1,6 @@
-json.value      quantity.value if quantity.value
-json.comparator quantity.comparator if quantity.comparator
-json.units      quantity.units if quantity.units
-json.system     quantity.system if quantity.system
-json.code       quantity.code if quantity.code
+json.value      quantity.value unless quantity.value.nil?
+json.comparator quantity.comparator unless quantity.comparator.nil?
+json.units      quantity.units unless quantity.units.nil?
+json.system     quantity.system unless quantity.system.nil?
+json.code       quantity.code unless quantity.code.nil?
 

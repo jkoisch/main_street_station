@@ -1,2 +1,2 @@
-json.name          query.name if query.name
-json.documentation query.documentation if query.documentation
+json.name           query.name unless query.name.nil?
+json.documentation  query.documentation unless query.documentation.nil?

@@ -1,2 +1,2 @@
-json.type certificate.type if certificate.type
-json.blob certificate.blob if certificate.blob
+json.type certificate.type unless certificate.type.nil?
+json.blob certificate.blob unless certificate.blob.nil?

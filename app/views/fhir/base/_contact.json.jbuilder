@@ -1,8 +1,7 @@
-json.system contact.system if contact.system
-json.value  contact.value if contact.value
-json.use    contact.use if contact.use
-if contact.period
-  json.period do
-    json.partial! 'fhir/base/period', period: contact.period
-  end
-end
+json.system contact.system unless contact.system.nil?
+json.value  contact.value unless contact.value.nil?
+json.use    contact.use unless contact.use.nil?
+
+json.period do
+  json.partial! 'fhir/base/period', period: contact.period
+end unless contact.period.nil?
