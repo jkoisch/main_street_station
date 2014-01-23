@@ -8,7 +8,6 @@ json.entry @patients do |patient|
   json.id "http://mainstreet.youcentric.com/fhir/Patient/#{patient.id}"
   json.updated DateTime.now
   json.content do
-    json.resourceType 'Patient'
     json.partial! 'patient', resource: patient
   end
 end

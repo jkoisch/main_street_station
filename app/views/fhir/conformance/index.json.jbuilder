@@ -8,7 +8,6 @@ json.entry @conformances do |conformance|
   json.id 'http://mainstreet.youcentric.com/fhir/conformance/1'
   json.updated DateTime.now
   json.content do
-    json.resourceType 'Conformance'
     json.partial! 'conformance', resource: conformance
   end
 end
