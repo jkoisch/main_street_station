@@ -1,15 +1,15 @@
-xml.use({value: human_name.use}) if human_name.use
-xml.text({value: human_name.text}) if human_name.text
+xml.use({value: human_name.use}) unless human_name.use.nil?
+xml.text({value: human_name.text}) unless human_name.text.nil?
 human_name.family.each do |family_property|
   xml.family({value: family_property})
-end if human_name.family
+end unless human_name.family.nil?
 human_name.given.each do |given_property|
   xml.given({value: given_property})
-end if human_name.given
+end unless human_name.given.nil?
 human_name.prefix.each do |prefix_property|
   xml.prefix({value: prefix_property})
-end if human_name.prefix
+end unless human_name.prefix.nil?
 human_name.suffix.each do |suffix_property|
   xml.suffix({value: suffix_property})
-end if human_name.suffix
-xml.period { |xml| xml << render('fhir/base/period', {period: human_name.period}) } if human_name.period
+end unless human_name.suffix.nil?
+xml.period { |xml| xml << render('fhir/base/period', {period: human_name.period}) } unless human_name.period.nil?

@@ -1,2 +1,2 @@
-xml.name({value: query.name}) if query.name
-xml.documentation({value: query.documentation}) if query.documentation
+xml.name({value: query.name}) unless query.name.nil?
+xml.documentation({value: query.documentation}) unless query.documentation.nil?

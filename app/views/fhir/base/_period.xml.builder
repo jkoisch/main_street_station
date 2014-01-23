@@ -1,2 +1,2 @@
-xml.start({value: period.start}) if period.start
-xml.end({value: period.end}) if period.end
+xml.start({value: period.start}) unless period.start.nil?
+xml.end({value: period.end}) unless period.end.nil?

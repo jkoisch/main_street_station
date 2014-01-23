@@ -1,12 +1,12 @@
-xml.use({value: address.use}) if address.use
-xml.text({value: address.text}) if address.text
+xml.use({value: address.use}) unless address.use.nil?
+xml.text({value: address.text}) unless address.text.nil?
 
 address.line.each do |line_property|
   xml.line({value: line_property})
-end if address.line
+end unless address.line.nil?
 
-xml.city({value: address.city}) if address.city
-xml.state({value: address.state}) if address.state
-xml.zip({value: address.zip}) if address.zip
-xml.country({value: address.country}) if address.country
-xml.period { |xml| xml << render('fhir/base/period', {period: address.period}) } if address.period
+xml.city({value: address.city}) unless address.city.nil?
+xml.state({value: address.state}) unless address.state.nil?
+xml.zip({value: address.zip}) unless address.zip.nil?
+xml.country({value: address.country}) unless address.country.nil?
+xml.period { |xml| xml << render('fhir/base/period', {period: address.period}) } unless address.period.nil?

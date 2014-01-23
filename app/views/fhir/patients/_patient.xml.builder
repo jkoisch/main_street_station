@@ -8,12 +8,12 @@ resource.telecom.each do |telecom|
   xml.telecom {|xml| xml << render('fhir/base/contact', {contact: telecom})}
 end unless resource.telecom.nil?
 xml.gender { |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: resource.gender})} unless resource.gender.nil?
-xml.birthDate({value: resource.birth_date}) if resource.birth_date
-xml.deceasedBoolean({value: resource.deceased_boolean}) if resource.deceased_boolean
+xml.birthDate({value: resource.birth_date}) unless resource.birth_date.nil?
+xml.deceasedBoolean({value: resource.deceased_boolean}) unless resource.deceased_boolean.nil?
 resource.address.each do |address|
   xml.address {|xml| xml << render('fhir/base/address', {address: address})}
 end unless resource.address.nil?
 resource.contact.each do |contact|
   xml.contact { |xml| xml << render('contact', {contact: contact})}
 end unless resource.contact.nil?
-xml.active({value: resource.active}) if resource.active
+xml.active({value: resource.active}) unless resource.active.nil?

@@ -1,2 +1,2 @@
-xml.numerator { |xml| xml << render('fhir/base/quantity', {numerator: ratio.numerator}) } if ratio.numerator
-xml.denominator { |xml| xml << render('fhir/base/quantity', {denominator: ratio.denominator}) } if ratio.denominator
+xml.numerator { |xml| xml << render('fhir/base/quantity', {numerator: ratio.numerator}) } unless ratio.numerator.nil?
+xml.denominator { |xml| xml << render('fhir/base/quantity', {denominator: ratio.denominator}) } unless ratio.denominator.nil?

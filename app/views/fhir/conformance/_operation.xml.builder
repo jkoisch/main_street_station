@@ -1,2 +1,2 @@
-xml.code({value: operation.code}) if operation.code
-xml.documentation({value: operation.documentation}) if operation.documentation
+xml.code({value: operation.code}) unless operation.code.nil?
+xml.documentation({value: operation.documentation}) unless operation.documentation.nil?

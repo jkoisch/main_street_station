@@ -1,4 +1,4 @@
-xml.type({value: resource.type}) if resource.type
+xml.type({value: resource.type}) unless resource.type.nil?
 resource.operation.each do |operation|
   xml.operation { |xml| xml << render('operation', {operation: operation}) }
 end unless resource.operation.nil?

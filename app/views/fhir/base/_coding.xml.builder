@@ -1,6 +1,5 @@
-xml.system({value: coding.system}) if coding.system
-xml.version({value: coding.version}) if coding.version
-xml.code({value: coding.code}) if coding.code
-xml.display({value: coding.display}) if coding.display
-xml.primary({value: coding.primary}) if coding.primary
-#TODO: Resource(ValueSet)
+xml.system({value: coding.system}) unless coding.system.nil?
+xml.version({value: coding.version}) unless coding.version.nil?
+xml.code({value: coding.code}) unless coding.code.nil?
+xml.display({value: coding.display}) unless coding.display.nil?
+xml.primary({value: coding.primary}) unless coding.primary.nil?
