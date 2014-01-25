@@ -1,6 +1,7 @@
 #require 'yellow_pages'
 
 MainStreetStation::Application.routes.draw do
+
   #match 'auth/:provider/callback', to: 'omniauth_callbacks#create'
   #match 'auth/failure', to: redirect('/')
   #match 'logout', to: 'omniauth_callbacks#destroy', as: 'logout'
@@ -18,6 +19,8 @@ MainStreetStation::Application.routes.draw do
     resources :conformance, only: [:index, :show], defaults: {format: :json}
 
     resources :Observations, :Observation, :observations, controller: :observations, default: {format: :json}
+    resources :FamilyHistory, controller: :family_histories, default: {format: :json}
+
     get "metadata", to: 'conformance#show', defaults: {format: :json}
 
   end

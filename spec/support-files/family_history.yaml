@@ -1,0 +1,36 @@
+--- !ruby/object:Fhir::FamilyHistory
+  relation:
+    - !ruby/object:Fhir::FamilyHistoryClasses::Relation
+      relationship: !ruby/object:Fhir::Types::CodeableConcept
+        coding:
+          - !ruby/object:Fhir::Types::Coding
+            system: http://hl7.org/fhir/familial-relationship
+            code: mother
+      condition:
+        - !ruby/object:Fhir::FamilyHistoryClasses::Condition
+          type: !ruby/object:Fhir::Types::CodeableConcept
+            coding:
+              - !ruby/object:Fhir::Types::Coding
+                system: http://snomed.info/sct
+                code: "371041009"
+                display: Embolic Stroke
+            text: Stroke
+          onset_age: !ruby/object:Fhir::Types::Quantity
+            value: "56"
+            units: "a"
+            system: http://unitsofmeasure.org
+    - !ruby/object:Fhir::FamilyHistoryClasses::Relation
+      relationship: !ruby/object:Fhir::Types::CodeableConcept
+        coding:
+          - !ruby/object:Fhir::Types::Coding
+            system: http://hl7.org/fhir/familial-relationship
+            code: brother
+      condition:
+        - !ruby/object:Fhir::FamilyHistoryClasses::Condition
+          type: !ruby/object:Fhir::Types::CodeableConcept
+            coding:
+              - !ruby/object:Fhir::Types::Coding
+                system: http://snomed.info/sct
+                code: "190372001"
+                display: Type 1 Diabetes, Maturity Onset
+            text: Diabetes Mellitus
