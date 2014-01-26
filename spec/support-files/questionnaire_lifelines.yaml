@@ -1,0 +1,47 @@
+--- !ruby/object:Fhir::Questionnaire
+  status: completed
+  authored: "2013-06-18T00:00:00+01:00"
+  name: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: https://lifelines.nl
+        code: VL 1-1, 18-65_1.2.2
+        display: Lifelines Questionnaire 1 part 1
+  identifier:
+    - !ruby/object:Fhir::Types::Identifier
+      use: temp
+      label: Roel's VL 1-1, 18-65_1.2.2
+  group: !ruby/object:Fhir::QuestionnaireClasses::Group
+    group:
+      - !ruby/object:Fhir::QuestionnaireClasses::Group
+        question:
+          - !ruby/object:Fhir::QuestionnaireClasses::Question
+            text: Do you have allergies?
+            answer_string: I am allergic to house dust
+      - !ruby/object:Fhir::QuestionnaireClasses::Group
+        header: General questions
+        question:
+          - !ruby/object:Fhir::QuestionnaireClasses::Question
+            text: What is your gender?
+            answer_string: Male
+          - !ruby/object:Fhir::QuestionnaireClasses::Question
+            name: !ruby/object:Fhir::Types::CodeableConcept
+              text: What is your date of birth?
+            answer_date: 1960-03-13
+          - !ruby/object:Fhir::QuestionnaireClasses::Question
+            name: !ruby/object:Fhir::Types::CodeableConcept
+              text: What is your country of birth?
+            answer_string: The Netherlands
+          - !ruby/object:Fhir::QuestionnaireClasses::Question
+            name: !ruby/object:Fhir::Types::CodeableConcept
+              text: What is your marital status?
+            answer_string: married
+      - !ruby/object:Fhir::QuestionnaireClasses::Group
+        header: Intoxications
+        question:
+          - !ruby/object:Fhir::QuestionnaireClasses::Question
+            text: Do you smoke?
+            answer_string: "No"
+          - !ruby/object:Fhir::QuestionnaireClasses::Question
+            text: Do you drink alchohol?
+            answer_string: No, but I used to drink

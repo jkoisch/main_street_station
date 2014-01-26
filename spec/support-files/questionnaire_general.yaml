@@ -1,0 +1,96 @@
+--- !ruby/object:Fhir::Questionnaire
+  status: completed
+  authored: "2013-02-19T14:15:00"
+  name: !ruby/object:Fhir::Types::CodeableConcept
+    text: Cancer Quality Forum Questionnaire 2012
+  group: !ruby/object:Fhir::QuestionnaireClasses::Group
+    group:
+      - !ruby/object:Fhir::QuestionnaireClasses::Group
+        name: !ruby/object:Fhir::Types::CodeableConcept
+          coding:
+            - !ruby/object:Fhir::Types::Coding
+              system: http://cancer.questionnaire.org/system/code/sections
+              code: COMORBIDITY
+        question:
+          - !ruby/object:Fhir::QuestionnaireClasses::Question
+            name: !ruby/object:Fhir::Types::CodeableConcept
+              coding:
+                - !ruby/object:Fhir::Types::Coding
+                  system: http://cancer.questionnaire.org/system/code/questions
+                  code: COMORB
+            choice:
+              - !ruby/object:Fhir::Types::Coding
+                system: http://cancer.questionnaire.org/system/code/yesno
+                code: "1"
+                display: "Yes"
+            group:
+              - !ruby/object:Fhir::QuestionnaireClasses::Group
+                name: !ruby/object:Fhir::Types::CodeableConcept
+                  coding:
+                    - !ruby/object:Fhir::Types::Coding
+                      system: http://cancer.questionnaire.org/system/code/sections
+                      code: CARDIAL
+                question:
+                  - !ruby/object:Fhir::QuestionnaireClasses::Question
+                    name: !ruby/object:Fhir::Types::CodeableConcept
+                      coding:
+                        - !ruby/object:Fhir::Types::Coding
+                          system: http://cancer.questionnaire.org/system/code/questions
+                          code: COMORBCAR
+                    choice:
+                      - !ruby/object:Fhir::Types::Coding
+                        system: http://cancer.questionnaire.org/system/code/yesno
+                        code: "1"
+                  - !ruby/object:Fhir::QuestionnaireClasses::Question
+                    name: !ruby/object:Fhir::Types::CodeableConcept
+                      coding:
+                        - !ruby/object:Fhir::Types::Coding
+                          system: http://cancer.questionnaire.org/system/code/questions
+                          code: COMCAR00
+                          display: Angina Pectoris
+                        - !ruby/object:Fhir::Types::Coding
+                          system: http://snomed.info/sct
+                          code: "194828000"
+                          display: Angina (disorder)
+                    choice:
+                      - !ruby/object:Fhir::Types::Coding
+                        system: http://cancer.questionnaire.org/system/code/yesno
+                        code: "1"
+                  - !ruby/object:Fhir::QuestionnaireClasses::Question
+                    name: !ruby/object:Fhir::Types::CodeableConcept
+                      coding:
+                        - !ruby/object:Fhir::Types::Coding
+                          system: http://snomed.info/sct
+                          code: "22298006"
+                          display: Myocardial infarction (disorder)
+                    choice:
+                      - !ruby/object:Fhir::Types::Coding
+                        system: http://cancer.questionnaire.org/system/code/yesno
+                        code: "0"
+              - !ruby/object:Fhir::QuestionnaireClasses::Group
+                name: !ruby/object:Fhir::Types::CodeableConcept
+                  coding:
+                    - !ruby/object:Fhir::Types::Coding
+                      system: http://cancer.questionnaire.org/system/code/sections
+                      code: VASCULAR
+      - !ruby/object:Fhir::QuestionnaireClasses::Group
+        name: !ruby/object:Fhir::Types::CodeableConcept
+          coding:
+            - !ruby/object:Fhir::Types::Coding
+              system: http://cancer.questionnaire.org/system/code/sections
+              code: HISTOPATHOLOGY
+        group:
+          - !ruby/object:Fhir::QuestionnaireClasses::Group
+            name: !ruby/object:Fhir::Types::CodeableConcept
+              coding:
+                - !ruby/object:Fhir::Types::Coding
+                  system: http://cancer.questionnaire.org/system/code/sections
+                  code: ABDOMINAL
+            question:
+              - !ruby/object:Fhir::QuestionnaireClasses::Question
+                name: !ruby/object:Fhir::Types::CodeableConcept
+                  coding:
+                    - !ruby/object:Fhir::Types::Coding
+                      system: http://cancer.questionnaire.org/system/code/questions
+                      code: STADPT
+                      display: pT category

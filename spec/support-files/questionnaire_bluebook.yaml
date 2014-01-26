@@ -1,0 +1,60 @@
+--- !ruby/object:Fhir::Questionnaire
+  status: completed
+  authored: "2013-02-19T14:15:00"
+  group: !ruby/object:Fhir::QuestionnaireClasses::Group
+    name: !ruby/object:Fhir::Types::CodeableConcept
+      text: NSW Government My Personal Health Record, january 2013
+    group:
+      - !ruby/object:Fhir::QuestionnaireClasses::Group
+        name: !ruby/object:Fhir::Types::CodeableConcept
+          coding:
+            - !ruby/object:Fhir::Types::Coding
+              code: "6.1"
+          text: Birth details
+        header: Birth details - To be completed by health professional
+        group:
+          - !ruby/object:Fhir::QuestionnaireClasses::Group
+            question:
+              - !ruby/object:Fhir::QuestionnaireClasses::Question
+                text: Name of child
+                answer_string: Cathy Jones
+              - !ruby/object:Fhir::QuestionnaireClasses::Question
+                text: Sex
+                choice:
+                  - !ruby/object:Fhir::Types::Coding
+                    code: f
+          - !ruby/object:Fhir::QuestionnaireClasses::Group
+            header: Neonatal Information
+            question:
+              - !ruby/object:Fhir::QuestionnaireClasses::Question
+                text: Birth weight (kg)
+                answer_decimal: "3.25"
+              - !ruby/object:Fhir::QuestionnaireClasses::Question
+                text: Birth length (cm)
+                answer_decimal: "44.3"
+              - !ruby/object:Fhir::QuestionnaireClasses::Question
+                text: Vitamin K given
+                choice:
+                  - !ruby/object:Fhir::Types::Coding
+                    code: INJECTION
+                group:
+                  - !ruby/object:Fhir::QuestionnaireClasses::Group
+                    question:
+                      - !ruby/object:Fhir::QuestionnaireClasses::Question
+                        text: 1st dose
+                        answer_date: 1972-11-30
+                      - !ruby/object:Fhir::QuestionnaireClasses::Question
+                        text: 2nd dose
+                        answer_date: 1972-12-11
+              - !ruby/object:Fhir::QuestionnaireClasses::Question
+                text: Hep B given y / n
+                answer_boolean: true
+                group:
+                  - !ruby/object:Fhir::QuestionnaireClasses::Group
+                    question:
+                      - !ruby/object:Fhir::QuestionnaireClasses::Question
+                        text: Date given
+                        answer_date: 1972-12-04
+              - !ruby/object:Fhir::QuestionnaireClasses::Question
+                text: Abnormalities noted at birth
+                answer_string: Already able to speak Klingon

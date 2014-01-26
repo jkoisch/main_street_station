@@ -1,0 +1,76 @@
+<Questionnaire xmlns="http://hl7.org/fhir">
+  <!--   Please not that in this questionnaire, the questions are mostly unnamed, that is, the
+   questions are not identified using the &lt;name&gt; element. It will therefore
+    be hard to extract useful information in an automated way from this questionnaire.
+   This is, however, quite often the case when modelling existing questionnaires   -->
+  <status value="completed"/>
+  <authored value="2013-02-19T14:15:00"/>
+  <group>
+    <name>
+      <text value="NSW Government My Personal Health Record, january 2013"/>
+    </name>
+    <!--   Many groups left out of this example   -->
+    <group>
+      <name>
+        <coding>
+          <code value="6.1"/>
+        </coding>
+        <text value="Birth details"/>
+      </name>
+      <header value="Birth details - To be completed by health professional"/>
+      <group>
+        <question>
+          <text value="Name of child"/>
+          <answerString value="Cathy Jones"/>
+        </question>
+        <question>
+          <text value="Sex"/>
+          <choice>
+            <code value="f"/>
+          </choice>
+        </question>
+      </group>
+      <group>
+        <header value="Neonatal Information"/>
+        <question>
+          <text value="Birth weight (kg)"/>
+          <answerDecimal value="3.25"/>
+        </question>
+        <question>
+          <text value="Birth length (cm)"/>
+          <answerDecimal value="44.3"/>
+        </question>
+        <question>
+          <text value="Vitamin K given"/>
+          <choice>
+            <code value="INJECTION"/>
+          </choice>
+          <group>
+            <question>
+              <text value="1st dose"/>
+              <answerDate value="1972-11-30"/>
+            </question>
+            <question>
+              <text value="2nd dose"/>
+              <answerDate value="1972-12-11"/>
+            </question>
+          </group>
+        </question>
+        <question>
+          <text value="Hep B given y / n"/>
+          <answerBoolean value="true"/>
+          <group>
+            <question>
+              <text value="Date given"/>
+              <answerDate value="1972-12-04"/>
+            </question>
+          </group>
+        </question>
+        <question>
+          <text value="Abnormalities noted at birth"/>
+          <answerString value="Already able to speak Klingon"/>
+        </question>
+      </group>
+    </group>
+  </group>
+</Questionnaire>

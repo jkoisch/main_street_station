@@ -1,0 +1,2 @@
+module Fhir::QuestionnairesHelper
+end
