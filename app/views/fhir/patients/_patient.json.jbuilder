@@ -18,13 +18,24 @@ end unless resource.gender.nil?
 
 json.birthDate        resource.birth_date unless resource.birth_date.nil?
 json.deceasedBoolean  resource.deceased_boolean.to_s unless resource.deceased_boolean.nil?
+json.deceasedDatetime resource.deceased_datetime unless resource.deceased_datetime.nil?
 
 json.address resource.address do |address|
   json.partial! 'fhir/base/address', address: address
 end unless resource.address.nil?
 
+json.maritalStatus do
+  json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.marital_status
+end unless resource.marital_status.nil?
+
+json.multipleBirth resource.multiple_birth unless resource.multiple_birth.nil?
+
 json.contact resource.contact do |contact|
   json.partial! 'contact', contact: contact
 end unless resource.contact.nil?
+
+json.communication do
+  json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.communication
+end unless resource.communication.nil?
 
 json.active resource.active unless resource.active.nil?

@@ -2,7 +2,7 @@ json.name do
   json.partial! 'fhir/base/codeable_concept', codeable_concept: question.name
 end unless question.name.nil?
 
-json.text question.text unless question.text.nil?
+json.text           question.text unless question.text.nil?
 json.answerDecimal  question.answer_decimal unless question.answer_decimal.nil?
 json.answerInteger  question.answer_integer unless question.answer_integer.nil?
 json.answerBoolean  question.answer_boolean unless question.answer_boolean.nil?
@@ -14,6 +14,8 @@ json.answerInstant  question.answer_instant unless question.answer_instant.nil?
 json.choice question.choice do |choice|
   json.partial! 'fhir/base/coding', coding: choice
 end unless question.choice.nil?
+
+json.remarks        question.remarks unless question.remarks.nil?
 
 json.group question.group do |group|
     json.partial! 'group', group: group
