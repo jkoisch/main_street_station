@@ -1,0 +1,2 @@
+module Fhir::DevicesHelper
+end

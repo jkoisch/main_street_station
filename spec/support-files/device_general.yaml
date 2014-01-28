@@ -1,0 +1,22 @@
+--- !ruby/object:Fhir::Device
+  identifier:
+    - !ruby/object:Fhir::Types::Identifier
+      system: http://goodcare.org/devices/id
+      value: 345675
+    - !ruby/object:Fhir::Types::Identifier
+      label: Serial Number
+      value: AMID-342135-8464
+  type: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: http://snomed.info/sct
+        code: "86184003"
+        display: Electrocardiographic monitor and recorder
+    text: ECG
+  manufacturer: Acme Devices, Inc
+  model: AB 45-J
+  lot_number: "43453424"
+  contact:
+    - !ruby/object:Fhir::Types::Contact
+      system: phone
+      value: ext 4352

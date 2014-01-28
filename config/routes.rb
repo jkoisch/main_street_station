@@ -2,7 +2,9 @@
 
 MainStreetStation::Application.routes.draw do
 
-  resources :questionnaires
+  #resources :devices
+
+  #resources :questionnaires
 
   #match 'auth/:provider/callback', to: 'omniauth_callbacks#create'
   #match 'auth/failure', to: redirect('/')
@@ -23,6 +25,7 @@ MainStreetStation::Application.routes.draw do
     resources :Observations, :Observation, :observations, controller: :observations, default: {format: :json}
     resources :FamilyHistory, controller: :family_histories, default: {format: :json}
     resources :Questionnaire, controller: :questionnaires, default: {format: :json}
+    resources :Device, controller: :devices, default: {format: :json}
 
     get "metadata", to: 'conformance#show', defaults: {format: :json}
 
