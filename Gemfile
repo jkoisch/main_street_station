@@ -21,6 +21,7 @@ gem 'uglifier', '>= 1.0.3'
 group :test, :development do
   #gem 'better_errors'
   #gem 'binding_of_caller'
+  gem 'rest-client'
   gem 'guard'
   gem 'rspec-rails'
   gem 'database_cleaner'
