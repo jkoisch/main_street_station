@@ -33,3 +33,5 @@ end
 
 # Token based login authentication
 #  1. Login
+#  2. get token on return
+#  3. use token as part of query
