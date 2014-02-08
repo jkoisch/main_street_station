@@ -1,0 +1,1 @@
+xml.code { |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: evidence.code})} unless evidence.code.nil?

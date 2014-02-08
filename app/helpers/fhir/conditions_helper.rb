@@ -1,0 +1,2 @@
+module Fhir::ConditionsHelper
+end

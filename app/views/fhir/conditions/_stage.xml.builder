@@ -1,0 +1,1 @@
+xml.summary{ |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: stage.code})} unless stage.code.nil?
