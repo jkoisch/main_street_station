@@ -15,13 +15,13 @@ MainStreetStation::Application.routes.draw do
     #end
 
     resources :Patient, controller: "patients", as: "patients", only: [:index, :show], defaults: {format: :json}
-    resources :conformance, only: [:index, :show], defaults: {format: :json}
+    resources :Conformance, controller: "conformance", as: 'conformance', only: [:index, :show], defaults: {format: :json}
 
-    resources :Observations, :Observation, :observations, controller: :observations, default: {format: :json}
-    resources :FamilyHistory, controller: :family_histories, default: {format: :json}
-    resources :Questionnaire, controller: :questionnaires, default: {format: :json}
-    resources :Device, controller: :devices, default: {format: :json}
-    resources :Condition, controller: :conditions, default: {format: :json}
+    resources :Observations, :Observation, :observations, controller: :observations, defaults: {format: :json}
+    resources :FamilyHistory, controller: :family_histories, defaults: {format: :json}
+    resources :Questionnaire, controller: :questionnaires, defaults: {format: :json}
+    resources :Device, controller: :devices, defaults: {format: :json}
+    resources :Condition, controller: :conditions, defaults: {format: :json}
 
     get "metadata", to: 'conformance#show', defaults: {format: :json}
 
@@ -35,6 +35,8 @@ MainStreetStation::Application.routes.draw do
   devise_scope :users do
     delete "/logout", to: "devise/sessions#destroy"
   end
+
+  post 'login', to: "sessions#create", defaults: {format: :json}
 
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout" },
              controllers: {omniauth_callbacks: "omniauth_callbacks"}
