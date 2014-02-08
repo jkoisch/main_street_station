@@ -36,7 +36,6 @@ gem 'jquery-rails'
 gem 'foreman'
 gem 'rabl'
 gem 'json'
-gem 'rest-client'
 gem "nifty-generators", group: :development
 gem 'quiet_assets', group: :development
 gem 'uuid'
