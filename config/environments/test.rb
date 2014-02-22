@@ -33,4 +33,6 @@ MainStreetStation::Application.configure do
   config.active_support.deprecation = :stderr
 
   config.gringotts_observation = Rails.root + "test/observation.json"
+
+  config.fhir_enforce_security = false
 end

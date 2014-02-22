@@ -36,6 +36,8 @@ MainStreetStation::Application.configure do
 
   config.gringotts_url = 'http://gringotts.dev/'
 
+  config.fhir_enforce_security = true
+
   config.gringotts_conformance = Rails.root + 'config/conformance.json'
 
   #config.gringotts_url = 'http://protected-garden-4145.herokuapp.com/clients/'
