@@ -32,7 +32,10 @@ MainStreetStation::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 
+  config.gringotts_url = 'http://gringotts.dev/'
+
   config.gringotts_observation = Rails.root + "test/observation.json"
+  config.gringotts_conformance = Rails.root + 'config/conformance.json'
 
   config.fhir_enforce_security = false
 end

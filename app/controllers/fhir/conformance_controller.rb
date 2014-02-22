@@ -15,11 +15,7 @@ module Fhir
         end
       else
         logger.warn response
-        respond_to do |format|
-          format.html status: 500
-          format.json status: 500
-          format.xml  status: 500
-        end
+        render text: "Failure", status: 500
       end
     end
 
