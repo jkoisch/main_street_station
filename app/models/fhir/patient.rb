@@ -10,12 +10,14 @@ module Fhir
     fhir_attribute :deceased_datetime
     fhir_attribute :address, list: Types::Address
     fhir_attribute :marital_status, type: Types::CodeableConcept
-    fhir_attribute :multiple_birth
+    fhir_attribute :multiple_birth_boolean
+    fhir_attribute :multiple_birth_integer
     # TODO: Should Photo attribute be added?
     fhir_attribute :contact, list: PatientClasses::Contact
-    fhir_attribute :communication, type: Types::CodeableConcept
-    # TODO: Reference to careProvider resource
-    # TODO: Reference to managingOrganization (Organization) resource
+    fhir_attribute :communication, list: Types::CodeableConcept
+    # TODO: Reference to careProvider resource: Resource(Organization/Practitioner)
+    # TODO: Reference to managingOrganization: Resource(Organization)
+    fhir_attribute :link, list: PatientClasses::Link
     fhir_attribute :active
 
     def self.search_patient(search_params)

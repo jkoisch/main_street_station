@@ -1,8 +1,8 @@
 module Fhir
   module Types
     class Range < BaseType
-      fhir_attribute :low
-      fhir_attribute :high
+      fhir_attribute :low, type: Quantity
+      fhir_attribute :high, type: Quantity
     end
   end
 end

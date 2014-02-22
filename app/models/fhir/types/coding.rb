@@ -6,7 +6,7 @@ module Fhir
       fhir_attribute :code
       fhir_attribute :display
       fhir_attribute :primary
-      # TODO: need to resolve value_set
+      # TODO: need to resolve value_set: Resource(ValueSet)
     end
   end
 end

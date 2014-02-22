@@ -1,7 +1,7 @@
 module Fhir
   module Types
     class SampledData < BaseType
-      fhir_attribute :origin
+      fhir_attribute :origin, type: Quantity
       fhir_attribute :period
       fhir_attribute :factor
       fhir_attribute :lower_limit

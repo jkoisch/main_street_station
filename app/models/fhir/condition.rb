@@ -16,6 +16,6 @@ module Fhir
     fhir_attribute :evidence, type: Fhir::ConditionClasses::Evidence
     fhir_attribute :location, list: Fhir::ConditionClasses::Location
     fhir_attribute :related_item, list: Fhir::ConditionClasses::RelatedItem
-    fhir_attribute :note
+    fhir_attribute :notes
   end
 end

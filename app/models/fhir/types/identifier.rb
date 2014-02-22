@@ -6,7 +6,7 @@ module Fhir
       fhir_attribute :system
       fhir_attribute :value
       fhir_attribute :period, type: Period
-      # TODO: Needs assigner attribute of Fhir::Types::Identifier
+      # TODO: Needs assigner attribute: Resource(Organization)
     end
   end
 end
