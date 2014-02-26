@@ -20,7 +20,8 @@ resource.address.each do |address|
 end unless resource.address.nil?
 
 xml.maritalStatus { |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: resource.marital_status})} unless resource.marital_status.nil?
-xml.multipleBirth({value: resource.multiple_birth}) unless resource.multiple_birth.nil?
+xml.multipleBirthBoolean({value: resource.multiple_birth_boolean}) unless resource.multiple_birth_boolean.nil?
+xml.multipleBirthInteger({value: resource.multiple_birth_integer}) unless resource.multiple_birth_integer.nil?
 
 resource.contact.each do |contact|
   xml.contact { |xml| xml << render('contact', {contact: contact})}

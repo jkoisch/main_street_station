@@ -28,7 +28,8 @@ json.maritalStatus do
   json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.marital_status
 end unless resource.marital_status.nil?
 
-json.multipleBirth resource.multiple_birth unless resource.multiple_birth.nil?
+json.multipleBirthBoolean resource.multiple_birth_boolean unless resource.multiple_birth_boolean.nil?
+json.multipleBirthInteger resource.multiple_birth_integer unless resource.multiple_birth_integer.nil?
 
 json.contact resource.contact do |contact|
   json.partial! 'contact', contact: contact

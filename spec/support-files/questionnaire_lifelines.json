@@ -1,0 +1,72 @@
+{
+    "resource_type": "Questionnaire",
+    "status": "completed",
+    "authored": "2013-06-18T00:00:00+01:00",
+    "name": {
+        "coding": [
+            {
+                "system": "https://lifelines.nl",
+                "code": "VL 1-1, 18-65_1.2.2",
+                "display": "Lifelines Questionnaire 1 part 1"
+            }
+        ]
+    },
+    "identifier": [
+        {
+            "use": "temp",
+            "label": "Roel's VL 1-1, 18-65_1.2.2"
+        }
+    ],
+    "group": {
+        "group": [
+            {
+                "question": [
+                    {
+                        "text": "Do you have allergies?",
+                        "answer_string": "I am allergic to house dust"
+                    }
+                ]
+            },
+            {
+                "header": "General questions",
+                "question": [
+                    {
+                        "text": "What is your gender?",
+                        "answer_string": "Male"
+                    },
+                    {
+                        "name": {
+                            "text": "What is your date of birth?"
+                        },
+                        "answer_date": "1960-03-13"
+                    },
+                    {
+                        "name": {
+                            "text": "What is your country of birth?"
+                        },
+                        "answer_string": "The Netherlands"
+                    },
+                    {
+                        "name": {
+                            "text": "What is your marital status?"
+                        },
+                        "answer_string": "married"
+                    }
+                ]
+            },
+            {
+                "header": "Intoxications",
+                "question": [
+                    {
+                        "text": "Do you smoke?",
+                        "answer_string": "No"
+                    },
+                    {
+                        "text": "Do you drink alchohol?",
+                        "answer_string": "No, but I used to drink"
+                    }
+                ]
+            }
+        ]
+    }
+}
