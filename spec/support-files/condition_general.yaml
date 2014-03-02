@@ -1,32 +1,35 @@
 --- !ruby/object:Fhir::Condition
   code: !ruby/object:Fhir::Types::CodeableConcept
-    coding: !ruby/object:Fhir::Types::Coding
-      system: http://snomed.info/sct
-      code: 39065001
-      display: Burn of ear
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: http://snomed.info/sct
+        code: '39065001'
+        display: Burn of ear
     text: Burnt Ear
-  category:
-    - !ruby/object:Fhir::Types::CodeableConcept
-      coding: !ruby/object:Fhir::Types::Coding
+  category: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
         system: http://hl7.org/fhir/condition-category
         code: diagnosis
         display: Diagnosis
-    - !ruby/object:Fhir::Types::CodeableConcept
-      coding: !ruby/object:Fhir::Types::Coding
+      - !ruby/object:Fhir::Types::Coding
         system: http://snomed.info/sct
-        code: 439401001
+        code: '439401001'
         display: Diagnosis
   status: confirmed
   severity: !ruby/object:Fhir::Types::CodeableConcept
-    coding: !ruby/object:Fhir::Types::Coding
-      system: http://snomed.info/sct
-      code: 24484000
-      display: Severe
-  onset_date: 2012-05-24
-  location: !ruby/object:Fhir:ConditionClasses::Location
-    code: !ruby/object:Fhir::Types::CodeableConcept
-      coding: !ruby/object:Fhir::Types::Coding
+    coding:
+      - !ruby/object:Fhir::Types::Coding
         system: http://snomed.info/sct
-        code: 49521004
-        display: Left external ear structure
-      text: Left Ear
+        code: '24484000'
+        display: Severe
+  onset_date: 2012-05-24
+  location:
+    - !ruby/object:Fhir::ConditionClasses::Location
+      code: !ruby/object:Fhir::Types::CodeableConcept
+        coding:
+          - !ruby/object:Fhir::Types::Coding
+            system: http://snomed.info/sct
+            code: '49521004'
+            display: Left external ear structure
+        text: Left Ear

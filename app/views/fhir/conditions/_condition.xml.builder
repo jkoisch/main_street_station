@@ -2,7 +2,7 @@ resource.identifier.each do |identifier|
   xml.identifier {|xml| xml << render('fhir/base/identifier', {identifier: identifier})}
 end unless resource.identifier.nil?
 
-xml.date_asserted({value: resource.date_asserted}) unless resource.date_asserted.nil?
+xml.dateAsserted({value: resource.date_asserted}) unless resource.date_asserted.nil?
 xml.code{ |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: resource.code})} unless resource.code.nil?
 xml.category{ |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: resource.category})} unless resource.category.nil?
 xml.status({value: resource.status}) unless resource.status.nil?
@@ -20,8 +20,8 @@ resource.location.each do |location|
   xml.location { |xml| xml << render('location', {location: location})}
 end unless resource.location.nil?
 
-resource.related_item.each do |related_item|
+resource.relatedItem.each do |related_item|
   xml.relatedItem{ |xml| xml << render('related_item', {related_item: related_item})}
 end unless resource.related_item.nil?
 
-xml.note({value: resource.note}) unless resource.note.nil?
+xml.notes({value: resource.notes}) unless resource.notes.nil?

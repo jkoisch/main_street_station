@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'fhir/conformance'
 
-  describe "fhir/conformance/conformance" do
+  describe 'fhir/conformance/conformance' do
     let(:resource) { YAML.load(File.read('spec/support-files/conformance.yaml')) }
 
     it {should produce_fhir_json_like('spec/support-files/fhir-conformance.json')}
