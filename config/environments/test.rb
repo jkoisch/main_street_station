@@ -34,7 +34,7 @@ MainStreetStation::Application.configure do
 
   config.gringotts_url = 'http://gringotts.dev/'
 
-  config.gringotts_observation = Rails.root + "test/observation.json"
+  config.gringotts_observation = Rails.root + "spec/support-files/observation.json"
   config.gringotts_conformance = Rails.root + 'config/conformance.json'
 
   config.fhir_enforce_security = false

@@ -1,5 +1,6 @@
 module Fhir
   class Observation < BaseResource
+    fhir_attribute :id
     fhir_attribute :name, type: Types::CodeableConcept
     fhir_attribute :value_quantity, type: Types::Quantity
     fhir_attribute :value_codeable_concept, type: Types::CodeableConcept

@@ -6,7 +6,7 @@ class Fhir::ObservationsController < Fhir::FhirController
   def index
     response = get_gringotts_resources(RESOURCE)
     if response.success?
-      @observations = Fhir::Observation.init_from_ember(json_data)
+      @observations = Fhir::Observation.parse_ehmbr_list(response.body)
 
       respond_to do |format|
         format.html
@@ -21,19 +21,12 @@ class Fhir::ObservationsController < Fhir::FhirController
   end
 
   def show
-    response = get_resource(RESOURCE, params[:id][1..-1])
-    if response.is_a?(Net::HTTPSuccess)
-      json_data = JSON.parse(response.body, opts={:symbolize_names => true})
-      @patient = Fhir::Observation.init_from_ember(json_data)
-
-      respond_to do |format|
-        format.html
-        format.json
-        format.xml
-      end
+    response = get_resource(RESOURCE, params[:id])
+    if response.success?
+      @observation = Fhir::Observation.parse_ehmbr(response.body)
     else
       logger.warn response
-      render :status => 500
+      render status: 500
     end
   end
 
