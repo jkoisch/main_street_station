@@ -9,7 +9,7 @@ describe 'Secure API' do
       MainStreetStation::Application.config.fhir_enforce_security = true
     end
 
-    let(:valid_token) { "abcdefg" }
+    let(:valid_token) { UserToken.create(authentication_token: "abcdefg", expiry: DateTime.now + 5.minutes) }
 
     it 'should fail with an invalid token' do
       get '/fhir/Observations', nil,
@@ -24,9 +24,13 @@ describe 'Secure API' do
 
     it 'should pass with a valid token' do
       get '/fhir/Observations', nil,
-          'HTTP_AUTHORIZATION' => ActionController::HttpAuthentication::Token.encode_credentials(valid_token)
+          'HTTP_AUTHORIZATION' => ActionController::HttpAuthentication::Token.encode_credentials(valid_token.authentication_token)
       response.status.should be(200)
     end
+
+    it 'should do *something* with an expired token'
+
+
 
     after(:each) do
       MainStreetStation::Application.config.fhir_enforce_security = false

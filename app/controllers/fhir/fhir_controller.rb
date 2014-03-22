@@ -24,8 +24,9 @@ module Fhir
     def validate_authenticity_token
       #false # TODO: replace with actual security check
       authenticate_or_request_with_http_token do |token, options|
-        logger.warn "Token #{token} is invalid" unless token == 'abcdefg'
-        token == 'abcdefg'
+        db_token = UserToken.find_by(authentication_token: token)
+        logger.warn "Token #{token} is invalid" if db_token.nil?
+        !db_token.nil?
       end
     end
 

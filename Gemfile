@@ -34,7 +34,7 @@ end
 
 gem 'jquery-rails'
 gem 'foreman'
-gem 'rabl'
+#gem 'rabl'
 gem 'json'
 gem "nifty-generators", group: :development
 gem 'quiet_assets', group: :development
