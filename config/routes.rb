@@ -24,7 +24,6 @@ MainStreetStation::Application.routes.draw do
     resources :Condition, controller: :conditions, defaults: {format: :json}
 
     get "metadata", to: 'conformance#show', defaults: {format: :json}
-    get "metadata", to: 'condition#show', defaults: {format: :json}
 
   end
 

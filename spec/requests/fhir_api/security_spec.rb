@@ -29,7 +29,7 @@ describe 'Secure API' do
     end
 
     after(:each) do
-
+      MainStreetStation::Application.config.fhir_enforce_security = false
     end
   end
 
