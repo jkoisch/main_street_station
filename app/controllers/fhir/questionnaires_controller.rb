@@ -1,13 +1,15 @@
+require "net/http"
+
 module Fhir
-  class QuestionnairesController < FhirBaseController
-    RESOURCE = 'questionnaire
-'
-    before_action :set_questionnaire, only: [:show, :edit, :update, :destroy]
+  class QuestionnairesController < FhirController
+    RESOURCE = 'questionnaire'
+
+    before_action :set_questionnaire, only: [:show, :edit, :destroy]
 
     # GET /questionnaires
     # GET /questionnaires.json
     def index
-      response = get_gringotts_resources(RESOURCE, build_search_params(params))
+      response = get_gringotts_resources(RESOURCE)
       if response.success?
         @questionnaires = Fhir::Questionnaire.parse_ehmbr_list(response.body)
 

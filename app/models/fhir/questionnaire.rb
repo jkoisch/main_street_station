@@ -1,5 +1,6 @@
 module Fhir
   class Questionnaire < BaseResource
+    fhir_attribute :id
     fhir_attribute :status
     fhir_attribute :authored
     # TODO: subject Resource(Patient|RelatedPerson)

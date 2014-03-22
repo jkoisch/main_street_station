@@ -1,5 +1,6 @@
 module Fhir
   class Condition < BaseResource
+    fhir_attribute :id
     fhir_attribute :identifier, list: Fhir::Types::Identifier
     fhir_attribute :date_asserted
     fhir_attribute :code, type: Fhir::Types::CodeableConcept
