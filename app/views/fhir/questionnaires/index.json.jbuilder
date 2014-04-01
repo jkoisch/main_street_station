@@ -8,7 +8,7 @@ json.entry @questionnaires do |questionnaire|
   json.id "http://mainstreet.youcentric.com/fhir/Questionnaire/#{questionnaire.id}"
   json.updated DateTime.now
   json.content do
-    json.partial! 'observation', resource: observation
+    json.partial! 'questionnaire', resource: questionnaire
   end
 end
 

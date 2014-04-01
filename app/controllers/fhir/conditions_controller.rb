@@ -1,7 +1,5 @@
-require "net/http"
-
 module Fhir
-  class Fhir::ConditionsController < Fhir::FhirController
+  class ConditionsController < FhirBaseController
     RESOURCE = 'condition'
 
     def index
@@ -11,14 +9,17 @@ module Fhir
         @conditions = Fhir::Condition.parse_ehmbr_list(response.body)
 
         respond_to do |format|
-          format.html
-          format.atom
+          #format.html
+          #format.atom
           format.json
-          format.xml
+          #format.xml
         end
       else
         logger.warn response
-        respond :status => 500
+        respond_to do |format|
+          format.json status: 500
+        end
+
       end
     end
 
@@ -55,6 +56,10 @@ module Fhir
     # Never trust parameters from the scary internet, only allow the white list through.
     def condition_params
       params[:condition]
+    end
+
+    def build_search_params(params)
+
     end
   end
 

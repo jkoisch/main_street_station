@@ -94,14 +94,16 @@ ActiveRecord::Schema.define(version: 20140322000000) do
   end
 
   create_table "user_tokens", force: true do |t|
-    t.string   "authentication_token", null: false
-    t.string   "refresh_token"
-    t.datetime "expiry",               null: false
+    t.string   "authentication_token",  null: false
+    t.string   "refresh_token",         null: false
+    t.datetime "authentication_expiry", null: false
+    t.datetime "refresh_expiry",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "user_tokens", ["authentication_token"], name: "index_user_tokens_on_authentication_token", unique: true, using: :btree
+  add_index "user_tokens", ["refresh_token"], name: "index_user_tokens_on_refresh_token", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

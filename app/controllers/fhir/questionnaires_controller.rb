@@ -1,7 +1,7 @@
 require "net/http"
 
 module Fhir
-  class QuestionnairesController < FhirController
+  class QuestionnairesController < FhirBaseController
     RESOURCE = 'questionnaire'
 
     before_action :set_questionnaire, only: [:show, :edit, :destroy]

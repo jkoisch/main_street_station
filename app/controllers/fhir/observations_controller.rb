@@ -1,5 +1,3 @@
-require "net/http"
-
 class Fhir::ObservationsController < Fhir::FhirController
   RESOURCE = 'observation'
 
@@ -31,23 +29,6 @@ class Fhir::ObservationsController < Fhir::FhirController
   end
 
   def create_deontik_observation(dtl)
-    ##ext = params['_format']
-    #url = URI.parse(MainStreetStation::Application.config.deontik_url)
-    #
-    #http = Net::HTTP.new(url.host, url.port)
-    #req = Net::HTTP::Post.new(url.path)
-    #req.body = dtl[0].to_s
-    #req['Content-Type'] = "application/json+fhir; charset=UTF-8"
-    #
-    #response = http.request(req)
-    #
-    #case response
-    #  when Net::HTTPSuccess || Net::HTTPOK then response
-    #  when Net::HTTPRedirection then fetch(response['location'], limit - 1)
-    #  else
-    #    response.error!
-    #end
-
     redirect_to home_path
   end
 end
