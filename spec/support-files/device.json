@@ -1,5 +1,5 @@
 {
-    "resource_type": "Device",
+    "resourceType": "Device",
     "text": {
         "status": "generated",
         "div": "<div>\n      <p>example</p>\n    </div>"
