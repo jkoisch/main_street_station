@@ -18,6 +18,6 @@ describe "Questionnaire" do
 
     it "should return an OperationOutcome for something bad"
 
-    it {should return_single_json_object("Questionnaire"")}
+    it {should return_single_json_object("Questionnaire")}
   end
 end
