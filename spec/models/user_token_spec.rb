@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'UserToken' do
 
-  it 'should do generate a new instance'
+  it 'should generate a new instance'
 
   it 'should find by authentication token'
 
