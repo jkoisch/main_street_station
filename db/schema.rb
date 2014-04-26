@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20140322000000) do
   end
 
   create_table "user_tokens", force: true do |t|
+    t.integer  "user_id",               null: false
     t.string   "authentication_token",  null: false
     t.string   "refresh_token",         null: false
     t.datetime "authentication_expiry", null: false
