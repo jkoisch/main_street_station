@@ -33,6 +33,7 @@ class UserToken < ActiveRecord::Base
   end
 
   def refresh_authentication
+    raise 'Cannot refresh authentication after refresh limit expired' unless self.refreshable?
     generate_auth_token
     set_auth_expiry
     self

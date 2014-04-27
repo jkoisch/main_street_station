@@ -34,6 +34,36 @@ RSpec::Matchers.define :produce_fhir_xml_like do |xml_file|
   end
 end
 
+RSpec::Matchers.define :return_FHIR_JSON_object do |object_name|
+  match do |actual|
+    puts object_name
+    get "/fhir/#{object_name}/1.json"
+    hash_body = JSON.parse(response.body)
+    hash_body['resourceType'] == object_name
+  end
+end
+
+RSpec::Matchers.define :return_FHIR_JSON_bundle_object do |object_name|
+  match do |actual|
+    puts object_name
+    get "/fhir/#{object_name}.json"
+    hash_body = JSON.parse(response.body)
+    hash_body['resourceType'] == 'Bundle'
+  end
+end
+
+RSpec::Matchers.define :return_HTTP_success_for do |fhir_api_path|
+  match do |actual|
+    puts fhir_api_path
+    get "/fhir/#{fhir_api_path}"
+    response.status === 200
+  end
+  failure_message_for_should do |actual|
+    expected = 200
+    "expected: #{expected} received: #{response.status}"
+  end
+end
+
 class Hash
   def find_difference(other)
     (self.keys + other.keys).uniq.inject({}) do |memo, key|
