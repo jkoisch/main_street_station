@@ -9,7 +9,7 @@ describe 'Secure API' do
       MainStreetStation::Application.config.fhir_enforce_security = true
     end
 
-    let(:valid_token) { UserToken.create(authentication_token: "abcdefg", expiry: DateTime.now + 5.minutes) }
+    let(:valid_token) { UserToken.create(authentication_token: "abcdefg", authentication_expiry: DateTime.now + 5.minutes) }
 
     it 'should fail with an invalid token' do
       get '/fhir/Observations', nil,

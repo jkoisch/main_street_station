@@ -4,8 +4,6 @@ module Fhir
   class QuestionnairesController < FhirBaseController
     RESOURCE = 'questionnaire'
 
-    before_action :set_questionnaire, only: [:show, :edit, :destroy]
-
     # GET /questionnaires
     # GET /questionnaires.json
     def index
@@ -41,11 +39,6 @@ module Fhir
       end
     end
 
-    # GET /questionnaires/new
-    def new
-      @questionnaire = Questionnaire.new
-    end
-
     # POST /questionnaires
     # POST /questionnaires.json
     def create
@@ -65,9 +58,6 @@ module Fhir
 
     private
     # Use callbacks to share common setup or constraints between actions.
-    def set_questionnaire
-      @questionnaire = Questionnaire.find(params[:id])
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def questionnaire_params
