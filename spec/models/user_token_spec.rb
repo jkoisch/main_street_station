@@ -41,7 +41,7 @@ describe 'UserToken' do
     let(:user_token) { UserToken.create!(user: user) }
 
     it 'should generate a new authentication when still able to refresh' do
-      expect(user_token.refresh_authentication.save).not_to raise_exception
+      expect { user_token.refresh_authentication.save }.not_to raise_exception
     end
 
     it "should generate a different authentication token when it refreshes" do
@@ -90,7 +90,7 @@ describe 'UserToken' do
 
     it 'should throw an exception when asked to generate a new authentication token' do
       user_token.refresh_expiry = Time.now - 30.seconds
-      expect(user_token.refresh_authentication).to raise_exception
+      expect { user_token.refresh_authentication }.to raise_exception
     end
   end
 end

@@ -30,8 +30,6 @@ describe 'Secure API' do
 
     it 'should do *something* with an expired token'
 
-
-
     after(:each) do
       MainStreetStation::Application.config.fhir_enforce_security = false
     end
