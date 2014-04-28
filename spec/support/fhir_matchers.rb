@@ -36,7 +36,6 @@ end
 
 RSpec::Matchers.define :return_FHIR_JSON_object do |object_name|
   match do |actual|
-    puts object_name
     get "/fhir/#{object_name}/1.json"
     hash_body = JSON.parse(response.body)
     hash_body['resourceType'] == object_name
@@ -45,7 +44,6 @@ end
 
 RSpec::Matchers.define :return_FHIR_JSON_bundle_object do |object_name|
   match do |actual|
-    puts object_name
     get "/fhir/#{object_name}.json"
     hash_body = JSON.parse(response.body)
     hash_body['resourceType'] == 'Bundle'
@@ -54,7 +52,6 @@ end
 
 RSpec::Matchers.define :return_HTTP_success_for do |fhir_api_path|
   match do |actual|
-    puts fhir_api_path
     get "/fhir/#{fhir_api_path}"
     response.status === 200
   end

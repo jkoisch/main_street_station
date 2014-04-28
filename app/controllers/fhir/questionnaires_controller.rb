@@ -32,7 +32,8 @@ module Fhir
     def show
       response = get_resource(RESOURCE, params[:id])
       if response.success?
-        @questionnaires = Fhir::Questionnaire.parse_embhr(response.body)
+        @questionnaire = Fhir::Questionnaire.parse_ehmbr(response.body)
+        puts @questionnaire
       else
         logger.warn response
         render status: 500
