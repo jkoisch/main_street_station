@@ -33,7 +33,6 @@ module Fhir
       response = get_resource(RESOURCE, params[:id])
       if response.success?
         @questionnaire = Fhir::Questionnaire.parse_ehmbr(response.body)
-        puts @questionnaire
       else
         logger.warn response
         render status: 500
