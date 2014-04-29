@@ -1,7 +1,12 @@
+require "net/http"
+
 module Fhir
   class ConditionsController < FhirBaseController
     RESOURCE = 'condition'
 
+
+    # GET /conditions
+    # GET /conditions.json
     def index
       response = get_gringotts_resources(RESOURCE)
       logger.info "response: #{response.body}"
@@ -17,17 +22,20 @@ module Fhir
       else
         logger.warn response
         respond_to do |format|
+          format.html status: 500
           format.json status: 500
+          format.xml status: 500
         end
-
       end
     end
 
+    # GET /conditions/1
+    # GET /conditions/1.json
     def show
-      #response = get_resource(RESOURCE, params[:id][1..-1])
       response = get_resource(RESOURCE, params[:id])
       if response.success?
         @condition = Fhir::Condition.parse_ehmbr(response.body)
+        puts @condition
       else
         logger.warn response
         render status: 500

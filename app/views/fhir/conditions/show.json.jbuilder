@@ -1,1 +1,1 @@
-json.extract! @condition, :created_at, :updated_at
+json.partial! 'condition', resource: @condition
