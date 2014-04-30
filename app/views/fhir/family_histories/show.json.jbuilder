@@ -1,1 +1,1 @@
-json.extract! @family_history, :created_at, :updated_at
+json.partial! 'family_history', resource: @family_history

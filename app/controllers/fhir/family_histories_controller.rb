@@ -1,13 +1,13 @@
+require "net/http"
+
 module Fhir
   class FamilyHistoriesController < FhirBaseController
     RESOURCE = 'family_history'
 
-    before_action :set_family_history, only: [:show, :edit, :update, :destroy]
-
     # GET /family_histories
     # GET /family_histories.json
     def index
-      response = get_gringotts_resources(RESOURCE, build_search_params(params))
+      response = get_gringotts_resources(RESOURCE)
       if response.success?
         @family_histories = Fhir::FamilyHistory.parse_ehmbr_list(response.body)
 
@@ -32,16 +32,11 @@ module Fhir
     def show
       response = get_resource(RESOURCE, params[:id])
       if response.success?
-        @family_histories = Fhir::FamilyHistory.parse_ehmbr(response.body)
+        @family_history = Fhir::FamilyHistory.parse_ehmbr(response.body)
       else
         logger.warn response
         render status: 500
       end
-    end
-
-    # GET /family_histories/new
-    def new
-      @family_history = FamilyHistory.new
     end
 
     # POST /family_histories
@@ -62,10 +57,6 @@ module Fhir
     end
 
     private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_family_history
-      @family_history = FamilyHistory.find(params[:id])
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def family_history_params

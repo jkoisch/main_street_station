@@ -39,6 +39,7 @@ MainStreetStation::Application.configure do
   config.gringotts_conformance = Rails.root + 'config/conformance.json'
   config.gringotts_condition = Rails.root + "spec/support-files/condition.json"
   config.gringotts_questionnaire = Rails.root + "spec/support-files/questionnaire.json"
+  config.gringotts_family_history = Rails.root + "spec/support-files/family_history.json"
 
   config.fhir_enforce_security = false
 end
