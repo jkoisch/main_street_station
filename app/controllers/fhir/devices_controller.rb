@@ -1,15 +1,37 @@
-class DevicesController < ApplicationController
-  before_action :set_device, only: [:show, :edit, :update, :destroy]
+require "net/http"
+
+module Fhir
+  class DevicesController < FhirBaseController
+  RESOURCE = 'device'
 
   # GET /devices
   # GET /devices.json
   def index
-    @devices = Device.all
+    response = get_gringotts_resources(RESOURCE)
+    if response.success?
+      @devices = Fhir::Device.parse_ehmbr_list(response.body)
+
+      respond_to do |format|
+        format.json
+      end
+    else
+      respond_to do |format|
+        format.html status: 500
+        format.json status: 500
+        format.xml  status: 500
+      end
+    end
   end
 
   # GET /devices/1
   # GET /devices/1.json
   def show
+    response = get_resource(RESOURCE, params[:id])
+    if response.success?
+      @device = Fhir::Device.parse_ehmbr(response.body)
+    else
+      render status: 500
+    end
   end
 
   # GET /devices/new
@@ -71,4 +93,5 @@ class DevicesController < ApplicationController
     def device_params
       params[:device]
     end
+  end
 end

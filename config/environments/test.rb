@@ -35,11 +35,12 @@ MainStreetStation::Application.configure do
   config.gringotts_url = 'http://gringotts.dev/'
 
   config.gringotts_client = Rails.root + "spec/support-files/patient.json"
-  config.gringotts_observation = Rails.root + "spec/support-files/observation.json"
-  config.gringotts_conformance = Rails.root + 'config/conformance.json'
   config.gringotts_condition = Rails.root + "spec/support-files/condition.json"
-  config.gringotts_questionnaire = Rails.root + "spec/support-files/questionnaire.json"
+  config.gringotts_conformance = Rails.root + 'config/conformance.json'
+  config.gringotts_device = Rails.root + 'spec/support-files/device.json'
   config.gringotts_family_history = Rails.root + "spec/support-files/family_history.json"
+  config.gringotts_observation = Rails.root + "spec/support-files/observation.json"
+  config.gringotts_questionnaire = Rails.root + "spec/support-files/questionnaire.json"
 
   config.fhir_enforce_security = false
 end

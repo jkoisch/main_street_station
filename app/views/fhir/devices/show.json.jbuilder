@@ -1,1 +1,1 @@
-json.extract! @device, :created_at, :updated_at
+json.partial! 'device', resource: @device
