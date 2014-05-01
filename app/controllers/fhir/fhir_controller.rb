@@ -21,12 +21,21 @@ module Fhir
       end
     end
 
+=begin
     def validate_authenticity_token
       #false # TODO: replace with actual security check
       authenticate_or_request_with_http_token do |token, options|
         db_token = UserToken.find_by(authentication_token: token)
         logger.warn "Token #{token} is invalid" if db_token.nil?
         !db_token.nil?
+      end
+    end
+=end
+
+    def validate_authenticity_token
+      authenticate_or_request_with_http_token do |token, options|
+        db_token = UserToken.find_by(authentication_token: token)
+        !db_token.nil? and db_token.authentication_expiry > Time.now
       end
     end
 
