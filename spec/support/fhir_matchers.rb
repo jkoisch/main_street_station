@@ -42,6 +42,14 @@ RSpec::Matchers.define :return_FHIR_JSON_object do |object_name|
   end
 end
 
+RSpec::Matchers.define :return_an_OperationOutcome_for do |error_path|
+  match do |actual|
+    get "/fhir/#{error_path}"
+    hash_body = JSON.parse(response.body)
+    hash_body['resourceType'] == 'OperationOutcome'
+  end
+end
+
 RSpec::Matchers.define :return_FHIR_JSON_bundle_object do |object_name|
   match do |actual|
     get "/fhir/#{object_name}.json"

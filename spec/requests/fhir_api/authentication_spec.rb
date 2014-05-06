@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Secure API' do
+describe 'Authentication API' do
 
   describe 'Token management' do
     before(:each) do
@@ -10,6 +10,9 @@ describe 'Secure API' do
     end
 
     let(:user) { User.create!(email: 'temp@me.com', password: '123abc') }
+
+    it 'should allow a user to log in'
+
     it 'should fail with an invalid token' do
       get '/fhir/Observations', nil,
           'HTTP_AUTHORIZATION' => ActionController::HttpAuthentication::Token.encode_credentials('123456')

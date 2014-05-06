@@ -33,9 +33,13 @@ class Fhir::FhirBaseController < ApplicationController
 
       if list
         GringottResponse.new(true, [ fixed_json ])
-      elsif id && id.to_i == 1
-        logger.debug "*** display for #{resource} id:1 #{fixed_json}"
-        GringottResponse.new(true, fixed_json)
+      elsif id
+        if id.to_i == 1
+          logger.debug "*** display for #{resource} id:1 #{fixed_json}"
+          GringottResponse.new(true, fixed_json)
+        else
+          GringottResponse.new(false, nil)
+        end
       else
         nil
       end

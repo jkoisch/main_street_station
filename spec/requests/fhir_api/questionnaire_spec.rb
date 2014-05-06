@@ -6,13 +6,17 @@ describe "Questionnaire" do
     it { should return_FHIR_JSON_bundle_object("Questionnaire") }
 
     it { should return_HTTP_success_for('Questionnaire.json') }
-
-    it "should return an OperationOutcome for something bad"
   end
 
   describe 'GET /fhir/Questionnaire/1.json' do
     it { should return_FHIR_JSON_object("Questionnaire") }
 
     it { should return_HTTP_success_for('Questionnaire/1.json') }
+  end
+
+  describe 'GET /fhir/Questionnaire/n.json not found' do
+    it { should return_an_OperationOutcome_for('Questionnaire/2.json') }
+
+    it { should_not return_HTTP_success_for('Questionnaire/2.json') }
   end
 end
