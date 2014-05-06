@@ -27,7 +27,7 @@
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <li><a><%= link_to "View Statement", root_path, :method => :index %></a></li>
+                <li><a><%= link_to "View Statement", root_path %></a></li>
                 <li><a><%= link_to "Download in XML", fhir_conformance_index_path(format: :xml)%></a></li>
                 <li><a><%= link_to "Download JSON", fhir_conformance_index_path(format: :json)%></a></li>
               </ul>

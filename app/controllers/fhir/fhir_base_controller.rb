@@ -1,7 +1,9 @@
 class Fhir::FhirBaseController < ApplicationController
   def get_gringotts_resources(resource, search_params="")
     local_response = retrieve_file_resource(resource, true)
-    unless local_response
+    if local_response
+      local_response
+    else
       uri = URI.join(MainStreetStation::Application.config.gringotts_url,
                      resource.pluralize)
       unless search_params.empty?
@@ -9,19 +11,17 @@ class Fhir::FhirBaseController < ApplicationController
         uri.query = URI.encode(search_params)
       end
       wrap_response(Net::HTTP.get_response(uri))
-    else
-      local_response
     end
   end
 
   def get_resource(resource_name, id)
     local_response = retrieve_file_resource(resource_name, false, id)
-    unless local_response
+    if local_response
+      local_response
+    else
       uri = URI.join(MainStreetStation::Application.config.gringotts_url,
                      "/#{resource_name.pluralize}/#{id}")
       wrap_response(Net::HTTP.get_response(uri))
-    else
-      local_response
     end
   end
 
