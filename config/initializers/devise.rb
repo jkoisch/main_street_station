@@ -219,7 +219,7 @@ Devise.setup do |config|
                   #:strategy_class => OmniAuth::Strategies::Facebook,
 
 
-  #ENV["FACEBOOK_CONSUMER_KEY"], ["FACEBOOK_CONSUMER_SECRET"]
+  #ENV['FACEBOOK_CONSUMER_KEY'], ['FACEBOOK_CONSUMER_SECRET']
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
