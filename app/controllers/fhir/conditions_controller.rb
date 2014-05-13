@@ -1,7 +1,7 @@
-require "net/http"
+require 'net/http'
 
 module Fhir
-  class ConditionsController < FhirBaseController
+  class ConditionsController < FhirController
     RESOURCE = 'condition'
 
 

@@ -23,12 +23,12 @@ module Fhir
     def self.search_patient(search_params)
       supported_params = [:name]
 
-      if search_params[:id] == "search"
+      if search_params[:id] == 'search'
         conditions = {}
         search_params.slice(*supported_params).each do |scope, value|
         conditions[scope] = value
         end
-      elsif search_params[:id] =~ /^(@\d{1,36}+$)/
+      elsif search_params[:id] =~ /\D\d[0-9]{,36}\D/
 
       end
     end

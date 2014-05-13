@@ -16,7 +16,7 @@ module Fhir
       if MainStreetStation::Application.config.fhir_enforce_security
         validate_authenticity_token
       else
-        logger.warn "*** Authorization has been bypassed"
+        logger.warn '*** Authorization has been bypassed'
         true
       end
     end

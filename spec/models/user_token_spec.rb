@@ -12,7 +12,7 @@ describe 'UserToken' do
   describe 'when created' do
     let(:user_token) { UserToken.create!(user: user) }
 
-    it "should be active" do
+    it 'should be active' do
       expect(user_token.authentication_active?).to be_true
     end
 
@@ -44,7 +44,7 @@ describe 'UserToken' do
       expect { user_token.refresh_authentication.save }.not_to raise_exception
     end
 
-    it "should generate a different authentication token when it refreshes" do
+    it 'should generate a different authentication token when it refreshes' do
       token = user_token.authentication_token
       user_token.refresh_authentication
       expect(token).not_to eq(user_token.authentication_token)
@@ -60,14 +60,14 @@ describe 'UserToken' do
   describe 'when authentication has expired but refresh is OK' do
     let (:user_token) { UserToken.create(user: user) }
 
-    it "should not be valid" do
+    it 'should not be valid' do
       user_token.authentication_expiry = Time.now - 30.seconds
       token = user_token.authentication_token
       user_token.save!
       expect(UserToken.is_valid_auth_token(token)).to be_false
     end
 
-    it "should not be active" do
+    it 'should not be active' do
       user_token.authentication_expiry = Time.now - 30.seconds
       expect(user_token.authentication_active?).to be_false
     end

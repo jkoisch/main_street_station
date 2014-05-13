@@ -2,8 +2,8 @@
 <html>
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-    <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
@@ -15,11 +15,11 @@
             <ul class="nav">
             <% if user_signed_in? %>
               <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-              <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+              <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
             <% else %>
-              <li><%= link_to "Sign up", new_user_registration_url(:protocol => "https") %></li>
-              <li><%= link_to "Login", new_user_session_url(:protocol => "http") %></li>
-              <li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
+              <li><%= link_to 'Sign up', new_user_registration_url(:protocol => 'https') %></li>
+              <li><%= link_to 'Login', new_user_session_url(:protocol => 'http') %></li>
+              <li><%= link_to 'Sign in with Facebook', user_omniauth_authorize_path(:facebook) %></li>
             <% end %>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -27,9 +27,9 @@
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <li><a><%= link_to "View Statement", root_path %></a></li>
-                <li><a><%= link_to "Download in XML", fhir_conformance_index_path(format: :xml)%></a></li>
-                <li><a><%= link_to "Download JSON", fhir_conformance_index_path(format: :json)%></a></li>
+                <li><a><%= link_to 'View Statement', root_path %></a></li>
+                <li><a><%= link_to 'Download in XML', fhir_conformance_index_path(format: :xml)%></a></li>
+                <li><a><%= link_to 'Download JSON', fhir_conformance_index_path(format: :json)%></a></li>
               </ul>
             </ul>
           </div>

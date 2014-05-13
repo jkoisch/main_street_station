@@ -1,5 +1,5 @@
 class Fhir::FhirBaseController < ApplicationController
-  def get_gringotts_resources(resource, search_params="")
+  def get_gringotts_resources(resource, search_params='')
     local_response = retrieve_file_resource(resource, true)
     if local_response
       local_response
@@ -27,9 +27,9 @@ class Fhir::FhirBaseController < ApplicationController
 
   private
   def retrieve_file_resource(resource, list=false, id=nil)
-    if MainStreetStation::Application.config.respond_to?("gringotts_" + resource)
-      logger.debug "*** Retrieving resource #{resource} id: #{id} from file #{MainStreetStation::Application.config.send("gringotts_" + resource)}"
-      fixed_json = JSON.parse(File.read(MainStreetStation::Application.config.send("gringotts_" + resource)))
+    if MainStreetStation::Application.config.respond_to?('gringotts_' + resource)
+      logger.debug "*** Retrieving resource #{resource} id: #{id} from file #{MainStreetStation::Application.config.send('gringotts_' + resource)}"
+      fixed_json = JSON.parse(File.read(MainStreetStation::Application.config.send('gringotts_' + resource)))
 
       if list
         GringottResponse.new(true, [ fixed_json ])

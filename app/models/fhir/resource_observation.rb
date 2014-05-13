@@ -7,7 +7,7 @@ module Fhir
     end
 
     def self.parse_json_array(json_dtl)
-      resource = Resource.new()
+      resource = Resource.new
 
       resource.type = json_dtl[:type] unless json_dtl[:type].nil?
       resource.reference = json_dtl[:reference] unless json_dtl[:reference].nil?

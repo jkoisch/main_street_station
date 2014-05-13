@@ -7,7 +7,7 @@ module Fhir
     end
 
     def self.parse_input(dtl)
-      component = Component_Observation.new()
+      component = Component_Observation.new
 
       component.name = CodeableConcept.parse_json_array(dtl[:name]) unless dtl[:name].nil?
 

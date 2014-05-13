@@ -7,7 +7,7 @@ module Fhir
     end
 
     def self.parse_json_array(json_dtl)
-      narrative = Narrative.new()
+      narrative = Narrative.new
 
       narrative.div = json_dtl[:div] unless json_dtl[:div].nil?
       narrative.status = json_dtl[:status] unless json_dtl[:status].nil?

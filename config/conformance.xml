@@ -102,7 +102,7 @@
             <tbody>
               <tr>
                 <td><a href="http://www.hl7.org/implement/standards/fhir/patient.htm">Patient</a></td>
-                <td></td>
+                <td/>
                 <td class="text-center">*</td>
                 <td class='text-center'>*</td>
                 <td>
@@ -117,10 +117,10 @@
               </tr>
               <tr>
                 <td><a href="http://www.hl7.org/implement/standards/fhir/observation.htm">Observation</a></td>
-                <td></td>
+                <td/>
                 <td>*</td>
-                <td></td>
-                <td></td>
+                <td/>
+                <td/>
               </tr>
             </tbody>
           </table>

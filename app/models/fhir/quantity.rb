@@ -6,7 +6,7 @@ module Fhir
     end
 
     def self.parse_input(dtl)
-      quantity = Quantity.new()
+      quantity = Quantity.new
 
       quantity.value = dtl[:value] unless dtl[:value].nil?
       quantity.comparator = dtl[:comparator] unless dtl[:comparator].nil?

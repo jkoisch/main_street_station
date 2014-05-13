@@ -1,15 +1,15 @@
 require 'spec_helper'
 require 'support/fhir_matchers'
 
-describe "Questionnaire" do
-  describe "GET /fhir/Questionnaire" do
-    it { should return_FHIR_JSON_bundle_object("Questionnaire") }
+describe 'Questionnaire' do
+  describe 'GET /fhir/Questionnaire' do
+    it { should return_FHIR_JSON_bundle_object('Questionnaire') }
 
     it { should return_HTTP_success_for('Questionnaire.json') }
   end
 
   describe 'GET /fhir/Questionnaire/1.json' do
-    it { should return_FHIR_JSON_object("Questionnaire") }
+    it { should return_FHIR_JSON_object('Questionnaire') }
 
     it { should return_HTTP_success_for('Questionnaire/1.json') }
   end

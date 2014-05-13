@@ -15,7 +15,7 @@ module Fhir
         end
       else
         logger.warn response
-        render text: "Failure", status: 500
+        render text: 'Failure', status: 500
       end
     end
 

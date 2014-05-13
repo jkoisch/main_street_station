@@ -27,7 +27,7 @@ RSpec::Matchers.define :produce_fhir_xml_like do |xml_file|
   end
   failure_message_for_should do |actual|
     #expected = JSON.parse(File.read(xml_file))
-    expected = "--"
+    expected = '--'
     response = render
     "expected XML was: #{expected}\n generated: #{response}\n"
        # " *difference*: #{expected.find_difference(response)}"
@@ -91,7 +91,7 @@ end
 #
 require 'rexml/document'
 
-def xml_cmp a, b
+def xml_cmp (a, b)
   a = REXML::Document.new(a.to_s)
   b = REXML::Document.new(b.to_s)
 
