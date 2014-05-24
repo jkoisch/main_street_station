@@ -1,4 +1,4 @@
 --require ./spec/support/custom_progress.rb
 --format Nc
---format progress
+--format SingleLineProgressFormatter
 --color

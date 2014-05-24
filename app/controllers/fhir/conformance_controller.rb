@@ -20,7 +20,8 @@ module Fhir
     end
 
     def show
-      response = get_resource(RESOURCE, 0)
+      the_id = params.has_key?(:id) ? params[:id] : 1
+      response = get_resource(RESOURCE, the_id)
       @conformance = Fhir::Conformance.parse_ehmbr(response.body)
     end
 

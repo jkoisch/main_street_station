@@ -35,7 +35,6 @@ module Fhir
       response = get_resource(RESOURCE, params[:id])
       if response.success?
         @condition = Fhir::Condition.parse_ehmbr(response.body)
-        puts @condition
       else
         logger.warn response
         render status: 500
