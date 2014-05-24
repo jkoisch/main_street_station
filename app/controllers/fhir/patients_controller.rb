@@ -18,9 +18,13 @@ module Fhir
       else
         logger.warn response
         respond_to do |format|
-          format.html status: 500
-          format.json status: 500
-          format.xml  status: 500
+          format.html do
+            render html:Fhir::OperationOutcome.new, status: 500
+          end
+          format.json do
+            render json: Fhir::OperationOutcome.new, status: :unprocessable_entity
+          end
+          #format.xml  status: 500
         end
       end
     end

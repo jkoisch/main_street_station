@@ -42,8 +42,9 @@ RSpec::Matchers.define :return_FHIR_JSON_object do |object_name|
   end
 end
 
-RSpec::Matchers.define :return_an_OperationOutcome_for do |error_path|
+RSpec::Matchers.define :return_an_OperationOutcome_when_failing_for do |error_path|
   match do |actual|
+    GringottResponse.any_instance.stubs(:success?).returns(false)
     get "/fhir/#{error_path}"
     hash_body = JSON.parse(response.body)
     hash_body['resourceType'] == 'OperationOutcome'

@@ -28,6 +28,7 @@ group :test, :development do
   gem 'faker'
   gem 'cucumber-rails', :require => false #, '0.3.2'
   gem 'machinist', '>= 2.0.0.beta2'
+  gem 'mocha', require: 'mocha/api'
   gem 'rspec-nc'
   gem 'thin'
   #gem 'taps'
