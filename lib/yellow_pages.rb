@@ -10,17 +10,17 @@ class YellowPages < Sinatra::Base
 
   Rabl.register!
 
-  get "/communities" do
+  get '/communities' do
     @communities = getCommunities('all')
     Rabl::Renderer.json(@communities, 'directory/communities/index', view_path: 'app/views')
   end
 
-  get "/communities/:id" do
+  get '/communities/:id' do
     @community = getCommunities(params[:id])
     Rabl::Renderer.json(@community, 'directory/communities/show', view_path: 'app/views')
   end
 
-  get "/networks/:id" do
+  get '/networks/:id' do
     #TODO should be refactored into method
     @parties = Registration::Party.where(user_id: params[:id])
     @contracts = []
@@ -32,22 +32,22 @@ class YellowPages < Sinatra::Base
 
   end
 
-  get "/whitelabels/:id" do
+  get '/whitelabels/:id' do
     #TODO should be refactored
     @whitelabels = Registration::Whitelabel.where(contact_id: params[:id])
     Rabl::Renderer.json(@whitelabels, 'registration/whitelabels/index', view_path: 'app/views')
   end
 
-  get "/contracts/:id" do
+  get '/contracts/:id' do
     #TODO should be refactored
     @contracts = Registration::Contract.where(contact_id: params[:id])
     Rabl::Renderer.json(@contracts, 'registration/contracts/index', view_path: 'app/views')
   end
 
-  post "/invitations" do
-    @invitation = Registration::Party.find(params[:invitation][:party_id].split("=>")[1].gsub(/[\{\}\"]/, ''))
+  post '/invitations' do
+    @invitation = Registration::Party.find(params[:invitation][:party_id].split('=>')[1].gsub(/[\{\}\"]/, ''))
 
-    @invitation.invitation_status = "500"
+    @invitation.invitation_status = '500'
     @invitation.save
 
 
@@ -55,7 +55,7 @@ class YellowPages < Sinatra::Base
 
   end
 
-  post "/networks" do
+  post '/networks' do
     #TODO for development
     puts params
     @contract = Registration::Contract.create(params[:contract])
@@ -70,11 +70,11 @@ class YellowPages < Sinatra::Base
       #TODO should not send invitation to self ... only to others
       #TODO party should be marked as completed for self
       sendInvitation
-      @party.invitation_status = "2"
+      @party.invitation_status = '2'
       @party.save
     end
     #TODO for development ... needs to return error codes
-    "Contracts and Parties created, Invitations sent"
+    'Contracts and Parties created, Invitations sent'
   end
 
 

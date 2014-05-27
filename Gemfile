@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "1.9.3"
+ruby '1.9.3'
 
 gem 'rails', '4.0.2'
 
@@ -9,7 +9,7 @@ gem 'rails', '4.0.2'
 #gem 'sqlite3'
 gem 'pg'
 #gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
-#gem "formtastic"
+#gem 'formtastic'
 gem 'sinatra'
 gem 'twitter-bootstrap-rails'
 
@@ -38,7 +38,7 @@ gem 'jquery-rails'
 gem 'foreman'
 #gem 'rabl'
 gem 'json'
-gem "nifty-generators", group: :development
+gem 'nifty-generators', group: :development
 gem 'quiet_assets', group: :development
 gem 'uuid'
 gem 'nokogiri'

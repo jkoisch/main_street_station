@@ -14,8 +14,8 @@ MainStreetStation::Application.routes.draw do
     #          :constraint => [{ :id => /^(@\d[1,36]+$)/}, { :protocol => "http" }] do
     #end
 
-    resources :Patient, controller: "patients", as: "patients", only: [:index, :show], defaults: {format: :json}
-    resources :Conformance, controller: "conformance", as: 'conformance', only: [:index, :show], defaults: {format: :json}
+    resources :Patient, controller: 'patients', as: 'patients', only: [:index, :show], defaults: {format: :json}
+    resources :Conformance, controller: 'conformance', as: 'conformance', only: [:index, :show], defaults: {format: :json}
 
     resources :Observations, :Observation, :observations, controller: :observations, defaults: {format: :json}
     resources :FamilyHistory, controller: :family_histories, defaults: {format: :json}
@@ -23,7 +23,7 @@ MainStreetStation::Application.routes.draw do
     resources :Device, controller: :devices, defaults: {format: :json}
     resources :Condition, controller: :conditions, defaults: {format: :json}
 
-    get "metadata", to: 'conformance#show', defaults: {format: :json}
+    get 'metadata', to: 'conformance#show', defaults: {format: :json}
 
   end
 
@@ -33,15 +33,15 @@ MainStreetStation::Application.routes.draw do
   end
 
   devise_scope :users do
-    delete "/logout", to: "devise/sessions#destroy"
+    delete '/logout', to: 'devise/sessions#destroy'
   end
 
-  post 'login', to: "sessions#create", defaults: {format: :json}
+  post 'login', to: 'sessions#create', defaults: {format: :json}
 
-  devise_for :users, path_names: { sign_in: "login", sign_out: "logout" },
-             controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout' },
+             controllers: {omniauth_callbacks: 'omniauth_callbacks'}
 
-  root "fhir/conformance#index" #:controller => "fhir::conformance", :action => "index"  # :to => "fhir/conformance#index"
+  root 'fhir/conformance#index' #controller: 'fhir::conformance', action: 'index',  to: 'fhir/conformance#index'
 
 =begin
   namespace :registration do
