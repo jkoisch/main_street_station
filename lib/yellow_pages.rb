@@ -107,19 +107,19 @@ class YellowPages < Sinatra::Base
 
     #todo need to set a new field here for party ID so that can be updated directly
 
-    message = {"account_id" => @party.user_id,
-               "community_id" => @contract.community_id,
-               "content" => "Please join my YouCentric Network -- New",
-               "conversation_id" => "0",
-               "date_sent" => Date.current,
-               "from" => "South Sound Neurosurgery",
-               "from_id" => "4",
-               "is_invitation" => "true",
-               "invitation_info" => @party.as_json.to_s,
-               "status" => "",
-               "subject" => "Invitation to Network",
-               "to" => @party.user_id,
-               "to_id" => @party.user_id
+    message = {account_id: @party.user_id,
+               community_id: @contract.community_id,
+               content: 'Please join my YouCentric Network -- New',
+               conversation_id: '0',
+               date_sent: Date.current,
+               from: 'South Sound Neurosurgery',
+               from_id: '4',
+               is_invitation: 'true',
+               invitation_info: @party.as_json.to_s,
+               status: '',
+               subject: 'Invitation to Network',
+               to: @party.user_id,
+               to_id: @party.user_id
               }
 
   end
