@@ -1,9 +1,8 @@
 require 'spec_helper'
 require 'support/fhir_matchers'
 
-describe 'Observation Resource' do
-  let(:raw_json) { JSON.parse(File.read('spec/support-files/observation.json')) }
+describe Fhir::Observation do
   subject {Fhir::Observation}
 
-  it { should parse_ehmbr_response(raw_json) }
+  it { should parse_ehmbr_response('spec/support-files/observation.json') }
 end

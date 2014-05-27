@@ -1,5 +1,6 @@
-RSpec::Matchers.define :parse_ehmbr_response do |raw_json|
+RSpec::Matchers.define :parse_ehmbr_response do |json_file|
   match do |actual|
+    raw_json = JSON.parse(File.read(json_file))
     actual.parse_ehmbr(raw_json) != nil
   end
 end

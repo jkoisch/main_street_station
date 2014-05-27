@@ -1,9 +1,8 @@
 require 'spec_helper'
 require 'support/fhir_matchers'
 
-describe 'Condition Resource' do
-  let(:raw_json) { JSON.parse(File.read('spec/support-files/condition.json')) }
+describe Fhir::Condition do
   subject {Fhir::Condition}
 
-  it { should parse_ehmbr_response(raw_json) }
+  it { should parse_ehmbr_response('spec/support-files/condition.json') }
 end
