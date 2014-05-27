@@ -121,7 +121,6 @@ class YellowPages < Sinatra::Base
                to: @party.user_id,
                to_id: @party.user_id
               }
-
   end
 
 end
