@@ -4,7 +4,7 @@
   <tr>
     <th>Name</th>
   </tr>
-  <% for community_role_kind in @community_role_kinds %>
+  <% @community_role_kinds.each do |community_role_kind| %>
     <tr>
       <td><%= community_role_kind.name %></td>
       <td><%= link_to "Show", community_role_kind %></td>

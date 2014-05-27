@@ -4,7 +4,7 @@
     <th>Name</th>
     <th>Objective</th>
   </tr>
-  <% for community in @communities %>
+  <% @communities.each do |community| %>
     <tr>
       <td><%= community.name %></td>
       <td><%= community.objective %></td>

@@ -17,7 +17,7 @@
     <td width="300"><strong>Services:</strong></td>
   </tr>
   <tr>
-    <% for community_role in @community.community_roles do %>
+    <% @community.community_roles.each do |community_role| %>
         <tr>
         <td>
           <strong><%=h community_role.name %></strong>
@@ -27,19 +27,19 @@
         </td>
         <td>
           <strong>
-            <% for thisHash in @community_role_kinds.select{|v| v["id"] == community_role.role_kind.to_i} do %>
+            <% @community_role_kinds.select{|v| v["id"] == community_role.role_kind.to_i}.each do |thisHash| %>
                 <%= thisHash['name'] %>
             <% end %>
           </strong>
         </td>
 				<td>
 					<ul>
-					<% for service in community_role.services do %>
+					<% community_role.services.each do |service| %>
 
 						<li>Name: <%= service.name %></li>
 						<li>Description: <%= service.description %></li>
 
-							<% for operation in service.youcentric_operations %>
+							<% service.youcentric_operations.each do |operation| %>
 									<ul>
 										<li>Operation: </li>
 										<ul>
@@ -50,7 +50,7 @@
 									</ul>
 							<% end %>
 
-							<% for info in service.youcentric_objects %>
+							<% service.youcentric_objects.each do |info| %>
 									<ul>
 										<li>Information: </li>
 										<ul>

@@ -14,17 +14,17 @@
 </p>
 <td>
 	<strong>
-		<% for party in community_role.parties do %>
+		<% community_role.parties.each do |party| %>
 
-			<% for invitation_e in party.invitation_emails do %>
+			<% party.invitation_emails.each do |invitation_e| %>
 				Invitation Email <%=statusText invitation_e.status%> <%= invitation_e.email %>
 			<% end %>
 
-			<% for invitation_y in party.invitation_yous do %>
+			<% party.invitation_yous.each do |invitation_y| %>
 				Invitation <%=statusText invitation_y.status%> you
 			<% end %>
 
-			<% for invitation_i in party.invitation_ids do %>
+			<% party.invitation_ids.each do |invitation_i| %>
 				Invitation <%=statusText invitation_i.status%> <%= invitation_i.youCentricCenter_id %>
 			<% end %>
 		<% end %>

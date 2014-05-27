@@ -7,7 +7,7 @@
     <th>Description</th>
     <th>Address</th>
   </tr>
-  <% for service in @services %>
+  <% @services.each do |service| %>
     <tr>
       <td><%= service.community_role_id %></td>
       <td><%= service.name %></td>

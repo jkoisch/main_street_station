@@ -6,7 +6,7 @@
     <th>Description</th>
     <th>Community</th>
   </tr>
-  <% for community_role in @community_roles %>
+  <% @community_roles.each do |community_role| %>
     <tr>
       <td><%= community_role.name %></td>
       <td><%= community_role.description %></td>

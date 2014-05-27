@@ -11,7 +11,7 @@
     <th>Design Notes</th>
     <th>Conformance Profile</th>
   </tr>
-  <% for youcentric_object in @youcentric_objects %>
+  <% @youcentric_objects.each do |youcentric_object| %>
     <tr>
       <td><%= youcentric_object.service_id %></td>
       <td><%= youcentric_object.name %></td>

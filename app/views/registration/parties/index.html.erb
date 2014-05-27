@@ -6,7 +6,7 @@
     <th>Signature</th>
     <th>Youcentriccenter</th>
   </tr>
-  <% for party in @parties %>
+  <% @parties.each do |community_role| %>
     <tr>
       <td><%= party.community_role_id %></td>
       <td><%= party.signature %></td>

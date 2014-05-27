@@ -7,7 +7,7 @@
     <th>Description</th>
     <th>Verb</th>
   </tr>
-  <% for youcentric_operation in @youcentric_operations %>
+  <% @youcentric_operations.each do |youcentric_operation| %>
     <tr>
       <td><%= youcentric_operation.service_id %></td>
       <td><%= youcentric_operation.name %></td>
