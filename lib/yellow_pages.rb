@@ -92,9 +92,9 @@ class YellowPages < Sinatra::Base
   def sendInvitation
     #TODO should be refactored into sendMessage
     url = 'http://localhost:7777/youcentric_messages'
-    @youcentric_message = RestClient.post(
-        url,
-        {:youcentric_message => buildInvitation, :user_id => @party.user_id}, {:content_type => :json, :accept => :json})
+    @youcentric_message = RestClient.post(url,
+                                          {youcentric_message: buildInvitation, user_id: @party.user_id},
+                                          {content_type: :json, accept: :json})
   end
 
   def buildInvitation
