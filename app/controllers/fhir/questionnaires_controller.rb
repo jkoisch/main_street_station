@@ -1,7 +1,7 @@
 require 'net/http'
 
 module Fhir
-  class QuestionnairesController < FhirBaseController
+  class QuestionnairesController < FhirController
     RESOURCE = 'questionnaire'
 
     # GET /questionnaires

@@ -1,7 +1,7 @@
 require 'net/http'
 
 module Fhir
-  class DevicesController < FhirBaseController
+  class DevicesController < FhirController
   RESOURCE = 'device'
 
   # GET /devices

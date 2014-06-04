@@ -1,7 +1,7 @@
 require 'net/http'
 
 module Fhir
-  class FamilyHistoriesController < FhirBaseController
+  class FamilyHistoriesController < FhirController
     RESOURCE = 'family_history'
 
     # GET /family_histories
