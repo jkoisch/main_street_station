@@ -1,4 +1,4 @@
-<% title "Verbs" %>
+<% title 'Verbs' %>
 
 <table>
   <tr>
@@ -7,11 +7,11 @@
   <% @verbs.each do |verb| %>
     <tr>
       <td><%= verb.name %></td>
-      <td><%= link_to "Show", verb %></td>
-      <td><%= link_to "Edit", edit_verb_path(verb) %></td>
-      <td><%= link_to "Destroy", verb, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to 'Show', verb %></td>
+      <td><%= link_to 'Edit', edit_verb_path(verb) %></td>
+      <td><%= link_to 'Destroy', verb, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Verb", new_verb_path %></p>
+<p><%= link_to 'New Verb', new_verb_path %></p>

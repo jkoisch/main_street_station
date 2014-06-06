@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     stored_location_for(resource) ||  if resource.is_a?(User)
-                                        (flash[:notice] = "user logged in native")
+                                        (flash[:notice] = 'user logged in native')
                                         (new_user_session_url = root_url)
                                         #trust_authentication_path(User)
                                       else
@@ -17,9 +17,9 @@ class ApplicationController < ActionController::Base
   end
 
   def https_redirect
-    if ENV['ENABLE_HTTPS'] == "yes"
+    if ENV['ENABLE_HTTPS'] == 'yes'
       if request.ssl? && !use_https? || !request.ssl? && use_https?
-        protocol = request.ssl? ? 'http' : "https"
+        protocol = request.ssl? ? 'http' : 'https'
         flash.keep
         redirect_to protocol: "#{protocol}://", status: :moved_permanently
       end

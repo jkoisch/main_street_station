@@ -15,7 +15,7 @@ class Directory::ServicesController < ApplicationController
     @service = Service.new(params[:service])
     if @service.save
       respond_to do |format|
-        format.html {redirect_to @service, :notice => "Successfully created service."}
+        format.html {redirect_to @service, :notice => 'Successfully created service.'}
         format.xml {render :xml => @service}
         format.json {render :json => @service}
       end
@@ -31,7 +31,7 @@ class Directory::ServicesController < ApplicationController
   def update
     @service = Service.find(params[:id])
     if @service.update_attributes(params[:service])
-      redirect_to @service, :notice  => "Successfully updated service."
+      redirect_to @service, :notice  => 'Successfully updated service.'
     else
       render :action => 'edit'
     end
@@ -40,6 +40,6 @@ class Directory::ServicesController < ApplicationController
   def destroy
     @service = Service.find(params[:id])
     @service.destroy
-    redirect_to services_url, :notice => "Successfully destroyed service."
+    redirect_to services_url, :notice => 'Successfully destroyed service.'
   end
 end

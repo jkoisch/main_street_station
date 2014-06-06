@@ -18,7 +18,7 @@ atom_feed({:id => "urn:uuid: #{uuid.generate}"}) do |feed|
       end
 
       entry.content :type => 'text/xml' do |content|
-        content.tag!('Patient', xmlns: "http://hl7.org/fhir") do |pnt|
+        content.tag!('Patient', xmlns: 'http://hl7.org/fhir') do |pnt|
 
           pnt.active :value => patient.active
 

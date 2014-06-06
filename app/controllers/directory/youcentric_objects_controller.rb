@@ -15,7 +15,7 @@ class Directory::YoucentricObjectsController < ApplicationController
     @youcentric_object = YoucentricObject.new(params[:youcentric_object])
     if @youcentric_object.save
       respond_to do |format|
-        format.html {redirect_to @youcentric_object, :notice => "Successfully created youcentric object."}
+        format.html {redirect_to @youcentric_object, :notice => 'Successfully created youcentric object.'}
         format.xml {render :xml => @youcentric_object}
         format.json {render :json => @youcentric_object}
         end
@@ -31,7 +31,7 @@ class Directory::YoucentricObjectsController < ApplicationController
   def update
     @youcentric_object = YoucentricObject.find(params[:id])
     if @youcentric_object.update_attributes(params[:youcentric_object])
-      redirect_to @youcentric_object, :notice  => "Successfully updated youcentric object."
+      redirect_to @youcentric_object, :notice  => 'Successfully updated youcentric object.'
     else
       render :action => 'edit'
     end
@@ -40,6 +40,6 @@ class Directory::YoucentricObjectsController < ApplicationController
   def destroy
     @youcentric_object = YoucentricObject.find(params[:id])
     @youcentric_object.destroy
-    redirect_to youcentric_objects_url, :notice => "Successfully destroyed youcentric object."
+    redirect_to youcentric_objects_url, :notice => 'Successfully destroyed youcentric object.'
   end
 end

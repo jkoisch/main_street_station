@@ -15,7 +15,7 @@ class Directory::PartiesController < ApplicationController
     @party = Party.new(params[:party])
     if @party.save
       respond_to do |format|
-        format.html {redirect_to @party, :notice => "Successfully created party."}
+        format.html {redirect_to @party, :notice => 'Successfully created party.'}
         format.xml {render :xml => @party}
         format.json {render :json => @party}
       end
@@ -31,7 +31,7 @@ class Directory::PartiesController < ApplicationController
   def update
     @party = Party.find(params[:id])
     if @party.update_attributes(params[:party])
-      redirect_to @party, :notice  => "Successfully updated party."
+      redirect_to @party, :notice  => 'Successfully updated party.'
     else
       render :action => 'edit'
     end
@@ -40,6 +40,6 @@ class Directory::PartiesController < ApplicationController
   def destroy
     @party = Party.find(params[:id])
     @party.destroy
-    redirect_to parties_url, :notice => "Successfully destroyed party."
+    redirect_to parties_url, :notice => 'Successfully destroyed party.'
   end
 end

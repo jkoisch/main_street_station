@@ -48,7 +48,7 @@ class Registration::WhitelabelsController < ApplicationController
         format.html { redirect_to @registration_whitelabel, notice: 'Whitelabel was successfully created.' }
         format.json { render json: @registration_whitelabel, status: :created, location: @registration_whitelabel }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
         format.json { render json: @registration_whitelabel.errors, status: :unprocessable_entity }
       end
     end
@@ -64,7 +64,7 @@ class Registration::WhitelabelsController < ApplicationController
         format.html { redirect_to @registration_whitelabel, notice: 'Whitelabel was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit' }
         format.json { render json: @registration_whitelabel.errors, status: :unprocessable_entity }
       end
     end

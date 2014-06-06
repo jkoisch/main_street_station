@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       logger.debug "#{@user} is trying to create a session"
     else
       logger.error "Attempt to login as #{params[:user_name]}"
-      render text: "Login failed", status: :unauthorized
+      render text: 'Login failed', status: :unauthorized
     end
   end
 

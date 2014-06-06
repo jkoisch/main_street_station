@@ -1,5 +1,4 @@
-<% title "Network: " + @community.name %>
-</p>
+<% title 'Network: ' + @community.name %>
 <p>
   <strong>Description:</strong>
   <%= @community.description %>
@@ -18,61 +17,59 @@
   </tr>
   <tr>
     <% @community.community_roles.each do |community_role| %>
-        <tr>
-        <td>
-          <strong><%=h community_role.name %></strong>
-          <ul>
-            <%=h community_role.description %>
-          </ul>
-        </td>
-        <td>
-          <strong>
-            <% @community_role_kinds.select{|v| v["id"] == community_role.role_kind.to_i}.each do |thisHash| %>
-                <%= thisHash['name'] %>
-            <% end %>
-          </strong>
-        </td>
-				<td>
-					<ul>
-					<% community_role.services.each do |service| %>
+    <td>
+      <strong><%=h community_role.name %></strong>
+      <ul>
+        <%=h community_role.description %>
+      </ul>
+    </td>
+    <td>
+      <strong>
+        <% @community_role_kinds.select{|v| v['id'] == community_role.role_kind.to_i}.each do |thisHash| %>
+          <%= thisHash['name'] %>
+        <% end %>
+      </strong>
+    </td>
+    <td>
+      <ul>
+        <% community_role.services.each do |service| %>
 
-						<li>Name: <%= service.name %></li>
-						<li>Description: <%= service.description %></li>
+          <li>Name: <%= service.name %></li>
+          <li>Description: <%= service.description %></li>
 
-							<% service.youcentric_operations.each do |operation| %>
-									<ul>
-										<li>Operation: </li>
-										<ul>
-											<li>Name: <%= operation.name %></li>
-											<li>Description: <%= operation.description %></li>
-											<li>Verb: <%= Directory::Verb.find(operation.verb_id).name unless operation.verb_id.nil? %></li>
-										</ul>
-									</ul>
-							<% end %>
+          <% service.youcentric_operations.each do |operation| %>
+            <ul>
+              <li>Operation: </li>
+              <ul>
+                <li>Name: <%= operation.name %></li>
+                <li>Description: <%= operation.description %></li>
+                <li>Verb: <%= Directory::Verb.find(operation.verb_id).name unless operation.verb_id.nil? %></li>
+              </ul>
+            </ul>
+          <% end %>
 
-							<% service.youcentric_objects.each do |info| %>
-									<ul>
-										<li>Information: </li>
-										<ul>
-											<li>Name: <%= info.name %></li>
-											<li>Description: <%= info.description %></li>
-											<li>Parent Object: <%= Directory::YoucentricObject.find(info.youcentric_object_parent_id).name unless info.youcentric_object_parent_id.nil? %></li>
-											<li>Notes: <%= info.design_notes %></li>
-											<li>Conformance: <%= info.conformance_profile %></li>
-										</ul>
-									</ul>
-							<% end %>
-					<% end %>
-					</ul>
-				</td>
-        </tr>
-    <% end %>
+          <% service.youcentric_objects.each do |info| %>
+            <ul>
+              <li>Information: </li>
+              <ul>
+                <li>Name: <%= info.name %></li>
+                <li>Description: <%= info.description %></li>
+                <li>Parent Object: <%= Directory::YoucentricObject.find(info.youcentric_object_parent_id).name unless info.youcentric_object_parent_id.nil? %></li>
+                <li>Notes: <%= info.design_notes %></li>
+                <li>Conformance: <%= info.conformance_profile %></li>
+              </ul>
+            </ul>
+          <% end %>
+        <% end %>
+      </ul>
+    </td>
+  <% end %>
   </tr>
 </table>
 
 
 <p>
-  <%= link_to "Edit", edit_directory_community_path(@community) %> |
-  <%= link_to "Destroy", @community, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", directory_communities_path %>
+  <%= link_to 'Edit', edit_directory_community_path(@community) %> |
+  <%= link_to 'Destroy', @community, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to 'View All', directory_communities_path %>
 </p>

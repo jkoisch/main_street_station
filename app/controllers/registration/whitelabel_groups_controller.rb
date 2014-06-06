@@ -47,7 +47,7 @@ class Registration::WhitelabelGroupsController < ApplicationController
         format.html { redirect_to @registration_whitelabel_group, notice: 'Whitelabel group was successfully created.' }
         format.json { render json: @registration_whitelabel_group, status: :created, location: @registration_whitelabel_group }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
         format.json { render json: @registration_whitelabel_group.errors, status: :unprocessable_entity }
       end
     end
@@ -63,7 +63,7 @@ class Registration::WhitelabelGroupsController < ApplicationController
         format.html { redirect_to @registration_whitelabel_group, notice: 'Whitelabel group was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit' }
         format.json { render json: @registration_whitelabel_group.errors, status: :unprocessable_entity }
       end
     end

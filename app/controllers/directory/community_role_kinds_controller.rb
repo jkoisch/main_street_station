@@ -14,7 +14,7 @@ class Directory::CommunityRoleKindsController < ApplicationController
   def create
     @community_role_kind = CommunityRoleKind.new(params[:community_role_kind])
     if @community_role_kind.save
-      redirect_to @community_role_kind, :notice => "Successfully created community role kind."
+      redirect_to @community_role_kind, :notice => 'Successfully created community role kind.'
     else
       render :action => 'new'
     end
@@ -27,7 +27,7 @@ class Directory::CommunityRoleKindsController < ApplicationController
   def update
     @community_role_kind = CommunityRoleKind.find(params[:id])
     if @community_role_kind.update_attributes(params[:community_role_kind])
-      redirect_to @community_role_kind, :notice  => "Successfully updated community role kind."
+      redirect_to @community_role_kind, :notice  => 'Successfully updated community role kind.'
     else
       render :action => 'edit'
     end
@@ -36,6 +36,6 @@ class Directory::CommunityRoleKindsController < ApplicationController
   def destroy
     @community_role_kind = CommunityRoleKind.find(params[:id])
     @community_role_kind.destroy
-    redirect_to community_role_kinds_url, :notice => "Successfully destroyed community role kind."
+    redirect_to community_role_kinds_url, :notice => 'Successfully destroyed community role kind.'
   end
 end

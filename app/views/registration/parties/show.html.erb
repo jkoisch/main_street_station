@@ -1,4 +1,4 @@
-<% title "Party" %>
+<% title 'Party' %>
 
 <p>
   <strong>Community Role:</strong>
@@ -31,13 +31,13 @@
 	</strong>
 	<br />
 	<ul>
-		<%= link_to "More ... (e.g., who fills it in your network)", yellow_pages_community_community_role_path(@community, community_role) %>
+		<%= link_to 'More ... (e.g., who fills it in your network)', yellow_pages_community_community_role_path(@community, community_role) %>
 
 	</ul>
 </td>
 
 <p>
-  <%= link_to "Edit", edit_party_path(@party) %> |
-  <%= link_to "Destroy", @party, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", parties_path %>
+  <%= link_to 'Edit', edit_party_path(@party) %> |
+  <%= link_to 'Destroy', @party, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to 'View All', parties_path %>
 </p>

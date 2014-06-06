@@ -1,4 +1,4 @@
-<% title "Community Role Kinds" %>
+<% title 'Community Role Kinds' %>
 
 <table>
   <tr>
@@ -7,11 +7,11 @@
   <% @community_role_kinds.each do |community_role_kind| %>
     <tr>
       <td><%= community_role_kind.name %></td>
-      <td><%= link_to "Show", community_role_kind %></td>
-      <td><%= link_to "Edit", edit_community_role_kind_path(community_role_kind) %></td>
-      <td><%= link_to "Destroy", community_role_kind, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to 'Show', community_role_kind %></td>
+      <td><%= link_to 'Edit', edit_community_role_kind_path(community_role_kind) %></td>
+      <td><%= link_to 'Destroy', community_role_kind, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Community Role Kind", new_community_role_kind_path %></p>
+<p><%= link_to 'New Community Role Kind', new_community_role_kind_path %></p>

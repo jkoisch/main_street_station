@@ -32,7 +32,7 @@ class Directory::CommunitiesController < ApplicationController
     @community = Directory::Community.new(params[:directory_community])
     if @community.save
       respond_to do |format|
-        format.html {redirect_to @community, :notice => "Successfully created network."}
+        format.html {redirect_to @community, :notice => 'Successfully created network.'}
         format.xml {render :xml => @community}
         format.json {render :json => @community}
       end
@@ -49,7 +49,7 @@ class Directory::CommunitiesController < ApplicationController
   def update
     @community = Directory::Community.find(params[:id])
     if @community.update_attributes(params[:directory_community])
-      redirect_to @community, :notice  => "Successfully updated community."
+      redirect_to @community, :notice  => 'Successfully updated community.'
     else
       render :action => 'edit'
     end
@@ -58,7 +58,7 @@ class Directory::CommunitiesController < ApplicationController
   def destroy
     @community = Directory::Community.find(params[:id])
     @community.destroy
-    redirect_to communities_url, :notice => "Successfully destroyed community."
+    redirect_to communities_url, :notice => 'Successfully destroyed community.'
   end
 
 end
