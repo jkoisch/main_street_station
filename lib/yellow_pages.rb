@@ -11,12 +11,12 @@ class YellowPages < Sinatra::Base
   Rabl.register!
 
   get '/communities' do
-    @communities = getCommunities('all')
+    @communities = get_communities('all')
     Rabl::Renderer.json(@communities, 'directory/communities/index', view_path: 'app/views')
   end
 
   get '/communities/:id' do
-    @community = getCommunities(params[:id])
+    @community = get_communities(params[:id])
     Rabl::Renderer.json(@community, 'directory/communities/show', view_path: 'app/views')
   end
 
@@ -45,7 +45,7 @@ class YellowPages < Sinatra::Base
   end
 
   post '/invitations' do
-    @invitation = Registration::Party.find(params[:invitation][:party_id].split('=>')[1].gsub(/[\{\}\"]/, ''))
+    @invitation = Registration::Party.find(params[:invitation][:party_id].split('=>')[1].gsub(/[\{\}"]/, ''))
 
     @invitation.invitation_status = '500'
     @invitation.save
@@ -69,7 +69,7 @@ class YellowPages < Sinatra::Base
 
       #TODO should not send invitation to self ... only to others
       #TODO party should be marked as completed for self
-      sendInvitation
+      send_invitation
       @party.invitation_status = '2'
       @party.save
     end
@@ -78,7 +78,7 @@ class YellowPages < Sinatra::Base
   end
 
 
-  def getCommunities (id)
+  def get_communities (id)
     #TODO this should be refactored into helper class
     if id.nil?
       @communities = Directory::Community.all
@@ -89,15 +89,15 @@ class YellowPages < Sinatra::Base
     end
   end
 
-  def sendInvitation
+  def send_invitation
     #TODO should be refactored into sendMessage
     url = 'http://localhost:7777/youcentric_messages'
     @youcentric_message = RestClient.post(url,
-                                          {youcentric_message: buildInvitation, user_id: @party.user_id},
+                                          {youcentric_message: build_invitation, user_id: @party.user_id},
                                           {content_type: :json, accept: :json})
   end
 
-  def buildInvitation
+  def build_invitation
     #:account_id, :archive_state, :cc, :cc_id, :community_id, :content, :conversation_id, :date_sent, :encoding, :folder_tag, :from, :from_id, :is_invitation, :reply_to, :status, :subject, :to, :to_id, :urgency
 
     #TODO sender needs to be set to owner

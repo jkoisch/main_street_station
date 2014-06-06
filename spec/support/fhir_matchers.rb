@@ -27,6 +27,7 @@ RSpec::Matchers.define :produce_fhir_xml_like do |xml_file|
     response = expected_xml
     #false
   end
+  # noinspection RubyUnusedLocalVariable
   failure_message_for_should do |actual|
     #expected = JSON.parse(File.read(xml_file))
     expected = '--'

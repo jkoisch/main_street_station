@@ -33,6 +33,7 @@ module Fhir
 =end
 
     def validate_authenticity_token
+      # noinspection RubyUnusedLocalVariable
       authenticate_or_request_with_http_token do |token, options|
         db_token = UserToken.find_by(authentication_token: token)
         !db_token.nil? and db_token.authentication_expiry > Time.now
