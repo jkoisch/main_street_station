@@ -8,5 +8,5 @@ resource.search_include.each do |search_include|
   xml.searchInclude search_include
 end unless resource.search_include.nil?
 resource.search_param.each do |search_param|
-  xml.searchParam { |xml| xml << render('search_param', {searchParam: resource.search_param}) }
+  xml.searchParam { |xml| xml << render('search_param', {searchParam: search_param}) }
 end unless resource.search_param.nil?

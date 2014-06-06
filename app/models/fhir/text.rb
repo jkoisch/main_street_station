@@ -3,6 +3,7 @@ module Fhir
 
     attr_accessor :status, :div
 
+    # noinspection RubyUnusedLocalVariable
     def initialize(attributes = {})
     end
 

@@ -3,6 +3,7 @@ module Fhir
 
     attr_accessor :name, :valueQuantity
 
+    # noinspection RubyUnusedLocalVariable
     def initialize(attributes = {})
     end
 

@@ -14,6 +14,7 @@ module Fhir
       end
     end
 
+    # noinspection RubyUnusedLocalVariable
     def ehmbr_resource_type=(content)
       # Just eat the contents, might wish to validate in future
     end

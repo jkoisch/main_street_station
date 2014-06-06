@@ -3,6 +3,7 @@ module Fhir
 
     attr_accessor :type, :reference, :display # :url,
 
+    # noinspection RubyUnusedLocalVariable
     def initialize(attributes={})
     end
 

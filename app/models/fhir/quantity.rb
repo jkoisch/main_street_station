@@ -2,6 +2,7 @@ module Fhir
   class Quantity
     attr_accessor :value, :comparator, :units, :system, :code
 
+    # noinspection RubyUnusedLocalVariable
     def initialize(attributes = {})
     end
 

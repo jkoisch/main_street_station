@@ -65,19 +65,19 @@ module Fhir
       supported_params = [:name, :birthdate_before, :birthdate_after, :family,
                           :given, :gender, :id, :system]
 
-      search_params = ""
+      search_params = ''
       params.slice(*supported_params).each do |scope, value|
         case scope
-          when "birthdate_after", "birthdate_before"
+          when 'birthdate_after', 'birthdate_before'
             search_params << "query[#{scope}]=#{value}"
-          when "id", "system"
+          when 'id', 'system'
             if search_params.empty?
               search_params << "query[id_search][#{scope}]=#{value}"
             else
               search_params << ";query[id_search][#{scope}]=#{value}"
             end
           else
-            if scope == "gender"
+            if scope == 'gender'
               #TODO: regex for m, f, un (undifferentiated),
               # and unk (unknown) only and to do upper
               value = value.upcase

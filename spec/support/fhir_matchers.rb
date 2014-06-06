@@ -11,6 +11,7 @@ RSpec::Matchers.define :produce_fhir_json_like do |json_file|
     expected_json = File.read(json_file)
     response == expected_json
   end
+  # noinspection RubyUnusedLocalVariable
   failure_message_for_should do |actual|
     expected = JSON.parse(File.read(json_file))
     hash_response = JSON.parse(response)

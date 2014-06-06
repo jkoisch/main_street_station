@@ -66,7 +66,7 @@ module Fhir
     end
 
     def build_search_params(params)
-
+      #TODO: Need implementation of search params
     end
   end
 

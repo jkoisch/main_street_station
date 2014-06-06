@@ -2,6 +2,7 @@ module Fhir
   class ReferenceRange
     attr_accessor :meaning, :range
 
+    # noinspection RubyUnusedLocalVariable
     def initialize(attributes = {})
     end
 
