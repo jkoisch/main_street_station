@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'support/fhir_matchers'
 
 describe 'Questionnaire' do
   describe 'GET /fhir/Questionnaire' do
@@ -15,7 +14,7 @@ describe 'Questionnaire' do
   end
 
   describe 'GET /fhir/Questionnaire/n.json not found' do
-    it { should return_an_OperationOutcome_for('Questionnaire/2.json') }
+    it { should return_an_OperationOutcome_when_failing_for('Questionnaire/2.json') }
 
     it { should_not return_HTTP_success_for('Questionnaire/2.json') }
   end

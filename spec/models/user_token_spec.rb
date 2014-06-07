@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'UserToken' do
-  let(:user) {User.create!(email: 'temp@me.com', password: '123abc')}
+  let(:user) {User.create!(email: Faker::Internet.email, password: '123abc')}
 
   it 'should generate a new instance' do
     UserToken.create! do |ut|

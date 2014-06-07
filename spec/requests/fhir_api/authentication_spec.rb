@@ -6,6 +6,7 @@ describe 'Authentication API' do
     before(:each) do
       # set the valid token
       # override the validate_authenticity_token method to use the valid_token below
+      # noinspection RubyResolve
       MainStreetStation::Application.config.fhir_enforce_security = true
     end
 
@@ -33,6 +34,7 @@ describe 'Authentication API' do
 
     it "should do return 'Not Authorized' with an expired token" do
       user_token = UserToken.create!(user: user)
+      # noinspection RubyResolve
       user_token.authentication_expiry = Time.now - 30.seconds
       user_token.save!
       get '/fhir/Observations', nil,
@@ -41,6 +43,7 @@ describe 'Authentication API' do
     end
 
     after(:each) do
+      # noinspection RubyResolve
       MainStreetStation::Application.config.fhir_enforce_security = false
     end
   end

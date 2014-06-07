@@ -16,7 +16,7 @@ MainStreetStation::Application.configure do
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -43,6 +43,6 @@ MainStreetStation::Application.configure do
   #config.gringotts_url = 'http://protected-garden-4145.herokuapp.com/clients/'
  # config.ewout_url = 'http://spark.furore.com/fhir/observation?_format=json'  #patient?_format='
   #config.grahame_url = 'http://hl7connect.healthintersections.com.au/svc/fhir/observation?_format=json'  #patient?_format='
-  #config.observation_home_url = '/Users/drodriguez/FHIR-Patient_Files/gringott-observation.json'
+  #config.observation_home_url = Rails.root + '/FHIR-Patient_Files/gringott-observation.json'
   #config.deontik_url = 'http://eventswarm.whyanbeel.net:3333/fhir/observation'
 end

@@ -49,7 +49,7 @@ json.bodySite do
   json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.body_site
 end unless resource.body_site.nil?
 
-json.method do
+json.set! :method do
   json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.method
 end unless resource.method.nil?
 

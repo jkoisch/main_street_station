@@ -1,26 +1,26 @@
 uuid = UUID.new
 
-atom_feed({:id => "urn:uuid: #{uuid.generate}"}) do |feed|
+atom_feed({id: "urn:uuid: #{uuid.generate}"}) do |feed|
   feed.title 'FHIR Atom Feed Testing'
   feed.updated = Date.today
   feed.tag!('totalResults', @patients.count)
 
   @patients.each do |patient|
-    feed.entry(patient, :url => 'http://localhost:3000/fhir/patients/@' + patient.id.to_s,
-                        :id => "http://localhost:3000/fhir/patients/@#{patient.id}") do |entry|
+    feed.entry(patient, url: 'http://localhost:3000/fhir/patients/@' + patient.id.to_s,
+                        id: "http://localhost:3000/fhir/patients/@#{patient.id}") do |entry|
       entry.title "Patient [#{patient.id.to_s}] from Gringotts Version 1"
-      entry.category :scheme => 'http://localhost:3000/fhir/resource-types', :term => 'Patient'
-      entry.link :rel => 'self', :href => "http://localhost:3000/fhir/patients/@#{patient.id}"
+      entry.category scheme: 'http://localhost:3000/fhir/resource-types', term: 'Patient'
+      entry.link rel: 'self', href: "http://localhost:3000/fhir/patients/@#{patient.id}"
       entry.updated Time.now
 
       entry.author do
         entry.name 'imported from gringotts'
       end
 
-      entry.content :type => 'text/xml' do |content|
+      entry.content type: 'text/xml' do |content|
         content.tag!('Patient', xmlns: 'http://hl7.org/fhir') do |pnt|
 
-          pnt.active :value => patient.active
+          pnt.active value: patient.active
 
           unless patient.deceased.nil?
             pnt.deceased value: patient.deceased
@@ -37,16 +37,16 @@ atom_feed({:id => "urn:uuid: #{uuid.generate}"}) do |feed|
             patient.identifier.each do |identifier|
               pnt.identifier do |identity|
                 unless identifier.key.nil?
-                  identity.key :value => identifier.key
+                  identity.key value: identifier.key
                 end
                 unless identifier.label.nil?
-                  identity.label :value => identifier.label
+                  identity.label value: identifier.label
                 end
 
-                identity.system :value => identifier.system unless identifier.system.nil?
-                identity.use :value => identifier.use unless identifier.use.nil?
-                identity.assigner :value => identifier.assigner unless identifier.assigner.nil?
-                identity.period :value => identifier.period unless identifier.period.nil?
+                identity.system value: identifier.system unless identifier.system.nil?
+                identity.use value: identifier.use unless identifier.use.nil?
+                identity.assigner value: identifier.assigner unless identifier.assigner.nil?
+                identity.period value: identifier.period unless identifier.period.nil?
               end
             end
           end
@@ -55,9 +55,9 @@ atom_feed({:id => "urn:uuid: #{uuid.generate}"}) do |feed|
 
           unless patient.gender.nil?
             patient.gender do
-              pnt.gender.code :value => patient.gender.code unless patient.gender.code.nil?
-              pnt.gender.display :value => patient.gender.display unless patient.gender.display.nil?
-              pnt.gender.system :value => patient.gender.system unless patient.gender.system.nil?
+              pnt.gender.code value: patient.gender.code unless patient.gender.code.nil?
+              pnt.gender.display value: patient.gender.display unless patient.gender.display.nil?
+              pnt.gender.system value: patient.gender.system unless patient.gender.system.nil?
             end
           end
 
@@ -65,10 +65,10 @@ atom_feed({:id => "urn:uuid: #{uuid.generate}"}) do |feed|
           unless patient.telecom.nil?
             patient.telecom.each do |telephony|
               pnt.telecom do |comm|
-                comm.value :value => telephony.value unless telephony.value.nil?
-                comm.system :value => telephony.system unless telephony.system.nil?
-                comm.use :value => telephony.use unless telephony.use.nil?
-                comm.period :value => telephony.value unless telephony.period.nil?
+                comm.value value: telephony.value unless telephony.value.nil?
+                comm.system value: telephony.system unless telephony.system.nil?
+                comm.use value: telephony.use unless telephony.use.nil?
+                comm.period value: telephony.value unless telephony.period.nil?
               end
             end
           end
@@ -80,7 +80,7 @@ atom_feed({:id => "urn:uuid: #{uuid.generate}"}) do |feed|
                 addr.country address.country
                 addr.line address.line
                 addr.state address.state
-                addr.text :value => address.text
+                addr.text value: address.text
                 addr.use  address.use
                 addr.zip address.zip
               end
@@ -98,7 +98,7 @@ atom_feed({:id => "urn:uuid: #{uuid.generate}"}) do |feed|
 
                 unless name.prefix.nil?
                   name.prefix.each do |pre|
-                    _name.prefix :value => pre
+                    _name.prefix value: pre
                   end
                 end
 
@@ -109,17 +109,17 @@ atom_feed({:id => "urn:uuid: #{uuid.generate}"}) do |feed|
 
           unless patient.communication.nil?
             pnt.communication do
-              pnt.coding :value => patient.communication.coding
-              pnt.primary :value => patient.communication.primary
-              pnt.text :value => patient.communication.text
+              pnt.coding value: patient.communication.coding
+              pnt.primary value: patient.communication.primary
+              pnt.text value: patient.communication.text
             end
           end
 
         end
       end
 
-      entry.summary :type => 'xhtml' do
-        entry.div :xmlns => 'http://www.w3.org/1999/xhtml' do
+      entry.summary type: 'xhtml' do
+        entry.div xmlns: 'http://www.w3.org/1999/xhtml' do
           entry.p "#{patient.name[0]} - whatever"
         end
       end

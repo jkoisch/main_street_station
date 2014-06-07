@@ -38,6 +38,7 @@ RSpec::Matchers.define :produce_fhir_xml_like do |xml_file|
 end
 
 RSpec::Matchers.define :return_FHIR_JSON_object do |object_name|
+  # noinspection RubyUnusedLocalVariable
   match do |actual|
     get "/fhir/#{object_name}/1.json"
     hash_body = JSON.parse(response.body)
@@ -46,6 +47,7 @@ RSpec::Matchers.define :return_FHIR_JSON_object do |object_name|
 end
 
 RSpec::Matchers.define :return_an_OperationOutcome_when_failing_for do |error_path|
+  # noinspection RubyUnusedLocalVariable
   match do |actual|
     GringottResponse.any_instance.stubs(:success?).returns(false)
     get "/fhir/#{error_path}"
@@ -55,6 +57,7 @@ RSpec::Matchers.define :return_an_OperationOutcome_when_failing_for do |error_pa
 end
 
 RSpec::Matchers.define :return_FHIR_JSON_bundle_object do |object_name|
+  # noinspection RubyUnusedLocalVariable
   match do |actual|
     get "/fhir/#{object_name}.json"
     hash_body = JSON.parse(response.body)
@@ -63,10 +66,12 @@ RSpec::Matchers.define :return_FHIR_JSON_bundle_object do |object_name|
 end
 
 RSpec::Matchers.define :return_HTTP_success_for do |fhir_api_path|
+  # noinspection RubyUnusedLocalVariable
   match do |actual|
     get "/fhir/#{fhir_api_path}"
     response.status === 200
   end
+  # noinspection RubyUnusedLocalVariable
   failure_message_for_should do |actual|
     expected = 200
     "expected: #{expected} received: #{response.status}"
@@ -100,6 +105,7 @@ def xml_cmp (a, b)
   b = REXML::Document.new(b.to_s)
 
   normalized = Class.new(REXML::Formatters::Pretty) do
+    # noinspection RubySuperCallWithoutSuperclassInspection
     def write_text(node, output)
       super(node.to_s.strip, output)
     end
