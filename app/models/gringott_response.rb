@@ -1,5 +1,5 @@
 class GringottResponse
-  attr_accessor :successful, :body
+  attr_accessor :successful, :body, :message
   def initialize(is_good=true, body={})
     @successful = is_good
     @body = body

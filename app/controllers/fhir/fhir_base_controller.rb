@@ -38,7 +38,9 @@ class Fhir::FhirBaseController < ApplicationController
           logger.debug "*** display for #{resource} id:1 #{fixed_json}"
           GringottResponse.new(true, fixed_json)
         else
-          GringottResponse.new(false, nil)
+          resp = GringottResponse.new(false, nil)
+          resp.message = "#{resource} with id: #{id} not found"
+          resp
         end
       else
         nil
@@ -53,7 +55,9 @@ class Fhir::FhirBaseController < ApplicationController
       GringottResponse.new(true, JSON.parse(response.body))
     else
       logger.error "Gringotts ERROR #{response.code} #{response.message}"
-      GringottResponse.new(false, {})
+      resp = GringottResponse.new(false, {})
+      resp.message = response.message
+      resp
     end
   end
 end

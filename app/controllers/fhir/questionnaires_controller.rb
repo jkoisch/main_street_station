@@ -18,12 +18,9 @@ module Fhir
           #format.xml
         end
       else
-        logger.warn response
-        respond_to do |format|
-          format.html status: 500
-          format.json status: 500
-          format.xml  status: 500
-        end
+        @operation_outcome = Fhir::OperationOutcome.build(severity: 'error', details: response.message)
+        logger.warn response.message
+        render 'operation_outcome', status: :internal_server_error
       end
     end
 
@@ -34,8 +31,9 @@ module Fhir
       if response.success?
         @questionnaire = Fhir::Questionnaire.parse_ehmbr(response.body)
       else
-        logger.warn response
-        render status: 500
+        logger.warn response.message
+        @operation_outcome = Fhir::OperationOutcome.build(severity: 'error', details: response.message)
+        render 'operation_outcome', status: :internal_server_error
       end
     end
 
