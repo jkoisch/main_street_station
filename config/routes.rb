@@ -18,7 +18,7 @@ MainStreetStation::Application.routes.draw do
     resources :Patient, controller: 'patients', only: [:index, :show, :create, :update], defaults: {format: :json}
     resources :Conformance, controller: 'conformance', as: 'conformance', only: [:index, :show], defaults: {format: :json}
 
-    resources :Observations, :Observation, :observations, controller: :observations, defaults: {format: :json}
+    resources :Observation, controller: :observations,  only: [:index, :show, :create, :update], defaults: {format: :json}
     resources :FamilyHistory, controller: :family_histories, defaults: {format: :json}
     resources :Questionnaire, controller: :questionnaires, defaults: {format: :json}
     resources :Device, controller: :devices, defaults: {format: :json}
