@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Questionnaire', :focus do
+describe 'Questionnaire' do
   describe 'GET /fhir/Questionnaire' do
     it { should return_FHIR_JSON_bundle_object('Questionnaire') }
 
