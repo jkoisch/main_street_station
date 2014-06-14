@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Fhir::QuestionnairesController do
+describe Fhir::PatientsController do
 
   describe '#index' do
     subject { get :index, format: :json }
