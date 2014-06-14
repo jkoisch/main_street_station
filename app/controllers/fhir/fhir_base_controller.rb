@@ -25,6 +25,12 @@ class Fhir::FhirBaseController < ApplicationController
     end
   end
 
+  def send_operation_outcome(response)
+    logger.warn response.message
+    @operation_outcome = Fhir::OperationOutcome.build(severity: 'error', details: response.message)
+    render 'operation_outcome', status: :internal_server_error
+  end
+
   private
   def retrieve_file_resource(resource, list=false, id=nil)
     if MainStreetStation::Application.config.respond_to?('gringotts_' + resource)

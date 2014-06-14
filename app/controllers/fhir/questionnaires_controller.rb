@@ -18,9 +18,7 @@ module Fhir
           #format.xml
         end
       else
-        @operation_outcome = Fhir::OperationOutcome.build(severity: 'error', details: response.message)
-        logger.warn response.message
-        render 'operation_outcome', status: :internal_server_error
+        send_operation_outcome(response)
       end
     end
 
@@ -31,9 +29,7 @@ module Fhir
       if response.success?
         @questionnaire = Fhir::Questionnaire.parse_ehmbr(response.body)
       else
-        logger.warn response.message
-        @operation_outcome = Fhir::OperationOutcome.build(severity: 'error', details: response.message)
-        render 'operation_outcome', status: :internal_server_error
+        send_operation_outcome(response)
       end
     end
 
@@ -51,13 +47,10 @@ module Fhir
       #    format.json { render json: @questionnaire.errors, status: :unprocessable_entity }
       #  end
       #end
-      render :status => 501
+      render status: 501
     end
 
     private
-    # Use callbacks to share common setup or constraints between actions.
-
-    # Never trust parameters from the scary internet, only allow the white list through.
     def questionnaire_params
       params[:questionnaire]
     end

@@ -15,7 +15,7 @@ MainStreetStation::Application.routes.draw do
     #          :constraint => [{ :id => /^(@\d[1,36]+$)/}, { :protocol => "http" }] do
     #end
 
-    resources :Patient, controller: 'patients', as: 'patients', only: [:index, :show], defaults: {format: :json}
+    resources :Patient, controller: 'patients', only: [:index, :show, :create, :update], defaults: {format: :json}
     resources :Conformance, controller: 'conformance', as: 'conformance', only: [:index, :show], defaults: {format: :json}
 
     resources :Observations, :Observation, :observations, controller: :observations, defaults: {format: :json}
