@@ -34,7 +34,7 @@ describe 'FHIR Questionnaire' do
 
   describe 'forbidden routes' do
     # the following routes matches the show path, not testable
-    #specify { expect(get: '/customers/new').not_to be_routable }
+    #specify { expect(get: '/Questionnaire/new').not_to be_routable }
     specify { expect(get: '/fhir/Questionnaire/edit/1').not_to be_routable }
     specify { expect(delete: '/fhir/Questionnaire/1').not_to be_routable }
   end
