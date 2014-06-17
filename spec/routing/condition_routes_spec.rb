@@ -35,6 +35,7 @@ describe 'FHIR Condition' do
 
   describe 'forbidden routes' do
     # the following routes matches the show path, not testable
+    #specify { expect(get: '/fhir/Condition/new').not_to be_routable }
     specify { expect(get: '/fhir/condition').not_to be_routable }
     specify { expect(get: '/fhir/Conditions').not_to be_routable }
     specify { expect(get: '/fhir/Conditions/1').not_to be_routable }
