@@ -11,9 +11,9 @@
 <br />
 <table border="3">
   <tr>
-    <td width="300"><strong>Roles:</strong></td>
-    <td width="100"><strong>Type:</strong></td>
-    <td width="300"><strong>Services:</strong></td>
+    <td style="width: 300px;"><strong>Roles:</strong></td>
+    <td style="width: 100px;"><strong>Type:</strong></td>
+    <td style="width: 300px;"><strong>Services:</strong></td>
   </tr>
   <tr>
     <% @community.community_roles.each do |community_role| %>
@@ -40,24 +40,28 @@
           <% service.youcentric_operations.each do |operation| %>
             <ul>
               <li>Operation: </li>
-              <ul>
-                <li>Name: <%= operation.name %></li>
-                <li>Description: <%= operation.description %></li>
-                <li>Verb: <%= Directory::Verb.find(operation.verb_id).name unless operation.verb_id.nil? %></li>
-              </ul>
+              <li>
+                <ul>
+                  <li>Name: <%= operation.name %></li>
+                  <li>Description: <%= operation.description %></li>
+                  <li>Verb: <%= Directory::Verb.find(operation.verb_id).name unless operation.verb_id.nil? %></li>
+                </ul>
+              </li>
             </ul>
           <% end %>
 
           <% service.youcentric_objects.each do |info| %>
             <ul>
               <li>Information: </li>
-              <ul>
-                <li>Name: <%= info.name %></li>
-                <li>Description: <%= info.description %></li>
-                <li>Parent Object: <%= Directory::YoucentricObject.find(info.youcentric_object_parent_id).name unless info.youcentric_object_parent_id.nil? %></li>
-                <li>Notes: <%= info.design_notes %></li>
-                <li>Conformance: <%= info.conformance_profile %></li>
-              </ul>
+              <li>
+                <ul>
+                  <li>Name: <%= info.name %></li>
+                  <li>Description: <%= info.description %></li>
+                  <li>Parent Object: <%= Directory::YoucentricObject.find(info.youcentric_object_parent_id).name unless info.youcentric_object_parent_id.nil? %></li>
+                  <li>Notes: <%= info.design_notes %></li>
+                  <li>Conformance: <%= info.conformance_profile %></li>
+                </ul>
+              </li>
             </ul>
           <% end %>
         <% end %>

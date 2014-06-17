@@ -20,7 +20,7 @@ class Directory::PartiesController < ApplicationController
         format.json {render :json => @party}
       end
     else
-      render :action => 'new'
+      render :action => :new
     end
   end
 
@@ -33,7 +33,7 @@ class Directory::PartiesController < ApplicationController
     if @party.update_attributes(params[:party])
       redirect_to @party, :notice  => 'Successfully updated party.'
     else
-      render :action => 'edit'
+      render :action => :edit
     end
   end
 

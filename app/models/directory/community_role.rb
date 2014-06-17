@@ -8,7 +8,7 @@ class Directory::CommunityRole < ActiveRecord::Base
   accepts_nested_attributes_for :services, allow_destroy: true
   accepts_nested_attributes_for :parties, allow_destroy: true
 
-  def as_json (options={})
+  def as_json
     super(include: {services: {}})
   end
 

@@ -9,7 +9,7 @@ class Directory::Service < ActiveRecord::Base
 
 
 
-  def as_json (options={})
+  def as_json
     super(include: {youcentric_objects: {}, youcentric_operations: {}})
   end
 end
