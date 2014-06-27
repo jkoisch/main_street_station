@@ -18,17 +18,22 @@ module Fhir
     end
 
     def parse_ehmbr(detail)
-      obj = self.new
-      detail.each do |key, value|
-        obj.send("ehmbr_#{key}=", value)
+      obj = nil
+      unless detail.nil?
+        obj = self.new
+        detail.each do |key, value|
+          obj.send("ehmbr_#{key}=", value)
+        end
       end
       obj
     end
 
     def parse_ehmbr_list(details)
       list = []
-      details.each do |detail|
-        list << self.parse_ehmbr(detail)
+      unless details.nil?
+        details.each do |detail|
+          list << self.parse_ehmbr(detail)
+        end
       end
       list
     end
