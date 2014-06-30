@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'fhir/observation'
 
 describe 'FHIR Observation Views' do
   context 'general observation' do
