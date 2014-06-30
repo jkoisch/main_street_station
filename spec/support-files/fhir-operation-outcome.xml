@@ -1,0 +1,6 @@
+<OperationOutcome xmlns="http://hl7.org/fhir">
+  <issue>
+    <severity value="error"/>
+    <details value="It failed"/>
+  </issue>
+</OperationOutcome>
