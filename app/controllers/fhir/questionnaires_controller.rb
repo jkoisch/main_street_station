@@ -1,3 +1,4 @@
+
 require 'net/http'
 
 module Fhir
@@ -10,13 +11,6 @@ module Fhir
       response = get_gringotts_resources(RESOURCE)
       if response.success?
         @questionnaires = Fhir::Questionnaire.parse_ehmbr_list(response.body)
-
-        respond_to do |format|
-          #format.html
-          #format.atom
-          format.json
-          #format.xml
-        end
       else
         send_operation_outcome(response)
       end
