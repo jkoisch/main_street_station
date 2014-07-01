@@ -8,13 +8,6 @@ module Fhir
       response = get_gringotts_resources(RESOURCE, build_search_params(params))
       if response.success?
         @patients = Fhir::Patient.parse_ehmbr_list(response.body)
-
-        respond_to do |format|
-          #format.html
-          #format.atom
-          format.json
-          #format.xml
-        end
       else
         logger.warn response
         respond_to do |format|

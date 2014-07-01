@@ -27,5 +27,7 @@ resource.contact.each do |contact|
   xml.contact { |xml| xml << render('contact', {contact: contact})}
 end unless resource.contact.nil?
 
-xml.communication { |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: resource.communication})} unless resource.communication.nil?
+xml.communication { |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: resource.communication})} unless resource.communication.nil? or resource.communication.blank?
 xml.active({value: resource.active}) unless resource.active.nil?
+
+xml
