@@ -1,7 +1,8 @@
 require 'spec_helper'
 require 'fhir/condition'
 
-describe 'fhir/conditions/condition' do
+describe 'FHIR Condition View'  do
+  subject { 'fhir/conditions/condition' }
   let(:resource) { YAML.load(File.read('spec/support-files/condition.yaml')) }
 
   it {should produce_fhir_json_like('spec/support-files/fhir-condition.json')}

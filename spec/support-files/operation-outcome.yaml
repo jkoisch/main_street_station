@@ -1,0 +1,5 @@
+--- !ruby/object:Fhir::OperationOutcome
+  issue:
+    - !ruby/object:Fhir::OperationOutcomeClasses::Issue
+      severity: error
+      details: It failed

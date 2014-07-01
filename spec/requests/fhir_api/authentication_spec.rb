@@ -10,24 +10,24 @@ describe 'Authentication API' do
       MainStreetStation::Application.config.fhir_enforce_security = true
     end
 
-    let(:user) { User.create!(email: 'temp@me.com', password: '123abc') }
+    let(:user) { User.create!(email: Faker::Internet.email, password: '123abc') }
 
     it 'should allow a user to log in'
 
     it 'should fail with an invalid token' do
-      get '/fhir/Observations', nil,
+      get '/fhir/Observation', nil,
           'HTTP_AUTHORIZATION' => ActionController::HttpAuthentication::Token.encode_credentials('123456')
       response.status.should be(401)
     end
 
     it 'should fail without a token' do
-      get '/fhir/Observations'
+      get '/fhir/Observation'
       response.status.should be(401)
     end
 
     it 'should pass with a valid token' do
       current_token = UserToken.create!(user: user)
-      get '/fhir/Observations', nil,
+      get '/fhir/Observation', nil,
           'HTTP_AUTHORIZATION' => ActionController::HttpAuthentication::Token.encode_credentials(current_token.authentication_token)
       response.status.should be(200)
     end
@@ -37,7 +37,7 @@ describe 'Authentication API' do
       # noinspection RubyResolve
       user_token.authentication_expiry = Time.now - 30.seconds
       user_token.save!
-      get '/fhir/Observations', nil,
+      get '/fhir/Observation', nil,
           'HTTP_AUTHORIZATION' => ActionController::HttpAuthentication::Token.encode_credentials(user_token.authentication_token)
       response.status.should be(401)
     end

@@ -7,6 +7,7 @@ end
 
 RSpec::Matchers.define :produce_fhir_json_like do |json_file|
   match do |actual|
+    controller.prepend_view_path 'app/views/' + actual.rpartition('/')[0]
     response = render partial: actual, formats: :json, locals: {resource: resource}
     expected_json = File.read(json_file)
     response == expected_json
@@ -22,6 +23,7 @@ end
 
 RSpec::Matchers.define :produce_fhir_xml_like do |xml_file|
   match do |actual|
+    controller.prepend_view_path 'app/views/' + actual.rpartition('/')[0]
     response = render partial: actual, formats: :xml, locals: {resource: resource}
     expected_xml = File.read(xml_file)
     response = expected_xml
