@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Fhir::PatientsController do
+describe Fhir::PatientsController, :focus, type: :controller do
 
   describe '#index' do
     subject { get :index, format: :json }
@@ -9,7 +9,7 @@ describe Fhir::PatientsController do
 
     it 'assigns all patients as @patients' do
       get :index, format: :json
-      assigns(:patients).count.should eq(1)
+      expect(assigns(:patients).count).to eq(1)
     end
 
     it 'interprets search criteria'
@@ -22,12 +22,12 @@ describe Fhir::PatientsController do
 
     it 'assigns the requested patient as @patient' do
       get :show, id: 1, format: :json
-      assigns(:patient).should be_a(Fhir::Patient)
+      expect(assigns(:patient)).to be_a(Fhir::Patient)
     end
 
     it 'assigns the operation_outcome' do
-      get :show, id: 2
-      assigns(:operation_outcome).should be_a(Fhir::OperationOutcome)
+      get :show, id: 2, format: :json
+      expect(assigns(:operation_outcome)).to be_a(Fhir::OperationOutcome)
     end
   end
 
@@ -36,12 +36,18 @@ describe Fhir::PatientsController do
       let(:params) { ParamFaker.create(:patient) }
 
       it 'assigns a newly created patient as @patient' do
-        post :create, patient: valid_attributes, format: :json
+        post :create, patient: params, format: :json
         assigns(:patient).should be_a(Fhir::Patient)
       end
 
-      it 'should return a success'
-      it 'should return the ID'
+      it 'should return a success' do
+        post :create, params.to_json, format: :json
+        expect(response).to eq(400)
+      end
+
+      it 'should return the ID' do
+        post :create, patient: params, format: :json
+      end
 
     end
 

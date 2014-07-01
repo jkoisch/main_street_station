@@ -9,16 +9,7 @@ module Fhir
       if response.success?
         @patients = Fhir::Patient.parse_ehmbr_list(response.body)
       else
-        logger.warn response
-        respond_to do |format|
-          format.html do
-            render html:Fhir::OperationOutcome.new, status: 500
-          end
-          format.json do
-            render json: Fhir::OperationOutcome.new, status: :unprocessable_entity
-          end
-          #format.xml  status: 500
-        end
+        send_operation_outcome(response)
       end
     end
 
@@ -27,29 +18,13 @@ module Fhir
       if response.success?
         @patient = Fhir::Patient.parse_ehmbr(response.body)
       else
-        logger.warn response
-        render status: 500
+        send_operation_outcome(response)
       end
     end
 
     def create
-      #ext = params['_format']
-      #url = URI.parse(MainStreetStation::Application.config.grahame_url + ext)
-      #
-      #http = Net::HTTP.new(url.host, url.port)
-      #req = Net::HTTP::Post.new(url.path)
-      #req.body = get_test_data_to_export(ext)
-      #req['Content-Type'] = "application/fhir+" + ext + "; charset=UTF-8"
-      #
-      #response = http.request(req)
-      #
-      #case response
-      #  when Net::HTTPSuccess then response
-      #  when Net::HTTPRedirection then fetch(response['location'], limit - 1)
-      #else
-      #    response.error!
-      #end
-      render :status => 501
+      create_gringotts_resource(RESOURCE, params)
+      render text: 'nothing', status: 501
     end
 
     private

@@ -8,16 +8,8 @@ module Fhir
       response = get_gringotts_resources(RESOURCE)
       if response.success?
         @observations = Fhir::Observation.parse_ehmbr_list(response.body)
-
-        respond_to do |format|
-          format.html
-          format.atom
-          format.json
-          format.xml
-        end
       else
-        logger.warn response
-        respond :status => 500
+        send_operation_outcome(response)
       end
     end
 
@@ -26,8 +18,7 @@ module Fhir
       if response.success?
         @observation = Fhir::Observation.parse_ehmbr(response.body)
       else
-        logger.warn response
-        render status: 500
+        send_operation_outcome(response)
       end
     end
   end

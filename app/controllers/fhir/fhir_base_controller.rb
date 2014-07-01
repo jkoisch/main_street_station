@@ -25,6 +25,12 @@ class Fhir::FhirBaseController < ApplicationController
     end
   end
 
+  def create_gringotts_resource(resource, params)
+    uri = URI.join(MainStreetStation::Application.config.gringotts_url,
+                   resource.pluralize)
+    wrap_response(Net::HTTP.post_form(uri, client: params))
+  end
+
   def send_operation_outcome(response)
     logger.warn response.message
     @operation_outcome = Fhir::OperationOutcome.build(severity: 'error', details: response.message)
