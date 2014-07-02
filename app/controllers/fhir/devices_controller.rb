@@ -4,47 +4,39 @@ module Fhir
   class DevicesController < FhirController
   RESOURCE = 'device'
 
-  # GET /devices
-  # GET /devices.json
+  # GET /Device
+  # GET /Device.json
   def index
     response = get_gringotts_resources(RESOURCE)
     if response.success?
       @devices = Fhir::Device.parse_ehmbr_list(response.body)
-
-      respond_to do |format|
-        format.json
-      end
     else
-      respond_to do |format|
-        format.html status: 500
-        format.json status: 500
-        format.xml  status: 500
-      end
+      send_operation_outcome(response)
     end
   end
 
-  # GET /devices/1
-  # GET /devices/1.json
+  # GET /Device/1
+  # GET /Device/1.json
   def show
     response = get_resource(RESOURCE, params[:id])
     if response.success?
       @device = Fhir::Device.parse_ehmbr(response.body)
     else
-      render status: 500
+      send_operation_outcome(response)
     end
   end
 
-  # GET /devices/new
+  # GET /Device/new
   def new
     @device = Device.new
   end
 
-  # GET /devices/1/edit
+  # GET /Device/1/edit
   def edit
   end
 
-  # POST /devices
-  # POST /devices.json
+  # POST /Device
+  # POST /Device.json
   def create
     @device = Device.new(device_params)
 
@@ -59,8 +51,8 @@ module Fhir
     end
   end
 
-  # PATCH/PUT /devices/1
-  # PATCH/PUT /devices/1.json
+  # PATCH/PUT /Device/1
+  # PATCH/PUT /Device/1.json
   def update
     respond_to do |format|
       if @device.update(device_params)

@@ -4,43 +4,30 @@ module Fhir
   class FamilyHistoriesController < FhirController
     RESOURCE = 'family_history'
 
-    # GET /family_histories
-    # GET /family_histories.json
+    # GET /FamilyHistory
+    # GET /FamilyHistory.json
     def index
       response = get_gringotts_resources(RESOURCE)
       if response.success?
         @family_histories = Fhir::FamilyHistory.parse_ehmbr_list(response.body)
-
-        respond_to do |format|
-          #format.html
-          #format.atom
-          format.json
-          #format.xml
-        end
       else
-        logger.warn response
-        respond_to do |format|
-          format.html status: 500
-          format.json status: 500
-          format.xml  status: 500
-        end
+        send_operation_outcome(response)
       end
     end
 
-    # GET /family_histories/1
-    # GET /family_histories/1.json
+    # GET /FamilyHistory/1
+    # GET /FamilyHistory/1.json
     def show
       response = get_resource(RESOURCE, params[:id])
       if response.success?
         @family_history = Fhir::FamilyHistory.parse_ehmbr(response.body)
       else
-        logger.warn response
-        render status: 500
+        send_operation_outcome(response)
       end
     end
 
-    # POST /family_histories
-    # POST /family_histories.json
+    # POST /FamilyHistory
+    # POST /FamilyHistory.json
     def create
       #@family_history = FamilyHistory.new(family_history_params)
       #
