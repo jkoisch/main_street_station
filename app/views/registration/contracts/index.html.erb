@@ -14,7 +14,7 @@
     <td><%= registration_contract.community_id %></td>
     <td><%= registration_contract.status %></td>
     <td><%= link_to 'Show', registration_contract %></td>
-    <td><%= link_to 'Edit', edit_registration_contract_path(registration_contract) %></td>
+    <td><%#= link_to 'Edit', edit_registration_contract_path(registration_contract) %></td>
     <td><%= link_to 'Destroy', registration_contract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
@@ -22,4 +22,4 @@
 
 <br />
 
-<%= link_to 'New Contract', new_registration_contract_path %>
+<%#= link_to 'New Contract', new_registration_contract_path %>

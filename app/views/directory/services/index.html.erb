@@ -14,10 +14,10 @@
       <td><%= service.description %></td>
       <td><%= service.address %></td>
       <td><%= link_to 'Show', service %></td>
-      <td><%= link_to 'Edit', edit_service_path(service) %></td>
+      <td><%#= link_to 'Edit', edit_service_path(service) %></td>
       <td><%= link_to 'Destroy', service, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to 'New Service', new_service_path %></p>
+<p><%#= link_to 'New Service', new_service_path %></p>

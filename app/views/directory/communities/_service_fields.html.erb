@@ -1,6 +1,7 @@
-<p class="fields">
-  <strong> YouCentric Service: </strong> <br />
-  <br />
+<%= nested_form_for @services do |f| %>
+  <p class="fields">
+    <strong> YouCentric Service: </strong> <br />
+    <br />
   <table>
     <tr>
       <td>
@@ -30,4 +31,5 @@
     <%= f.link_to_add 'Add an Object?', :youcentric_objects %>
   </p>
   <%= f.link_to_remove 'Remove Service' %>
-</p>
+  </p>
+<% end %>

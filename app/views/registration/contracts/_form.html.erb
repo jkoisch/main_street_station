@@ -1,4 +1,4 @@
-<%= nested_form_for @registration_contract do |f| %>
+<%= form_for @registration_contracts do |f| %>
 	<p>
 		<%= f.label :community_id %><br />
 		<%= f.text_field :community_id %>
@@ -15,7 +15,7 @@
 		<%= f.fields_for :registration_parties %>
 	</p>
 	<p>
-		<%= f.link_to_add 'Add a Party', :registration_parties %>
+		<%#= f.link_to_add 'Add a Party', :registration_parties %>
 	</p>
   <%= f.submit %>
 <% end %>

@@ -1,59 +1,60 @@
-<p class='fields'>
-  <strong> YouCentric Object: </strong> <br />
-  <br />
-  <table>
-    <tr>
-      <td colspan='1'>
-        <%=  f.label :name %>
-      </td>
-      <td colspan='3' style="text-align: left;">
-        <%=  f.text_field :name %>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <%=  f.label :description %>
-      </td>
-      <td>
-        <%=  f.text_area :description, :rows => '3' %>
-      </td>
-      <td>
-        <%=  f.label :design_notes %>
-      </td>
-      <td>
-        <%=  f.text_area :design_notes, :rows => '3' %>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <%=  f.label :script  %>
-      </td>
-      <td>
-        <%=  f.text_area :script, :rows => '5'  %>
-      </td>
-      <td>
-        <%=  f.label :conformance_profile, 'Conformance Profile'  %>
-      </td>
-      <td>
-        <%=  f.text_area :conformance_profile, :rows => '5' %>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <%=  f.label :youcentric_object_parent_id, 'Parent ID'  %>
-      </td>
-      <td>
-        <%=  f.text_field :youcentric_object_parent_id %>
-      </td>
-      <td>
-        <%=  f.label :state_url, 'URL for Resource' %>
-      </td>
-      <td>
-        <%=  f.text_field :state_url %>
-      </td>
-    </tr>
-</table>
-<%= f.link_to_remove 'Remove Object' %>
-</p>
-
+<%= nested_form_for @services do |f| %>
+  <p class="fields">
+    <strong> YouCentric Object: </strong> <br />
+    <br />
+    <table>
+      <tr>
+        <td colspan='1'>
+          <%=  f.label :name %>
+        </td>
+        <td colspan='3' style="text-align: left;">
+          <%=  f.text_field :name %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%=  f.label :description %>
+        </td>
+        <td>
+          <%=  f.text_area :description, :rows => '3' %>
+        </td>
+        <td>
+          <%=  f.label :design_notes %>
+        </td>
+        <td>
+          <%=  f.text_area :design_notes, :rows => '3' %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%=  f.label :script  %>
+        </td>
+        <td>
+          <%=  f.text_area :script, :rows => '5'  %>
+        </td>
+        <td>
+          <%=  f.label :conformance_profile, 'Conformance Profile'  %>
+        </td>
+        <td>
+          <%=  f.text_area :conformance_profile, :rows => '5' %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%=  f.label :youcentric_object_parent_id, 'Parent ID'  %>
+        </td>
+        <td>
+          <%=  f.text_field :youcentric_object_parent_id %>
+        </td>
+        <td>
+          <%=  f.label :state_url, 'URL for Resource' %>
+        </td>
+        <td>
+          <%=  f.text_field :state_url %>
+        </td>
+      </tr>
+    </table>
+    <%= f.link_to_remove 'Remove Object' %>
+  </p>
+<% end %>
 

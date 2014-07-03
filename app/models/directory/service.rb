@@ -7,9 +7,15 @@ class Directory::Service < ActiveRecord::Base
   accepts_nested_attributes_for :youcentric_operations, allow_destroy: true
   accepts_nested_attributes_for :youcentric_objects, allow_destroy: true
 
-
+  helper_method :get_youcentricObject
 
   def as_json
     super(include: {youcentric_objects: {}, youcentric_operations: {}})
+  end
+
+  private
+
+  def get_youcentricObject(id)
+    youcentric_objects.find(id)
   end
 end

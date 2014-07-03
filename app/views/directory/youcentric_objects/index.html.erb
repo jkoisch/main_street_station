@@ -17,15 +17,15 @@
       <td><%= youcentric_object.name %></td>
       <td><%= youcentric_object.description %></td>
       <td><%= youcentric_object.script %></td>
-      <td><%= youcentric_object.state_url %></td>
+      <td><%#= youcentric_object.state_url %></td>
       <td><%= youcentric_object.youcentric_object_parent_id %></td>
-      <td><%= youcentric_object.design_notes %></td>
-      <td><%= youcentric_object.conformance_profile %></td>
+      <td><%#= youcentric_object.design_notes %></td>
+      <td><%#= youcentric_object.conformance_profile %></td>
       <td><%= link_to 'Show', youcentric_object %></td>
-      <td><%= link_to 'Edit', edit_youcentric_object_path(youcentric_object) %></td>
+      <td><%#= link_to 'Edit', edit_youcentric_object_path(youcentric_object) %></td>
       <td><%= link_to 'Destroy', youcentric_object, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to 'New Youcentric Object', new_youcentric_object_path %></p>
+<p><%#= link_to 'New Youcentric Object', new_youcentric_object_path %></p>

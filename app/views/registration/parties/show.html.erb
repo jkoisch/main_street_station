@@ -14,7 +14,7 @@
 </p>
 <td>
 	<strong>
-		<% community_role.parties.each do |party| %>
+		<% @community_role.parties.each do |party| %>
 
 			<% party.invitation_emails.each do |invitation_e| %>
 				Invitation Email <%=statusText invitation_e.status%> <%= invitation_e.email %>

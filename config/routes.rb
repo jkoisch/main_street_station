@@ -15,6 +15,7 @@ MainStreetStation::Application.routes.draw do
     #          :constraint => [{ :id => /^(@\d[1,36]+$)/}, { :protocol => "http" }] do
     #end
 
+    #noinspection RailsParamDefResolve,RailsParamDefResolve
     resources :Condition, controller: 'conditions',  only: [:index, :show, :create, :update], defaults: {format: :json}
     resources :Conformance, controller: 'conformance', as: 'conformance', only: [:index, :show], defaults: {format: :json}
     resources :Device, controller: 'devices', only: [:index, :show, :create, :update], defaults: {format: :json}

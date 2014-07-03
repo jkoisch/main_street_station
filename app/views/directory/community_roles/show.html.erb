@@ -1,33 +1,33 @@
 <% title 'Role' %>
-<%= nested_form_for @community_role do |f| %>
-<p>
-  <%= link_to 'See the Parent Community', community_path(@community_role.community_id) %>
-</p>
-<p>
-  <i>Roles talk about the behaviors of parties within networks, as well as what they should and shouldn't do.</i>
-</p>
-<p>
-  <strong>Name:</strong>
-  <%= @community_role.name %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= @community_role.description %>
-</p>
-<br />
-<%= f.fields_for :parties %>
-<p>
-  <%= f.link_to_add 'Assign this Role to someone', :parties %>
-</p>
-<%= f.fields_for :services %>
-<p>
-  <%= f.link_to_add 'See how YouCentric helps you share this information', :services %>
-</p>
+<%= nested_form_for @community_roles do |f| %>
+  <p>
+    <%#= link_to 'See the Parent Community', community_path(@community_role.community_id) %>
+  </p>
+  <p>
+    <i>Roles talk about the behaviors of parties within networks, as well as what they should and shouldn't do.</i>
+  </p>
+  <p>
+    <strong>Name:</strong>
+    <%= @community_role.name %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @community_role.description %>
+  </p>
+  <br />
+  <%= f.fields_for :parties %>
+  <p>
+    <%#= f.link_to_add 'Assign this Role to someone', :parties %>
+  </p>
+  <%= f.fields_for :services %>
+  <p>
+    <%= f.link_to_add 'See how YouCentric helps you share this information', :services %>
+  </p>
 
-<p>
-  <%= f.submit %>
-</p>
-<p>
-  <%= link_to 'See the Parent Community', community_path(@community_role.community_id) %>
-</p>
+  <p>
+    <%= f.submit %>
+  </p>
+  <p>
+    <%#= link_to 'See the Parent Community', community_path(@community_role.community_id) %>
+  </p>
 <% end %>

@@ -1,14 +1,16 @@
-<p class="fields">
-  <ul>
-    <li><strong>Another YouCentric Account takes on this Role ...</strong></li>
-    <li><%= f.label :send_date, 'Date Sent' %>
-      <%= f.date_select :send_date %></li>
-    <li><%= f.label :content, 'Message' %>
-      <%= f.text_area :content, :rows => '3' %></li>
-    <li><%= f.label :email_address, 'Email Address' %>
-      <%=  f.text_field :email %></li>
-    <li><%= f.label :youCentricCenter_id, 'What is their YouCentric ID#?' %>
-      <%= f.text_field :youCentricCenter_id %></li>
-  </ul>
-  <%= f.link_to_remove 'Un-assign' %>
-</p>
+<%= nested_form_for @community_roles do |f| %>
+  <p class="fields">
+    <ul>
+      <li><strong>Another YouCentric Account takes on this Role ...</strong></li>
+      <li><%= f.label :send_date, 'Date Sent' %>
+        <%= f.date_select :send_date %></li>
+      <li><%= f.label :content, 'Message' %>
+        <%= f.text_area :content, :rows => '3' %></li>
+      <li><%= f.label :email_address, 'Email Address' %>
+        <%=  f.text_field :email %></li>
+      <li><%= f.label :youCentricCenter_id, 'What is their YouCentric ID#?' %>
+        <%= f.text_field :youCentricCenter_id %></li>
+    </ul>
+    <%= f.link_to_remove 'Un-assign' %>
+  </p>
+<%= end %>

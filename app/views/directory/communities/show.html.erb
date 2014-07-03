@@ -5,7 +5,7 @@
 </p>
 <p>
   <strong>Objective:</strong>
-  <%= @community.objective %>
+  <%#= @community.objective %>
 </p>
 
 <br />
@@ -44,7 +44,7 @@
                 <ul>
                   <li>Name: <%= operation.name %></li>
                   <li>Description: <%= operation.description %></li>
-                  <li>Verb: <%= Directory::Verb.find(operation.verb_id).name unless operation.verb_id.nil? %></li>
+                  <li>Verb: <%= Directory::Verb.get_verb(operation.verb_id).name unless operation.verb_id.nil? %></li>
                 </ul>
               </li>
             </ul>
@@ -57,9 +57,9 @@
                 <ul>
                   <li>Name: <%= info.name %></li>
                   <li>Description: <%= info.description %></li>
-                  <li>Parent Object: <%= Directory::YoucentricObject.find(info.youcentric_object_parent_id).name unless info.youcentric_object_parent_id.nil? %></li>
-                  <li>Notes: <%= info.design_notes %></li>
-                  <li>Conformance: <%= info.conformance_profile %></li>
+                  <li>Parent Object: <%= Directory::YoucentricObject.get_youcentricObject(info.youcentric_object_parent_id).name unless info.youcentric_object_parent_id.nil? %></li>
+                  <li>Notes: <%#= info.design_notes %></li>
+                  <li>Conformance: <%#= info.conformance_profile %></li>
                 </ul>
               </li>
             </ul>
@@ -73,7 +73,7 @@
 
 
 <p>
-  <%= link_to 'Edit', edit_directory_community_path(@community) %> |
+  <%#= link_to 'Edit', edit_directory_community_path(@community) %> |
   <%= link_to 'Destroy', @community, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to 'View All', directory_communities_path %>
+  <%#= link_to 'View All', directory_communities_path %>
 </p>

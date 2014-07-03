@@ -32,7 +32,7 @@
     <td><%= registration_whitelabel.work_phone %></td>
     <td><%= registration_whitelabel.email_primary %></td>
     <td><%= link_to 'Show', registration_whitelabel %></td>
-    <td><%= link_to 'Edit', edit_registration_whitelabel_path(registration_whitelabel) %></td>
+    <td><%#= link_to 'Edit', edit_registration_whitelabel_path(registration_whitelabel) %></td>
     <td><%= link_to 'Destroy', registration_whitelabel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
@@ -40,4 +40,4 @@
 
 <br />
 
-<%= link_to 'New Whitelabel', new_registration_whitelabel_path %>
+<%#= link_to 'New Whitelabel', new_registration_whitelabel_path %>

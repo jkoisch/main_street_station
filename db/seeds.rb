@@ -6,5 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-verbs = Directory::Verb.create([{name: 'POST'}, {name: 'EMAIL'}, {name: 'GET'}, {name: 'PUT'}, {name: 'CONSUMER'}, {name: 'CALLER'}])
-rk = Directory::CommunityRoleKind.create( [ {name: 'Commissioning Role'},{name: 'Responsible Role'} ] )
+#verbs = Directory::Verb.create([{name: 'POST'}, {name: 'EMAIL'}, {name: 'GET'}, {name: 'PUT'}, {name: 'CONSUMER'}, {name: 'CALLER'}])
+#rk = Directory::CommunityRoleKind.create( [ {name: 'Commissioning Role'},{name: 'Responsible Role'} ] )

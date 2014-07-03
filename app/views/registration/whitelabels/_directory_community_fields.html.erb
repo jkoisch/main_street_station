@@ -1,8 +1,11 @@
 <p class="fields">
   <strong>Community: </strong><br/>
+  <%= nested_form_for @community_roles do |f| %>
   <ul>
     <li><%= f.label :community_id, 'Community' %>
       <%= f.select :id, Directory::Community.all.collect{ |r| [r.name, r.id]} %></li>
     <li><%= f.link_to_remove 'Remove this Community' %></li>
   </ul>
+  <%= end %>
 </p>
+

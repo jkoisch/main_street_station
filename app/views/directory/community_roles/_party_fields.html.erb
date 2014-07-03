@@ -1,21 +1,23 @@
-<p class="fields">
-  <strong> Assign Roles: </strong> <br />
-  <br />
-  <ul>
-    <%= f.fields_for :invitation_yous %>
-
-    <%= f.link_to_add 'Do You want to take on this Role?', :invitation_yous %>
-
+<%= nested_form_for @community_roles do |f| %>
+  <p class="fields">
+    <strong> Assign Roles: </strong> <br />
     <br />
+    <ul>
+      <%= f.fields_for :invitation_yous %>
 
-    <%= f.fields_for :invitation_ids %>
+      <%= f.link_to_add 'Do You want to take on this Role?', :invitation_yous %>
 
-    <%= f.link_to_add 'Assign this Role when you know their YouCentric Number?', :invitation_ids %>
+      <br />
 
-    <br />
+      <%= f.fields_for :invitation_ids %>
 
-    <%= f.fields_for :invitation_emails %>
+      <%= f.link_to_add 'Assign this Role when you know their YouCentric Number?', :invitation_ids %>
 
-    <%= f.link_to_add 'Assign this Role when you know their YouCentric email?', :invitation_emails %>
-  </ul>
-</p>
+      <br />
+
+      <%= f.fields_for :invitation_emails %>
+
+      <%= f.link_to_add 'Assign this Role when you know their YouCentric email?', :invitation_emails %>
+    </ul>
+  </p>
+<% end %>
