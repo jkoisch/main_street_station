@@ -31,6 +31,12 @@ class Fhir::FhirBaseController < ApplicationController
     wrap_response(Net::HTTP.post_form(uri, client: params))
   end
 
+  def update_gringotts_resource(resource, params)
+    uri = URI.join(MainStreetStation::Application.config.gringotts_url,
+                   resource.pluralize)
+    wrap_response(Net::HTTP.post_form(uri, client: params))
+  end
+
   def send_operation_outcome(response)
     logger.warn response.message
     @operation_outcome = Fhir::OperationOutcome.build(severity: 'error', details: response.message)
@@ -64,6 +70,8 @@ class Fhir::FhirBaseController < ApplicationController
 
   def wrap_response(response)
     if response.is_a?(Net::HTTPSuccess)
+      logger.warn 'Success from Gringotts'
+      logger.warn response.body
       GringottResponse.new(true, JSON.parse(response.body))
     else
       logger.error "Gringotts ERROR #{response.code} #{response.message}"
