@@ -11,7 +11,6 @@ module Fhir
       end
     end
 
-
     def api_authenticate_user
       if MainStreetStation::Application.config.fhir_enforce_security
         validate_authenticity_token

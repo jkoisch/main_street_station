@@ -1,12 +1,12 @@
-
 require 'net/http'
 
 module Fhir
   class QuestionnairesController < FhirController
     RESOURCE = 'questionnaire'
 
-    # GET /questionnaires
-    # GET /questionnaires.json
+    # GET /Questionnaire
+    # GET /Questionnaire.json
+    # GET /Questionnaire.xml
     def index
       response = get_gringotts_resources(RESOURCE)
       if response.success?
@@ -16,8 +16,8 @@ module Fhir
       end
     end
 
-    # GET /questionnaires/1
-    # GET /questionnaires/1.json
+    # GET /Questionnaire/1
+    # GET /Questionnaire/1.json
     def show
       response = get_resource(RESOURCE, params[:id])
       if response.success?

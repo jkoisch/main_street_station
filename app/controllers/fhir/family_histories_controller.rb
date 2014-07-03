@@ -6,6 +6,7 @@ module Fhir
 
     # GET /FamilyHistory
     # GET /FamilyHistory.json
+    # GET /FamilyHistory.xml
     def index
       response = get_gringotts_resources(RESOURCE)
       if response.success?
@@ -17,6 +18,7 @@ module Fhir
 
     # GET /FamilyHistory/1
     # GET /FamilyHistory/1.json
+    # GET /FamilyHistory/1.xml
     def show
       response = get_resource(RESOURCE, params[:id])
       if response.success?
@@ -28,6 +30,7 @@ module Fhir
 
     # POST /FamilyHistory
     # POST /FamilyHistory.json
+    # POST /FamilyHistory.xml
     def create
       #@family_history = FamilyHistory.new(family_history_params)
       #

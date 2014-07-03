@@ -4,54 +4,29 @@ module Fhir
   class ConditionsController < FhirController
     RESOURCE = 'condition'
 
-
-    # GET /conditions
-    # GET /conditions.json
+    # GET /Condition
+    # GET /Condition.json
+    # GET /Condition.xml
     def index
       response = get_gringotts_resources(RESOURCE)
       logger.info "response: #{response.body}"
       if response.success?
         @conditions = Fhir::Condition.parse_ehmbr_list(response.body)
-
-        respond_to do |format|
-          #format.html
-          #format.atom
-          format.json
-          #format.xml
-        end
       else
-        logger.warn response
-        respond_to do |format|
-          format.html status: 500
-          format.json status: 500
-          format.xml status: 500
-        end
+        send_operation_outcome(response)
       end
     end
 
-    # GET /conditions/1
-    # GET /conditions/1.json
+    # GET /Condition/1
+    # GET /Condition/1.json
+    # GET /Condition/1.xml
     def show
       response = get_resource(RESOURCE, params[:id])
       if response.success?
         @condition = Fhir::Condition.parse_ehmbr(response.body)
       else
-        logger.warn response
-        render status: 500
+        send_operation_outcome(response)
       end
-      #if response.is_a?(Net::HTTPSuccess)
-      #  json_data = JSON.parse(response.body, opts={:symbolize_names => true})
-      #  @patient = Fhir::Condition.init_from_ember(json_data)
-      #
-      #  respond_to do |format|
-      #    format.html
-      #    format.json
-      #    format.xml
-      #  end
-      #else
-      #  logger.warn response
-      #  render :status => 500
-      #end
     end
 
     private

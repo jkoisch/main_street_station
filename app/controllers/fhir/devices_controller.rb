@@ -6,6 +6,7 @@ module Fhir
 
   # GET /Device
   # GET /Device.json
+  # GET /Device.xml
   def index
     response = get_gringotts_resources(RESOURCE)
     if response.success?
@@ -17,6 +18,7 @@ module Fhir
 
   # GET /Device/1
   # GET /Device/1.json
+  # GET /Device/1.xml
   def show
     response = get_resource(RESOURCE, params[:id])
     if response.success?

@@ -6,16 +6,8 @@ module Fhir
       response = get_gringotts_resources(RESOURCE)
       if response.success?
         @conformances = Fhir::Conformance.parse_ehmbr_list(response.body)
-
-        respond_to do |format|
-          #format.html
-          #format.atom
-          format.json
-          #format.xml
-        end
       else
-        logger.warn response
-        render text: 'Failure', status: 500
+        send_operation_outcome(response)
       end
     end
 
