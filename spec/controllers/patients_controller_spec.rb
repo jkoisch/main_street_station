@@ -1,6 +1,7 @@
 require 'spec_helper'
 
-describe Fhir::PatientsController, :focus, type: :controller do
+describe Fhir::PatientsController, type: :controller do
+  let(:json_headers) { {'Accept' => 'application/json', 'Content-Type' => 'application/json'} }
 
   describe '#index' do
     subject { get :index, format: :json }
@@ -33,20 +34,25 @@ describe Fhir::PatientsController, :focus, type: :controller do
 
   describe '#create' do
     context 'with valid parameters' do
-      let(:params) { ParamFaker.create(:patient) }
+      let(:params) { FactoryGirl.json(:fhir_patient) }
 
       it 'assigns a newly created patient as @patient' do
-        post :create, patient: params, format: :json
+        Fhir::PatientsController.any_instance.stubs(:create_gringotts_resource).returns(GringottResponse.new(true, {active:true}))
+        puts params
+        #puts json_headers
+        #@request.env['CONTENT-TYPE'] = 'application/json'
+        #@request.env['RAW_POST_DATA'] = params
+        post :create, {}, {'RAW_POST_DATA' => params}
         assigns(:patient).should be_a(Fhir::Patient)
       end
 
       it 'should return a success' do
-        post :create, params.to_json, format: :json
+        post :create, {}, json_headers.merge({'RAW_POST_DATA' => params})
         expect(response).to eq(400)
       end
 
       it 'should return the ID' do
-        post :create, patient: params, format: :json
+        post :create, {}, {'RAW_POST_DATA' => params}
       end
 
     end

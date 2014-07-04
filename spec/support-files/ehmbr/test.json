@@ -1,0 +1,96 @@
+{
+    "id": 1,
+    "active": true,
+    "birth_date": {
+        "_precision": "Y",
+        "value": "1810-01-01"
+    },
+    "gender": {
+        "text": "M",
+        "coding": [
+            {
+                "display": "Male",
+                "id": 1,
+                "system": "http://hl7.org/fhir/v3/AdministrativeGender",
+                "code": "M",
+                "primary": true
+            }
+        ]
+    },
+    "text": {
+        "div": "<div>Yoda Master Jedi</div>",
+        "status": "generated"
+    },
+    "name": [
+        {
+            "id": 1,
+            "family": ["Yoda"],
+            "given": null,
+            "prefix": ["Master"],
+            "suffix": null,
+            "use": "usual",
+            "text": null
+        }
+    ],
+    "address": [
+        {
+            "id": 1,
+            "use": "home",
+            "text": {
+                "div": "222 Jedi Council Way, Trantor City",
+                "status": "generated"
+            },
+            "line": ["222 Jedi Council Way"],
+            "city": "Trantor City",
+            "state": "NY",
+            "zip": "13041",
+            "country": "US"
+        },
+        {
+            "id": 2,
+            "use": "temp",
+            "text": {
+                "div": "#4 Treestump, Dagoba, HI",
+                "status": "generated"
+            },
+            "line": ["#4 Treestump"],
+            "city": "Dagoba",
+            "state": "HI",
+            "zip": "98765",
+            "country": "US"
+        }
+    ],
+    "telecom": [
+        {
+            "id": 1,
+            "system": "phone",
+            "value": "+1 7809030885",
+            "use": "mobile"
+        }
+    ],
+    "identifier": [
+        {
+            "id": 1,
+            "use": "official",
+            "label": "MRN",
+            "system": "http://albertahealthservices.ca/patient-mrns",
+            "value": "54-08976-23",
+            "period": {
+                "start": null,
+                "end": null
+            },
+            "assigner": null
+        },
+        {
+            "id": 2,
+            "use": "search",
+            "label": "PHN",
+            "system": "295.1345.456.1.2.4.3.3",
+            "value": "456123789",
+            "period": {
+                "start": null,
+                "end": null
+            },
+            "assigner": null
+        }
+    ]}

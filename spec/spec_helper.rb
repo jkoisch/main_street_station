@@ -12,6 +12,9 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
+FactoryGirl.definition_file_paths = %w(spec/support-files/factories)
+FactoryGirl.find_definitions
+
 RSpec.configure do |config|
   # noinspection RubyResolve
   config.treat_symbols_as_metadata_keys_with_true_values = true
@@ -49,3 +52,5 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = 'random'
 end
+
+FactoryGirl.register_strategy(:json, JsonStrategy)

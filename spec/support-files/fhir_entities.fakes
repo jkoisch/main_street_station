@@ -1,5 +1,0 @@
-{
-    patient: {
-        birthDate: ->{ Date.new(1990, 3, 20) }
-    }
-}
