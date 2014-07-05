@@ -29,5 +29,4 @@ describe Fhir::ConditionsController, type: :controller do
       expect(assigns(:operation_outcome)).to be_a(Fhir::OperationOutcome)
     end
   end
-
 end

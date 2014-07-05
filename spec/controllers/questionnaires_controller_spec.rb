@@ -13,7 +13,7 @@ describe Fhir::QuestionnairesController do
     end
   end
 
-  describe '#show', :focus do
+  describe '#show' do
     subject { get :show, id: 1, format: :json }
 
     specify { should render_template(:show) }
