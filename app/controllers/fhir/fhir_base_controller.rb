@@ -1,4 +1,7 @@
 class Fhir::FhirBaseController < ApplicationController
+
+  FHIR_LOCATION_ROOT = 'http://mainstreet.youcentric.com/fhir'
+
   def get_gringotts_resources(resource, search_params='')
     local_response = retrieve_file_resource(resource, true)
     if local_response
@@ -37,10 +40,10 @@ class Fhir::FhirBaseController < ApplicationController
     wrap_response(Net::HTTP.post_form(uri, client: params))
   end
 
-  def send_operation_outcome(response)
+  def send_operation_outcome(response, the_status = :internal_server_error)
     logger.warn response.message
     @operation_outcome = Fhir::OperationOutcome.build(severity: 'error', details: response.message)
-    render 'operation_outcome', status: :internal_server_error
+    render 'operation_outcome', status: the_status
   end
 
   private

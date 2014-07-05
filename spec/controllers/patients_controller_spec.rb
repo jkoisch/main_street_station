@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Fhir::PatientsController, type: :controller do
+describe Fhir::PatientsController, :focus, type: :controller do
   let(:json_headers) { {'Accept' => 'application/json', 'Content-Type' => 'application/json'} }
 
   describe '#index' do
@@ -33,45 +33,112 @@ describe Fhir::PatientsController, type: :controller do
   end
 
   describe '#create' do
-    context 'with valid parameters' do
-      let(:params) { FactoryGirl.json(:fhir_patient) }
+    let(:params) { FactoryGirl.json(:fhir_patient) }
 
-      it 'assigns a newly created patient as @patient' do
-        Fhir::PatientsController.any_instance.stubs(:create_gringotts_resource).returns(GringottResponse.new(true, {active:true}))
-        puts params
-        #puts json_headers
-        #@request.env['CONTENT-TYPE'] = 'application/json'
-        #@request.env['RAW_POST_DATA'] = params
-        post :create, {}, {'RAW_POST_DATA' => params}
-        assigns(:patient).should be_a(Fhir::Patient)
+    context 'with valid parameters' do
+      before(:each) do
+        gringott_response = GringottResponse.new(true, {id: 1})
+        Fhir::PatientsController.any_instance.stubs(:create_gringotts_resource).returns(gringott_response)
       end
 
       it 'should return a success' do
-        post :create, {}, json_headers.merge({'RAW_POST_DATA' => params})
-        expect(response).to eq(400)
+        post :create, {}, {'RAW_POST_DATA' => params}
+        # expect(response).to have_http_status(:created) # this is the replacement for below when upgrade to RSpec 3
+        response.status.should eq(201)
       end
 
-      it 'should return the ID' do
+      it 'should set the Location on the response' do
         post :create, {}, {'RAW_POST_DATA' => params}
+        expect(response.location).to match /Patient\/1/
       end
 
     end
 
     context 'with invalid parameters' do
-      let(:params) { ParamFaker.create(:patient_invalid) }
+      before(:each) do
+        gringott_response = GringottResponse.new(false, {message: 'bad data'})
+        Fhir::PatientsController.any_instance.stubs(:create_gringotts_resource).returns(gringott_response)
+      end
 
-      it 'should return a failure'
-      it 'should return an OperationOutcome'
+      it 'should return a bad request' do
+        post :create, {}, {'RAW_POST_DATA' => params}
+        # expect(response).to have_http_status(:bad_request) # this is the replacement for below when upgrade to RSpec 3
+        response.status.should eq(400)
+      end
+
+      it 'should return an OperationOutcome' do
+        post :create, {}, {'RAW_POST_DATA' => params}
+        response.should render_template 'fhir/fhir_base/operation_outcome'
+      end
+    end
+
+    context 'with Gringotts down' do
+      before(:each) do
+        Fhir::PatientsController.any_instance.stubs(:create_gringotts_resource).returns(nil)
+      end
+
+      it 'should return a service unavailable' do
+        post :create, {}, {'RAW_POST_DATA' => params}
+        # expect(response).to have_http_status(:service_unavailable) # this is the replacement for below when upgrade to RSpec 3
+        response.status.should eq(503)
+      end
+
+      it 'should return an OperationOutcome' do
+        post :create, {}, {'RAW_POST_DATA' => params}
+        response.should render_template 'fhir/fhir_base/operation_outcome'
+      end
     end
   end
 
   describe '#update' do
-    context 'with valid parameters' do
+    let(:params) { FactoryGirl.json(:fhir_patient) }
 
+    context 'with valid parameters' do
+      before(:each) do
+        gringott_response = GringottResponse.new(true, {message: 'done'})
+        Fhir::PatientsController.any_instance.stubs(:update_gringotts_resource).returns(gringott_response)
+      end
+
+      it 'should return a success' do
+        put :update, {id:1}, {'RAW_POST_DATA' => params}
+        # expect(response).to have_http_status(:created) # this is the replacement for below when upgrade to RSpec 3
+        response.status.should eq(200)
+      end
     end
 
     context 'with invalid parameters' do
+      before(:each) do
+        gringott_response = GringottResponse.new(false, {message: 'bad data'})
+        Fhir::PatientsController.any_instance.stubs(:update_gringotts_resource).returns(gringott_response)
+      end
 
+      it 'should return a bad request' do
+        put :update, {id:1}, {'RAW_POST_DATA' => params}
+        # expect(response).to have_http_status(:bad_request) # this is the replacement for below when upgrade to RSpec 3
+        response.status.should eq(400)
+      end
+
+      it 'should return an OperationOutcome' do
+        put :update, {id:1}, {'RAW_POST_DATA' => params}
+        response.should render_template 'fhir/fhir_base/operation_outcome'
+      end
+    end
+
+    context 'with Gringotts down' do
+      before(:each) do
+        Fhir::PatientsController.any_instance.stubs(:update_gringotts_resource).returns(nil)
+      end
+
+      it 'should return a service unavailable' do
+        put :update, {id:1}, {'RAW_POST_DATA' => params}
+        # expect(response).to have_http_status(:service_unavailable) # this is the replacement for below when upgrade to RSpec 3
+        response.status.should eq(503)
+      end
+
+      it 'should return an OperationOutcome' do
+        put :update, {id:1}, {'RAW_POST_DATA' => params}
+        response.should render_template 'fhir/fhir_base/operation_outcome'
+      end
     end
   end
 end
