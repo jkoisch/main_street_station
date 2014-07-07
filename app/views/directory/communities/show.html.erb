@@ -57,7 +57,7 @@
                 <ul>
                   <li>Name: <%= info.name %></li>
                   <li>Description: <%= info.description %></li>
-                  <li>Parent Object: <%= Directory::YoucentricObject.get_youcentricObject(info.youcentric_object_parent_id).name unless info.youcentric_object_parent_id.nil? %></li>
+                  <li>Parent Object: <%= Directory::YoucentricObject.get_youcentric_object(info.youcentric_object_parent_id).name unless info.youcentric_object_parent_id.nil? %></li>
                   <li>Notes: <%#= info.design_notes %></li>
                   <li>Conformance: <%#= info.conformance_profile %></li>
                 </ul>

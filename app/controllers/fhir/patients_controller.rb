@@ -17,6 +17,7 @@ module Fhir
       response = get_resource(RESOURCE, params[:id])
       if response.success?
         @patient = Fhir::Patient.parse_ehmbr(response.body)
+        value = @patient
       else
         send_operation_outcome(response)
       end

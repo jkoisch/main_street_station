@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Fhir::ConditionsController, type: :controller do
-  let(:json_headers) { { 'Accept' => 'application/json', 'Content-Type' => 'application/json' } }
+  let(:json_headers) { { Accept: 'application/json', Content-Type => 'application/json' } }
 
   describe '#index' do
     subject { get :index, format: :json }
