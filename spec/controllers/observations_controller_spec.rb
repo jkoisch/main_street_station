@@ -88,4 +88,55 @@ describe Fhir::ObservationsController, type: :controller do
     end
   end
 
+  describe '#update', :focus do
+    let(:params) { FactoryGirl.json(:fhir_observation) }
+
+    context 'with valid parameters' do
+      before(:each) do
+        gringott_response = GringottResponse.new(true, {message: 'done'})
+        Fhir::ObservationsController.any_instance.stubs(:update_gringotts_resource).returns(gringott_response)
+      end
+
+      it 'should return a success' do
+        put :update, {id:1}, {RAW_POST_DATA: :params}
+        # expect(response).to have_http_status(:created) # this is the replacement for below when upgrade to RSpec 3
+        response.status.should eq(200)
+      end
+    end
+
+    context 'with invalid parameters' do
+      before(:each) do
+        gringott_response = GringottResponse.new(false, {message: 'bad data'})
+        Fhir::ObservationsController.any_instance.stubs(:update_gringotts_resource).returns(gringott_response)
+      end
+
+      it 'should return a bad request' do
+        put :update, {id:1}, {RAW_POST_DATA: :params}
+        # expect(response).to have_http_status(:bad_request) # this is the replacement for below when upgrade to RSpec 3
+        response.status.should eq(400)
+      end
+
+      it 'should return an OperationOutcome' do
+        put :update, {id:1}, {RAW_POST_DATA: :params}
+        response.should render_template 'fhir/fhir_base/operation_outcome'
+      end
+    end
+
+    context 'with Gringotts down' do
+      before(:each) do
+        Fhir::ObservationsController.any_instance.stubs(:update_gringotts_resource).returns(nil)
+      end
+
+      it 'should return a service unavailable' do
+        put :update, {id:1}, {RAW_POST_DATA: :params}
+        # expect(response).to have_http_status(:service_unavailable) # this is the replacement for below when upgrade to RSpec 3
+        response.status.should eq(503)
+      end
+
+      it 'should return an OperationOutcome' do
+        put :update, {id:1}, {RAW_POST_DATA: :params}
+        response.should render_template 'fhir/fhir_base/operation_outcome'
+      end
+    end
+  end
 end
