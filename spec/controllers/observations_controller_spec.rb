@@ -29,4 +29,63 @@ describe Fhir::ObservationsController, type: :controller do
       expect(assigns(:operation_outcome)).to be_a(Fhir::OperationOutcome)
     end
   end
+
+  describe '#create' do
+    let(:params) { FactoryGirl.json(:fhir_observation) }
+
+    context 'with valid parameters' do
+      before(:each) do
+        gringott_response = GringottResponse.new(true, {id: 1})
+        Fhir::ObservationsController.any_instance.stubs(:create_gringotts_resource).returns(gringott_response)
+      end
+
+      it 'should return a success' do
+        post :create, {}, {RAW_POST_DATA: :params}
+        # expect(response).to have_http_status(:created) # this is the replacement for below when upgrade to RSpec 3
+        response.status.should eq(201)
+      end
+
+      it 'should set the Location on the response' do
+        post :create, {}, { RAW_POST_DATA: :params}
+        expect(response.location).to match /Observation\/1/
+      end
+
+    end
+
+    context 'with invalid parameters' do
+      before(:each) do
+        gringott_response = GringottResponse.new(false, {message: 'bad data'})
+        Fhir::ObservationsController.any_instance.stubs(:create_gringotts_resource).returns(gringott_response)
+      end
+
+      it 'should return a bad request' do
+        post :create, {}, {RAW_POST_DATA: :params}
+        # expect(response).to have_http_status(:bad_request) # this is the replacement for below when upgrade to RSpec 3
+        response.status.should eq(400)
+      end
+
+      it 'should return an OperationOutcome' do
+        post :create, {}, {RAW_POST_DATA: :params}
+        response.should render_template 'fhir/fhir_base/operation_outcome'
+      end
+    end
+
+    context 'with Gringotts down' do
+      before(:each) do
+        Fhir::ObservationsController.any_instance.stubs(:create_gringotts_resource).returns(nil)
+      end
+
+      it 'should return a service unavailable' do
+        post :create, {}, {RAW_POST_DATA: :params}
+        # expect(response).to have_http_status(:service_unavailable) # this is the replacement for below when upgrade to RSpec 3
+        response.status.should eq(503)
+      end
+
+      it 'should return an OperationOutcome' do
+        post :create, {}, {RAW_POST_DATA: :params}
+        response.should render_template 'fhir/fhir_base/operation_outcome'
+      end
+    end
+  end
+
 end
