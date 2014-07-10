@@ -88,7 +88,7 @@ describe Fhir::ObservationsController, type: :controller do
     end
   end
 
-  describe '#update', :focus do
+  describe '#update' do
     let(:params) { FactoryGirl.json(:fhir_observation) }
 
     context 'with valid parameters' do
