@@ -40,7 +40,7 @@ describe Fhir::ObservationsController, type: :controller do
       end
 
       it 'should return a success' do
-        post :create, {}, {RAW_POST_DATA: :params}
+        post :create, {format: :json}, {RAW_POST_DATA: :params}
         # expect(response).to have_http_status(:created) # this is the replacement for below when upgrade to RSpec 3
         response.status.should eq(201)
       end

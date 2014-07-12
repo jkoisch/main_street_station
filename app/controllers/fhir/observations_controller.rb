@@ -1,7 +1,7 @@
 require 'net/http'
 
 module Fhir
-  class ObservationsController < FhirBaseController
+  class ObservationsController < FhirController
     RESOURCE = 'observation'
 
     def index

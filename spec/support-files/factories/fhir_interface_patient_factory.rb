@@ -4,5 +4,10 @@ FactoryGirl.define do
 
     birthDate {Date.today - 30.years}
     active    true
+
+  end
+
+  factory :fhir_patient_name, class: FhirInterface::Types::HumanName do
+    givenName [ 'John' ]
   end
 end
