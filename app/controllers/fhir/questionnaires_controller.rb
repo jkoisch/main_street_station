@@ -27,21 +27,33 @@ module Fhir
       end
     end
 
-    # POST /questionnaires
+    # POST /Questionnaire
     # POST /questionnaires.json
+
     def create
-      #@questionnaire = Questionnaire.new(questionnaire_params)
-      #
-      #respond_to do |format|
-      #  if @questionnaire.save
-      #    format.html { redirect_to @questionnaire, notice: 'Questionnaire was successfully created.' }
-      #    format.json { render action: 'show', status: :created, location: @questionnaire }
-      #  else
-      #    format.html { render action: 'new' }
-      #    format.json { render json: @questionnaire.errors, status: :unprocessable_entity }
-      #  end
-      #end
-      render status: 501
+      response = create_gringotts_resource(RESOURCE, params)
+      if response
+        if response.success?
+          render nothing: true, status: 201, location: "#{FHIR_LOCATION_ROOT}/Questionnaire/#{response.body[:id]}"
+        else
+          render text: 'nothing', status: 400
+        end
+      else
+        render text: 'Please try again later', status: 503
+      end
+    end
+
+    def update
+      response = update_gringotts_resource(RESOURCE, params)
+      if response
+        if response.success?
+          render nothing: true, status: 200
+        else
+          render text: 'nothing', status: 400
+        end
+      else
+        render text: 'Please try again later', status: 503
+      end
     end
 
     private

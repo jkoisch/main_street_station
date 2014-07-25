@@ -40,30 +40,30 @@ module Fhir
   # POST /Device
   # POST /Device.json
   def create
-    @device = Device.new(device_params)
-
-    respond_to do |format|
-      if @device.save
-        format.html { redirect_to @device, notice: 'Device was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @device }
+    response = create_gringotts_resource(RESOURCE, params)
+    if response
+      if response.success?
+        render nothing: true, status: 201, location: "#{FHIR_LOCATION_ROOT}/Device/#{response.body[:id]}"
       else
-        format.html { render action: 'new' }
-        format.json { render json: @device.errors, status: :unprocessable_entity }
+        render text: 'nothing', status: 400
       end
+    else
+      render text: 'Please try again later', status: 503
     end
   end
 
   # PATCH/PUT /Device/1
   # PATCH/PUT /Device/1.json
   def update
-    respond_to do |format|
-      if @device.update(device_params)
-        format.html { redirect_to @device, notice: 'Device was successfully updated.' }
-        format.json { head :no_content }
+    response = update_gringotts_resource(RESOURCE, params)
+    if response
+      if response.success?
+        render nothing: true, status: 200
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @device.errors, status: :unprocessable_entity }
+        render text: 'nothing', status: 400
       end
+    else
+      render text: 'Please try again later', status: 503
     end
   end
 
