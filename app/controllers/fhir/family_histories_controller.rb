@@ -31,19 +31,31 @@ module Fhir
     # POST /FamilyHistory
     # POST /FamilyHistory.json
     # POST /FamilyHistory.xml
+
     def create
-      #@family_history = FamilyHistory.new(family_history_params)
-      #
-      #respond_to do |format|
-      #  if @family_history.save
-      #    format.html { redirect_to @family_history, notice: 'Family history was successfully created.' }
-      #    format.json { render action: 'show', status: :created, location: @family_history }
-      #  else
-      #    format.html { render action: 'new' }
-      #    format.json { render json: @family_history.errors, status: :unprocessable_entity }
-      #  end
-      #end
-      render :status => 501
+      response = create_gringotts_resource(RESOURCE, params)
+      if response
+        if response.success?
+          render nothing: true, status: 201, location: "#{FHIR_LOCATION_ROOT}/FamilyHistory/#{response.body[:id]}"
+        else
+          render text: 'nothing', status: 400
+        end
+      else
+        render text: 'Please try again later', status: 503
+      end
+    end
+
+    def update
+      response = update_gringotts_resource(RESOURCE, params)
+      if response
+        if response.success?
+          render nothing: true, status: 200
+        else
+          render text: 'nothing', status: 400
+        end
+      else
+        render text: 'Please try again later', status: 503
+      end
     end
 
     private

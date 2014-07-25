@@ -29,6 +29,32 @@ module Fhir
       end
     end
 
+    def create
+      response = create_gringotts_resource(RESOURCE, params)
+      if response
+        if response.success?
+          render nothing: true, status: 201, location: "#{FHIR_LOCATION_ROOT}/Condition/#{response.body[:id]}"
+        else
+          render text: 'nothing', status: 400
+        end
+      else
+        render text: 'Please try again later', status: 503
+      end
+    end
+
+    def update
+      response = update_gringotts_resource(RESOURCE, params)
+      if response
+        if response.success?
+          render nothing: true, status: 200
+        else
+          render text: 'nothing', status: 400
+        end
+      else
+        render text: 'Please try again later', status: 503
+      end
+    end
+
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_condition
