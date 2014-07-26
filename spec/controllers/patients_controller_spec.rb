@@ -13,7 +13,10 @@ describe Fhir::PatientsController, type: :controller do
       expect(assigns(:patients).count).to eq(1)
     end
 
-    it 'interprets search criteria'
+    it 'interprets search criteria' do
+      get :index, {format: :json, search: 'something'}
+      pending 'needs validation of parameters'
+    end
   end
 
   describe '#show' do
