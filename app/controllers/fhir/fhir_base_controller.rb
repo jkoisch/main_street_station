@@ -40,9 +40,20 @@ class Fhir::FhirBaseController < ApplicationController
     wrap_response(Net::HTTP.post_form(uri, client: params))
   end
 
-  def send_operation_outcome(response, the_status = :internal_server_error)
-    logger.warn response.message
-    @operation_outcome = Fhir::OperationOutcome.build(severity: 'error', details: response.message)
+  def send_operation_outcome(response, the_status = :internal_server_error, error_message=nil)
+    if response
+      logger.warn response.message
+      @operation_outcome = Fhir::OperationOutcome.build(severity: 'error', details: response.message)
+    else
+      if error_message
+        logger.error error_message
+        @operation_outcome = Fhir::OperationOutcome.build(severity: 'error', details: error_message)
+      else
+        logger.error '**No error text and no response passed to send OperationOutcome**'
+        @operation_outcome = Fhir::OperationOutcome.build(severity: 'error',
+                                                          details: 'An internal error occurred')
+      end
+    end
     render 'operation_outcome', status: the_status
   end
 

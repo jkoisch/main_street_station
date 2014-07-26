@@ -61,13 +61,13 @@ describe Fhir::PatientsController, type: :controller do
       end
 
       it 'should return a bad request' do
-        post :create, {}, {RAW_POST_DATA: :params}
+        post :create, {format: :json}, {RAW_POST_DATA: :params}
         # expect(response).to have_http_status(:bad_request) # this is the replacement for below when upgrade to RSpec 3
         response.status.should eq(400)
       end
 
       it 'should return an OperationOutcome' do
-        post :create, {}, {RAW_POST_DATA: :params}
+        post :create, {format: :json}, {RAW_POST_DATA: :params}
         response.should render_template 'fhir/fhir_base/operation_outcome'
       end
     end
@@ -78,13 +78,13 @@ describe Fhir::PatientsController, type: :controller do
       end
 
       it 'should return a service unavailable' do
-        post :create, {}, {RAW_POST_DATA: :params}
+        post :create, {format: :json}, {RAW_POST_DATA: :params}
         # expect(response).to have_http_status(:service_unavailable) # this is the replacement for below when upgrade to RSpec 3
         response.status.should eq(503)
       end
 
       it 'should return an OperationOutcome' do
-        post :create, {}, {RAW_POST_DATA: :params}
+        post :create, {format: :json}, {RAW_POST_DATA: :params}
         response.should render_template 'fhir/fhir_base/operation_outcome'
       end
     end
@@ -113,13 +113,13 @@ describe Fhir::PatientsController, type: :controller do
       end
 
       it 'should return a bad request' do
-        put :update, {id:1}, {RAW_POST_DATA: :params}
+        put :update, {id:1, format: :json}, {RAW_POST_DATA: :params}
         # expect(response).to have_http_status(:bad_request) # this is the replacement for below when upgrade to RSpec 3
         response.status.should eq(400)
       end
 
       it 'should return an OperationOutcome' do
-        put :update, {id:1}, {RAW_POST_DATA: :params}
+        put :update, {id:1, format: :json}, {RAW_POST_DATA: :params}
         response.should render_template 'fhir/fhir_base/operation_outcome'
       end
     end
@@ -130,13 +130,13 @@ describe Fhir::PatientsController, type: :controller do
       end
 
       it 'should return a service unavailable' do
-        put :update, {id:1}, {RAW_POST_DATA: :params}
+        put :update, {id:1, format: :json}, {RAW_POST_DATA: :params}
         # expect(response).to have_http_status(:service_unavailable) # this is the replacement for below when upgrade to RSpec 3
         response.status.should eq(503)
       end
 
       it 'should return an OperationOutcome' do
-        put :update, {id:1}, {RAW_POST_DATA: :params}
+        put :update, {id:1, format: :json}, {RAW_POST_DATA: :params}
         response.should render_template 'fhir/fhir_base/operation_outcome'
       end
     end
