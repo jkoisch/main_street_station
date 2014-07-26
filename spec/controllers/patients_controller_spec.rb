@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Fhir::PatientsController, type: :controller do
   let(:json_headers) { { Accept: 'application/json', Content-Type => 'application/json'} }
 
-  describe '#index' do
+  context '#index' do
     subject { get :index, format: :json }
 
     specify { should render_template(:index) }
@@ -13,9 +13,11 @@ describe Fhir::PatientsController, type: :controller do
       expect(assigns(:patients).count).to eq(1)
     end
 
-    it 'interprets search criteria' do
-      get :index, {format: :json, search: 'something'}
-      pending 'needs validation of parameters'
+    context 'for searches' do
+      it 'interprets search criteria' do
+        get :index, {format: :json, search: 'something'}
+        pending 'needs validation of parameters'
+      end
     end
   end
 
