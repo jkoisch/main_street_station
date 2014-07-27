@@ -45,10 +45,10 @@ module Fhir
       if response.success?
         render nothing: true, status: 201, location: "#{FHIR_LOCATION_ROOT}/Device/#{response.body[:id]}"
       else
-        render text: 'nothing', status: 400
+        send_operation_outcome(response, 400)
       end
     else
-      render text: 'Please try again later', status: 503
+      send_operation_outcome(nil, 503, 'Application unavailable at this time')
     end
   end
 
@@ -60,10 +60,10 @@ module Fhir
       if response.success?
         render nothing: true, status: 200
       else
-        render text: 'nothing', status: 400
+        send_operation_outcome(response, 400)
       end
     else
-      render text: 'Please try again later', status: 503
+      send_operation_outcome(nil, 503, 'Application unavailable at this time')
     end
   end
 
