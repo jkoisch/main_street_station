@@ -1,0 +1,22 @@
+<Organization xmlns="http://hl7.org/fhir">
+  <name value="Health Level Seven International"/>
+  <telecom>
+    <system value="phone"/>
+    <value value="(+1) 734-677-7777"/>
+  </telecom>
+  <telecom>
+    <system value="fax"/>
+    <value value="(+1) 734-677-6622"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="hq@HL7.org"/>
+  </telecom>
+  <address>
+    <line value="3300 Washtenaw Avenue, Suite 227"/>
+    <city value="Ann Arbor"/>
+    <state value="MI"/>
+    <zip value="48104"/>
+    <country value="USA"/>
+  </address>
+</Organization>
