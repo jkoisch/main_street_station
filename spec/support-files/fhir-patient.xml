@@ -71,8 +71,8 @@
       <value value="+33 (237) 998327"/>
     </telecom>
   </contact>
-  <!--<managingOrganization>
-    <reference value="Organization/1"/>
-  </managingOrganization>-->
+  <managing_organization>
+    <reference value="Organization/11"/>
+  </managing_organization>
   <active value="true"/>
 </Patient>

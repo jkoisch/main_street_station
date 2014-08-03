@@ -1,0 +1,1 @@
+json.reference resource_reference.reference unless resource_reference.reference.nil?

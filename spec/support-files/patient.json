@@ -81,5 +81,8 @@
             ]
         }
     ],
+    "managing_organization": {
+        "reference": "Organization/1"
+    },
     "active": true
 }

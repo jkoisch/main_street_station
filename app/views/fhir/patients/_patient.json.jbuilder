@@ -39,4 +39,8 @@ json.communication resource.communication do |communication|
   json.partial! 'fhir/base/codeable_concept', codeable_concept: communication
 end unless resource.communication.nil?
 
+json.managingOrganization do
+  json.partial! 'fhir/base/resource_reference', resource_reference: resource.managing_organization
+end unless resource.managing_organization.nil?
+
 json.active resource.active unless resource.active.nil?

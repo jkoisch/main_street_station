@@ -38,4 +38,5 @@ FactoryGirl.define do
     system 'email'
     value  'john.smith@somewhere.com'
   end
+
 end

@@ -16,7 +16,7 @@ module Fhir
     fhir_attribute :contact, list: PatientClasses::Contact
     fhir_attribute :communication, list: Types::CodeableConcept
     # TODO: Reference to careProvider resource: Resource(Organization/Practitioner)
-    # TODO: Reference to managingOrganization: Resource(Organization)
+    fhir_attribute :managing_organization, type: Types::ResourceReference
     fhir_attribute :link, list: PatientClasses::Link
     fhir_attribute :active
 

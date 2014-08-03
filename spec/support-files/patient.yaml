@@ -61,5 +61,6 @@
         - !ruby/object:Fhir::Types::Contact
           system: phone
           value: +33 (237) 998327
-  #TODO: managing_organization Resource(Organization)
+  managing_organization: !ruby/object:Fhir::Types::ResourceReference
+    reference: Organization/1
   active: "true"
