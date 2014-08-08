@@ -15,7 +15,7 @@ module Fhir
     # TODO: Should Photo attribute be added?
     fhir_attribute :contact, list: PatientClasses::Contact
     fhir_attribute :communication, list: Types::CodeableConcept
-    # TODO: Reference to careProvider resource: Resource(Organization/Practitioner)
+    fhir_attribute :care_provider, list: Types::ResourceReference #Organization/Practitioner
     fhir_attribute :managing_organization, type: Types::ResourceReference
     fhir_attribute :link, list: PatientClasses::Link
     fhir_attribute :active

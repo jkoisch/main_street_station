@@ -7,3 +7,4 @@ contact.telecom.each do |telecom|
 end unless contact.telecom.nil?
 xml.address { |xml| xml << render('fhir/base/address', {address: contact.address})} unless contact.address.nil?
 xml.gender { |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: contact.gender})} unless contact.gender.nil?
+xml.organization { |xml| xml << render('fhir/base/resource_reference', {resource_reference: contact.organization})} unless contact.organization.nil?

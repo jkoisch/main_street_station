@@ -5,6 +5,7 @@ module Fhir
       #fhir_attribute :local_id
       #fhir_attribute :local_type
       fhir_attribute :reference
+      fhir_attribute :display
       #fhir_attribute :external_reference
     end
   end

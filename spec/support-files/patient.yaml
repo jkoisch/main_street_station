@@ -61,6 +61,17 @@
         - !ruby/object:Fhir::Types::Contact
           system: phone
           value: +33 (237) 998327
+      organization: !ruby/object:Fhir::Types::ResourceReference
+        reference: Organization/1
+        display: "Walt Disney Corporation"
+  care_provider:
+    - !ruby/object:Fhir::Types::ResourceReference
+      reference: Organization/1
   managing_organization: !ruby/object:Fhir::Types::ResourceReference
     reference: Organization/1
+  link:
+    - !ruby/object:Fhir::PatientClasses::Link
+      other: !ruby/object:Fhir::Types::ResourceReference
+        reference: Patient/pat2
+      type: "seealso"
   active: "true"

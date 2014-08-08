@@ -6,7 +6,7 @@ module Fhir
       fhir_attribute :telecom, list: Fhir::Types::Contact
       fhir_attribute :address, type: Fhir::Types::Address
       fhir_attribute :gender, type: Fhir::Types::CodeableConcept
-      # TODO: Add reference to Organization: Resource(Organization)
+      fhir_attribute :organization, type: Types::ResourceReference #organization
     end
   end
 end
