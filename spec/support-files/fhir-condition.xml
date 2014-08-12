@@ -1,4 +1,15 @@
 <Condition xmlns="http://hl7.org/fhir">
+  <subject>
+    <reference value="Patient/f201"/>
+    <display value="Roel"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/f201"/>
+  </encounter>
+  <asserter>
+    <reference value="Practitioner/f201"/>
+  </asserter>
+  <dateAsserted value="2013-04-04"/>
   <code>
     <coding>
       <system value="http://snomed.info/sct"/>
@@ -29,6 +40,18 @@
     </coding>
   </severity>
   <onsetDate value="2012-05-24"/>
+  <stage>
+    <summary>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="14803004"/>
+        <display value="Temporary"/>
+      </coding>
+    </summary>
+    <assessment>
+      <reference value="Procedure/f201"/>
+    </assessment>
+  </stage>
   <location>
     <code>
       <coding>

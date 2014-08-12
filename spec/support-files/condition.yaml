@@ -1,4 +1,12 @@
 --- !ruby/object:Fhir::Condition
+  subject: !ruby/object:Fhir::Types::ResourceReference
+    reference: Patient/f201
+    display: Roel
+  encounter: !ruby/object:Fhir::Types::ResourceReference
+    reference: Encounter/f201
+  asserter: !ruby/object:Fhir::Types::ResourceReference
+    reference: Practitioner/f201
+  date_asserted: 2013-04-04
   code: !ruby/object:Fhir::Types::CodeableConcept
     coding:
       - !ruby/object:Fhir::Types::Coding
@@ -24,6 +32,16 @@
         code: '24484000'
         display: Severe
   onset_date: 2012-05-24
+  stage: !ruby/object:Fhir::ConditionClasses::Stage
+    summary: !ruby/object:Fhir::Types::CodeableConcept
+      coding:
+        - !ruby/object:Fhir::Types::Coding
+          system: http://snomed.info/sct
+          code: '14803004'
+          display: Temporary
+    assessment:
+      - !ruby/object:Fhir::Types::ResourceReference
+        reference: Procedure/f201
   location:
     - !ruby/object:Fhir::ConditionClasses::Location
       code: !ruby/object:Fhir::Types::CodeableConcept

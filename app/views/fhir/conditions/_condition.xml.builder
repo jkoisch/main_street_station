@@ -2,6 +2,8 @@ resource.identifier.each do |identifier|
   xml.identifier {|xml| xml << render('fhir/base/identifier', {identifier: identifier})}
 end unless resource.identifier.nil?
 
+xml.subject{ |xml| xml << render('fhir/base/resource_reference', {resource_reference: resource.subject})} unless resource.subject.nil?
+xml.encounter{ |xml| xml << render('fhir/base/resource_reference', {resource_reference: resource.encounter})} unless resource.encounter.nil?
 xml.dateAsserted({value: resource.date_asserted}) unless resource.date_asserted.nil?
 xml.code{ |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: resource.code})} unless resource.code.nil?
 xml.category{ |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: resource.category})} unless resource.category.nil?

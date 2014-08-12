@@ -4,6 +4,18 @@ json.identifier resource.identifier do |identifier|
   json.partial! 'fhir/base/identifier', identifier: identifier
 end unless resource.identifier.nil?
 
+json.subject do
+  json.partial! 'fhir/base/resource_reference', resource_reference: resource.subject
+end unless resource.subject.nil?
+
+json.encounter do
+  json.partial! 'fhir/base/resource_reference', resource_reference: resource.encounter
+end unless resource.encounter.nil?
+
+json.asserter do
+  json.partial! 'fhir/base/resource_reference', resource_reference: resource.asserter
+end unless resource.asserter.nil?
+
 json.dateAsserted resource.date_asserted unless resource.date_asserted.nil?
 
 json.code do

@@ -2,6 +2,9 @@ module Fhir
   class Condition < BaseResource
     fhir_attribute :id
     fhir_attribute :identifier, list: Fhir::Types::Identifier
+    fhir_attribute :subject, type: Fhir::Types::ResourceReference
+    fhir_attribute :encounter, type: Fhir::Types::ResourceReference
+    fhir_attribute :asserter, type: Fhir::Types::ResourceReference
     fhir_attribute :date_asserted
     fhir_attribute :code, type: Fhir::Types::CodeableConcept
     fhir_attribute :category, type: Fhir::Types::CodeableConcept
