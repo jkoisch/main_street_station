@@ -51,7 +51,20 @@
     <assessment>
       <reference value="Procedure/f201"/>
     </assessment>
-  </stage>
+  </stage>>
+  <evidence>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="258710007"/>
+        <display value="degrees C"/>
+      </coding>
+    </code>
+    <detail>
+      <reference value="Observation/f202"/>
+      <display value="Temperature"/>
+    </detail>
+  </evidence>
   <location>
     <code>
       <coding>
@@ -62,4 +75,18 @@
       <text value="Left Ear"/>
     </code>
   </location>
+  <relatedItem>
+    <type value="due-to"/>
+    <target>
+      <reference value="Procedure/f201"/>
+      <display value="TPF chemokuur"/>
+    </target>
+  </relatedItem>
+  <relatedItem>
+    <type value="due-to"/>
+    <target>
+      <reference value="Condition/f205"/>
+      <display value="bacterial infection"/>
+    </target>
+  </relatedItem>
 </Condition>

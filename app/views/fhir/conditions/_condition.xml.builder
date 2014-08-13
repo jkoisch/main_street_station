@@ -16,13 +16,16 @@ xml.abatementDate({value: resource.abatement_date}) unless resource.abatement_da
 xml.abatementAge{ |xml| xml << render('fhir/base/quantity', {quantity: resource.abatement_age})} unless resource.abatement_age.nil?
 xml.abatementBoolean({value: resource.abatement_boolean}) unless resource.abatement_boolean.nil?
 xml.stage{ |xml| xml << render('stage', {stage: resource.stage})} unless resource.stage.nil?
-xml.evidence{ |xml| xml << render('evidence', {evidence: resource.evidence})} unless resource.evidence.nil?
+
+resource.evidence.each do |evidence|
+  xml.evidence { |xml| xml << render('evidence', {evidence: evidence})}
+end unless resource.evidence.nil?
 
 resource.location.each do |location|
   xml.location { |xml| xml << render('location', {location: location})}
 end unless resource.location.nil?
 
-resource.relatedItem.each do |related_item|
+resource.related_item.each do |related_item|
   xml.relatedItem{ |xml| xml << render('related_item', {related_item: related_item})}
 end unless resource.related_item.nil?
 

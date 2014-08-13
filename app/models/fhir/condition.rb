@@ -17,7 +17,7 @@ module Fhir
     fhir_attribute :abatement_age, type: Fhir::Types::Quantity
     fhir_attribute :abatement_boolean
     fhir_attribute :stage, type: Fhir::ConditionClasses::Stage
-    fhir_attribute :evidence, type: Fhir::ConditionClasses::Evidence
+    fhir_attribute :evidence, list: Fhir::ConditionClasses::Evidence
     fhir_attribute :location, list: Fhir::ConditionClasses::Location
     fhir_attribute :related_item, list: Fhir::ConditionClasses::RelatedItem
     fhir_attribute :notes

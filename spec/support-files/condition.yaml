@@ -42,6 +42,18 @@
     assessment:
       - !ruby/object:Fhir::Types::ResourceReference
         reference: Procedure/f201
+  evidence:
+    - !ruby/object:Fhir::ConditionClasses::Evidence
+      code: !ruby/object:Fhir::Types::CodeableConcept
+        coding:
+          - !ruby/object:Fhir::Types::Coding
+            system: http://snomed.info/sct
+            code: '258710007'
+            display: degrees C
+      detail:
+        - !ruby/object:Fhir::Types::ResourceReference
+          reference: Observation/f202
+          display: Temperature
   location:
     - !ruby/object:Fhir::ConditionClasses::Location
       code: !ruby/object:Fhir::Types::CodeableConcept
@@ -51,3 +63,14 @@
             code: '49521004'
             display: Left external ear structure
         text: Left Ear
+  related_item:
+    - !ruby/object:Fhir::ConditionClasses::RelatedItem
+      type: 'due-to'
+      target: !ruby/object:Fhir::Types::ResourceReference
+        reference: Procedure/f201
+        display: TPF chemokuur
+    - !ruby/object:Fhir::ConditionClasses::RelatedItem
+      type: 'due-to'
+      target: !ruby/object:Fhir::Types::ResourceReference
+        reference: Condition/f205
+        display: bacterial infection
