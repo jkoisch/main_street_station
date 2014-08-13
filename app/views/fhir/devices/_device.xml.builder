@@ -10,6 +10,10 @@ xml.expiry({value: resource.expiry}) unless resource.expiry.nil?
 xml.udi({value: resource.udi}) unless resource.udi.nil?
 xml.lotNumber({value: resource.lot_number}) unless resource.lot_number.nil?
 
+xml.owner { |xml| xml << render('fhir/base/resource_reference', {resource_reference: resource.owner})} unless resource.owner.nil?
+xml.location { |xml| xml << render('fhir/base/resource_reference', {resource_reference: resource.location})} unless resource.location.nil?
+xml.patient { |xml| xml << render('fhir/base/resource_reference', {resource_reference: resource.patient})} unless resource.patient.nil?
+
 resource.contact.each do |contact|
   xml.contact { |xml| xml << render('fhir/base/contact', {contact: contact})}
 end unless resource.contact.nil?

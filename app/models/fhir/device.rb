@@ -9,9 +9,9 @@ module Fhir
     fhir_attribute :expiry
     fhir_attribute :udi
     fhir_attribute :lot_number
-    # TODO: need a resource reference for owner: Resource(Organization)
-    # TODO: need a resource reference for location: Resource(Location)
-    # TODO: need a resource reference for patient: Resource(Patient)
+    fhir_attribute :owner, type: Types::ResourceReference #Organization
+    fhir_attribute :location, type: Types::ResourceReference #Location
+    fhir_attribute :patient, type: Types::ResourceReference #Patient
     fhir_attribute :contact, list: Types::Contact
     fhir_attribute :url
   end

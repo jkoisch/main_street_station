@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'FHIR Device View' do
+describe 'FHIR Device View', :focus do
   subject { 'fhir/devices/device' }
   let(:resource) { YAML.load(File.read('spec/support-files/device_general.yaml')) }
 

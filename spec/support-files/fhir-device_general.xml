@@ -18,6 +18,18 @@
   <manufacturer value="Acme Devices, Inc"/>
   <model value="AB 45-J"/>
   <lotNumber value="43453424"/>
+  <owner>
+    <reference value="PTC/f201"/>
+    <display value="monitor"/>
+  </owner>
+  <location>
+    <reference value="Anaheim, CA"/>
+    <display value="USA"/>
+  </location>
+  <patient>
+    <reference value="Patient/14"/>
+    <display value="14"/>
+  </patient>
   <contact>
     <system value="phone"/>
     <value value="ext 4352"/>
