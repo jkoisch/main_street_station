@@ -1,4 +1,7 @@
 --- !ruby/object:Fhir::FamilyHistory
+  subject: !ruby/object:Fhir::Types::ResourceReference
+    reference: Patient/example
+    display: Peter Patient
   relation:
     - !ruby/object:Fhir::FamilyHistoryClasses::Relation
       relationship: !ruby/object:Fhir::Types::CodeableConcept
