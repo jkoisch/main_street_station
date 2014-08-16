@@ -19,9 +19,9 @@ module Fhir
     fhir_attribute :body_site, type: Types::CodeableConcept
     fhir_attribute :method, type: Types::CodeableConcept
     fhir_attribute :identifier, type: Types::Identifier
-    # TODO: Reference for Subject: Resource(Patient|Group|Device|Location) resource
-    # TODO: Reference to Resource (Specimen) resource
-    # TODO: Reference for Performer: Resource(Practitioner|Device|Organization) resource
+    fhir_attribute :subject, type: Types::ResourceReference #Patient|Group|Device|Location
+    fhir_attribute :specimen, type: Types::ResourceReference #Specimen
+    fhir_attribute :performer, list: Types::ResourceReference #Practitioner|Device|Organization
     fhir_attribute :reference_range, list: ObservationClasses::ReferenceRange
     fhir_attribute :related, list: ObservationClasses::Related
   end

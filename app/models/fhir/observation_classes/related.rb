@@ -2,7 +2,7 @@ module Fhir
   module ObservationClasses
     class Related < BaseClass
       fhir_attribute :type
-      # TODO: Reference for target: Resource(Observation) resource
+      fhir_attribute :target, type: Fhir::Types::ResourceReference  #Observation
     end
   end
 end

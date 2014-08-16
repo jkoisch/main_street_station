@@ -38,6 +38,22 @@
     <value value="187e0c12-8dd2-67e2-99b2-bf273c878281"/>
   </identifier>
   <subject>
-    <reference value="Patient/example"/>
+    <reference value="Patient/f001"/>
+    <display value="P. van de Heuvel"/>
   </subject>
+  <specimen>
+    <reference value="Patient/f001"/>
+    <display value="bp"/>
+  </specimen>
+  <specimen>
+    <reference value="Practitioner/f005"/>
+    <display value="A. Langeveld"/>
+  </specimen>
+  <related>
+    <type value="MBR"/>
+    <target>
+      <reference value="Observation/f005"/>
+      <display value="JC May"/>
+    </target>
+  </related>
 </Observation>

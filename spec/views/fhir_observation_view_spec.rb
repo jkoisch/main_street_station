@@ -9,7 +9,6 @@ describe 'FHIR Observation Views' do
     it {should produce_fhir_xml_like('spec/support-files/fhir-observation_general.xml')}
   end
 
-
   context 'glucose observation' do
     subject { '/fhir/observations/observation' }
     let(:resource) { YAML.load(File.read('spec/support-files/observation_glucose.yaml')) }

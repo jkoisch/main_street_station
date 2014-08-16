@@ -57,6 +57,22 @@ json.identifier do
   json.partial! 'fhir/base/identifier', identifier: resource.identifier
 end unless resource.identifier.nil?
 
+json.subject do
+  json.partial! 'fhir/base/resource_reference', resource_reference: resource.subject
+end unless resource.subject.nil?
+
+json.specimen do
+  json.partial! 'fhir/base/resource_reference', resource_reference: resource.specimen
+end unless resource.specimen.nil?
+
+json.performer resource.performer do |performer|
+  json.partial! 'fhir/base/resource_reference', resource_reference: performer
+end unless resource.performer.nil?
+
 json.referenceRange resource.reference_range do |reference_range|
   json.partial! 'reference_range', reference_range: reference_range
 end unless resource.reference_range.nil?
+
+json.related resource.related do |related|
+  json.partial! 'related', related: related
+end unless resource.related.nil?
