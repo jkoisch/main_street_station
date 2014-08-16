@@ -18,8 +18,16 @@ json.address resource.address do |address|
   json.partial! 'fhir/base/address', address: address
 end unless resource.address.nil?
 
+json.partOf do
+  json.partial! 'fhir/base/resource_reference', resource_reference: resource.part_of
+end unless resource.part_of.nil?
+
 json.contact resource.contact do |contact|
   json.partial! 'contact', contact: contact
 end unless resource.contact.nil?
+
+json.location resource.location do |location|
+  json.partial! 'fhir/base/resource_reference', resource_reference: location
+end unless resource.location.nil?
 
 json.active resource.active unless resource.active.nil?
