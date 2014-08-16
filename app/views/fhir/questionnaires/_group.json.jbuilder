@@ -4,6 +4,11 @@ end unless group.name.nil?
 
 json.header   group.header unless group.header.nil?
 json.text     group.text unless group.text.nil?
+
+json.subject do
+  json.partial! 'fhir/base/resource_reference', resource_reference: group.subject
+end unless group.subject.nil?
+
 json.ordered  group.ordered unless group.ordered.nil?
 
 json.group group.group do |group|

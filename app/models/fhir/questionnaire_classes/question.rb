@@ -11,7 +11,7 @@ module Fhir
       fhir_attribute :answer_datetime
       fhir_attribute :answer_instant
       fhir_attribute :choice, list: Fhir::Types::Coding
-      # TODO: options Resource(ValueSet)
+      fhir_attribute :options, type: Fhir::Types::ResourceReference #ValueSet
       # TODO: fhir_attribute :data
       fhir_attribute :remarks
       fhir_attribute :group, list: Fhir::QuestionnaireClasses::Group

@@ -1,9 +1,23 @@
 <Questionnaire xmlns="http://hl7.org/fhir">
   <status value="completed"/>
   <authored value="2013-02-19T14:15:00"/>
+  <subject>
+    <reference value="Patient/f201" />
+    <display value="Roel" />
+  </subject>
+  <author>
+    <reference value="Practitioner/f201"/>
+  </author>
+  <source>
+    <reference value="Practitioner/f201"/>
+  </source>
   <name>
     <text value="Cancer Quality Forum Questionnaire 2012"/>
   </name>
+  <encounter>
+    <reference value="Encounter/example"/>
+    <display value="in progress"/>
+  </encounter>
   <group>
     <group>
       <!--   COMORBIDITY   -->
@@ -108,6 +122,10 @@
             <code value="ABDOMINAL"/>
           </coding>
         </name>
+        <subject>
+          <reference value="USCA/0302"/>
+          <display value="general"/>
+        </subject>
         <question>
           <name>
             <coding>
@@ -116,6 +134,10 @@
               <display value="pT category"/>
             </coding>
           </name>
+          <options>
+            <reference value="http://spark.furore.com/fhir/ValueSet/bc299b13baff4405871b14b3a9346c04"/>
+            <display value="SCTT 2006 Service Type"/>
+          </options>
         </question>
       </group>
     </group>

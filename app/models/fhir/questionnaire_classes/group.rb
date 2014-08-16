@@ -5,7 +5,7 @@ module Fhir
       fhir_attribute :header
       fhir_attribute :text
       fhir_attribute :ordered
-      # TODO: subject Resource(Any)
+      fhir_attribute :subject, type: Fhir::Types::ResourceReference #Any
       fhir_attribute :group, list: Fhir::QuestionnaireClasses::Group
       fhir_attribute :question, list: Fhir::QuestionnaireClasses::Question
     end

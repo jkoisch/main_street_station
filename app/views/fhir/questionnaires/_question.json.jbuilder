@@ -15,6 +15,10 @@ json.choice question.choice do |choice|
   json.partial! 'fhir/base/coding', coding: choice
 end unless question.choice.nil?
 
+json.options do
+  json.partial! 'fhir/base/resource_reference', resource_reference: question.options
+end unless question.options.nil?
+
 json.remarks        question.remarks unless question.remarks.nil?
 
 json.group question.group do |group|

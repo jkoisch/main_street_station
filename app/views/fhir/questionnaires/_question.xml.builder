@@ -12,6 +12,7 @@ question.choice.each do |choice|
   xml.choice { |xml| xml << render('fhir/base/coding', {coding: choice})}
 end unless question.choice.nil?
 
+xml.options { |xml| xml << render('fhir/base/resource_reference', {resource_reference: question.options})} unless question.options.nil?
 xml.remarks({value: question.remarks}) unless question.remarks.nil?
 
 question.group.each do |group|

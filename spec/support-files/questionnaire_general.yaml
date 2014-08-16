@@ -3,6 +3,16 @@
   authored: "2013-02-19T14:15:00"
   name: !ruby/object:Fhir::Types::CodeableConcept
     text: Cancer Quality Forum Questionnaire 2012
+  subject: !ruby/object:Fhir::Types::ResourceReference
+    reference: Patient/f201
+    display: Roel
+  author: !ruby/object:Fhir::Types::ResourceReference
+    reference: Practitioner/f201
+  source: !ruby/object:Fhir::Types::ResourceReference
+    reference: Practitioner/f201
+  encounter: !ruby/object:Fhir::Types::ResourceReference
+    reference: Encounter/example
+    display: in progress
   group: !ruby/object:Fhir::QuestionnaireClasses::Group
     group:
       - !ruby/object:Fhir::QuestionnaireClasses::Group
@@ -86,6 +96,9 @@
                 - !ruby/object:Fhir::Types::Coding
                   system: http://cancer.questionnaire.org/system/code/sections
                   code: ABDOMINAL
+            subject: !ruby/object:Fhir::Types::ResourceReference
+              reference: USCA/0302
+              display: general
             question:
               - !ruby/object:Fhir::QuestionnaireClasses::Question
                 name: !ruby/object:Fhir::Types::CodeableConcept
@@ -94,3 +107,6 @@
                       system: http://cancer.questionnaire.org/system/code/questions
                       code: STADPT
                       display: pT category
+                options: !ruby/object:Fhir::Types::ResourceReference
+                  reference: http://spark.furore.com/fhir/ValueSet/bc299b13baff4405871b14b3a9346c04
+                  display: SCTT 2006 Service Type
