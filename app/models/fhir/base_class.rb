@@ -2,6 +2,8 @@ module Fhir
   class BaseClass
     extend AttributeDefs
 
+    fhir_attribute :_id
+
     def initialize(attr_accessors={})
       update(attr_accessors)
     end
