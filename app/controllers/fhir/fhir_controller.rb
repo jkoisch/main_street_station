@@ -27,9 +27,5 @@ module Fhir
         !db_token.nil? and db_token.authentication_expiry > Time.now
       end
     end
-
-    def json_request?
-      request.format.json?
-    end
   end
 end

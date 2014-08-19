@@ -31,4 +31,7 @@ class ApplicationController < ActionController::Base
     false  #override in other controllers
   end
 
+  def json_request?
+    request.format.json?
+  end
 end
