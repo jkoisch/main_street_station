@@ -44,7 +44,7 @@
                 <ul>
                   <li>Name: <%= operation.name %></li>
                   <li>Description: <%= operation.description %></li>
-                  <li>Verb: <%= Directory::Verb.get_verb(operation.verb_id).name unless operation.verb_id.nil? %></li>
+                  <li>Verb: <%= Directory::Verb.find(operation.verb_id).name unless operation.verb_id.nil? %></li>
                 </ul>
               </li>
             </ul>
