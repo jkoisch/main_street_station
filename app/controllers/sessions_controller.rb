@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   before_action :set_user, only: [:create]
-  skip_before_action :verify_authenticity_token, only: [:create], if: request.format.json?
+  skip_before_action :verify_authenticity_token, only: [:create], if: :json_request?
 
   def create
     if @user
@@ -14,5 +14,9 @@ class SessionsController < ApplicationController
   private
   def set_user
     @user = User.where(email: params[:user_name]).first
+  end
+
+  def is_json_request?
+    request.format.json?
   end
 end
