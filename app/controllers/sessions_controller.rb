@@ -17,6 +17,6 @@ class SessionsController < ApplicationController
   end
 
   def is_json_request?
-    request.format.json?
+    request.defined? ? request.format.json? : false
   end
 end
