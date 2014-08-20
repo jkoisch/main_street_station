@@ -1,39 +1,60 @@
 {
     "id": 1,
+    "resource_type": "Client",
     "text": {
         "status": "generated",
         "div": "<div>\n      <table>\n        <tbody>\n          <tr>\n            <td>Name</td>\n            <td>Peter James <b>Chalmers</b> (&quot;Jim&quot;)</td>\n          </tr>\n          <tr>\n            <td>Address</td>\n            <td>534 Erewhon, Pleasantville, Vic, 3999</td>\n          </tr>\n          <tr>\n            <td>Contacts</td>\n            <td>Home: unknown. Work: (03) 5555 6473</td>\n          </tr>\n          <tr>\n            <td>Id</td>\n            <td>MRN: 12345 (Acme Healthcare)</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>"
     },
     "identifier": [
         {
+            "_id": 1,
             "use": "usual",
             "label": "MRN",
             "system": "urn:oid:1.2.36.146.595.217.0.1",
             "value": "12345",
             "period": {
-                "start": "2001-05-06"
-            }
+                "start": "2001-05-06",
+                "end": null
+            },
+            "assigner": null
         }
     ],
     "name": [
         {
+            "_id": 1,
+            "text": null,
             "use": "official",
             "family": ["Chalmers"],
-            "given": ["Peter", "James"]
+            "given": ["Peter", "James"],
+            "prefix": null,
+            "suffix": null,
+            "period": null
         },
         {
+            "_id": 2,
+            "text": null,
             "use": "usual",
-            "given": ["Jim"]
+            "family": [],
+            "given": ["Jim"],
+            "prefix": null,
+            "suffix": null,
+            "period": null
         }
     ],
     "telecom": [
         {
-            "use": "home"
+            "_id": 1,
+            "system": null,
+            "value": null,
+            "use": "home",
+            "period": null
         },
         {
+            "_id": 2,
             "system": "phone",
             "value": "(03) 5555 6473",
-            "use": "work"
+            "use": "work",
+            "period": null
         }
     ],
     "gender": {
@@ -45,40 +66,24 @@
             }
         ]
     },
-    "birth_date": "1974-12-25",
+    "birth_date": {
+        "_precision": "F",
+        "value": "1974-12-25"
+    },
     "deceased_boolean": false,
     "address": [
         {
+            "_id": 1,
+            "text": null,
             "use": "home",
             "line": ["534 Erewhon St"],
             "city": "PleasantVille",
             "state": "Vic",
-            "zip": "3999"
+            "zip": "3999",
+            "country": null,
+            "period": null
         }
     ],
-    "contact": [
-        {
-            "relationship": [
-                {
-                    "coding": [
-                        {
-                            "system": "http://hl7.org/fhir/patient-contact-relationship",
-                            "code": "partner"
-                        }
-                    ]
-                }
-            ],
-            "name": {
-                "family": ["du", "Marché"],
-                "given": ["Bénédicte"]
-            },
-            "telecom": [
-                {
-                    "system": "phone",
-                    "value": "+33 (237) 998327"
-                }
-            ]
-        }
-    ],
+    "communication": [],
     "active": true
 }
