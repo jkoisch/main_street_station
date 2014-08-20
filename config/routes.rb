@@ -24,7 +24,7 @@ MainStreetStation::Application.routes.draw do
     resources :Organization, controller: 'organizations', only: [:index, :show, :create, :update], defaults: {format: :json}
     resources :Patient, controller: 'patients', only: [:index, :show, :create, :update], defaults: {format: :json}
     resources :Questionnaire, controller: 'questionnaires', only: [:index, :show, :create, :update], defaults: {format: :json}
-
+    resources :Practitioner, controller: 'practitioners', only: [:index, :show, :create, :update], defaults: {format: :json}
     resources :operation_outcomes, only: [:show], defaults: {format: :json}
 
     get 'metadata', to: 'conformance#show', defaults: {format: :json}

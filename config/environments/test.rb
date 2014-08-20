@@ -43,6 +43,7 @@ MainStreetStation::Application.configure do
   config.gringotts_observation = Rails.root + 'spec/support-files/observation.json'
   config.gringotts_questionnaire = Rails.root + 'spec/support-files/questionnaire.json'
   config.gringotts_organization = Rails.root + 'spec/support-files/organization.json'
+  config.gringotts_practitioner = Rails.root + 'spec/support-files/practitioner.json'
 
   config.fhir_enforce_security = false
 end
