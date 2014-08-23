@@ -3,17 +3,17 @@ class SessionsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create], if: :is_json_request?
 
   def create
-    if @user
-      logger.debug "#{@user} is trying to create a session"
+    if SessionService.authenticate(@user, params)
+      logger.debug "#{@user.email} is trying to create a session"
     else
-      logger.error "Attempt to login as #{params[:user_name]}"
+      logger.error "** Failure** Attempt to login as #{params[:user_name]} - rejected"
       render text: 'Login failed', status: :unauthorized
     end
   end
 
   private
   def set_user
-    @user = User.where(email: params[:user_name]).first
+    @user = User.find_by(email: params[:user_name])
   end
 
   def is_json_request?
