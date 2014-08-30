@@ -1,4 +1,8 @@
 <Condition xmlns="http://hl7.org/fhir">
+  <identifier>
+    <system value="http://goodcare.org/devices/id"/>
+    <value value="345675"/>
+  </identifier>
   <subject>
     <reference value="Patient/f201"/>
     <display value="Roel"/>
