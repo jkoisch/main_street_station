@@ -1,4 +1,8 @@
 --- !ruby/object:Fhir::Condition
+  identifier:
+     - !ruby/object:Fhir::Types::Identifier
+       system: http://goodcare.org/devices/id
+       value: 345675
   subject: !ruby/object:Fhir::Types::ResourceReference
     reference: Patient/f201
     display: Roel

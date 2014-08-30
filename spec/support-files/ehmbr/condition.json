@@ -1,58 +1,67 @@
 {
     "id": 1,
-    "resource_type": "Condition",
+    "resource_type":"Condition",
     "identifier":[
         {
             "_id": 2,
             "system": "http://goodcare.org/devices/id",
-            "value": "345675"
+            "value": "345675",
+            "use": null,
+            "label": null,
+            "period": null,
+            "assigner": null
         }],
     "subject":{
         "reference":"Patient/f201",
         "display":"Roel"
     },
     "encounter":{
-        "reference":"Encounter/f201"
+        "reference":"Encounter/f201",
+        "display": null
     },
     "asserter":{
-        "reference":"Practitioner/f201"
+        "reference":"Practitioner/f201",
+        "display": null
     },
     "date_asserted":"2013-04-04",
-    "code": {
-        "coding": [
+    "code":{
+        "coding":[
             {
-                "system": "http://snomed.info/sct",
-                "code": "39065001",
-                "display": "Burn of ear"
+                "system":"http://snomed.info/sct",
+                "code":"39065001",
+                "display":"Burn of ear"
             }
         ],
-        "text": "Burnt Ear"
+        "text":"Burnt Ear"
     },
-    "category": {
-        "coding": [
+    "category":{
+        "coding":[
             {
-                "system": "http://hl7.org/fhir/condition-category",
-                "code": "diagnosis",
-                "display": "Diagnosis"
+                "system":"http://hl7.org/fhir/condition-category",
+                "code":"diagnosis",
+                "display":"Diagnosis"
             },
             {
-                "system": "http://snomed.info/sct",
-                "code": "439401001",
-                "display": "Diagnosis"
+                "system":"http://snomed.info/sct",
+                "code":"439401001",
+                "display":"Diagnosis"
             }
-        ]
+        ],
+        "text": null
     },
-    "status": "confirmed",
-    "severity": {
-        "coding": [
+    "status":"confirmed",
+    "certainty":{},
+    "severity":{
+        "coding":[
             {
-                "system": "http://snomed.info/sct",
-                "code": "24484000",
-                "display": "Severe"
+                "system":"http://snomed.info/sct",
+                "code":"24484000",
+                "display":"Severe"
             }
-        ]
+        ],
+        "text": null
     },
-    "onset_date": "2012-05-24",
+    "onset_date":"2012-05-24",
     "stage":{
         "summary":{
             "coding":[
@@ -61,11 +70,13 @@
                     "code":"14803004",
                     "display":"Temporary"
                 }
-            ]
+            ],
+            "text": null
         },
         "assessment":[
             {
-                "reference":"Procedure/f201"
+                "reference":"Procedure/f201",
+                "display": null
             }
         ]
     },
@@ -88,23 +99,25 @@
             ]
         }
     ],
-    "location": [
+    "location":[
         {
-            "code": {
-                "coding": [
+            "code":{
+                "coding":[
                     {
-                        "system": "http://snomed.info/sct",
-                        "code": "49521004",
-                        "display": "Left external ear structure"
+                        "system":"http://snomed.info/sct",
+                        "code":"49521004",
+                        "display":"Left external ear structure"
                     }
                 ],
-                "text": "Left Ear"
-            }
+                "text":"Left Ear"
+            },
+            "detail": null
         }
     ],
     "related_item":[
         {
             "type":"due-to",
+            "code":{},
             "target":{
                 "reference":"Procedure/f201",
                 "display":"TPF chemokuur"
@@ -112,6 +125,7 @@
         },
         {
             "type":"due-to",
+            "code":{},
             "target":{
                 "reference":"Condition/f205",
                 "display":"bacterial infection"
