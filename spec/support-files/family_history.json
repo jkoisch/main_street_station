@@ -1,6 +1,11 @@
 {
     "id": 1,
     "resource_type": "FamilyHistory",
+    "subject": {
+        "reference": "Patient/f201",
+        "display": "Roel"
+    },
+    "note": "Both parents, both brothers and both children (twin) are still alive.",
     "relation": [
         {
             "relationship": {
@@ -11,6 +16,7 @@
                     }
                 ]
             },
+            "deceased_boolean": false,
             "condition": [
                 {
                     "type": {
@@ -22,6 +28,15 @@
                             }
                         ],
                         "text": "Stroke"
+                    },
+                    "outcome": {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "419099112",
+                                "display": "Inactive"
+                            }
+                        ]
                     },
                     "onset_age": {
                         "value": 56,
@@ -51,6 +66,15 @@
                             }
                         ],
                         "text": "Diabetes Mellitus"
+                    },
+                    "outcome": {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "419099009",
+                                "display": "Died"
+                            }
+                        ]
                     }
                 }
             ]

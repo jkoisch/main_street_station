@@ -1,7 +1,8 @@
 --- !ruby/object:Fhir::FamilyHistory
   subject: !ruby/object:Fhir::Types::ResourceReference
-    reference: Patient/example
-    display: Peter Patient
+    reference: Patient/f201
+    display: Roel
+  note: "Both parents, both brothers and both children (twin) are still alive."
   relation:
     - !ruby/object:Fhir::FamilyHistoryClasses::Relation
       relationship: !ruby/object:Fhir::Types::CodeableConcept
@@ -9,6 +10,7 @@
           - !ruby/object:Fhir::Types::Coding
             system: http://hl7.org/fhir/familial-relationship
             code: mother
+      deceased_boolean: "false"
       condition:
         - !ruby/object:Fhir::FamilyHistoryClasses::Condition
           type: !ruby/object:Fhir::Types::CodeableConcept
@@ -18,6 +20,12 @@
                 code: "371041009"
                 display: Embolic Stroke
             text: Stroke
+          outcome: !ruby/object:Fhir::Types::CodeableConcept
+            coding:
+              - !ruby/object:Fhir::Types::Coding
+                system: http://snomed.info/sct
+                code: "419099112"
+                display: Inactive
           onset_age: !ruby/object:Fhir::Types::Quantity
             value: "56"
             units: "a"
@@ -37,3 +45,9 @@
                 code: "190372001"
                 display: Type 1 Diabetes, Maturity Onset
             text: Diabetes Mellitus
+          outcome: !ruby/object:Fhir::Types::CodeableConcept
+            coding:
+              - !ruby/object:Fhir::Types::Coding
+                system: http://snomed.info/sct
+                code: "419099009"
+                display: Died

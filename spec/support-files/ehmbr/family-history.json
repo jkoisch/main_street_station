@@ -1,0 +1,179 @@
+{
+    "id": 1,
+    "resource_type": "FamilyHistory",
+    "identifier":[],
+    "subject": {
+        "reference": "Patient/f201",
+        "display": "Roel"
+    },
+    "note": "Both parents, both brothers and both children (twin) are still alive.",
+    "relation": [
+        {
+            "name": null,
+            "relationship": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/familial-relationship",
+                        "version": null,
+                        "code": "mother",
+                        "display": null,
+                        "primary":null,
+                        "value_set": {
+                            "reference": null,
+                            "display": null
+                        }
+                    }
+                ],
+                "text": null
+            },
+            "born_period": {
+                "start": null,
+                "end": null
+            },
+            "born_date": null,
+            "born_string": null,
+            "deceased_boolean": false,
+            "deceased_age": null,
+            "deceased_range": null,
+            "deceased_date": null,
+            "deceased_string": null,
+            "note": null,
+            "condition": [
+                {
+                    "type": {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "version": null,
+                                "code": "371041009",
+                                "display": "Embolic Stroke",
+                                "primary": null,
+                                "value_set": {
+                                    "reference": null,
+                                    "display": null
+                                }
+                            }
+                        ],
+                        "text": "Stroke"
+                    },
+                    "outcome": {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "version": null,
+                                "code": "419099112",
+                                "display": "Inactive",
+                                "primary": null,
+                                "value_set": {
+                                    "reference": null,
+                                    "display": null
+                                }
+                            }
+                        ]
+                    },
+                    "onset_age": {
+                        "value": 56,
+                        "comparator": null,
+                        "units": "a",
+                        "system": "http://unitsofmeasure.org",
+                        "code": null
+                    },
+                    "onset_range":{
+                        "low": null,
+                        "high": null
+                    },
+                    "onset_string": null,
+                    "note": null
+                }
+            ]
+        },
+        {
+            "name": null,
+            "relationship": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/familial-relationship",
+                        "version":null,
+                        "code": "brother",
+                        "display": null,
+                        "primary": null,
+                        "value_set": {
+                            "reference": null,
+                            "display": null
+                        }
+                    }
+                ],
+                "text": null
+            },
+            "born_period": {
+                "start": null,
+                "end": null
+            },
+            "born_date": null,
+            "born_string": null,
+            "deceased_boolean": null,
+            "deceased_age": {
+                "value": null,
+                "comparator": null,
+                "units": null,
+                "system": null,
+                "code": null
+            },
+            "deceased_range": {
+                "low": null,
+                "high": null
+            },
+            "deceased_date": null,
+            "deceased_string": null,
+            "note": null,
+            "condition": [
+                {
+                    "type": {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "version": null,
+                                "code": "190372001",
+                                "display": "Type 1 Diabetes, Maturity Onset",
+                                "primary": null,
+                                "value_set": {
+                                    "reference": null,
+                                    "display": null
+                                }
+                            }
+                        ],
+                        "text": "Diabetes Mellitus"
+                    },
+                    "outcome": {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "version": null,
+                                "code": "419099009",
+                                "display": "Died",
+                                "primary": null,
+                                "value_set": {
+                                    "reference": null,
+                                    "display": null
+                                }
+                            }
+                        ]
+                    },
+                    "onset_age": {
+                        "value": null,
+                        "comparator": null,
+                        "units": null,
+                        "system": null,
+                        "code": null
+                    },
+                    "onset_range":{
+                        "low": null,
+                        "high": null
+                    },
+                    "onset_string": null,
+                    "note": null
+                }
+            ]
+        }
+    ]
+}

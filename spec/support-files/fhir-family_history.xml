@@ -4,9 +4,10 @@
     <div xmlns="http://www.w3.org/1999/xhtml">Mother died of a stroke aged 56. Brother has diabetes</div>
   </text>
   <subject>
-    <reference value="Patient/example"/>
-    <display value="Peter Patient"/>
+    <reference value="Patient/f201"/>
+    <display value="Roel"/>
   </subject>
+  <note value="Both parents, both brothers and both children (twin) are still alive."/>
   <relation>
     <relationship>
       <coding>
@@ -14,6 +15,7 @@
         <code value="mother"/>
       </coding>
     </relationship>
+    <deceasedBoolean value="false"/>
     <condition>
       <type>
         <coding>
@@ -23,6 +25,13 @@
         </coding>
         <text value="Stroke"/>
       </type>
+      <outcome>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="419099112"/>
+          <display value="Inactive"/>
+        </coding>
+      </outcome>
       <onsetAge>
         <value value="56"/>
         <units value="a"/>
@@ -46,6 +55,13 @@
         </coding>
         <text value="Diabetes Mellitus"/>
       </type>
+      <outcome>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="419099009"/>
+          <display value="Died"/>
+        </coding>
+      </outcome>
     </condition>
   </relation>
 </FamilyHistory>
