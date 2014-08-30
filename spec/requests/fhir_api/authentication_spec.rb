@@ -23,6 +23,17 @@ describe 'Authentication API', type: :request do
         post '/login', {user_name: bad_email, password: '123abc'}
         expect(response.status).to eq 401
       end
+
+      it 'should reject a user when password invalid' do
+        post '/login', {user_name: user.email, password: '123temp'}
+        expect(response.status).to eq 401
+      end
+
+      it 'should return the authentication and refresh tokens when successful' do
+        # TODO needs to use JSON object to determine equivalence to users current token
+        post '/login', {user_name: user.email, password: '123abc'}
+        expect(response.body).to include("authentication_token")
+      end
     end
 
     describe ' - OAuth' do
