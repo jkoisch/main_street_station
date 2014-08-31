@@ -30,9 +30,17 @@ describe 'Authentication API', type: :request do
       end
 
       it 'should return the authentication and refresh tokens when successful' do
-        # TODO needs to use JSON object to determine equivalence to users current token
         post '/login', {user_name: user.email, password: '123abc'}
-        expect(response.body).to include("authentication_token")
+        expect(json).to include("authentication_token")
+        expect(json).to include("refresh_token")
+      end
+
+      it 'should return a valid authentication token that can be used' do
+        post '/login', {user_name: user.email, password: '123abc'}
+        token = json["authentication_token"]
+        get '/fhir/Observation', nil,
+            'HTTP_AUTHORIZATION' => ActionController::HttpAuthentication::Token.encode_credentials(token)
+        expect(response.status).to eq 200
       end
     end
 
