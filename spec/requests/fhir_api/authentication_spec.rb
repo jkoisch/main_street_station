@@ -49,7 +49,7 @@ describe 'Authentication API', type: :request do
     end
   end
 
-  describe '- token management' do
+  describe '- token validation' do
     let(:user) { User.create!(email: Faker::Internet.email, password: '123abc') }
 
     it 'should fail with an invalid token' do

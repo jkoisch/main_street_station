@@ -64,4 +64,6 @@ gem 'jbuilder'
 # To use debugger
 # gem 'debugger'
 
+gem 'highline'
+
 gem 'rails_12factor', group: :production

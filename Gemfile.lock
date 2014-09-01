@@ -92,6 +92,7 @@ GEM
       pry (>= 0.9.12)
       thor (>= 0.18.1)
     hashie (2.0.5)
+    highline (1.6.13)
     hike (1.2.3)
     httpauth (0.2.0)
     i18n (0.6.9)
@@ -258,6 +259,7 @@ DEPENDENCIES
   faker
   foreman
   guard
+  highline
   jbuilder
   jquery-rails
   json
