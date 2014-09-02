@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     if SessionService.authenticate(@user, params)
+      # TODO Add successful log in message
       logger.debug "#{@user.email} is trying to create a session"
     else
       logger.error "** Failure** Attempt to login as #{params[:user_name]} - rejected"
