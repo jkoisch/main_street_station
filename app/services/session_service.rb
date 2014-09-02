@@ -1,5 +1,4 @@
 class SessionService
-  # TODO Clean up to use the explicit password and not the entire params structure
   def self.authenticate(user, pw)
     if user && user.valid_password?(pw)
       unless user.user_tokens.current.count > 0
