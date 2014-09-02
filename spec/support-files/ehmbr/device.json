@@ -1,6 +1,10 @@
 {
     "id": 2,
     "resource_type": "Device",
+    "text": {
+        "status": "generated",
+        "div": "<div>\n      <p>example</p>\n    </div>"
+    },
     "identifier": [
         {
             "_id": 2,

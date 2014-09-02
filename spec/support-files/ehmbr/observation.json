@@ -1,0 +1,133 @@
+{
+    "id": 1,
+    "resource_type": "Observation",
+    "text": {
+        "status": "generated",
+        "div": "<div>Sept 17, 2012: Systolic Blood pressure 107 mmHg (normal)</div>"
+    },
+    "name": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "version": null,
+                "code": "8480-6",
+                "display": "Systolic blood pressure",
+                "primary": null,
+                "value_set": {
+                    "reference": null,
+                    "display": null
+                }
+            },
+            {
+                "system": "http://snomed.info/sct",
+                "version": null,
+                "code": "271649006",
+                "display": "Systolic blood pressure",
+                "primary": null,
+                "value_set": {
+                    "reference": null,
+                    "display": null
+                }
+            },
+            {
+                "system": "http://acme.org/devices/clinical-codes",
+                "version": null,
+                "code": "bp-s",
+                "display": "Systolic Blood pressure",
+                "primary": null,
+                "value_set": {
+                    "reference": null,
+                    "display": null
+                }
+            }
+        ]
+    },
+    "value_quantity": {
+        "value": "107",
+        "units": "mm[Hg]"
+    },
+    "value_codeable_concept": {
+        "coding": [
+            {
+                "system": null,
+                "version": null,
+                "code": null,
+                "display": null,
+                "primary": null,
+                "value_set": {
+                    "reference": null,
+                    "display": null
+                }
+            }
+        ],
+        "text": null
+    },
+    "value_attachment": {
+        "content_type": null,
+        "language": null,
+        "data": null,
+        "url": null,
+        "size": null,
+        "hash": null,
+        "title": null
+    },
+    "value_ratio": {
+        "numerator": null,
+        "denominator": null
+    },
+    "value_period": {
+        "start": null,
+        "end": null
+    },
+    "value_sampled_data": {
+        "origin": {
+            "value": null,
+            "comparator": null,
+            "units": null,
+            "system": null,
+            "code": null
+        }
+    },
+    "value_string": null,
+    "interpretation": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/v2/0078",
+                "version":null,
+                "code": "N",
+                "display": "Normal (applies to non-numeric results)",
+                "primary": null,
+                "value_set": {
+                    "reference": null,
+                    "display": null
+                }
+            }
+        ],
+        "text": null
+    },
+    "comments": null,
+    "applies_datetime": "2012-09-17",
+    "applies_period":{
+        "start": null,
+        "end": null
+    },
+    "issued": null,
+    "status": "final",
+    "reliability": "ok",
+    "body_site": {},
+    "method": {},
+    "identifier": {
+        "use": null,
+        "label": null,
+        "system": "urn:ietf:rfc:3986",
+        "value": "187e0c12-8dd2-67e2-99b2-bf273c878281",
+        "period": {
+            "start": null,
+            "end": null
+        },
+        "assigner": {}
+    },
+    "subject": {},
+    "specimen": {},
+    "performer": {}
+}
