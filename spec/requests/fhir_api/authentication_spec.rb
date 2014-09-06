@@ -31,13 +31,13 @@ describe 'Authentication API', type: :request do
 
       it 'should return the authentication and refresh tokens when successful' do
         post '/api_session', {user_name: user.email, password: '123abc'}
-        expect(json).to include("authentication_token")
-        expect(json).to include("refresh_token")
+        expect(json).to include('authentication_token')
+        expect(json).to include('refresh_token')
       end
 
       it 'should return a valid authentication token that can be used' do
         post '/api_session', {user_name: user.email, password: '123abc'}
-        token = json["authentication_token"]
+        token = json['authentication_token']
         get '/fhir/Observation', nil,
             'HTTP_AUTHORIZATION' => ActionController::HttpAuthentication::Token.encode_credentials(token)
         expect(response.status).to eq 200
@@ -70,7 +70,7 @@ describe 'Authentication API', type: :request do
       expect(response.status).to eq 200
     end
 
-    it "should do return 'Not Authorized' with an expired token" do
+    it "should return 'Not Authorized' with an expired token" do
       user_token = UserToken.create!(user: user)
       # noinspection RubyResolve
       user_token.authentication_expiry = Time.now - 30.seconds
