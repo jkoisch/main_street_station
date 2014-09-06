@@ -9,4 +9,10 @@ namespace :db do
       User.create!(email: email, password: pw, password_confirmation: pw_confirm)
     end
   end
+
+  namespace :maintenance do
+    task :cleanup => [:environment] do |t|
+      UserToken.expired.destroy
+    end
+  end
 end

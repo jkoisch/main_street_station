@@ -16,6 +16,7 @@ class UserToken < ActiveRecord::Base
 
   scope :by_refresh_token, ->(token) { where(refresh_token: token) }
   scope :current, ->(now=Time.now) { where('refresh_expiry > ? and authentication_expiry > ?', now, now) }
+  scope :expired, ->(now=Time.now) { where('refresh_expiry < ? and authentication_expiry < ?', now, now) }
 
   def self.is_valid_auth_token(token)
     exists?(['authentication_token = ? and authentication_expiry > ?', token, Time.now])

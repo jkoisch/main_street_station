@@ -1,7 +1,11 @@
 require 'rest-client'
 require 'json'
+require 'highline/import'
 
 class ApiTest < Thor
+  HEROKU_Mainstreet = "whispering-sierra-2314.herokuapp.com"
+  HEROKU_Gringotts  = "protected-garden-4145.herokuapp.com"
+
   desc 'simple_index RESOURCE', ''
   def simple_index(resource)
     begin
@@ -30,6 +34,47 @@ class ApiTest < Thor
   rescue => e
     puts '****** FAILURE ******'
     puts e
+  end
+
+  desc 'heroku_smoke_test', 'Run a series of tests against the Heroku installed YouCentric apps to verify things are operational'
+  option :username, required: true, type: :string, aliases: 'u'
+  def heroku_smoke_test
+    puts 'Testing YouCentric on Heroku... '
+    puts '   testing Mainstreet up'
+    begin
+      RestClient.get "http://#{HEROKU_Mainstreet}/fhir/metadata",  {accept: :json}
+      puts '         ...success'
+      puts '   testing Patient retrieve (login not required)'
+      begin
+        RestClient.get "http://#{HEROKU_Mainstreet}/fhir/Patient/1",  {accept: :json}
+        puts '         ...success'
+        puts '   testing API login'
+        begin
+          pw = ask("-->enter password for #{options[:username]}: ") { |q| q.echo = '@'}
+          resp = RestClient.post "http://#{HEROKU_Mainstreet}/api_session", {user_name: options[:username], password: pw}, {accept: :json}
+          token = 'Token token=' + JSON.parse(resp)['authentication_token']
+          puts '         ...success'
+          puts '   testing Device retrieve (requires active session)'
+          begin
+            RestClient.get "http://#{HEROKU_Mainstreet}/fhir/Device/1",  {accept: :json, Authorization: token}
+            puts '         ...success'
+          rescue => e
+            puts '****** FAILURE ******'
+            puts e
+          end
+        rescue => e
+          puts '****** FAILURE ******'
+          puts e
+        end
+      rescue => e
+        puts '****** FAILURE ******'
+        puts e
+      end
+      puts 'done'
+    rescue => e
+      puts '****** FAILURE ******'
+      puts e
+    end
   end
 end
 

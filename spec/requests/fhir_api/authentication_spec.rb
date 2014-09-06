@@ -14,7 +14,7 @@ describe 'Authentication API', type: :request do
       let(:user) { User.create!(email: Faker::Internet.email, password: '123abc') }
 
       it 'should allow a user to log in' do
-        post '/login', {user_name: user.email, password: '123abc'}
+        post '/api_session', {user_name: user.email, password: '123abc'}
         expect(response.status).to eq 200
       end
 
@@ -30,13 +30,13 @@ describe 'Authentication API', type: :request do
       end
 
       it 'should return the authentication and refresh tokens when successful' do
-        post '/login', {user_name: user.email, password: '123abc'}
+        post '/api_session', {user_name: user.email, password: '123abc'}
         expect(json).to include("authentication_token")
         expect(json).to include("refresh_token")
       end
 
       it 'should return a valid authentication token that can be used' do
-        post '/login', {user_name: user.email, password: '123abc'}
+        post '/api_session', {user_name: user.email, password: '123abc'}
         token = json["authentication_token"]
         get '/fhir/Observation', nil,
             'HTTP_AUTHORIZATION' => ActionController::HttpAuthentication::Token.encode_credentials(token)
