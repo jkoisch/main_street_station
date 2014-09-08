@@ -66,10 +66,7 @@
             }
         ]
     },
-    "birth_date": {
-        "_precision": "F",
-        "value": "1974-12-25"
-    },
+    "birth_date": "1974-12-25",
     "deceased_boolean": false,
     "address": [
         {
