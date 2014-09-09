@@ -15,10 +15,35 @@ describe Fhir::PatientsController, type: :controller do
 
     context 'for searches' do
       it 'interprets search criteria' do
-        get :index, {format: :json, search: 'something'}
+        get :index, {format: :json, search: 'given=darth'}
+        #expect(assigns(:patients).count).to eq(1)
         pending 'needs validation of parameters'
       end
+
+      #it 'returns patients using search criteria: active' do
+      #  get :index, {format: :json, search: 'active=true'}
+      #end
+
+      #it 'performs a patient search for matching address'
+
+      it 'performs a patient search for matching birthdate_before'
+
+      it 'performs a patient search for matching birthdate_after'
+
+      it 'performs a patient search for matching family'
+
+      it 'performs a patient search for matching gender'
+
+      it 'performs a patient search for matching given'
+
+      it 'performs a patient search for matching identifier'
+
+      it 'performs a patient search for matching name'
+
+      it 'returns operation_outcome using invalid search criteria'
+
     end
+
   end
 
   describe '#show' do
