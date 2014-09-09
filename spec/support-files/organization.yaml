@@ -1,5 +1,11 @@
 --- !ruby/object:Fhir::Organization
   name: "Health Level Seven International"
+  type: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: urn:oid:2.16.840.1.113883.2.4.15.1060
+        code: V6
+        display: University Medical Hospital
   telecom:
     - !ruby/object:Fhir::Types::Contact
       system: phone

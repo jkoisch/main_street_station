@@ -1,0 +1,180 @@
+{
+    "id": 1,
+    "resource_type": "Organization",
+    "text": {
+        "status": "generated",
+        "div": "<div>\n      Health Level Seven International<br/>\n\t\t\t\t3300 Washtenaw Avenue, Suite 227<br/>\n\t\t\t\tAnn Arbor, MI 48104<br/>\n\t\t\t\tUSA<br/>\n\t\t\t\t(+1) 734-677-7777 (phone)<br/>\n\t\t\t\t(+1) 734-677-6622 (fax)<br/>\n\t\t\t\tE-mail:  <a href=\"mailto:hq@HL7.org\">hq@HL7.org</a>\n    </div>"
+    },
+    "identifier": [
+        {
+            "_id": 1,
+            "use": null,
+            "label": null,
+            "system": null,
+            "value": null,
+            "period":{
+                "start": null,
+                "end": null
+            },
+            "assigner": {
+                "reference": null,
+                "display": null
+            }
+        }
+    ],
+    "name": "Health Level Seven International",
+    "type": {
+        "coding": [
+            {
+                "_id": 1,
+                "system": "urn:oid:2.16.840.1.113883.2.4.15.1060",
+                "version": null,
+                "code": "V6",
+                "display": "University Medical Hospital",
+                "primary": null,
+                "value_set": {
+                    "reference": null,
+                    "display": null
+                }
+            }
+        ],
+        "text": null
+    },
+    "telecom": [
+        {
+            "_id": 1,
+            "system": "phone",
+            "value": "(+1) 734-677-7777",
+            "use": null,
+            "period": {
+                "start": null,
+                "end": null
+            }
+        },
+        {
+            "_id": 2,
+            "system": "fax",
+            "value": "(+1) 734-677-6622",
+            "use": null,
+            "period": {
+                "start": null,
+                "end": null
+            }
+        },
+        {
+            "_id": 3,
+            "system": "email",
+            "value": "hq@HL7.org",
+            "use": null,
+            "period": {
+                "start": null,
+                "end": null
+            }
+        }
+    ],
+    "address": [
+        {
+            "_id": 1,
+            "use": null,
+            "text": null,
+            "line": [
+                "3300 Washtenaw Avenue, Suite 227"
+            ],
+            "city": "Ann Arbor",
+            "state": "MI",
+            "zip": "48104",
+            "country": "USA",
+            "period": {
+                "start": null,
+                "end": null
+            }
+        }
+    ],
+    "part_of": {
+        "reference": null,
+        "display": null
+    },
+    "contact": [
+        {
+            "purpose": {
+                "coding": [
+                    {
+                        "_id": 1,
+                        "system": "urn:oid:2.16.840.1.113883.2.4.15.1060",
+                        "version": null,
+                        "code": "V6",
+                        "display": "University Medical Hospital",
+                        "primary": null,
+                        "value_set": {
+                            "reference": null,
+                            "display": null
+                        }
+                    }
+                ],
+                "text": null
+            },
+            "name": {
+                "_id": 1,
+                "use": null,
+                "text": null,
+                "family": [],
+                "given": [],
+                "prefix": [],
+                "suffix": [],
+                "period": {
+                    "start": null,
+                    "end": null
+                }
+            },
+            "telecom": [
+                {
+                    "_id": 1,
+                    "system": null,
+                    "value": null,
+                    "use": null,
+                    "period": {
+                        "start": null,
+                        "end": null
+                    }
+                }
+            ],
+            "address": {
+                "_id": 1,
+                "use": null,
+                "text": null,
+                "line": [],
+                "city": null,
+                "state": null,
+                "zip": null,
+                "country": null,
+                "period": {
+                    "start": null,
+                    "end": null
+                }
+            },
+            "gender": {
+                "coding": [
+                    {
+                        "system": null,
+                        "version": null,
+                        "code": null,
+                        "display": null,
+                        "primary": null,
+                        "value_set": {
+                            "reference": null,
+                            "display": null
+                        }
+                    }
+                ],
+                "text": null
+            },
+            "location": [
+                {
+                    "reference": null,
+                    "display": null
+                }
+            ],
+            "active": null
+        }
+    ]
+}

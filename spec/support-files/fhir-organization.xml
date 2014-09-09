@@ -1,5 +1,12 @@
 <Organization xmlns="http://hl7.org/fhir">
   <name value="Health Level Seven International"/>
+  <type>
+    <coding>
+      <system value="urn:oid:2.16.840.1.113883.2.4.15.1060"/>
+      <code value="V6"/>
+      <display value="University Medical Hospital"/>
+    </coding>
+  </type>
   <telecom>
     <system value="phone"/>
     <value value="(+1) 734-677-7777"/>
