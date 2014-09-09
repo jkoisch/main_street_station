@@ -8,7 +8,7 @@ module Fhir
   # GET /Device.json
   # GET /Device.xml
   def index
-    response = get_gringotts_resources(RESOURCE)
+    response = get_gringotts_resources(RESOURCE, build_search_params(params))
     if response.success?
       @devices = Fhir::Device.parse_ehmbr_list(response.body)
     else
@@ -86,6 +86,26 @@ module Fhir
     # Never trust parameters from the scary internet, only allow the white list through.
     def device_params
       params[:device]
+    end
+
+    def build_search_params(params)
+
+      supported_params = [:identifier, :location, :organization, :patient, :type, :udi]
+
+      search_params = ''
+      params.slice(*supported_params).each do |scope, value|
+        case scope
+          when 'identifier'
+            if search_params.empty?
+              search_params << "query[id_search][#{scope}]=#{value}"
+            else
+              search_params << ";query[id_search][#{scope}]=#{value}"
+            end
+          else
+            search_params << "query[#{scope}_search]=#{value}"
+        end
+      end
+      search_params
     end
   end
 end

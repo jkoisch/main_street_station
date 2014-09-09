@@ -12,6 +12,28 @@ describe Fhir::DevicesController, type: :controller do
       get :index, format: :json
       expect(assigns(:devices).count).to eq(1)
     end
+
+    context 'for searches' do
+      it 'interprets search criteria' do
+        get :index, {format: :json, search: 'something'}
+        pending 'needs validation of parameters'
+      end
+
+      it 'performs a device search for matching identifier'
+
+      it 'performs a device search for matching location'
+
+      it 'performs a device search for matching organization'
+
+      it 'performs a device search for matching patient'
+
+      it 'performs a device search for matching type'
+
+      it 'performs a device search for matching udi'
+
+      it 'returns operation_outcome using invalid search criteria'
+
+    end
   end
 
   describe '#show' do
