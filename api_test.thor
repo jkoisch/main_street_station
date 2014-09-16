@@ -3,8 +3,8 @@ require 'json'
 require 'highline/import'
 
 class ApiTest < Thor
-  HEROKU_Mainstreet = "whispering-sierra-2314.herokuapp.com"
-  HEROKU_Gringotts  = "protected-garden-4145.herokuapp.com"
+  HEROKU_Mainstreet = 'whispering-sierra-2314.herokuapp.com'
+  HEROKU_Gringotts  = 'protected-garden-4145.herokuapp.com'
 
   desc 'simple_index RESOURCE', ''
   def simple_index(resource)
