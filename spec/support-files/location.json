@@ -6,6 +6,16 @@
     },
     "name": "South Wing, second floor",
     "description": "Second floor of the Old South Wing, formerly in use by Psychiatry",
+    "type":{
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/v2/0078",
+                "code": "N",
+                "display": "Normal (applies to non-numeric results)"
+            }
+        ],
+        "text": null
+    },
     "telecom": [
         {
             "system": "phone",
