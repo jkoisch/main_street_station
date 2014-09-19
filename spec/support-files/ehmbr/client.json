@@ -68,6 +68,7 @@
     },
     "birth_date": "1974-12-25",
     "deceased_boolean": false,
+    "deceased_datetime": null,
     "address": [
         {
             "_id": 1,
