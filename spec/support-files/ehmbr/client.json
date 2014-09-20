@@ -26,8 +26,8 @@
             "use": "official",
             "family": ["Chalmers"],
             "given": ["Peter", "James"],
-            "prefix": null,
-            "suffix": null,
+            "prefix": [],
+            "suffix": [],
             "period": null
         },
         {
@@ -36,8 +36,8 @@
             "use": "usual",
             "family": [],
             "given": ["Jim"],
-            "prefix": null,
-            "suffix": null,
+            "prefix": [],
+            "suffix": [],
             "period": null
         }
     ],
