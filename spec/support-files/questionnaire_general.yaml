@@ -2,7 +2,16 @@
   status: completed
   authored: "2013-02-19T14:15:00"
   name: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: https://lifelines.nl
+        code: VL 1-1, 18-65_1.2.2
+        display: Lifelines Questionnaire 1 part 1
     text: Cancer Quality Forum Questionnaire 2012
+  identifier:
+    - !ruby/object:Fhir::Types::Identifier
+      use: temp
+      label: Roel's VL 1-1, 18-65_1.2.2
   subject: !ruby/object:Fhir::Types::ResourceReference
     reference: Patient/f201
     display: Roel

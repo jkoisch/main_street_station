@@ -1,0 +1,337 @@
+{
+    "_id": 1,
+    "resource_type": "Questionnaire",
+    "status": "completed",
+    "authored": "2013-02-19T14:15:00",
+    "subject": {
+        "reference": null,
+        "display": null
+    },
+    "source": {
+        "reference": null,
+        "display": null
+    },
+    "name": {
+        "coding": [
+            {
+                "system": "https://lifelines.nl",
+                "code": "VL 1-1, 18-65_1.2.2",
+                "display": "Lifelines Questionnaire 1 part 1"
+            }
+        ],
+        "text": null
+    },
+    "identifier": [
+        {
+            "_id": 1,
+            "use": "temp",
+            "label": "Roel's VL 1-1, 18-65_1.2.2",
+            "system": null,
+            "value": null,
+            "period": {
+                "start": null,
+                "end": null
+            },
+            "assigner": {
+                "reference": null,
+                "display": null
+            }
+        }
+    ],
+    "encounter": {
+        "reference": null,
+        "display": null
+    },
+    "group": {
+        "name": {
+            "coding": [
+                {
+                    "system": null,
+                    "version": null,
+                    "code": null,
+                    "display": null,
+                    "primary": null,
+                    "value_set": {
+                        "reference": null,
+                        "display": null
+                    }
+                }
+            ],
+            "text": null
+        },
+        "header": null,
+        "text": null,
+        "group": [
+            {
+                "name": {
+                    "coding": [
+                        {
+                            "system": "http://cancer.questionnaire.org/system/code/sections",
+                            "version": null,
+                            "code": "COMORBIDITY",
+                            "display": null,
+                            "primary": null,
+                            "value_set": {
+                                "reference": null,
+                                "display": null
+                            }
+                        }
+                    ],
+                    "text": null
+                },
+                "header": null,
+                "text": null,
+                "question": [
+                    {
+                        "name": {
+                            "coding": [
+                                {
+                                    "system": "http://cancer.questionnaire.org/system/code/questions",
+                                    "version": null,
+                                    "code": "COMORB",
+                                    "display": null,
+                                    "primary": null,
+                                    "valueSet": {
+                                        "reference": null,
+                                        "display": null
+                                    }
+                                }
+                            ],
+                            "text": null
+                        },
+                        "text": null,
+                        "answer": null,
+                        "choice": [
+                            {
+                                "system": "http://cancer.questionnaire.org/system/code/yesno",
+                                "version": null,
+                                "code": "1",
+                                "display": "Yes",
+                                "primary": null,
+                                "valueSet": {
+                                    "reference": null,
+                                    "display": null
+                                }
+                            }
+                        ],
+                        "options": {
+                            "reference": null,
+                            "display": null
+                        },
+                        "data": null,
+                        "remarks": null,
+                        "group": [
+                            {
+                                "name": {
+                                    "coding": [
+                                        {
+                                            "system": "http://cancer.questionnaire.org/system/code/sections",
+                                            "version": null,
+                                            "code": "CARDIAL",
+                                            "display": null,
+                                            "primary": null,
+                                            "valueSet": {
+                                                "reference": null,
+                                                "display": null
+                                            }
+                                        }
+                                    ],
+                                    "text": null
+                                },
+                                "header": null,
+                                "text": null,
+                                "subject": null,
+                                "group": [],
+                                "question": [
+                                    {
+                                        "name": {
+                                            "coding": [
+                                                {
+                                                    "system": "http://cancer.questionnaire.org/system/code/questions",
+                                                    "version": null,
+                                                    "code": "COMORBCAR",
+                                                    "display": null,
+                                                    "primary": null,
+                                                    "valueSet": {
+                                                        "reference": null,
+                                                        "display": null
+                                                    }
+                                                }
+                                            ],
+                                            "text": null
+                                        },
+                                        "choice": [
+                                            {
+                                                "system": "http://cancer.questionnaire.org/system/code/yesno",
+                                                "version": null,
+                                                "code": "1",
+                                                "display": null,
+                                                "primary": null,
+                                                "valueSet": {
+                                                    "reference": null,
+                                                    "display": null
+                                                }
+                                            }
+                                        ],
+                                        "text": null
+                                    },
+                                    {
+                                        "name": {
+                                            "coding": [
+                                                {
+                                                    "system": "http://cancer.questionnaire.org/system/code/questions",
+                                                    "version": null,
+                                                    "code": "COMCAR00",
+                                                    "display": "Angina Pectoris",
+                                                    "primary": null,
+                                                    "valueSet": {
+                                                        "reference": null,
+                                                        "display": null
+                                                    }
+                                                },
+                                                {
+                                                    "system": "http://snomed.info/sct",
+                                                    "version": null,
+                                                    "code": "194828000",
+                                                    "display": "Angina (disorder)",
+                                                    "primary": null,
+                                                    "valueSet": {
+                                                        "reference": null,
+                                                        "display": null
+                                                    }
+                                                }
+                                            ],
+                                            "text": null
+                                        },
+                                        "choice": [
+                                            {
+                                                "system": "http://cancer.questionnaire.org/system/code/yesno",
+                                                "version": null,
+                                                "code": "1",
+                                                "display": null,
+                                                "primary": null,
+                                                "valueSet": {
+                                                    "reference": null,
+                                                    "display": null
+                                                }
+                                            }
+                                        ],
+                                        "text": null
+                                    },
+                                    {
+                                        "name": {
+                                            "coding": [
+                                                {
+                                                    "system": "http://snomed.info/sct",
+                                                    "version": null,
+                                                    "code": "22298006",
+                                                    "display": "Myocardial infarction (disorder)",
+                                                    "primary": null,
+                                                    "valueSet": {
+                                                        "reference": null,
+                                                        "display": null
+                                                    }
+                                                }
+                                            ],
+                                            "text": null
+                                        },
+                                        "choice": [
+                                            {
+                                                "system": "http://cancer.questionnaire.org/system/code/yesno",
+                                                "version": null,
+                                                "code": "0",
+                                                "display": null,
+                                                "primary": null,
+                                                "valueSet": {
+                                                    "reference": null,
+                                                    "display": null
+                                                }
+                                            }
+                                        ],
+                                        "text": null
+                                    }
+                                ]
+                            },
+                            {
+                                "name": {
+                                    "coding": [
+                                        {
+                                            "system": "http://cancer.questionnaire.org/system/code/sections",
+                                            "version": null,
+                                            "code": "VASCULAR",
+                                            "display": null,
+                                            "primary": null,
+                                            "valueSet": {
+                                                "reference": null,
+                                                "display": null
+                                            }
+                                        }
+                                    ],
+                                    "text": null
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": {
+                    "coding": [
+                        {
+                            "system": "http://cancer.questionnaire.org/system/code/sections",
+                            "version": null,
+                            "code": "HISTOPATHOLOGY",
+                            "display": null,
+                            "primary": null,
+                            "valueSet": {
+                                "reference": null,
+                                "display": null
+                            }
+                        }
+                    ],
+                    "text": null
+                },
+                "group": [
+                    {
+                        "name": {
+                            "coding": [
+                                {
+                                    "system": "http://cancer.questionnaire.org/system/code/sections",
+                                    "version": null,
+                                    "code": "ABDOMINAL",
+                                    "display": null,
+                                    "primary": null,
+                                    "valueSet": {
+                                        "reference": null,
+                                        "display": null
+                                    }
+                                }
+                            ],
+                            "text": null
+                        },
+                        "question": [
+                            {
+                                "name": {
+                                    "coding": [
+                                        {
+                                            "system": "http://cancer.questionnaire.org/system/code/questions",
+                                            "version": null,
+                                            "code": "STADPT",
+                                            "display": "pT category",
+                                            "primary": null,
+                                            "valueSet": {
+                                                "reference": null,
+                                                "display": null
+                                            }
+                                        }
+                                    ],
+                                    "text": null
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

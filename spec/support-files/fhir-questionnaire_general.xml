@@ -12,8 +12,17 @@
     <reference value="Practitioner/f201"/>
   </source>
   <name>
+    <coding>
+      <system value="https://lifelines.nl"/>
+      <code value="VL 1-1, 18-65_1.2.2"/>
+      <display value="Lifelines Questionnaire 1 part 1"/>
+    </coding>
     <text value="Cancer Quality Forum Questionnaire 2012"/>
   </name>
+  <identifier>
+    <use value="temp"/>
+    <label value="Roel's VL 1-1, 18-65_1.2.2"/>
+  </identifier>
   <encounter>
     <reference value="Encounter/example"/>
     <display value="in progress"/>
