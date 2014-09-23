@@ -3,11 +3,17 @@
     <use value="official"/>
     <system value="urn:oid:2.16.528.1.1007.3.1"/>
     <value value="938273695"/>
+    <period>
+      <start value="2001-05-06"/>
+    </period>
   </identifier>
   <identifier>
     <use value="usual"/>
     <system value="urn:oid:2.16.840.1.113883.2.4.6.3"/>
     <value value="129IDH4OP733"/>
+    <period>
+      <start value="2001-05-06"/>
+    </period>
   </identifier>
   <name>
     <use value="official"/>
@@ -65,4 +71,26 @@
     </coding>
     <text value="specialisation"/>
   </specialty>
+  <period>
+    <start value="2012-01-01"/>
+    <end value="2012-03-31"/>
+  </period>
+  <qualification>
+    <code>
+      <coding>
+        <system value=""/>
+        <code value="41672002"/>
+        <display value="Pulmonologist"/>
+      </coding>
+      <text value="Care Role"/>
+    </code>
+  </qualification>
+  <communication>
+    <coding>
+      <system value="urn:oid:2.16.840.1.113883.6.121"/>
+      <code value="nl"/>
+      <display value="Dutch"/>
+    </coding>
+    <text value="Care role"/>
+  </communication>
 </Practitioner>

@@ -4,7 +4,7 @@ end unless qualification.code.nil?
 
 json.period do
   json.partial! 'fhir/base/period', period: qualification.period
-end unless qualification.code.nil?
+end unless qualification.period.nil?
 
 json.issuer qualification.issuer do |issuer|
   json.partial! 'fhir/base/resource_reference', resource_reference: issuer

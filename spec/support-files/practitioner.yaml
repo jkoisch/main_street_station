@@ -4,10 +4,14 @@
       use: official
       system: urn:oid:2.16.528.1.1007.3.1
       value: 938273695
+      period: !ruby/object:Fhir::Types::Period
+        start: '2001-05-06'
     - !ruby/object:Fhir::Types::Identifier
       use: usual
       system: urn:oid:2.16.840.1.113883.2.4.6.3
       value: 129IDH4OP733
+      period: !ruby/object:Fhir::Types::Period
+        start: '2001-05-06'
   name: !ruby/object:Fhir::Types::HumanName
       use: official
       family:
@@ -62,3 +66,23 @@
           code: '01.018'
           display: Ear-, Nose and Throat
       text: specialisation
+  period: !ruby/object:Fhir::Types::Period
+    start: '2012-01-01'
+    end: '2012-03-31'
+  qualification:
+    - !ruby/object:Fhir::PractitionerClasses::Qualification
+      code: !ruby/object:Fhir::Types::CodeableConcept
+        coding:
+          - !ruby/object:Fhir::Types::Coding
+            system: http://snomed.info/sct
+            code: '41672002'
+            display: Pulmonologist
+        text: Care Role
+  communication:
+    - !ruby/object:Fhir::Types::CodeableConcept
+      coding:
+        - !ruby/object:Fhir::Types::Coding
+          system: urn:oid:2.16.840.1.113883.6.121
+          code: 'nl'
+          display: Dutch
+      text: Care Role

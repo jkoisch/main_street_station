@@ -2,68 +2,108 @@
     "resource_type": "Practitioner",
     "identifier": [
         {
+            "_id": 1,
             "use": "official",
+            "label": null,
             "system": "urn:oid:2.16.528.1.1007.3.1",
             "value": "938273695",
             "period": {
-                "start": "2001-05-06"
-            }
+                "start": "2001-05-06",
+                "end": null
+            },
+            "assigner": null
         },
         {
+            "_id": 2,
             "use": "usual",
+            "label": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.6.3",
             "value": "129IDH4OP733",
             "period": {
-                "start": "2001-05-06"
-            }
+                "start": "2001-05-06",
+                "end": null
+            },
+            "assigner": null
         }
     ],
     "name": {
         "use": "official",
+        "text": null,
         "family": [
             "van den broek"
         ],
         "given": [
             "Eric"
         ],
+        "prefix": [
+        ],
         "suffix": [
             "MD"
-        ]
+        ],
+        "period": {
+            "start": null,
+            "end": null
+        }
     },
     "telecom": [
         {
             "system": "phone",
             "value": "0205568263",
-            "use": "work"
+            "use": "work",
+            "period": {
+                "start": null,
+                "end": null
+            }
         },
         {
             "system": "email",
             "value": "E.M.vandenbroek@bmc.nl",
-            "use": "work"
+            "use": "work",
+            "period": {
+                "start": null,
+                "end": null
+            }
         },
         {
             "system": "fax",
             "value": "0205664440",
-            "use": "work"
+            "use": "work",
+            "period": {
+                "start": null,
+                "end": null
+            }
         }
     ],
     "address": {
         "use": "work",
+        "text": null,
         "line": [
             "Galapagosweg 91"
         ],
         "city": "Den Burg",
+        "state": null,
         "zip": "9105 PZ",
-        "country": "NLD"
+        "country": "NLD",
+        "period": {
+            "start": null,
+            "end": null
+        }
     },
     "gender": {
         "coding": [
             {
                 "system": "http://hl7.org/fhir/v3/AdministrativeGender",
+                "version": null,
                 "code": "M",
-                "display": "Male"
+                "display": "Male",
+                "primary": null,
+                "value_set": {
+                    "reference": null,
+                    "display": null
+                }
             }
-        ]
+        ],
+        "text": null
     },
     "birth_date": "1975-12-07",
     "organization": {
@@ -98,6 +138,10 @@
         "start": "2012-01-01",
         "end": "2012-03-31"
     },
+    "location": [{
+        "reference": null,
+        "display": null
+    }],
     "qualification": [
         {
             "code": {
@@ -109,6 +153,14 @@
                     }
                 ],
                 "text": "Care role"
+            },
+            "period": {
+                "start": null,
+                "end": null
+            },
+            "issuer":{
+                "reference": null,
+                "display": null
             }
         }
     ],
