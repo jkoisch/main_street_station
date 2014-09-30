@@ -32,7 +32,7 @@
         "coding":[
             {
                 "system":"http://snomed.info/sct",
-                "value": null,
+                "version": null,
                 "code":"39065001",
                 "display":"Burn of ear",
                 "primary": null,
@@ -48,7 +48,7 @@
         "coding":[
             {
                 "system":"http://hl7.org/fhir/condition-category",
-                "value": null,
+                "version": null,
                 "code":"diagnosis",
                 "display":"Diagnosis",
                 "primary": null,
@@ -59,7 +59,7 @@
             },
             {
                 "system":"http://snomed.info/sct",
-                "value": null,
+                "version": null,
                 "code":"439401001",
                 "display":"Diagnosis",
                 "primary": null,
@@ -72,12 +72,27 @@
         "text": null
     },
     "status":"confirmed",
-    "certainty":{},
+    "certainty":{
+        "coding":[
+            {
+                "system":"http://snomed.info/sct",
+                "version": null,
+                "code":"24484000",
+                "display":"Severe",
+                "primary": null,
+                "value_set": {
+                    "reference": null,
+                    "display": null
+                }
+            }
+        ],
+        "text": null
+    },
     "severity":{
         "coding":[
             {
                 "system":"http://snomed.info/sct",
-                "value": null,
+                "version": null,
                 "code":"24484000",
                 "display":"Severe",
                 "primary": null,
@@ -95,7 +110,7 @@
             "coding":[
                 {
                     "system":"http://snomed.info/sct",
-                    "value": null,
+                    "version": null,
                     "code":"14803004",
                     "display":"Temporary",
                     "primary": null,
@@ -120,7 +135,7 @@
                 "coding":[
                     {
                         "system":"http://snomed.info/sct",
-                        "value": null,
+                        "version": null,
                         "code":"258710007",
                         "display":"degrees C",
                         "primary": null,
@@ -129,7 +144,8 @@
                             "display": null
                         }
                     }
-                ]
+                ],
+                "text": null
             },
             "detail":[
                 {
@@ -145,7 +161,7 @@
                 "coding":[
                     {
                         "system":"http://snomed.info/sct",
-                        "value": null,
+                        "version": null,
                         "code":"49521004",
                         "display":"Left external ear structure",
                         "primary": null,

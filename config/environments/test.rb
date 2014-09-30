@@ -36,7 +36,7 @@ MainStreetStation::Application.configure do
   config.gringotts_url = 'http://gringotts.dev/'
 
   config.gringotts_client = Rails.root + 'spec/support-files/ehmbr/client.json'
-  config.gringotts_condition = Rails.root + 'spec/support-files/condition.json'
+  config.gringotts_condition = Rails.root + 'spec/support-files/ehmbr/condition.json'
   config.gringotts_conformance = Rails.root + 'config/conformance.json'
   config.gringotts_device = Rails.root + 'spec/support-files/ehmbr/device.json'
   config.gringotts_family_history = Rails.root + 'spec/support-files/family_history.json'
