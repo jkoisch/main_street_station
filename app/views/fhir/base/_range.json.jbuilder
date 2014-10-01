@@ -5,5 +5,3 @@ end unless range.low.nil?
 json.high do
   json.partial! 'fhir/base/quantity', high: range.high
 end unless range.high.nil?
-
-
