@@ -1,5 +1,5 @@
 json.origin do
-  json.partial! 'fhir/base/quantity', origin: sampled_data.origin
+  json.partial! 'fhir/base/quantity', quantity: sampled_data.origin
 end unless sampled_data.origin.nil?
 
 json.period       sampled_data.period unless sampled_data.period.nil?

@@ -44,7 +44,10 @@
     },
     "value_quantity": {
         "value": "107",
-        "units": "mm[Hg]"
+        "comparator": null,
+        "units": "mm[Hg]",
+        "system": null,
+        "code": null
     },
     "value_codeable_concept": {
         "coding": [
