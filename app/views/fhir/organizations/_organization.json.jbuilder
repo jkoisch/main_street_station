@@ -1,7 +1,7 @@
 json.resourceType 'Organization'
 
-json.identifier do
-  json.partial! 'fhir/base/identifier', identifier: resource.identifier
+json.identifier resource.identifier do |identifier|
+  json.partial! 'fhir/base/identifier', identifier: identifier
 end unless resource.identifier.nil?
 
 json.name resource.name unless resource.name.nil?

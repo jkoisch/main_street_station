@@ -167,14 +167,14 @@
                     }
                 ],
                 "text": null
-            },
-            "location": [
-                {
-                    "reference": null,
-                    "display": null
-                }
-            ],
-            "active": null
+            }
         }
-    ]
+    ],
+    "location": [
+        {
+            "reference": null,
+            "display": null
+        }
+    ],
+    "active": null
 }
