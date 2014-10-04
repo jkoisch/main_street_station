@@ -23,6 +23,7 @@ group :test, :development do
   #gem 'binding_of_caller'
   gem 'rest-client'
   gem 'guard'
+  gem 'guard-rspec', require: false
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'faker'
