@@ -26,7 +26,7 @@ describe SessionService do
     end
 
     it 'should return a new token if none of the existing tokens are active' do
-      ut = user.user_tokens.create()
+      ut = user.user_tokens.create
       ut.update(authentication_expiry: Time.now - 1.minute)
       SessionService.authenticate(user, valid_pw)
       expect(user.user_tokens.current[0].authentication_token).to_not eq(ut.authentication_token)
@@ -35,17 +35,17 @@ describe SessionService do
 
   context 'session cleanup' do
     it 'should remove the current session token' do
-      ut = user.user_tokens.create()
+      ut = user.user_tokens.create
       SessionService.cleanup(ut.authentication_token)
       expect(user.user_tokens.current.count).to eq 0
     end
 
     it 'should cleanup any old tokens for the user' do
-      ut = user.user_tokens.create()
+      ut = user.user_tokens.create
       ut.update(authentication_expiry: Time.now - 1.minute)
-      ut = user.user_tokens.create()
+      ut = user.user_tokens.create
       ut.update(authentication_expiry: Time.now - 1.minute)
-      ut = user.user_tokens.create()
+      ut = user.user_tokens.create
       SessionService.cleanup(ut.authentication_token)
       expect(user.user_tokens.count).to eq 0
     end
