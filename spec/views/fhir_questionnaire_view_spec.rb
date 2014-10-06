@@ -1,6 +1,7 @@
-require 'spec_helper'
+require 'rails_helper'
+require 'fhir/questionnaire'
 
-describe 'FHIR Questionnaire View' do
+describe 'FHIR Questionnaire View', type: :view do
   context 'general questionnaires' do
     subject { 'fhir/questionnaires/questionnaire' }
     let(:resource) { YAML.load(File.read('spec/support-files/fhir/questionnaire/questionnaire_general.yaml'))}

@@ -1,6 +1,7 @@
-require 'spec_helper'
+require 'rails_helper'
+require 'fhir/location'
 
-describe 'FHIR Location View' do
+describe 'FHIR Location View', type: :view do
   subject { 'fhir/locations/location' }
   let(:resource) { YAML.load(File.read('spec/support-files/fhir/location/location.yaml')) }
 

@@ -1,6 +1,7 @@
-require 'spec_helper'
+require 'rails_helper'
+require 'fhir/practitioner'
 
-describe 'FHIR Practitioner View' do
+describe 'FHIR Practitioner View', type: :view do
   subject { 'fhir/practitioners/practitioner' }
   let(:resource) { YAML.load(File.read('spec/support-files/fhir/practitioner/practitioner.yaml')) }
 

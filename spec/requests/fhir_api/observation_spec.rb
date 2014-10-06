@@ -1,13 +1,13 @@
-require 'spec_helper'
+require 'rails_helper'
 require 'support/fhir_matchers'
 
-describe 'Observation' do
+describe 'Observation Request FHIR API', type: :request do
   describe 'GET /fhir/Observation' do
     it { should return_FHIR_JSON_bundle_object('Observation') }
 
-    it 'should return_HTTP_success_for Observation.json' do
+    it 'should return HTTP success' do
       GringottResponse.any_instance.stubs(:success?).returns(true)
-      expect(get '/fhir/Observation.json'). to eq 200
+      expect(get '/fhir/Observation.json').to eq 200
     end
 
     it 'should return error for failure' do

@@ -7,14 +7,8 @@
         "label": null,
         "system": null,
         "value": "B1-S.F2",
-        "period":{
-            "start": null,
-            "end": null
-        },
-        "assigner": {
-            "reference": null,
-            "display": null
-        }
+        "period": null,
+        "assigner": null
     },
     "name": "South Wing, second floor",
     "description": "Second floor of the Old South Wing, formerly in use by Psychiatry",
@@ -40,40 +34,28 @@
             "system": "phone",
             "value": "2328",
             "use": "work",
-            "period": {
-                "start": null,
-                "end": null
-            }
+            "period": null
         },
         {
             "_id": 2,
             "system": "fax",
             "value": "2329",
             "use": "work",
-            "period": {
-                "start": null,
-                "end": null
-            }
+            "period": null
         },
         {
             "_id": 3,
             "system": "email",
             "value": "second wing admissions",
             "use": null,
-            "period": {
-                "start": null,
-                "end": null
-            }
+            "period": null
         },
         {
             "_id": 4,
             "system": "url",
             "value": "http://sampleorg.com/southwing",
             "use": "work",
-            "period": {
-                "start": null,
-                "end": null
-            }
+            "period": null
         }
     ],
     "address": {
@@ -87,10 +69,7 @@
         "state": null,
         "zip": "9105 PZ",
         "country": "NLD",
-        "period": {
-            "start": null,
-            "end": null
-        }
+        "period": null
     },
     "physical_type": {
         "coding": [
@@ -118,9 +97,6 @@
         "display": null
     },
     "status": "active",
-    "part_of": {
-        "reference": null,
-        "display": null
-    },
+    "part_of": null,
     "mode": null
  }

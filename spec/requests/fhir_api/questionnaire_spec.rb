@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe 'Questionnaire API' do
+describe 'Questionnaire Request FHIR API', type: :request do
   describe 'GET /fhir/Questionnaire' do
     it { should return_FHIR_JSON_bundle_object('Questionnaire') }
 

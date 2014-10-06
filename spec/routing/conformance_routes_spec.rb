@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe 'FHIR Conformance' do
+describe 'FHIR Conformance', type: :routing do
   describe 'provided routes' do
     specify { expect(get: fhir_conformance_index_path).to route_to(controller: 'fhir/conformance',
                                                                    action:     'index',

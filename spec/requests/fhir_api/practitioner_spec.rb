@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe 'Practitioner API' do
+describe 'Practitioner Request FHIR API', type: :request do
   describe 'GET /fhir/Practitioner' do
     it { should return_FHIR_JSON_bundle_object('Practitioner') }
 

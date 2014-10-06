@@ -12,14 +12,8 @@
             "label": null,
             "system": null,
             "value": null,
-            "period":{
-                "start": null,
-                "end": null
-            },
-            "assigner": {
-                "reference": null,
-                "display": null
-            }
+            "period":null,
+            "assigner": null
         }
     ],
     "name": "Health Level Seven International",
@@ -46,30 +40,21 @@
             "system": "phone",
             "value": "(+1) 734-677-7777",
             "use": null,
-            "period": {
-                "start": null,
-                "end": null
-            }
+            "period": null
         },
         {
             "_id": 2,
             "system": "fax",
             "value": "(+1) 734-677-6622",
             "use": null,
-            "period": {
-                "start": null,
-                "end": null
-            }
+            "period": null
         },
         {
             "_id": 3,
             "system": "email",
             "value": "hq@HL7.org",
             "use": null,
-            "period": {
-                "start": null,
-                "end": null
-            }
+            "period": null
         }
     ],
     "address": [
@@ -84,16 +69,10 @@
             "state": "MI",
             "zip": "48104",
             "country": "USA",
-            "period": {
-                "start": null,
-                "end": null
-            }
+            "period": null
         }
     ],
-    "part_of": {
-        "reference": null,
-        "display": null
-    },
+    "part_of": null,
     "contact": [
         {
             "purpose": {
@@ -121,10 +100,7 @@
                 "given": [],
                 "prefix": [],
                 "suffix": [],
-                "period": {
-                    "start": null,
-                    "end": null
-                }
+                "period": null
             },
             "telecom": [
                 {
@@ -132,10 +108,7 @@
                     "system": null,
                     "value": null,
                     "use": null,
-                    "period": {
-                        "start": null,
-                        "end": null
-                    }
+                    "period": null
                 }
             ],
             "address": {
@@ -147,10 +120,7 @@
                 "state": null,
                 "zip": null,
                 "country": null,
-                "period": {
-                    "start": null,
-                    "end": null
-                }
+                "period": null
             },
             "gender": {
                 "coding": [
@@ -170,11 +140,6 @@
             }
         }
     ],
-    "location": [
-        {
-            "reference": null,
-            "display": null
-        }
-    ],
+    "location": [],
     "active": null
 }

@@ -1,6 +1,7 @@
-require 'spec_helper'
+require 'rails_helper'
+require 'fhir/family_history'
 
-describe 'FHIR FamilyHistory View' do
+describe 'FHIR FamilyHistory View', type: :view do
   subject { 'fhir/family_histories/family_history' }
   let(:resource) { YAML.load(File.read('spec/support-files/fhir/family_history/family_history.yaml')) }
 

@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe 'FHIR Device' do
+describe 'FHIR Device', type: :routing do
   describe 'provided routes' do
 
     specify { expect(get: fhir_Device_index_path).to route_to(controller: 'fhir/devices',

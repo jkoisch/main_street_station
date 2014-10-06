@@ -1,11 +1,11 @@
-require 'spec_helper'
+require 'rails_helper'
 require 'support/fhir_matchers'
 
-describe 'Condition' do
+describe 'Condition Request FHIR API', type: :request do
   describe 'GET /fhir/Condition' do
     it { should return_FHIR_JSON_bundle_object('Condition') }
 
-    it 'should return_HTTP_success_for Condition.json' do
+    it 'should return HTTP success' do
       GringottResponse.any_instance.stubs(:success?).returns(true)
       expect(get '/fhir/Condition.json'). to eq 200
     end

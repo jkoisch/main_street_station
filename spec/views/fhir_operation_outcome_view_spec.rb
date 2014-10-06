@@ -1,6 +1,7 @@
-require 'spec_helper'
+require 'rails_helper'
+require 'fhir/operation_outcome'
 
-describe 'FHIR OperationOutcome View' do
+describe 'FHIR OperationOutcome View', type: :view do
   it 'should produce valid JSON' do
     @operation_outcome = YAML.load(File.read('spec/support-files/fhir/operation_outcome/operation-outcome.yaml'))
     response = render template: 'fhir/fhir_base/operation_outcome', formats: :json

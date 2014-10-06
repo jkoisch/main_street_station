@@ -1,6 +1,7 @@
-require 'spec_helper'
+require 'rails_helper'
+require 'fhir/observation'
 
-describe 'FHIR Observation Views' do
+describe 'FHIR Observation Views', type: :view do
   context 'general observation' do
     subject { '/fhir/observations/observation' }
     let(:resource) { YAML.load(File.read('spec/support-files/fhir/observation/observation_general.yaml')) }

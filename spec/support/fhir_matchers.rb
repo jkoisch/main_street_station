@@ -1,5 +1,5 @@
 RSpec::Matchers.define :parse_ehmbr_response do |json_file|
-  match do |actual|
+    match do |actual|
     raw_json = JSON.parse(File.read(json_file))
     actual.parse_ehmbr(raw_json) != nil
   end
@@ -13,7 +13,7 @@ RSpec::Matchers.define :produce_fhir_json_like do |json_file|
     response == expected_json
   end
   # noinspection RubyUnusedLocalVariable
-  failure_message_for_should do |actual|
+  failure_message do |actual|
     expected = JSON.parse(File.read(json_file))
     hash_response = JSON.parse(response)
     "expected JSON was: #{expected}\n generated: #{hash_response}\n" +
@@ -30,7 +30,7 @@ RSpec::Matchers.define :produce_fhir_xml_like do |xml_file|
     #false
   end
   # noinspection RubyUnusedLocalVariable
-  failure_message_for_should do |actual|
+  failure_message do |actual|
     #expected = JSON.parse(File.read(xml_file))
     expected = '--'
     response = render
@@ -74,7 +74,7 @@ RSpec::Matchers.define :return_HTTP_success_for do |fhir_api_path|
     response.status === 200
   end
   # noinspection RubyUnusedLocalVariable
-  failure_message_for_should do |actual|
+  failure_message do |actual|
     expected = 200
     "expected: #{expected} received: #{response.status}"
   end

@@ -23,14 +23,14 @@ group :test, :development do
   #gem 'binding_of_caller'
   gem 'rest-client'
   gem 'guard'
-  gem 'guard-rspec', require: false
-  gem 'rspec-rails'
+  gem 'guard-rspec',  require: false
+  gem 'rspec-rails', '3.0.1'
   gem 'database_cleaner'
   gem 'faker'
-  gem 'cucumber-rails', :require => false #, '0.3.2'
+  gem 'cucumber-rails', require: false #, '0.3.2'
   gem 'factory_girl_rails'
+  gem 'terminal-notifier'
   gem 'mocha', require: 'mocha/api'
-  gem 'rspec-nc'
   gem 'thin'
   #gem 'taps'
 end

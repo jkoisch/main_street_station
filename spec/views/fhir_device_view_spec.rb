@@ -1,6 +1,7 @@
-require 'spec_helper'
+require 'rails_helper'
+require 'fhir/device'
 
-describe 'FHIR Device View' do
+describe 'FHIR Device View', type: :view do
   subject { 'fhir/devices/device' }
   let(:resource) { YAML.load(File.read('spec/support-files/fhir/device/device_general.yaml')) }
 

@@ -1,7 +1,7 @@
-require 'spec_helper'
+require 'rails_helper'
 require 'support/fhir_matchers'
 
-describe 'Patient' do
+describe 'Patient Request FHIR API', type: :request do
   describe 'GET /fhir/Patient' do
     it { should return_FHIR_JSON_bundle_object('Patient') }
 

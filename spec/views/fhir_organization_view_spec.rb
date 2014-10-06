@@ -1,6 +1,7 @@
-require 'spec_helper'
+require 'rails_helper'
+require 'fhir/organization'
 
-describe 'FHIR Organization View' do
+describe 'FHIR Organization View', type: :view do
   subject { 'fhir/organizations/organization' }
   let(:resource) { YAML.load(File.read('spec/support-files/fhir/organization/organization.yaml')) }
 

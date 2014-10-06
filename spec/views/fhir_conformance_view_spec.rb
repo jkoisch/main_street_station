@@ -1,6 +1,7 @@
-require 'spec_helper'
+require 'rails_helper'
+require 'fhir/conformance'
 
-describe 'FHIR Conformance View' do
+describe 'FHIR Conformance View', type: :view do
   subject { 'fhir/conformance/conformance' }
   let(:resource) { YAML.load(File.read('spec/support-files/fhir/conformance/conformance.yaml')) }
 

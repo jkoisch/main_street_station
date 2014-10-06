@@ -1,7 +1,7 @@
-require 'spec_helper'
+require 'rails_helper'
 require 'support/fhir_matchers'
 
-describe 'Family History' do
+describe 'Family History Request FHIR API', type: :request do
   describe 'GET /fhir/FamilyHistory' do
     it { should return_FHIR_JSON_bundle_object('FamilyHistory') }
 

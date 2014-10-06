@@ -12,14 +12,8 @@
             "label": null,
             "system": null,
             "value": null,
-            "period": {
-                "start": null,
-                "end": null
-            },
-            "assigner": {
-                "reference": null,
-                "display": null
-            }
+            "period": null,
+            "assigner": null
         }
     ],
     "subject": {
@@ -46,18 +40,12 @@
                 ],
                 "text": null
             },
-            "born_period": {
-                "start": null,
-                "end": null
-            },
+            "born_period": null,
             "born_date": null,
             "born_string": null,
             "deceased_boolean": false,
             "deceased_age": null,
-            "deceased_range": {
-                "low": null,
-                "high": null
-            },
+            "deceased_range": null,
             "deceased_date": null,
             "deceased_string": null,
             "note": null,
@@ -102,10 +90,7 @@
                         "system": "http://unitsofmeasure.org",
                         "code": null
                     },
-                    "onset_range":{
-                        "low": null,
-                        "high": null
-                    },
+                    "onset_range": null,
                     "onset_string": null,
                     "note": null
                 }
@@ -129,24 +114,12 @@
                 ],
                 "text": null
             },
-            "born_period": {
-                "start": null,
-                "end": null
-            },
+            "born_period": null,
             "born_date": null,
             "born_string": null,
             "deceased_boolean": null,
-            "deceased_age": {
-                "value": null,
-                "comparator": null,
-                "units": null,
-                "system": null,
-                "code": null
-            },
-            "deceased_range": {
-                "low": null,
-                "high": null
-            },
+            "deceased_age": null,
+            "deceased_range": null,
             "deceased_date": null,
             "deceased_string": null,
             "note": null,
@@ -184,17 +157,8 @@
                         ],
                         "text": "Stroke"
                     },
-                    "onset_age": {
-                        "value": null,
-                        "comparator": null,
-                        "units": null,
-                        "system": null,
-                        "code": null
-                    },
-                    "onset_range":{
-                        "low": null,
-                        "high": null
-                    },
+                    "onset_age": null,
+                    "onset_range": null,
                     "onset_string": null,
                     "note": null
                 }

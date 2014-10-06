@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe 'Location API' do
+describe 'Location Request FHIR API', type: :request do
   describe 'GET /fhir/Location' do
     it { should return_FHIR_JSON_bundle_object('Location') }
 

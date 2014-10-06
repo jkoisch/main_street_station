@@ -18,7 +18,7 @@
 #
 guard :rspec, cmd: 'bundle exec rspec', all_after_pass: true do
   watch(%r{^spec/.+_spec\.rb$}) { "spec" }
-  watch('spec/spec_helper.rb')  { "spec" }
+  watch('spec/rails_helper.rb')  { "spec" }
   watch('spec/rails_helper.rb')  { "spec" }
 
   # Rails example
@@ -49,7 +49,7 @@ end
 #   watch('config/environments/test.rb')
 #   watch(%r{^config/initializers/.+\.rb$})
 #   watch('Gemfile.lock')
-#   watch('spec/spec_helper.rb') { :rspec }
+#   watch('spec/rails_helper.rb') { :rspec }
 #   watch('test/test_helper.rb') { :test_unit }
 #   watch(%r{features/support/}) { :cucumber }
 # end

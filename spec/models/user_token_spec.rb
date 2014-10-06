@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe 'UserToken' do
   let(:user) {User.create!(email: Faker::Internet.email, password: '123abc')}
@@ -13,11 +13,11 @@ describe 'UserToken' do
     let(:user_token) { UserToken.create!(user: user) }
 
     it 'should be active' do
-      expect(user_token.authentication_active?).to be_true
+      expect(user_token.authentication_active?).to eq true
     end
 
     it 'should be refreshable' do
-      expect(user_token.refreshable?).to be_true
+      expect(user_token.refreshable?).to eq true
     end
   end
 
@@ -27,13 +27,13 @@ describe 'UserToken' do
     it 'should be a valid authentication token' do
       token = user_token.authentication_token
 
-      expect(UserToken.is_valid_auth_token(token)).to be_true
+      expect(UserToken.is_valid_auth_token(token)).to eq true
     end
 
     it 'should be a valid refresh token' do
       token = user_token.refresh_token
 
-      expect(UserToken.is_valid_refresh_token(token)).to be_true
+      expect(UserToken.is_valid_refresh_token(token)).to eq true
     end
   end
 
@@ -64,12 +64,12 @@ describe 'UserToken' do
       user_token.authentication_expiry = Time.now - 30.seconds
       token = user_token.authentication_token
       user_token.save!
-      expect(UserToken.is_valid_auth_token(token)).to be_false
+      expect(UserToken.is_valid_auth_token(token)).to eq false
     end
 
     it 'should not be active' do
       user_token.authentication_expiry = Time.now - 30.seconds
-      expect(user_token.authentication_active?).to be_false
+      expect(user_token.authentication_active?).to eq false
     end
   end
 
@@ -78,14 +78,14 @@ describe 'UserToken' do
 
     it 'should not be refreshable' do
       user_token.refresh_expiry = Time.now
-      expect(user_token.refreshable?).to be_false
+      expect(user_token.refreshable?).to eq false
     end
 
     it 'should not be a valid refresh token' do
       user_token.refresh_expiry = Time.now - 30.seconds
       user_token.save
       token = user_token.refresh_token
-      expect(UserToken.is_valid_refresh_token(token)).to be_false
+      expect(UserToken.is_valid_refresh_token(token)).to eq false
     end
 
     it 'should throw an exception when asked to generate a new authentication token' do

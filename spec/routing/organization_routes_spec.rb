@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe 'FHIR Organization' do
+describe 'FHIR Organization', type: :routing do
   describe 'provided routes' do
     specify { expect(get: fhir_Organization_index_path).to route_to(controller: 'fhir/organizations',
                                                                    action:     'index',

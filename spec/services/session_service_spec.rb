@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe SessionService do
   let(:valid_pw) { '123temp' }
@@ -6,15 +6,15 @@ describe SessionService do
 
   context 'authentication' do
     it 'should authenticate a valid user' do
-      expect(SessionService.authenticate(user, valid_pw)).to be_true
+      expect(SessionService.authenticate(user, valid_pw)).to eq true
     end
 
     it 'should reject an invalid user' do
-      expect(SessionService.authenticate(nil, valid_pw)).to be_false
+      expect(SessionService.authenticate(nil, valid_pw)).to eq false
     end
 
     it 'should reject an invalid password' do
-      expect(SessionService.authenticate(user, '123tem')).to be_false
+      expect(SessionService.authenticate(user, '123tem')).to eq false
     end
   end
 

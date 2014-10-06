@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe 'FHIR FamilyHistory' do
+describe 'FHIR FamilyHistory', type: :routing do
   describe 'provided routes' do
     specify { expect(get: fhir_FamilyHistory_index_path).to route_to(controller: 'fhir/family_histories',
                                                                       action:     'index',

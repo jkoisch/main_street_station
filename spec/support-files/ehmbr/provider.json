@@ -40,38 +40,26 @@
         "suffix": [
             "MD"
         ],
-        "period": {
-            "start": null,
-            "end": null
-        }
+        "period": null
     },
     "telecom": [
         {
             "system": "phone",
             "value": "0205568263",
             "use": "work",
-            "period": {
-                "start": null,
-                "end": null
-            }
+            "period": null
         },
         {
             "system": "email",
             "value": "E.M.vandenbroek@bmc.nl",
             "use": "work",
-            "period": {
-                "start": null,
-                "end": null
-            }
+            "period": null
         },
         {
             "system": "fax",
             "value": "0205664440",
             "use": "work",
-            "period": {
-                "start": null,
-                "end": null
-            }
+            "period": null
         }
     ],
     "address": {
@@ -84,10 +72,7 @@
         "state": null,
         "zip": "9105 PZ",
         "country": "NLD",
-        "period": {
-            "start": null,
-            "end": null
-        }
+        "period": null
     },
     "gender": {
         "coding": [
@@ -138,10 +123,7 @@
         "start": "2012-01-01",
         "end": "2012-03-31"
     },
-    "location": [{
-        "reference": null,
-        "display": null
-    }],
+    "location": [],
     "qualification": [
         {
             "code": {
@@ -154,14 +136,8 @@
                 ],
                 "text": "Care role"
             },
-            "period": {
-                "start": null,
-                "end": null
-            },
-            "issuer":{
-                "reference": null,
-                "display": null
-            }
+            "period": null,
+            "issuer":null
         }
     ],
     "communication": [

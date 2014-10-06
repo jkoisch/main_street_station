@@ -179,7 +179,7 @@
     "related_item":[
         {
             "type":"due-to",
-            "code":{},
+            "code": null,
             "target":{
                 "reference":"Procedure/f201",
                 "display":"TPF chemokuur"
@@ -187,7 +187,7 @@
         },
         {
             "type":"due-to",
-            "code":{},
+            "code":null,
             "target":{
                 "reference":"Condition/f205",
                 "display":"bacterial infection"

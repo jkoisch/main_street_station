@@ -65,32 +65,10 @@
         ],
         "text": null
     },
-    "value_attachment": {
-        "content_type": null,
-        "language": null,
-        "data": null,
-        "url": null,
-        "size": null,
-        "hash": null,
-        "title": null
-    },
-    "value_ratio": {
-        "numerator": null,
-        "denominator": null
-    },
-    "value_period": {
-        "start": null,
-        "end": null
-    },
-    "value_sampled_data": {
-        "origin": {
-            "value": null,
-            "comparator": null,
-            "units": null,
-            "system": null,
-            "code": null
-        }
-    },
+    "value_attachment": null,
+    "value_ratio": null,
+    "value_period": null,
+    "value_sampled_data": null,
     "value_string": null,
     "interpretation": {
         "coding": [
@@ -110,27 +88,21 @@
     },
     "comments": null,
     "applies_datetime": "2012-09-17",
-    "applies_period":{
-        "start": null,
-        "end": null
-    },
+    "applies_period": null,
     "issued": null,
     "status": "final",
     "reliability": "ok",
-    "body_site": {},
-    "method": {},
+    "body_site": null,
+    "method": null,
     "identifier": {
         "use": null,
         "label": null,
         "system": "urn:ietf:rfc:3986",
         "value": "187e0c12-8dd2-67e2-99b2-bf273c878281",
-        "period": {
-            "start": null,
-            "end": null
-        },
-        "assigner": {}
+        "period": null,
+        "assigner": null
     },
-    "subject": {},
-    "specimen": {},
-    "performer": {}
+    "subject": null,
+    "specimen": null,
+    "performer": null
 }

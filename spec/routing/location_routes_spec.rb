@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe 'FHIR Location' do
+describe 'FHIR Location', type: :routing do
   describe 'provided routes' do
     specify { expect(get: fhir_Location_index_path).to route_to(controller: 'fhir/locations',
                                                                     action:     'index',

@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe 'Authentication API', type: :request do
+describe 'Authentication Request FHIR API', type: :request do
   before(:each) do
     # set the valid token
     # override the validate_authenticity_token method to use the valid_token below

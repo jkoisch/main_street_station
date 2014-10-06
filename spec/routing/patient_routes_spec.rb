@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe 'FHIR Patient' do
+describe 'FHIR Patient', type: :routing do
   describe 'provided routes' do
     specify { expect(get: fhir_Patient_index_path).to route_to(controller: 'fhir/patients',
                                                                action:     'index',

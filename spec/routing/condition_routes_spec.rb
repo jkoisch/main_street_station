@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe 'FHIR Condition' do
+describe 'FHIR Condition', type: :routing do
   describe 'provided routes' do
 
     specify { expect(get: fhir_Condition_index_path).to route_to(controller: 'fhir/conditions',

@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Fhir::DevicesController, type: :controller do
   let(:json_headers) { { Accept: 'application/json', Content-Type => 'application/json' } }
@@ -17,6 +17,7 @@ describe Fhir::DevicesController, type: :controller do
       it 'interprets search criteria' do
         get :index, {format: :json, search: 'something'}
         pending 'needs validation of parameters'
+        fail
       end
 
       it 'performs a device search for matching identifier'
@@ -63,8 +64,7 @@ describe Fhir::DevicesController, type: :controller do
 
       it 'should return a success' do
         post :create, { format: :json }, { RAW_POST_DATA: :params }
-        # expect(response).to have_http_status(:created) # this is the replacement for below when upgrade to RSpec 3
-        response.status.should eq(201)
+        expect(response).to have_http_status(:created)
       end
 
       it 'should set the Location on the response' do
@@ -82,13 +82,12 @@ describe Fhir::DevicesController, type: :controller do
 
       it 'should return a bad request' do
         post :create, { format: :json }, { RAW_POST_DATA: :params }
-        # expect(response).to have_http_status(:bad_request) # this is the replacement for below when upgrade to RSpec 3
-        response.status.should eq(400)
+        expect(response).to have_http_status(:bad_request)
       end
 
       it 'should return an OperationOutcome' do
         post :create, { format: :json }, { RAW_POST_DATA: :params }
-        response.should render_template 'fhir/fhir_base/operation_outcome'
+        expect(response).to render_template 'fhir/fhir_base/operation_outcome'
       end
     end
 
@@ -99,13 +98,12 @@ describe Fhir::DevicesController, type: :controller do
 
       it 'should return a service unavailable' do
         post :create, { format: :json }, { RAW_POST_DATA: :params }
-        # expect(response).to have_http_status(:service_unavailable) # this is the replacement for below when upgrade to RSpec 3
-        response.status.should eq(503)
+        expect(response).to have_http_status(:service_unavailable)
       end
 
       it 'should return an OperationOutcome' do
         post :create, { format: :json }, { RAW_POST_DATA: :params }
-        response.should render_template 'fhir/fhir_base/operation_outcome'
+        expect(response).to render_template 'fhir/fhir_base/operation_outcome'
       end
     end
   end
@@ -121,8 +119,7 @@ describe Fhir::DevicesController, type: :controller do
 
       it 'should return a success' do
         put :update, { format: :json, id: 1 }, { RAW_POST_DATA: :params }
-        # expect(response).to have_http_status(:created) # this is the replacement for below when upgrade to RSpec 3
-        response.status.should eq(200)
+        expect(response).to have_http_status(:success)
       end
     end
 
@@ -134,13 +131,12 @@ describe Fhir::DevicesController, type: :controller do
 
       it 'should return a bad request' do
         put :update, { format: :json, id: 1 }, { RAW_POST_DATA: :params }
-        # expect(response).to have_http_status(:bad_request) # this is the replacement for below when upgrade to RSpec 3
-        response.status.should eq(400)
+        expect(response).to have_http_status(:bad_request)
       end
 
       it 'should return an OperationOutcome' do
         put :update, { format: :json, id: 1 }, { RAW_POST_DATA: :params }
-        response.should render_template 'fhir/fhir_base/operation_outcome'
+        expect(response).to render_template 'fhir/fhir_base/operation_outcome'
       end
     end
 
@@ -151,13 +147,12 @@ describe Fhir::DevicesController, type: :controller do
 
       it 'should return a service unavailable' do
         put :update, { format: :json, id: 1 }, { RAW_POST_DATA: :params }
-        # expect(response).to have_http_status(:service_unavailable) # this is the replacement for below when upgrade to RSpec 3
-        response.status.should eq(503)
+        expect(response).to have_http_status(:service_unavailable)
       end
 
       it 'should return an OperationOutcome' do
         put :update, { format: :json, id: 1 }, { RAW_POST_DATA: :params }
-        response.should render_template 'fhir/fhir_base/operation_outcome'
+        expect(response).to render_template 'fhir/fhir_base/operation_outcome'
       end
     end
   end
