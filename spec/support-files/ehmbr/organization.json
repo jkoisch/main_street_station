@@ -26,10 +26,7 @@
                 "code": "V6",
                 "display": "University Medical Hospital",
                 "primary": null,
-                "value_set": {
-                    "reference": null,
-                    "display": null
-                }
+                "value_set": null
             }
         ],
         "text": null
@@ -84,10 +81,7 @@
                         "code": "V6",
                         "display": "University Medical Hospital",
                         "primary": null,
-                        "value_set": {
-                            "reference": null,
-                            "display": null
-                        }
+                        "value_set": null
                     }
                 ],
                 "text": null
@@ -130,10 +124,7 @@
                         "code": null,
                         "display": null,
                         "primary": null,
-                        "value_set": {
-                            "reference": null,
-                            "display": null
-                        }
+                        "value_set": null
                     }
                 ],
                 "text": null

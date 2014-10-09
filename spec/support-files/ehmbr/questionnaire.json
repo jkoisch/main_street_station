@@ -109,10 +109,7 @@
                                             "code": "CARDIAL",
                                             "display": null,
                                             "primary": null,
-                                            "value_set": {
-                                                "reference": null,
-                                                "display": null
-                                            }
+                                            "value_set": null
                                         }
                                     ],
                                     "text": null
@@ -131,10 +128,7 @@
                                                     "code": "COMORBCAR",
                                                     "display": null,
                                                     "primary": null,
-                                                    "value_set": {
-                                                        "reference": null,
-                                                        "display": null
-                                                    }
+                                                    "value_set": null
                                                 }
                                             ],
                                             "text": null
@@ -201,10 +195,7 @@
                                                 "code": "1",
                                                 "display": null,
                                                 "primary": null,
-                                                "value_set": {
-                                                    "reference": null,
-                                                    "display": null
-                                                }
+                                                "value_set": null
                                             }
                                         ],
                                         "options": null,

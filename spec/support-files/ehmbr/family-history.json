@@ -32,10 +32,7 @@
                         "code": "mother",
                         "display": null,
                         "primary":null,
-                        "value_set": {
-                            "reference": null,
-                            "display": null
-                        }
+                        "value_set": null
                     }
                 ],
                 "text": null
@@ -59,10 +56,7 @@
                                 "code": "371041009",
                                 "display": "Embolic Stroke",
                                 "primary": null,
-                                "value_set": {
-                                    "reference": null,
-                                    "display": null
-                                }
+                                "value_set": null
                             }
                         ],
                         "text": "Stroke"
@@ -75,10 +69,7 @@
                                 "code": "419099112",
                                 "display": "Inactive",
                                 "primary": null,
-                                "value_set": {
-                                    "reference": null,
-                                    "display": null
-                                }
+                                "value_set": null
                             }
                         ],
                         "text": "Stroke"
@@ -106,10 +97,7 @@
                         "code": "brother",
                         "display": null,
                         "primary": null,
-                        "value_set": {
-                            "reference": null,
-                            "display": null
-                        }
+                        "value_set":null
                     }
                 ],
                 "text": null
@@ -133,10 +121,7 @@
                                 "code": "190372001",
                                 "display": "Type 1 Diabetes, Maturity Onset",
                                 "primary": null,
-                                "value_set": {
-                                    "reference": null,
-                                    "display": null
-                                }
+                                "value_set": null
                             }
                         ],
                         "text": "Diabetes Mellitus"
@@ -149,10 +134,7 @@
                                 "code": "419099009",
                                 "display": "Died",
                                 "primary": null,
-                                "value_set": {
-                                    "reference": null,
-                                    "display": null
-                                }
+                                "value_set": null
                             }
                         ],
                         "text": "Stroke"

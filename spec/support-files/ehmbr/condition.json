@@ -36,10 +36,7 @@
                 "code":"39065001",
                 "display":"Burn of ear",
                 "primary": null,
-                "value_set": {
-                    "reference": null,
-                    "display": null
-                }
+                "value_set": null
             }
         ],
         "text":"Burnt Ear"
@@ -52,10 +49,7 @@
                 "code":"diagnosis",
                 "display":"Diagnosis",
                 "primary": null,
-                "value_set": {
-                    "reference": null,
-                    "display": null
-                }
+                "value_set": null
             },
             {
                 "system":"http://snomed.info/sct",
@@ -63,10 +57,7 @@
                 "code":"439401001",
                 "display":"Diagnosis",
                 "primary": null,
-                "value_set": {
-                    "reference": null,
-                    "display": null
-                }
+                "value_set": null
             }
         ],
         "text": null
@@ -80,10 +71,7 @@
                 "code":"24484000",
                 "display":"Severe",
                 "primary": null,
-                "value_set": {
-                    "reference": null,
-                    "display": null
-                }
+                "value_set": null
             }
         ],
         "text": null
@@ -96,10 +84,7 @@
                 "code":"24484000",
                 "display":"Severe",
                 "primary": null,
-                "value_set": {
-                    "reference": null,
-                    "display": null
-                }
+                "value_set": null
             }
         ],
         "text": null
@@ -114,10 +99,7 @@
                     "code":"14803004",
                     "display":"Temporary",
                     "primary": null,
-                    "value_set": {
-                        "reference": null,
-                        "display": null
-                    }
+                    "value_set": null
                 }
             ],
             "text": null
@@ -139,10 +121,7 @@
                         "code":"258710007",
                         "display":"degrees C",
                         "primary": null,
-                        "value_set": {
-                            "reference": null,
-                            "display": null
-                        }
+                        "value_set": null
                     }
                 ],
                 "text": null
@@ -165,10 +144,7 @@
                         "code":"49521004",
                         "display":"Left external ear structure",
                         "primary": null,
-                        "value_set": {
-                            "reference": null,
-                            "display": null
-                        }
+                        "value_set": null
                     }
                 ],
                 "text":"Left Ear"

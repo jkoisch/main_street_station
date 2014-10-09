@@ -13,10 +13,7 @@
                 "code": "8480-6",
                 "display": "Systolic blood pressure",
                 "primary": null,
-                "value_set": {
-                    "reference": null,
-                    "display": null
-                }
+                "value_set": null
             },
             {
                 "system": "http://snomed.info/sct",
@@ -24,10 +21,7 @@
                 "code": "271649006",
                 "display": "Systolic blood pressure",
                 "primary": null,
-                "value_set": {
-                    "reference": null,
-                    "display": null
-                }
+                "value_set": null
             },
             {
                 "system": "http://acme.org/devices/clinical-codes",
@@ -35,10 +29,7 @@
                 "code": "bp-s",
                 "display": "Systolic Blood pressure",
                 "primary": null,
-                "value_set": {
-                    "reference": null,
-                    "display": null
-                }
+                "value_set": null
             }
         ]
     },
@@ -57,10 +48,7 @@
                 "code": null,
                 "display": null,
                 "primary": null,
-                "value_set": {
-                    "reference": null,
-                    "display": null
-                }
+                "value_set": null
             }
         ],
         "text": null
@@ -78,10 +66,7 @@
                 "code": "N",
                 "display": "Normal (applies to non-numeric results)",
                 "primary": null,
-                "value_set": {
-                    "reference": null,
-                    "display": null
-                }
+                "value_set": null
             }
         ],
         "text": null

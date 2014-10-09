@@ -20,10 +20,7 @@
                 "code": "N",
                 "display": "Normal (applies to non-numeric results)",
                 "primary": null,
-                "value_set": {
-                    "reference": null,
-                    "display": null
-                    }
+                "value_set": null
             }
         ],
         "text": null
@@ -79,10 +76,7 @@
                 "code": "wi",
                 "display": "Wing",
                 "primary": null,
-                "value_set": {
-                    "reference": null,
-                    "display": null
-                }
+                "value_set": null
             }
         ],
         "text": null

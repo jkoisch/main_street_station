@@ -82,10 +82,7 @@
                 "code": "M",
                 "display": "Male",
                 "primary": null,
-                "value_set": {
-                    "reference": null,
-                    "display": null
-                }
+                "value_set": null
             }
         ],
         "text": null
