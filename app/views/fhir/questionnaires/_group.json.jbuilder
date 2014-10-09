@@ -9,8 +9,6 @@ json.subject do
   json.partial! 'fhir/base/resource_reference', resource_reference: group.subject
 end unless group.subject.nil?
 
-json.ordered  group.ordered unless group.ordered.nil?
-
 json.group group.group do |group|
   json.partial! 'group', group: group
 end unless group.group.nil?

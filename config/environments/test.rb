@@ -42,9 +42,9 @@ MainStreetStation::Application.configure do
   config.gringotts_family_history = Rails.root + 'spec/support-files/ehmbr/family-history.json'
   config.gringotts_location = Rails.root + 'spec/support-files/ehmbr/location.json'
   config.gringotts_observation = Rails.root + 'spec/support-files/ehmbr/observation.json'
-  config.gringotts_questionnaire = Rails.root + 'spec/support-files/questionnaire.json'
   config.gringotts_organization = Rails.root + 'spec/support-files/ehmbr/organization.json'
   config.gringotts_practitioner = Rails.root + 'spec/support-files/ehmbr/provider.json'
+  config.gringotts_questionnaire = Rails.root + 'spec/support-files/ehmbr/questionnaire.json'
 
   config.fhir_enforce_security = false
 end

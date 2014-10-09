@@ -19,6 +19,11 @@ json.options do
   json.partial! 'fhir/base/resource_reference', resource_reference: question.options
 end unless question.options.nil?
 
+json.dataInteger    question.data_integer unless question.data_integer.nil?
+json.dataDate       question.data_date unless question.data_date.nil?
+json.dataString     question.data_string unless question.data_string.nil?
+json.dataBoolean    question.data_boolean unless question.data_boolean.nil?
+
 json.remarks        question.remarks unless question.remarks.nil?
 
 json.group question.group do |group|
