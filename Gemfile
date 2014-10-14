@@ -21,6 +21,7 @@ gem 'uglifier', '>= 1.0.3'
 group :test, :development do
   #gem 'better_errors'
   #gem 'binding_of_caller'
+  gem 'spring-commands-rspec'
   gem 'rest-client'
   gem 'guard'
   gem 'guard-rspec',  require: false
@@ -42,7 +43,7 @@ gem 'json'
 gem 'nifty-generators', group: :development
 gem 'quiet_assets', group: :development
 gem 'uuid'
-gem 'nokogiri'
+#gem 'nokogiri'
 
 gem 'devise'
 gem 'omniauth'

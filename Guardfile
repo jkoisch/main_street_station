@@ -16,7 +16,8 @@
 #   watch(%r{(app|vendor)(/assets/\w+/(.+\.(css|js|html|png|jpg))).*}) { |m| "/assets/#{m[3]}" }
 # end
 #
-guard :rspec, cmd: 'bundle exec rspec', all_after_pass: true do
+
+guard :rspec, cmd: 'spring rspec', all_after_pass: true do
   watch(%r{^spec/.+_spec\.rb$}) { "spec" }
   watch('spec/rails_helper.rb')  { "spec" }
   watch('spec/rails_helper.rb')  { "spec" }
@@ -41,15 +42,3 @@ guard :rspec, cmd: 'bundle exec rspec', all_after_pass: true do
   watch(%r{^spec/acceptance/(.+)\.feature$})
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
 end
-
-#
-# guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' } do
-#   watch('config/application.rb')
-#   watch('config/environment.rb')
-#   watch('config/environments/test.rb')
-#   watch(%r{^config/initializers/.+\.rb$})
-#   watch('Gemfile.lock')
-#   watch('spec/rails_helper.rb') { :rspec }
-#   watch('test/test_helper.rb') { :test_unit }
-#   watch(%r{features/support/}) { :cucumber }
-# end
