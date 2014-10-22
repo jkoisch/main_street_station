@@ -5,7 +5,7 @@
         "status": "generated",
         "div":"<div><h5>HL7 FHIR Server<\/h5><p>The <a href=\"http://hl7.org/fhir\">HL7 FHIR Specification<\/a> Interface Server in Main Street supports the following RESTful transactions based on FHIR v.0.11.<br\/>Released: 2013-09-27 v.0.00.010.0001 supporting JSON and XML formats. <\/p><div class=\"span8\"><table class=\"table table-condensed\"><thead><tr class=\"success\"><td><b>FHIR Resource<\/b><\/td><td><b>Create<\/b><\/td><td><b>Read<\/b><\/td><td><b>Update<\/b><\/td><td><b>Search<\/b><\/td><\/tr><\/thead><tbody><tr><td><a href=\"http://www.hl7.org/implement/standards/fhir/patient.htm\">Patient<\/a><\/td><td><\/td><td class=\"text-center\">*<\/td><td class=\"text-center\">*<\/td><td><ul><li>Gender<\/li><li>Given Name<\/li><li>Family Name<\/li><li>Birthday - Before<\/li><li>Birthday - After<\/li><\/ul><\/td><\/tr><tr><td><a href=\"http://www.hl7.org/implement/standards/fhir/observation.htm\">Observation<\/a><\/td><td><\/td><td>*<\/td><td><\/td><td><\/td><\/tr><\/tbody><\/table><\/div><\/div>"
     },
-    "version": "sex-comedy",
+    "version": "0.00.010.0002",
     "name": "",
     "publisher": "YouCentric",
     "telecom": [{
@@ -14,10 +14,10 @@
     }],
     "software": {
         "name": "Mainstreet",
-        "version": "0.00.010.0001"
+        "version": "0.00.010.0002"
     },
-    "date": "2013-09-21",
-    "fhir_version": "0.11",
+    "date": "2014-10-21",
+    "fhir_version": "0.0.82",
     "accept_unknown": "true",
     "format": [ "json" ],
     "rest": [
@@ -53,6 +53,30 @@
                             "source": "http://hl7.org/fhir/Patient/search#birthdate_after",
                             "type": "date",
                             "documentation": "patient date of birth after given date"
+                        },
+                        {
+                            "name": "family",
+                            "source": "http://hl7.org/fhir/Patient/search#family",
+                            "type": "string",
+                            "documentation": "a portion of the family name of the patient"
+                        },
+                        {
+                            "name": "given",
+                            "source": "http://hl7.org/fhir/Patient/search#given",
+                            "type": "string",
+                            "documentation": "a portion of the given name of the patient"
+                        },
+                        {
+                            "name": "system",
+                            "source": "http://hl7.org/fhir/Patient/search#system",
+                            "type": "string",
+                            "documentation": "identifies a particular sequence or set of unique patient identifiers"
+                        },
+                        {
+                            "name": "value",
+                            "source": "http://hl7.org/fhir/Patient/search#value",
+                            "type": "string",
+                            "documentation": "unique value of patient identifier typically displayed to the user"
                         }]
                 },
                 {
