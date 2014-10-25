@@ -1,8 +1,8 @@
 {
     "id": 1,
     "resource_type": "Location",
+    "text": null,
     "identifier": {
-        "_id": 1,
         "use": null,
         "label": null,
         "system": null,
@@ -56,7 +56,6 @@
         }
     ],
     "address": {
-        "_id": 1,
         "use": "work",
         "text": null,
         "line": [
@@ -84,10 +83,11 @@
     "position": {
         "longitude": 4.844614000123024,
         "latitude": 52.37799399970903,
-        "altitude": 0
+        "altitude": 0.0
     },
     "managing_organization": {
-        "reference": "Organization/f001",
+        "local_type": "Organization",
+        "local_id": 33,
         "display": null
     },
     "status": "active",

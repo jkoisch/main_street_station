@@ -16,15 +16,15 @@
             "assigner": null
         }],
     "subject":{
-        "reference":"Patient/f201",
+        "external_reference":"Patient/f201",
         "display":"Roel"
     },
     "encounter":{
-        "reference":"Encounter/f201",
+        "external_reference":"Encounter/f201",
         "display": null
     },
     "asserter":{
-        "reference":"Practitioner/f201",
+        "external_reference":"Practitioner/f201",
         "display": null
     },
     "date_asserted":"2013-04-04",
@@ -106,7 +106,7 @@
         },
         "assessment":[
             {
-                "reference":"Procedure/f201",
+                "external_reference":"Procedure/f201",
                 "display": null
             }
         ]
@@ -128,7 +128,7 @@
             },
             "detail":[
                 {
-                    "reference":"Observation/f202",
+                    "external_reference":"Observation/f202",
                     "display":"Temperature"
                 }
             ]
@@ -157,7 +157,7 @@
             "type":"due-to",
             "code": null,
             "target":{
-                "reference":"Procedure/f201",
+                "external_reference":"Procedure/f201",
                 "display":"TPF chemokuur"
             }
         },
@@ -165,7 +165,7 @@
             "type":"due-to",
             "code":null,
             "target":{
-                "reference":"Condition/f205",
+                "external_reference":"Condition/f205",
                 "display":"bacterial infection"
             }
         }

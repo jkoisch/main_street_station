@@ -3,7 +3,7 @@
     "resource_type": "Device",
     "text": {
         "status": "generated",
-        "div": "<div>\n      <p>example</p>\n    </div>"
+        "div": "<div>      <p>example</p>     </div>"
     },
     "identifier": [
         {
@@ -43,6 +43,7 @@
     "lot_number": "43453424",
     "contact": [
         {
+            "_id": 6,
             "system": "phone",
             "value": "ext 4352",
             "use": null,

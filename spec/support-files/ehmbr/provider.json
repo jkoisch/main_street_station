@@ -89,7 +89,7 @@
     },
     "birth_date": "1975-12-07",
     "organization": {
-        "reference": "Organization/f001",
+        "external_reference": "Organization/f001",
         "display": "BMC"
     },
     "role": [

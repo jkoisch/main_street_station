@@ -17,13 +17,13 @@
   model: AB 45-J
   lot_number: "43453424"
   owner: !ruby/object:Fhir::Types::ResourceReference
-    reference: PTC/f201
+    external_reference: PTC/f201
     display: monitor
   location: !ruby/object:Fhir::Types::ResourceReference
-    reference: Anaheim, CA
+    external_reference: Anaheim, CA
     display: USA
   patient: !ruby/object:Fhir::Types::ResourceReference
-    reference: Patient/14
+    external_reference: Patient/14
     display: "14"
   contact:
     - !ruby/object:Fhir::Types::Contact

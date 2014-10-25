@@ -25,13 +25,13 @@
       zip: 48104
       country: USA
   part_of: !ruby/object:Fhir::Types::ResourceReference
-    reference: Organization/1
+    external_reference: Organization/1
     display: ACME Healthcare, Inc
   location:
     - !ruby/object:Fhir::Types::ResourceReference
-      reference: '#560de676-4302-4775-8866-7721c68f8d28'
+      external_reference: '#560de676-4302-4775-8866-7721c68f8d28'
       display: Main surgery
     - !ruby/object:Fhir::Types::ResourceReference
-      reference: '#20066004-a0d3-4bd1-a68d-fdea464288bc'
+      external_reference: '#20066004-a0d3-4bd1-a68d-fdea464288bc'
       display: Location 2
   active: "true"

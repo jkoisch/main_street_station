@@ -13,14 +13,14 @@
       use: temp
       label: Roel's VL 1-1, 18-65_1.2.2
   subject: !ruby/object:Fhir::Types::ResourceReference
-    reference: Patient/f201
+    external_reference: Patient/f201
     display: Roel
   author: !ruby/object:Fhir::Types::ResourceReference
-    reference: Practitioner/f201
+    external_reference: Practitioner/f201
   source: !ruby/object:Fhir::Types::ResourceReference
-    reference: Practitioner/f201
+    external_reference: Practitioner/f201
   encounter: !ruby/object:Fhir::Types::ResourceReference
-    reference: Encounter/example
+    external_reference: Encounter/example
     display: in progress
   group: !ruby/object:Fhir::QuestionnaireClasses::Group
     group:
@@ -106,7 +106,7 @@
                   system: http://cancer.questionnaire.org/system/code/sections
                   code: ABDOMINAL
             subject: !ruby/object:Fhir::Types::ResourceReference
-              reference: USCA/0302
+              external_reference: USCA/0302
               display: general
             question:
               - !ruby/object:Fhir::QuestionnaireClasses::Question
@@ -117,5 +117,5 @@
                       code: STADPT
                       display: pT category
                 options: !ruby/object:Fhir::Types::ResourceReference
-                  reference: http://spark.furore.com/fhir/ValueSet/bc299b13baff4405871b14b3a9346c04
+                  external_reference: http://spark.furore.com/fhir/ValueSet/bc299b13baff4405871b14b3a9346c04
                   display: SCTT 2006 Service Type

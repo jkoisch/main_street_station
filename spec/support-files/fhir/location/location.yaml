@@ -43,5 +43,5 @@
     latitude: 52.37799399970903
     altitude: 0
   managing_organization: !ruby/object:Fhir::Types::ResourceReference
-    reference: Organization/f001
+    external_reference: Organization/f001
   status: active

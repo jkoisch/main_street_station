@@ -48,7 +48,7 @@
         display: Male
   birth_date: 1975-12-07
   organization: !ruby/object:Fhir::Types::ResourceReference
-    reference: Organization/f001
+    external_reference: Organization/f001
     display: BMC
   role:
     -  !ruby/object:Fhir::Types::CodeableConcept

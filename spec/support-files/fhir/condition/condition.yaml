@@ -4,12 +4,12 @@
        system: http://goodcare.org/devices/id
        value: 345675
   subject: !ruby/object:Fhir::Types::ResourceReference
-    reference: Patient/f201
+    external_reference: Patient/f201
     display: Roel
   encounter: !ruby/object:Fhir::Types::ResourceReference
-    reference: Encounter/f201
+    external_reference: Encounter/f201
   asserter: !ruby/object:Fhir::Types::ResourceReference
-    reference: Practitioner/f201
+    external_reference: Practitioner/f201
   date_asserted: 2013-04-04
   code: !ruby/object:Fhir::Types::CodeableConcept
     coding:
@@ -45,7 +45,7 @@
           display: Temporary
     assessment:
       - !ruby/object:Fhir::Types::ResourceReference
-        reference: Procedure/f201
+        external_reference: Procedure/f201
   evidence:
     - !ruby/object:Fhir::ConditionClasses::Evidence
       code: !ruby/object:Fhir::Types::CodeableConcept
@@ -56,7 +56,7 @@
             display: degrees C
       detail:
         - !ruby/object:Fhir::Types::ResourceReference
-          reference: Observation/f202
+          external_reference: Observation/f202
           display: Temperature
   location:
     - !ruby/object:Fhir::ConditionClasses::Location
@@ -71,10 +71,10 @@
     - !ruby/object:Fhir::ConditionClasses::RelatedItem
       type: 'due-to'
       target: !ruby/object:Fhir::Types::ResourceReference
-        reference: Procedure/f201
+        external_reference: Procedure/f201
         display: TPF chemokuur
     - !ruby/object:Fhir::ConditionClasses::RelatedItem
       type: 'due-to'
       target: !ruby/object:Fhir::Types::ResourceReference
-        reference: Condition/f205
+        external_reference: Condition/f205
         display: bacterial infection

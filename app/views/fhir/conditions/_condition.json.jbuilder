@@ -41,7 +41,10 @@ json.onsetAge resource.onset_age unless resource.onset_age.nil?
 json.abatementDate resource.abatement_date unless resource.abatement_date.nil?
 json.abatementAge   resource.abatement_age unless resource.abatement_age.nil?
 json.abatementBoolean resource.abatement_boolean unless resource.abatement_boolean.nil?
-json.stage  resource.stage unless resource.stage.nil?
+
+json.stage  do
+  json.partial! 'stage', stage: resource.stage
+end unless resource.stage.nil?
 
 json.evidence resource.evidence do |evidence|
   json.partial! 'evidence', evidence: evidence

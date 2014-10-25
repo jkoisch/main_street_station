@@ -1,6 +1,6 @@
 --- !ruby/object:Fhir::FamilyHistory
   subject: !ruby/object:Fhir::Types::ResourceReference
-    reference: Patient/f201
+    external_reference: Patient/f201
     display: Roel
   note: "Both parents, both brothers and both children (twin) are still alive."
   relation:

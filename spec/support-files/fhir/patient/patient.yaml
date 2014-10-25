@@ -7,7 +7,6 @@
       value: 12345
       period: !ruby/object:Fhir::Types::Period
         start: 2001-05-06
-      #TODO: assigner Resource(Organization) not defined
   name:
     - !ruby/object:Fhir::Types::HumanName
       use: official
@@ -62,16 +61,16 @@
           system: phone
           value: +33 (237) 998327
       organization: !ruby/object:Fhir::Types::ResourceReference
-        reference: Organization/1
+        external_reference: Organization/1
         display: "Walt Disney Corporation"
   care_provider:
     - !ruby/object:Fhir::Types::ResourceReference
-      reference: Organization/1
+      external_reference: Organization/1
   managing_organization: !ruby/object:Fhir::Types::ResourceReference
-    reference: Organization/1
+    external_reference: Organization/1
   link:
     - !ruby/object:Fhir::PatientClasses::Link
       other: !ruby/object:Fhir::Types::ResourceReference
-        reference: Patient/pat2
+        external_reference: Patient/pat2
       type: "seealso"
   active: "true"
