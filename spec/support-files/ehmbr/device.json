@@ -30,7 +30,9 @@
             {
                 "system": "http://snomed.info/sct",
                 "code": "86184003",
-                "display": "Electrocardiographic monitor and recorder"
+                "version": null,
+                "display": "Electrocardiographic monitor and recorder",
+                "value_set": null
             }
         ],
         "text": "ECG"

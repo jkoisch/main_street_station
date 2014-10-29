@@ -62,9 +62,12 @@
             {
                 "system": "http://hl7.org/fhir/v3/AdministrativeGender",
                 "code": "M",
-                "display": "Male"
+                "version": null,
+                "display": "Male",
+                "value_set": null
             }
-        ]
+        ],
+        "text": null
     },
     "birth_date": "1974-12-25",
     "deceased_boolean": false,

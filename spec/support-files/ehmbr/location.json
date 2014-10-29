@@ -19,7 +19,6 @@
                 "version":null,
                 "code": "N",
                 "display": "Normal (applies to non-numeric results)",
-                "primary": null,
                 "value_set": null
             }
         ],
@@ -74,7 +73,6 @@
                 "version":null,
                 "code": "wi",
                 "display": "Wing",
-                "primary": null,
                 "value_set": null
             }
         ],
