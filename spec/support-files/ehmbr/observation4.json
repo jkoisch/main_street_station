@@ -31,12 +31,8 @@
         ]
     },
     "value": {
-        "type":"Quantity",
-        "value": "107",
-        "comparator": null,
-        "units": "mm[Hg]",
-        "system": null,
-        "code": null
+        "type": "String",
+        "value": "some string"
     },
     "interpretation": {
         "coding": [

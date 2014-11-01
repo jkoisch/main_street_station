@@ -10,8 +10,8 @@
             "_id": 1,
             "use": null,
             "label": null,
-            "system": null,
-            "value": null,
+            "system": "http://sdo.org",
+            "value": "HL7 International",
             "period":null,
             "assigner": null
         }
@@ -20,12 +20,10 @@
     "type": {
         "coding": [
             {
-                "_id": 1,
                 "system": "urn:oid:2.16.840.1.113883.2.4.15.1060",
                 "version": null,
                 "code": "V6",
                 "display": "University Medical Hospital",
-                "primary": null,
                 "value_set": null
             }
         ],
@@ -75,12 +73,10 @@
             "purpose": {
                 "coding": [
                     {
-                        "_id": 1,
                         "system": "urn:oid:2.16.840.1.113883.2.4.15.1060",
                         "version": null,
                         "code": "V6",
                         "display": "University Medical Hospital",
-                        "primary": null,
                         "value_set": null
                     }
                 ],
@@ -123,7 +119,6 @@
                         "version": null,
                         "code": null,
                         "display": null,
-                        "primary": null,
                         "value_set": null
                     }
                 ],
@@ -132,5 +127,5 @@
         }
     ],
     "location": [],
-    "active": null
+    "active": true
 }

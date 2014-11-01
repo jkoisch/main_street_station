@@ -28,15 +28,13 @@
                 "display": "Systolic Blood pressure",
                 "value_set": null
             }
-        ]
+        ],
+        "text": null
     },
     "value": {
-        "type":"Quantity",
-        "value": "107",
-        "comparator": null,
-        "units": "mm[Hg]",
-        "system": null,
-        "code": null
+        "type":"Period",
+        "start": "",
+        "end": ""
     },
     "interpretation": {
         "coding": [

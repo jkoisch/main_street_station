@@ -31,12 +31,17 @@
         ]
     },
     "value": {
-        "type":"Quantity",
-        "value": "107",
-        "comparator": null,
-        "units": "mm[Hg]",
-        "system": null,
-        "code": null
+        "type":"CodeableConcept",
+        "coding": [
+            {
+                "system": null,
+                "version": null,
+                "code": null,
+                "display": null,
+                "value_set": null
+            }
+        ],
+        "text": null
     },
     "interpretation": {
         "coding": [
