@@ -31,7 +31,7 @@
         ]
     },
     "value": {
-        "type":"Quantity",
+        "_type":"Quantity",
         "value": "107",
         "comparator": null,
         "units": "mm[Hg]",

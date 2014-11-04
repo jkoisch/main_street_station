@@ -32,7 +32,7 @@
         "text": null
     },
     "value": {
-        "type":"Period",
+        "_type":"Period",
         "start": "",
         "end": ""
     },
