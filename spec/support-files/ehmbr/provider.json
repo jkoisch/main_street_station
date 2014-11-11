@@ -1,5 +1,7 @@
 {
-    "resource_type": "Practitioner",
+    "id": "1",
+    "resource_type": "Provider",
+    "text": null,
     "identifier": [
         {
             "_id": 1,
@@ -44,18 +46,21 @@
     },
     "telecom": [
         {
+            "_id": 1,
             "system": "phone",
             "value": "0205568263",
             "use": "work",
             "period": null
         },
         {
+            "_id": 2,
             "system": "email",
             "value": "E.M.vandenbroek@bmc.nl",
             "use": "work",
             "period": null
         },
         {
+            "_id": 3,
             "system": "fax",
             "value": "0205664440",
             "use": "work",
@@ -74,31 +79,22 @@
         "country": "NLD",
         "period": null
     },
-    "gender": {
-        "coding": [
-            {
-                "system": "http://hl7.org/fhir/v3/AdministrativeGender",
-                "version": null,
-                "code": "M",
-                "display": "Male",
-                "primary": null,
-                "value_set": null
-            }
-        ],
-        "text": null
-    },
-    "birth_date": "1975-12-07",
-    "organization": {
-        "external_reference": "Organization/f001",
-        "display": "BMC"
-    },
+    "gender": null,
+    "birth_date": null,
+    "organization": [{
+        "local_type": "Organization",
+        "local_id": "1",
+        "display": null
+    }],
     "role": [
         {
             "coding": [
                 {
                     "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
                     "code": "01.000",
-                    "display": "Arts"
+                    "version": null,
+                    "display": "Arts",
+                    "value_set": null
                 }
             ],
             "text": "Care role"
@@ -110,7 +106,9 @@
                 {
                     "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
                     "code": "01.018",
-                    "display": "Ear-, Nose and Throat"
+                    "version": null,
+                    "display": "Ear-, Nose and Throat",
+                    "value_set": null
                 }
             ],
             "text": "specialisation"
@@ -123,12 +121,15 @@
     "location": [],
     "qualification": [
         {
+            "_id": 1,
             "code": {
                 "coding": [
                     {
                         "system": "http://snomed.info/sct",
                         "code": "41672002",
-                        "display": "Pulmonologist"
+                        "version": null,
+                        "display": "Pulmonologist",
+                        "value_set": null
                     }
                 ],
                 "text": "Care role"
@@ -143,7 +144,9 @@
                 {
                     "system": "urn:oid:2.16.840.1.113883.6.121",
                     "code": "nl",
-                    "display": "Dutch"
+                    "version": null,
+                    "display": "Dutch",
+                    "value_set": null
                 }
             ],
             "text": "Care role"

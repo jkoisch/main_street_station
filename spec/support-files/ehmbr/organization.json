@@ -70,6 +70,7 @@
     "part_of": null,
     "contact": [
         {
+            "_id": 1,
             "purpose": {
                 "coding": [
                     {
@@ -83,9 +84,8 @@
                 "text": null
             },
             "name": {
-                "_id": 1,
-                "use": null,
-                "text": null,
+                "use": "official",
+                "text": "Someone",
                 "family": [],
                 "given": [],
                 "prefix": [],
@@ -96,34 +96,13 @@
                 {
                     "_id": 1,
                     "system": null,
-                    "value": null,
-                    "use": null,
+                    "value": "you@me.com",
+                    "use": "email",
                     "period": null
                 }
             ],
-            "address": {
-                "_id": 1,
-                "use": null,
-                "text": null,
-                "line": [],
-                "city": null,
-                "state": null,
-                "zip": null,
-                "country": null,
-                "period": null
-            },
-            "gender": {
-                "coding": [
-                    {
-                        "system": null,
-                        "version": null,
-                        "code": null,
-                        "display": null,
-                        "value_set": null
-                    }
-                ],
-                "text": null
-            }
+            "address": null,
+            "gender": null
         }
     ],
     "location": [],
