@@ -12,6 +12,14 @@ module Fhir
           send("#{name}=", value)
         end
       end
+
+      def ehmbr__type=(thing)
+        # eat the _type attribute
+      end
+
+      def self.simple_type?
+        false
+      end
     end
   end
 end
