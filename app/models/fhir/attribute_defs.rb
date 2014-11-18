@@ -17,7 +17,7 @@ module Fhir
         end
 
         define_method("ehmbr_#{attr_name}=") do |content|
-          if (content.has_key?('_type'))
+          if content.has_key?('_type')
             klass = Fhir::Types.const_get(content['_type'])
 
             if klass.simple_type?
