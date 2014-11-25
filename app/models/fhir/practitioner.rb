@@ -8,7 +8,7 @@ module Fhir
     fhir_attribute :gender, type: Types::CodeableConcept
     fhir_attribute :birth_date
     #photo: Attachment
-    fhir_attribute :organization, list: Types::ResourceReference #Organization
+    fhir_attribute :organization, type: Types::ResourceReference #Organization
     fhir_attribute :role, list: Types::CodeableConcept
     fhir_attribute :specialty, list: Types::CodeableConcept
     fhir_attribute :period, type: Types::Period

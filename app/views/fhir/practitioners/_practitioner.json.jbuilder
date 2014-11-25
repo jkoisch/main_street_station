@@ -22,8 +22,8 @@ end unless resource.gender.nil?
 
 json.birthDate        resource.birth_date unless resource.birth_date.nil?
 
-json.organization resource.organization do |organization|
-  json.partial! 'fhir/base/resource_reference', resource_reference: organization
+json.organization do
+  json.partial! 'fhir/base/resource_reference', resource_reference: resource.organization
 end unless resource.organization.nil?
 
 json.role resource.role do |role|
