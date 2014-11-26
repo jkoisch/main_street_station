@@ -16,15 +16,14 @@
             "assigner": null
         }],
     "subject":{
-        "external_reference":"Patient/f201",
-        "display":"Roel"
-    },
-    "encounter":{
-        "external_reference":"Encounter/f201",
+        "local_type": "Client",
+        "local_id": 1,
         "display": null
     },
+    "encounter": null,
     "asserter":{
-        "external_reference":"Practitioner/f201",
+        "local_type": "Provider",
+        "local_id": 1,
         "display": null
     },
     "date_asserted":"2013-04-04",
@@ -35,7 +34,6 @@
                 "version": null,
                 "code":"39065001",
                 "display":"Burn of ear",
-                "primary": null,
                 "value_set": null
             }
         ],
@@ -48,7 +46,6 @@
                 "version": null,
                 "code":"diagnosis",
                 "display":"Diagnosis",
-                "primary": null,
                 "value_set": null
             },
             {
@@ -56,7 +53,6 @@
                 "version": null,
                 "code":"439401001",
                 "display":"Diagnosis",
-                "primary": null,
                 "value_set": null
             }
         ],
@@ -70,7 +66,6 @@
                 "version": null,
                 "code":"24484000",
                 "display":"Severe",
-                "primary": null,
                 "value_set": null
             }
         ],
@@ -83,13 +78,16 @@
                 "version": null,
                 "code":"24484000",
                 "display":"Severe",
-                "primary": null,
                 "value_set": null
             }
         ],
         "text": null
     },
-    "onset_date":"2012-05-24",
+    "onset": {
+        "_type": "SimpleDate",
+        "value": "2012-05-24"
+    },
+    "abatement": null,
     "stage":{
         "summary":{
             "coding":[
@@ -98,7 +96,6 @@
                     "version": null,
                     "code":"14803004",
                     "display":"Temporary",
-                    "primary": null,
                     "value_set": null
                 }
             ],
@@ -106,7 +103,8 @@
         },
         "assessment":[
             {
-                "external_reference":"Procedure/f201",
+                "local_type": "Observation",
+                "local_id": 1,
                 "display": null
             }
         ]
@@ -120,7 +118,6 @@
                         "version": null,
                         "code":"258710007",
                         "display":"degrees C",
-                        "primary": null,
                         "value_set": null
                     }
                 ],
@@ -128,8 +125,9 @@
             },
             "detail":[
                 {
-                    "external_reference":"Observation/f202",
-                    "display":"Temperature"
+                    "local_type": "Observation",
+                    "local_id": 1,
+                    "display": null
                 }
             ]
         }
@@ -143,7 +141,6 @@
                         "version": null,
                         "code":"49521004",
                         "display":"Left external ear structure",
-                        "primary": null,
                         "value_set": null
                     }
                 ],
@@ -155,19 +152,28 @@
     "related_item":[
         {
             "type":"due-to",
-            "code": null,
+            "code": {
+                "coding": [],
+                "text": null
+            },
             "target":{
-                "external_reference":"Procedure/f201",
-                "display":"TPF chemokuur"
+                "local_type": "Observation",
+                "local_id": 1,
+                "display": null
             }
         },
         {
             "type":"due-to",
-            "code":null,
+            "code": {
+                "coding": [],
+                "text": null
+            },
             "target":{
-                "external_reference":"Condition/f205",
-                "display":"bacterial infection"
+                "local_type": "Condition",
+                "local_id": 1,
+                "display": null
             }
         }
-    ]
+    ],
+    "notes": null
 }

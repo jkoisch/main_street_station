@@ -1,5 +1,7 @@
 module Fhir
   class Condition < BaseResource
+    attr_accessor :onset_date, :abatement_date, :abatement_boolean
+
     fhir_attribute :id
     fhir_attribute :identifier, list: Fhir::Types::Identifier
     fhir_attribute :subject, type: Fhir::Types::ResourceReference
@@ -11,11 +13,8 @@ module Fhir
     fhir_attribute :status
     fhir_attribute :certainty, type: Fhir::Types::CodeableConcept
     fhir_attribute :severity, type: Fhir::Types::CodeableConcept
-    fhir_attribute :onset_date
-    fhir_attribute :onset_age, type: Fhir::Types::Quantity
-    fhir_attribute :abatement_date
-    fhir_attribute :abatement_age, type: Fhir::Types::Quantity
-    fhir_attribute :abatement_boolean
+    fhir_attribute :onset, type_list: [Types::Age, Types::SimpleDate]
+    fhir_attribute :abatement, type_list: [Types::Age, Types::SimpleDate, Types::SimpleBoolean]
     fhir_attribute :stage, type: Fhir::ConditionClasses::Stage
     fhir_attribute :evidence, list: Fhir::ConditionClasses::Evidence
     fhir_attribute :location, list: Fhir::ConditionClasses::Location

@@ -1,6 +1,8 @@
 module Fhir
   module Types
     class SimpleString
+      attr_accessor :value
+
       def self.output_type
         'string'
       end
