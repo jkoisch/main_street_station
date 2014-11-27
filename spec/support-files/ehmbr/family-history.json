@@ -9,7 +9,7 @@
         {
             "_id": 1,
             "use": null,
-            "label": null,
+            "label": "MRN",
             "system": null,
             "value": null,
             "period": null,
@@ -17,12 +17,14 @@
         }
     ],
     "subject": {
-        "external_reference": "Patient/f201",
-        "display": "Roel"
+        "local_type": "Client",
+        "local_id": 1,
+        "display": null
     },
     "note": "Both parents, both brothers and both children (twin) are still alive.",
     "relation": [
         {
+            "_id": 1,
             "name": null,
             "relationship": {
                 "coding": [
@@ -31,23 +33,17 @@
                         "version": null,
                         "code": "mother",
                         "display": null,
-                        "primary":null,
                         "value_set": null
                     }
                 ],
                 "text": null
             },
-            "born_period": null,
-            "born_date": null,
-            "born_string": null,
-            "deceased_boolean": false,
-            "deceased_age": null,
-            "deceased_range": null,
-            "deceased_date": null,
-            "deceased_string": null,
+            "born": null,
+            "deceased": null,
             "note": null,
             "condition": [
                 {
+                    "_id": 1,
                     "type": {
                         "coding": [
                             {
@@ -55,7 +51,6 @@
                                 "version": null,
                                 "code": "371041009",
                                 "display": "Embolic Stroke",
-                                "primary": null,
                                 "value_set": null
                             }
                         ],
@@ -68,26 +63,25 @@
                                 "version": null,
                                 "code": "419099112",
                                 "display": "Inactive",
-                                "primary": null,
                                 "value_set": null
                             }
                         ],
                         "text": "Stroke"
                     },
-                    "onset_age": {
+                    "onset": {
+                        "_type": "Age",
                         "value": 56,
                         "comparator": null,
-                        "units": "a",
+                        "units": null,
                         "system": "http://unitsofmeasure.org",
                         "code": null
                     },
-                    "onset_range": null,
-                    "onset_string": null,
                     "note": null
                 }
             ]
         },
         {
+            "_id": 1,
             "name": null,
             "relationship": {
                 "coding": [
@@ -96,23 +90,17 @@
                         "version":null,
                         "code": "brother",
                         "display": null,
-                        "primary": null,
                         "value_set":null
                     }
                 ],
                 "text": null
             },
-            "born_period": null,
-            "born_date": null,
-            "born_string": null,
-            "deceased_boolean": null,
-            "deceased_age": null,
-            "deceased_range": null,
-            "deceased_date": null,
-            "deceased_string": null,
+            "born": null,
+            "deceased": null,
             "note": null,
             "condition": [
                 {
+                    "_id": 1,
                     "type": {
                         "coding": [
                             {
@@ -120,7 +108,6 @@
                                 "version": null,
                                 "code": "190372001",
                                 "display": "Type 1 Diabetes, Maturity Onset",
-                                "primary": null,
                                 "value_set": null
                             }
                         ],
@@ -133,15 +120,12 @@
                                 "version": null,
                                 "code": "419099009",
                                 "display": "Died",
-                                "primary": null,
                                 "value_set": null
                             }
                         ],
                         "text": "Stroke"
                     },
-                    "onset_age": null,
-                    "onset_range": null,
-                    "onset_string": null,
+                    "onset": null,
                     "note": null
                 }
             ]

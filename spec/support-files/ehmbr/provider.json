@@ -81,11 +81,13 @@
     },
     "gender": null,
     "birth_date": null,
-    "organization": {
-        "local_type": "Organization",
-        "local_id": "1",
-        "display": null
-    },
+    "organization": [
+        {
+            "local_type": "Organization",
+            "local_id": null,
+            "display": null
+        }
+    ],
     "role": [
         {
             "coding": [

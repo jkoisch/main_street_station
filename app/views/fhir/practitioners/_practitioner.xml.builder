@@ -12,7 +12,11 @@ xml.address { |xml| xml << render('fhir/base/address', address: resource.address
 xml.gender { |xml| xml << render('fhir/base/codeable_concept', codeable_concept: resource.gender)} unless resource.gender.nil?
 xml.birthDate({value: resource.birth_date}) unless resource.birth_date.nil?
 
-xml.organization { |xml| xml << render('fhir/base/resource_reference', resource_reference: resource.organization)} unless resource.organization.nil?
+resource.organization.each do |org|
+  xml.organization { |xml| xml << render('fhir/base/resource_reference', resource_reference: org) }
+end unless resource.organization.nil?
+
+#xml.organization { |xml| xml << render('fhir/base/resource_reference', resource_reference: resource.organization)} unless resource.organization.nil?
 
 resource.role.each do |role|
   xml.role{ |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: role})}
