@@ -49,13 +49,21 @@
         "text": null
     },
     "comments": null,
-    "applies_datetime": "2012-09-17",
-    "applies_period": null,
+    "applies": {
+        "_type": "SimpleDate",
+        "value": "2012-09-17"
+    },
     "issued": null,
     "status": "final",
     "reliability": "ok",
-    "body_site": null,
-    "method": null,
+    "body_site": {
+        "coding": [],
+        "text": null
+    },
+    "method": {
+        "coding": [],
+        "text": null
+    },
     "identifier": {
         "use": null,
         "label": null,
@@ -66,5 +74,7 @@
     },
     "subject": null,
     "specimen": null,
-    "performer": null
+    "performer": [],
+    "reference_range": [],
+    "related": []
 }

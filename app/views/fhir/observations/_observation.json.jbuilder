@@ -35,7 +35,7 @@ json.interpretation do
 end unless resource.interpretation.nil?
 
 json.comments         resource.comments unless resource.comments.nil?
-json.appliesDatetime  resource.applies_datetime unless resource.applies_datetime.nil?
+json.appliesDatetime  resource.applies_date unless resource.applies_date.nil?
 
 json.appliesPeriod do
   json.partial! 'fhir/base/period', period: resource.applies_period

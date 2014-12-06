@@ -1,5 +1,7 @@
 module Fhir
   class Observation < BaseResource
+    attr_accessor :applies_date
+
     fhir_attribute :id
     fhir_attribute :name, type: Types::CodeableConcept
     fhir_attribute :value, type_list: [Types::Quantity, Types::CodeableConcept, Types::SimpleString]
@@ -12,8 +14,7 @@ module Fhir
     fhir_attribute :value_string
     fhir_attribute :interpretation, type: Types::CodeableConcept
     fhir_attribute :comments
-    fhir_attribute :applies_datetime
-    fhir_attribute :applies_period, type: Types::Period
+    fhir_attribute :applies, type_list: [Types::Period, Types::SimpleDate]
     fhir_attribute :issued
     fhir_attribute :status
     fhir_attribute :reliability

@@ -22,7 +22,7 @@
         system: "http://hl7.org/fhir/v2/0078"
         code: "N"
         display: "Normal (applies to non-numeric results)"
-  applies_datetime: "2012-09-17"
+  applies_date: "2012-09-17"
   status: "final"
   reliability: "ok"
   identifier: !ruby/object:Fhir::Types::Identifier

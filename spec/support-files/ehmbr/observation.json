@@ -11,7 +11,7 @@
                 "system": "http://loinc.org",
                 "version": null,
                 "code": "8480-6",
-                "display": "Systolic blood pressure",
+                "display": "Systolic Blood Pressure",
                 "value_set": null
             },
             {
@@ -28,11 +28,12 @@
                 "display": "Systolic Blood pressure",
                 "value_set": null
             }
-        ]
+        ],
+        "text": null
     },
     "value": {
         "_type":"Quantity",
-        "value": "107",
+        "value": "107.0",
         "comparator": null,
         "units": "mm[Hg]",
         "system": null,
@@ -51,13 +52,21 @@
         "text": null
     },
     "comments": null,
-    "applies_datetime": "2012-09-17",
-    "applies_period": null,
+    "applies":{
+        "_type": "SimpleDate",
+        "value": "2012-09-17"
+    },
     "issued": null,
     "status": "final",
     "reliability": "ok",
-    "body_site": null,
-    "method": null,
+    "body_site": {
+        "coding": [],
+        "text": null
+    },
+    "method": {
+        "coding": [],
+        "text": null
+    },
     "identifier": {
         "use": null,
         "label": null,
@@ -68,5 +77,7 @@
     },
     "subject": null,
     "specimen": null,
-    "performer": null
+    "performer": [],
+    "reference_range": [],
+    "related": []
 }
