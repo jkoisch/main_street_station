@@ -82,7 +82,7 @@
     },
     "subject": null,
     "specimen": null,
-    "performer": null,
+    "performer": [],
     "reference_range": [],
     "related": []
 }
