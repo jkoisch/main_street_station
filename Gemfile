@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
 
-gem 'rails', '4.0.2'
+gem 'rails', '4.1.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -24,8 +24,8 @@ group :test, :development do
   gem 'spring-commands-rspec'
   gem 'rest-client'
   gem 'guard'
-  gem 'guard-rspec',  require: false
-  gem 'rspec-rails', '3.0.1'
+  gem 'guard-rspec', '4.4.2',  require: false
+  gem 'rspec-rails', '3.1.0'
   gem 'database_cleaner'
   gem 'faker'
   gem 'cucumber-rails', require: false #, '0.3.2'
