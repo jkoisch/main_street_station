@@ -9,12 +9,12 @@ module Fhir
     fhir_attribute :status
     fhir_attribute :experimental
     fhir_attribute :date
+    fhir_attribute :software, type: Fhir::ConformanceClasses::Software
+    fhir_attribute :implementation, type: Fhir::ConformanceClasses::Implementation
     fhir_attribute :fhir_version
     fhir_attribute :accept_unknown
     fhir_attribute :format
-    # TODO: Need resource reference to Profile
-    fhir_attribute :software, type: ConformanceClasses::Software
-    fhir_attribute :implementation, type: ConformanceClasses::Implementation
-    fhir_attribute :rest, list: ConformanceClasses::Rest
+    fhir_attribute :profile, list: Types::ResourceReference #Profile
+    fhir_attribute :rest, list: Fhir::ConformanceClasses::Rest
   end
 end

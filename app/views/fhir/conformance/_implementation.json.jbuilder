@@ -1,4 +1,2 @@
-json.implementation do
-  json.description  implementation.description
-  json.url          implementation.url
-end unless implementation.nil?
+json.description  implementation.description unless implementation.description.nil?
+json.url          implementation.url unless implementation.url.nil?

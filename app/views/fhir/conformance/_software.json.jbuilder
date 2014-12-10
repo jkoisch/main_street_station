@@ -1,5 +1,3 @@
-json.software do
-  json.name         software.name
-  json.version      software.version
-  json.releaseDate  software.release_date
-end unless software.nil?
+  json.name         software.name unless software.name.nil?
+  json.version      software.version unless software.version.nil?
+  json.releaseDate  software.release_date unless software.release_date.nil?
