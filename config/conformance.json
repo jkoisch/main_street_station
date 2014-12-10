@@ -12,11 +12,11 @@
         "system": "email",
         "value": "the_black_dot@youcentric.com"
     }],
+    "date": "2014-12-10",
     "software": {
         "name": "Mainstreet",
         "version": "0.00.020.0001"
     },
-    "date": "2014-10-21",
     "fhir_version": "0.0.82",
     "accept_unknown": "true",
     "format": [ "json" ],
