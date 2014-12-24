@@ -28,6 +28,14 @@
     - !ruby/object:Fhir::ConformanceClasses::Rest
       mode: server
       documentation: we serve things
+      security: !ruby/object:Fhir::ConformanceClasses::Security
+        service:
+          - !ruby/object:Fhir::Types::CodeableConcept
+            text: OAuth
+        description: We recommend that PHR servers use standard OAuth using a standard
+                     3rd party provider. We are not testing the ability to provide an OAuth
+                     authentication/authorization service itself, and nor is providing any
+                     security required for the connectathon at all
       resource:
         - !ruby/object:Fhir::ConformanceClasses::Resource
           type: Patient
