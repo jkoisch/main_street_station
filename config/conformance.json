@@ -25,17 +25,67 @@
             "mode": "server",
             "resource": [
                 {
+                    "type": "Condition",
+                    "read_history": "false",
+                    "operation": [
+                        {"code": "read"}
+                    ]
+                },
+                {
+                    "type": "Conformance",
+                    "read_history": "false",
+                    "operation": [
+                        {"code": "read"}
+                    ]
+                },
+                {
+                    "type": "Device",
+                    "read_history": "false",
+                    "operation": [
+                        {"code": "read"}
+                    ]
+                },
+                {
+                    "type": "FamilyHistory",
+                    "read_history": "false",
+                    "operation": [
+                        {"code": "read"}
+                    ]
+                },
+                {
+                    "type": "Location",
+                    "read_history": "false",
+                    "operation": [
+                        {"code": "read"}
+                    ]
+                },
+                {
+                    "type": "Observation",
+                    "read_history": "false",
+                    "operation": [
+                        {"code": "read"}
+                    ]
+                },
+                {
+                    "type": "Organization",
+                    "read_history": "false",
+                    "operation": [
+                        {"code": "read"}
+                    ]
+                },
+                {
                     "type": "Patient",
                     "read_history": "false",
                     "operation": [
                         {"code": "read"}
                     ],
-                    "search_param":[{
-                        "name": "name",
-                        "source": "http://hl7.org/fhir/Patient/search#name",
-                        "type": "string",
-                        "documentation": "a portion of either family or given name of the patient"
-                    },
+                    "search_param":[
+                        {
+                            "name": "name",
+                            "source": "http://hl7.org/fhir/Patient/search#name",
+                            "type": "string",
+                            "documentation": "a portion of either family or given name of the patient"
+                        },
                         {
                             "name": "gender",
                             "source": "http://hl7.org/fhir/Patient/search#gender",
@@ -77,10 +127,11 @@
                             "source": "http://hl7.org/fhir/Patient/search#value",
                             "type": "string",
                             "documentation": "unique value of patient identifier typically displayed to the user"
-                        }]
+                        }
+                    ]
                 },
                 {
-                    "type": "Conformance",
+                    "type": "Practitioner",
                     "read_history": "false",
                     "operation": [
                         {"code": "read"}
