@@ -1,0 +1,1 @@
+xml_bundle(xml, @things)
