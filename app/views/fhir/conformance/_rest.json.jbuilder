@@ -9,12 +9,14 @@ json.resource rest.resource.each do |resource|
   json.partial! 'resource', resource: resource
 end unless rest.resource.nil?
 
+json.interaction rest.interaction.each do |interaction|
+  json.partial! 'interaction', interaction: interaction
+end unless rest.interaction.nil?
+
 json.operation rest.operation.each do |operation|
   json.partial! 'operation', operation: operation
 end unless rest.operation.nil?
 
-json.query rest.query.each do |query|
-  json.partial! 'query', query: query
-end unless rest.query.nil?
-
-json.documentMailbox rest.document_mailbox unless rest.document_mailbox.nil?
+json.documentMailbox rest.document_mailbox do |document_mailbox|
+  json.documentMailbox rest.document_mailbox
+end unless rest.document_mailbox.nil?

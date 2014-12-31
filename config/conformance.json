@@ -26,105 +26,105 @@
             "resource": [
                 {
                     "type": "Condition",
-                    "read_history": "false",
-                    "operation": [
+                    "interaction": [
                         {"code": "read"}
-                    ]
+                    ],
+                    "read_history": "false"
                 },
                 {
                     "type": "Conformance",
-                    "read_history": "false",
-                    "operation": [
+                    "interaction": [
                         {"code": "read"}
-                    ]
+                    ],
+                    "read_history": "false"
                 },
                 {
                     "type": "Device",
-                    "read_history": "false",
-                    "operation": [
+                    "interaction": [
                         {"code": "read"}
-                    ]
+                    ],
+                    "read_history": "false"
                 },
                 {
                     "type": "FamilyHistory",
-                    "read_history": "false",
-                    "operation": [
+                    "interaction": [
                         {"code": "read"}
-                    ]
+                    ],
+                    "read_history": "false"
                 },
                 {
                     "type": "Location",
-                    "read_history": "false",
-                    "operation": [
+                    "interaction": [
                         {"code": "read"}
-                    ]
+                    ],
+                    "read_history": "false"
                 },
                 {
                     "type": "Observation",
-                    "read_history": "false",
-                    "operation": [
+                    "interaction": [
                         {"code": "read"}
-                    ]
+                    ],
+                    "read_history": "false"
                 },
                 {
                     "type": "Organization",
-                    "read_history": "false",
-                    "operation": [
+                    "interaction": [
                         {"code": "read"}
-                    ]
+                    ],
+                    "read_history": "false"
                 },
                 {
                     "type": "Patient",
-                    "read_history": "false",
-                    "operation": [
+                    "interaction": [
                         {"code": "read"}
                     ],
+                    "read_history": "false",
                     "search_param":[
                         {
                             "name": "name",
-                            "source": "http://hl7.org/fhir/Patient/search#name",
+                            "definition": "http://hl7.org/fhir/Patient/search#name",
                             "type": "string",
                             "documentation": "a portion of either family or given name of the patient"
                         },
                         {
                             "name": "gender",
-                            "source": "http://hl7.org/fhir/Patient/search#gender",
+                            "definition": "http://hl7.org/fhir/Patient/search#gender",
                             "type": "string",
                             "documentation": "patient gender"
                         },
                         {
                             "name": "birthdate_before",
-                            "source": "http://hl7.org/fhir/Patient/search#birthdate_before",
+                            "definition": "http://hl7.org/fhir/Patient/search#birthdate_before",
                             "type": "date",
                             "documentation": "patient date of birth before given date"
                         },
                         {
                             "name": "birthdate_after",
-                            "source": "http://hl7.org/fhir/Patient/search#birthdate_after",
+                            "definition": "http://hl7.org/fhir/Patient/search#birthdate_after",
                             "type": "date",
                             "documentation": "patient date of birth after given date"
                         },
                         {
                             "name": "family",
-                            "source": "http://hl7.org/fhir/Patient/search#family",
+                            "definition": "http://hl7.org/fhir/Patient/search#family",
                             "type": "string",
                             "documentation": "a portion of the family name of the patient"
                         },
                         {
                             "name": "given",
-                            "source": "http://hl7.org/fhir/Patient/search#given",
+                            "definition": "http://hl7.org/fhir/Patient/search#given",
                             "type": "string",
                             "documentation": "a portion of the given name of the patient"
                         },
                         {
                             "name": "system",
-                            "source": "http://hl7.org/fhir/Patient/search#system",
+                            "definition": "http://hl7.org/fhir/Patient/search#system",
                             "type": "string",
                             "documentation": "identifies a particular sequence or set of unique patient identifiers"
                         },
                         {
                             "name": "value",
-                            "source": "http://hl7.org/fhir/Patient/search#value",
+                            "definition": "http://hl7.org/fhir/Patient/search#value",
                             "type": "string",
                             "documentation": "unique value of patient identifier typically displayed to the user"
                         }
@@ -132,10 +132,9 @@
                 },
                 {
                     "type": "Practitioner",
-                    "read_history": "false",
-                    "operation": [
-                        {"code": "read"}
-                    ]
+                    "interaction": [
+                        {"code": "read"}],
+                    "read_history": "false"
                 }
             ]
         }

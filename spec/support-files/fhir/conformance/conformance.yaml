@@ -39,17 +39,17 @@
       resource:
         - !ruby/object:Fhir::ConformanceClasses::Resource
           type: Patient
-          operation:
-            - !ruby/object:Fhir::ConformanceClasses::Operation
+          interaction:
+            - !ruby/object:Fhir::ConformanceClasses::Interaction
               code: read
-            - !ruby/object:Fhir::ConformanceClasses::Operation
+            - !ruby/object:Fhir::ConformanceClasses::Interaction
               code: update
           read_history: "false"
           update_create: "false"
         - !ruby/object:Fhir::ConformanceClasses::Resource
           type: Conformance
-          operation:
-            - !ruby/object:Fhir::ConformanceClasses::Operation
+          interaction:
+            - !ruby/object:Fhir::ConformanceClasses::Interaction
               code: read
           read_history: "false"
           update_create: "false"

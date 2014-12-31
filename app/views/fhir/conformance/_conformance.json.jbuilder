@@ -25,10 +25,18 @@ json.fhirVersion    resource.fhir_version unless resource.fhir_version.nil?
 json.acceptUnknown  resource.accept_unknown unless resource.accept_unknown.nil?
 json.format         resource.format unless resource.format.nil?
 
-json.profile resource.provider do |profile|
+json.profile resource.profile do |profile|
   json.partial 'fhir/base/resource_reference', resource_reference: profile
 end unless resource.profile.nil?
 
 json.rest resource.rest do |rest|
   json.partial! 'rest', rest: rest
 end unless resource.rest.nil?
+
+json.messaging resource.messaging do |messaging|
+  json.partial! 'messaging', messaging: messaging
+end unless resource.messaging.nil?
+
+json.document resource.document do |document|
+  json.partial! 'document', document: document
+end unless resource.document.nil?

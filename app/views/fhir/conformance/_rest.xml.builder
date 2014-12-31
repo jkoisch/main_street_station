@@ -6,13 +6,13 @@ rest.resource.each do |resource|
   xml.resource { |xml| xml << render('resource', {resource: resource}) }
 end unless rest.resource.nil?
 
+rest.interaction.each do |interaction|
+  xml.interaction { |xml| xml << render('interaction', {interaction: interaction}) }
+end unless rest.interaction.nil?
+
 rest.operation.each do |operation|
   xml.operation { |xml| xml << render('operation', {operation: operation}) }
 end unless rest.operation.nil?
-
-rest.query.each do |query|
-  xml.query { |xml| xml << render('query', {query: query}) }
-end unless rest.query.nil?
 
 rest.document_mailbox.each do |mailbox|
   xml.documentMailbox({value: mailbox})

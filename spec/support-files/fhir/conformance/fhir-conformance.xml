@@ -1,7 +1,7 @@
 <Conformance xmlns="http://hl7.org/fhir">
   <identifier value="test-1"/>
-  <name value="test"/>
   <version value="0.1"/>
+  <name value="test"/>
   <publisher value="YouCentric"/>
   <telecom>
     <system value="email"/>
@@ -12,6 +12,8 @@
   </telecom>
   <description value=""/>
   <status value="alpha"/>
+  <experimental value=""/>
+  <date value=""/>
   <software>
     <name value="Mainstreet"/>
     <version value="0.00.010.0001"/>
@@ -21,6 +23,9 @@
     <description value="the main point"/>
     <url value="http://mainstreet.youcentric.com"/>
   </implementation>
+  <fhirVersion value=""/>
+  <acceptUnknown value=""/>
+  <format value=""/>
   <rest>
     <mode value="server"/>
     <documentation value="we serve things"/>
@@ -34,20 +39,40 @@
     </security>
     <resource>
       <type value="Patient"/>
-      <operation>
+      <interaction>
         <code value="read"/>
         <code value="update"/>
-      </operation>
+      </interaction>
       <readHistory value="false"/>
       <updateCreate value="false"/>
     </resource>
     <resource>
       <type value="Conformance"/>
-      <operation>
+      <interaction>
         <code value="read"/>
-      </operation>
+      </interaction>
       <readHistory value="false"/>
       <updateCreate value="false"/>
     </resource>
   </rest>
+  <messaging>
+    <event>
+      <code>
+        <system value="http://hl7.org/fhir/message-type"/>
+        <code value="admin-notify"/>
+      </code>
+      <mode value="receiver"/>
+      <focus value="Patient"/>
+      <request>
+        <reference value="Profile/101"/>
+      </request>
+      <response>
+        <reference value="Profile/101"/>
+      </response>
+    </event>
+  </messaging>
+  <document>
+    <mode value="consumer"/>
+    <documentation value="Basic rules for all documents in the system"/>
+  </document>
 </Conformance>

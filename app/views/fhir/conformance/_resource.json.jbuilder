@@ -1,9 +1,14 @@
 json.type         resource.type unless resource.type.nil?
 
-json.operation  resource.operation do |operation|
-  json.partial! 'operation', operation: operation
-end unless resource.operation.nil?
+json.profile do
+  json.partial 'fhir/base/resource_reference', resource_reference: resource.profile
+end unless resource.profile.nil?
 
+json.interaction resource.interaction do |interaction|
+  json.partial! 'interaction', interaction: interaction
+end unless resource.interaction.nil?
+
+json.versioning resource.versioning unless resource.versioning.nil?
 json.readHistory  resource.read_history unless resource.read_history.nil?
 json.updateCreate resource.update_create unless resource.update_create.nil?
 
