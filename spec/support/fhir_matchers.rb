@@ -62,7 +62,7 @@ RSpec::Matchers.define :return_FHIR_JSON_bundle_object do |object_name|
   match do |actual|
     get "/fhir/#{object_name}.json"
     hash_body = JSON.parse(response.body)
-    hash_body['resourceType'] == 'Bundle'
+    hash_body['type'] == 'collection'
   end
 end
 

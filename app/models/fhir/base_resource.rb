@@ -14,6 +14,10 @@ module Fhir
       end
     end
 
+    def to_partial_path
+      self.class.name.split('::').last.underscore
+    end
+
     # noinspection RubyUnusedLocalVariable
     def ehmbr_resource_type=(content)
       # Just eat the contents, might wish to validate in future
