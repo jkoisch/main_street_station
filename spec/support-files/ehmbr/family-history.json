@@ -16,11 +16,12 @@
             "assigner": null
         }
     ],
-    "subject": {
+    "patient": {
         "local_type": "Client",
         "local_id": 1,
         "display": null
     },
+    "date": "2014-12-03",
     "note": "Both parents, both brothers and both children (twin) are still alive.",
     "relation": [
         {

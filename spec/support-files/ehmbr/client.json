@@ -57,18 +57,7 @@
             "period": null
         }
     ],
-    "gender": {
-        "coding": [
-            {
-                "system": "http://hl7.org/fhir/v3/AdministrativeGender",
-                "code": "M",
-                "version": null,
-                "display": "Male",
-                "value_set": null
-            }
-        ],
-        "text": null
-    },
+    "gender": "male",
     "birth_date": "1974-12-25",
     "deceased_boolean": false,
     "deceased_datetime": null,
@@ -80,11 +69,17 @@
             "line": ["534 Erewhon St"],
             "city": "PleasantVille",
             "state": "Vic",
-            "zip": "3999",
+            "postal_code": "3999",
             "country": null,
             "period": null
         }
     ],
+    "marital_status": {
+        "coding": [],
+        "text": null
+    },
+    "multiple_birth_boolean": null,
+    "multiple_birth_integer": null,
     "communication": [],
     "active": true
 }

@@ -10,7 +10,7 @@ resource.telecom.each do |telecom|
   xml.telecom {|xml| xml << render('fhir/base/contact', {contact: telecom})}
 end unless resource.telecom.nil?
 
-xml.gender { |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: resource.gender})} unless resource.gender.nil?
+xml.gender({value: resource.gender}) unless resource.gender.nil?
 xml.birthDate({value: resource.birth_date}) unless resource.birth_date.nil?
 xml.deceasedBoolean({value: resource.deceased_boolean}) unless resource.deceased_boolean.nil?
 xml.deceasedDatetime({value: resource.deceased_datetime}) unless resource.deceased_datetime.nil?

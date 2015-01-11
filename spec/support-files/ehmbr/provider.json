@@ -67,7 +67,7 @@
             "period": null
         }
     ],
-    "address": {
+    "address": [{
         "use": "work",
         "text": null,
         "line": [
@@ -75,10 +75,10 @@
         ],
         "city": "Den Burg",
         "state": null,
-        "zip": "9105 PZ",
+        "postal_code": "9105 PZ",
         "country": "NLD",
         "period": null
-    },
+    }],
     "gender": null,
     "birth_date": null,
     "organization": [
@@ -124,6 +124,7 @@
     "qualification": [
         {
             "_id": 1,
+            "identifier": [],
             "code": {
                 "coding": [
                     {

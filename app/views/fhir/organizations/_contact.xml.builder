@@ -6,4 +6,4 @@ resource.telecom.each do |telecom|
 end unless resource.telecom.nil?
 
 xml.address { |xml| xml << render('fhir/base/address', address: resource.address)} unless resource.address.nil?
-xml.gender { |xml| xml << render('fhir/base/codeable_concept', codeable_concept: resource.gender)} unless resource.gender.nil?
+xml.gender({value: resource.gender}) unless resource.gender.nil?

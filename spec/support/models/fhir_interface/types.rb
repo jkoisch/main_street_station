@@ -5,7 +5,7 @@ module FhirInterface
     end
 
     class Address < Element
-      attr_accessor :use,:text,:line,:city,:state,:zip,:country,:period
+      attr_accessor :use,:text,:line,:city,:state,:postalCode,:country,:period
     end
 
     class Attachment < Element

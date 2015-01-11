@@ -33,19 +33,15 @@
       system: fax
       value: '0205664440'
       use: work
-  address: !ruby/object:Fhir::Types::Address
+  address:
+    - !ruby/object:Fhir::Types::Address
       use: work
       line:
         - Galapagosweg 91
       city: Den Burg
-      zip: 9105 PZ
+      postal_code: 9105 PZ
       country: NLD
-  gender: !ruby/object:Fhir::Types::CodeableConcept
-    coding:
-      - !ruby/object:Fhir::Types::Coding
-        system: http://hl7.org/fhir/v3/AdministrativeGender
-        code: M
-        display: Male
+  gender: male
   birth_date: 1975-12-07
   organization:
     -  !ruby/object:Fhir::Types::ResourceReference

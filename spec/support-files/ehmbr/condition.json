@@ -149,9 +149,8 @@
             "detail": null
         }
     ],
-    "related_item":[
+    "due_to":[
         {
-            "type":"due-to",
             "code": {
                 "coding": [],
                 "text": null
@@ -163,7 +162,6 @@
             }
         },
         {
-            "type":"due-to",
             "code": {
                 "coding": [],
                 "text": null
@@ -175,5 +173,6 @@
             }
         }
     ],
+    "occurred_following": [],
     "notes": null
 }

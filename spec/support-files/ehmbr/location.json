@@ -2,14 +2,7 @@
     "id": 1,
     "resource_type": "Location",
     "text": null,
-    "identifier": {
-        "use": null,
-        "label": null,
-        "system": null,
-        "value": "B1-S.F2",
-        "period": null,
-        "assigner": null
-    },
+    "identifier": [],
     "name": "South Wing, second floor",
     "description": "Second floor of the Old South Wing, formerly in use by Psychiatry",
     "type":{
@@ -23,7 +16,7 @@
             }
         ],
         "text": null
-        },
+    },
     "telecom": [
         {
             "_id": 1,
@@ -62,7 +55,7 @@
         ],
         "city": "Den Burg",
         "state": null,
-        "zip": "9105 PZ",
+        "postal_code": "9105 PZ",
         "country": "NLD",
         "period": null
     },
@@ -91,4 +84,4 @@
     "status": "active",
     "part_of": null,
     "mode": null
- }
+}

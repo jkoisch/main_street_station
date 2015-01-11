@@ -12,15 +12,12 @@ json.telecom resource.telecom do |telecom|
   json.partial! 'fhir/base/contact', contact: telecom
 end unless resource.telecom.nil?
 
-json.address do
-  json.partial! 'fhir/base/address', address: resource.address
+json.address resource.address do |address|
+  json.partial! 'fhir/base/address', address: address
 end unless resource.address.nil?
 
-json.gender do
-  json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.gender
-end unless resource.gender.nil?
-
-json.birthDate        resource.birth_date unless resource.birth_date.nil?
+json.gender     resource.gender unless resource.gender.nil?
+json.birthDate  resource.birth_date unless resource.birth_date.nil?
 
 json.organization do
   json.partial! 'fhir/base/resource_reference', resource_reference: resource.organization[0]

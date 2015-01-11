@@ -14,9 +14,7 @@ json.address do
   json.partial! 'fhir/base/address', address: contact.address
 end unless contact.address.nil?
 
-json.gender  do
-  json.partial! 'fhir/base/codeable_concept', codeable_concept: contact.gender
-end unless contact.gender.nil?
+json.gender contact.gender unless contact.gender.nil?
 
 
 

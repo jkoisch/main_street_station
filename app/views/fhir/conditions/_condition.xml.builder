@@ -25,8 +25,12 @@ resource.location.each do |location|
   xml.location { |xml| xml << render('location', {location: location})}
 end unless resource.location.nil?
 
-resource.related_item.each do |related_item|
-  xml.relatedItem{ |xml| xml << render('related_item', {related_item: related_item})}
-end unless resource.related_item.nil?
+resource.due_to.each do |dueTo|
+  xml.dueTo { |xml| xml << render('due_to', {location: dueTo})}
+end unless resource.due_to.nil?
+
+resource.occurred_following.each do |occurredFollowing|
+  xml.occurredFollowing { |xml| xml << render('occurred_following', {occurred_following: occurredFollowing})}
+end unless resource.occurred_following.nil?
 
 xml.notes({value: resource.notes}) unless resource.notes.nil?

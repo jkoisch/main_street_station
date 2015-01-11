@@ -40,16 +40,10 @@
     <use value="work"/>
     <line value="Galapagosweg 91"/>
     <city value="Den Burg"/>
-    <zip value="9105 PZ"/>
+    <postalCode value="9105 PZ"/>
     <country value="NLD"/>
   </address>
-  <gender>
-    <coding>
-      <system value="http://hl7.org/fhir/v3/AdministrativeGender"/>
-      <code value="M"/>
-      <display value="Male"/>
-    </coding>
-  </gender>
+  <gender value="male"/>
   <birth_date value="1975-12-07"/>
   <organization>
     <reference value="Organization/f001"/>
