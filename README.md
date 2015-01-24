@@ -5,6 +5,12 @@ is the clearing house, the hub for information in YouCentric. Mainstreet orchest
 communications with the the Gringotts secure data store performing necessary conversions 
 from external interface formats into the internal Ehmbr JSON format used by Gringotts.
 
+##Overview
+###Base Software
+* Ruby 2.1.2
+* PostgreSQL 9.3.5 (running 9.2.7 on Heroku)
+* Rails 4.1.8
+
 ##Interfaces
 ###FHIR
 Mainstreet provides a interface for exchange of FHIR resources under the fhir subdomain. 
