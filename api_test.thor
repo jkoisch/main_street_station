@@ -6,10 +6,11 @@ class ApiTest < Thor
   HEROKU_Mainstreet = 'whispering-sierra-2314.herokuapp.com'
   HEROKU_Gringotts  = 'protected-garden-4145.herokuapp.com'
 
-  desc 'simple_index RESOURCE', ''
+  desc 'simple_index RESOURCE', 'Run a simple index on a resource'
+  option :port, type: :numeric, default: 3000, aliases: 'p'
   def simple_index(resource)
     begin
-      resp = RestClient.get "http://localhost:3000/fhir/#{resource}", {accept: :json}
+      resp = RestClient.get "http://localhost:#{options[:port]}/fhir/#{resource}", {accept: :json}
       puts 'SUCCESS!!'
     rescue => e
       puts '****** FAILURE ******'
