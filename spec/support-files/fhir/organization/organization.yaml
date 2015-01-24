@@ -22,7 +22,7 @@
         - 3300 Washtenaw Avenue, Suite 227
       city: Ann Arbor
       state: MI
-      zip: 48104
+      postal_code: 48104
       country: USA
   part_of: !ruby/object:Fhir::Types::ResourceReference
     external_reference: Organization/1

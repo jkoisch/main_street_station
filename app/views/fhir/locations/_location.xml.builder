@@ -1,4 +1,7 @@
-xml.identifier { |xml| xml << render('fhir/base/identifier', identifier: resource.identifier)} unless resource.identifier.nil?
+resource.identifier.each do |identifier|
+  xml.identifier { |xml| xml << render('fhir/base/identifier', {identifier: identifier})}
+end
+
 xml.name({value: resource.name}) unless resource.name.nil?
 xml.description({value: resource.description}) unless resource.description.nil?
 xml.type { |xml| xml << render('fhir/base/codeable_concept', codeable_concept: resource.type)} unless resource.type.nil?

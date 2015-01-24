@@ -39,6 +39,7 @@
         "system": null,
         "code": null
     },
+    "data_absent_reason": null,
     "interpretation": {
         "coding": [
             {
@@ -78,6 +79,7 @@
     "subject": null,
     "specimen": null,
     "performer": [],
+    "encounter": null,
     "reference_range": [],
     "related": []
 }

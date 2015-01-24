@@ -67,14 +67,3 @@
             code: '49521004'
             display: Left external ear structure
         text: Left Ear
-  related_item:
-    - !ruby/object:Fhir::ConditionClasses::RelatedItem
-      type: 'due-to'
-      target: !ruby/object:Fhir::Types::ResourceReference
-        external_reference: Procedure/f201
-        display: TPF chemokuur
-    - !ruby/object:Fhir::ConditionClasses::RelatedItem
-      type: 'due-to'
-      target: !ruby/object:Fhir::Types::ResourceReference
-        external_reference: Condition/f205
-        display: bacterial infection

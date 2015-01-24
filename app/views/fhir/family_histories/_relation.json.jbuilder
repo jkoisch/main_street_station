@@ -10,6 +10,17 @@ end unless relation.born_period.nil?
 
 json.bornDate         relation.born_date unless relation.born_date.nil?
 json.bornString       relation.born_string unless relation.born_string.nil?
+
+json.ageAge do
+  json.partial! 'fhir/base/age', age: relation.age_age
+end unless relation.age_age.nil?
+
+json.ageRange do
+  json.partial! 'fhir/base/range', range: relation.age_range
+end unless relation.age_range.nil?
+
+json.ageString        relation.age_string unless relation.age_string.nil?
+
 json.deceasedBoolean  relation.deceased_boolean unless relation.deceased_boolean.nil?
 
 json.deceasedAge  do

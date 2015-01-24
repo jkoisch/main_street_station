@@ -1,7 +1,7 @@
 module Fhir
   class Location < BaseResource
     fhir_attribute :id
-    fhir_attribute :identifier, type: Types::Identifier
+    fhir_attribute :identifier, list: Types::Identifier
     fhir_attribute :name
     fhir_attribute :description
     fhir_attribute :type, type: Types::CodeableConcept

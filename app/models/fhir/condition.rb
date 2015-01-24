@@ -18,7 +18,8 @@ module Fhir
     fhir_attribute :stage, type: Fhir::ConditionClasses::Stage
     fhir_attribute :evidence, list: Fhir::ConditionClasses::Evidence
     fhir_attribute :location, list: Fhir::ConditionClasses::Location
-    fhir_attribute :related_item, list: Fhir::ConditionClasses::RelatedItem
+    fhir_attribute :due_to, list: Fhir::ConditionClasses::DueTo
+    fhir_attribute :occurred_following, list: Fhir::ConditionClasses::OccurredFollowing
     fhir_attribute :notes
   end
 end

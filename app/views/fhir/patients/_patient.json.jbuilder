@@ -12,9 +12,7 @@ json.telecom resource.telecom do |contact|
   json.partial! 'fhir/base/contact', contact: contact
 end unless resource.telecom.nil?
 
-json.gender do
-  json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.gender
-end unless resource.gender.nil?
+json.gender resource.gender unless resource.gender.nil?
 
 json.birthDate        resource.birth_date unless resource.birth_date.nil?
 json.deceasedBoolean  resource.deceased_boolean.to_s unless resource.deceased_boolean.nil?

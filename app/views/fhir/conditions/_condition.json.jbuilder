@@ -54,8 +54,12 @@ json.location resource.location do |location|
   json.partial! 'location', location: location
 end unless resource.location.nil?
 
-json.relatedItem resource.related_item do |item|
-  json.partial! 'related_item', related_item: item
-end unless resource.related_item.nil?
+json.dueTo resource.due_to do |dueTo|
+  json.partial! 'due_to', due_to: dueTo
+end unless resource.due_to.nil?
+
+json.occurredFollowing resource.occurred_following do |occurred|
+  json.partial! 'occurred_following', occurred_following: occurred
+end unless resource.occurred_following.nil?
 
 json.notes resource.notes unless resource.notes.nil?

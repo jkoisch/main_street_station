@@ -20,6 +20,8 @@ json.valueRatio do
   json.partial! 'fhir/base/ratio', ratio: resource.value_ratio
 end unless resource.value_ratio.nil?
 
+json.valueDateTime resource.value_date_time unless resource.value_date_time.nil?
+
 json.valuePeriod do
   json.partial! 'fhir/base/period', period: resource.value_period
 end unless resource.value_period.nil?
@@ -28,7 +30,10 @@ json.valueSampledData do
   json.partial! 'fhir/base/sampled_data', sampled_data: resource.value_sampled_data
 end unless resource.value_sampled_data.nil?
 
-json.valueString  resource.value_string unless resource.value_string.nil?
+json.valueString      resource.value_string unless resource.value_string.nil?
+
+json.valueTime        resource.value_time unless resource.value_time.nil?
+json.dataAbsentReason resource.data_absent_reason unless resource.data_absent_reason.nil?
 
 json.interpretation do
   json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.interpretation
@@ -68,6 +73,9 @@ end unless resource.specimen.nil?
 json.performer resource.performer do |performer|
   json.partial! 'fhir/base/resource_reference', resource_reference: performer
 end unless resource.performer.nil?
+
+json.encounter resource.encounter unless resource.encounter.nil?
+  #json.partial! 'fhir/base/encounter', encounter: resource.encounter
 
 json.referenceRange resource.reference_range do |reference_range|
   json.partial! 'reference_range', reference_range: reference_range

@@ -75,6 +75,7 @@
     "subject": null,
     "specimen": null,
     "performer": [],
+    "encounter": null,
     "reference_range": [],
     "related": []
 }

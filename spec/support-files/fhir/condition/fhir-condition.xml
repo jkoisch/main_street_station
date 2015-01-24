@@ -79,18 +79,4 @@
       <text value="Left Ear"/>
     </code>
   </location>
-  <relatedItem>
-    <type value="due-to"/>
-    <target>
-      <reference value="Procedure/f201"/>
-      <display value="TPF chemokuur"/>
-    </target>
-  </relatedItem>
-  <relatedItem>
-    <type value="due-to"/>
-    <target>
-      <reference value="Condition/f205"/>
-      <display value="bacterial infection"/>
-    </target>
-  </relatedItem>
 </Condition>

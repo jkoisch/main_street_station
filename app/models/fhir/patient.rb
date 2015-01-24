@@ -4,7 +4,7 @@ module Fhir
     fhir_attribute :identifier, list: Types::Identifier
     fhir_attribute :name, list: Types::HumanName
     fhir_attribute :telecom, list: Types::Contact
-    fhir_attribute :gender, type: Types::CodeableConcept
+    fhir_attribute :gender
     fhir_attribute :birth_date
     fhir_attribute :deceased_boolean
     fhir_attribute :deceased_datetime

@@ -6,7 +6,7 @@ module Fhir
       fhir_attribute :line, array: true
       fhir_attribute :city
       fhir_attribute :state
-      fhir_attribute :zip
+      fhir_attribute :postal_code
       fhir_attribute :country
       fhir_attribute :period, type: Period
     end

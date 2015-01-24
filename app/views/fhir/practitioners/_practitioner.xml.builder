@@ -8,8 +8,11 @@ resource.telecom.each do |telecom|
   xml.telecom { |xml| xml << render('fhir/base/contact', {contact: telecom})}
 end unless resource.telecom.nil?
 
-xml.address { |xml| xml << render('fhir/base/address', address: resource.address)} unless resource.address.nil?
-xml.gender { |xml| xml << render('fhir/base/codeable_concept', codeable_concept: resource.gender)} unless resource.gender.nil?
+resource.address.each do |address|
+  xml.address { |xml| xml << render('fhir/base/address', {address: address})}
+end unless resource.address.nil?
+
+xml.gender({value: resource.gender}) unless resource.gender.nil?
 xml.birthDate({value: resource.birth_date}) unless resource.birth_date.nil?
 
 resource.organization.each do |org|
