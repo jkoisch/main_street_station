@@ -51,6 +51,14 @@ module Fhir
 
     private
     def build_search_params(params)
+      supported_params = { name: Fhir::StringParameter, birthdate: Fhir::DateParameter,
+      active: Fhir::TokenParameter}
+
+      populate_search_parameters(supported_params, params)
+      ''
+    end
+
+    def old_build_search_params(params)
 
       supported_params = [:name, :birthdate_before, :birthdate_after, :family,
                           :given, :gender, :id, :system]

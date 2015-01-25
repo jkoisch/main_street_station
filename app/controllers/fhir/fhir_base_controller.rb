@@ -2,6 +2,14 @@ class Fhir::FhirBaseController < ApplicationController
 
   FHIR_LOCATION_ROOT = 'http://mainstreet.youcentric.com/fhir'
 
+  def populate_search_parameters(parameter_list, params)
+    parameter_list.each_pair do |field, token_class|
+      if params.has_key?(field)
+        token_class.parse(field, params[field])
+      end
+    end
+  end
+
   def get_gringotts_resources(resource, search_params='')
     local_response = retrieve_file_resource(resource, true)
     if local_response
