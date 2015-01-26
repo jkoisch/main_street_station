@@ -42,8 +42,6 @@ guard :rspec, cmd: 'spring rspec', all_after_pass: true do
   watch(%r{^spec/support-files/fhir/(.+)/.+\.json$})  { |m| "spec/views/fhir_#{m[1]}_view_spec.rb" }
   watch('config/routes.rb')                           { 'spec/routing' }
   watch('app/controllers/application_controller.rb')  { 'spec/controllers' }
-  watch('app/lib/ehmbr_formatters.rb')                { 'spec/lib/ehmbr_formatters' }
-  watch(%r{^app/lib/ehmbr/(.+)\.rb$})                 { 'spec/lib/deserializers' }
 
   # Capybara features specs
   watch(%r{^app/views/(.+)/.*\.(erb|haml|slim)$})     { |m| "spec/features/#{m[1]}_spec.rb" }

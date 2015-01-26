@@ -3,11 +3,19 @@ class Fhir::FhirBaseController < ApplicationController
   FHIR_LOCATION_ROOT = 'http://mainstreet.youcentric.com/fhir'
 
   def populate_search_parameters(parameter_list, params)
-    parameter_list.each_pair do |field, token_class|
-      if params.has_key?(field)
-        token_class.parse(field, params[field])
-      end
+    parameter_array = []
+    # build the list params that match something in our list
+    filtered_params = params.select do |field, value|
+      # strip the modifier from the param name prior to lookup
+      parameter_list.has_key?(field.include?(':') ? field.partition(':')[0] : field)
     end
+
+    filtered_params.each_pair do |raw_field, value|
+      field = raw_field.include?(':') ? raw_field.partition(':')[0] : raw_field
+      parameter_array << parameter_list[field].parse(raw_field, value)
+    end
+
+    produce_query_string(parameter_array)
   end
 
   def get_gringotts_resources(resource, search_params='')
@@ -63,6 +71,27 @@ class Fhir::FhirBaseController < ApplicationController
       end
     end
     render 'operation_outcome', status: the_status
+  end
+
+  def produce_query_string(queries)
+    if queries.count > 0
+      out_string = []
+      queries.each do |query|
+        keys = query.keys
+        if keys.length == 1
+          if query[keys[0]].is_a?(Hash)
+            query[keys[0]].each_pair do |key, value|
+              out_string << "query[#{keys[0]}][#{key}]=#{value}"
+            end
+          else
+            out_string << "query[#{keys[0]}]=#{query[keys[0]]}"
+          end
+        end
+      end
+      out_string.join(';')
+    else
+      ''
+    end
   end
 
   private
