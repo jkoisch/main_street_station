@@ -32,6 +32,7 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'terminal-notifier'
   gem 'mocha', require: 'mocha/api'
+  gem 'webmock'
   gem 'thin'
   #gem 'taps'
 end

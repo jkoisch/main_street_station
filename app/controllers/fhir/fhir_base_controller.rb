@@ -1,4 +1,5 @@
 class Fhir::FhirBaseController < ApplicationController
+  attr_accessor :uri
 
   FHIR_LOCATION_ROOT = 'http://mainstreet.youcentric.com/fhir'
 
@@ -7,12 +8,12 @@ class Fhir::FhirBaseController < ApplicationController
     # build the list params that match something in our list
     filtered_params = params.select do |field, value|
       # strip the modifier from the param name prior to lookup
-      parameter_list.has_key?(field.include?(':') ? field.partition(':')[0] : field)
+      parameter_list.has_key?((field.include?(':') ? field.partition(':')[0] : field).to_sym)
     end
 
     filtered_params.each_pair do |raw_field, value|
       field = raw_field.include?(':') ? raw_field.partition(':')[0] : raw_field
-      parameter_array << parameter_list[field].parse(raw_field, value)
+      parameter_array << parameter_list[field.to_sym].parse(raw_field, value)
     end
 
     produce_query_string(parameter_array)
@@ -23,13 +24,13 @@ class Fhir::FhirBaseController < ApplicationController
     if local_response
       local_response
     else
-      uri = URI.join(MainStreetStation::Application.config.gringotts_url,
+      @uri = URI.join(MainStreetStation::Application.config.gringotts_url,
                      resource.pluralize)
       unless search_params.empty?
         Rails.logger.info "Adding #{search_params}"
-        uri.query = URI.encode(search_params)
+        @uri.query = URI.encode(search_params)
       end
-      wrap_response(Net::HTTP.get_response(uri))
+      wrap_response(Net::HTTP.get_response(@uri))
     end
   end
 
@@ -75,20 +76,7 @@ class Fhir::FhirBaseController < ApplicationController
 
   def produce_query_string(queries)
     if queries.count > 0
-      out_string = []
-      queries.each do |query|
-        keys = query.keys
-        if keys.length == 1
-          if query[keys[0]].is_a?(Hash)
-            query[keys[0]].each_pair do |key, value|
-              out_string << "query[#{keys[0]}][#{key}]=#{value}"
-            end
-          else
-            out_string << "query[#{keys[0]}]=#{query[keys[0]]}"
-          end
-        end
-      end
-      out_string.join(';')
+      CGI.unescape({query: queries.reduce({}, :merge)}.to_query)
     else
       ''
     end

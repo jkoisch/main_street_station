@@ -2,6 +2,7 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
+require 'webmock/rspec'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -51,5 +52,7 @@ RSpec.configure do |config|
 
   config.include Requests::JsonHelpers, type: :request
 end
+
+#WebMock.stub_request(:any, 'http://gringotts.dev/')
 
 FactoryGirl.register_strategy(:json, JsonStrategy)
