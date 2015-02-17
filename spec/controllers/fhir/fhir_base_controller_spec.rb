@@ -6,13 +6,13 @@ describe Fhir::FhirBaseController do
     it 'should produce a single query parameter' do
       list = { thing1: Fhir::StringParameter, thing2: Fhir::StringParameter}
       params = { 'thing1' => 'fun'}
-      expect(subject.populate_search_parameters(list, params)).to eq 'query[thing1]=fun'
+      expect(subject.populate_search_parameters(list, params)).to eq 'query[thing1][value]=fun'
     end
 
     it 'should produce a list of query parameters' do
       list = { thing1: Fhir::StringParameter, thing2: Fhir::StringParameter}
       params = { 'thing1' => 'fun', 'thing2' => 'frolic'}
-      expect(subject.populate_search_parameters(list, params)).to eq 'query[thing1]=fun&query[thing2]=frolic'
+      expect(subject.populate_search_parameters(list, params)).to eq 'query[thing1][value]=fun&query[thing2][value]=frolic'
     end
 
     it 'should produce a null query string when no fields match' do
@@ -24,14 +24,17 @@ describe Fhir::FhirBaseController do
     it 'should process a parameter that has a modifier' do
       list = { thing1: Fhir::StringParameter, thing2: Fhir::StringParameter}
       params = { 'thing1:exact' => 'fun'}
-      expect(subject.populate_search_parameters(list, params)).to eq 'query[thing1:exact]=fun'
-      #expect(subject.populate_search_parameters(list, params)).to eq 'query[thing1][value]=fun;query[thing1][modifier]=exact'
+      #expect(subject.populate_search_parameters(list, params)).to eq 'query[thing1:exact]=fun'
+      expect(subject.populate_search_parameters(list,
+                                                params)).to eq 'query[thing1][modifier]=ex&query[thing1][value]=fun'
     end
 
     it 'should process a parameter that has an invalid modifier' do
       list = { thing1: Fhir::StringParameter, thing2: Fhir::StringParameter}
       params = { 'thing1:simple' => 'fun'}
-      expect(subject.populate_search_parameters(list, params)).to eq 'query[]=fun'
+      expect {
+        subject.populate_search_parameters(list, params)}.to raise_error(Fhir::ParameterException,
+                                                             "Invalid modifier 'simple' for string parameter 'thing1'")
     end
   end
 
