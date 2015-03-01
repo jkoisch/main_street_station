@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Fhir::PatientsController, type: :controller do
+describe Fhir::PatientsController, :focus, type: :controller do
   let(:json_headers) { { Accept: 'application/json', Content-Type => 'application/json'} }
 
   context '#index' do
@@ -14,34 +14,65 @@ describe Fhir::PatientsController, type: :controller do
     end
 
     context 'for searches' do
-      it 'interprets search criteria' do
-        get :index, {format: :json, search: 'given=darth'}
-        #expect(assigns(:patients).count).to eq(1)
-        pending 'needs validation of parameters'
-        fail
-      end
+      before(:each) {Fhir::PatientsController.any_instance.stubs(:retrieve_file_resource).returns(nil) }
 
       it 'returns patients using search criteria: active' do
-        get :index, {format: :json, search: 'active=true'}
-        pending 'Not implemented yet'
-        fail
+        stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+        get :index, {format: :json, active: 'true'}
+        expect(a_request(:get, 'gringotts.dev/clients').
+                  with(:query => hash_including({'query' => {'active' => {'code' => 'true'}}}))).to have_been_made
       end
 
-      it 'performs a patient search for matching address'
+      it 'performs a patient search for matching address' do
+        stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+        get :index, {format: :json, address: '-40C Hoth St., Edmonton, AB'}
+        expect(a_request(:get, 'gringotts.dev/clients').
+                   with(:query => hash_including({'query' => {'address' => {'value' => '-40C Hoth St., Edmonton, AB'}}}))).to have_been_made
+      end
 
-      it 'performs a patient search for matching birthdate_before'
+      it 'performs a patient search for matching birthdate' do
+        stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+        get :index, {format: :json, birthdate: '1993-12-20'}
+        expect(a_request(:get, 'gringotts.dev/clients').
+                  with(:query => hash_including({'query' => {'birthdate' => {'value' => '1993-12-20'}}}))).to have_been_made
+      end
 
-      it 'performs a patient search for matching birthdate_after'
+      it 'performs a patient search for matching family' do
+        stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+        get :index, {format: :json, family: 'Skywalker'}
+        expect(a_request(:get, 'gringotts.dev/clients').
+                  with(:query => hash_including({'query' => {'family' => {'value' => 'Skywalker'}}}))).to have_been_made
+      end
 
-      it 'performs a patient search for matching family'
+      it 'performs a patient search for matching gender' do
+        #pending 'awaiting final param parsing'
+        stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+        get :index, {format: :json, gender: 'male'}
+        expect(a_request(:get, 'gringotts.dev/clients').
+                   with(:query => hash_including({'query' => {'gender' => {'code' => 'male'}}}))).to have_been_made
+      end
 
-      it 'performs a patient search for matching gender'
+      it 'performs a patient search for matching given' do
+        stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+        get :index, {format: :json, given: 'Han'}
+        expect(a_request(:get, 'gringotts.dev/clients').
+                  with(:query => hash_including({'query' => {'given' => {'value' => 'Han'}}}))).to have_been_made
+      end
 
-      it 'performs a patient search for matching given'
+      it 'performs a patient search for matching identifier' do
+        #pending 'awaiting final param parsing'
+        stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+        get :index, {format: :json, identifier: '54-08976-23'}
+        expect(a_request(:get, 'gringotts.dev/clients').
+                   with(:query => hash_including({'query' => {'identifier' => {'code' => '54-08976-23'}}}))).to have_been_made
+      end
 
-      it 'performs a patient search for matching identifier'
-
-      it 'performs a patient search for matching name'
+      it 'performs a patient search for matching name' do
+        stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+        get :index, {format: :json, name: 'Solo'}
+        expect(a_request(:get, 'gringotts.dev/clients').
+                   with(:query => hash_including({'query' => {'name' => {'value' => 'Solo'}}}))).to have_been_made
+      end
 
       it 'returns operation_outcome using invalid search criteria'
 
