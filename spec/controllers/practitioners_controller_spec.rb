@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Fhir::PractitionersController, type: :controller do
 let(:json_headers) { { Accept: 'application/json', Content-Type => 'application/json' } }
 
-  describe '#index' do
+  context '#index' do
     subject { get :index, format: :json }
 
     specify { should render_template(:index) }
@@ -12,6 +12,38 @@ let(:json_headers) { { Accept: 'application/json', Content-Type => 'application/
       get :index, format: :json
       expect(assigns(:practitioners).count).to eq(1)
     end
+  end
+
+  context 'for searches' do
+    before(:each) {Fhir::PractitionersController.any_instance.stubs(:retrieve_file_resource).returns(nil) }
+
+    it 'performs a practitioner search for matching address' do
+      stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, address: 'Galapagosweg 91'}
+      expect(a_request(:get, 'gringotts.dev/practitioners').
+                 with(:query => hash_including({'query' => {'address' => {'value' => 'Galapagosweg 91'}}}))).to have_been_made
+    end
+
+    it 'performs an practitioner search for matching communication' do
+      #pending 'awaiting final param parsing'
+      stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, communication: 'urn:oid:2.16.840.1.113883.6.121'}
+      expect(a_request(:get, 'gringotts.dev/practitioners').
+                 with(:query => hash_including({'query' => {'communication' => {'code' => 'urn:oid:2.16.840.1.113883.6.121'}}}))).to have_been_made
+    end
+
+    it 'performs an practitioner search for matching identifier' do
+      #pending 'awaiting final param parsing'
+      stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, identifier: '938273695'}
+      expect(a_request(:get, 'gringotts.dev/practitioners').
+                 with(:query => hash_including({'query' => {'identifier' => {'code' => '938273695'}}}))).to have_been_made
+    end
+
+    it 'performs an practitioner search for matching location'
+
+    it 'returns operation_outcome using invalid search criteria'
+
   end
 
   describe '#show' do

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Fhir::PatientsController, :focus, type: :controller do
+describe Fhir::PatientsController, type: :controller do
   let(:json_headers) { { Accept: 'application/json', Content-Type => 'application/json'} }
 
   context '#index' do
@@ -72,6 +72,13 @@ describe Fhir::PatientsController, :focus, type: :controller do
         get :index, {format: :json, name: 'Solo'}
         expect(a_request(:get, 'gringotts.dev/clients').
                    with(:query => hash_including({'query' => {'name' => {'value' => 'Solo'}}}))).to have_been_made
+      end
+
+      it 'performs a patient search for matching telecom' do
+        stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+        get :index, {format: :json, telecom: '7809030885'}
+        expect(a_request(:get, 'gringotts.dev/clients').
+                  with(:query => hash_including({'query' => {'telecom' => {'value' => '7809030885'}}}))).to have_been_made
       end
 
       it 'returns operation_outcome using invalid search criteria'

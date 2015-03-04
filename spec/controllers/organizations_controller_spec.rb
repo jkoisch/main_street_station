@@ -14,6 +14,35 @@ describe Fhir::OrganizationsController, type: :controller do
     end
   end
 
+  context 'for searches' do
+    before(:each) {Fhir::OrganizationsController.any_instance.stubs(:retrieve_file_resource).returns(nil) }
+
+    it 'performs an organization search for matching active' do
+      stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, active: 'true'}
+      expect(a_request(:get, 'gringotts.dev/organizations').
+                 with(:query => hash_including({'query' => {'active' => {'code' => 'true'}}}))).to have_been_made
+    end
+
+    it 'performs an organization search for matching identifier' do
+      #pending 'awaiting final param parsing'
+      stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, identifier: 'HL7 International'}
+      expect(a_request(:get, 'gringotts.dev/organizations').
+                 with(:query => hash_including({'query' => {'identifier' => {'code' => 'HL7 International'}}}))).to have_been_made
+    end
+
+    it 'performs an organization search for matching name' do
+      stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, name: 'Health Level Seven International'}
+      expect(a_request(:get, 'gringotts.dev/organizations').
+                 with(:query => hash_including({'query' => {'name' => {'value' => 'Health Level Seven International'}}}))).to have_been_made
+    end
+
+    it 'returns operation_outcome using invalid search criteria'
+
+  end
+
   describe '#show' do
     subject { get :show, id: 1, format: :json }
 

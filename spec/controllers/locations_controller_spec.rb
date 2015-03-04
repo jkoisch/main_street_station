@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Fhir::LocationsController, type: :controller do
   let(:json_headers) { { Accept: 'application/json', Content-Type => 'application/json' } }
 
-  describe '#index' do
+  context '#index' do
     subject { get :index, format: :json }
 
     specify { should render_template(:index) }
@@ -12,6 +12,42 @@ describe Fhir::LocationsController, type: :controller do
       get :index, format: :json
       expect(assigns(:locations).count).to eq(1)
     end
+  end
+
+  context 'for searches' do
+    before(:each) {Fhir::LocationsController.any_instance.stubs(:retrieve_file_resource).returns(nil) }
+
+    it 'performs a location search for matching address' do
+      stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, address: 'Galapagosweg 91, Building A'}
+      expect(a_request(:get, 'gringotts.dev/locations').
+                 with(:query => hash_including({'query' => {'address' => {'value' => 'Galapagosweg 91, Building A'}}}))).to have_been_made
+    end
+
+    it 'performs a location search for matching identifier' do
+      stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, identifier: '54-08976-23'}
+      expect(a_request(:get, 'gringotts.dev/locations').
+                 with(:query => hash_including({'query' => {'identifier' => {'code' => '54-08976-23'}}}))).to have_been_made
+    end
+
+    it 'performs a location search for matching name' do
+      stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, name: 'South Wing, second floor'}
+      expect(a_request(:get, 'gringotts.dev/locations').
+                 with(:query => hash_including({'query' => {'name' => {'value' => 'South Wing, second floor'}}}))).to have_been_made
+    end
+
+    it 'performs a location search for matching near' do
+      stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, near: '4.844614000123024,52.37799399970903'}
+      expect(a_request(:get, 'gringotts.dev/locations').
+                 with(:query => hash_including({'query' => {'near' => {'code' => '4.844614000123024,52.37799399970903'}}}))).to have_been_made
+    end
+
+    it 'performs a location search for matching near_distance'
+
+    it 'returns operation_outcome using invalid search criteria'
   end
 
   describe '#show' do

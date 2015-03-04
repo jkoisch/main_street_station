@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Fhir::ConditionsController, type: :controller do
   let(:json_headers) { { Accept: 'application/json', Content-Type => 'application/json' } }
 
-  describe '#index' do
+  context '#index' do
     subject { get :index, format: :json }
 
     specify { should render_template(:index) }
@@ -14,6 +14,37 @@ describe Fhir::ConditionsController, type: :controller do
     end
   end
 
+  context 'for searches' do
+    before(:each) {Fhir::ConditionsController.any_instance.stubs(:retrieve_file_resource).returns(nil)}
+
+    it 'performs a condition search for matching asserter'
+
+    it 'performs a condition search for matching category' do
+      stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, category: '439401001'}
+      expect(a_request(:get, 'gringotts.dev/conditions').
+            with(:query => hash_including({'query' => {'category' => {'code' => '439401001'}}}))).to have_been_made
+    end
+
+    it 'performs a condition search for matching code' do
+      stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, code: '39065001'}
+      expect(a_request(:get, 'gringotts.dev/conditions').
+                 with(:query => hash_including({'query' => {'code' => {'code' => '39065001'}}}))).to have_been_made
+    end
+
+    it 'performs a condition search for matching onset date' do
+      stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, onset: '2012-05-24'}
+      expect(a_request(:get, 'gringotts.dev/conditions').
+                 with(:query => hash_including({'query' => {'onset' => {'value' => '2012-05-24'}}}))).to have_been_made
+    end
+
+    it 'performs a condition search for matching patient subject'
+
+    it 'returns operation_outcome using invalid search criteria'
+
+  end
   describe '#show' do
     subject { get :show, id: 1, format: :json }
 

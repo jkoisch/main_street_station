@@ -58,7 +58,8 @@ module Fhir
                            gender:      Fhir::TokenParameter,
                            given:       Fhir::StringParameter,
                            identifier:  Fhir::TokenParameter,
-                           name:        Fhir::StringParameter
+                           name:        Fhir::StringParameter,
+                           telecom:     Fhir::StringParameter
                           }
 
       populate_search_parameters(supported_params, params)

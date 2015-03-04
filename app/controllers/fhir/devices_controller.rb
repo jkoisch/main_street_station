@@ -89,6 +89,17 @@ module Fhir
     end
 
     def build_search_params(params)
+      supported_params = {  identifier:   Fhir::TokenParameter,
+                            manufacturer: Fhir::StringParameter,
+                            model:        Fhir::StringParameter,
+                            patient:      Fhir::ReferenceParameter,
+                            type:         Fhir::TokenParameter,
+                            udi:          Fhir::StringParameter
+                          }
+      populate_search_parameters(supported_params, params)
+    end
+
+    def old_build_search_params(params)
 
       supported_params = [:identifier, :location, :organization, :patient, :type, :udi]
 

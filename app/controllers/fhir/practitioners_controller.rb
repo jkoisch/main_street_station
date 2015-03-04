@@ -5,7 +5,7 @@ module Fhir
     RESOURCE = 'practitioner'
 
     def index
-      response = get_gringotts_resources(RESOURCE)
+      response = get_gringotts_resources(RESOURCE, build_search_params(params))
       if response.success?
         @practitioners = Fhir::Practitioner.parse_ehmbr_list(response.body)
       else
@@ -46,6 +46,18 @@ module Fhir
       else
         send_operation_outcome(nil, 503, 'Application unavailable at this time')
       end
+    end
+
+    private
+
+    def build_search_params(params)
+      supported_params = {  address:        Fhir::StringParameter,
+                            communication:  Fhir::TokenParameter,
+                            identifier:     Fhir::TokenParameter,
+                            location:       Fhir::ReferenceParameter
+                          }
+
+      populate_search_parameters(supported_params, params)
     end
   end
 end

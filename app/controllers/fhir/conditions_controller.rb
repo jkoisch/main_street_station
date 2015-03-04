@@ -8,8 +8,8 @@ module Fhir
     # GET /Condition.json
     # GET /Condition.xml
     def index
-      response = get_gringotts_resources(RESOURCE)
-      logger.info "response: #{response.body}"
+      response = get_gringotts_resources(RESOURCE, build_search_params(params))
+      #logger.info "response: #{response.body}"
       if response.success?
         @conditions = Fhir::Condition.parse_ehmbr_list(response.body)
       else
@@ -66,8 +66,16 @@ module Fhir
       params[:condition]
     end
 
-    def build_search_params #()params)
-      #TODO: Need implementation of search params
+    def build_search_params (params)
+      supported_params = {
+                           asserter:  Fhir::ReferenceParameter,
+                           category:  Fhir::TokenParameter,
+                           code:      Fhir::TokenParameter,
+                           onset:     Fhir::DateParameter,
+                           patient:   Fhir::ReferenceParameter
+                          }
+
+      populate_search_parameters(supported_params, params)
     end
   end
 

@@ -14,23 +14,44 @@ describe Fhir::DevicesController, type: :controller do
     end
 
     context 'for searches' do
-      it 'interprets search criteria' do
-        get :index, {format: :json, search: 'something'}
-        pending 'needs validation of parameters'
-        fail
+      before(:each) {Fhir::DevicesController.any_instance.stubs(:retrieve_file_resource).returns(nil) }
+
+      it 'performs a device search for matching identifier' do
+        stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
+        get :index, {format: :json, identifier: 'AMID-342135-8464'}
+        expect(a_request(:get, 'gringotts.dev/devices').
+                  with(:query => hash_including({'query' => {'identifier' => {'code' => 'AMID-342135-8464'}}}))).to have_been_made
       end
 
-      it 'performs a device search for matching identifier'
+      it 'performs a device search for matching manufacturer' do
+        stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
+        get :index, {format: :json, manufacturer: 'Acme Devices, Inc'}
+        expect(a_request(:get, 'gringotts.dev/devices').
+                   with(:query => hash_including({'query' => {'manufacturer' => {'value' => 'Acme Devices, Inc'}}}))).to have_been_made
+      end
 
-      it 'performs a device search for matching location'
-
-      it 'performs a device search for matching organization'
+      it 'performs a device search for matching model' do
+        stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
+        get :index, {format: :json, model: 'AB 45-J'}
+        expect(a_request(:get, 'gringotts.dev/devices').
+                   with(:query => hash_including({'query' => {'model' => {'value' => 'AB 45-J'}}}))).to have_been_made
+      end
 
       it 'performs a device search for matching patient'
 
-      it 'performs a device search for matching type'
+      it 'performs a device search for matching type' do
+        stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
+        get :index, {format: :json, type: '86184003'}
+        expect(a_request(:get, 'gringotts.dev/devices').
+                   with(:query => hash_including({'query' => {'type' => {'code' => '86184003'}}}))).to have_been_made
+      end
 
-      it 'performs a device search for matching udi'
+      it 'performs a device search for matching udi' do
+        stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
+        get :index, {format: :json, udi: 'xo98-s3'}
+        expect(a_request(:get, 'gringotts.dev/devices').
+                   with(:query => hash_including({'query' => {'udi' => {'value' => 'xo98-s3'}}}))).to have_been_made
+      end
 
       it 'returns operation_outcome using invalid search criteria'
 

@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Fhir::FamilyHistoriesController, type: :controller do
   let(:json_headers) { { Accept: 'application/json', Content-Type => 'application/json' } }
 
-  describe '#index' do
+  context '#index' do
     subject { get :index, format: :json }
 
     specify { should render_template(:index) }
@@ -12,6 +12,14 @@ describe Fhir::FamilyHistoriesController, type: :controller do
       get :index, format: :json
       expect(assigns(:family_histories).count).to eq(1)
     end
+  end
+
+  context 'for searches' do
+    before(:each) {Fhir::FamilyHistoriesController.any_instance.stubs(:retrieve_file_resource).returns(nil) }
+
+    it 'performs a family history search for matching patient'
+
+    it 'returns operation_outcome using invalid search criteria'
   end
 
   describe '#show' do

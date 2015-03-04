@@ -5,7 +5,7 @@ module Fhir
     RESOURCE = 'location'
 
     def index
-      response = get_gringotts_resources(RESOURCE)
+      response = get_gringotts_resources(RESOURCE, build_search_params(params))
       if response.success?
         @locations = Fhir::Location.parse_ehmbr_list(response.body)
       else
@@ -46,6 +46,19 @@ module Fhir
       else
         send_operation_outcome(nil, 503, 'Application unavailable at this time')
       end
+    end
+
+    private
+
+    def build_search_params(params)
+      supported_params = { address:       Fhir::StringParameter,
+                           identifier:    Fhir::TokenParameter,
+                           name:          Fhir::StringParameter,
+                           near:          Fhir::TokenParameter,
+                           near_distance: Fhir::TokenParameter
+                          }
+
+      populate_search_parameters(supported_params, params)
     end
   end
 end

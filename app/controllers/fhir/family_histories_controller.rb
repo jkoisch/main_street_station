@@ -4,11 +4,8 @@ module Fhir
   class FamilyHistoriesController < FhirController
     RESOURCE = 'family_history'
 
-    # GET /FamilyHistory
-    # GET /FamilyHistory.json
-    # GET /FamilyHistory.xml
     def index
-      response = get_gringotts_resources(RESOURCE)
+      response = get_gringotts_resources(RESOURCE, build_search_params(params))
       if response.success?
         @family_histories = Fhir::FamilyHistory.parse_ehmbr_list(response.body)
       else
@@ -16,9 +13,6 @@ module Fhir
       end
     end
 
-    # GET /FamilyHistory/1
-    # GET /FamilyHistory/1.json
-    # GET /FamilyHistory/1.xml
     def show
       response = get_resource(RESOURCE, params[:id])
       if response.success?
@@ -27,10 +21,6 @@ module Fhir
         send_operation_outcome(response)
       end
     end
-
-    # POST /FamilyHistory
-    # POST /FamilyHistory.json
-    # POST /FamilyHistory.xml
 
     def create
       response = create_gringotts_resource(RESOURCE, params)
@@ -63,6 +53,12 @@ module Fhir
     # Never trust parameters from the scary internet, only allow the white list through.
     def family_history_params
       params[:family_history]
+    end
+
+    def build_search_params(params)
+      supported_params = { patient: Fhir::ReferenceParameter }
+
+      populate_search_parameters(supported_params, params)
     end
   end
 end

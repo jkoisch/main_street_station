@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Fhir::ObservationsController, type: :controller do
   let(:json_headers) { { Accept: 'application/json', Content-Type => 'application/json' } }
 
-  describe '#index' do
+  context '#index' do
     subject { get :index, format: :json }
 
     specify { should render_template(:index) }
@@ -12,6 +12,39 @@ describe Fhir::ObservationsController, type: :controller do
       get :index, format: :json
       expect(assigns(:observations).count).to eq(1)
     end
+  end
+
+  context 'for searches' do
+    before(:each) {Fhir::ObservationsController.any_instance.stubs(:retrieve_file_resource).returns(nil) }
+
+    it 'performs an observation search for matching date' do
+      stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, date: '1993-12-20'}
+      expect(a_request(:get, 'gringotts.dev/observations').
+              with(:query => hash_including({'query' => {'date' => {'value' => '1993-12-20'}}}))).to have_been_made
+    end
+
+    it 'performs an observation search for matching identifier' do
+      #pending 'awaiting final param parsing'
+      stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, identifier: '187e0c12-8dd2-67e2-99b2-bf273c878281'}
+      expect(a_request(:get, 'gringotts.dev/observations').
+                 with(:query => hash_including({'query' => {'identifier' => {'code' => '187e0c12-8dd2-67e2-99b2-bf273c878281'}}}))).to have_been_made
+    end
+
+    it 'performs an observation search for matching name' do
+      stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, name: '8480-6'}
+      expect(a_request(:get, 'gringotts.dev/observations').
+                 with(:query => hash_including({'query' => {'name' => {'code' => '8480-6'}}}))).to have_been_made
+    end
+
+    it 'performs an observation search for matching patient'
+
+    it 'performs an observation search for matching performer'
+
+    it 'returns operation_outcome using invalid search criteria'
+
   end
 
   describe '#show' do
