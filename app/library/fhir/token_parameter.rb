@@ -23,12 +23,25 @@ module Fhir
         end
       end
 
+      if value.is_a?(Array)
+        search_list = []
+        value.each do |the_value|
+          search_list << format_value(element_name, the_value).merge(modifier)
+        end
+        {search_field => search_list}
+      else
+        {search_field => format_value(element_name, value).merge(modifier)}
+      end
+    end
+
+    private
+    def self.format_value(element, value)
       if value.include?('|')
         partitions = value.partition('|')
         partitions[0] = nil if partitions[0].empty?
-        {search_field => {'system' => partitions[0], element_name => partitions[2]}.merge(modifier)}
+        {'system' => partitions[0], element => partitions[2]}
       else
-        {search_field => {element_name => value}.merge(modifier)}
+        {element => value}
       end
     end
   end

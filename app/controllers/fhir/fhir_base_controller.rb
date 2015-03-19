@@ -3,6 +3,34 @@ class Fhir::FhirBaseController < ApplicationController
 
   FHIR_LOCATION_ROOT = 'http://mainstreet.youcentric.com/fhir'
 
+  def query_params
+    query_string = request.query_string
+    the_params = {}
+    if query_string.include?('&')
+      query_string.split('&').each do |raw_param|
+        if raw_param.include?('=')
+          param_parts = raw_param.partition('=')
+          param_name = URI.decode(param_parts[0])
+          if the_params.include?(param_name)
+            if the_params[param_name].is_a?(Array)
+            the_params[param_name] << URI.decode(param_parts[2])
+            else
+              the_params[param_name] = [the_params[param_name], URI.decode(param_parts[2])]
+            end
+          else
+            the_params[param_name] = URI.decode(param_parts[2])
+          end
+        end
+      end
+    else
+      if query_string.include?('=')
+        param_parts = query_string.partition('=')
+        the_params[URI.decode(param_parts[0])] = URI.decode(param_parts[2])
+      end
+    end
+    the_params
+  end
+
   def populate_search_parameters(parameter_list, params)
     parameter_array = []
     # build the list params that match something in our list
