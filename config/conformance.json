@@ -29,7 +29,29 @@
                     "interaction": [
                         {"code": "read"}
                     ],
-                    "read_history": "false"
+                    "read_history": "false",
+                    "search_param":[
+                        {
+                            "name": "asserter",
+                            "type": "reference"
+                        },
+                        {
+                            "name": "category",
+                            "type": "token"
+                        },
+                        {
+                            "name": "code",
+                            "type": "token"
+                        },
+                        {
+                            "name": "onset",
+                            "type": "date"
+                        },
+                        {
+                            "name": "patient",
+                            "type": "reference"
+                        }
+                    ]
                 },
                 {
                     "type": "Conformance",
@@ -43,35 +65,125 @@
                     "interaction": [
                         {"code": "read"}
                     ],
-                    "read_history": "false"
+                    "read_history": "false",
+                    "search_param":[
+                        {
+                            "name": "identifier",
+                            "type": "token"
+                        },
+                        {
+                            "name": "manufacturer",
+                            "type": "string"
+                        },
+                        {
+                            "name": "model",
+                            "type": "string"
+                        },
+                        {
+                            "name": "patient",
+                            "type": "reference"
+                        },
+                        {
+                            "name": "type",
+                            "type": "token"
+                        },
+                        {
+                            "name": "udi",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "FamilyHistory",
                     "interaction": [
                         {"code": "read"}
                     ],
-                    "read_history": "false"
+                    "read_history": "false",
+                    "search_param":[
+                        {
+                            "name": "patient",
+                            "type": "reference"
+                        }
+                    ]
                 },
                 {
                     "type": "Location",
                     "interaction": [
                         {"code": "read"}
                     ],
-                    "read_history": "false"
+                    "read_history": "false",
+                    "search_param":[
+                        {
+                            "name": "address",
+                            "type": "string"
+                        },
+                        {
+                            "name": "identifier",
+                            "type": "token"
+                        },
+                        {
+                            "name": "name",
+                            "type": "string"
+                        },
+                        {
+                            "name": "near",
+                            "type": "token"
+                        },
+                        {
+                            "name": "near-distance",
+                            "type": "token"
+                        }
+                    ]
                 },
                 {
                     "type": "Observation",
                     "interaction": [
                         {"code": "read"}
                     ],
-                    "read_history": "false"
+                    "read_history": "false",
+                    "search_param":[
+                        {
+                            "name": "date",
+                            "type": "date"
+                        },
+                        {
+                            "name": "identifier",
+                            "type": "token"
+                        },
+                        {
+                            "name": "name",
+                            "type": "string"
+                        },
+                        {
+                            "name": "patient",
+                            "type": "reference"
+                        },
+                        {
+                            "name": "performer",
+                            "type": "reference"
+                        }
+                    ]
                 },
                 {
                     "type": "Organization",
                     "interaction": [
                         {"code": "read"}
                     ],
-                    "read_history": "false"
+                    "read_history": "false",
+                    "search_param":[
+                        {
+                            "name": "active",
+                            "type": "token"
+                        },
+                        {
+                            "name": "identifier",
+                            "type": "token"
+                        },
+                        {
+                            "name": "name",
+                            "type": "string"
+                        }
+                    ]
                 },
                 {
                     "type": "Patient",
@@ -82,28 +194,17 @@
                     "read_history": "false",
                     "search_param":[
                         {
-                            "name": "name",
-                            "definition": "http://hl7.org/fhir/Patient/search#name",
-                            "type": "string",
-                            "documentation": "a portion of either family or given name of the patient"
+                            "name": "active",
+                            "type": "token"
                         },
                         {
-                            "name": "gender",
-                            "definition": "http://hl7.org/fhir/Patient/search#gender",
-                            "type": "string",
-                            "documentation": "patient gender"
+                            "name": "address",
+                            "type": "string"
                         },
                         {
-                            "name": "birthdate_before",
-                            "definition": "http://hl7.org/fhir/Patient/search#birthdate_before",
+                            "name": "birthdate",
                             "type": "date",
-                            "documentation": "patient date of birth before given date"
-                        },
-                        {
-                            "name": "birthdate_after",
-                            "definition": "http://hl7.org/fhir/Patient/search#birthdate_after",
-                            "type": "date",
-                            "documentation": "patient date of birth after given date"
+                            "documentation": "patient date of birth"
                         },
                         {
                             "name": "family",
@@ -112,22 +213,33 @@
                             "documentation": "a portion of the family name of the patient"
                         },
                         {
+                            "name": "gender",
+                            "definition": "http://hl7.org/fhir/Patient/search#gender",
+                            "type": "token",
+                            "documentation": "patient gender"
+                        },
+                        {
                             "name": "given",
                             "definition": "http://hl7.org/fhir/Patient/search#given",
                             "type": "string",
                             "documentation": "a portion of the given name of the patient"
                         },
                         {
-                            "name": "system",
-                            "definition": "http://hl7.org/fhir/Patient/search#system",
-                            "type": "string",
-                            "documentation": "identifies a particular sequence or set of unique patient identifiers"
+                            "name": "identifier",
+                            "definition": "http://hl7.org/fhir/Patient/search#identifier",
+                            "type": "token",
+                            "documentation": "patient identifier"
                         },
                         {
-                            "name": "value",
-                            "definition": "http://hl7.org/fhir/Patient/search#value",
+                            "name": "name",
+                            "definition": "http://hl7.org/fhir/Patient/search#name",
                             "type": "string",
-                            "documentation": "unique value of patient identifier typically displayed to the user"
+                            "documentation": "a portion of either family or given name of the patient"
+                        },
+                        {
+                            "name": "telecom",
+                            "definition": "http://hl7.org/fhir/Patient/search#telecom",
+                            "type": "string"
                         }
                     ]
                 },
@@ -135,7 +247,25 @@
                     "type": "Practitioner",
                     "interaction": [
                         {"code": "read"}],
-                    "read_history": "false"
+                    "read_history": "false",
+                    "search_param":[
+                        {
+                            "name": "address",
+                            "type": "string"
+                        },
+                        {
+                            "name": "communication",
+                            "type": "token"
+                        },
+                        {
+                            "name": "identifier",
+                            "type": "token"
+                        },
+                        {
+                            "name": "location",
+                            "type": "reference"
+                        }
+                    ]
                 }
             ]
         }
