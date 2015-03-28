@@ -1,4 +1,4 @@
-require 'rspec'
+require 'spec_helper'
 
 describe Fhir::TokenParameter do
 
@@ -47,6 +47,23 @@ describe Fhir::TokenParameter do
       expect {
         subject.class.parse('test:fuzzy', 'value')
       }.to raise_error(Fhir::ParameterException, "Invalid modifier 'fuzzy' for token parameter 'test'")
+    end
+
+    it 'should create an array for multiple values' do
+      expect(subject.class.parse('test', ['val1', 'val2'])).to eq({'test' => [{'code' => 'val1'},
+                                                                              {'code' => 'val2'}]})
+      expect(subject.class.parse('test', ['x|val1', 'y|val2'])).to eq({'test' => [{'system' => 'x', 'code' => 'val1'},
+                                                                                  {'system' => 'y', 'code' => 'val2'}]})
+    end
+
+    it 'should distribute modifiers for multiple values' do
+      expect(subject.class.parse('test:not', ['x|val1', 'y|val2'])).to eq({'test' => [{'system' => 'x', 'code' => 'val1', 'modifier' => 'ne'},
+                                                                                      {'system' => 'y', 'code' => 'val2', 'modifier' => 'ne'}]})
+    end
+
+    it 'should create an array with correct value names' do
+      expect(subject.class.parse('test:not-in', ['set1', 'set2'])).to eq({'test' => [{'valueset' => 'set1', 'modifier' => 'ne'},
+                                                                         {'valueset' => 'set2', 'modifier' => 'ne'}]})
     end
   end
 end

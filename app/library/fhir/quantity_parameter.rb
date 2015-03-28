@@ -1,10 +1,23 @@
 module Fhir
   class QuantityParameter
     def self.parse(field, value)
-      modifier = parse_modifier(value)
-      value_hash = parse_value(value.gsub(/\A[<>!~]=?/, ''))
-      raise Fhir::ParameterException, "Field: #{field} has invalid value <#{value}>" if value_hash.nil?
-      {field => value_hash.merge(modifier) }
+      if value.is_a?(Array)
+        values_array = []
+        value.each do |the_value|
+          modifier = parse_modifier(the_value)
+          value_hash = parse_value(the_value.gsub(/\A[<>!~]=?/, ''))
+          raise Fhir::ParameterException,
+                "Field: #{field} has invalid value <#{the_value}>" if value_hash.nil?
+          values_array << value_hash.merge(modifier)
+        end
+        {field => values_array}
+      else
+        modifier = parse_modifier(value)
+        value_hash = parse_value(value.gsub(/\A[<>!~]=?/, ''))
+        raise Fhir::ParameterException,
+              "Field: #{field} has invalid value <#{value}>" if value_hash.nil?
+        {field => value_hash.merge(modifier) }
+      end
     end
 
     private

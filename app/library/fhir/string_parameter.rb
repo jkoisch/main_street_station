@@ -13,7 +13,15 @@ module Fhir
           raise Fhir::ParameterException, "Invalid modifier '#{field_partitions[1]}' for string parameter '#{search_field}'"
         end
       end
-      {search_field =>  {'value' => value}.merge(modifier)}
+      if value.is_a?(Array)
+        string_value = []
+        value.each do |a_value|
+          string_value << {'value' => a_value}.merge(modifier)
+        end
+      else
+        string_value = {'value' => value}.merge(modifier)
+      end
+      {search_field =>  string_value}
     end
   end
 end

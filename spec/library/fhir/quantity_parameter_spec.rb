@@ -42,5 +42,16 @@ describe Fhir::QuantityParameter do
     it 'should return multiple modifiers and parameters' do
       expect(subject.class.parse('test', '!=5|http://unitsofmeasure.org|mg')).to eq({'test' => {'system' => 'http://unitsofmeasure.org', 'code' => 'mg', 'value' => '5', 'modifier' => 'ne'}})
     end
+
+    it 'should return an array for multiple values' do
+      expect(subject.class.parse('test', ['val1', 'val2'])).to eq({'test' => [{'value' => 'val1'},
+                                                                              {'value' => 'val2'}]})
+    end
+
+    it 'should return an array with individual modifiers for each value' do
+      expect(subject.class.parse('test', ['<=5|http://unitsofmeasure.org|mg',
+                                          '>=2|http://unitsofmeasure.org|mg'])).to eq({'test' => [{'system' => 'http://unitsofmeasure.org', 'code' => 'mg', 'value' => '5', 'modifier' => 'le'},
+                                                                                                  {'system' => 'http://unitsofmeasure.org', 'code' => 'mg', 'value' => '2', 'modifier' => 'ge'}]})
+    end
   end
 end
