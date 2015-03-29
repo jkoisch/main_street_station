@@ -34,7 +34,7 @@ MainStreetStation::Application.configure do
   # or load models when precompiling your assets.
   config.assets.initialize_on_precompile = false
 
-  config.gringotts_url = 'http://gringotts.dev/'
+  config.gringotts_url = 'http://localhost:3000/'
 
   config.fhir_enforce_security = true
 
