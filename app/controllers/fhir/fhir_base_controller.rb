@@ -35,15 +35,18 @@ class Fhir::FhirBaseController < ApplicationController
     parameter_array = []
     # build the list params that match something in our list
     filtered_params = params.select do |field, value|
+      #puts 'field: ' + field
       # strip the modifier from the param name prior to lookup
       parameter_list.has_key?((field.include?(':') ? field.partition(':')[0] : field).to_sym)
     end
+    #puts 'filtered_params: ' + filtered_params.to_s
 
     filtered_params.each_pair do |raw_field, value|
       field = raw_field.include?(':') ? raw_field.partition(':')[0] : raw_field
       parameter_array << parameter_list[field.to_sym].parse(raw_field, value)
     end
 
+    #puts 'parameter_array: ' + parameter_array.to_s
     produce_query_string(parameter_array)
   end
 
@@ -54,7 +57,7 @@ class Fhir::FhirBaseController < ApplicationController
     else
       @uri = URI.join(MainStreetStation::Application.config.gringotts_url,
                      resource.pluralize)
-      unless search_params.empty?
+      unless search_params.nil? || search_params.empty?
         Rails.logger.info "Adding #{search_params}"
         @uri.query = URI.encode(search_params)
       end

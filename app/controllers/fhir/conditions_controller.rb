@@ -8,7 +8,8 @@ module Fhir
     # GET /Condition.json
     # GET /Condition.xml
     def index
-      response = get_gringotts_resources(RESOURCE, build_search_params(params))
+      #puts params
+      response = get_gringotts_resources(RESOURCE, build_search_params(query_params))
       #logger.info "response: #{response.body}"
       if response.success?
         @conditions = Fhir::Condition.parse_ehmbr_list(response.body)

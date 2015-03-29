@@ -71,6 +71,12 @@ describe Fhir::FhirBaseController do
                                                 params)).to eq 'query[thing1][modifier]=ex&query[thing1][value]=fun'
     end
 
+    it 'should process a reference search parameter' do
+      list = { thing1: Fhir::ReferenceParameter}
+      params = {'thing1:patient' => '23'}
+      expect(subject.populate_search_parameters(list, params)).to eq 'query[thing1][resource]=Client&query[thing1][value]=23'
+    end
+
     it 'should process a parameter that has an invalid modifier' do
       list = { thing1: Fhir::StringParameter, thing2: Fhir::StringParameter}
       params = { 'thing1:simple' => 'fun'}

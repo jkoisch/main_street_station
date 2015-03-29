@@ -35,12 +35,18 @@ describe Fhir::ConditionsController, type: :controller do
 
     it 'performs a condition search for matching onset date' do
       stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
-      get :index, {format: :json, onset: '2012-05-24'}
+      get :index, {format: :json, 'onset' => '2012-05-24'}
       expect(a_request(:get, 'gringotts.dev/conditions').
                  with(:query => hash_including({'query' => {'onset' => {'value' => '2012-05-24'}}}))).to have_been_made
     end
 
-    it 'performs a condition search for matching patient subject'
+    it 'performs a condition search for matching patient reference' do
+      stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, 'patient' => '23'}
+      expect(a_request(:get, 'gringotts.dev/conditions').
+                with(:query => hash_including({'query' => {'patient' => {'value' => '23'}}}))).to have_been_made
+    end
+
 
     it 'returns operation_outcome using invalid search criteria'
 

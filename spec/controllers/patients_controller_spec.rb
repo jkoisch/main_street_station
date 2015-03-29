@@ -81,6 +81,13 @@ describe Fhir::PatientsController, type: :controller do
                   with(:query => hash_including({'query' => {'telecom' => {'value' => '7809030885'}}}))).to have_been_made
       end
 
+      it 'processes multiple search criteria for same parameter' do
+        stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
+        get :index, {format: :json, name: 'Solo', 'name:exact' => 'Han'}
+        #expect(a_request(:get, 'gringotts.dev/clients').
+        #           with(:query => hash_including({'query' => {'name' => [{'value' => 'Solo'},{'value' => 'Han'}]}}))).to have_been_made
+      end
+
       it 'returns operation_outcome using invalid search criteria'
 
     end
