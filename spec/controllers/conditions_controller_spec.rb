@@ -17,7 +17,12 @@ describe Fhir::ConditionsController, type: :controller do
   context 'for searches' do
     before(:each) {Fhir::ConditionsController.any_instance.stubs(:retrieve_file_resource).returns(nil)}
 
-    it 'performs a condition search for matching asserter'
+    it 'performs a condition search for matching asserter' do
+      stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, 'asserter' => '23'}
+      expect(a_request(:get, 'gringotts.dev/conditions').
+                 with(:query => hash_including({'query' => {'asserter' => {'value' => '23'}}}))).to have_been_made
+    end
 
     it 'performs a condition search for matching category' do
       stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')

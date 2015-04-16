@@ -37,7 +37,12 @@ describe Fhir::DevicesController, type: :controller do
                    with(:query => hash_including({'query' => {'model' => {'value' => 'AB 45-J'}}}))).to have_been_made
       end
 
-      it 'performs a device search for matching patient'
+      it 'performs a device search for matching patient' do
+        stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
+        get :index, {format: :json, 'patient' => '23'}
+        expect(a_request(:get, 'gringotts.dev/devices').
+                  with(:query => hash_including({'query' => {'patient' => {'value' => '23'}}}))).to have_been_made
+      end
 
       it 'performs a device search for matching type' do
         stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')

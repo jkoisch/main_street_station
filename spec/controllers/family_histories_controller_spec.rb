@@ -17,7 +17,12 @@ describe Fhir::FamilyHistoriesController, type: :controller do
   context 'for searches' do
     before(:each) {Fhir::FamilyHistoriesController.any_instance.stubs(:retrieve_file_resource).returns(nil) }
 
-    it 'performs a family history search for matching patient'
+    it 'performs a family history search for matching patient' do
+      stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, 'patient' => '23'}
+      expect(a_request(:get, 'gringotts.dev/family_histories').
+                 with(:query => hash_including({'query' => {'patient' => {'value' => '23'}}}))).to have_been_made
+    end
 
     it 'returns operation_outcome using invalid search criteria'
   end

@@ -39,12 +39,21 @@ describe Fhir::ObservationsController, type: :controller do
                  with(:query => hash_including({'query' => {'name' => {'code' => '8480-6'}}}))).to have_been_made
     end
 
-    it 'performs an observation search for matching patient'
+    it 'performs a observation search for matching patient' do
+      stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, 'patient' => '23'}
+      expect(a_request(:get, 'gringotts.dev/observations').
+                 with(:query => hash_including({'query' => {'patient' => {'value' => '23'}}}))).to have_been_made
+    end
 
-    it 'performs an observation search for matching performer'
+    it 'performs a observation search for matching performer' do
+      stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, 'performer' => '23'}
+      expect(a_request(:get, 'gringotts.dev/observations').
+                 with(:query => hash_including({'query' => {'performer' => {'value' => '23'}}}))).to have_been_made
+    end
 
     it 'returns operation_outcome using invalid search criteria'
-
   end
 
   describe '#show' do
