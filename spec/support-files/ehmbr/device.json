@@ -11,7 +11,7 @@
             "system": "http://goodcare.org/devices/id",
             "value": "345675",
             "use": null,
-            "label": null,
+            "type": null,
             "period": null,
             "assigner": null
         },
@@ -20,7 +20,7 @@
             "system": null,
             "value": "AMID-342135-8464",
             "use": null,
-            "label": "Serial Number",
+            "type": null,
             "period": null,
             "assigner": null
         }
@@ -31,8 +31,7 @@
                 "system": "http://snomed.info/sct",
                 "code": "86184003",
                 "version": null,
-                "display": "Electrocardiographic monitor and recorder",
-                "value_set": null
+                "display": "Electrocardiographic monitor and recorder"
             }
         ],
         "text": "ECG"

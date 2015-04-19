@@ -6,7 +6,7 @@
         {
             "_id": 1,
             "use": "official",
-            "label": null,
+            "type": null,
             "system": "urn:oid:2.16.528.1.1007.3.1",
             "value": "938273695",
             "period": {
@@ -18,7 +18,7 @@
         {
             "_id": 2,
             "use": "usual",
-            "label": null,
+            "type": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.6.3",
             "value": "129IDH4OP733",
             "period": {
@@ -95,8 +95,7 @@
                     "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
                     "code": "01.000",
                     "version": null,
-                    "display": "Arts",
-                    "value_set": null
+                    "display": "Arts"
                 }
             ],
             "text": "Care role"
@@ -109,8 +108,7 @@
                     "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
                     "code": "01.018",
                     "version": null,
-                    "display": "Ear-, Nose and Throat",
-                    "value_set": null
+                    "display": "Ear-, Nose and Throat"
                 }
             ],
             "text": "specialisation"
@@ -131,8 +129,7 @@
                         "system": "http://snomed.info/sct",
                         "code": "41672002",
                         "version": null,
-                        "display": "Pulmonologist",
-                        "value_set": null
+                        "display": "Pulmonologist"
                     }
                 ],
                 "text": "Care role"
@@ -148,8 +145,7 @@
                     "system": "urn:oid:2.16.840.1.113883.6.121",
                     "code": "nl",
                     "version": null,
-                    "display": "Dutch",
-                    "value_set": null
+                    "display": "Dutch"
                 }
             ],
             "text": "Care role"

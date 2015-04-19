@@ -9,7 +9,7 @@
         {
             "_id": 1,
             "use": null,
-            "label": null,
+            "type": null,
             "system": "http://sdo.org",
             "value": "HL7 International",
             "period":null,
@@ -23,8 +23,7 @@
                 "system": "urn:oid:2.16.840.1.113883.2.4.15.1060",
                 "version": null,
                 "code": "V6",
-                "display": "University Medical Hospital",
-                "value_set": null
+                "display": "University Medical Hospital"
             }
         ],
         "text": null
@@ -77,8 +76,7 @@
                         "system": "urn:oid:2.16.840.1.113883.2.4.15.1060",
                         "version": null,
                         "code": "V6",
-                        "display": "University Medical Hospital",
-                        "value_set": null
+                        "display": "University Medical Hospital"
                     }
                 ],
                 "text": null

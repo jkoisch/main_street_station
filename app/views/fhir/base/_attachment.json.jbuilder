@@ -5,3 +5,4 @@ json.url          attachment.url unless attachment.url.nil?
 json.size         attachment.size unless attachment.size.nil?
 json.set! :hash,  attachment.hash unless attachment.hash.nil?
 json.title        attachment.title unless attachment.title.nil?
+json.creation     attachment.creation unless attachment.creation.nil?

@@ -10,7 +10,6 @@
   identifier:
     - !ruby/object:Fhir::Types::Identifier
       use: temp
-      label: Roel's VL 1-1, 18-65_1.2.2
   group: !ruby/object:Fhir::QuestionnaireClasses::Group
     group:
       - !ruby/object:Fhir::QuestionnaireClasses::Group

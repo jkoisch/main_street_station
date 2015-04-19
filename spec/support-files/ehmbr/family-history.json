@@ -9,7 +9,7 @@
         {
             "_id": 1,
             "use": null,
-            "label": "MRN",
+            "type": null,
             "system": null,
             "value": null,
             "period": null,
@@ -33,8 +33,7 @@
                         "system": "http://hl7.org/fhir/familial-relationship",
                         "version": null,
                         "code": "mother",
-                        "display": null,
-                        "value_set": null
+                        "display": null
                     }
                 ],
                 "text": null
@@ -51,8 +50,7 @@
                                 "system": "http://snomed.info/sct",
                                 "version": null,
                                 "code": "371041009",
-                                "display": "Embolic Stroke",
-                                "value_set": null
+                                "display": "Embolic Stroke"
                             }
                         ],
                         "text": "Stroke"
@@ -63,8 +61,7 @@
                                 "system": "http://snomed.info/sct",
                                 "version": null,
                                 "code": "419099112",
-                                "display": "Inactive",
-                                "value_set": null
+                                "display": "Inactive"
                             }
                         ],
                         "text": "Stroke"
@@ -90,8 +87,7 @@
                         "system": "http://hl7.org/fhir/familial-relationship",
                         "version":null,
                         "code": "brother",
-                        "display": null,
-                        "value_set":null
+                        "display": null
                     }
                 ],
                 "text": null
@@ -108,8 +104,7 @@
                                 "system": "http://snomed.info/sct",
                                 "version": null,
                                 "code": "190372001",
-                                "display": "Type 1 Diabetes, Maturity Onset",
-                                "value_set": null
+                                "display": "Type 1 Diabetes, Maturity Onset"
                             }
                         ],
                         "text": "Diabetes Mellitus"
@@ -120,8 +115,7 @@
                                 "system": "http://snomed.info/sct",
                                 "version": null,
                                 "code": "419099009",
-                                "display": "Died",
-                                "value_set": null
+                                "display": "Died"
                             }
                         ],
                         "text": "Stroke"

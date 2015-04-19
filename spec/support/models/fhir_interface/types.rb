@@ -9,7 +9,7 @@ module FhirInterface
     end
 
     class Attachment < Element
-      attr_accessor :contentType,:language,:data,:url,:size,:hash,:title
+      attr_accessor :contentType,:language,:data,:url,:size,:hash,:title,:creation
     end
 
     class CodeableConcept < Element

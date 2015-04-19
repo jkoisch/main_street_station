@@ -8,6 +8,7 @@ module Fhir
       fhir_attribute :size
       fhir_attribute :hash
       fhir_attribute :title
+      fhir_attribute :creation
     end
   end
 end

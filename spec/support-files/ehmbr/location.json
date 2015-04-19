@@ -11,8 +11,7 @@
                 "system": "http://hl7.org/fhir/v2/0078",
                 "version":null,
                 "code": "N",
-                "display": "Normal (applies to non-numeric results)",
-                "value_set": null
+                "display": "Normal (applies to non-numeric results)"
             }
         ],
         "text": null
@@ -65,8 +64,7 @@
                 "system": "http://hl7.org/fhir/location-physical-type",
                 "version":null,
                 "code": "wi",
-                "display": "Wing",
-                "value_set": null
+                "display": "Wing"
             }
         ],
         "text": null

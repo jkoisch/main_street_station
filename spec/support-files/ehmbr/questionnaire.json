@@ -16,8 +16,7 @@
                 "version": null,
                 "code": "VL 1-1, 18-65_1.2.2",
                 "display": "Lifelines Questionnaire 1 part 1",
-                "primary": null,
-                "value_set": null
+                "primary": null
             }
         ],
         "text": null
@@ -26,7 +25,7 @@
         {
             "_id": 1,
             "use": "temp",
-            "label": "Roel's VL 1-1, 18-65_1.2.2",
+            "type": null,
             "system": null,
             "value": null,
             "period": null,
@@ -51,8 +50,7 @@
                             "version": null,
                             "code": "COMORBIDITY",
                             "display": null,
-                            "primary": null,
-                            "value_set": null
+                            "primary": null
                         }
                     ],
                     "text": null
@@ -69,8 +67,7 @@
                                     "version": null,
                                     "code": "COMORB",
                                     "display": null,
-                                    "primary": null,
-                                    "value_set": null
+                                    "primary": null
                                 }
                             ],
                             "text": null
@@ -89,8 +86,7 @@
                                 "version": null,
                                 "code": "1",
                                 "display": "Yes",
-                                "primary": null,
-                                "value_set": null
+                                "primary": null
                             }
                         ],
                         "options": null,
@@ -108,8 +104,7 @@
                                             "version": null,
                                             "code": "CARDIAL",
                                             "display": null,
-                                            "primary": null,
-                                            "value_set": null
+                                            "primary": null
                                         }
                                     ],
                                     "text": null
@@ -127,8 +122,7 @@
                                                     "version": null,
                                                     "code": "COMORBCAR",
                                                     "display": null,
-                                                    "primary": null,
-                                                    "value_set": null
+                                                    "primary": null
                                                 }
                                             ],
                                             "text": null
@@ -147,8 +141,7 @@
                                                 "version": null,
                                                 "code": "1",
                                                 "display": null,
-                                                "primary": null,
-                                                "value_set": null
+                                                "primary": null
                                             }
                                         ],
                                         "options": null,
@@ -166,16 +159,14 @@
                                                     "version": null,
                                                     "code": "COMCAR00",
                                                     "display": "Angina Pectoris",
-                                                    "primary": null,
-                                                    "value_set": null
+                                                    "primary": null
                                                 },
                                                 {
                                                     "system": "http://snomed.info/sct",
                                                     "version": null,
                                                     "code": "194828000",
                                                     "display": "Angina (disorder)",
-                                                    "primary": null,
-                                                    "value_set": null
+                                                    "primary": null
                                                 }
                                             ],
                                             "text": null
@@ -194,8 +185,7 @@
                                                 "version": null,
                                                 "code": "1",
                                                 "display": null,
-                                                "primary": null,
-                                                "value_set": null
+                                                "primary": null
                                             }
                                         ],
                                         "options": null,
@@ -213,8 +203,7 @@
                                                     "version": null,
                                                     "code": "22298006",
                                                     "display": "Myocardial infarction (disorder)",
-                                                    "primary": null,
-                                                    "value_set": null
+                                                    "primary": null
                                                 }
                                             ],
                                             "text": null
@@ -233,8 +222,7 @@
                                                 "version": null,
                                                 "code": "0",
                                                 "display": null,
-                                                "primary": null,
-                                                "value_set": null
+                                                "primary": null
                                             }
                                         ],
                                         "options": null,
@@ -254,8 +242,7 @@
                                             "version": null,
                                             "code": "VASCULAR",
                                             "display": null,
-                                            "primary": null,
-                                            "value_set": null
+                                            "primary": null
                                         }
                                     ],
                                     "text": null
@@ -278,8 +265,7 @@
                             "version": null,
                             "code": "HISTOPATHOLOGY",
                             "display": null,
-                            "primary": null,
-                            "value_set": null
+                            "primary": null
                         }
                     ],
                     "text": null
@@ -296,8 +282,7 @@
                                     "version": null,
                                     "code": "ABDOMINAL",
                                     "display": null,
-                                    "primary": null,
-                                    "value_set": null
+                                    "primary": null
                                 }
                             ],
                             "text": null
@@ -314,8 +299,7 @@
                                             "version": null,
                                             "code": "STADPT",
                                             "display": "pT category",
-                                            "primary": null,
-                                            "value_set": null
+                                            "primary": null
                                         }
                                     ],
                                     "text": null

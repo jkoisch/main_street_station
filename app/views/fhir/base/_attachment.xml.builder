@@ -5,3 +5,4 @@ xml.url({value: attachment.url}) unless attachment.url.nil?
 xml.size({value: attachment.size}) unless attachment.size.nil?
 xml.tag!('hash', {value: attachment.hash}) unless attachment.hash.nil?
 xml.title({value: attachment.title}) unless attachment.value.nil?
+xml.creation({value: attachment.creation}) unless attachment.creation.nil?
