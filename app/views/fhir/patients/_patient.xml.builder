@@ -27,7 +27,7 @@ resource.contact.each do |contact|
   xml.contact { |xml| xml << render('contact', {contact: contact})}
 end unless resource.contact.nil?
 
-xml.communication { |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: resource.communication})} unless resource.communication.nil? or resource.communication.blank?
+xml.communication { |xml| xml << render('communication', {communication: resource.communication})} unless resource.communication.nil? or resource.communication.blank?
 
 resource.care_provider.each do |care_provider|
   xml.careProvider { |xml| xml << render( 'fhir/base/resource_reference', {resource_reference: care_provider})}

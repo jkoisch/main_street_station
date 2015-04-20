@@ -34,7 +34,7 @@ json.contact resource.contact do |contact|
 end unless resource.contact.nil?
 
 json.communication resource.communication do |communication|
-  json.partial! 'fhir/base/codeable_concept', codeable_concept: communication
+  json.partial! 'communication', communication: communication
 end unless resource.communication.nil?
 
 json.careProvider resource.care_provider do |care_provider|

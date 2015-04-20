@@ -14,7 +14,7 @@ module Fhir
     fhir_attribute :multiple_birth_integer
     # TODO: Should Photo attribute be added?
     fhir_attribute :contact, list: PatientClasses::Contact
-    fhir_attribute :communication, list: Types::CodeableConcept
+    fhir_attribute :communication, list: PatientClasses::Communication
     fhir_attribute :care_provider, list: Types::ResourceReference #Organization/Practitioner
     fhir_attribute :managing_organization, type: Types::ResourceReference
     fhir_attribute :link, list: PatientClasses::Link

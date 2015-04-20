@@ -90,6 +90,9 @@
     },
     "multiple_birth_boolean": null,
     "multiple_birth_integer": null,
-    "communication": [],
+    "communication": [{
+        "language": [],
+        "preferred": null
+    }],
     "active": true
 }
