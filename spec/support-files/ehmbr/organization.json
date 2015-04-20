@@ -99,10 +99,8 @@
                     "period": null
                 }
             ],
-            "address": null,
-            "gender": null
+            "address": null
         }
     ],
-    "location": [],
     "active": true
 }

@@ -8,7 +8,6 @@ module Fhir
     fhir_attribute :address, list: Types::Address
     fhir_attribute :part_of, type: Types::ResourceReference
     fhir_attribute :contact, list: OrganizationClasses::Contact
-    fhir_attribute :location, list: Types::ResourceReference
     fhir_attribute :active
   end
 end

@@ -16,8 +16,4 @@ resource.contact.each do |contact|
   xml.contact {|xml| xml << render('contact', {contact: contact})}
 end unless resource.contact.nil?
 
-resource.location.each do |location|
-  xml.location {|xml| xml << render('fhir/base/resource_reference', {resource_reference: location})}
-end unless resource.location.nil?
-
 xml.active({value: resource.active}) unless resource.active.nil?

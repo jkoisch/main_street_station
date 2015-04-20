@@ -26,8 +26,4 @@ json.contact resource.contact do |contact|
   json.partial! 'contact', contact: contact
 end unless resource.contact.nil?
 
-json.location resource.location do |location|
-  json.partial! 'fhir/base/resource_reference', resource_reference: location
-end unless resource.location.nil?
-
 json.active resource.active unless resource.active.nil?

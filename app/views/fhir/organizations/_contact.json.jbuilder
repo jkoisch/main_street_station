@@ -13,8 +13,3 @@ end unless contact.telecom.nil?
 json.address do
   json.partial! 'fhir/base/address', address: contact.address
 end unless contact.address.nil?
-
-json.gender contact.gender unless contact.gender.nil?
-
-
-

@@ -30,13 +30,5 @@
     <reference value="Organization/1"/>
     <display value="ACME Healthcare, Inc"/>
   </partOf>
-  <location>
-    <reference value="#560de676-4302-4775-8866-7721c68f8d28"/>
-    <display value="Main surgery"/>
-  </location>
-  <location>
-    <reference value="#20066004-a0d3-4bd1-a68d-fdea464288bc"/>
-    <display value="Location 2"/>
-  </location>
   <active value="true"/>
 </Organization>
