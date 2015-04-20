@@ -3,10 +3,10 @@
     <system value="http://goodcare.org/devices/id"/>
     <value value="345675"/>
   </identifier>
-  <subject>
+  <patient>
     <reference value="Patient/f201"/>
     <display value="Roel"/>
-  </subject>
+  </patient>
   <encounter>
     <reference value="Encounter/f201"/>
   </encounter>
@@ -35,7 +35,7 @@
       <display value="Diagnosis"/>
     </coding>
   </category>
-  <status value="confirmed"/>
+  <clinicalStatus value="confirmed"/>
   <severity>
     <coding>
       <system value="http://snomed.info/sct"/>
@@ -70,13 +70,13 @@
     </detail>
   </evidence>
   <location>
-    <code>
+    <siteCodeableConcept>
       <coding>
         <system value="http://snomed.info/sct"/>
         <code value="49521004"/>
         <display value="Left external ear structure"/>
       </coding>
       <text value="Left Ear"/>
-    </code>
+    </siteCodeableConcept>
   </location>
 </Condition>

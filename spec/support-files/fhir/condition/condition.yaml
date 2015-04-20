@@ -3,7 +3,7 @@
      - !ruby/object:Fhir::Types::Identifier
        system: http://goodcare.org/devices/id
        value: 345675
-  subject: !ruby/object:Fhir::Types::ResourceReference
+  patient: !ruby/object:Fhir::Types::ResourceReference
     external_reference: Patient/f201
     display: Roel
   encounter: !ruby/object:Fhir::Types::ResourceReference
@@ -28,7 +28,7 @@
         system: http://snomed.info/sct
         code: '439401001'
         display: Diagnosis
-  status: confirmed
+  clinical_status: confirmed
   severity: !ruby/object:Fhir::Types::CodeableConcept
     coding:
       - !ruby/object:Fhir::Types::Coding
@@ -60,7 +60,7 @@
           display: Temperature
   location:
     - !ruby/object:Fhir::ConditionClasses::Location
-      code: !ruby/object:Fhir::Types::CodeableConcept
+      site_codeable_concept: !ruby/object:Fhir::Types::CodeableConcept
         coding:
           - !ruby/object:Fhir::Types::Coding
             system: http://snomed.info/sct

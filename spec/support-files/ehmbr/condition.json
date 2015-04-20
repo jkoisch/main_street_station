@@ -15,7 +15,7 @@
             "period": null,
             "assigner": null
         }],
-    "subject":{
+    "patient":{
         "local_type": "Client",
         "local_id": 1,
         "display": null
@@ -55,18 +55,7 @@
         ],
         "text": null
     },
-    "status":"confirmed",
-    "certainty":{
-        "coding":[
-            {
-                "system":"http://snomed.info/sct",
-                "version": null,
-                "code":"24484000",
-                "display":"Severe"
-            }
-        ],
-        "text": null
-    },
+    "clinical_status":"confirmed",
     "severity":{
         "coding":[
             {
@@ -127,7 +116,7 @@
     ],
     "location":[
         {
-            "code":{
+            "site_codeable_concept":{
                 "coding":[
                     {
                         "system":"http://snomed.info/sct",
@@ -138,7 +127,7 @@
                 ],
                 "text":"Left Ear"
             },
-            "detail": null
+            "site_reference": null
         }
     ],
     "due_to":[

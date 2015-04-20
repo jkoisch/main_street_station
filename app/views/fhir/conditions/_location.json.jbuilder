@@ -1,5 +1,7 @@
-json.code do
-  json.partial! 'fhir/base/codeable_concept', codeable_concept: location.code
-end unless location.code.nil?
+json.siteCodeableConcept do
+  json.partial! 'fhir/base/codeable_concept', codeable_concept: location.site_codeable_concept
+end unless location.site_codeable_concept.nil?
 
-json.detail location.detail unless location.detail.nil?
+json.siteReference do
+  json.partial! 'fhir/base/resource_reference', resource_reference: location.site_reference
+end unless location.site_reference.nil?

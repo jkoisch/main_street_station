@@ -1,6 +1,6 @@
 module FhirInterface
   class Condition
-    attr_accessor :identifier, :subject, :encounter, :asserter, :dateAsserted, :code, :category, :status, :certainty,
+    attr_accessor :identifier, :subject, :encounter, :asserter, :dateAsserted, :code, :category, :clinicalStatus, :certainty,
                   :severity, :onsetDate, :onsetAge, :abatementDate, :abatementAge, :abatementBoolean, :notes
   end
 
@@ -14,7 +14,7 @@ module FhirInterface
     end
 
     class Location
-      attr_accessor :code, :detail
+      attr_accessor :siteCodeableConcept, :siteReference
     end
 
     class RelatedItem

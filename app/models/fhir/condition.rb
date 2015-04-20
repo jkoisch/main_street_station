@@ -4,17 +4,16 @@ module Fhir
 
     fhir_attribute :id
     fhir_attribute :identifier, list: Fhir::Types::Identifier
-    fhir_attribute :subject, type: Fhir::Types::ResourceReference
+    fhir_attribute :patient, type: Fhir::Types::ResourceReference
     fhir_attribute :encounter, type: Fhir::Types::ResourceReference
     fhir_attribute :asserter, type: Fhir::Types::ResourceReference
     fhir_attribute :date_asserted
     fhir_attribute :code, type: Fhir::Types::CodeableConcept
     fhir_attribute :category, type: Fhir::Types::CodeableConcept
-    fhir_attribute :status
-    fhir_attribute :certainty, type: Fhir::Types::CodeableConcept
+    fhir_attribute :clinical_status
     fhir_attribute :severity, type: Fhir::Types::CodeableConcept
-    fhir_attribute :onset, type_list: [Types::Age, Types::SimpleDate]
-    fhir_attribute :abatement, type_list: [Types::Age, Types::SimpleDate, Types::SimpleBoolean]
+    fhir_attribute :onset, type_list: [Types::Age, Types::SimpleDate, Types::Period, Types::Range, Types::SimpleString]
+    fhir_attribute :abatement, type_list: [Types::Age, Types::SimpleDate, Types::SimpleBoolean, Types::Period, Types::Range, Types::SimpleString]
     fhir_attribute :stage, type: Fhir::ConditionClasses::Stage
     fhir_attribute :evidence, list: Fhir::ConditionClasses::Evidence
     fhir_attribute :location, list: Fhir::ConditionClasses::Location

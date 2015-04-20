@@ -4,9 +4,9 @@ json.identifier resource.identifier do |identifier|
   json.partial! 'fhir/base/identifier', identifier: identifier
 end unless resource.identifier.nil?
 
-json.subject do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.subject
-end unless resource.subject.nil?
+json.patient do
+  json.partial! 'fhir/base/resource_reference', resource_reference: resource.patient
+end unless resource.patient.nil?
 
 json.encounter do
   json.partial! 'fhir/base/resource_reference', resource_reference: resource.encounter
@@ -26,11 +26,7 @@ json.category do
   json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.category
 end unless resource.category.nil?
 
-json.status resource.status unless resource.status.nil?
-
-json.certainty do
-  json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.certainty
-end unless resource.certainty.nil?
+json.clinicalStatus resource.clinical_status unless resource.clinical_status.nil?
 
 json.severity do
   json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.severity
