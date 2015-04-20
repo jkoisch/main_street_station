@@ -8,9 +8,11 @@ json.type do
   json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.type
 end unless resource.type.nil?
 
+json.status         resource.status unless resource.status.nil?
 json.manufacturer   resource.manufacturer unless resource.manufacturer.nil?
 json.model          resource.model unless resource.model.nil?
 json.version        resource.version unless resource.version.nil?
+json.manufactureDate  resource.manufacture_date unless resource.manufacture_date.nil?
 json.expiry         resource.expiry unless resource.expiry.nil?
 json.udi            resource.udi unless resource.udi.nil?
 json.lotNumber      resource.lot_number unless resource.lot_number.nil?

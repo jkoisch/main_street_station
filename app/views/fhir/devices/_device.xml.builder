@@ -3,9 +3,11 @@ resource.identifier.each do |identifier|
 end unless resource.identifier.nil?
 
 xml.type { |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: resource.type})} unless resource.type.nil?
+xml.status({value: resource.status}) unless resource.status.nil?
 xml.manufacturer({value: resource.manufacturer}) unless resource.manufacturer.nil?
 xml.model({value: resource.model}) unless resource.model.nil?
 xml.version({value: resource.version}) unless resource.version.nil?
+xml.manufactureDate({value: resource.manufacture_date}) unless resource.manufacture_date.nil?
 xml.expiry({value: resource.expiry}) unless resource.expiry.nil?
 xml.udi({value: resource.udi}) unless resource.udi.nil?
 xml.lotNumber({value: resource.lot_number}) unless resource.lot_number.nil?

@@ -3,9 +3,11 @@ module Fhir
     fhir_attribute :id
     fhir_attribute :identifier, list: Types::Identifier
     fhir_attribute :type, type: Types::CodeableConcept
+    fhir_attribute :status
     fhir_attribute :manufacturer
     fhir_attribute :model
     fhir_attribute :version
+    fhir_attribute :manufacture_date
     fhir_attribute :expiry
     fhir_attribute :udi
     fhir_attribute :lot_number

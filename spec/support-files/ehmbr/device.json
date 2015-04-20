@@ -36,9 +36,11 @@
         ],
         "text": "ECG"
     },
+    "status": null,
     "manufacturer": "Acme Devices, Inc",
     "model": "AB 45-J",
     "version": null,
+    "manufacture_date": null,
     "expiry": null,
     "udi": null,
     "lot_number": "43453424",
