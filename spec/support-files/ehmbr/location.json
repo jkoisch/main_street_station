@@ -5,6 +5,7 @@
     "identifier": [],
     "name": "South Wing, second floor",
     "description": "Second floor of the Old South Wing, formerly in use by Psychiatry",
+    "mode": null,
     "type":{
         "coding": [
             {
@@ -79,7 +80,6 @@
         "local_id": 33,
         "display": null
     },
-    "status": "active",
     "part_of": null,
-    "mode": null
+    "status": "active"
 }

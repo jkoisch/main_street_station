@@ -6,6 +6,7 @@ end unless resource.identifier.nil?
 
 json.name   resource.name unless resource.name.nil?
 json.description resource.description unless resource.description.nil?
+json.mode resource.mode unless resource.mode.nil?
 
 json.type do
   json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.type
@@ -31,10 +32,8 @@ json.managingOrganization do
   json.partial! 'fhir/base/resource_reference', resource_reference: resource.managing_organization
 end unless resource.managing_organization.nil?
 
-json.status resource.status unless resource.status.nil?
-
 json.partOf do
   json.partial! 'fhir/base/resource_reference', resource_reference: resource.part_of
 end unless resource.part_of.nil?
 
-json.mode resource.mode unless resource.mode.nil?
+json.status resource.status unless resource.status.nil?
