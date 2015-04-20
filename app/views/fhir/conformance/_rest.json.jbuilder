@@ -20,3 +20,7 @@ end unless rest.operation.nil?
 json.documentMailbox rest.document_mailbox do |document_mailbox|
   json.documentMailbox rest.document_mailbox
 end unless rest.document_mailbox.nil?
+
+json.compartment rest.compartment do |compartment|
+  json.compartment rest.compartment
+end unless rest.compartment.nil?

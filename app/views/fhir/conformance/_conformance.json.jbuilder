@@ -1,14 +1,16 @@
 json.resourceType 'Conformance'
-json.identifier   resource.identifier unless resource.identifier.nil?
+json.url          resource.url unless resource.url.nil?
 json.version      resource.version unless resource.version.nil?
 json.name         resource.name unless resource.name.nil?
 json.publisher    resource.publisher unless resource.publisher.nil?
 
-json.telecom resource.telecom do |contact|
-  json.partial! 'fhir/base/contact', contact: contact
-end unless resource.telecom.nil?
+json.contact resource.contact do |contact|
+  json.partial! 'contact', contact: contact
+end unless resource.contact.nil?
 
 json.description    resource.description unless resource.description.nil?
+json.requirements   resource.requirements unless resource.requirements.nil?
+json.copyright      resource.copyright unless resource.copyright.nil?
 json.status         resource.status unless resource.status.nil?
 json.experimental   resource.experimental unless resource.experimental.nil?
 json.date           resource.date unless resource.date.nil?

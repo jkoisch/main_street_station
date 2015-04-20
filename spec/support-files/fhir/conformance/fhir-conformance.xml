@@ -1,15 +1,11 @@
 <Conformance xmlns="http://hl7.org/fhir">
-  <identifier value="test-1"/>
+  <url value="test-1"/>
   <version value="0.1"/>
   <name value="test"/>
   <publisher value="YouCentric"/>
-  <telecom>
-    <system value="email"/>
-    <value value="theblackdot@gmail.com"/>
-    <period>
-      <start value="2013-01-01"/>
-    </period>
-  </telecom>
+  <contact>
+    <name value="email"/>
+  </contact>
   <description value=""/>
   <status value="alpha"/>
   <experimental value=""/>

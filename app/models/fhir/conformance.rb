@@ -1,11 +1,13 @@
 module Fhir
   class Conformance < BaseResource
-    fhir_attribute :identifier
+    fhir_attribute :url
     fhir_attribute :version
     fhir_attribute :name
     fhir_attribute :publisher
-    fhir_attribute :telecom, list: Types::Contact
+    fhir_attribute :contact, list: Types::ConformanceClasses::Contact
     fhir_attribute :description
+    fhir_attribute :requirements
+    fhir_attribute :copyright
     fhir_attribute :status
     fhir_attribute :experimental
     fhir_attribute :date

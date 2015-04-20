@@ -1,6 +1,6 @@
 {
     "resource_type" : "Conformance",
-    "identifier": "mainstreet-fhir-profile-1",
+    "url": "mainstreet-fhir-profile-1",
     "text": {
         "status": "generated",
         "div":"<div><h5>HL7 FHIR Server<\/h5><p>The <a href=\"http://hl7.org/fhir\">HL7 FHIR Specification<\/a> Interface Server in Main Street supports the following RESTful transactions based on FHIR v.0.11.<br\/>Released: 2013-09-27 v.0.00.010.0001 supporting JSON and XML formats. <\/p><div class=\"span8\"><table class=\"table table-condensed\"><thead><tr class=\"success\"><td><b>FHIR Resource<\/b><\/td><td><b>Create<\/b><\/td><td><b>Read<\/b><\/td><td><b>Update<\/b><\/td><td><b>Search<\/b><\/td><\/tr><\/thead><tbody><tr><td><a href=\"http://www.hl7.org/implement/standards/fhir/patient.htm\">Patient<\/a><\/td><td><\/td><td class=\"text-center\">*<\/td><td class=\"text-center\">*<\/td><td><ul><li>Gender<\/li><li>Given Name<\/li><li>Family Name<\/li><li>Birthday - Before<\/li><li>Birthday - After<\/li><\/ul><\/td><\/tr><tr><td><a href=\"http://www.hl7.org/implement/standards/fhir/observation.htm\">Observation<\/a><\/td><td><\/td><td>*<\/td><td><\/td><td><\/td><\/tr><\/tbody><\/table><\/div><\/div>"
@@ -8,9 +8,8 @@
     "version": "0.00.040.0001",
     "name": "",
     "publisher": "YouCentric",
-    "telecom": [{
-        "system": "email",
-        "value": "the_black_dot@youcentric.com"
+    "contact": [{
+        "name": "email"
     }],
     "date": "2015-03-29",
     "software": {

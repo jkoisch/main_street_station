@@ -1,14 +1,11 @@
 --- !ruby/object:Fhir::Conformance
-  identifier: test-1
+  url: test-1
   version: 0.1
   name: test
   publisher: YouCentric
-  telecom:
-    - !ruby/object:Fhir::Types::Contact
-      system: email
-      value: theblackdot@gmail.com
-      period: !ruby/object:Fhir::Types::Period
-        start: 2013-01-01
+  contact:
+    - !ruby/object:Fhir::ConformanceClasses::Contact
+      name: email
   status: alpha
   experimental: true
   date: 2014-01-01

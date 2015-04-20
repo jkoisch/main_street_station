@@ -1,11 +1,13 @@
-xml.identifier({value: resource.identifier}) unless resource.identifier.nil?
+xml.url({value: resource.url}) unless resource.url.nil?
 xml.version({value: resource.version}) unless resource.version.nil?
 xml.name({value: resource.name}) unless resource.name.nil?
 xml.publisher({value: resource.publisher}) unless resource.publisher.nil?
-resource.telecom.each do |contact|
-  xml.telecom { |xml| xml << render('fhir/base/contact', {contact: contact}) }
-end unless resource.telecom.nil?
+resource.contact.each do |contact|
+  xml.contact { |xml| xml << render('contact', {contact: contact}) }
+end unless resource.contact.nil?
 xml.description({value: resource.description}) unless resource.description.nil?
+xml.requirements({value: resource.requirements}) unless resource.requirements.nil?
+xml.copyright({value: resource.copyright}) unless resource.copyright.nil?
 xml.status({value: resource.status}) unless resource.status.nil?
 xml.experimental({value: resource.experimental}) unless resource.experimental.nil?
 xml.date({value: resource.date}) unless resource.date.nil?

@@ -8,6 +8,7 @@ module Fhir
       fhir_attribute :interaction, list: ConformanceClasses::Interaction
       fhir_attribute :operation, list: ConformanceClasses::Operation
       fhir_attribute :document_mailbox, array: true
+      fhir_attribute :compartment, array: true
     end
   end
 end
