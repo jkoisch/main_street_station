@@ -81,44 +81,45 @@
     }],
     "gender": null,
     "birth_date": null,
-    "organization": [
+    "practitioner_role": [
         {
-            "local_type": "Organization",
-            "local_id": null,
-            "display": null
-        }
-    ],
-    "role": [
-        {
-            "coding": [
+            "managing_organization": {
+                "local_type": "Organization",
+                "local_id": 33,
+                "display": null
+            },
+            "role":{
+                    "coding": [
+                        {
+                            "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
+                            "code": "01.018",
+                            "version": null,
+                            "display": "Ear-, Nose and Throat"
+                        }
+                    ],
+                    "text": "specialisation"
+                },
+            "specialty": [
                 {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
-                    "code": "01.000",
-                    "version": null,
-                    "display": "Arts"
+                    "coding": [
+                        {
+                            "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
+                            "code": "01.018",
+                            "version": null,
+                            "display": "Ear-, Nose and Throat"
+                        }
+                    ],
+                    "text": "specialisation"
                 }
             ],
-            "text": "Care role"
+            "period": {
+                "start": "2012-01-01",
+                "end": "2012-03-31"
+            },
+            "location": [],
+            "healthcare_service": []
         }
     ],
-    "specialty": [
-        {
-            "coding": [
-                {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
-                    "code": "01.018",
-                    "version": null,
-                    "display": "Ear-, Nose and Throat"
-                }
-            ],
-            "text": "specialisation"
-        }
-    ],
-    "period": {
-        "start": "2012-01-01",
-        "end": "2012-03-31"
-    },
-    "location": [],
     "qualification": [
         {
             "_id": 1,

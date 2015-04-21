@@ -19,25 +19,9 @@ end unless resource.address.nil?
 json.gender     resource.gender unless resource.gender.nil?
 json.birthDate  resource.birth_date unless resource.birth_date.nil?
 
-json.organization do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.organization[0]
-end unless resource.organization.nil?
-
-json.role resource.role do |role|
-  json.partial! 'fhir/base/codeable_concept', codeable_concept: role
-end unless resource.role.nil?
-
-json.specialty resource.specialty do |specialty|
-  json.partial! 'fhir/base/codeable_concept', codeable_concept: specialty
-end unless resource.specialty.nil?
-
-json.period do
-  json.partial! 'fhir/base/period', period: resource.period
-end unless resource.period.nil?
-
-json.location resource.location do |location|
-  json.partial! 'fhir/base/resource_reference', resource_reference: location
-end unless resource.location.nil?
+json.practitionerRole resource.practitioner_role do |role|
+  json.partial! 'practitioner_role', practitioner_role: role
+end unless resource.practitioner_role.nil?
 
 json.qualification resource.qualification do |qualification|
   json.partial! 'qualification', qualification: qualification

@@ -7,12 +7,8 @@ module Fhir
     fhir_attribute :address, list: Types::Address
     fhir_attribute :gender
     fhir_attribute :birth_date
-    #photo: Attachment
-    fhir_attribute :organization, list: Types::ResourceReference #Organization
-    fhir_attribute :role, list: Types::CodeableConcept
-    fhir_attribute :specialty, list: Types::CodeableConcept
-    fhir_attribute :period, type: Types::Period
-    fhir_attribute :location, list: Types::ResourceReference #Location
+    #photo:
+    fhir_attribute :practitioner_role, list: PractitionerClasses::PractitionerRole
     fhir_attribute :qualification, list: PractitionerClasses::Qualification
     fhir_attribute :communication, list: Types::CodeableConcept
   end
