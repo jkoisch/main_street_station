@@ -1,1 +1,0 @@
-json_bundle(json, @family_histories)

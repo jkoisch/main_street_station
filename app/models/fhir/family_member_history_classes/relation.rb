@@ -1,5 +1,5 @@
 module Fhir
-  module FamilyHistoryClasses
+  module FamilyMemberHistoryClasses
     class Relation < BaseClass
       attr_accessor :born_date, :born_string, :deceased_date, :deceased_boolean, :deceased_string,
                     :age_age, :age_range, :age_string
@@ -12,7 +12,7 @@ module Fhir
       fhir_attribute :deceased, type_list: [Types::SimpleString, Types::SimpleDate,
                                            Types::SimpleBoolean, Types::Age, Types::Range]
       fhir_attribute :note
-      fhir_attribute :condition, list: Fhir::FamilyHistoryClasses::Condition
+      fhir_attribute :condition, list: Fhir::FamilyMemberHistoryClasses::Condition
     end
   end
 end

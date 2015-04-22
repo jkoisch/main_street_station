@@ -1,10 +1,10 @@
 module Fhir
-  class FamilyHistory < BaseResource
+  class FamilyMemberHistory < BaseResource
     fhir_attribute :id
     fhir_attribute :identifier, list: Types::Identifier
     fhir_attribute :patient, type: Types::ResourceReference
     fhir_attribute :date
     fhir_attribute :note
-    fhir_attribute :relation, list: Fhir::FamilyHistoryClasses::Relation
+    fhir_attribute :relation, list: Fhir::FamilyMemberHistoryClasses::Relation
   end
 end

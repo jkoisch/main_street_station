@@ -1,9 +1,9 @@
 module FhirInterface
-  class FamilyHistory
+  class FamilyMemberHistory
     attr_accessor :identifier, :subject, :note
   end
 
-  module FamilyHistoryClasses
+  module FamilyMemberHistoryClasses
     class Relation
       attr_accessor :name, :relationship, :bornPeriod, :bornDate, :bornString, :deceasedBoolean, :deceasedAge,
                     :deceasedRange, :deceasedDate, :deceasedString, :note

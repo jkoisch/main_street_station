@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Fhir::FamilyHistoriesController, type: :controller do
+describe Fhir::FamilyMemberHistoriesController, type: :controller do
   let(:json_headers) { { Accept: 'application/json', Content-Type => 'application/json' } }
 
   context '#index' do
@@ -8,19 +8,19 @@ describe Fhir::FamilyHistoriesController, type: :controller do
 
     specify { should render_template(:index) }
 
-    it 'assigns all devices as @family_histories' do
+    it 'assigns all devices as @family_member_histories' do
       get :index, format: :json
-      expect(assigns(:family_histories).count).to eq(1)
+      expect(assigns(:family_member_histories).count).to eq(1)
     end
   end
 
   context 'for searches' do
-    before(:each) {Fhir::FamilyHistoriesController.any_instance.stubs(:retrieve_file_resource).returns(nil) }
+    before(:each) {Fhir::FamilyMemberHistoriesController.any_instance.stubs(:retrieve_file_resource).returns(nil) }
 
-    it 'performs a family history search for matching patient' do
+    it 'performs a family member history search for matching patient' do
       stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
       get :index, {format: :json, 'patient' => '23'}
-      expect(a_request(:get, 'gringotts.dev/family_histories').
+      expect(a_request(:get, 'gringotts.dev/family_member_histories').
                  with(:query => hash_including({'query' => {'patient' => {'value' => '23'}}}))).to have_been_made
     end
 
@@ -32,9 +32,9 @@ describe Fhir::FamilyHistoriesController, type: :controller do
 
     specify { should render_template(:show) }
 
-    it 'assigns the requested family_history as @family_history' do
+    it 'assigns the requested family_member_history as @family_member_history' do
       get :show, id: 1, format: :json
-      expect(assigns(:family_history)).to be_a(Fhir::FamilyHistory)
+      expect(assigns(:family_member_history)).to be_a(Fhir::FamilyMemberHistory)
     end
 
     it 'assigns the operation_outcome' do
@@ -44,12 +44,12 @@ describe Fhir::FamilyHistoriesController, type: :controller do
   end
 
   describe '#create' do
-    let(:params) { FactoryGirl.json(:fhir_family_history) }
+    let(:params) { FactoryGirl.json(:fhir_family_member_history) }
 
     context 'with valid parameters' do
       before(:each) do
         gringott_response = GringottResponse.new(true, { id: 1 })
-        Fhir::FamilyHistoriesController.any_instance.stubs(:create_gringotts_resource).returns(gringott_response)
+        Fhir::FamilyMemberHistoriesController.any_instance.stubs(:create_gringotts_resource).returns(gringott_response)
       end
 
       it 'should return a success' do
@@ -59,7 +59,7 @@ describe Fhir::FamilyHistoriesController, type: :controller do
 
       it 'should set the Location on the response' do
         post :create, { format: :json }, { RAW_POST_DATA: :params }
-        expect(response.location).to match /FamilyHistory\/1/
+        expect(response.location).to match /FamilyMemberHistory\/1/
       end
 
     end
@@ -67,7 +67,7 @@ describe Fhir::FamilyHistoriesController, type: :controller do
     context 'with invalid parameters' do
       before(:each) do
         gringott_response = GringottResponse.new(false, { message: 'bad data' })
-        Fhir::FamilyHistoriesController.any_instance.stubs(:create_gringotts_resource).returns(gringott_response)
+        Fhir::FamilyMemberHistoriesController.any_instance.stubs(:create_gringotts_resource).returns(gringott_response)
       end
 
       it 'should return a bad request' do
@@ -83,7 +83,7 @@ describe Fhir::FamilyHistoriesController, type: :controller do
 
     context 'with Gringotts down' do
       before(:each) do
-        Fhir::FamilyHistoriesController.any_instance.stubs(:create_gringotts_resource).returns(nil)
+        Fhir::FamilyMemberHistoriesController.any_instance.stubs(:create_gringotts_resource).returns(nil)
       end
 
       it 'should return a service unavailable' do
@@ -99,12 +99,12 @@ describe Fhir::FamilyHistoriesController, type: :controller do
   end
 
   describe '#update' do
-    let(:params) { FactoryGirl.json(:fhir_family_history) }
+    let(:params) { FactoryGirl.json(:fhir_family_member_history) }
 
     context 'with valid parameters' do
       before(:each) do
         gringott_response = GringottResponse.new(true, { message: 'done' })
-        Fhir::FamilyHistoriesController.any_instance.stubs(:update_gringotts_resource).returns(gringott_response)
+        Fhir::FamilyMemberHistoriesController.any_instance.stubs(:update_gringotts_resource).returns(gringott_response)
       end
 
       it 'should return a success' do
@@ -116,7 +116,7 @@ describe Fhir::FamilyHistoriesController, type: :controller do
     context 'with invalid parameters' do
       before(:each) do
         gringott_response = GringottResponse.new(false, { message: 'bad data' })
-        Fhir::FamilyHistoriesController.any_instance.stubs(:update_gringotts_resource).returns(gringott_response)
+        Fhir::FamilyMemberHistoriesController.any_instance.stubs(:update_gringotts_resource).returns(gringott_response)
       end
 
       it 'should return a bad request' do
@@ -132,7 +132,7 @@ describe Fhir::FamilyHistoriesController, type: :controller do
 
     context 'with Gringotts down' do
       before(:each) do
-        Fhir::FamilyHistoriesController.any_instance.stubs(:update_gringotts_resource).returns(nil)
+        Fhir::FamilyMemberHistoriesController.any_instance.stubs(:update_gringotts_resource).returns(nil)
       end
 
       it 'should return a service unavailable' do

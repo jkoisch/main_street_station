@@ -1,0 +1,1 @@
+json_bundle(json, @family_member_histories)

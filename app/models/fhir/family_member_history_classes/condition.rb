@@ -1,5 +1,5 @@
 module Fhir
-  module FamilyHistoryClasses
+  module FamilyMemberHistoryClasses
     class Condition < BaseClass
       attr_accessor :onset_string
 

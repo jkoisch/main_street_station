@@ -5,6 +5,7 @@ module Fhir
         case gringott_type
           when /client/i then 'Patient'
           when /provider/i then 'Practitioner'
+          when /familyhistory/i then 'FamilyMemberHistory'
           else
             if gringott_type
               gringott_type.capitalize
@@ -18,6 +19,7 @@ module Fhir
         case fhir_type
           when /patient/i then 'Client'
           when /practitioner/i then 'Provider'
+          when /familymemberhistory/i then 'FamilyHistory'
           else
             if fhir_type
               fhir_type.capitalize
