@@ -17,6 +17,11 @@ describe Fhir::Types::ResourceReference do
     expect(thing.reference).to eq 'http://mainstreet.youcentric.com/fhir/Practitioner/3'
   end
 
+  it 'should convert family_history in a reference' do
+    thing = Fhir::Types::ResourceReference.new(local_id: 3, local_type: 'FamilyHistory')
+    expect(thing.reference).to eq 'http://mainstreet.youcentric.com/fhir/FamilyMemberHistory/3'
+  end
+
   it 'should repeat an external reference explicitly' do
     the_ref = 'http://healthintersections.com/fhir/BlahBlah/45'
     thing = Fhir::Types::ResourceReference.new(external_reference: the_ref)

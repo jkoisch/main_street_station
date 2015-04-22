@@ -19,7 +19,7 @@ MainStreetStation::Application.routes.draw do
     resources :Condition, controller: 'conditions',  only: [:index, :show, :create, :update], defaults: {format: :json}
     resources :Conformance, controller: 'conformance', as: 'conformance', only: [:index, :show], defaults: {format: :json}
     resources :Device, controller: 'devices', only: [:index, :show, :create, :update], defaults: {format: :json}
-    resources :FamilyHistory, controller: 'family_histories', only: [:index, :show, :create, :update], defaults: {format: :json}
+    resources :FamilyMemberHistory, controller: 'family_member_histories', only: [:index, :show, :create, :update], defaults: {format: :json}
     resources :Location, controller: "locations", only: [:index, :show, :create, :update], defaults: {format: :json}
     resources :Observation, controller: :observations,  only: [:index, :show, :create, :update], defaults: {format: :json}
     resources :Organization, controller: 'organizations', only: [:index, :show, :create, :update], defaults: {format: :json}

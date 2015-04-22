@@ -1,13 +1,13 @@
 require 'net/http'
 
 module Fhir
-  class FamilyHistoriesController < FhirController
-    RESOURCE = 'family_history'
+  class FamilyMemberHistoriesController < FhirController
+    RESOURCE = 'family_member_history'
 
     def index
       response = get_gringotts_resources(RESOURCE, build_search_params(params))
       if response.success?
-        @family_histories = Fhir::FamilyHistory.parse_ehmbr_list(response.body)
+        @family_member_histories = Fhir::FamilyMemberHistory.parse_ehmbr_list(response.body)
       else
         send_operation_outcome(response)
       end
@@ -16,7 +16,7 @@ module Fhir
     def show
       response = get_resource(RESOURCE, params[:id])
       if response.success?
-        @family_history = Fhir::FamilyHistory.parse_ehmbr(response.body)
+        @family_member_history = Fhir::FamilyMemberHistory.parse_ehmbr(response.body)
       else
         send_operation_outcome(response)
       end
@@ -26,7 +26,7 @@ module Fhir
       response = create_gringotts_resource(RESOURCE, params)
       if response
         if response.success?
-          render nothing: true, status: 201, location: "#{FHIR_LOCATION_ROOT}/FamilyHistory/#{response.body[:id]}"
+          render nothing: true, status: 201, location: "#{FHIR_LOCATION_ROOT}/FamilyMemberHistory/#{response.body[:id]}"
         else
           send_operation_outcome(response, 400)
         end
@@ -51,8 +51,8 @@ module Fhir
     private
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def family_history_params
-      params[:family_history]
+    def family_member_history_params
+      params[:family_member_history]
     end
 
     def build_search_params(params)

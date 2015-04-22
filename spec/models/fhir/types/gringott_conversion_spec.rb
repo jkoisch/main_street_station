@@ -3,7 +3,8 @@ require 'rails_helper'
 module Fhir
   module Types
     CONVERSION_NAMES = {'Patient'      => 'Client',
-                        'Practitioner' => 'Provider'}
+                        'Practitioner' => 'Provider',
+                        'FamilyMemberHistory' => 'FamilyHistory'}
   end
 end
 

@@ -1,10 +1,10 @@
---- !ruby/object:Fhir::FamilyHistory
+--- !ruby/object:Fhir::FamilyMemberHistory
   patient: !ruby/object:Fhir::Types::ResourceReference
     external_reference: Patient/201
     display: Roel
   note: "Both parents, both brothers and both children (twin) are still alive."
   relation:
-    - !ruby/object:Fhir::FamilyHistoryClasses::Relation
+    - !ruby/object:Fhir::FamilyMemberHistoryClasses::Relation
       relationship: !ruby/object:Fhir::Types::CodeableConcept
         coding:
           - !ruby/object:Fhir::Types::Coding
@@ -12,7 +12,7 @@
             code: mother
       deceased_boolean: "false"
       condition:
-        - !ruby/object:Fhir::FamilyHistoryClasses::Condition
+        - !ruby/object:Fhir::FamilyMemberHistoryClasses::Condition
           type: !ruby/object:Fhir::Types::CodeableConcept
             coding:
               - !ruby/object:Fhir::Types::Coding
@@ -30,14 +30,14 @@
             value: "56"
             units: "a"
             system: http://unitsofmeasure.org
-    - !ruby/object:Fhir::FamilyHistoryClasses::Relation
+    - !ruby/object:Fhir::FamilyMemberHistoryClasses::Relation
       relationship: !ruby/object:Fhir::Types::CodeableConcept
         coding:
           - !ruby/object:Fhir::Types::Coding
             system: http://hl7.org/fhir/familial-relationship
             code: brother
       condition:
-        - !ruby/object:Fhir::FamilyHistoryClasses::Condition
+        - !ruby/object:Fhir::FamilyMemberHistoryClasses::Condition
           type: !ruby/object:Fhir::Types::CodeableConcept
             coding:
               - !ruby/object:Fhir::Types::Coding

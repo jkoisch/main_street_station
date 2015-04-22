@@ -1,4 +1,4 @@
-json.resourceType  'FamilyHistory'
+json.resourceType  'FamilyMemberHistory'
 
 json.identifier resource.identifier do |identifier|
   json.partial! 'fhir/base/identifier', identifier: identifier
