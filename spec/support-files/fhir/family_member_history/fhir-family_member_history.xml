@@ -8,60 +8,32 @@
     <display value="Roel"/>
   </patient>
   <note value="Both parents, both brothers and both children (twin) are still alive."/>
-  <relation>
-    <relationship>
+  <relationship>
+    <coding>
+      <system value="http://hl7.org/fhir/familial-relationship"/>
+      <code value="brother"/>
+    </coding>
+  </relationship>
+  <condition>
+    <type>
       <coding>
-        <system value="http://hl7.org/fhir/familial-relationship"/>
-        <code value="mother"/>
+        <system value="http://snomed.info/sct"/>
+        <code value="371041009"/>
+        <display value="Embolic Stroke"/>
       </coding>
-    </relationship>
-    <deceasedBoolean value="false"/>
-    <condition>
-      <type>
-        <coding>
-          <system value="http://snomed.info/sct"/>
-          <code value="371041009"/>
-          <display value="Embolic Stroke"/>
-        </coding>
-        <text value="Stroke"/>
-      </type>
-      <outcome>
-        <coding>
-          <system value="http://snomed.info/sct"/>
-          <code value="419099112"/>
-          <display value="Inactive"/>
-        </coding>
-      </outcome>
-      <onsetAge>
-        <value value="56"/>
-        <units value="a"/>
-        <system value="http://unitsofmeasure.org"/>
-      </onsetAge>
-    </condition>
-  </relation>
-  <relation>
-    <relationship>
+      <text value="Stroke"/>
+    </type>
+    <outcome>
       <coding>
-        <system value="http://hl7.org/fhir/familial-relationship"/>
-        <code value="brother"/>
+        <system value="http://snomed.info/sct"/>
+        <code value="419099112"/>
+        <display value="Inactive"/>
       </coding>
-    </relationship>
-    <condition>
-      <type>
-        <coding>
-          <system value="http://snomed.info/sct"/>
-          <code value="190372001"/>
-          <display value="Type 1 Diabetes, Maturity Onset"/>
-        </coding>
-        <text value="Diabetes Mellitus"/>
-      </type>
-      <outcome>
-        <coding>
-          <system value="http://snomed.info/sct"/>
-          <code value="419099009"/>
-          <display value="Died"/>
-        </coding>
-      </outcome>
-    </condition>
-  </relation>
+    </outcome>
+    <onsetAge>
+      <value value="56"/>
+      <units value="a"/>
+      <system value="http://unitsofmeasure.org"/>
+    </onsetAge>
+  </condition>
 </FamilyMemberHistory>

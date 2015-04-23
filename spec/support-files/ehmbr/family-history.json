@@ -22,108 +22,57 @@
         "display": null
     },
     "date": "2014-12-03",
+    "name": "Bob",
+    "relationship": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/familial-relationship",
+                "version":null,
+                "code": "brother",
+                "display": null
+            }
+        ],
+        "text": null
+    },
+    "gender": null,
+    "born": null,
+    "age": null,
+    "deceased": null,
     "note": "Both parents, both brothers and both children (twin) are still alive.",
-    "relation": [
+    "condition": [
         {
             "_id": 1,
-            "name": null,
-            "relationship": {
+            "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/familial-relationship",
+                        "system": "http://snomed.info/sct",
                         "version": null,
-                        "code": "mother",
-                        "display": null
+                        "code": "371041009",
+                        "display": "Embolic Stroke"
                     }
                 ],
-                "text": null
+                "text": "Stroke"
             },
-            "born": null,
-            "deceased": null,
-            "note": null,
-            "condition": [
-                {
-                    "_id": 1,
-                    "type": {
-                        "coding": [
-                            {
-                                "system": "http://snomed.info/sct",
-                                "version": null,
-                                "code": "371041009",
-                                "display": "Embolic Stroke"
-                            }
-                        ],
-                        "text": "Stroke"
-                    },
-                    "outcome": {
-                        "coding": [
-                            {
-                                "system": "http://snomed.info/sct",
-                                "version": null,
-                                "code": "419099112",
-                                "display": "Inactive"
-                            }
-                        ],
-                        "text": "Stroke"
-                    },
-                    "onset": {
-                        "_type": "Age",
-                        "value": 56,
-                        "comparator": null,
-                        "units": null,
-                        "system": "http://unitsofmeasure.org",
-                        "code": null
-                    },
-                    "note": null
-                }
-            ]
-        },
-        {
-            "_id": 1,
-            "name": null,
-            "relationship": {
+            "outcome": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/familial-relationship",
-                        "version":null,
-                        "code": "brother",
-                        "display": null
+                        "system": "http://snomed.info/sct",
+                        "version": null,
+                        "code": "419099112",
+                        "display": "Inactive"
                     }
                 ],
-                "text": null
+                "text": "Stroke"
             },
-            "born": null,
-            "deceased": null,
-            "note": null,
-            "condition": [
-                {
-                    "_id": 1,
-                    "type": {
-                        "coding": [
-                            {
-                                "system": "http://snomed.info/sct",
-                                "version": null,
-                                "code": "190372001",
-                                "display": "Type 1 Diabetes, Maturity Onset"
-                            }
-                        ],
-                        "text": "Diabetes Mellitus"
-                    },
-                    "outcome": {
-                        "coding": [
-                            {
-                                "system": "http://snomed.info/sct",
-                                "version": null,
-                                "code": "419099009",
-                                "display": "Died"
-                            }
-                        ],
-                        "text": "Stroke"
-                    },
-                    "onset": null,
-                    "note": null
-                }
-            ]
+            "onset": {
+                "_type": "Age",
+                "value": 56,
+                "comparator": null,
+                "units": null,
+                "system": "http://unitsofmeasure.org",
+                "code": null
+            },
+            "note": null
         }
     ]
 }

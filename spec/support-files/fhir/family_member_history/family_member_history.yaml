@@ -2,52 +2,29 @@
   patient: !ruby/object:Fhir::Types::ResourceReference
     external_reference: Patient/201
     display: Roel
+  name: Bob
+  relationship: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: http://hl7.org/fhir/familial-relationship
+        code: brother
   note: "Both parents, both brothers and both children (twin) are still alive."
-  relation:
-    - !ruby/object:Fhir::FamilyMemberHistoryClasses::Relation
-      relationship: !ruby/object:Fhir::Types::CodeableConcept
+  condition:
+    - !ruby/object:Fhir::FamilyMemberHistoryClasses::Condition
+      type: !ruby/object:Fhir::Types::CodeableConcept
         coding:
           - !ruby/object:Fhir::Types::Coding
-            system: http://hl7.org/fhir/familial-relationship
-            code: mother
-      deceased_boolean: "false"
-      condition:
-        - !ruby/object:Fhir::FamilyMemberHistoryClasses::Condition
-          type: !ruby/object:Fhir::Types::CodeableConcept
-            coding:
-              - !ruby/object:Fhir::Types::Coding
-                system: http://snomed.info/sct
-                code: "371041009"
-                display: Embolic Stroke
-            text: Stroke
-          outcome: !ruby/object:Fhir::Types::CodeableConcept
-            coding:
-              - !ruby/object:Fhir::Types::Coding
-                system: http://snomed.info/sct
-                code: "419099112"
-                display: Inactive
-          onset_age: !ruby/object:Fhir::Types::Quantity
-            value: "56"
-            units: "a"
-            system: http://unitsofmeasure.org
-    - !ruby/object:Fhir::FamilyMemberHistoryClasses::Relation
-      relationship: !ruby/object:Fhir::Types::CodeableConcept
+            system: http://snomed.info/sct
+            code: "371041009"
+            display: Embolic Stroke
+        text: Stroke
+      outcome: !ruby/object:Fhir::Types::CodeableConcept
         coding:
           - !ruby/object:Fhir::Types::Coding
-            system: http://hl7.org/fhir/familial-relationship
-            code: brother
-      condition:
-        - !ruby/object:Fhir::FamilyMemberHistoryClasses::Condition
-          type: !ruby/object:Fhir::Types::CodeableConcept
-            coding:
-              - !ruby/object:Fhir::Types::Coding
-                system: http://snomed.info/sct
-                code: "190372001"
-                display: Type 1 Diabetes, Maturity Onset
-            text: Diabetes Mellitus
-          outcome: !ruby/object:Fhir::Types::CodeableConcept
-            coding:
-              - !ruby/object:Fhir::Types::Coding
-                system: http://snomed.info/sct
-                code: "419099009"
-                display: Died
+            system: http://snomed.info/sct
+            code: "419099112"
+            display: Inactive
+      onset_age: !ruby/object:Fhir::Types::Quantity
+        value: "56"
+        units: "a"
+        system: http://unitsofmeasure.org
