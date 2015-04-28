@@ -1,7 +1,11 @@
-<% provide(:title, 'Welcome to Main Street Station') %>
-
-<h1>Welcome to Mainstreet Station</h1>
-
-<%= link_to 'Conformance', fhir_metadata_path(format: :html) %>
-<br/>
-<%= link_to 'Application User Signup', new_user_registration_path %>
+<% provide(:title, 'Welcome') %>
+<div class="center hero-unit">
+  <h1>Welcome to Mainstreet Station</h1>
+  <h2>
+    Youcentric FHIR v0.5.0 Implementation
+  </h2>
+  <% if not user_signed_in? %>
+    <%= link_to 'Signup', new_user_registration_path, class: "btn btn-medium btn-success" %>
+  <% end %>
+  <%= link_to 'Conformance', fhir_conformance_index_path(format: :html), class: "btn btn-medium btn-success" %>
+</div>

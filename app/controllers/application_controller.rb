@@ -34,4 +34,10 @@ class ApplicationController < ActionController::Base
   def json_request?
     request.format.json?
   end
+
+  protected
+
+  def after_sign_out_path_for(resource)
+    request.referrer
+  end
 end

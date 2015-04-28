@@ -21,6 +21,11 @@ require 'rails_helper'
 RSpec.describe WelcomesController, :type => :controller do
 
   describe "GET index" do
-    it 'should have a test'
+    subject {get :index}
+
+    specify { should render_template(:index) }
+    specify { should render_template("index") }
+    specify { should render_template("welcomes/index") }
+    specify { should render_template("layouts/application")}
   end
 end

@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     if SessionService.authenticate(@user, params[:password])
       # TODO Add successful log in message
       logger.debug "#{@user.email} is trying to create a session"
+      root_path
     else
       logger.error "** Failure** Attempt to login as #{params[:user_name]} - rejected"
       render text: 'Login failed', status: :unauthorized

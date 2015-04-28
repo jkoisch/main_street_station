@@ -2,7 +2,7 @@ class Trust::AuthenticationController < ApplicationController
   before_filter :authenticate_user! , except: [:index]  #, :show_old]
 
   def index
-    @title = 'Home Authentication Index'
+    @title = 'Home Authentication Index for logout'
   end
 
   def show
