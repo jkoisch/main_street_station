@@ -79,6 +79,11 @@ ul {
   li {
     float: left;
     margin-left: 10px;
+    label {
+      color: #ffffff !important;
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
   }
 }
 
