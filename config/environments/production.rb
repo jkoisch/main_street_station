@@ -69,6 +69,6 @@ MainStreetStation::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   config.gringotts_conformance = Rails.root + 'config/conformance.json'
-  config.gringotts_url = 'http://protected-garden-4145.herokuapp.com/clients/'
+  config.gringotts_url = 'http://protected-garden-4145.herokuapp.com/'
   config.fhir_enforce_security = true
 end
