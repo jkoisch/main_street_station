@@ -1,5 +1,6 @@
 module Fhir::FhirBaseHelper
   def json_bundle(json, resource_list=[])
+    json.resourceType 'Bundle'
     json.type 'collection'
     json.total resource_list.count
     json.entry resource_list do |resource|
