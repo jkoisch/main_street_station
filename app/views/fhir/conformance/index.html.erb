@@ -18,7 +18,11 @@
           <td><%= resource.type %></td>
           <td>
             <% resource.interaction.each do |interaction| %>
-                <%= interaction.code %><br/>
+                <%= interaction.code %>
+                <% if interaction.documentation %>
+                <small><em><%= interaction.documentation %></em></small>
+                <% end %>
+                <br/>
             <% end %>
           </td>
           <td>
