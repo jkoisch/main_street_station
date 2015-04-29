@@ -122,7 +122,10 @@
                 {
                     "type": "Observation",
                     "interaction": [
-                        {"code": "read"}
+                        {
+                          "code": "read",
+                          "documentation": "This resource has not been updated to FHIR 0.5.0 and returns in FHIR 0.4.0 format"
+                        }
                     ],
                     "read_history": "false",
                     "search_param":[
