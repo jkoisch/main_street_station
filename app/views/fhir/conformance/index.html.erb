@@ -1,4 +1,35 @@
 <div>
   <h4>Conformance Statement</h4>
-  <%= @conformances.as_json %>
+  <small>
+    <strong><%= @conformances[0].publisher %></strong> <%= @conformances[0].software.name %>:
+    <%= @conformances[0].version %>
+  </small>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Resource</th>
+      <th>REST action</th>
+      <th>Search Parameter</th>
+    </tr>
+    </thead>
+
+    <% @conformances[0].rest[0].resource.each do |resource| %>
+        <tr>
+          <td><%= resource.type %></td>
+          <td>
+            <% resource.interaction.each do |interaction| %>
+                <%= interaction.code %><br/>
+            <% end %>
+          </td>
+          <td>
+            <% if resource.search_param %>
+                <% resource.search_param.each do |search| %>
+                    <%= search.name %>: <%= search.type %><br/>
+                <% end %>
+            <% end %>
+          </td>
+        </tr>
+    <% end %>
+
+  </table>
 </div>

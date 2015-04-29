@@ -16,20 +16,29 @@ MainStreetStation::Application.routes.draw do
     #end
 
     #noinspection RailsParamDefResolve,RailsParamDefResolve
-    resources :Condition, controller: 'conditions',  only: [:index, :show, :create, :update], defaults: {format: :json}
-    resources :Conformance, controller: 'conformance', as: 'conformance', only: [:index, :show], defaults: {format: :json}
-    resources :Device, controller: 'devices', only: [:index, :show, :create, :update], defaults: {format: :json}
-    resources :FamilyMemberHistory, controller: 'family_member_histories', only: [:index, :show, :create, :update], defaults: {format: :json}
-    resources :Location, controller: "locations", only: [:index, :show, :create, :update], defaults: {format: :json}
-    resources :Observation, controller: :observations,  only: [:index, :show, :create, :update], defaults: {format: :json}
-    resources :Organization, controller: 'organizations', only: [:index, :show, :create, :update], defaults: {format: :json}
-    resources :Patient, controller: 'patients', only: [:index, :show, :create, :update], defaults: {format: :json}
-    resources :Questionnaire, controller: 'questionnaires', only: [:index, :show, :create, :update], defaults: {format: :json}
-    resources :Practitioner, controller: 'practitioners', only: [:index, :show, :create, :update], defaults: {format: :json}
+    resources :Condition, controller: 'conditions',
+              only: [:index, :show, :create, :update], defaults: {format: :json}
+    resources :Conformance, controller: 'conformance', as: 'conformance',
+              only: [:index, :show], defaults: {format: :json}
+    resources :Device, controller: 'devices',
+              only: [:index, :show, :create, :update], defaults: {format: :json}
+    resources :FamilyMemberHistory, controller: 'family_member_histories',
+              only: [:index, :show, :create, :update], defaults: {format: :json}
+    resources :Location, controller: "locations",
+              only: [:index, :show, :create, :update], defaults: {format: :json}
+    resources :Observation, controller: :observations,
+              only: [:index, :show, :create, :update], defaults: {format: :json}
+    resources :Organization, controller: 'organizations',
+              only: [:index, :show, :create, :update], defaults: {format: :json}
+    resources :Patient, controller: 'patients',
+              only: [:index, :show, :create, :update], defaults: {format: :json}
+    resources :Questionnaire, controller: 'questionnaires',
+              only: [:index, :show, :create, :update], defaults: {format: :json}
+    resources :Practitioner, controller: 'practitioners',
+              only: [:index, :show, :create, :update], defaults: {format: :json}
     resources :operation_outcomes, only: [:show], defaults: {format: :json}
 
     get 'metadata', to: 'conformance#show', defaults: {format: :json}
-
   end
 
   namespace :trust do
