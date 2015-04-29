@@ -1,6 +1,8 @@
 class Fhir::FhirBaseController < ApplicationController
   attr_accessor :uri
 
+  before_filter :set_default_response_format
+
   FHIR_LOCATION_ROOT = 'http://mainstreet.youcentric.com/fhir'
 
   def query_params
@@ -148,6 +150,14 @@ class Fhir::FhirBaseController < ApplicationController
       resp = GringottResponse.new(false, {})
       resp.message = response.message
       resp
+    end
+  end
+
+  protected
+  def set_default_response_format
+    if request.headers['Accept'] && (request.headers['Accept'] == 'application/xml' ||
+        request.headers['Accept'] == 'text/xml')
+      request.format = :xml
     end
   end
 end

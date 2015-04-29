@@ -19,6 +19,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.0.3'
 
 gem 'simplecov', require: false, group: :test
+gem 'webmock', group: :test
 
 group :test, :development do
   #gem 'better_errors'
@@ -34,7 +35,6 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'terminal-notifier'
   gem 'mocha', require: 'mocha/api'
-  gem 'webmock'
   gem 'thin'
   #gem 'taps'
 end
