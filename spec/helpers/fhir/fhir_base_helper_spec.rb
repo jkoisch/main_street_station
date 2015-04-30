@@ -20,20 +20,20 @@ describe Fhir::FhirBaseHelper, type: :view do
     it 'should return a JSON FHIR Bundle for an empty array' do
       @things = []
       render template: 'fhir/fhir_base/index', formats: :json
-      expect(response.body).to eq '{"type":"collection","total":0,"entry":[]}'
+      expect(response.body).to eq '{"resourceType":"Bundle","type":"collection","total":0,"entry":[]}'
     end
 
     it 'should return a JSON FHIR Bundle for a single item' do
       @things = [ BundleTest.new('testing 1', 'expert') ]
       render template: 'fhir/fhir_base/index', formats: :json
-      expect(response.body).to eq '{"type":"collection","total":1,"entry":[{"status":"match","resource":{"resourceType":"BundleTest","name":"testing 1","category":"expert"}}]}'
+      expect(response.body).to eq '{"resourceType":"Bundle","type":"collection","total":1,"entry":[{"status":"match","resource":{"resourceType":"BundleTest","name":"testing 1","category":"expert"}}]}'
     end
 
     it 'should return a JSON FHIR Bundle for a multiple items' do
       @things = [ BundleTest.new('testing 1', 'expert'),
                   BundleTest.new('testing 2', 'poser') ]
       render template: 'fhir/fhir_base/index', formats: :json
-      expect(response.body).to eq '{"type":"collection","total":2,"entry":[{"status":"match","resource":{"resourceType":"BundleTest","name":"testing 1","category":"expert"}},{"status":"match","resource":{"resourceType":"BundleTest","name":"testing 2","category":"poser"}}]}'
+      expect(response.body).to eq '{"resourceType":"Bundle","type":"collection","total":2,"entry":[{"status":"match","resource":{"resourceType":"BundleTest","name":"testing 1","category":"expert"}},{"status":"match","resource":{"resourceType":"BundleTest","name":"testing 2","category":"poser"}}]}'
     end
   end
 
