@@ -32,11 +32,11 @@ describe Fhir::ObservationsController, type: :controller do
                  with(:query => hash_including({'query' => {'identifier' => {'code' => '187e0c12-8dd2-67e2-99b2-bf273c878281'}}}))).to have_been_made
     end
 
-    it 'performs an observation search for matching name' do
+    it 'performs an observation search for matching code' do
       stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
-      get :index, {format: :json, name: '8480-6'}
+      get :index, {format: :json, code: '8480-6'}
       expect(a_request(:get, 'gringotts.dev/observations').
-                 with(:query => hash_including({'query' => {'name' => {'code' => '8480-6'}}}))).to have_been_made
+                 with(:query => hash_including({'query' => {'code' => {'code' => '8480-6'}}}))).to have_been_made
     end
 
     it 'performs a observation search for matching patient' do

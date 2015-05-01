@@ -5,7 +5,7 @@
         "status": "generated",
         "div": "<div>Sept 17, 2012: Systolic Blood pressure 107 mmHg (normal)</div>"
     },
-    "name": {
+    "code": {
         "coding": [
             {
                 "system": "http://loinc.org",
@@ -40,6 +40,15 @@
         ],
         "text": null
     },
+    "value": {
+        "_type": "Ratio",
+        "numerator": {
+            "value": 1
+        },
+        "denominator": {
+            "value": 256
+        }
+    },
     "interpretation": {
         "coding": [
             {
@@ -59,25 +68,27 @@
     "issued": null,
     "status": "final",
     "reliability": "ok",
-    "body_site": {
+    "body_site_codeable_concept": {
         "coding": [],
         "text": null
     },
+    "body_site_resource_reference": null,
     "method": {
         "coding": [],
         "text": null
     },
-    "identifier": {
+    "identifier": [{
         "use": null,
         "type": {},
         "system": "urn:ietf:rfc:3986",
         "value": "187e0c12-8dd2-67e2-99b2-bf273c878281",
         "period": null,
         "assigner": null
-    },
+    }],
     "subject": null,
     "specimen": null,
     "performer": [],
+    "device": null,
     "encounter": null,
     "reference_range": [],
     "related": []

@@ -53,7 +53,7 @@ module Fhir
     def build_search_params(params)
       supported_params = {  date:       Fhir::DateParameter,
                             identifier: Fhir::TokenParameter,
-                            name:       Fhir::TokenParameter,
+                            code:       Fhir::TokenParameter,
                             patient:    Fhir::ReferenceParameter,
                             performer:  Fhir::ReferenceParameter
                           }

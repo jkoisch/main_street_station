@@ -1,8 +1,9 @@
 module FhirInterface
   class Observation
-    attr_accessor :name, :valueQuantity, :valueCodeableConcept, :valueAttachment, :valueRatio, :valuePeriod,
+    attr_accessor :code, :valueQuantity, :valueCodeableConcept, :valueAttachment, :valueRange, :valueRatio, :valuePeriod,
                   :valueSampledData, :valueString, :interpretation, :comments, :appliesDatetime, :appliesPeriod,
-                  :issued, :status, :reliability, :bodySite, :method, :identifier, :subject, :specimen, :performer
+                  :issued, :status, :reliability, :bodySiteCodeableConcept, :bodySiteResourceReference, :method,
+                  :identifier, :subject, :specimen, :performer, :device
   end
 
   module ObservationClasses

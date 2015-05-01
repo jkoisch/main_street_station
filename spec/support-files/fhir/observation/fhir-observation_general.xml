@@ -1,5 +1,5 @@
 <Observation xmlns="http://hl7.org/fhir">
-  <name>
+  <code>
     <!--   LOINC - always recommended to have a LOINC code   -->
     <coding>
       <system value="http://loinc.org"/>
@@ -18,7 +18,7 @@
       <code value="bp-s"/>
       <display value="Systolic Blood pressure"/>
     </coding>
-  </name>
+  </code>
   <value_quantity>
     <value value="107"/>
     <units value="mm[Hg]"/>
