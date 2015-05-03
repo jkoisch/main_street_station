@@ -36,7 +36,10 @@
         "system": null,
         "code": null
     },
-    "data_absent_reason": null,
+    "data_absent_reason": {
+        "coding": [],
+        "text": null
+    },
     "interpretation": {
         "coding": [
             {
@@ -56,16 +59,13 @@
     "issued": null,
     "status": "final",
     "reliability": "ok",
-    "body_site_codeable_concept": {
-        "coding": [],
-        "text": null
-    },
-    "body_site_resource_reference": null,
-    "method": {
+    "body_site": {
+        "_type": "CodeableConcept",
         "coding": [],
         "text": null
     },
     "identifier": [{
+        "_id": 20,
         "use": null,
         "type": null,
         "system": "urn:ietf:rfc:3986",

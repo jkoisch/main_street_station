@@ -12,8 +12,12 @@ module Fhir
         end
       elsif options.has_key?(:type_list)
         options[:type_list].each do |type|
-          raw_type = type.name.sub(/Fhir::Types::/, '')
-          attr_accessor("#{attr_name}_#{raw_type.underscore}")
+          if type.simple_type?
+            attr_accessor("#{attr_name}_#{type.output_type}")
+          else
+            raw_type = type.name.sub(/Fhir::Types::/, '')
+            attr_accessor("#{attr_name}_#{raw_type.underscore}")
+          end
         end
 
         define_method("ehmbr_#{attr_name}=") do |content|

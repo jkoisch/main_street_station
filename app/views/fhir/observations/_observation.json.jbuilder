@@ -30,7 +30,7 @@ json.valueAttachment do
   json.partial! 'fhir/base/attachment', attachment: resource.value_attachment
 end unless resource.value_attachment.nil?
 
-json.valueDateTime resource.value_date_time unless resource.value_date_time.nil?
+json.valueDateTime resource.value_datetime unless resource.value_datetime.nil?
 
 json.valueTime        resource.value_time unless resource.value_time.nil?
 json.valueString      resource.value_string unless resource.value_string.nil?

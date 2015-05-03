@@ -51,16 +51,13 @@
     "issued": null,
     "status": "final",
     "reliability": "ok",
-    "body_site_codeable_concept": {
-        "coding": [],
-        "text": null
-    },
-    "body_site_resource_reference": null,
-    "method": {
+    "body_site": {
+        "_type": "CodeableConcept",
         "coding": [],
         "text": null
     },
     "identifier": [{
+        "_id": 45,
         "use": null,
         "type": {},
         "system": "urn:ietf:rfc:3986",

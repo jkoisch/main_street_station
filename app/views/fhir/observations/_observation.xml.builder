@@ -7,7 +7,7 @@ xml.valueRatio{ |xml| xml << render('fhir/base/ratio', ratio: resource.value_rat
 xml.valueSampledData{ |xml| xml << render('fhir/base/sampled_data', sampled_data: resource.value_sampled_data)} unless resource.value_sampled_data.nil?
 xml.valueAttachment { |xml| xml << render('fhir/base/attachment', attachment: resource.value_attachment)} unless resource.value_attachment.nil?
 xml.valueTime({value: resource.value_time}) unless resource.value_time.nil?
-xml.valueDateTime({value: resource.value_date_time}) unless resource.value_date_time.nil?
+xml.valueDateTime({value: resource.value_datetime}) unless resource.value_datetime.nil?
 xml.valuePeriod{ |xml| xml << render('fhir/base/period', period: resource.value_period)} unless resource.value_period.nil?
 xml.dataAbsentReason { |xml| xml << render('fhir/base/codeable_concept', codeable_concept: resource.data_absent_reason)} unless resource.data_absent_reason.nil?
 xml.interpretation { |xml| xml << render('fhir/base/codeable_concept', codeable_concept: resource.interpretation)} unless resource.interpretation.nil?
