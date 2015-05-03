@@ -6,12 +6,10 @@ module Fhir
     fhir_attribute :telecom, list: Types::Contact
     fhir_attribute :gender
     fhir_attribute :birth_date
-    fhir_attribute :deceased_boolean
-    fhir_attribute :deceased_datetime
+    fhir_attribute :deceased, type_list: [Types::SimpleBoolean, Types::SimpleDatetime]
     fhir_attribute :address, list: Types::Address
     fhir_attribute :marital_status, type: Types::CodeableConcept
-    fhir_attribute :multiple_birth_boolean
-    fhir_attribute :multiple_birth_integer
+    fhir_attribute :multiple_birth, type_list: [Types::SimpleBoolean, Types::SimpleInteger]
     # TODO: Should Photo attribute be added?
     fhir_attribute :contact, list: PatientClasses::Contact
     fhir_attribute :communication, list: PatientClasses::Communication

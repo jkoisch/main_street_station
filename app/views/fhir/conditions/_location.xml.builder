@@ -1,2 +1,2 @@
 xml.siteCodeableConcept{ |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: location.site_codeable_concept})} unless location.site_codeable_concept.nil?
-xml.siteReference{ |xml| xml << render('fhir/base/resource_reference', {resource_reference: location.site_reference})} unless location.site_reference.nil?
+xml.siteReference{ |xml| xml << render('fhir/base/resource_reference', {resource_reference: location.site_resource_reference})} unless location.site_resource_reference.nil?

@@ -116,7 +116,8 @@
     ],
     "location":[
         {
-            "site_codeable_concept":{
+            "site":{
+                "type": "CodeableConcept",
                 "coding":[
                     {
                         "system":"http://snomed.info/sct",

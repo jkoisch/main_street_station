@@ -69,8 +69,14 @@
     ],
     "gender": "male",
     "birth_date": "1974-12-25",
-    "deceased_boolean": false,
-    "deceased_datetime": null,
+    "deceased": {
+        "_type": "SimpleBoolean",
+        "value": false
+    },
+    "deceased":{
+        "_type": "SimpleDatetime",
+        "value": false
+    },
     "address": [
         {
             "_id": 1,
@@ -88,8 +94,14 @@
         "coding": [],
         "text": null
     },
-    "multiple_birth_boolean": null,
-    "multiple_birth_integer": null,
+    "multiple_birth": {
+        "_type": "SimpleBoolean",
+        "value": null
+    },
+    "multiple_birth":{
+        "_type": "SimpleInteger",
+        "value": null
+    },
     "communication": [],
     "active": true
 }
