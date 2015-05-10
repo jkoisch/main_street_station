@@ -36,7 +36,7 @@ MainStreetStation::Application.configure do
 
   config.gringotts_url = 'http://localhost:3001/'
 
-  config.fhir_enforce_security = true
+  config.fhir_enforce_security = false
 
   config.gringotts_conformance = Rails.root + 'config/conformance.json'
 

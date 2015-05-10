@@ -1,7 +1,7 @@
 class Fhir::FhirBaseController < ApplicationController
   attr_accessor :uri
 
-#  before_filter :set_default_response_format
+  before_filter :set_default_response_format
 
   FHIR_LOCATION_ROOT = 'http://mainstreet.youcentric.com/fhir'
 
@@ -153,11 +153,16 @@ class Fhir::FhirBaseController < ApplicationController
     end
   end
 
-  # protected
-  # def set_default_response_format
-  #   if request.headers['Accept'] && (request.headers['Accept'] == 'application/xml' ||
-  #       request.headers['Accept'] == 'text/xml')
-  #     request.format = :xml
-  #   end
-  # end
+  protected
+  def set_default_response_format
+    if request.headers['Accept']
+      if (request.headers['Accept'] == 'application/xml' ||
+          request.headers['Accept'] == 'text/xml' ||
+          request.headers['Accept'] == 'application/fhir+xml')
+        request.format = :xml
+      elsif request.headers['Accept'] == 'application/fhir+xml'
+        request.format = :json
+      end
+    end
+  end
 end

@@ -4,7 +4,7 @@ module Fhir
 
     private
     def api_or_interactive
-      if json_request?
+      if json_request? || xml_request?
         api_authenticate_user
       else
         authenticate_user!

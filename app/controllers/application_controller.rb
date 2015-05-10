@@ -35,6 +35,10 @@ class ApplicationController < ActionController::Base
     request.format.json?
   end
 
+  def xml_request?
+    request.format.xml?
+  end
+
   protected
 
   def after_sign_out_path_for(resource)

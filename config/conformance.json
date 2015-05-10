@@ -14,7 +14,7 @@
     "date": "2015-03-29",
     "software": {
         "name": "Mainstreet",
-        "version": "0.00.050.0001"
+        "version": "0.00.050.0006"
     },
     "fhir_version": "0.5.0",
     "accept_unknown": "true",
