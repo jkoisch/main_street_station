@@ -73,10 +73,6 @@
         "_type": "SimpleBoolean",
         "value": false
     },
-    "deceased":{
-        "_type": "SimpleDatetime",
-        "value": false
-    },
     "address": [
         {
             "_id": 1,
@@ -94,14 +90,7 @@
         "coding": [],
         "text": null
     },
-    "multiple_birth": {
-        "_type": "SimpleBoolean",
-        "value": null
-    },
-    "multiple_birth":{
-        "_type": "SimpleInteger",
-        "value": null
-    },
+    "multiple_birth": null,
     "communication": [],
     "active": true
 }
