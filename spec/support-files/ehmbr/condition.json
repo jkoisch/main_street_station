@@ -117,7 +117,7 @@
     "location":[
         {
             "site":{
-                "type": "CodeableConcept",
+                "_type": "CodeableConcept",
                 "coding":[
                     {
                         "system":"http://snomed.info/sct",
