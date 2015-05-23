@@ -78,7 +78,7 @@ GEM
       dotenv-deployment (~> 0.0.2)
     dotenv-deployment (0.0.2)
     erubis (2.7.0)
-    eventmachine (1.0.3)
+    eventmachine (1.0.7)
     execjs (2.2.1)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
