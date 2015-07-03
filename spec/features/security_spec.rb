@@ -17,22 +17,22 @@ RSpec.describe 'security page behavior' do
 
     it 'returns to the main page on user sign in' do
       expect(page).to have_content("Welcome #{user.email}")
-      expect(page).to have_link('Logout')
+      expect(page).to have_link('Log out')
       expect(page).to have_link('Edit profile')
     end
 
-    it 'returns to the main page on user logout' do
-      click_link "Logout"
+    it 'returns to the main page on user log out' do
+      click_link "Log out"
 
-      expect(page).to have_link("Login")
-      expect(page).to have_link("Sign up")
+      expect(page).to have_link("Log In")
+      expect(page).to have_link("Register")
     end
 
   end
 
   context 'sign up page behavior' do
 
-    it 'returns to the main page when new user signs up' do
+    it 'returns to the main page when new user registers' do
       visit '/users/sign_up'
 
       fill_in 'user_email', with: 'mathew123@test.com'
@@ -42,7 +42,7 @@ RSpec.describe 'security page behavior' do
       click_button 'Sign up'
 
       expect(page).to have_content("Welcome mathew123@test.com")
-      expect(page).to have_link('Logout')
+      expect(page).to have_link('Log out')
       expect(page).to have_link('Edit profile')
     end
   end
