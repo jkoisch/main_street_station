@@ -11,10 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150721011327) do
+ActiveRecord::Schema.define(version: 20150807000005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "access_permissions", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "caregivers", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "circles", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "clients", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "communities", force: true do |t|
     t.text     "name"
@@ -53,25 +73,30 @@ ActiveRecord::Schema.define(version: 20150721011327) do
 
   add_index "identity_authorities", ["user_id"], name: "index_identity_authorities_on_user_id", using: :btree
 
-  create_table "registration_contracts", force: true do |t|
-    t.integer  "community_id"
-    t.string   "status"
+  create_table "information_categories", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "constraint"
+  end
+
+  create_table "registration_contracts", force: true do |t|
+    t.integer  "communities_id"
+    t.string   "status"
+    t.string   "constraints"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "registration_whitelabel_id"
   end
 
   create_table "registration_parties", force: true do |t|
     t.integer  "community_role_id"
     t.text     "signature"
+    t.string   "address"
+    t.string   "invitation_status"
     t.integer  "user_id"
+    t.boolean  "owner"
+    t.integer  "registration_contracts_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "owner"
-    t.string   "address"
-    t.integer  "contract_id"
-    t.string   "invitation_status"
   end
 
   create_table "registration_whitelabel_groups", force: true do |t|
@@ -94,6 +119,11 @@ ActiveRecord::Schema.define(version: 20150721011327) do
     t.string   "zip_postal_code"
     t.string   "work_phone"
     t.string   "email_primary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
