@@ -26,6 +26,10 @@ class UserToken < ActiveRecord::Base
     exists?(['refresh_token = ? and refresh_expiry > ?', token, Time.now])
   end
 
+  def self.create_authentication_token(auth)
+    create(user_id: auth.user_id, authentication_token: auth.token)
+  end
+
   def authentication_active?
     self.refreshable? and self.authentication_expiry > Time.now
   end
@@ -48,7 +52,9 @@ class UserToken < ActiveRecord::Base
   def refresh_time_limit
     Time.now + 24.hours
   end
+
   private
+
   def generate_auth_token
     self.authentication_token = loop do
       random_token = SecureRandom.urlsafe_base64(nil, false)
@@ -78,4 +84,5 @@ class UserToken < ActiveRecord::Base
   def set_refresh_expiry
     self.refresh_expiry = self.refresh_time_limit
   end
+
 end
