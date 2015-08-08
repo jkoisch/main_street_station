@@ -11,10 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140322000000) do
+ActiveRecord::Schema.define(version: 20150807000005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "access_permissions", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "caregivers", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "circles", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "clients", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "communities", force: true do |t|
     t.text     "name"
@@ -35,6 +55,11 @@ ActiveRecord::Schema.define(version: 20140322000000) do
     t.text     "description"
     t.integer  "community_id"
     t.string   "role_kind"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "information_categories", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -80,6 +105,11 @@ ActiveRecord::Schema.define(version: 20140322000000) do
     t.string   "zip_postal_code"
     t.string   "work_phone"
     t.string   "email_primary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
