@@ -59,30 +59,44 @@ ActiveRecord::Schema.define(version: 20150807000005) do
     t.datetime "updated_at"
   end
 
+  create_table "identity_authorities", force: true do |t|
+    t.integer  "user_id",                             null: false
+    t.string   "provider",                            null: false
+    t.string   "uid",                                 null: false
+    t.string   "token_secret"
+    t.string   "password",               default: ""
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "identity_authorities", ["user_id"], name: "index_identity_authorities_on_user_id", using: :btree
+
   create_table "information_categories", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "registration_contracts", force: true do |t|
-    t.integer  "community_id"
+    t.integer  "communities_id"
     t.string   "status"
+    t.string   "constraints"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "constraint"
     t.integer  "registration_whitelabel_id"
   end
 
   create_table "registration_parties", force: true do |t|
     t.integer  "community_role_id"
     t.text     "signature"
+    t.string   "address"
+    t.string   "invitation_status"
     t.integer  "user_id"
+    t.boolean  "owner"
+    t.integer  "registration_contracts_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "owner"
-    t.string   "address"
-    t.integer  "contract_id"
-    t.string   "invitation_status"
   end
 
   create_table "registration_whitelabel_groups", force: true do |t|
@@ -137,27 +151,19 @@ ActiveRecord::Schema.define(version: 20150807000005) do
   add_index "user_tokens", ["refresh_token"], name: "index_user_tokens_on_refresh_token", unique: true, using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0
+    t.string   "name"
+    t.string   "email",              default: "", null: false
+    t.string   "password",           default: ""
+    t.integer  "sign_in_count",      default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.string   "oauth_token"
-    t.date     "oauth_expires_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "verbs", force: true do |t|
     t.text     "name"

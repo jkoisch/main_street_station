@@ -211,15 +211,11 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
 
   #Removed client_options for PROD?
-  config.omniauth :facebook, ENV['FACEBOOK_CONSUMER_KEY'], ENV['FACEBOOK_CONSUMER_SECRET'] #,
+  config.omniauth :facebook, ENV["FACEBOOK_CONSUMER_KEY"], ENV["FACEBOOK_CONSUMER_SECRET"]
+  config.omniauth :google_oauth2, ENV["GOOGLE_CONSUMER_KEY"], ENV["GOOGLE_CONSUMER_SECRET"], name: 'google'
+
+  #config.omniauth :facebook, ENV['FACEBOOK_CONSUMER_KEY'], ENV['FACEBOOK_CONSUMER_SECRET'] #,
   #               :client_options => {:ssl => {:ca_file => '/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt'}}
-
-  #config.omniauth :facebook, 'FACEBOOK_CONSUMER_KEY', 'FACEBOOK_CONSUMER_SECRET'
-
-                  #:strategy_class => OmniAuth::Strategies::Facebook,
-
-
-  #ENV['FACEBOOK_CONSUMER_KEY'], ['FACEBOOK_CONSUMER_SECRET']
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
@@ -244,5 +240,5 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = "/my_engine/users/auth"
 
-  config.secret_key = 'd1674c821ba3e113ab44f22d8881eedad63a3fb223470142f7ce6e3c2b6358110818fbfa233ffce32b69bab6fb740f8c314bd2487c431ae7cbe4c6929b265498'
+  config.secret_key = ENV['DEVISE_SECRET_KEY']
 end
