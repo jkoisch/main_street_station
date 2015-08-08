@@ -7,15 +7,14 @@ gem 'rails', '4.1.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 #gem 'sqlite3'
-gem 'pg'
 #gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
 #gem 'formtastic'
+gem 'pg'
 gem 'sinatra'
 gem 'twitter-bootstrap-rails'
 
 gem 'sass-rails'
 gem 'coffee-rails', '~> 4.0.0'
-
 gem 'uglifier', '>= 1.0.3'
 
 gem 'simplecov', require: false, group: :test
@@ -37,11 +36,11 @@ group :test, :development do
   gem 'mocha', require: 'mocha/api'
   gem 'thin'
   #gem 'taps'
+  gem 'dotenv-rails'
 end
 
 gem 'jquery-rails'
 gem 'foreman'
-#gem 'rabl'
 gem 'json'
 gem 'nifty-generators', group: :development
 gem 'quiet_assets', group: :development
@@ -51,6 +50,7 @@ gem 'uuid'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 gem 'oauth2'
 gem 'omniauth-oauth2'
 
@@ -59,18 +59,7 @@ gem 'omniauth-oauth2'
 
 # To use Jbuilder templates for JSON
 gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
-
 gem 'highline'
-
 gem 'rails_12factor', group: :production
 gem 'turbolinks'
 gem 'bootstrap-sass'

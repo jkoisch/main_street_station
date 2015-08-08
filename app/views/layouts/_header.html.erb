@@ -12,6 +12,7 @@
             <li><%= link_to 'Register', new_user_registration_path(:protocol => 'https') %></li>
             <li><%= link_to 'Log In', new_user_session_url(:protocol => 'http') %></li>
             <li><%= link_to 'Facebook Log In', user_omniauth_authorize_path(:facebook) %></li>
+            <li><%= link_to 'Google Log In', user_omniauth_authorize_path(:google) %></li>
           <% end %>
         </ul>
       </nav>
