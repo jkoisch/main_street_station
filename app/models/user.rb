@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
 
   def self.create_from_form(form)
-
+    User.new(email: form.email)
   end
 
   def self.from_omniauth(auth, signed_in_resource = nil)
@@ -56,6 +56,9 @@ class User < ActiveRecord::Base
     find_by(email: auth.info.email)
   end
 
+  def self.get_user_by_email(email)
+    find_by(email: email)
+  end
 
   def self.new_with_session(params, session)
     if session['devise.user_attributes']

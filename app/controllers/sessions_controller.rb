@@ -17,6 +17,8 @@ class SessionsController < ApplicationController
 
   end
 
+
+
   private
   def set_user
     @user = User.find_by(email: params[:user_name])

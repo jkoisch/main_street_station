@@ -58,6 +58,7 @@ class UserToken < ActiveRecord::Base
   def generate_auth_token
     self.authentication_token = loop do
       random_token = SecureRandom.urlsafe_base64(nil, false)
+      Rails.logger.debug("++++random token: #{random_token}")
       break random_token unless UserToken.exists?(authentication_token: random_token)
     end
   end
