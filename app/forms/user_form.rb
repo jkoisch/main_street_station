@@ -36,4 +36,12 @@ class UserForm
     @user.save
   end
 
+  def errors
+    user.identity_authorities.each do |auth|
+      auth.errors.each do |attr, msg|
+        user.errors.add(attr, msg)
+      end
+    end
+    user.errors
+  end
 end

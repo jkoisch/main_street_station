@@ -33,6 +33,9 @@ guard :rspec, cmd: 'spring rspec', all_after_pass: true do
   watch(%r{^spec/serializers/support/([^-]+)-(.+)\.json$}) do |m|
     "spec/serializers/#{m[1]}_serializer_spec.rb"
   end
+  watch(%r{^spec/factories/([^-]+)_factory\.rb$}) do |m|
+    "spec/models/#{m[1]}_spec.rb"
+  end
   watch(%r{^spec/support/(.+)\.rb$})                  { 'spec' }
   watch(%r{^spec/support-files/(.+)\.rb$})            { 'spec' }
   watch(%r{^spec/support-files/ehmbr/([^-]+)(-[0-9]+)?\.json$}) do |m|
