@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe SessionService do
   let(:valid_pw) { '123temp' }
-  let(:user) {User.create!(email: 'temp@youcentric.com', password: valid_pw, password_confirmation: valid_pw)}
+  let(:user) { FactoryGirl.create(:local_user, email: 'temp@youcentric.com', local_pw: valid_pw) }
 
   context 'authentication' do
     it 'should authenticate a valid user' do
