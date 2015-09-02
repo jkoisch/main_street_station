@@ -1,96 +1,85 @@
 {
-    "id": 1,
-    "resource_type": "Observation",
-    "text": {
-        "status": "generated",
-        "div": "<div>Sept 17, 2012: Systolic Blood pressure 107 mmHg (normal)</div>"
+  "id": 1,
+  "resource_type": "Observation",
+  "text": {
+    "status": "generated",
+    "div": "<div>Sept 17, 2012: Systolic Blood pressure 107 mmHg (normal)</div>"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "version": null,
+        "code": "8480-6",
+        "display": "Systolic blood pressure"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": null,
+        "code": "271649006",
+        "display": "Systolic blood pressure"
+      },
+      {
+        "system": "http://acme.org/devices/clinical-codes",
+        "version": null,
+        "code": "bp-s",
+        "display": "Systolic Blood pressure"
+      }
+    ],
+    "text": null
+  },
+  "value": {
+    "_type": "Ratio",
+    "numerator": {
+      "value": 1
     },
-    "code": {
-        "coding": [
-            {
-                "system": "http://loinc.org",
-                "version": null,
-                "code": "8480-6",
-                "display": "Systolic blood pressure"
-            },
-            {
-                "system": "http://snomed.info/sct",
-                "version": null,
-                "code": "271649006",
-                "display": "Systolic blood pressure"
-            },
-            {
-                "system": "http://acme.org/devices/clinical-codes",
-                "version": null,
-                "code": "bp-s",
-                "display": "Systolic Blood pressure"
-            }
-        ],
-        "text": null
-    },
-    "value": {
-        "_type":"CodeableConcept",
-        "coding": [
-            {
-                "system": null,
-                "version": null,
-                "code": null,
-                "display": null
-            }
-        ],
-        "text": null
-    },
-    "value": {
-        "_type": "Ratio",
-        "numerator": {
-            "value": 1
-        },
-        "denominator": {
-            "value": 256
-        }
-    },
-    "interpretation": {
-        "coding": [
-            {
-                "system": "http://hl7.org/fhir/v2/0078",
-                "version":null,
-                "code": "N",
-                "display": "Normal (applies to non-numeric results)"
-            }
-        ],
-        "text": null
-    },
-    "comments": null,
-    "applies": {
-        "_type": "SimpleDate",
-        "value": "2012-09-17"
-    },
-    "issued": null,
-    "status": "final",
-    "reliability": "ok",
-    "body_site": {
-        "_type": "CodeableConcept",
-        "coding": [],
-        "text": null
-    },
-    "method": {
-        "coding": [],
-        "text": null
-    },
-    "identifier": [{
-        "_id": 23,
-        "use": null,
-        "type": {},
-        "system": "urn:ietf:rfc:3986",
-        "value": "187e0c12-8dd2-67e2-99b2-bf273c878281",
-        "period": null,
-        "assigner": null
-    }],
-    "subject": null,
-    "specimen": null,
-    "performer": [],
-    "device": null,
-    "encounter": null,
-    "reference_range": [],
-    "related": []
+    "denominator": {
+      "value": 256
+    }
+  },
+  "interpretation": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/v2/0078",
+        "version":null,
+        "code": "N",
+        "display": "Normal (applies to non-numeric results)"
+      }
+    ],
+    "text": null
+  },
+  "comments": null,
+  "applies": {
+    "_id": 1,
+    "_type": "SimpleDate",
+    "value": "2012-09-17"
+  },
+  "issued": null,
+  "status": "final",
+  "reliability": "ok",
+  "body_site": {
+    "_type": "CodeableConcept",
+    "coding": [],
+    "text": null
+  },
+  "method": {
+    "coding": [],
+    "text": null
+  },
+  "identifier": [{
+    "_id": 23,
+    "use": null,
+    "type": {},
+    "system": "urn:ietf:rfc:3986",
+    "value": "187e0c12-8dd2-67e2-99b2-bf273c878281",
+    "period": null,
+    "assigner": null
+  }],
+  "subject": null,
+  "specimen": null,
+  "performer": [],
+  "device": null,
+  "encounter": null,
+  "reference_range": [],
+  "related": []
 }
