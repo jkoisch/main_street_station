@@ -45,7 +45,12 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    request.env['omniauth.origin'] || stored_location_for(resource) || root_path
+    sign_in_url = api_session_url
+    if request.referer == sign_in_url
+      super
+    else
+      root_path
+    end
   end
 
   #def after_sign_in_path_for(resource)

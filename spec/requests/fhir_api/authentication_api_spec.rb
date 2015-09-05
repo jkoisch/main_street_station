@@ -11,16 +11,17 @@ describe 'Authentication Request FHIR API', type: :request do
 
   describe '- user verification' do
     describe ' - internal' do
-      let(:user) { User.create!(email: Faker::Internet.email, password: '123abc') }
+      let(:valid_pw) { '123test' }
+      let(:user) { FactoryGirl.create(:local_user, local_pw: valid_pw) }
 
       it 'should allow a user to log in' do
-        post '/api_session', {user_name: user.email, password: '123abc'}
+        post '/api_session', {user_name: user.email, password: valid_pw}
         expect(response.status).to eq 200
       end
 
       it 'should reject a user that does not exist' do
         bad_email = user.email.tr('aei', '123')
-        post '/login', {user_name: bad_email, password: '123abc'}
+        post '/login', {user_name: bad_email, password: valid_pw}
         expect(response.status).to eq 401
       end
 
@@ -30,13 +31,13 @@ describe 'Authentication Request FHIR API', type: :request do
       end
 
       it 'should return the authentication and refresh tokens when successful' do
-        post '/api_session', {user_name: user.email, password: '123abc'}
+        post '/api_session', {user_name: user.email, password: valid_pw}
         expect(json).to include('authentication_token')
         expect(json).to include('refresh_token')
       end
 
       it 'should return a valid authentication token that can be used' do
-        post '/api_session', {user_name: user.email, password: '123abc'}
+        post '/api_session', {user_name: user.email, password: valid_pw}
         token = json['authentication_token']
         get '/fhir/Observation', nil,
             'HTTP_AUTHORIZATION' => ActionController::HttpAuthentication::Token.encode_credentials(token)
@@ -50,7 +51,8 @@ describe 'Authentication Request FHIR API', type: :request do
   end
 
   describe '- token validation' do
-    let(:user) { User.create!(email: Faker::Internet.email, password: '123abc') }
+    let(:valid_pw) { '123test' }
+    let(:user) { FactoryGirl.create(:local_user, local_pw: valid_pw) }
 
     it 'should fail with an invalid token' do
       get '/fhir/Observation', nil,

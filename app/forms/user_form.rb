@@ -10,7 +10,7 @@ class UserForm
            :current_sign_in_at, :current_sign_in_at=, :last_sign_in_at, :last_sign_in_at=,
            :current_sign_in_ip, :current_sign_in_ip=, :created_at, :created_at=,
            :updated_at, :updated_at, :identity_authorities, :identity_authorities=,
-           :active_for_authentication?, :inactive_message,
+           :active_for_authentication?, :inactive_message, :authenticatable_salt,
            to: :user, prefix: false, allow_nil: false
   #delegate :user_id, :user_id=, :authentication_token, :authentication_token=, :refresh_token,
   #         :refresh_token=, :authentication_expiry, :authentication_expiry=, :refresh_expiry,
@@ -22,7 +22,7 @@ class UserForm
   def initialize(attrs={})
     @user = User.new()
     @authority = LocalAuthority.new(provider: "youcentric", uid: UUID.generate())
-    
+
     attrs.each do |name, value|
       send("#{name}=", value)
     end

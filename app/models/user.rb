@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   devise :registerable, :omniauthable, :recoverable, :trackable,
-         :rememberable, :omniauth_providers => [:facebook, :google] #:database_authenticatable,
+         :rememberable, :omniauth_providers => [:facebook, :google]
 
   has_many :user_tokens
   has_many :identity_authorities
@@ -41,14 +41,12 @@ class User < ActiveRecord::Base
   end
 
   def self.find_user_by_oauth(identityAuth)
-    Rails.logger.debug("###oauth_user_id: #{identityAuth.user_id}")
     find_by(id: identityAuth.user_id)
   end
 
   def self.create_user_by_oauth(auth)
     v = User.new(email: auth.info.email)
     v.save!
-    Rails.logger.debug("###user2: #{v}")
     v
   end
 
@@ -63,8 +61,6 @@ class User < ActiveRecord::Base
   def self.new_with_session(params, session)
     if session['devise.user_attributes']
       new(session['devise.user_attributes'], without_protection: true) do |user|
-        Rails.logger.debug("RIGHT HERE NOW")
-
         user.attributes = params
         user.valid?
       end
@@ -93,7 +89,6 @@ class User < ActiveRecord::Base
       Rails.logger.debug("USER:")
       Rails.logger.debug("#{@user}")
 
-      #Rails.logger.debug("#{params["authenticity_token"]}")
       update_attributes(params, *options)
     else
       super
