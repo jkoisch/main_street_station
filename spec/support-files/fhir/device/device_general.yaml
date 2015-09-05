@@ -26,6 +26,6 @@
     external_reference: Patient/14
     display: "14"
   contact:
-    - !ruby/object:Fhir::Types::Contact
+    - !ruby/object:Fhir::Types::ContactPoint
       system: phone
       value: ext 4352

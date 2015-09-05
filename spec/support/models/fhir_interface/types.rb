@@ -20,8 +20,8 @@ module FhirInterface
       attr_accessor :system,:version,:code,:display,:primary,:valueSet
     end
 
-    class Contact < Element
-      attr_accessor :system,:value,:use,:period
+    class ContactPoint < Element
+      attr_accessor :system,:value,:use, :rank, :period
     end
 
     class HumanName < Element

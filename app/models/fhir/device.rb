@@ -14,7 +14,7 @@ module Fhir
     fhir_attribute :owner, type: Types::ResourceReference #Organization
     fhir_attribute :location, type: Types::ResourceReference #Location
     fhir_attribute :patient, type: Types::ResourceReference #Patient
-    fhir_attribute :contact, list: Types::Contact
+    fhir_attribute :contact, list: Types::ContactPoint
     fhir_attribute :url
   end
 end

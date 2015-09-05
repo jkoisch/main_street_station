@@ -5,7 +5,7 @@ module Fhir
     fhir_attribute :id
     fhir_attribute :code, type: Types::CodeableConcept
     fhir_attribute :value, type_list: [Types::Quantity, Types::CodeableConcept,
-                                       Types::SimpleString, Types::Range, Types:: Ratio,
+                                       Types::SimpleString, Types::Range, Types::Ratio,
                                       Types::SampledData, Types::Attachment,
                                        Types::SimpleTime, Types::SimpleDatetime,
                                       Types::Period]

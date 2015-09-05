@@ -9,7 +9,7 @@ json.name resource.name do |name|
 end unless resource.name.nil?
 
 json.telecom resource.telecom do |contact|
-  json.partial! 'fhir/base/contact', contact: contact
+  json.partial! 'fhir/base/contact_point', contact_point: contact
 end unless resource.telecom.nil?
 
 json.gender resource.gender unless resource.gender.nil?

@@ -30,7 +30,7 @@ json.patient do
 end unless resource.patient.nil?
 
 json.contact resource.contact do |contact|
-  json.partial! 'fhir/base/contact', contact: contact
+  json.partial! 'fhir/base/contact_point', contact_point: contact
 end unless resource.contact.nil?
 
 json.url            resource.url unless resource.url.nil?

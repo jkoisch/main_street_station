@@ -6,7 +6,7 @@ module Fhir
     fhir_attribute :description
     fhir_attribute :mode
     fhir_attribute :type, type: Types::CodeableConcept
-    fhir_attribute :telecom, list: Types::Contact
+    fhir_attribute :telecom, list: Types::ContactPoint
     fhir_attribute :address, type: Types::Address
     fhir_attribute :physical_type, type: Types::CodeableConcept
     fhir_attribute :position, type: Fhir::LocationClasses::Position

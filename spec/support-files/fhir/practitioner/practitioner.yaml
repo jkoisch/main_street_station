@@ -21,15 +21,15 @@
       suffix:
         - MD
   telecom:
-    - !ruby/object:Fhir::Types::Contact
+    - !ruby/object:Fhir::Types::ContactPoint
       system: phone
       value: '0205568263'
       use: work
-    - !ruby/object:Fhir::Types::Contact
+    - !ruby/object:Fhir::Types::ContactPoint
       system: email
       value: E.M.vandenbroek@bmc.nl
       use: work
-    - !ruby/object:Fhir::Types::Contact
+    - !ruby/object:Fhir::Types::ContactPoint
       system: fax
       value: '0205664440'
       use: work

@@ -11,18 +11,18 @@
         code: N
         display: Normal (applies to non-numeric results)
   telecom:
-    - !ruby/object:Fhir::Types::Contact
+    - !ruby/object:Fhir::Types::ContactPoint
       system: phone
       value: '2328'
       use: work
-    - !ruby/object:Fhir::Types::Contact
+    - !ruby/object:Fhir::Types::ContactPoint
       system: fax
       value: '2329'
       use: work
-    - !ruby/object:Fhir::Types::Contact
+    - !ruby/object:Fhir::Types::ContactPoint
       system: email
       value: second wing admissions
-    - !ruby/object:Fhir::Types::Contact
+    - !ruby/object:Fhir::Types::ContactPoint
       system: url
       value: http://sampleorg.com/southwing
       use: work

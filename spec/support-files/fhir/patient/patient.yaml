@@ -19,9 +19,9 @@
       given:
         - Jim
   telecom:
-    - !ruby/object:Fhir::Types::Contact
+    - !ruby/object:Fhir::Types::ContactPoint
       use: home
-    - !ruby/object:Fhir::Types::Contact
+    - !ruby/object:Fhir::Types::ContactPoint
       system: phone
       value: (03) 5555 6473
       use: work
@@ -51,7 +51,7 @@
         given:
           - Benedicte
       telecom:
-        - !ruby/object:Fhir::Types::Contact
+        - !ruby/object:Fhir::Types::ContactPoint
           system: phone
           value: +33 (237) 998327
       organization: !ruby/object:Fhir::Types::ResourceReference

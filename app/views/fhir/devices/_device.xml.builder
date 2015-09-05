@@ -17,7 +17,7 @@ xml.location { |xml| xml << render('fhir/base/resource_reference', {resource_ref
 xml.patient { |xml| xml << render('fhir/base/resource_reference', {resource_reference: resource.patient})} unless resource.patient.nil?
 
 resource.contact.each do |contact|
-  xml.contact { |xml| xml << render('fhir/base/contact', {contact: contact})}
+  xml.contact { |xml| xml << render('fhir/base/contact_point', {contact_point: contact})}
 end unless resource.contact.nil?
 
 xml.url({value: resource.url}) unless resource.url.nil?

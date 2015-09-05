@@ -32,7 +32,7 @@ FactoryGirl.define do
     given  ['John']
   end
 
-  factory :fhir_type_contact, class: FhirInterface::Types::Contact do
+  factory :fhir_type_contact_point, class: FhirInterface::Types::ContactPoint do
     skip_create
 
     system 'email'
