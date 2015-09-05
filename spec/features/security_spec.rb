@@ -1,16 +1,16 @@
-require 'spec_helper'
+require 'rails_helper'
 
-RSpec.describe 'security page behavior' do
-
+RSpec.describe 'security page behavior', type: :feature do
 
   context 'sign in, sign out' do
-    let(:user) {User.create!(email: Faker::Internet.email, password: '123abc')}
+    let(:valid_pw)  { '123test' }
+    let(:user)      { FactoryGirl.create(:local_user, local_pw: valid_pw) }
 
     before(:each) do
-      visit '/users/login'
+      visit '/login'
 
       fill_in 'user_email', with: user.email
-      fill_in 'user_password', with: user.password
+      fill_in 'user_password', with: valid_pw
 
       click_button "Sign in"
     end
