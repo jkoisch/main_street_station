@@ -59,7 +59,7 @@ module Fhir
                            given:       Fhir::StringParameter,
                            identifier:  Fhir::TokenParameter,
                            name:        Fhir::StringParameter,
-                           telecom:     Fhir::StringParameter
+                           telecom:     Fhir::TokenParameter
                           }
 
       populate_search_parameters(supported_params, params)
