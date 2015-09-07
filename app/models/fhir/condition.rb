@@ -12,7 +12,7 @@ module Fhir
     fhir_attribute :category, type: Fhir::Types::CodeableConcept
     fhir_attribute :clinical_status
     fhir_attribute :severity, type: Fhir::Types::CodeableConcept
-    fhir_attribute :onset, type_list: [Types::Age, Types::SimpleDate, Types::Period, Types::Range, Types::SimpleString]
+    fhir_attribute :onset, type_list: [Types::Age, Types::SimpleDatetime, Types::Period, Types::Range, Types::SimpleString]
     fhir_attribute :abatement, type_list: [Types::Age, Types::SimpleDate, Types::SimpleBoolean,
                                            Types::Period, Types::Range, Types::SimpleString]
     fhir_attribute :stage, type: Fhir::ConditionClasses::Stage

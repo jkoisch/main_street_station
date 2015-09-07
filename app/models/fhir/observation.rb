@@ -12,7 +12,7 @@ module Fhir
     fhir_attribute :data_absent_reason, type: Types::CodeableConcept
     fhir_attribute :interpretation, type: Types::CodeableConcept
     fhir_attribute :comments
-    fhir_attribute :applies, type_list: [Types::Period, Types::SimpleDate]
+    fhir_attribute :applies, type_list: [Types::Period, Types::SimpleDatetime]
     fhir_attribute :issued
     fhir_attribute :status
     fhir_attribute :reliability

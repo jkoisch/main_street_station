@@ -54,7 +54,7 @@
     "comments": null,
     "applies":{
         "_id": 1,
-        "_type": "SimpleDate",
+        "_type": "SimpleDatetime",
         "value": "2012-09-17"
     },
     "issued": null,

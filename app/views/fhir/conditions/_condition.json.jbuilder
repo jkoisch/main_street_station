@@ -32,7 +32,7 @@ json.severity do
   json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.severity
 end unless resource.severity.nil?
 
-json.onsetDate resource.onset_date unless resource.onset_date.nil?
+json.onsetDatetime resource.onset_datetime unless resource.onset_datetime.nil?
 json.onsetAge resource.onset_age unless resource.onset_age.nil?
 json.abatementDate resource.abatement_date unless resource.abatement_date.nil?
 json.abatementAge   resource.abatement_age unless resource.abatement_age.nil?

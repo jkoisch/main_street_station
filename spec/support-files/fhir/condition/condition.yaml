@@ -35,7 +35,7 @@
         system: http://snomed.info/sct
         code: '24484000'
         display: Severe
-  onset_date: 2012-05-24
+  onset_datetime: 2012-05-24
   stage: !ruby/object:Fhir::ConditionClasses::Stage
     summary: !ruby/object:Fhir::Types::CodeableConcept
       coding:

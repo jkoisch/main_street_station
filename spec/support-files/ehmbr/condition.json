@@ -69,7 +69,7 @@
     },
     "onset": {
         "_id": 1,
-        "_type": "SimpleDate",
+        "_type": "SimpleDatetime",
         "value": "2012-05-24"
     },
     "abatement": null,
