@@ -4,6 +4,8 @@ json.identifier resource.identifier do |id|
   json.partial! 'fhir/base/identifier', identifier: id
 end unless resource.identifier.nil?
 
+json.active resource.active unless resource.active.nil?
+
 json.name do
   json.partial! 'fhir/base/human_name', human_name: resource.name
 end unless resource.name.nil?

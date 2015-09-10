@@ -12,6 +12,7 @@
       value: 129IDH4OP733
       period: !ruby/object:Fhir::Types::Period
         start: '2001-05-06'
+  active: true
   name: !ruby/object:Fhir::Types::HumanName
       use: official
       family:

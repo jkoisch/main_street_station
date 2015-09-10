@@ -28,6 +28,7 @@
             "assigner": null
         }
     ],
+    "active": true,
     "name": {
         "use": "official",
         "text": null,
