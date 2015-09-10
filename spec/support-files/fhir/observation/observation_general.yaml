@@ -15,7 +15,7 @@
         display: "Systolic Blood pressure"
   value_quantity: !ruby/object:Fhir::Types::Quantity
     value: "107"
-    units: "mm[Hg]"
+    unit: "mm[Hg]"
   interpretation: !ruby/object:Fhir::Types::CodeableConcept
     coding:
       - !ruby/object:Fhir::Types::Coding

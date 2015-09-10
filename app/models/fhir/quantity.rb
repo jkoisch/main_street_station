@@ -1,6 +1,6 @@
 module Fhir
   class Quantity
-    attr_accessor :value, :comparator, :units, :system, :code
+    attr_accessor :value, :comparator, :unit, :system, :code
 
     # noinspection RubyUnusedLocalVariable
     def initialize(attributes = {})
@@ -11,7 +11,7 @@ module Fhir
 
       quantity.value = dtl[:value] unless dtl[:value].nil?
       quantity.comparator = dtl[:comparator] unless dtl[:comparator].nil?
-      quantity.units = dtl[:units] unless dtl[:units].nil?
+      quantity.unit = dtl[:unit] unless dtl[:unit].nil?
       quantity.system = dtl[:system] unless dtl[:system].nil?
       quantity.code = dtl[:code] unless dtl[:code].nil?
 

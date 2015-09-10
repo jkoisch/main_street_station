@@ -15,7 +15,8 @@
                         "system":"http://snomed.info/sct",
                         "version": null,
                         "code":"39065001",
-                        "display":"Burn of ear"
+                        "display":"Burn of ear",
+                        "user_selected": null
                     }
                 ],
                 "text": "MRN"
@@ -57,6 +58,7 @@
             "system": null,
             "value": null,
             "use": "home",
+            "rank": null,
             "period": null
         },
         {
@@ -64,6 +66,7 @@
             "system": "phone",
             "value": "(03) 5555 6473",
             "use": "work",
+            "rank": null,
             "period": null
         }
     ],
@@ -77,8 +80,10 @@
         {
             "_id": 1,
             "text": null,
+            "type": null,
             "use": "home",
             "line": ["534 Erewhon St"],
+            "district": null,
             "city": "PleasantVille",
             "state": "Vic",
             "postal_code": "3999",

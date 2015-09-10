@@ -7,7 +7,7 @@
         display: Glucose [Mass/volume] in Blood
   value_quantity: !ruby/object:Fhir::Types::Quantity
     value: "6.3"
-    units: mmol/l
+    unit: mmol/l
     system: http://unitsofmeasure.org
     code: mmol/l
   interpretation: !ruby/object:Fhir::Types::CodeableConcept
@@ -43,11 +43,11 @@
     - !ruby/object:Fhir::ObservationClasses::ReferenceRange
       low: !ruby/object:Fhir::Types::Quantity
         value: "3.1"
-        units: mmol/l
+        unit: mmol/l
         system: http://unitsofmeasure.org
         code: mmol/l
       high: !ruby/object:Fhir::Types::Quantity
         value: "6.2"
-        units: mmol/l
+        unit: mmol/l
         system: http://unitsofmeasure.org
         code: mmol/l

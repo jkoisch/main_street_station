@@ -23,7 +23,8 @@
                 "system": "urn:oid:2.16.840.1.113883.2.4.15.1060",
                 "version": null,
                 "code": "V6",
-                "display": "University Medical Hospital"
+                "display": "University Medical Hospital",
+                "user_selected": null
             }
         ],
         "text": null
@@ -34,6 +35,7 @@
             "system": "phone",
             "value": "(+1) 734-677-7777",
             "use": null,
+            "rank": null,
             "period": null
         },
         {
@@ -41,6 +43,7 @@
             "system": "fax",
             "value": "(+1) 734-677-6622",
             "use": null,
+            "rank": null,
             "period": null
         },
         {
@@ -48,6 +51,7 @@
             "system": "email",
             "value": "hq@HL7.org",
             "use": null,
+            "rank": null,
             "period": null
         }
     ],
@@ -55,11 +59,13 @@
         {
             "_id": 1,
             "use": null,
+            "type": null,
             "text": null,
             "line": [
                 "3300 Washtenaw Avenue, Suite 227"
             ],
             "city": "Ann Arbor",
+            "district": null,
             "state": "MI",
             "postal_code": "48104",
             "country": "USA",
@@ -76,7 +82,8 @@
                         "system": "urn:oid:2.16.840.1.113883.2.4.15.1060",
                         "version": null,
                         "code": "V6",
-                        "display": "University Medical Hospital"
+                        "display": "University Medical Hospital",
+                        "user_selected": null
                     }
                 ],
                 "text": null
@@ -96,6 +103,7 @@
                     "system": null,
                     "value": "you@me.com",
                     "use": "email",
+                    "rank": null,
                     "period": null
                 }
             ],

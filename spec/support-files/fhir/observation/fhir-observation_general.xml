@@ -21,7 +21,7 @@
   </code>
   <value_quantity>
     <value value="107"/>
-    <units value="mm[Hg]"/>
+    <unit value="mm[Hg]"/>
   </value_quantity>
   <interpretation>
     <coding>

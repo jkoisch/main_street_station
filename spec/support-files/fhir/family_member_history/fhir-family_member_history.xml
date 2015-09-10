@@ -32,7 +32,7 @@
     </outcome>
     <onsetAge>
       <value value="56"/>
-      <units value="a"/>
+      <unit value="a"/>
       <system value="http://unitsofmeasure.org"/>
     </onsetAge>
   </condition>

@@ -8,7 +8,7 @@
   </code>
   <valueQuantity>
     <value value="6.3"/>
-    <units value="mmol/l"/>
+    <unit value="mmol/l"/>
     <system value="http://unitsofmeasure.org"/>
     <code value="mmol/l"/>
   </valueQuantity>
@@ -48,13 +48,13 @@
   <referenceRange>
     <low>
       <value value="3.1"/>
-      <units value="mmol/l"/>
+      <unit value="mmol/l"/>
       <system value="http://unitsofmeasure.org"/>
       <code value="mmol/l"/>
     </low>
     <high>
       <value value="6.2"/>
-      <units value="mmol/l"/>
+      <unit value="mmol/l"/>
       <system value="http://unitsofmeasure.org"/>
       <code value="mmol/l"/>
     </high>

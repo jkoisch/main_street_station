@@ -5,7 +5,7 @@ module FhirInterface
     end
 
     class Address < Element
-      attr_accessor :use,:text,:line,:city,:state,:postalCode,:country,:period
+      attr_accessor :use,:type,:text,:line,:city,:district,:state,:postalCode,:country,:period
     end
 
     class Attachment < Element
@@ -17,11 +17,11 @@ module FhirInterface
     end
 
     class Coding < Element
-      attr_accessor :system,:version,:code,:display,:primary,:valueSet
+      attr_accessor :system,:version,:code,:display,:userSelected
     end
 
     class ContactPoint < Element
-      attr_accessor :system,:value,:use, :rank, :period
+      attr_accessor :system,:value,:use,:rank,:period
     end
 
     class HumanName < Element
@@ -37,7 +37,7 @@ module FhirInterface
     end
 
     class Quantity < Element
-      attr_accessor :value,:comparator,:units,:system,:code
+      attr_accessor :value,:comparator,:unit,:system,:code
     end
 
     class Range < Element

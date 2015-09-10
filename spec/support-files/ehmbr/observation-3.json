@@ -11,19 +11,22 @@
                 "system": "http://loinc.org",
                 "version": null,
                 "code": "8480-6",
-                "display": "Systolic blood pressure"
+                "display": "Systolic blood pressure",
+                "user_selected": null
             },
             {
                 "system": "http://snomed.info/sct",
                 "version": null,
                 "code": "271649006",
-                "display": "Systolic blood pressure"
+                "display": "Systolic blood pressure",
+                "user_selected": null
             },
             {
                 "system": "http://acme.org/devices/clinical-codes",
                 "version": null,
                 "code": "bp-s",
-                "display": "Systolic Blood pressure"
+                "display": "Systolic Blood pressure",
+                "user_selected": null
             }
         ],
         "text": null
@@ -39,7 +42,8 @@
                 "system": "http://hl7.org/fhir/v2/0078",
                 "version":null,
                 "code": "N",
-                "display": "Normal (applies to non-numeric results)"
+                "display": "Normal (applies to non-numeric results)",
+                "user_selected": null
             }
         ],
         "text": null

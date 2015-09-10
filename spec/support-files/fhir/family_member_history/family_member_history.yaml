@@ -26,5 +26,5 @@
             display: Inactive
       onset_age: !ruby/object:Fhir::Types::Quantity
         value: "56"
-        units: "a"
+        unit: "a"
         system: http://unitsofmeasure.org

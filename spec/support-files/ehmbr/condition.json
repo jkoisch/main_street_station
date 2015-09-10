@@ -33,7 +33,8 @@
                 "system":"http://snomed.info/sct",
                 "version": null,
                 "code":"39065001",
-                "display":"Burn of ear"
+                "display":"Burn of ear",
+                "user_selected": null
             }
         ],
         "text":"Burnt Ear"
@@ -44,13 +45,15 @@
                 "system":"http://hl7.org/fhir/condition-category",
                 "version": null,
                 "code":"diagnosis",
-                "display":"Diagnosis"
+                "display":"Diagnosis",
+                "user_selected": null
             },
             {
                 "system":"http://snomed.info/sct",
                 "version": null,
                 "code":"439401001",
-                "display":"Diagnosis"
+                "display":"Diagnosis",
+                "user_selected": null
             }
         ],
         "text": null
@@ -62,7 +65,8 @@
                 "system":"http://snomed.info/sct",
                 "version": null,
                 "code":"24484000",
-                "display":"Severe"
+                "display":"Severe",
+                "user_selected": null
             }
         ],
         "text": null
@@ -124,7 +128,8 @@
                         "system":"http://snomed.info/sct",
                         "version": null,
                         "code":"49521004",
-                        "display":"Left external ear structure"
+                        "display":"Left external ear structure",
+                        "user_selected": null
                     }
                 ],
                 "text":"Left Ear"

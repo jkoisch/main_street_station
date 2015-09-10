@@ -50,6 +50,7 @@
             "system": "phone",
             "value": "0205568263",
             "use": "work",
+            "rank": null,
             "period": null
         },
         {
@@ -57,6 +58,7 @@
             "system": "email",
             "value": "E.M.vandenbroek@bmc.nl",
             "use": "work",
+            "rank": null,
             "period": null
         },
         {
@@ -64,16 +66,19 @@
             "system": "fax",
             "value": "0205664440",
             "use": "work",
+            "rank": null,
             "period": null
         }
     ],
     "address": [{
         "use": "work",
+        "type": null,
         "text": null,
         "line": [
             "Galapagosweg 91"
         ],
         "city": "Den Burg",
+        "district": null,
         "state": null,
         "postal_code": "9105 PZ",
         "country": "NLD",
@@ -94,7 +99,8 @@
                             "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
                             "code": "01.018",
                             "version": null,
-                            "display": "Ear-, Nose and Throat"
+                            "display": "Ear-, Nose and Throat",
+                            "user_selected": null
                         }
                     ],
                     "text": "specialisation"
@@ -106,7 +112,8 @@
                             "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
                             "code": "01.018",
                             "version": null,
-                            "display": "Ear-, Nose and Throat"
+                            "display": "Ear-, Nose and Throat",
+                            "user_selected": null
                         }
                     ],
                     "text": "specialisation"
@@ -130,7 +137,8 @@
                         "system": "http://snomed.info/sct",
                         "code": "41672002",
                         "version": null,
-                        "display": "Pulmonologist"
+                        "display": "Pulmonologist",
+                        "user_selected": null
                     }
                 ],
                 "text": "Care role"
@@ -146,7 +154,8 @@
                     "system": "urn:oid:2.16.840.1.113883.6.121",
                     "code": "nl",
                     "version": null,
-                    "display": "Dutch"
+                    "display": "Dutch",
+                    "user_selected": null
                 }
             ],
             "text": "Care role"
