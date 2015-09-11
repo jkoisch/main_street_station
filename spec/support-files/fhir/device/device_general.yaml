@@ -13,6 +13,12 @@
         code: "86184003"
         display: Electrocardiographic monitor and recorder
     text: ECG
+  note:
+    - !ruby/object:Fhir::Types::Annotation
+      author_resource_reference: !ruby/object:Fhir::Types::ResourceReference
+        external_reference: "Practitioner/xcda-author"
+      time: "2015-06-28T14:03:32+10:00"
+      text: "QA Checked"
   manufacturer: Acme Devices, Inc
   model: AB 45-J
   lot_number: "43453424"

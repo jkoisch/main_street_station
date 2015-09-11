@@ -1,4 +1,4 @@
-json.authorReference do
+json.authorResourceReference do
   json.partial! 'fhir/base/resource_reference', resource_reference: annotation.author_resource_reference
 end unless annotation.author_resource_reference.nil?
 

@@ -1,6 +1,6 @@
 module Fhir
   module Types
-    class Annotation < KeyedBaseType
+    class Annotation < BaseType
       fhir_attribute :author, type_list: [Types::SimpleString, Types::ResourceReference]
       fhir_attribute :time
       fhir_attribute :text

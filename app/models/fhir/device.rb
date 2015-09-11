@@ -3,6 +3,7 @@ module Fhir
     fhir_attribute :id
     fhir_attribute :identifier, list: Types::Identifier
     fhir_attribute :type, type: Types::CodeableConcept
+    fhir_attribute :note, list: Types::Annotation
     fhir_attribute :status
     fhir_attribute :manufacturer
     fhir_attribute :model

@@ -8,6 +8,10 @@ module FhirInterface
       attr_accessor :use,:type,:text,:line,:city,:district,:state,:postalCode,:country,:period
     end
 
+    class Annotation < Element
+      attr_accessor :authorResourceReference,:authorString,:time,:text
+    end
+
     class Attachment < Element
       attr_accessor :contentType,:language,:data,:url,:size,:hash,:title,:creation
     end

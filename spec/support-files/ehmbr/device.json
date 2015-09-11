@@ -25,6 +25,16 @@
             "assigner": null
         }
     ],
+    "note": [
+        {
+            "author": {
+                "_type": "ResourceReference",
+                "external_reference": "Practitioner/xcda-author"
+            },
+            "time": "2015-06-28T14:03:32+10:00",
+            "text": "QA Checked"
+        }
+    ],
     "type": {
         "coding": [
             {
