@@ -5,6 +5,20 @@
         "status": "generated",
         "div": "<div>Sept 17, 2012: Systolic Blood pressure 107 mmHg (normal)</div>"
     },
+    "identifier": [{
+        "_id": 45,
+        "use": null,
+        "type": {},
+        "system": "urn:ietf:rfc:3986",
+        "value": "187e0c12-8dd2-67e2-99b2-bf273c878281",
+        "period": null,
+        "assigner": null
+    }],
+    "status": "final",
+    "category": {
+        "coding": [],
+        "text": null
+    },
     "code": {
         "coding": [
             {
@@ -31,6 +45,15 @@
         ],
         "text": null
     },
+    "subject": null,
+    "encounter": null,
+    "effective": {
+        "_id": 1,
+        "_type": "SimpleDatetime",
+        "value": "2012-09-17"
+    },
+    "issued": null,
+    "performer": [],
     "value": {
         "_type": "SimpleString",
         "value": "some string"
@@ -48,16 +71,7 @@
         "text": null
     },
     "comments": null,
-    "applies": {
-        "_id": 1,
-        "_type": "SimpleDatetime",
-        "value": "2012-09-17"
-    },
-    "issued": null,
-    "status": "final",
-    "reliability": "ok",
     "body_site": {
-        "_type": "CodeableConcept",
         "coding": [],
         "text": null
     },
@@ -65,20 +79,9 @@
         "coding": [],
         "text": null
     },
-    "identifier": [{
-        "_id": 45,
-        "use": null,
-        "type": {},
-        "system": "urn:ietf:rfc:3986",
-        "value": "187e0c12-8dd2-67e2-99b2-bf273c878281",
-        "period": null,
-        "assigner": null
-    }],
-    "subject": null,
     "specimen": null,
-    "performer": [],
     "device": null,
-    "encounter": null,
     "reference_range": [],
-    "related": []
+    "related": [],
+    "component": []
 }

@@ -1,4 +1,9 @@
 --- !ruby/object:Fhir::Observation
+  identifier:
+    - !ruby/object:Fhir::Types::Identifier
+      system: "urn:ietf:rfc:3986"
+      value: "187e0c12-8dd2-67e2-99b2-bf273c878281"
+  status: "final"
   code: !ruby/object:Fhir::Types::CodeableConcept
     coding:
       - !ruby/object:Fhir::Types::Coding
@@ -13,6 +18,14 @@
         system: "http://acme.org/devices/clinical-codes"
         code: "bp-s"
         display: "Systolic Blood pressure"
+  subject: !ruby/object:Fhir::Types::ResourceReference
+    external_reference: Patient/f001
+    display: P. van de Heuvel
+  effective_date: "2012-09-17"
+  performer:
+    - !ruby/object:Fhir::Types::ResourceReference
+      external_reference: Practitioner/f005
+      display: A. Langeveld
   value_quantity: !ruby/object:Fhir::Types::Quantity
     value: "107"
     unit: "mm[Hg]"
@@ -22,23 +35,9 @@
         system: "http://hl7.org/fhir/v2/0078"
         code: "N"
         display: "Normal (applies to non-numeric results)"
-  applies_date: "2012-09-17"
-  status: "final"
-  reliability: "ok"
-  identifier:
-    - !ruby/object:Fhir::Types::Identifier
-      system: "urn:ietf:rfc:3986"
-      value: "187e0c12-8dd2-67e2-99b2-bf273c878281"
-  subject: !ruby/object:Fhir::Types::ResourceReference
-    external_reference: Patient/f001
-    display: P. van de Heuvel
   specimen: !ruby/object:Fhir::Types::ResourceReference
     external_reference: Patient/f001
     display: bp
-  performer:
-    - !ruby/object:Fhir::Types::ResourceReference
-      external_reference: Practitioner/f005
-      display: A. Langeveld
   related:
     - !ruby/object:Fhir::ObservationClasses::Related
       type: MBR

@@ -1,10 +1,20 @@
 --- !ruby/object:Fhir::Observation
+  identifier:
+    - !ruby/object:Fhir::Types::Identifier
+      use: official
+      system: http://www.bmc.nl/zorgportal/identifiers/observations
+      value: "6323"
+  status: final
   code: !ruby/object:Fhir::Types::CodeableConcept
     coding:
       - !ruby/object:Fhir::Types::Coding
         system: http://loinc.org
         code: 2339-0
         display: Glucose [Mass/volume] in Blood
+  effective_period: !ruby/object:Fhir::Types::Period
+    start: "2013-04-02T09:30:10+01:00"
+    end: "2013-04-05T09:30:10+01:00"
+  issued: "2013-04-03T15:30:10+01:00"
   value_quantity: !ruby/object:Fhir::Types::Quantity
     value: "6.3"
     unit: mmol/l
@@ -16,13 +26,7 @@
         system: http://hl7.org/fhir/v2/0078
         code: A
         display: abnormal
-  applies_period: !ruby/object:Fhir::Types::Period
-    start: "2013-04-02T09:30:10+01:00"
-    end: "2013-04-05T09:30:10+01:00"
-  issued: "2013-04-03T15:30:10+01:00"
-  status: final
-  reliability: ok
-  body_site_codeable_concept: !ruby/object:Fhir::Types::CodeableConcept
+  body_site: !ruby/object:Fhir::Types::CodeableConcept
     coding:
       - !ruby/object:Fhir::Types::Coding
         system: http://snomed.info/sct
@@ -34,11 +38,6 @@
         system: http://snomed.info/sct
         code: "120220003"
         display: Injection to forearm
-  identifier:
-    - !ruby/object:Fhir::Types::Identifier
-      use: official
-      system: http://www.bmc.nl/zorgportal/identifiers/observations
-      value: "6323"
   reference_range:
     - !ruby/object:Fhir::ObservationClasses::ReferenceRange
       low: !ruby/object:Fhir::Types::Quantity
