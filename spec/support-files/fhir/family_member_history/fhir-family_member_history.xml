@@ -8,6 +8,7 @@
     <display value="Roel"/>
   </patient>
   <note value="Both parents, both brothers and both children (twin) are still alive."/>
+  <status value="completed"/>
   <relationship>
     <coding>
       <system value="http://hl7.org/fhir/familial-relationship"/>

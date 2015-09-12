@@ -9,6 +9,7 @@ json.patient do
 end unless resource.patient.nil?
 
 json.date resource.date unless resource.date.nil?
+json.status resource.status unless resource.status.nil?
 json.name resource.name unless resource.name.nil?
 
 json.relationship do

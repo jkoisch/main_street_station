@@ -12,6 +12,7 @@
         "display": null
     },
     "date": "2014-12-03",
+    "status": "completed",
     "name": "Bob",
     "relationship": {
         "coding": [
@@ -33,7 +34,7 @@
     "condition": [
         {
             "_id": 1,
-            "type": {
+            "code": {
                 "coding": [
                     {
                         "system": "http://snomed.info/sct",
