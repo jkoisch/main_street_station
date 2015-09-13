@@ -8,6 +8,10 @@ json.type do
   json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.type
 end unless resource.type.nil?
 
+json.note resource.note do |note|
+  json.partial! 'fhir/base/annotation', annotation: note
+end unless resource.note.nil?
+
 json.status         resource.status unless resource.status.nil?
 json.manufacturer   resource.manufacturer unless resource.manufacturer.nil?
 json.model          resource.model unless resource.model.nil?
@@ -30,7 +34,7 @@ json.patient do
 end unless resource.patient.nil?
 
 json.contact resource.contact do |contact|
-  json.partial! 'fhir/base/contact', contact: contact
+  json.partial! 'fhir/base/contact_point', contact_point: contact
 end unless resource.contact.nil?
 
 json.url            resource.url unless resource.url.nil?

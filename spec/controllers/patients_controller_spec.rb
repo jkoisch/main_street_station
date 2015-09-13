@@ -78,7 +78,7 @@ describe Fhir::PatientsController, type: :controller do
         stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
         get :index, {format: :json, telecom: '7809030885'}
         expect(a_request(:get, 'gringotts.dev/clients').
-                  with(:query => hash_including({'query' => {'telecom' => {'value' => '7809030885'}}}))).to have_been_made
+                  with(:query => hash_including({'query' => {'telecom' => {'code' => '7809030885'}}}))).to have_been_made
       end
 
       it 'processes multiple search criteria for same parameter' do

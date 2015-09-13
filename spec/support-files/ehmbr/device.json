@@ -25,13 +25,24 @@
             "assigner": null
         }
     ],
+    "note": [
+        {
+            "author": {
+                "_type": "ResourceReference",
+                "external_reference": "Practitioner/xcda-author"
+            },
+            "time": "2015-06-28T14:03:32+10:00",
+            "text": "QA Checked"
+        }
+    ],
     "type": {
         "coding": [
             {
                 "system": "http://snomed.info/sct",
                 "code": "86184003",
                 "version": null,
-                "display": "Electrocardiographic monitor and recorder"
+                "display": "Electrocardiographic monitor and recorder",
+                "user_selected": null
             }
         ],
         "text": "ECG"
@@ -50,6 +61,7 @@
             "system": "phone",
             "value": "ext 4352",
             "use": null,
+            "rank": null,
             "period": null
         }
     ],

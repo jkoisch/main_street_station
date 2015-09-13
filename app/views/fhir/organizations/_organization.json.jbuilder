@@ -11,7 +11,7 @@ json.type do
 end unless resource.type.nil?
 
 json.telecom resource.telecom do |telecom|
-  json.partial! 'fhir/base/contact', contact: telecom
+  json.partial! 'fhir/base/contact_point', contact_point: telecom
 end unless resource.telecom.nil?
 
 json.address resource.address do |address|

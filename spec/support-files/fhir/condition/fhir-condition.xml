@@ -13,7 +13,7 @@
   <asserter>
     <reference value="Practitioner/f201"/>
   </asserter>
-  <dateAsserted value="2013-04-04"/>
+  <dateRecorded value="2013-04-04"/>
   <code>
     <coding>
       <system value="http://snomed.info/sct"/>
@@ -36,6 +36,7 @@
     </coding>
   </category>
   <clinicalStatus value="confirmed"/>
+  <verificationStatus value="confirmed"/>
   <severity>
     <coding>
       <system value="http://snomed.info/sct"/>
@@ -69,14 +70,11 @@
       <display value="Temperature"/>
     </detail>
   </evidence>
-  <location>
-    <siteCodeableConcept>
-      <coding>
-        <system value="http://snomed.info/sct"/>
-        <code value="49521004"/>
-        <display value="Left external ear structure"/>
-      </coding>
-      <text value="Left Ear"/>
-    </siteCodeableConcept>
-  </location>
+  <bodySite>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="308046002"/>
+      <display value="Superficial forearm vein"/>
+    </coding>
+  </bodySite>
 </Condition>

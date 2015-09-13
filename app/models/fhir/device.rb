@@ -3,6 +3,7 @@ module Fhir
     fhir_attribute :id
     fhir_attribute :identifier, list: Types::Identifier
     fhir_attribute :type, type: Types::CodeableConcept
+    fhir_attribute :note, list: Types::Annotation
     fhir_attribute :status
     fhir_attribute :manufacturer
     fhir_attribute :model
@@ -14,7 +15,7 @@ module Fhir
     fhir_attribute :owner, type: Types::ResourceReference #Organization
     fhir_attribute :location, type: Types::ResourceReference #Location
     fhir_attribute :patient, type: Types::ResourceReference #Patient
-    fhir_attribute :contact, list: Types::Contact
+    fhir_attribute :contact, list: Types::ContactPoint
     fhir_attribute :url
   end
 end

@@ -5,29 +5,55 @@
         "status": "generated",
         "div": "<div>Sept 17, 2012: Systolic Blood pressure 107 mmHg (normal)</div>"
     },
+    "identifier": [{
+        "_id": 45,
+        "use": null,
+        "type": {},
+        "system": "urn:ietf:rfc:3986",
+        "value": "187e0c12-8dd2-67e2-99b2-bf273c878281",
+        "period": null,
+        "assigner": null
+    }],
+    "status": "final",
+    "category": {
+        "coding": [],
+        "text": null
+    },
     "code": {
         "coding": [
             {
                 "system": "http://loinc.org",
                 "version": null,
                 "code": "8480-6",
-                "display": "Systolic blood pressure"
+                "display": "Systolic blood pressure",
+                "user_selected": null
             },
             {
                 "system": "http://snomed.info/sct",
                 "version": null,
                 "code": "271649006",
-                "display": "Systolic blood pressure"
+                "display": "Systolic blood pressure",
+                "user_selected": null
             },
             {
                 "system": "http://acme.org/devices/clinical-codes",
                 "version": null,
                 "code": "bp-s",
-                "display": "Systolic Blood pressure"
+                "display": "Systolic Blood pressure",
+                "user_selected": null
             }
         ],
         "text": null
     },
+    "subject": null,
+    "encounter": null,
+    "effective": {
+        "_id": 1,
+        "_type": "SimpleDatetime",
+        "value": "2012-09-17"
+    },
+    "issued": null,
+    "performer": [],
     "value": {
         "_type": "SimpleString",
         "value": "some string"
@@ -38,21 +64,14 @@
                 "system": "http://hl7.org/fhir/v2/0078",
                 "version":null,
                 "code": "N",
-                "display": "Normal (applies to non-numeric results)"
+                "display": "Normal (applies to non-numeric results)",
+                "user_selected": null
             }
         ],
         "text": null
     },
     "comments": null,
-    "applies": {
-        "_type": "SimpleDate",
-        "value": "2012-09-17"
-    },
-    "issued": null,
-    "status": "final",
-    "reliability": "ok",
     "body_site": {
-        "_type": "CodeableConcept",
         "coding": [],
         "text": null
     },
@@ -60,20 +79,9 @@
         "coding": [],
         "text": null
     },
-    "identifier": [{
-        "_id": 45,
-        "use": null,
-        "type": {},
-        "system": "urn:ietf:rfc:3986",
-        "value": "187e0c12-8dd2-67e2-99b2-bf273c878281",
-        "period": null,
-        "assigner": null
-    }],
-    "subject": null,
     "specimen": null,
-    "performer": [],
     "device": null,
-    "encounter": null,
     "reference_range": [],
-    "related": []
+    "related": [],
+    "component": []
 }

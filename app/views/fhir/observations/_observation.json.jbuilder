@@ -1,8 +1,38 @@
 json.resourceType 'Observation'
 
+json.identifier resource.identifier do |identifier|
+  json.partial! 'fhir/base/identifier', identifier: identifier
+end unless resource.identifier.nil?
+
+json.status           resource.status unless resource.status.nil?
+
+json.category do
+  json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.category
+end unless resource.category.nil?
+
 json.code do
   json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.code
 end unless resource.code.nil?
+
+json.subject do
+  json.partial! 'fhir/base/resource_reference', resource_reference: resource.subject
+end unless resource.subject.nil?
+
+json.encounter do
+  json.partial! 'fhir/base/resource_reference', resource_reference: resource.encounter
+end unless resource.encounter.nil?
+
+json.effectiveDatetime  resource.effective_date unless resource.effective_date.nil?
+
+json.effectivePeriod do
+  json.partial! 'fhir/base/period', period: resource.effective_period
+end unless resource.effective_period.nil?
+
+json.issued           resource.issued unless resource.issued.nil?
+
+json.performer resource.performer do |performer|
+  json.partial! 'fhir/base/resource_reference', resource_reference: performer
+end unless resource.performer.nil?
 
 json.valueQuantity do
   json.partial! 'fhir/base/quantity', quantity: resource.value_quantity
@@ -48,51 +78,22 @@ json.interpretation do
 end unless resource.interpretation.nil?
 
 json.comments         resource.comments unless resource.comments.nil?
-json.appliesDatetime  resource.applies_date unless resource.applies_date.nil?
 
-json.appliesPeriod do
-  json.partial! 'fhir/base/period', period: resource.applies_period
-end unless resource.applies_period.nil?
-
-json.issued           resource.issued unless resource.issued.nil?
-json.status           resource.status unless resource.status.nil?
-json.reliability      resource.reliability unless resource.reliability.nil?
-
-json.bodySiteCodeableConcept do
-  json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.body_site_codeable_concept
-end unless resource.body_site_codeable_concept.nil?
-
-json.bodySiteResourceReference do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.body_site_resource_reference
-end unless resource.body_site_resource_reference.nil?
+json.bodySite do
+  json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.body_site
+end unless resource.body_site.nil?
 
 json.set! :method do
   json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.method
 end unless resource.method.nil?
 
-json.identifier resource.identifier do |identifier|
-  json.partial! 'fhir/base/identifier', identifier: identifier
-end unless resource.identifier.nil?
-
-json.subject do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.subject
-end unless resource.subject.nil?
-
 json.specimen do
   json.partial! 'fhir/base/resource_reference', resource_reference: resource.specimen
 end unless resource.specimen.nil?
 
-json.performer resource.performer do |performer|
-  json.partial! 'fhir/base/resource_reference', resource_reference: performer
-end unless resource.performer.nil?
-
 json.device do
   json.partial! 'fhir/base/resource_reference', resource_reference: resource.device
 end unless resource.device.nil?
-
-json.encounter do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.encounter
-end unless resource.encounter.nil?
 
 json.referenceRange resource.reference_range do |reference_range|
   json.partial! 'reference_range', reference_range: reference_range
@@ -101,3 +102,7 @@ end unless resource.reference_range.nil?
 json.related resource.related do |related|
   json.partial! 'related', related: related
 end unless resource.related.nil?
+
+json.component resource.component do |component|
+  json.partial! 'component', component: component
+end unless resource.component.nil?

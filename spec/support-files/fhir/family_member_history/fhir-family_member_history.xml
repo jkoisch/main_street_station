@@ -8,6 +8,7 @@
     <display value="Roel"/>
   </patient>
   <note value="Both parents, both brothers and both children (twin) are still alive."/>
+  <status value="completed"/>
   <relationship>
     <coding>
       <system value="http://hl7.org/fhir/familial-relationship"/>
@@ -32,7 +33,7 @@
     </outcome>
     <onsetAge>
       <value value="56"/>
-      <units value="a"/>
+      <unit value="a"/>
       <system value="http://unitsofmeasure.org"/>
     </onsetAge>
   </condition>

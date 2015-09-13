@@ -46,16 +46,20 @@ MainStreetStation::Application.routes.draw do
     get 'authentication/:id', to: 'authentication#show'
   end
 
-  devise_scope :users do
+  devise_scope :user do
+    get "/login" => "users/sessions#new"
     delete '/logout', to: 'devise/sessions#destroy'
   end
 
+  post 'user_login', to: 'users/sessions#create'
   post 'login', to: 'sessions#create', defaults: {format: :json}
   post '/api_session', to: 'sessions#create', defaults: {format: :json}
   delete '/api_session', to: 'sessions#destroy'
 
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout' },
-             controllers: {sessions: 'sessions', omniauth_callbacks: 'omniauth_callbacks'}
+             controllers: {registrations: 'users/registrations',
+                           sessions: 'sessions',
+                           omniauth_callbacks: 'omniauth_callbacks'}
 
   #root 'fhir/conformance#index' #controller: 'fhir::conformance', action: 'index',  to: 'fhir/conformance#index'
   root 'welcomes#index'

@@ -5,7 +5,7 @@ module Fhir
       fhir_attribute :version
       fhir_attribute :code
       fhir_attribute :display
-      fhir_attribute :primary
+      fhir_attribute :user_selected
     end
   end
 end

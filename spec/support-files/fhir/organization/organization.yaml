@@ -7,13 +7,13 @@
         code: V6
         display: University Medical Hospital
   telecom:
-    - !ruby/object:Fhir::Types::Contact
+    - !ruby/object:Fhir::Types::ContactPoint
       system: phone
       value: (+1) 734-677-7777
-    - !ruby/object:Fhir::Types::Contact
+    - !ruby/object:Fhir::Types::ContactPoint
       system: fax
       value: (+1) 734-677-6622
-    - !ruby/object:Fhir::Types::Contact
+    - !ruby/object:Fhir::Types::ContactPoint
       system: email
       value: hq@HL7.org
   address:

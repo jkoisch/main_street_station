@@ -7,7 +7,7 @@ resource.name.each do |name|
 end unless resource.name.nil?
 
 resource.telecom.each do |telecom|
-  xml.telecom {|xml| xml << render('fhir/base/contact', {contact: telecom})}
+  xml.telecom {|xml| xml << render('fhir/base/contact_point', {contact_point: telecom})}
 end unless resource.telecom.nil?
 
 xml.gender({value: resource.gender}) unless resource.gender.nil?

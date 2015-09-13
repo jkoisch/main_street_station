@@ -3,7 +3,7 @@ xml.name({value: resource.name}) unless resource.name.nil?
 xml.type { |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: resource.type})} unless resource.type.nil?
 
 resource.telecom.each do |telecom|
-  xml.telecom {|xml| xml << render('fhir/base/contact', {contact: telecom})}
+  xml.telecom {|xml| xml << render('fhir/base/contact_point', {contact_point: telecom})}
 end unless resource.telecom.nil?
 
 resource.address.each do |address|

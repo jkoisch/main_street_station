@@ -1,4 +1,9 @@
 <Observation xmlns="http://hl7.org/fhir">
+  <identifier>
+    <system value="urn:ietf:rfc:3986"/>
+    <value value="187e0c12-8dd2-67e2-99b2-bf273c878281"/>
+  </identifier>
+  <status value="final"/>
   <code>
     <!--   LOINC - always recommended to have a LOINC code   -->
     <coding>
@@ -19,9 +24,18 @@
       <display value="Systolic Blood pressure"/>
     </coding>
   </code>
+  <subject>
+    <reference value="Patient/f001"/>
+    <display value="P. van de Heuvel"/>
+  </subject>
+  <effective_datetime value="2012-09-17"/>
+  <performer>
+    <reference value="Practitioner/f005"/>
+    <display value="A. Langeveld"/>
+  </performer>
   <value_quantity>
     <value value="107"/>
-    <units value="mm[Hg]"/>
+    <unit value="mm[Hg]"/>
   </value_quantity>
   <interpretation>
     <coding>
@@ -30,17 +44,6 @@
       <display value="Normal (applies to non-numeric results)"/>
     </coding>
   </interpretation>
-  <applies_datetime value="2012-09-17"/>
-  <status value="final"/>
-  <reliability value="ok"/>
-  <identifier>
-    <system value="urn:ietf:rfc:3986"/>
-    <value value="187e0c12-8dd2-67e2-99b2-bf273c878281"/>
-  </identifier>
-  <subject>
-    <reference value="Patient/f001"/>
-    <display value="P. van de Heuvel"/>
-  </subject>
   <specimen>
     <reference value="Patient/f001"/>
     <display value="bp"/>

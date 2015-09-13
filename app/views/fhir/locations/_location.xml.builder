@@ -8,7 +8,7 @@ xml.mode({value: resource.mode}) unless resource.mode.nil?
 xml.type { |xml| xml << render('fhir/base/codeable_concept', codeable_concept: resource.type)} unless resource.type.nil?
 
 resource.telecom.each do |telecom|
-  xml.telecom { |xml| xml << render('fhir/base/contact', {contact: telecom})}
+  xml.telecom { |xml| xml << render('fhir/base/contact_point', {contact_point: telecom})}
 end unless resource.telecom.nil?
 
 xml.address { |xml| xml << render('fhir/base/address', address: resource.address)} unless resource.address.nil?

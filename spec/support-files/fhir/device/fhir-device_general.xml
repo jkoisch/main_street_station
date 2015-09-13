@@ -6,6 +6,10 @@
   <identifier>
     <value value="AMID-342135-8464"/>
   </identifier>
+  <note>
+    <time value="2015-06-28T14:03:32+10:00"/>
+    <text value="QA Checked"/>
+  </note>
   <type>
     <coding>
       <system value="http://snomed.info/sct"/>

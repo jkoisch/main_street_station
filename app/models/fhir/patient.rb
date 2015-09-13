@@ -3,7 +3,7 @@ module Fhir
     fhir_attribute :id
     fhir_attribute :identifier, list: Types::Identifier
     fhir_attribute :name, list: Types::HumanName
-    fhir_attribute :telecom, list: Types::Contact
+    fhir_attribute :telecom, list: Types::ContactPoint
     fhir_attribute :gender
     fhir_attribute :birth_date
     fhir_attribute :deceased, type_list: [Types::SimpleBoolean, Types::SimpleDatetime]

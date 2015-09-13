@@ -3,6 +3,7 @@
     external_reference: Patient/201
     display: Roel
   name: Bob
+  status: "completed"
   relationship: !ruby/object:Fhir::Types::CodeableConcept
     coding:
       - !ruby/object:Fhir::Types::Coding
@@ -11,7 +12,7 @@
   note: "Both parents, both brothers and both children (twin) are still alive."
   condition:
     - !ruby/object:Fhir::FamilyMemberHistoryClasses::Condition
-      type: !ruby/object:Fhir::Types::CodeableConcept
+      code: !ruby/object:Fhir::Types::CodeableConcept
         coding:
           - !ruby/object:Fhir::Types::Coding
             system: http://snomed.info/sct
@@ -26,5 +27,5 @@
             display: Inactive
       onset_age: !ruby/object:Fhir::Types::Quantity
         value: "56"
-        units: "a"
+        unit: "a"
         system: http://unitsofmeasure.org

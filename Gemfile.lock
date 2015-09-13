@@ -290,6 +290,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   cucumber-rails
@@ -329,6 +330,3 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
   uuid
   webmock
-
-BUNDLED WITH
-   1.10.3

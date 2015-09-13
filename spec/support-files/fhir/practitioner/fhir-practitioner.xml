@@ -15,6 +15,7 @@
       <start value="2001-05-06"/>
     </period>
   </identifier>
+  <active value="true"/>
   <name>
     <use value="official"/>
     <family value="van den broek"/>

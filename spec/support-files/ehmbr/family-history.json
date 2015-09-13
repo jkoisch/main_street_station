@@ -12,6 +12,7 @@
         "display": null
     },
     "date": "2014-12-03",
+    "status": "completed",
     "name": "Bob",
     "relationship": {
         "coding": [
@@ -19,7 +20,8 @@
                 "system": "http://hl7.org/fhir/familial-relationship",
                 "version":null,
                 "code": "brother",
-                "display": null
+                "display": null,
+                "user_selected": null
             }
         ],
         "text": null
@@ -32,13 +34,14 @@
     "condition": [
         {
             "_id": 1,
-            "type": {
+            "code": {
                 "coding": [
                     {
                         "system": "http://snomed.info/sct",
                         "version": null,
                         "code": "371041009",
-                        "display": "Embolic Stroke"
+                        "display": "Embolic Stroke",
+                        "user_selected": null
                     }
                 ],
                 "text": "Stroke"
@@ -49,16 +52,18 @@
                         "system": "http://snomed.info/sct",
                         "version": null,
                         "code": "419099112",
-                        "display": "Inactive"
+                        "display": "Inactive",
+                        "user_selected": null
                     }
                 ],
                 "text": "Stroke"
             },
             "onset": {
+                "_id": 1,
                 "_type": "Age",
                 "value": 56,
                 "comparator": null,
-                "units": null,
+                "unit": null,
                 "system": "http://unitsofmeasure.org",
                 "code": null
             },

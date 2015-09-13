@@ -60,11 +60,12 @@ ActiveRecord::Schema.define(version: 20150807000005) do
   end
 
   create_table "identity_authorities", force: true do |t|
-    t.integer  "user_id",                             null: false
-    t.string   "provider",                            null: false
-    t.string   "uid",                                 null: false
+    t.integer  "user_id",                null: false
+    t.string   "type"
+    t.string   "provider",               null: false
+    t.string   "uid",                    null: false
     t.string   "token_secret"
-    t.string   "password",               default: ""
+    t.string   "password_digest"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "created_at"
@@ -153,7 +154,6 @@ ActiveRecord::Schema.define(version: 20150807000005) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email",              default: "", null: false
-    t.string   "password",           default: ""
     t.integer  "sign_in_count",      default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"

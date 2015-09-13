@@ -1,7 +1,8 @@
 class RegistrationService
 
   def self.add_plain_user(user_form)
-    #add user with associated identityAuthority
+    user_form.identity_authorities << LocalAuthority.create_for_new(user_form)
+    user.save
   end
 
 end

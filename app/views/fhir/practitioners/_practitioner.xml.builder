@@ -1,11 +1,11 @@
 resource.identifier.each do |identifier|
   xml.identifier { |xml| xml << render('fhir/base/identifier', {identifier: identifier})}
 end unless resource.identifier.nil?
-
+xml.active({value: resource.active}) unless resource.active.nil?
 xml.name{ |xml| xml << render('fhir/base/human_name', human_name: resource.name)} unless resource.name.nil?
 
 resource.telecom.each do |telecom|
-  xml.telecom { |xml| xml << render('fhir/base/contact', {contact: telecom})}
+  xml.telecom { |xml| xml << render('fhir/base/contact_point', {contact_point: telecom})}
 end unless resource.telecom.nil?
 
 resource.address.each do |address|
