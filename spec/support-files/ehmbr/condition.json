@@ -26,7 +26,7 @@
         "local_id": 1,
         "display": null
     },
-    "date_asserted":"2013-04-04",
+    "date_recorded":"2013-04-04",
     "code":{
         "coding":[
             {
@@ -59,6 +59,7 @@
         "text": null
     },
     "clinical_status":"confirmed",
+    "verification_status":"confirmed",
     "severity":{
         "coding":[
             {
@@ -119,47 +120,9 @@
             ]
         }
     ],
-    "location":[
-        {
-            "site":{
-                "_type": "CodeableConcept",
-                "coding":[
-                    {
-                        "system":"http://snomed.info/sct",
-                        "version": null,
-                        "code":"49521004",
-                        "display":"Left external ear structure",
-                        "user_selected": null
-                    }
-                ],
-                "text":"Left Ear"
-            }
-        }
-    ],
-    "due_to":[
-        {
-            "code": {
-                "coding": [],
-                "text": null
-            },
-            "target":{
-                "local_type": "Observation",
-                "local_id": 1,
-                "display": null
-            }
-        },
-        {
-            "code": {
-                "coding": [],
-                "text": null
-            },
-            "target":{
-                "local_type": "Condition",
-                "local_id": 1,
-                "display": null
-            }
-        }
-    ],
-    "occurred_following": [],
+    "body_site": {
+        "coding": [],
+        "text": null
+    },
     "notes": null
 }

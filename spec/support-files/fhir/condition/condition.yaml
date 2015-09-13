@@ -10,7 +10,7 @@
     external_reference: Encounter/f201
   asserter: !ruby/object:Fhir::Types::ResourceReference
     external_reference: Practitioner/f201
-  date_asserted: 2013-04-04
+  date_recorded: 2013-04-04
   code: !ruby/object:Fhir::Types::CodeableConcept
     coding:
       - !ruby/object:Fhir::Types::Coding
@@ -29,6 +29,7 @@
         code: '439401001'
         display: Diagnosis
   clinical_status: confirmed
+  verification_status: confirmed
   severity: !ruby/object:Fhir::Types::CodeableConcept
     coding:
       - !ruby/object:Fhir::Types::Coding
@@ -58,12 +59,9 @@
         - !ruby/object:Fhir::Types::ResourceReference
           external_reference: Observation/f202
           display: Temperature
-  location:
-    - !ruby/object:Fhir::ConditionClasses::Location
-      site_codeable_concept: !ruby/object:Fhir::Types::CodeableConcept
-        coding:
-          - !ruby/object:Fhir::Types::Coding
-            system: http://snomed.info/sct
-            code: '49521004'
-            display: Left external ear structure
-        text: Left Ear
+  body_site: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: http://snomed.info/sct
+        code: "308046002"
+        display: Superficial forearm vein
