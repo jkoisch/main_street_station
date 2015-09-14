@@ -16,7 +16,7 @@ module Fhir
     fhir_attribute :fhir_version
     fhir_attribute :accept_unknown
     fhir_attribute :format
-    fhir_attribute :profile, list: Types::ResourceReference #Profile
+    fhir_attribute :profile, list: Types::Reference #Profile
     fhir_attribute :rest, list: Fhir::ConformanceClasses::Rest
     fhir_attribute :messaging, list: Fhir::ConformanceClasses::Messaging
     fhir_attribute :document, list: Fhir::ConformanceClasses::Document

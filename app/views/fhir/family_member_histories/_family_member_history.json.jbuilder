@@ -5,7 +5,7 @@ json.identifier resource.identifier do |identifier|
 end unless resource.identifier.nil?
 
 json.patient do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.patient
+  json.partial! 'fhir/base/reference', reference: resource.patient
 end unless resource.patient.nil?
 
 json.date resource.date unless resource.date.nil?

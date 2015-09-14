@@ -1,6 +1,6 @@
 xml.type({value: resource.type}) unless resource.type.nil?
 
-xml.profile { |xml| xml << render('fhir/base/resource_reference', {resource_reference: resource.profile})} unless resource.profile.nil?
+xml.profile { |xml| xml << render('fhir/base/reference', {reference: resource.profile})} unless resource.profile.nil?
 
 resource.interaction.each do |interaction|
   xml.interaction { |xml| xml << render('interaction', {interaction: interaction})}

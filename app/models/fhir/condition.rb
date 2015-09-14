@@ -4,9 +4,9 @@ module Fhir
 
     fhir_attribute :id
     fhir_attribute :identifier, list: Fhir::Types::Identifier
-    fhir_attribute :patient, type: Fhir::Types::ResourceReference
-    fhir_attribute :encounter, type: Fhir::Types::ResourceReference
-    fhir_attribute :asserter, type: Fhir::Types::ResourceReference
+    fhir_attribute :patient, type: Fhir::Types::Reference
+    fhir_attribute :encounter, type: Fhir::Types::Reference
+    fhir_attribute :asserter, type: Fhir::Types::Reference
     fhir_attribute :date_recorded
     fhir_attribute :code, type: Fhir::Types::CodeableConcept
     fhir_attribute :category, type: Fhir::Types::CodeableConcept

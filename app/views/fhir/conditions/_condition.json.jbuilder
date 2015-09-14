@@ -5,15 +5,15 @@ json.identifier resource.identifier do |identifier|
 end unless resource.identifier.nil?
 
 json.patient do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.patient
+  json.partial! 'fhir/base/reference', reference: resource.patient
 end unless resource.patient.nil?
 
 json.encounter do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.encounter
+  json.partial! 'fhir/base/reference', reference: resource.encounter
 end unless resource.encounter.nil?
 
 json.asserter do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.asserter
+  json.partial! 'fhir/base/reference', reference: resource.asserter
 end unless resource.asserter.nil?
 
 json.dateRecorded resource.date_recorded unless resource.date_recorded.nil?

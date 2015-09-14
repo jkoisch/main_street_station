@@ -1,16 +1,16 @@
 module Fhir
   module Types
-    class ResourceReference < BaseType
+    class Reference < BaseType
       fhir_attribute :local_id
       fhir_attribute :local_type
       fhir_attribute :display
-      fhir_attribute :external_reference
+      fhir_attribute :external
 
       def reference
-        if external_reference.nil?
+        if external.nil?
           "http://mainstreet.youcentric.com/fhir/#{GringottConversion.from_gringott_type(local_type)}/#{local_id}"
         else
-          external_reference
+          external
         end
       end
     end

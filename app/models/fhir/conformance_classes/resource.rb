@@ -2,7 +2,7 @@ module Fhir
   module ConformanceClasses
     class Resource < BaseClass
       fhir_attribute :type
-      fhir_attribute :profile, type: Types::ResourceReference
+      fhir_attribute :profile, type: Types::Reference
       fhir_attribute :interaction, list: ConformanceClasses::Interaction
       fhir_attribute :versioning
       fhir_attribute :read_history

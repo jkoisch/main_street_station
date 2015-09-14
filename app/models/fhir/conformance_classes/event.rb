@@ -5,8 +5,8 @@ module Fhir
       fhir_attribute :category
       fhir_attribute :mode
       fhir_attribute :focus
-      fhir_attribute :request, type: Types::ResourceReference #Profile
-      fhir_attribute :response, type: Types::ResourceReference  #Profile
+      fhir_attribute :request, type: Types::Reference #Profile
+      fhir_attribute :response, type: Types::Reference  #Profile
       fhir_attribute :documentation
     end
   end

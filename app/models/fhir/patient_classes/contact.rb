@@ -6,7 +6,7 @@ module Fhir
       fhir_attribute :telecom, list: Fhir::Types::ContactPoint
       fhir_attribute :address, type: Fhir::Types::Address
       fhir_attribute :gender
-      fhir_attribute :organization, type: Types::ResourceReference #organization
+      fhir_attribute :organization, type: Types::Reference #organization
       fhir_attribute :period, type: Types::Period
     end
   end

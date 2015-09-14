@@ -1,69 +1,70 @@
 {
-    "id": 2,
-    "resource_type": "Device",
-    "text": {
-        "status": "generated",
-        "div": "<div>      <p>example</p>     </div>"
+  "id": 2,
+  "resource_type": "Device",
+  "text": {
+    "status": "generated",
+    "div": "<div>      <p>example</p>     </div>"
+  },
+  "identifier": [
+    {
+      "_id": 2,
+      "system": "http://goodcare.org/devices/id",
+      "value": "345675",
+      "use": null,
+      "type": null,
+      "period": null,
+      "assigner": null
     },
-    "identifier": [
-        {
-            "_id": 2,
-            "system": "http://goodcare.org/devices/id",
-            "value": "345675",
-            "use": null,
-            "type": null,
-            "period": null,
-            "assigner": null
-        },
-        {
-            "_id": 4,
-            "system": null,
-            "value": "AMID-342135-8464",
-            "use": null,
-            "type": null,
-            "period": null,
-            "assigner": null
-        }
+    {
+      "_id": 4,
+      "system": null,
+      "value": "AMID-342135-8464",
+      "use": null,
+      "type": null,
+      "period": null,
+      "assigner": null
+    }
+  ],
+  "note": [
+    {
+      "_id": 1,
+      "author": {
+        "_type": "Reference",
+        "external": "Practitioner/xcda-author"
+      },
+      "time": "2015-06-28T14:03:32Z",
+      "text": "QA Checked"
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "86184003",
+        "version": null,
+        "display": "Electrocardiographic monitor and recorder",
+        "user_selected": null
+      }
     ],
-    "note": [
-        {
-            "author": {
-                "_type": "ResourceReference",
-                "external_reference": "Practitioner/xcda-author"
-            },
-            "time": "2015-06-28T14:03:32+10:00",
-            "text": "QA Checked"
-        }
-    ],
-    "type": {
-        "coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "86184003",
-                "version": null,
-                "display": "Electrocardiographic monitor and recorder",
-                "user_selected": null
-            }
-        ],
-        "text": "ECG"
-    },
-    "status": null,
-    "manufacturer": "Acme Devices, Inc",
-    "model": "AB 45-J",
-    "version": null,
-    "manufacture_date": null,
-    "expiry": null,
-    "udi": null,
-    "lot_number": "43453424",
-    "contact": [
-        {
-            "_id": 6,
-            "system": "phone",
-            "value": "ext 4352",
-            "use": null,
-            "rank": null,
-            "period": null
-        }
-    ],
-    "url": null
+    "text": "ECG"
+  },
+  "status": null,
+  "manufacturer": "Acme Devices, Inc",
+  "model": "AB 45-J",
+  "version": null,
+  "manufacture_date": null,
+  "expiry": null,
+  "udi": null,
+  "lot_number": "43453424",
+  "contact": [
+    {
+      "_id": 6,
+      "system": "phone",
+      "value": "ext 4352",
+      "use": null,
+      "rank": null,
+      "period": null
+    }
+  ],
+  "url": null
 }

@@ -6,7 +6,7 @@ module Fhir
       fhir_attribute :system
       fhir_attribute :value
       fhir_attribute :period, type: Period
-      fhir_attribute :assigner, type: ResourceReference
+      fhir_attribute :assigner, type: Reference
     end
   end
 end

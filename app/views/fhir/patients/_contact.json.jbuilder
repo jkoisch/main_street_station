@@ -17,7 +17,7 @@ end unless contact.address.nil?
 json.gender contact.gender unless contact.gender.nil?
 
 json.organization do
-  json.partial! 'fhir/base/resource_reference', resource_reference: contact.organization
+  json.partial! 'fhir/base/reference', reference: contact.organization
 end unless contact.organization.nil?
 
 json.period do

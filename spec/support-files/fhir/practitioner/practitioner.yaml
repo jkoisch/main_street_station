@@ -46,8 +46,8 @@
   birth_date: 1975-12-07
   practitioner_role:
     - !ruby/object:Fhir::PractitionerClasses::PractitionerRole
-      managing_organization: !ruby/object:Fhir::Types::ResourceReference
-          external_reference: Organization/f001
+      managing_organization: !ruby/object:Fhir::Types::Reference
+          external: Organization/f001
           display: BMC
       role: !ruby/object:Fhir::Types::CodeableConcept
         coding:
@@ -68,8 +68,8 @@
         start: '2012-01-01'
         end: '2012-03-31'
       healthcare_service:
-        - !ruby/object:Fhir::Types::ResourceReference
-          external_reference: Organization/f001
+        - !ruby/object:Fhir::Types::Reference
+          external: Organization/f001
           display: BMC
   qualification:
     - !ruby/object:Fhir::PractitionerClasses::Qualification

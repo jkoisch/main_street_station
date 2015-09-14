@@ -10,8 +10,8 @@ module Fhir
     fhir_attribute :address, type: Types::Address
     fhir_attribute :physical_type, type: Types::CodeableConcept
     fhir_attribute :position, type: Fhir::LocationClasses::Position
-    fhir_attribute :managing_organization, type: Types::ResourceReference #Organization
-    fhir_attribute :part_of, type: Types::ResourceReference #Location
+    fhir_attribute :managing_organization, type: Types::Reference #Organization
+    fhir_attribute :part_of, type: Types::Reference #Location
     fhir_attribute :status
   end
 end

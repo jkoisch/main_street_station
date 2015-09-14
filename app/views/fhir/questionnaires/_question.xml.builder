@@ -12,7 +12,7 @@ question.choice.each do |choice|
   xml.choice { |xml| xml << render('fhir/base/coding', {coding: choice})}
 end unless question.choice.nil?
 
-xml.options { |xml| xml << render('fhir/base/resource_reference', {resource_reference: question.options})} unless question.options.nil?
+xml.options { |xml| xml << render('fhir/base/reference', {reference: question.options})} unless question.options.nil?
 
 xml.dataInteger({value: question.data_integer}) unless question.data_integer.nil?
 xml.dataDate({value: question.data_date}) unless question.data_date.nil?

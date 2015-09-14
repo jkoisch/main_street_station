@@ -15,21 +15,21 @@
     text: ECG
   note:
     - !ruby/object:Fhir::Types::Annotation
-      author_resource_reference: !ruby/object:Fhir::Types::ResourceReference
-        external_reference: "Practitioner/xcda-author"
+      author_reference: !ruby/object:Fhir::Types::Reference
+        external: "Practitioner/xcda-author"
       time: "2015-06-28T14:03:32+10:00"
       text: "QA Checked"
   manufacturer: Acme Devices, Inc
   model: AB 45-J
   lot_number: "43453424"
-  owner: !ruby/object:Fhir::Types::ResourceReference
-    external_reference: PTC/f201
+  owner: !ruby/object:Fhir::Types::Reference
+    external: PTC/f201
     display: monitor
-  location: !ruby/object:Fhir::Types::ResourceReference
-    external_reference: Anaheim, CA
+  location: !ruby/object:Fhir::Types::Reference
+    external: Anaheim, CA
     display: USA
-  patient: !ruby/object:Fhir::Types::ResourceReference
-    external_reference: Patient/14
+  patient: !ruby/object:Fhir::Types::Reference
+    external: Patient/14
     display: "14"
   contact:
     - !ruby/object:Fhir::Types::ContactPoint

@@ -1,7 +1,7 @@
 json.type         resource.type unless resource.type.nil?
 
 json.profile do
-  json.partial 'fhir/base/resource_reference', resource_reference: resource.profile
+  json.partial 'fhir/base/reference', reference: resource.profile
 end unless resource.profile.nil?
 
 json.interaction resource.interaction do |interaction|

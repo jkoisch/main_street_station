@@ -1,6 +1,6 @@
 --- !ruby/object:Fhir::FamilyMemberHistory
-  patient: !ruby/object:Fhir::Types::ResourceReference
-    external_reference: Patient/201
+  patient: !ruby/object:Fhir::Types::Reference
+    external: Patient/201
     display: Roel
   name: Bob
   status: "completed"

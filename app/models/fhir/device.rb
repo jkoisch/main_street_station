@@ -12,9 +12,9 @@ module Fhir
     fhir_attribute :expiry
     fhir_attribute :udi
     fhir_attribute :lot_number
-    fhir_attribute :owner, type: Types::ResourceReference #Organization
-    fhir_attribute :location, type: Types::ResourceReference #Location
-    fhir_attribute :patient, type: Types::ResourceReference #Patient
+    fhir_attribute :owner, type: Types::Reference #Organization
+    fhir_attribute :location, type: Types::Reference #Location
+    fhir_attribute :patient, type: Types::Reference #Patient
     fhir_attribute :contact, list: Types::ContactPoint
     fhir_attribute :url
   end

@@ -2,7 +2,7 @@ resource.identifier.each do |identifier|
   xml.identifier {|xml| xml << render('fhir/base/identifier', {identifier: identifier})}
 end unless resource.identifier.nil?
 
-xml.patient { |xml| xml << render('fhir/base/resource_reference', {resource_reference: resource.patient})} unless resource.patient.nil?
+xml.patient { |xml| xml << render('fhir/base/reference', {reference: resource.patient})} unless resource.patient.nil?
 xml.status({value: resource.status}) unless resource.status.nil?
 xml.name({value: resource.name}) unless resource.name.nil?
 xml.relationship { |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: resource.relationship})} unless resource.relationship.nil?

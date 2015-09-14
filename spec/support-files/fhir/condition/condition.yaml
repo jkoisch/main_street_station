@@ -3,13 +3,13 @@
      - !ruby/object:Fhir::Types::Identifier
        system: http://goodcare.org/devices/id
        value: 345675
-  patient: !ruby/object:Fhir::Types::ResourceReference
-    external_reference: Patient/f201
+  patient: !ruby/object:Fhir::Types::Reference
+    external: Patient/f201
     display: Roel
-  encounter: !ruby/object:Fhir::Types::ResourceReference
-    external_reference: Encounter/f201
-  asserter: !ruby/object:Fhir::Types::ResourceReference
-    external_reference: Practitioner/f201
+  encounter: !ruby/object:Fhir::Types::Reference
+    external: Encounter/f201
+  asserter: !ruby/object:Fhir::Types::Reference
+    external: Practitioner/f201
   date_recorded: 2013-04-04
   code: !ruby/object:Fhir::Types::CodeableConcept
     coding:
@@ -45,8 +45,8 @@
           code: '14803004'
           display: Temporary
     assessment:
-      - !ruby/object:Fhir::Types::ResourceReference
-        external_reference: Procedure/f201
+      - !ruby/object:Fhir::Types::Reference
+        external: Procedure/f201
   evidence:
     - !ruby/object:Fhir::ConditionClasses::Evidence
       code: !ruby/object:Fhir::Types::CodeableConcept
@@ -56,8 +56,8 @@
             code: '258710007'
             display: degrees C
       detail:
-        - !ruby/object:Fhir::Types::ResourceReference
-          external_reference: Observation/f202
+        - !ruby/object:Fhir::Types::Reference
+          external: Observation/f202
           display: Temperature
   body_site: !ruby/object:Fhir::Types::CodeableConcept
     coding:

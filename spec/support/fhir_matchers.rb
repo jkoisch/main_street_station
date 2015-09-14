@@ -25,14 +25,15 @@ RSpec::Matchers.define :produce_fhir_xml_like do |xml_file|
     controller.prepend_view_path 'app/views/' + actual.rpartition('/')[0]
     response = render partial: actual, formats: :xml, locals: {resource: resource}
     expected_xml = File.read(xml_file)
-    response = expected_xml
+    response == expected_xml
+    #xml_cmp(expected_xml, response)
     #false
   end
   # noinspection RubyUnusedLocalVariable
   failure_message do |actual|
     #expected = JSON.parse(File.read(xml_file))
     expected = '--'
-    response = render
+    #response = render
     "expected XML was: #{expected}\n generated: #{response}\n"
        # " *difference*: #{expected.find_difference(response)}"
   end
