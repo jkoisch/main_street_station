@@ -6,8 +6,9 @@ module Fhir
       fhir_attribute :security, type: ConformanceClasses::Security
       fhir_attribute :resource, list: ConformanceClasses::Resource
       fhir_attribute :interaction, list: ConformanceClasses::Interaction
+      fhir_attribute :transaction_mode
+      fhir_attribute :search_param, list: ConformanceClasses::SearchParam
       fhir_attribute :operation, list: ConformanceClasses::Operation
-      fhir_attribute :document_mailbox, array: true
       fhir_attribute :compartment, array: true
     end
   end

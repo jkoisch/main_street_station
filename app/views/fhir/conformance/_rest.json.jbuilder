@@ -13,13 +13,15 @@ json.interaction rest.interaction.each do |interaction|
   json.partial! 'interaction', interaction: interaction
 end unless rest.interaction.nil?
 
+json.transactionMode  rest.transaction_mode unless rest.transaction_mode.nil?
+
+json.searchParam rest.search_param.each do |search|
+  json.partial! 'search_param', search_param: search
+end unless rest.search_param.nil?
+
 json.operation rest.operation.each do |operation|
   json.partial! 'operation', operation: operation
 end unless rest.operation.nil?
-
-json.documentMailbox rest.document_mailbox do |document_mailbox|
-  json.documentMailbox rest.document_mailbox
-end unless rest.document_mailbox.nil?
 
 json.compartment rest.compartment do |compartment|
   json.compartment rest.compartment
