@@ -85,7 +85,8 @@
                     "system":"http://snomed.info/sct",
                     "version": null,
                     "code":"14803004",
-                    "display":"Temporary"
+                    "display":"Temporary",
+                    "user_selected": null
                 }
             ],
             "text": null
@@ -106,7 +107,8 @@
                         "system":"http://snomed.info/sct",
                         "version": null,
                         "code":"258710007",
-                        "display":"degrees C"
+                        "display":"degrees C",
+                        "user_selected": null
                     }
                 ],
                 "text": null

@@ -30,9 +30,10 @@
       "_id": 1,
       "author": {
         "_type": "Reference",
-        "external": "Practitioner/xcda-author"
+        "external": "Practitioner/xcda-author",
+        "display": null
       },
-      "time": "2015-06-28T14:03:32Z",
+      "time": "2015-06-28T04:03:32.000Z",
       "text": "QA Checked"
     }
   ],
