@@ -1,130 +1,140 @@
 {
-    "id": 1,
-    "resource_type":"Condition",
-    "text": {
-        "status": "generated",
-        "div": "<div>\n      <p>\n        <b>Generated Narrative</b>\n      </p>\n      <p>\n        <b>subject</b>: Roel\n      </p>\n      <p>\n        <b>encounter</b>: \n        <a href=\"encounter-example-f201-20130404.html\">Roel's encounter on April fourth 2013 = Encounter_Roel_20130404 (temp); finished; outpatient; Consultation; The patient had fever peaks over the last couple of days. He is worried about these peaks.; Normal</a>\n      </p>\n      <p>\n        <b>asserter</b>: \n        <a href=\"practitioner-example-f201-ab.html\">UZI-nummer = 12345678901 (official); Dokter Bronsig(official); Male; birthDate: 24-Dec 1956; Implementation of planned interventions; Medical oncologist</a>\n      </p>\n      <p>\n        <b>dateAsserted</b>: 4-Apr 2013\n      </p>\n      <p>\n        <b>code</b>: \n        <span title=\"Codes: {http://snomed.info/sct 386661006}\">Fever</span>\n      </p>\n      <p>\n        <b>category</b>: \n        <span title=\"Codes: {http://snomed.info/sct 55607006}, {http://hl7.org/fhir/condition-category condition}\">Problem</span>\n      </p>\n      <p>\n        <b>status</b>: confirmed\n      </p>\n      <p>\n        <b>severity</b>: \n        <span title=\"Codes: {http://snomed.info/sct 255604002}\">Mild</span>\n      </p>\n      <p>\n        <b>onset[x]</b>: 2-Apr 2013\n      </p>\n      <h3>Evidences</h3>\n      <table class=\"grid\">\n        <tr>\n          <td>\n            <b>Code</b>\n          </td>\n          <td>\n            <b>Detail</b>\n          </td>\n        </tr>\n        <tr>\n          <td>\n            <span title=\"Codes: {http://snomed.info/sct 258710007}\">degrees C</span>\n          </td>\n          <td>Temperature</td>\n        </tr>\n      </table>\n      <h3>Locations</h3>\n      <table class=\"grid\">\n        <tr>\n          <td>\n            <b>Code</b>\n          </td>\n          <td>\n            <b>Detail</b>\n          </td>\n        </tr>\n        <tr>\n          <td>\n            <span title=\"Codes: {http://snomed.info/sct 38266002}\">Entire body as a whole</span>\n          </td>\n          <td> </td>\n        </tr>\n      </table>\n      <h3>RelatedItems</h3>\n      <table class=\"grid\">\n        <tr>\n          <td>\n            <b>Type</b>\n          </td>\n          <td>\n            <b>Code</b>\n          </td>\n          <td>\n            <b>Target</b>\n          </td>\n        </tr>\n        <tr>\n          <td>dueto</td>\n          <td> </td>\n          <td>TPF chemokuur</td>\n        </tr>\n        <tr>\n          <td>dueto</td>\n          <td> </td>\n          <td>bacterial infection</td>\n        </tr>\n      </table>\n    </div>"
-    },
-    "identifier":[
-        {
-            "_id": 2,
-            "system": "http://goodcare.org/devices/id",
-            "value": "345675",
-            "use": null,
-            "type": null,
-            "period": null,
-            "assigner": null
-        }],
-    "patient":{
-        "local_type": "Client",
-        "local_id": 1,
-        "display": null
-    },
-    "encounter": null,
-    "asserter":{
-        "local_type": "Provider",
-        "local_id": 1,
-        "display": null
-    },
-    "date_recorded":"2013-04-04",
-    "code":{
-        "coding":[
-            {
-                "system":"http://snomed.info/sct",
-                "version": null,
-                "code":"39065001",
-                "display":"Burn of ear",
-                "user_selected": null
-            }
-        ],
-        "text":"Burnt Ear"
-    },
-    "category":{
-        "coding":[
-            {
-                "system":"http://hl7.org/fhir/condition-category",
-                "version": null,
-                "code":"diagnosis",
-                "display":"Diagnosis",
-                "user_selected": null
-            },
-            {
-                "system":"http://snomed.info/sct",
-                "version": null,
-                "code":"439401001",
-                "display":"Diagnosis",
-                "user_selected": null
-            }
-        ],
-        "text": null
-    },
-    "clinical_status":"confirmed",
-    "verification_status":"confirmed",
-    "severity":{
-        "coding":[
-            {
-                "system":"http://snomed.info/sct",
-                "version": null,
-                "code":"24484000",
-                "display":"Severe",
-                "user_selected": null
-            }
-        ],
-        "text": null
-    },
-    "onset": {
-        "_id": 1,
-        "_type": "SimpleDatetime",
-        "value": "2012-05-24"
-    },
-    "abatement": null,
-    "stage":{
-        "summary":{
-            "coding":[
-                {
-                    "system":"http://snomed.info/sct",
-                    "version": null,
-                    "code":"14803004",
-                    "display":"Temporary",
-                    "user_selected": null
-                }
-            ],
-            "text": null
-        },
-        "assessment":[
-            {
-                "local_type": "Observation",
-                "local_id": 1,
-                "display": null
-            }
-        ]
-    },
-    "evidence":[
-        {
-            "code":{
-                "coding":[
-                    {
-                        "system":"http://snomed.info/sct",
-                        "version": null,
-                        "code":"258710007",
-                        "display":"degrees C",
-                        "user_selected": null
-                    }
-                ],
-                "text": null
-            },
-            "detail":[
-                {
-                    "local_type": "Observation",
-                    "local_id": 1,
-                    "display": null
-                }
-            ]
-        }
+  "id": 1,
+  "resource_type":"Condition",
+  "text": {
+    "status": "generated",
+    "div": "<div>\n      <p>\n        <b>Generated Narrative</b>\n      </p>\n      <p>\n        <b>subject</b>: Roel\n      </p>\n      <p>\n        <b>encounter</b>: \n        <a href=\"encounter-example-f201-20130404.html\">Roel's encounter on April fourth 2013 = Encounter_Roel_20130404 (temp); finished; outpatient; Consultation; The patient had fever peaks over the last couple of days. He is worried about these peaks.; Normal</a>\n      </p>\n      <p>\n        <b>asserter</b>: \n        <a href=\"practitioner-example-f201-ab.html\">UZI-nummer = 12345678901 (official); Dokter Bronsig(official); Male; birthDate: 24-Dec 1956; Implementation of planned interventions; Medical oncologist</a>\n      </p>\n      <p>\n        <b>dateAsserted</b>: 4-Apr 2013\n      </p>\n      <p>\n        <b>code</b>: \n        <span title=\"Codes: {http://snomed.info/sct 386661006}\">Fever</span>\n      </p>\n      <p>\n        <b>category</b>: \n        <span title=\"Codes: {http://snomed.info/sct 55607006}, {http://hl7.org/fhir/condition-category condition}\">Problem</span>\n      </p>\n      <p>\n        <b>status</b>: confirmed\n      </p>\n      <p>\n        <b>severity</b>: \n        <span title=\"Codes: {http://snomed.info/sct 255604002}\">Mild</span>\n      </p>\n      <p>\n        <b>onset[x]</b>: 2-Apr 2013\n      </p>\n      <h3>Evidences</h3>\n      <table class=\"grid\">\n        <tr>\n          <td>\n            <b>Code</b>\n          </td>\n          <td>\n            <b>Detail</b>\n          </td>\n        </tr>\n        <tr>\n          <td>\n            <span title=\"Codes: {http://snomed.info/sct 258710007}\">degrees C</span>\n          </td>\n          <td>Temperature</td>\n        </tr>\n      </table>\n      <h3>Locations</h3>\n      <table class=\"grid\">\n        <tr>\n          <td>\n            <b>Code</b>\n          </td>\n          <td>\n            <b>Detail</b>\n          </td>\n        </tr>\n        <tr>\n          <td>\n            <span title=\"Codes: {http://snomed.info/sct 38266002}\">Entire body as a whole</span>\n          </td>\n          <td> </td>\n        </tr>\n      </table>\n      <h3>RelatedItems</h3>\n      <table class=\"grid\">\n        <tr>\n          <td>\n            <b>Type</b>\n          </td>\n          <td>\n            <b>Code</b>\n          </td>\n          <td>\n            <b>Target</b>\n          </td>\n        </tr>\n        <tr>\n          <td>dueto</td>\n          <td> </td>\n          <td>TPF chemokuur</td>\n        </tr>\n        <tr>\n          <td>dueto</td>\n          <td> </td>\n          <td>bacterial infection</td>\n        </tr>\n      </table>\n    </div>"
+  },
+  "identifier":[
+    {
+      "_id": 2,
+      "system": "http://goodcare.org/devices/id",
+      "value": "345675",
+      "use": null,
+      "type": null,
+      "period": null,
+      "assigner": null
+    }],
+  "patient":{
+    "local_type": "Client",
+    "local_id": 1,
+    "display": null
+  },
+  "encounter": null,
+  "asserter":{
+    "local_type": "Provider",
+    "local_id": 1,
+    "display": null
+  },
+  "date_recorded":"2013-04-04",
+  "code":{
+    "coding":[
+      {
+        "system":"http://snomed.info/sct",
+        "version": null,
+        "code":"39065001",
+        "display":"Burn of ear",
+        "user_selected": null
+      }
     ],
-    "body_site": {
-        "coding": [],
-        "text": null
+    "text":"Burnt Ear"
+  },
+  "category":{
+    "coding":[
+      {
+        "system":"http://hl7.org/fhir/condition-category",
+        "version": null,
+        "code":"diagnosis",
+        "display":"Diagnosis",
+        "user_selected": null
+      },
+      {
+        "system":"http://snomed.info/sct",
+        "version": null,
+        "code":"439401001",
+        "display":"Diagnosis",
+        "user_selected": null
+      }
+    ],
+    "text": null
+  },
+  "clinical_status":"active",
+  "verification_status":"confirmed",
+  "severity":{
+    "coding":[
+      {
+        "system":"http://snomed.info/sct",
+        "version": null,
+        "code":"24484000",
+        "display":"Severe",
+        "user_selected": null
+      }
+    ],
+    "text": null
+  },
+  "onset": {
+    "_id": 1,
+    "_type": "SimpleDatetime",
+    "value": "2012-05-24"
+  },
+  "abatement": null,
+  "stage":{
+    "summary":{
+      "coding":[
+        {
+          "system":"http://snomed.info/sct",
+          "version": null,
+          "code":"14803004",
+          "display":"Temporary",
+          "user_selected": null
+        }
+      ],
+      "text": null
     },
-    "notes": null
+    "assessment":[
+      {
+        "local_type": "Observation",
+        "local_id": 1,
+        "display": null
+      }
+    ]
+  },
+  "evidence":[
+    {
+      "code":{
+        "coding":[
+          {
+            "system":"http://snomed.info/sct",
+            "version": null,
+            "code":"258710007",
+            "display":"degrees C",
+            "user_selected": null
+          }
+        ],
+        "text": null
+      },
+      "detail":[
+        {
+          "local_type": "Observation",
+          "local_id": 1,
+          "display": null
+        }
+      ]
+    }
+  ],
+  "body_site": [
+    {
+      "coding": [
+        {
+          "system":"http://snomed.info/sct",
+          "version": null,
+          "code":"49521004",
+          "display":"Left external ear structure",
+          "user_selected": null
+        }
+      ],
+      "text": "left ear"
+    }
+  ],
+  "notes": null
 }
