@@ -45,13 +45,13 @@ class ApiTest < Thor
     begin
       RestClient.get "http://#{HEROKU_Mainstreet}/fhir/metadata",  {accept: :json}
       puts '         ...success'
-      puts '   testing Patient retrieve (login not required)'
+      puts '   testing Organization retrieve (login not required)'
       begin
-        RestClient.get "http://#{HEROKU_Mainstreet}/fhir/Patient/1",  {accept: :json}
+        RestClient.get "http://#{HEROKU_Mainstreet}/fhir/Organization/1",  {accept: :json}
         puts '         ...success'
-        puts '   testing Patient index'
+        puts '   testing Organization index'
         begin
-          RestClient.get "http://#{HEROKU_Mainstreet}/fhir/Patient",  {accept: :json}
+          RestClient.get "http://#{HEROKU_Mainstreet}/fhir/Organization",  {accept: :json}
           puts '         ...success'
           puts '   testing API login'
           begin
@@ -59,9 +59,9 @@ class ApiTest < Thor
             resp = RestClient.post "http://#{HEROKU_Mainstreet}/api_session", {user_name: options[:username], password: pw}, {accept: :json}
             token = 'Token token=' + JSON.parse(resp)['authentication_token']
             puts '         ...success'
-            puts '   testing Device retrieve (requires active session)'
+            puts '   testing Patient retrieve (requires active session)'
             begin
-              RestClient.get "http://#{HEROKU_Mainstreet}/fhir/Device/1",  {accept: :json, Authorization: token}
+              RestClient.get "http://#{HEROKU_Mainstreet}/fhir/Patient/1",  {accept: :json, Authorization: token}
               puts '         ...success'
             rescue => e
               puts '****** FAILURE ******'
