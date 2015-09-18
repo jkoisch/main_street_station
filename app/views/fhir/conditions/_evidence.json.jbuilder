@@ -3,5 +3,5 @@ json.code do
 end unless evidence.code.nil?
 
 json.detail evidence.detail do |detail|
-  json.partial! 'fhir/base/resource_reference', resource_reference: detail
+  json.partial! 'fhir/base/reference', reference: detail
 end unless evidence.detail.nil?

@@ -15,11 +15,11 @@ json.code do
 end unless resource.code.nil?
 
 json.subject do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.subject
+  json.partial! 'fhir/base/reference', reference: resource.subject
 end unless resource.subject.nil?
 
 json.encounter do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.encounter
+  json.partial! 'fhir/base/reference', reference: resource.encounter
 end unless resource.encounter.nil?
 
 json.effectiveDatetime  resource.effective_date unless resource.effective_date.nil?
@@ -31,7 +31,7 @@ end unless resource.effective_period.nil?
 json.issued           resource.issued unless resource.issued.nil?
 
 json.performer resource.performer do |performer|
-  json.partial! 'fhir/base/resource_reference', resource_reference: performer
+  json.partial! 'fhir/base/reference', reference: performer
 end unless resource.performer.nil?
 
 json.valueQuantity do
@@ -88,11 +88,11 @@ json.set! :method do
 end unless resource.method.nil?
 
 json.specimen do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.specimen
+  json.partial! 'fhir/base/reference', reference: resource.specimen
 end unless resource.specimen.nil?
 
 json.device do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.device
+  json.partial! 'fhir/base/reference', reference: resource.device
 end unless resource.device.nil?
 
 json.referenceRange resource.reference_range do |reference_range|

@@ -1,7 +1,7 @@
 require 'net/http'
 
 module Fhir
-  class PatientsController < FhirBaseController
+  class PatientsController < FhirController
     RESOURCE = 'client'
 
     def index

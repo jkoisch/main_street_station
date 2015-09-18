@@ -16,7 +16,7 @@ json.choice question.choice do |choice|
 end unless question.choice.nil?
 
 json.options do
-  json.partial! 'fhir/base/resource_reference', resource_reference: question.options
+  json.partial! 'fhir/base/reference', reference: question.options
 end unless question.options.nil?
 
 json.dataInteger    question.data_integer unless question.data_integer.nil?

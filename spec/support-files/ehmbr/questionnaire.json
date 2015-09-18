@@ -4,7 +4,7 @@
     "status": "completed",
     "authored": "2013-02-19T14:15:00",
     "subject": {
-        "external_reference": "Patient/f201",
+        "external": "Patient/f201",
         "display": "Roel"
     },
     "author": null,

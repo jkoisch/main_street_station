@@ -11,15 +11,15 @@
   identifier:
     - !ruby/object:Fhir::Types::Identifier
       use: temp
-  subject: !ruby/object:Fhir::Types::ResourceReference
-    external_reference: Patient/f201
+  subject: !ruby/object:Fhir::Types::Reference
+    external: Patient/f201
     display: Roel
-  author: !ruby/object:Fhir::Types::ResourceReference
-    external_reference: Practitioner/f201
-  source: !ruby/object:Fhir::Types::ResourceReference
-    external_reference: Practitioner/f201
-  encounter: !ruby/object:Fhir::Types::ResourceReference
-    external_reference: Encounter/example
+  author: !ruby/object:Fhir::Types::Reference
+    external: Practitioner/f201
+  source: !ruby/object:Fhir::Types::Reference
+    external: Practitioner/f201
+  encounter: !ruby/object:Fhir::Types::Reference
+    external: Encounter/example
     display: in progress
   group: !ruby/object:Fhir::QuestionnaireClasses::Group
     group:
@@ -104,8 +104,8 @@
                 - !ruby/object:Fhir::Types::Coding
                   system: http://cancer.questionnaire.org/system/code/sections
                   code: ABDOMINAL
-            subject: !ruby/object:Fhir::Types::ResourceReference
-              external_reference: USCA/0302
+            subject: !ruby/object:Fhir::Types::Reference
+              external: USCA/0302
               display: general
             question:
               - !ruby/object:Fhir::QuestionnaireClasses::Question
@@ -115,6 +115,6 @@
                       system: http://cancer.questionnaire.org/system/code/questions
                       code: STADPT
                       display: pT category
-                options: !ruby/object:Fhir::Types::ResourceReference
-                  external_reference: http://spark.furore.com/fhir/ValueSet/bc299b13baff4405871b14b3a9346c04
+                options: !ruby/object:Fhir::Types::Reference
+                  external: http://spark.furore.com/fhir/ValueSet/bc299b13baff4405871b14b3a9346c04
                   display: SCTT 2006 Service Type

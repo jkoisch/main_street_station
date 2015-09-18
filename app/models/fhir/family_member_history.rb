@@ -6,7 +6,7 @@ module Fhir
 
     fhir_attribute :id
     fhir_attribute :identifier, list: Types::Identifier
-    fhir_attribute :patient, type: Types::ResourceReference
+    fhir_attribute :patient, type: Types::Reference
     fhir_attribute :date
     fhir_attribute :status
     fhir_attribute :name

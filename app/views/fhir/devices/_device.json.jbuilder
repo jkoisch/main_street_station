@@ -22,15 +22,15 @@ json.udi            resource.udi unless resource.udi.nil?
 json.lotNumber      resource.lot_number unless resource.lot_number.nil?
 
 json.owner do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.owner
+  json.partial! 'fhir/base/reference', reference: resource.owner
 end unless resource.owner.nil?
 
 json.location do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.location
+  json.partial! 'fhir/base/reference', reference: resource.location
 end unless resource.location.nil?
 
 json.patient do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.patient
+  json.partial! 'fhir/base/reference', reference: resource.patient
 end unless resource.patient.nil?
 
 json.contact resource.contact do |contact|

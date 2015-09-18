@@ -11,7 +11,7 @@ module Fhir
       fhir_attribute :answer_datetime
       fhir_attribute :answer_instant
       fhir_attribute :choice, list: Fhir::Types::Coding
-      fhir_attribute :options, type: Fhir::Types::ResourceReference #ValueSet
+      fhir_attribute :options, type: Fhir::Types::Reference #ValueSet
       fhir_attribute :data_integer
       fhir_attribute :data_date
       fhir_attribute :data_string

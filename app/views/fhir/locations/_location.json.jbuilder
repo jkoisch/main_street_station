@@ -29,11 +29,11 @@ json.position do
 end unless resource.position.nil?
 
 json.managingOrganization do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.managing_organization
+  json.partial! 'fhir/base/reference', reference: resource.managing_organization
 end unless resource.managing_organization.nil?
 
 json.partOf do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.part_of
+  json.partial! 'fhir/base/reference', reference: resource.part_of
 end unless resource.part_of.nil?
 
 json.status resource.status unless resource.status.nil?

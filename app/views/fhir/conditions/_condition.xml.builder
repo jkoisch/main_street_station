@@ -2,8 +2,8 @@ resource.identifier.each do |identifier|
   xml.identifier {|xml| xml << render('fhir/base/identifier', {identifier: identifier})}
 end unless resource.identifier.nil?
 
-xml.patient{ |xml| xml << render('fhir/base/resource_reference', {resource_reference: resource.patient})} unless resource.patient.nil?
-xml.encounter{ |xml| xml << render('fhir/base/resource_reference', {resource_reference: resource.encounter})} unless resource.encounter.nil?
+xml.patient{ |xml| xml << render('fhir/base/reference', {reference: resource.patient})} unless resource.patient.nil?
+xml.encounter{ |xml| xml << render('fhir/base/reference', {reference: resource.encounter})} unless resource.encounter.nil?
 xml.dateRecorded({value: resource.date_recorded}) unless resource.date_recorded.nil?
 xml.code{ |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: resource.code})} unless resource.code.nil?
 xml.category{ |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: resource.category})} unless resource.category.nil?

@@ -24,7 +24,7 @@
       state: MI
       postal_code: 48104
       country: USA
-  part_of: !ruby/object:Fhir::Types::ResourceReference
-    external_reference: Organization/1
+  part_of: !ruby/object:Fhir::Types::Reference
+    external: Organization/1
     display: ACME Healthcare, Inc
   active: "true"

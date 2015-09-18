@@ -10,7 +10,7 @@ resource.address.each do |address|
   xml.address {|xml| xml << render('fhir/base/address', {address: address})}
 end unless resource.address.nil?
 
-xml.partOf { |xml| xml << render('fhir/base/resource_reference', {resource_reference: resource.part_of})} unless resource.part_of.nil?
+xml.partOf { |xml| xml << render('fhir/base/reference', {reference: resource.part_of})} unless resource.part_of.nil?
 
 resource.contact.each do |contact|
   xml.contact {|xml| xml << render('contact', {contact: contact})}

@@ -1,7 +1,7 @@
 require 'net/http'
 
 module Fhir
-  class OrganizationsController < FhirController
+  class OrganizationsController < FhirBaseController
     RESOURCE = 'organization'
 
     def index

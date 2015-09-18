@@ -120,12 +120,12 @@ describe Fhir::PatientsController, type: :controller do
       end
 
       it 'should return a success' do
-        post :create, {}, {RAW_POST_DATA: :params}
+        post :create, {format: :json}, {RAW_POST_DATA: :params}
         expect(response).to have_http_status(:created)
       end
 
       it 'should set the Location on the response' do
-        post :create, {}, { RAW_POST_DATA: :params}
+        post :create, {format: :json}, { RAW_POST_DATA: :params}
         expect(response.location).to match /Patient\/1/
       end
 
@@ -175,7 +175,7 @@ describe Fhir::PatientsController, type: :controller do
       end
 
       it 'should return a success' do
-        put :update, {id:1}, {RAW_POST_DATA: :params}
+        put :update, {id:1,format: :json}, {RAW_POST_DATA: :params}
         expect(response).to have_http_status(:success)
       end
     end

@@ -5,8 +5,8 @@ end unless resource.identifier.nil?
 xml.status({value: resource.status}) unless resource.status.nil?
 xml.category {|xml| xml << render('fhir/base/codeable_concept', codeable_concept: resource.category)} unless resource.category.nil?
 xml.code {|xml| xml << render('fhir/base/codeable_concept', codeable_concept: resource.code)} unless resource.code.nil?
-xml.subject { |xml| xml << render('fhir/base/resource_reference', resource_reference: resource.subject)} unless resource.subject.nil?
-xml.encounter{ |xml| xml << render('fhir/base/resource_reference', resource_reference: resource.encounter)} unless resource.encounter.nil?
+xml.subject { |xml| xml << render('fhir/base/reference', reference: resource.subject)} unless resource.subject.nil?
+xml.encounter{ |xml| xml << render('fhir/base/reference', reference: resource.encounter)} unless resource.encounter.nil?
 xml.effectiveDatetime({value: resource.effective_date}) unless resource.effective_date.nil?
 xml.effectivePeriod{ |xml| xml << render('fhir/base/period', period: resource.effective_period)} unless resource.effective_period.nil?
 xml.issued({value: resource.issued}) unless resource.issued.nil?
@@ -25,13 +25,13 @@ xml.interpretation { |xml| xml << render('fhir/base/codeable_concept', codeable_
 xml.comments({value: resource.comments}) unless resource.comments.nil?
 xml.bodySite { |xml| xml << render('fhir/base/codeable_concept', codeable_concept: resource.body_site)} unless resource.body_site.nil?
 xml.tag!('method'){ |xml| xml << render('fhir/base/codeable_concept', codeable_concept: resource.method)} unless resource.method.nil?
-xml.specimen { |xml| xml << render('fhir/base/resource_reference', resource_reference: resource.specimen)} unless resource.specimen.nil?
+xml.specimen { |xml| xml << render('fhir/base/reference', reference: resource.specimen)} unless resource.specimen.nil?
 
 resource.performer.each do |performer|
-  xml.performer { |xml| xml << render('fhir/base/resource_reference', {resource_reference: performer})}
+  xml.performer { |xml| xml << render('fhir/base/reference', {reference: performer})}
 end unless resource.performer.nil?
 
-xml.device{ |xml| xml << render('fhir/base/resource_reference', resource_reference: resource.device)} unless resource.device.nil?
+xml.device{ |xml| xml << render('fhir/base/reference', reference: resource.device)} unless resource.device.nil?
 
 resource.reference_range.each do |reference_range|
   xml.referenceRange { |xml| xml << render('reference_range', {reference_range: reference_range})}

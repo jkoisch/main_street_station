@@ -11,5 +11,5 @@ json.period do
 end unless qualification.period.nil?
 
 json.issuer do
-  json.partial! 'fhir/base/resource_reference', resource_reference: qualification.issuer
+  json.partial! 'fhir/base/reference', reference: qualification.issuer
 end unless qualification.issuer.nil?

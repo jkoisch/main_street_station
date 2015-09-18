@@ -4,15 +4,15 @@ json.status   resource.status unless resource.status.nil?
 json.authored resource.authored unless resource.authored.nil?
 
 json.subject do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.subject
+  json.partial! 'fhir/base/reference', reference: resource.subject
 end unless resource.subject.nil?
 
 json.author do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.author
+  json.partial! 'fhir/base/reference', reference: resource.author
 end unless resource.author.nil?
 
 json.source do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.source
+  json.partial! 'fhir/base/reference', reference: resource.source
 end unless resource.source.nil?
 
 json.name do
@@ -24,7 +24,7 @@ json.identifier resource.identifier do |identifier|
 end unless resource.identifier.nil?
 
 json.encounter do
-  json.partial! 'fhir/base/resource_reference', resource_reference: resource.encounter
+  json.partial! 'fhir/base/reference', reference: resource.encounter
 end unless resource.encounter.nil?
 
 json.group do

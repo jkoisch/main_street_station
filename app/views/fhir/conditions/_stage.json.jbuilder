@@ -3,5 +3,5 @@ json.summary do
 end unless stage.summary.nil?
 
 json.assessment stage.assessment do |assessment|
-  json.partial! 'fhir/base/resource_reference', resource_reference: assessment
+  json.partial! 'fhir/base/reference', reference: assessment
 end unless stage.assessment.nil?
