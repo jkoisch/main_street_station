@@ -10,3 +10,7 @@ json.value  identifier.value.to_s unless identifier.value.nil?
 json.period do
   json.partial! 'fhir/base/period', period: identifier.period
 end unless identifier.period.nil?
+
+json.assigner do
+  json.partial! 'fhir/base/reference', reference: identifier.assigner
+end unless identifier.assigner.nil?
