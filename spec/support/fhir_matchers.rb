@@ -24,18 +24,19 @@ RSpec::Matchers.define :produce_fhir_xml_like do |xml_file|
   match do |actual|
     controller.prepend_view_path 'app/views/' + actual.rpartition('/')[0]
     response = render partial: actual, formats: :xml, locals: {resource: resource}
-    expected_xml = File.read(xml_file)
-    response == expected_xml
+    expected_xml = Nokogiri::XML(File.read(xml_file))
+    response_xml = Nokogiri::XML(response)
+    EquivalentXml.equivalent?(expected_xml,response_xml, element_order: true)
     #xml_cmp(expected_xml, response)
     #false
   end
   # noinspection RubyUnusedLocalVariable
   failure_message do |actual|
-    #expected = JSON.parse(File.read(xml_file))
-    expected = '--'
-    #response = render
-    "expected XML was: #{expected}\n generated: #{response}\n"
-       # " *difference*: #{expected.find_difference(response)}"
+    expected_xml = Nokogiri::XML(File.read(xml_file))
+    response_xml = Nokogiri::XML(response)
+    expected_xml.list_differences(response_xml).join("\n")
+    #"expected XML was:\n#{expected_xml}\n" +
+    #    " generated: --------------------------------\n#{response_xml}\n"
   end
 end
 
