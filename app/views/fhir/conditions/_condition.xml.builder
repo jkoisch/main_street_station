@@ -18,9 +18,11 @@ xml.abatementBoolean({value: resource.abatement_boolean}) unless resource.abatem
 xml.stage{ |xml| xml << render('stage', {stage: resource.stage})} unless resource.stage.nil?
 
 resource.evidence.each do |evidence|
-  xml.evidence { |xml| xml <<
-      render('evidence', {evidence: evidence})}
+  xml.evidence { |xml| xml << render('evidence', {evidence: evidence})}
 end unless resource.evidence.nil?
 
-xml.bodySite { |xml| xml << render('fhir/base/codeable_concept', codeable_concept: resource.body_site)} unless resource.body_site.nil?
+resource.body_site.each do |bodySite|
+  xml.identifier {|xml| xml << render('fhir/base/codeable_concept', {codeable_concept: bodySite})}
+end unless resource.body_site.nil?
+
 xml.notes({value: resource.notes}) unless resource.notes.nil?

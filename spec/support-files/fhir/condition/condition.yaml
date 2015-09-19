@@ -59,9 +59,10 @@
         - !ruby/object:Fhir::Types::Reference
           external: Observation/f202
           display: Temperature
-  body_site: !ruby/object:Fhir::Types::CodeableConcept
-    coding:
-      - !ruby/object:Fhir::Types::Coding
-        system: http://snomed.info/sct
-        code: "308046002"
-        display: Superficial forearm vein
+  body_site:
+    - !ruby/object:Fhir::Types::CodeableConcept
+      coding:
+        - !ruby/object:Fhir::Types::Coding
+          system: http://snomed.info/sct
+          code: "308046002"
+          display: Superficial forearm vein
