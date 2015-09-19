@@ -3,7 +3,7 @@
     external: Patient/201
     display: Roel
   name: Bob
-  status: "completed"
+  status: completed
   relationship: !ruby/object:Fhir::Types::CodeableConcept
     coding:
       - !ruby/object:Fhir::Types::Coding
@@ -28,5 +28,5 @@
             display: Inactive
       onset_age: !ruby/object:Fhir::Types::Quantity
         value: "56"
-        unit: "a"
+        unit: a
         system: http://unitsofmeasure.org
