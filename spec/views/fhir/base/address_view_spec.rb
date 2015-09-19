@@ -1,10 +1,16 @@
 require 'rails_helper'
 
-describe FHIR Base address do
+describe "FHIR base-type address" do
 
-  it 'should pass' do
+  context 'JSON format' do
+    context 'should populate lines' do
+      let(:object) { yaml_load('base/address-lines.yaml') }
 
-    #To change this template use File | Settings | File Templates.
-    expect(true).to be_false
+      it { should match_fhir_json('base/address-lines.json') }
+    end
+  end
+
+  context 'XML format' do
+
   end
 end
