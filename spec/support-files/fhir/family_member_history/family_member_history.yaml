@@ -9,7 +9,8 @@
       - !ruby/object:Fhir::Types::Coding
         system: http://hl7.org/fhir/familial-relationship
         code: brother
-  note: "Both parents, both brothers and both children (twin) are still alive."
+  note: !ruby/object:Fhir::Types::Annotation
+    text: "Both parents, both brothers and both children (twin) are still alive."
   condition:
     - !ruby/object:Fhir::FamilyMemberHistoryClasses::Condition
       code: !ruby/object:Fhir::Types::CodeableConcept

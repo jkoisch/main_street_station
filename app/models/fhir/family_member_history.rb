@@ -16,7 +16,7 @@ module Fhir
     fhir_attribute :age, type_list: [Types::Age, Types::Range, Types::SimpleString]
     fhir_attribute :deceased, type_list: [Types::SimpleBoolean, Types::Age, Types::Range,
                                           Types::SimpleDate, Types::SimpleString]
-    fhir_attribute :note
+    fhir_attribute :note, type: Fhir::Types::Annotation
     fhir_attribute :condition, list: Fhir::FamilyMemberHistoryClasses::Condition
   end
 end
