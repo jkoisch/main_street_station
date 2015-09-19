@@ -47,8 +47,8 @@ json.evidence resource.evidence do |evidence|
   json.partial! 'evidence', evidence: evidence
 end unless resource.evidence.nil?
 
-json.bodySite do
-  json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.body_site
+json.bodySite resource.body_site do |bodySite|
+  json.partial! 'fhir/base/codeable_concept', codeable_concept: bodySite
 end unless resource.body_site.nil?
 
 json.notes resource.notes unless resource.notes.nil?

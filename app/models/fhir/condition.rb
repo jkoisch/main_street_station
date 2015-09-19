@@ -18,7 +18,7 @@ module Fhir
                                            Types::Period, Types::Range, Types::SimpleString]
     fhir_attribute :stage, type: Fhir::ConditionClasses::Stage
     fhir_attribute :evidence, list: Fhir::ConditionClasses::Evidence
-    fhir_attribute :body_site, list: Types::CodeableConcept
+    fhir_attribute :body_site, list: Fhir::Types::CodeableConcept
     fhir_attribute :notes
   end
 end

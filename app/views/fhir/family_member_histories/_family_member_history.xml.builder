@@ -23,7 +23,7 @@ xml.tag!('FamilyMemberHistory') do
   xml.deceasedDate({value: resource.deceased_date}) unless resource.deceased_date.nil?
   xml.deceasedString({value: resource.deceased_string}) unless resource.deceased_string.nil?
 
-  xml.note({value: resource.note}) unless resource.note.nil?
+  xml.note { |xml| xml << render('fhir/base/annotation', {annotation: resource.note})} unless resource.note.nil?
 
   resource.condition.each do |condition|
     xml.condition {|xml| xml << render('condition', {condition: condition})}
