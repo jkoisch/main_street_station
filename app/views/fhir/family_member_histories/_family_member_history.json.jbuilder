@@ -48,7 +48,9 @@ end unless resource.deceased_range.nil?
 json.deceasedDate     resource.deceased_date unless resource.deceased_date.nil?
 json.deceasedString   resource.deceased_string unless resource.deceased_string.nil?
 
-json.note resource.note unless resource.note.nil?
+json.note do
+  json.partial! 'fhir/base/annotation', annotation: resource.note
+end unless resource.note.nil?
 
 json.condition resource.condition do |condition|
   json.partial! 'condition', condition: condition

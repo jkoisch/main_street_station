@@ -7,7 +7,14 @@
     <reference value="Patient/201"/>
     <display value="Roel"/>
   </patient>
+<<<<<<< HEAD:spec/support-files/fhir/family_member_history/family_member_history.xml
+  <date value="2015-06-05"/>
   <note value="Both parents, both brothers and both children (twin) are still alive."/>
+=======
+  <note>
+    <text value="Both parents, both brothers and both children (twin) are still alive."/>
+  </note>
+>>>>>>> master:spec/support-files/fhir/family_member_history/fhir-family_member_history.xml
   <status value="completed"/>
   <relationship>
     <coding>

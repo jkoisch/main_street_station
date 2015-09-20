@@ -6,9 +6,6 @@ gem 'rails', '4.1.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
-#gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
-#gem 'formtastic'
 gem 'pg'
 gem 'sinatra'
 gem 'twitter-bootstrap-rails'
@@ -37,6 +34,9 @@ group :test, :development do
   gem 'thin'
   #gem 'taps'
   gem 'dotenv-rails'
+  gem 'equivalent-xml'
+  gem 'nokogiri-pretty'
+  gem 'rb-readline'
 end
 
 gem 'jquery-rails'
@@ -45,7 +45,6 @@ gem 'json'
 gem 'nifty-generators', group: :development
 gem 'quiet_assets', group: :development
 gem 'uuid'
-#gem 'nokogiri'
 
 gem 'devise'
 gem 'omniauth'
