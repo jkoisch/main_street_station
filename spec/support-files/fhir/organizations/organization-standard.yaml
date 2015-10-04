@@ -1,21 +1,17 @@
 --- !ruby/object:Fhir::Organization
-  name: "Health Level Seven International"
+  id: 3
+  active: "true"
   type: !ruby/object:Fhir::Types::CodeableConcept
     coding:
       - !ruby/object:Fhir::Types::Coding
         system: urn:oid:2.16.840.1.113883.2.4.15.1060
         code: V6
         display: University Medical Hospital
+  name: "Health Level Seven International"
   telecom:
     - !ruby/object:Fhir::Types::ContactPoint
       system: phone
       value: (+1) 734-677-7777
-    - !ruby/object:Fhir::Types::ContactPoint
-      system: fax
-      value: (+1) 734-677-6622
-    - !ruby/object:Fhir::Types::ContactPoint
-      system: email
-      value: hq@HL7.org
   address:
     - !ruby/object:Fhir::Types::Address
       line:
@@ -27,4 +23,3 @@
   part_of: !ruby/object:Fhir::Types::Reference
     external: Organization/1
     display: ACME Healthcare, Inc
-  active: "true"

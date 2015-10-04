@@ -1,0 +1,7 @@
+<Bundle xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="xxx"/>
+  </meta>
+  <type value="searchset"/>
+  <total value="0"/>
+</Bundle>

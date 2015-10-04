@@ -1,0 +1,30 @@
+{
+  "purpose": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.4.642.1.229",
+        "code": "ADMIN",
+        "display": "Administrative"
+      }
+    ]
+  },
+  "name": {
+    "use": "usual",
+    "given": [ "The Big Cheese" ]
+  },
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(+1) 734-677-7777"
+    },
+    {
+      "system": "email",
+      "value": "hq@HL7.org"
+    }
+  ],
+  "address": {
+    "use": "work",
+    "line": [ "123 Somewhere St." ],
+    "city": "Edmonton"
+  }
+}

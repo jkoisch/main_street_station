@@ -52,6 +52,10 @@ RSpec.configure do |config|
   config.order = 'random'
 
   config.include Requests::JsonHelpers, type: :request
+  config.include Requests::JsonHelpers, type: :view
+  config.include Requests::XmlHelpers, type: :request
+  config.include Requests::XmlHelpers, type: :view
+  config.include Fhir::Spec::Helpers
 end
 
 #WebMock.stub_request(:any, 'http://gringotts.dev/')

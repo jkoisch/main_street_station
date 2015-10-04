@@ -1,0 +1,167 @@
+{
+  "resourceType": "Bundle",
+  "meta": {
+    "lastUpdated": "xxx"
+  },
+  "type": "searchset",
+  "total": 2,
+  "entry": [
+    {
+      "fullUrl": "http://mainstreet.youcentric.com/fhir/Organization/3",
+      "resource": {
+        "resourceType":"Organization",
+        "id": "3",
+        "active":"true",
+        "type":{
+          "coding":[
+            {
+              "system":"urn:oid:2.16.840.1.113883.2.4.15.1060",
+              "code":"V6",
+              "display":"University Medical Hospital"}
+          ]
+        },
+        "name":"Health Level Seven International",
+        "telecom":[
+          {
+            "system":"phone",
+            "value":"(+1) 734-677-7777"
+          }
+        ],
+        "address":[
+          {
+            "line":["3300 Washtenaw Avenue, Suite 227"],
+            "city":"Ann Arbor",
+            "state":"MI",
+            "postalCode":"48104",
+            "country":"USA"
+          }
+        ],
+        "partOf":{
+          "reference":"Organization/1",
+          "display":"ACME Healthcare, Inc"
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://mainstreet.youcentric.com/fhir/Organization/1",
+      "resource": {
+        "resourceType":"Organization",
+        "id": "1",
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "187e0c12-8dd2-67e2-99b2-bf273c878281"
+          },
+          {
+            "system": "http://bbb.ca",
+            "value": "23"
+          }
+        ],
+        "active":"true",
+        "type":{
+          "coding":[
+            {
+              "system":"urn:oid:2.16.840.1.113883.2.4.15.1060",
+              "code":"V6",
+              "display":"University Medical Hospital"
+            }
+          ]
+        },
+        "name":"Health Level Seven International",
+        "telecom":[
+          {
+            "system":"phone",
+            "value":"(+1) 734-677-7777"
+          },
+          {
+            "system":"fax",
+            "value":"(+1) 734-677-6622"
+          },
+          {
+            "system":"email",
+            "value":"hq@HL7.org"
+          }
+        ],
+        "address":[
+          {
+            "line":[ "3300 Washtenaw Avenue, Suite 227" ],
+            "city":"Ann Arbor",
+            "state":"MI",
+            "postalCode":"48104",
+            "country":"USA"
+          },
+          {
+            "city":"Ann Arbor",
+            "state":"MI",
+            "postalCode":"48104",
+            "country":"USA"
+          }
+        ],
+        "partOf":{
+          "reference":"Organization/1",
+          "display":"ACME Healthcare, Inc"
+        },
+        "contact": [
+          {
+            "name": {
+              "use": "usual",
+              "given": [ "The Big Cheese" ]
+            },
+            "telecom": [
+              {
+                "system": "fax",
+                "value": "(+1) 734-677-7777"
+              },
+              {
+                "system": "phone",
+                "value": "(+1) 734-677-7777"
+              }
+            ],
+            "address": {
+              "use": "work",
+              "line": [ "123 Somewhere St." ],
+              "city": "Edmonton"
+            }
+          },
+          {
+            "purpose": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.4.642.1.229",
+                  "code": "ADMIN",
+                  "display": "Administrative"
+                }
+              ]
+            },
+            "name": {
+              "use": "official",
+              "given": [ "Karen" ],
+              "family": [ "van Hentenryk" ]
+            },
+            "telecom": [
+              {
+                "system": "email",
+                "value": "karen@hl7.org"
+              },
+              {
+                "system": "phone",
+                "value": "(+1) 734-677-7777"
+              }
+            ],
+            "address": {
+              "use": "work",
+              "line": [ "123 Somewhere St." ],
+              "city": "Edmonton"
+            }
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      }
+    }
+  ]
+}

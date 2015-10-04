@@ -8,6 +8,8 @@ FactoryGirl.define do
   end
 
   factory :fhir_patient_name, class: FhirInterface::Types::HumanName do
+    skip_create
+
     givenName [ 'John' ]
   end
 end

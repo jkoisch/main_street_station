@@ -1,0 +1,95 @@
+<Organization xmlns="http://hl7.org/fhir">
+  <id value="1"/>
+  <identifier>
+    <system value="urn:ietf:rfc:3986"/>
+    <value value="187e0c12-8dd2-67e2-99b2-bf273c878281"/>
+  </identifier>
+  <identifier>
+    <system value="http://bbb.ca"/>
+    <value value="23"/>
+  </identifier>
+  <active value="true"/>
+  <type>
+    <coding>
+      <system value="urn:oid:2.16.840.1.113883.2.4.15.1060"/>
+      <code value="V6"/>
+      <display value="University Medical Hospital"/>
+    </coding>
+  </type>
+  <name value="Health Level Seven International"/>
+  <telecom>
+    <system value="phone"/>
+    <value value="(+1) 734-677-7777"/>
+  </telecom>
+  <telecom>
+    <system value="fax"/>
+    <value value="(+1) 734-677-6622"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="hq@HL7.org"/>
+  </telecom>
+  <address>
+    <line value="3300 Washtenaw Avenue, Suite 227"/>
+    <city value="Ann Arbor"/>
+    <state value="MI"/>
+    <postalCode value="48104"/>
+    <country value="USA"/>
+  </address>
+  <address>
+    <city value="Ann Arbor"/>
+    <state value="MI"/>
+    <postalCode value="48104"/>
+    <country value="USA"/>
+  </address>
+  <partOf>
+    <reference value="Organization/1"/>
+    <display value="ACME Healthcare, Inc"/>
+  </partOf>
+  <contact>
+    <name>
+      <use value="usual"/>
+      <given value="The Big Cheese"/>
+    </name>
+    <telecom>
+      <system value="fax"/>
+      <value value="(+1) 734-677-7777"/>
+    </telecom>
+    <telecom>
+      <system value="phone"/>
+      <value value="(+1) 734-677-7777"/>
+    </telecom>
+    <address>
+      <use value="work"/>
+      <line value="123 Somewhere St."/>
+      <city value="Edmonton"/>
+    </address>
+  </contact>
+  <contact>
+    <purpose>
+      <coding>
+        <system value="urn:oid:2.16.840.1.113883.4.642.1.229"/>
+        <code value="ADMIN"/>
+        <display value="Administrative"/>
+      </coding>
+    </purpose>
+    <name>
+      <use value="official"/>
+      <given value="Karen"/>
+      <family value="van Hentenryk"/>
+    </name>
+    <telecom>
+      <system value="email"/>
+      <value value="karen@hl7.org"/>
+    </telecom>
+    <telecom>
+      <system value="phone"/>
+      <value value="(+1) 734-677-7777"/>
+    </telecom>
+    <address>
+      <use value="work"/>
+      <line value="123 Somewhere St."/>
+      <city value="Edmonton"/>
+    </address>
+  </contact>
+</Organization>

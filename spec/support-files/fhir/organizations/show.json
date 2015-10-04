@@ -7,8 +7,7 @@
       {
         "system":"urn:oid:2.16.840.1.113883.2.4.15.1060",
         "code":"V6",
-        "display":"University Medical Hospital"
-      }
+        "display":"University Medical Hospital"}
     ]
   },
   "name":"Health Level Seven International",
@@ -20,7 +19,7 @@
   ],
   "address":[
     {
-      "line":[ "3300 Washtenaw Avenue, Suite 227" ],
+      "line":["3300 Washtenaw Avenue, Suite 227"],
       "city":"Ann Arbor",
       "state":"MI",
       "postalCode":"48104",

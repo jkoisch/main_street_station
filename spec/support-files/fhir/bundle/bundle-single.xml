@@ -1,0 +1,18 @@
+<Bundle xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="xxx"/>
+  </meta>
+  <type value="searchset"/>
+  <total value="1"/>
+  <entry>
+    <fullUrl value="http://mainstreet.youcentric.com/fhir/BundleTest/1"/>
+    <resource>
+      <resourceType value="BundleTest"/>
+      <name value="testing 1"/>
+      <category value="expert"/>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+</Bundle>

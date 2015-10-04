@@ -1,0 +1,32 @@
+{
+  "resourceType":"Bundle",
+  "meta": {
+    "lastUpdated": "xxx"
+  },
+  "type":"searchset",
+  "total":2,
+  "entry": [
+    {
+      "fullUrl":"http://mainstreet.youcentric.com/fhir/BundleTest/1",
+      "resource": {
+        "resourceType":"BundleTest",
+        "name":"testing 1",
+        "category":"expert"
+      },
+      "search": {
+        "mode":"match"
+      }
+    },
+    {
+      "fullUrl":"http://mainstreet.youcentric.com/fhir/BundleTest/2",
+      "resource": {
+        "resourceType":"BundleTest",
+        "name":"testing 2",
+        "category":"poser"
+      },
+      "search": {
+        "mode":"match"
+      }
+    }
+  ]
+}

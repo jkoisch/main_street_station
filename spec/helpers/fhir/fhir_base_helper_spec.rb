@@ -2,15 +2,13 @@ require 'rails_helper'
 
 ActionController::Base.append_view_path("#{Rails.root}/spec/support/views")
 
-class BundleTest
-  attr_accessor :name, :category
+module Fhir
+  class BundleTest < Poro
+    attr_accessor :id, :name, :category
 
-  def initialize(the_name, the_category)
-    @name = the_name; @category = the_category
-  end
-
-  def to_partial_path
-    'bundle_test'
+    def to_partial_path
+      'bundle_test'
+    end
   end
 end
 
@@ -20,20 +18,29 @@ describe Fhir::FhirBaseHelper, type: :view do
     it 'should return a JSON FHIR Bundle for an empty array' do
       @things = []
       render template: 'fhir/fhir_base/index', formats: :json
-      expect(response.body).to eq '{"resourceType":"Bundle","type":"collection","total":0,"entry":[]}'
+      expect(response.body).to match_fhir_json(support_file('bundle/bundle-empty.json'),
+                                               {'**/lastUpdated' => 'xxx'})
     end
 
     it 'should return a JSON FHIR Bundle for a single item' do
-      @things = [ BundleTest.new('testing 1', 'expert') ]
+      @things = [ Fhir::BundleTest.new(id: 1, name: 'testing 1', category: 'expert') ]
       render template: 'fhir/fhir_base/index', formats: :json
-      expect(response.body).to eq '{"resourceType":"Bundle","type":"collection","total":1,"entry":[{"status":"match","resource":{"resourceType":"BundleTest","name":"testing 1","category":"expert"}}]}'
+      expect(response.body).to match_fhir_json(support_file('bundle/bundle-single.json'),
+                                               {'**/lastUpdated' => 'xxx'})
     end
 
     it 'should return a JSON FHIR Bundle for a multiple items' do
-      @things = [ BundleTest.new('testing 1', 'expert'),
-                  BundleTest.new('testing 2', 'poser') ]
+      @things = [ Fhir::BundleTest.new(id: 1, name: 'testing 1', category: 'expert'),
+                  Fhir::BundleTest.new(id: 2, name: 'testing 2', category: 'poser') ]
       render template: 'fhir/fhir_base/index', formats: :json
-      expect(response.body).to eq '{"resourceType":"Bundle","type":"collection","total":2,"entry":[{"status":"match","resource":{"resourceType":"BundleTest","name":"testing 1","category":"expert"}},{"status":"match","resource":{"resourceType":"BundleTest","name":"testing 2","category":"poser"}}]}'
+      expect(response.body).to match_fhir_json(support_file('bundle/bundle-multiple.json'),
+                                               {'**/lastUpdated' => 'xxx'})
+    end
+
+    it 'should set the lastUpdated as a properly formatted datetime' do
+      @things = []
+      render template: 'fhir/fhir_base/index', formats: :json
+      expect(json['meta']['lastUpdated']).to match(/20\d{2}-[01][0-9]-[0123][0-9]T[0-2][0-9]:[0-5][0-9]:[0-5][0-9]Z/)
     end
   end
 
@@ -41,59 +48,29 @@ describe Fhir::FhirBaseHelper, type: :view do
     it 'should return an XML bundle for an empty array' do
       @things = []
       render template: 'fhir/fhir_base/index', formats: :xml
-      expect(response.body).to eq <<-END.gsub(/^ {6}/, '')
-      <Bundle>
-        <type value="collection"/>
-        <total value="0"/>
-      </Bundle>
-      END
+      expect(response.body).to match_fhir_xml(support_file('bundle/bundle-empty.xml'),
+                                              {"//*[local-name()='lastUpdated']/@value" => 'xxx'})
     end
 
     it 'should return an XML bundle for a single item' do
-      @things = [ BundleTest.new('testing 1', 'expert') ]
+      @things = [ Fhir::BundleTest.new(id: 1, name: 'testing 1', category: 'expert') ]
       render template: 'fhir/fhir_base/index', formats: :xml
-      expect(response.body).to eq <<-END.gsub(/^ {6}/, '')
-      <Bundle>
-        <type value="collection"/>
-        <total value="1"/>
-        <entry>
-          <status value="match"/>
-          <resource>
-      <resourceType value="BundleTest"/>
-      <name value="testing 1"/>
-      <category value="expert"/>
-          </resource>
-        </entry>
-      </Bundle>
-      END
+      expect(response.body).to match_fhir_xml(support_file('bundle/bundle-single.xml'),
+                                              {"//*[local-name()='lastUpdated']/@value" => 'xxx'})
     end
 
     it 'should return an XML bundle for a multiple items' do
-      @things = [ BundleTest.new('testing 1', 'expert'),
-                  BundleTest.new('testing 2', 'poser') ]
+      @things = [ Fhir::BundleTest.new(id: 1, name: 'testing 1', category: 'expert'),
+                  Fhir::BundleTest.new(id: 2, name: 'testing 2', category: 'poser') ]
       render template: 'fhir/fhir_base/index', formats: :xml
-      expect(response.body).to eq <<-END.gsub(/^ {6}/, '')
-      <Bundle>
-        <type value="collection"/>
-        <total value="2"/>
-        <entry>
-          <status value="match"/>
-          <resource>
-      <resourceType value="BundleTest"/>
-      <name value="testing 1"/>
-      <category value="expert"/>
-          </resource>
-        </entry>
-        <entry>
-          <status value="match"/>
-          <resource>
-      <resourceType value="BundleTest"/>
-      <name value="testing 2"/>
-      <category value="poser"/>
-          </resource>
-        </entry>
-      </Bundle>
-      END
+      expect(response.body).to match_fhir_xml(support_file('bundle/bundle-multiple.xml'),
+                                              {"//*[local-name()='lastUpdated']/@value" => 'xxx'})
+    end
+
+    it 'should set the lastUpdated as a properly formatted datetime' do
+      @things = []
+      render template: 'fhir/fhir_base/index', formats: :xml
+      expect(xml.at_css('meta lastUpdated')['value']).to match(/20\d{2}-[01][0-9]-[0123][0-9]T[0-2][0-9]:[0-5][0-9]:[0-5][0-9]Z/)
     end
   end
 end

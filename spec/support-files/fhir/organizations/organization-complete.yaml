@@ -1,0 +1,86 @@
+--- !ruby/object:Fhir::Organization
+  id: 1
+  identifier:
+    - !ruby/object:Fhir::Types::Identifier
+      system: urn:ietf:rfc:3986
+      value: 187e0c12-8dd2-67e2-99b2-bf273c878281
+    - !ruby/object:Fhir::Types::Identifier
+      system: http://bbb.ca
+      value: 23
+  name: "Health Level Seven International"
+  type: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: urn:oid:2.16.840.1.113883.2.4.15.1060
+        code: V6
+        display: University Medical Hospital
+  telecom:
+    - !ruby/object:Fhir::Types::ContactPoint
+      system: phone
+      value: (+1) 734-677-7777
+    - !ruby/object:Fhir::Types::ContactPoint
+      system: fax
+      value: (+1) 734-677-6622
+    - !ruby/object:Fhir::Types::ContactPoint
+      system: email
+      value: hq@HL7.org
+  address:
+    - !ruby/object:Fhir::Types::Address
+      line:
+        - 3300 Washtenaw Avenue, Suite 227
+      city: Ann Arbor
+      state: MI
+      postal_code: 48104
+      country: USA
+    - !ruby/object:Fhir::Types::Address
+      city: Ann Arbor
+      state: MI
+      postal_code: 48104
+      country: USA
+  part_of: !ruby/object:Fhir::Types::Reference
+    external: Organization/1
+    display: ACME Healthcare, Inc
+  active: "true"
+  contact:
+    - !ruby/object:Fhir::OrganizationClasses::Contact
+      name: !ruby/object:Fhir::Types::HumanName
+        use: usual
+        given:
+          - The Big Cheese
+      telecom:
+        - !ruby/object:Fhir::Types::ContactPoint
+          system: fax
+          value: (+1) 734-677-7777
+        - !ruby/object:Fhir::Types::ContactPoint
+          system: phone
+          value: (+1) 734-677-7777
+      address: !ruby/object:Fhir::Types::Address
+        use: work
+        line:
+          - 123 Somewhere St.
+        city: Edmonton
+    - !ruby/object:Fhir::OrganizationClasses::Contact
+      purpose: !ruby/object:Fhir::Types::CodeableConcept
+        coding:
+          - !ruby/object:Fhir::Types::Coding
+            system: urn:oid:2.16.840.1.113883.4.642.1.229
+            code: ADMIN
+            display: Administrative
+      name: !ruby/object:Fhir::Types::HumanName
+        use: official
+        given:
+          - Karen
+        family:
+          - van Hentenryk
+      telecom:
+        - !ruby/object:Fhir::Types::ContactPoint
+          system: email
+          value: karen@hl7.org
+        - !ruby/object:Fhir::Types::ContactPoint
+          system: phone
+          value: (+1) 734-677-7777
+      address: !ruby/object:Fhir::Types::Address
+        use: work
+        line:
+          - 123 Somewhere St.
+        city: Edmonton
