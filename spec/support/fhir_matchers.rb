@@ -76,6 +76,22 @@ RSpec::Matchers.define :return_FHIR_JSON_object do |object_name|
   end
 end
 
+RSpec::Matchers.define :return_FHIR_XML_object do |object_name|
+  match do |actual|
+    body = Nokogiri::XML(actual.body)
+    actual.content_type == :xml &&
+        body.first_element_child.name == object_name
+  end
+  failure_message do |actual|
+    body = Nokogiri::XML(actual.body)
+    if actual.content_type != :xml
+      "Content was not XML (received: #{actual.content_type.to_s})"
+    elsif body.first_element_child.name != object_name
+      "Body should contain a XML #{object_name} resource, received: <#{body.first_element_child.name}>"
+    end
+  end
+end
+
 RSpec::Matchers.define :return_an_OperationOutcome_when_failing_for do |error_path|
   # noinspection RubyUnusedLocalVariable
   match do |actual|
@@ -83,6 +99,44 @@ RSpec::Matchers.define :return_an_OperationOutcome_when_failing_for do |error_pa
     get "/fhir/#{error_path}"
     hash_body = JSON.parse(response.body)
     hash_body['resourceType'] == 'OperationOutcome'
+  end
+end
+
+RSpec::Matchers.define :return_FHIR_JSON_bundle do |object_name|
+  match do |actual|
+    body = JSON.parse(actual.body)
+    actual.content_type == :json &&
+        body['resourceType'] == 'Bundle' &&
+        body['entry'][0]['resource']['resourceType'] == object_name
+  end
+  failure_message do |actual|
+    body = JSON.parse(actual.body)
+    if actual.content_type != :json
+      "Content was not JSON (received: #{actual.content_type.to_s})"
+    elsif body['resourceType'] != 'Bundle'
+      "Body should contain a JSON Bundle object, received: <#{body['resourceType']}>"
+    elsif body['entry'][0]['resource']['resourceType'] != object_name
+      "Bundle does not contain a <#{object_name}> resource"
+    end
+  end
+end
+
+RSpec::Matchers.define :return_FHIR_XML_bundle do |object_name|
+  match do |actual|
+    body = Nokogiri::XML(actual.body)
+    actual.content_type == :xml &&
+        body.first_element_child.name == 'Bundle' &&
+        body.xpath("//*[local-name()='resource']/*[local-name()='#{object_name}']").count > 0
+  end
+  failure_message do |actual|
+    body = Nokogiri::XML(actual.body)
+    if actual.content_type != :xml
+      "Content was not XML (received: #{actual.content_type.to_s})"
+    elsif body.first_element_child.name != 'Bundle'
+      "Body should contain a XML Bundle object, received: <#{body.first_element_child.name}>"
+    elsif body.xpath("//*[local-name()='resource']/*[local-name()='#{object_name}']").count == 0
+      "Bundle does not contain a <#{object_name}> resource"
+    end
   end
 end
 
@@ -95,17 +149,6 @@ RSpec::Matchers.define :return_FHIR_JSON_bundle_object do |object_name|
     hash_body['resourceType'] == 'Bundle'
   end
 end
-
-RSpec::Matchers.define :return_FHIR_XML_bundle_object do |object_name|
-  # noinspection RubyUnusedLocalVariable
-  # TODO: remove get and test content and accept headers
-  match do |actual|
-    get "/fhir/#{object_name}.xml"
-    hash_body = JSON.parse(response.body)
-    hash_body['resourceType'] == 'Bundle'
-  end
-end
-
 
 RSpec::Matchers.define :return_HTTP_success_for do |fhir_api_path|
   # noinspection RubyUnusedLocalVariable

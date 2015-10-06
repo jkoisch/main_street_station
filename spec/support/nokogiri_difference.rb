@@ -11,15 +11,17 @@ module NokogiriDifference
         unless EquivalentXml.equivalent?(self, other, opts: {element_order: true, normalize_whitespace: true})
           diffs << _add_indent(depth) + "Error in <#{self.name}>"
 
-          if self.namespace && other.namespace.nil?
-            diffs << _add_indent(depth) + 'namespace <' + self.namespace.href + '> not found'
-          elsif other.namespace && self.namespace.nil?
-            diffs << _add_indent(depth) + 'found namespace <' + other.namespace.href + '> not expected'
-          else
-            unless self.namespace.href == other.namespace.href
-              diffs << _add_indent(depth) + 'namespace <' +
-                  (self.namespace.nil? ? 'nil namespace' : self.namespace.href) + '> != <' +
-                  (other.namespace.nil? ? 'nil namespace' : other.namespace.href) + '>'
+          unless self.namespace.nil? && other.namespace.nil?
+            if self.namespace && other.namespace.nil?
+              diffs << _add_indent(depth) + 'namespace <' + self.namespace.href + '> not found'
+            elsif other.namespace && self.namespace.nil?
+              diffs << _add_indent(depth) + 'found namespace <' + other.namespace.href + '> not expected'
+            else
+              unless self.namespace.href == other.namespace.href
+                diffs << _add_indent(depth) + 'namespace <' +
+                    (self.namespace.nil? ? 'nil namespace' : self.namespace.href) + '> != <' +
+                    (other.namespace.nil? ? 'nil namespace' : other.namespace.href) + '>'
+              end
             end
           end
 

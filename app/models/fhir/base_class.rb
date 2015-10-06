@@ -3,6 +3,7 @@ module Fhir
     extend AttributeDefs
 
     fhir_attribute :_id
+    fhir_attribute :extension
 
     def initialize(attr_accessors={})
       update(attr_accessors)

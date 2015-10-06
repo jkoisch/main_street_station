@@ -2,7 +2,9 @@ module Fhir
   class BaseResource
     extend AttributeDefs
 
+    fhir_attribute :id
     fhir_attribute :text
+    fhir_attribute :extension
 
     def initialize(attr_accessors={})
       update(attr_accessors)

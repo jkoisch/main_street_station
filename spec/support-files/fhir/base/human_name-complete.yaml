@@ -1,0 +1,19 @@
+--- !ruby/object:Fhir::Types::HumanName
+  id: 2
+  use: official
+  text: I have a long name with many words
+  family:
+    - Winnifred
+    - Jones
+  given:
+    - Alfred
+    - Reginald
+  prefix:
+    - Lt.
+    - Sir
+  suffix:
+    - Esq.
+    - MD
+  period: !ruby/object:Fhir::Types::Period
+    start: "2000-01-11"
+    end: "2015-05-26"
