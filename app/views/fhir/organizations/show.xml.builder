@@ -1,2 +1,2 @@
 xml.instruct!
-xml << render(@organization)
+@organization.to_xml(nil, xml, true)

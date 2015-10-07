@@ -1,0 +1,5 @@
+<identifier>
+  <use value="official"/>
+  <system value="http://hl7.org/fhir"/>
+  <value value="1234-6677"/>
+</identifier>

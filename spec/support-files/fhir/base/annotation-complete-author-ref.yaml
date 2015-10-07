@@ -1,0 +1,11 @@
+--- !ruby/object:Fhir::Types::Annotation
+  author: !ruby/object:Fhir::Types::Reference
+    local_id: 4
+    local_type: Client
+    display: Mr. Schmuck
+  author_reference: !ruby/object:Fhir::Types::Reference
+    local_id: 4
+    local_type: Client
+    display: Mr. Schmuck
+  time: 2015-06-07T09:30:30.0Z
+  text: Something intelligent

@@ -1,0 +1,5 @@
+<quantity>
+  <value value="23"/>
+  <unit value="g"/>
+  <system value="http://hl7.org/fhir/thing"/>
+</quantity>

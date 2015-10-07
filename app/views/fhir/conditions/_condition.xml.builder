@@ -10,7 +10,7 @@ xml.category{ |xml| xml << render('fhir/base/codeable_concept', {codeable_concep
 xml.clinicalStatus({value: resource.clinical_status}) unless resource.clinical_status.nil?
 xml.verificationStatus({value: resource.verification_status}) unless resource.verification_status.nil?
 xml.severity{ |xml| xml << render('fhir/base/codeable_concept', {codeable_concept: resource.severity})} unless resource.severity.nil?
-xml.onsetDatetime({value: resource.onset_date}) unless resource.onset_date.nil?
+xml.onsetDatetime({value: resource.onset_datetime}) unless resource.onset_datetime.nil?
 xml.onsetAge{ |xml| xml << render('fhir/base/quantity', {quantity: resource.onset_age})} unless resource.onset_age.nil?
 xml.abatementDatetime({value: resource.abatement_datetime}) unless resource.abatement_datetime.nil?
 xml.abatementAge{ |xml| xml << render('fhir/base/quantity', {quantity: resource.abatement_age})} unless resource.abatement_age.nil?

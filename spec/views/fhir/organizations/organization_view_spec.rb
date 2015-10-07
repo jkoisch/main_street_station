@@ -1,5 +1,6 @@
 require 'rails_helper'
 require 'fhir/organization'
+require 'builder'
 
 describe 'FHIR Organization View', type: :view do
   before(:each) { controller.prepend_view_path 'app/views/fhir/organizations' }
@@ -14,7 +15,8 @@ describe 'FHIR Organization View', type: :view do
     end
 
     context 'XML' do
-      subject { render resource, formats: :xml }
+      let(:builder) { Builder::XmlMarkup.new() }
+      subject { resource.to_xml(nil, builder, true) }
 
       it {should match_fhir_xml(support_file('organizations/organization-standard.xml')) }
     end
@@ -30,7 +32,8 @@ describe 'FHIR Organization View', type: :view do
     end
 
     context 'XML' do
-      subject { render resource, formats: :xml }
+      let(:builder) { Builder::XmlMarkup.new() }
+      subject { resource.to_xml(nil, builder, true) }
 
       it {should match_fhir_xml(support_file('organizations/organization-complete.xml')) }
     end

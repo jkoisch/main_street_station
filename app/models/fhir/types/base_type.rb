@@ -2,6 +2,7 @@ module Fhir
   module Types
     class BaseType
       extend Fhir::AttributeDefs
+      include Fhir::XmlAttributeOutput
 
       def initialize(attr_accessors={})
         update(attr_accessors)
@@ -19,6 +20,12 @@ module Fhir
 
       def self.simple_type?
         false
+      end
+
+      def to_xml(tag, builder)
+        builder.tag!(tag) { |xml|
+          generate_xml_output(xml)
+        }
       end
     end
   end

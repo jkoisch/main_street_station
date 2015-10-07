@@ -1,6 +1,6 @@
 module Fhir
   module Types
-    class Repeat < BaseType
+    class Repeat < KeyedBaseType
       fhir_attribute :frequency
       fhir_attribute :when
       fhir_attribute :duration

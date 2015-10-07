@@ -1,0 +1,7 @@
+<range>
+  <low>
+    <value value="43"/>
+    <unit value="g"/>
+    <system value="http://somewhere.com/measure"/>
+  </low>
+</range>

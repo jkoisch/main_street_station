@@ -1,7 +1,8 @@
 require 'rails_helper'
 require 'fhir/types/human_name'
+require 'builder'
 
-describe 'FHIR base-type human name', type: :view do
+describe 'FHIR base-type HumanName', type: :view do
   context 'simple' do
     let(:object) { yaml_load('base/human_name-simple.yaml') }
 
@@ -12,8 +13,8 @@ describe 'FHIR base-type human name', type: :view do
     end
 
     context 'XML' do
-      subject { render inline: "xml.name {|xml| xml << render('fhir/base/human_name', {human_name: thing})}",
-                       type: :builder, locals: {thing: object} }
+      let(:builder) { Builder::XmlMarkup.new() }
+      subject       { object.to_xml('name', builder) }
       it { should match_fhir_xml(support_file('base/human_name-simple.xml')) }
     end
   end
@@ -28,8 +29,8 @@ describe 'FHIR base-type human name', type: :view do
     end
 
     context 'XML' do
-      subject { render inline: "xml.name {|xml| xml << render('fhir/base/human_name', {human_name: thing})}",
-                       type: :builder, locals: {thing: object} }
+      let(:builder) { Builder::XmlMarkup.new() }
+      subject       { object.to_xml('name', builder) }
       it { should match_fhir_xml(support_file('base/human_name-complete.xml')) }
     end
   end

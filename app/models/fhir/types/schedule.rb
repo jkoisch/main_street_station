@@ -1,6 +1,6 @@
 module Fhir
   module Types
-    class Schedule < BaseType
+    class Schedule < KeyedBaseType
       fhir_attribute :event, list: Period
       fhir_attribute :repeat, type: Repeat
     end

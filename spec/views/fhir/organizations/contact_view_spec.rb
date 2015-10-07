@@ -1,5 +1,6 @@
 require 'rails_helper'
 require 'fhir/organization'
+require 'builder'
 
 describe 'FHIR View Organization Contact', type: :view do
   context 'partial' do
@@ -13,8 +14,8 @@ describe 'FHIR View Organization Contact', type: :view do
       end
 
       context 'xml' do
-        subject { render inline: "xml.contact {|xml| xml << render('fhir/organizations/contact', {contact: contact})}",
-                         type: :builder, locals: {contact: object} }
+        let(:builder) { Builder::XmlMarkup.new() }
+        subject       { object.to_xml('contact', builder) }
 
         it { should match_fhir_xml(support_file('organizations/contact-standard.xml')) }
       end
@@ -30,8 +31,8 @@ describe 'FHIR View Organization Contact', type: :view do
       end
 
       context 'xml' do
-        subject { render inline: "xml.contact {|xml| xml << render('fhir/organizations/contact', {contact: contact})}",
-                         type: :builder, locals: {contact: object} }
+        let(:builder) { Builder::XmlMarkup.new() }
+        subject       { object.to_xml('contact', builder) }
 
         it { should match_fhir_xml(support_file('organizations/contact-complete.xml')) }
       end

@@ -1,6 +1,6 @@
 module Fhir
   module Types
-    class SampledData < BaseType
+    class SampledData < KeyedBaseType
       fhir_attribute :origin, type: Quantity
       fhir_attribute :period
       fhir_attribute :factor

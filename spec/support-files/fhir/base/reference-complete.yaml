@@ -1,0 +1,5 @@
+--- !ruby/object:Fhir::Types::Reference
+  local_id: 2
+  local_type: Provider
+  display: Joe Schmoe
+

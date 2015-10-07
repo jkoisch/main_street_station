@@ -1,7 +1,8 @@
 require 'rails_helper'
 require 'fhir/types/address'
+require 'builder'
 
-describe 'FHIR base-type address', type: :view do
+describe 'FHIR base-type Address', type: :view do
   context 'simple' do
     let(:object) { yaml_load('base/address-simple.yaml') }
 
@@ -12,8 +13,8 @@ describe 'FHIR base-type address', type: :view do
     end
 
     context 'XML' do
-      subject { render inline: "xml.address {|xml| xml << render('fhir/base/address', {address: thing})}",
-                       type: :builder, locals: {thing: object} }
+      let(:builder) { Builder::XmlMarkup.new() }
+      subject       { object.to_xml('address', builder) }
 
       it { should match_fhir_xml(support_file('base/address-simple.xml')) }
     end

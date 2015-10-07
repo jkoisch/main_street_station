@@ -1,0 +1,6 @@
+--- !ruby/object:Fhir::Types::Ratio
+  denominator: !ruby/object:Fhir::Types::Quantity
+    value: 43
+    unit: g
+    system: http://somewhere.com/measure
+

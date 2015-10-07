@@ -8,7 +8,7 @@ module NokogiriDifference
       if self.document?
         diffs = self.first_element_child.list_differences(other.first_element_child,depth,debug)
       else
-        unless EquivalentXml.equivalent?(self, other, opts: {element_order: true, normalize_whitespace: true})
+        unless EquivalentXml.equivalent?(self, other, {element_order: true, normalize_whitespace: true})
           diffs << _add_indent(depth) + "Error in <#{self.name}>"
 
           unless self.namespace.nil? && other.namespace.nil?

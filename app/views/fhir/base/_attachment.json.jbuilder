@@ -1,4 +1,4 @@
-json.content_type attachment.content_type unless attachment.content_type.nil?
+json.contentType  attachment.content_type unless attachment.content_type.nil?
 json.language     attachment.language unless attachment.language.nil?
 json.data         attachment.data unless attachment.data.nil?
 json.url          attachment.url unless attachment.url.nil?

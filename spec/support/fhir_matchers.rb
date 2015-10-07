@@ -25,7 +25,7 @@ RSpec::Matchers.define :match_fhir_xml do |xml_file, ignored={}, detail=false|
     expected_xml = Nokogiri::XML(File.read(xml_file))
     response_xml = Nokogiri::XML(actual)
     response_xml.smooth!(ignored)
-    EquivalentXml.equivalent?(expected_xml, response_xml, opts: {element_order: true, normalize_whitespace: true})
+    EquivalentXml.equivalent?(expected_xml, response_xml, {element_order: true, normalize_whitespace: true})
   end
   failure_message do |actual|
     expected_xml = Nokogiri::XML(File.read(xml_file))
@@ -57,7 +57,7 @@ RSpec::Matchers.define :produce_fhir_xml_like do |xml_file|
     response = render partial: actual, formats: :xml, locals: {resource: resource}
     expected_xml = Nokogiri::XML(File.read(xml_file))
     response_xml = Nokogiri::XML(response)
-    EquivalentXml.equivalent?(expected_xml,response_xml, opts: {element_order: true})
+    EquivalentXml.equivalent?(expected_xml, response_xml, {element_order: true, normalize_whitespace: true})
   end
   # noinspection RubyUnusedLocalVariable
   failure_message do |actual|

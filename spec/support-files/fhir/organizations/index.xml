@@ -120,8 +120,8 @@
           </purpose>
           <name>
             <use value="official"/>
-            <given value="Karen"/>
             <family value="van Hentenryk"/>
+            <given value="Karen"/>
           </name>
           <telecom>
             <system value="email"/>

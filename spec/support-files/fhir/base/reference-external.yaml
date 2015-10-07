@@ -1,0 +1,3 @@
+--- !ruby/object:Fhir::Types::Reference
+  external: http://hl7.org/fhir/Patient/7
+

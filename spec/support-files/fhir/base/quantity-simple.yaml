@@ -1,0 +1,4 @@
+--- !ruby/object:Fhir::Types::Quantity
+  value: 23
+  unit: g
+  system: http://hl7.org/fhir/thing
