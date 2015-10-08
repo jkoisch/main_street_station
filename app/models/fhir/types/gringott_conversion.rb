@@ -7,11 +7,7 @@ module Fhir
           when /provider/i then 'Practitioner'
           when /familyhistory/i then 'FamilyMemberHistory'
           else
-            if gringott_type
-              gringott_type.capitalize
-            else
-              nil
-            end
+            gringott_type
         end
       end
 

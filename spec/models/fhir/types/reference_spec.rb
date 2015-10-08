@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Fhir::Types::Reference do
 
   it 'should format a reference' do
-    thing = Fhir::Types::Reference.new(local_id: 3, local_type: 'observation')
+    thing = Fhir::Types::Reference.new(local_id: 3, local_type: 'Observation')
     expect(thing.reference).to eq 'Observation/3'
   end
 

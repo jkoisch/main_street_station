@@ -2,14 +2,14 @@
   <url value="test-1"/>
   <version value="0.1"/>
   <name value="test"/>
+  <status value="alpha"/>
+  <experimental value="true"/>
   <publisher value="YouCentric"/>
   <contact>
-    <name value="email"/>
+    <name value="tech guy"/>
   </contact>
-  <description value=""/>
-  <status value="alpha"/>
-  <experimental value=""/>
-  <date value=""/>
+  <date value="2014-01-01"/>
+  <kind value="instance"/>
   <software>
     <name value="Mainstreet"/>
     <version value="0.00.010.0001"/>
@@ -19,9 +19,10 @@
     <description value="the main point"/>
     <url value="http://mainstreet.youcentric.com"/>
   </implementation>
-  <fhirVersion value=""/>
-  <acceptUnknown value=""/>
-  <format value=""/>
+  <fhirVersion value="1.0.0"/>
+  <acceptUnknown value="extensions"/>
+  <format value="xml"/>
+  <format value="json"/>
   <rest>
     <mode value="server"/>
     <documentation value="we serve things"/>
@@ -29,15 +30,15 @@
       <service>
         <text value="OAuth"/>
       </service>
-      <description value="We recommend that PHR servers use standard OAuth using a standard 3rd party provider.
-       We are not testing the ability to provide an OAuth authentication/authorization
-       service itself, and nor is providing any security required for the connectathon at all"/>
+      <description value="We recommend that PHR servers use standard OAuth using a standard 3rd party provider. We are not testing the ability to provide an OAuth authentication/authorization service itself, and nor is providing any security required for the connectathon at all"/>
     </security>
     <resource>
       <type value="Patient"/>
       <interaction>
         <code value="read"/>
-        <code value="update"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
       </interaction>
       <readHistory value="false"/>
       <updateCreate value="false"/>
@@ -60,15 +61,18 @@
       <mode value="receiver"/>
       <focus value="Patient"/>
       <request>
-        <reference value="Profile/101"/>
+        <reference value="Profile/001"/>
       </request>
       <response>
-        <reference value="Profile/101"/>
+        <reference value="Profile/001"/>
       </response>
     </event>
   </messaging>
   <document>
     <mode value="consumer"/>
     <documentation value="Basic rules for all documents in the system"/>
+    <profile>
+      <reference value="StructureDefinition/3"/>
+    </profile>
   </document>
 </Conformance>
