@@ -65,7 +65,7 @@
       },
       "onset": {
         "_id": 1,
-        "_type": "Age",
+        "_type": "Quantity",
         "value": 56,
         "comparator": null,
         "unit": null,

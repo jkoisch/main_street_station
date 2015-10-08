@@ -1,10 +1,5 @@
 module Fhir
   class FamilyMemberHistory < BaseResource
-    attr_accessor :born_date, :born_string,
-                  :age_age, :age_range, :age_string,
-                  :deceased_date, :deceased_boolean, :deceased_string
-
-    fhir_attribute :id
     fhir_attribute :identifier, list: Types::Identifier
     fhir_attribute :patient, type: Types::Reference
     fhir_attribute :date
@@ -13,8 +8,8 @@ module Fhir
     fhir_attribute :relationship, type: Types::CodeableConcept
     fhir_attribute :gender
     fhir_attribute :born, type_list: [Types::Period, Types::SimpleDate, Types::SimpleString]
-    fhir_attribute :age, type_list: [Types::Age, Types::Range, Types::SimpleString]
-    fhir_attribute :deceased, type_list: [Types::SimpleBoolean, Types::Age, Types::Range,
+    fhir_attribute :age, type_list: [Types::Quantity, Types::Range, Types::SimpleString]
+    fhir_attribute :deceased, type_list: [Types::SimpleBoolean, Types::Quantity, Types::Range,
                                           Types::SimpleDate, Types::SimpleString]
     fhir_attribute :note, type: Fhir::Types::Annotation
     fhir_attribute :condition, list: Fhir::FamilyMemberHistoryClasses::Condition

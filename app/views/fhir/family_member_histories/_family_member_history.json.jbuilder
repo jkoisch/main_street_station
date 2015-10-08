@@ -1,5 +1,7 @@
 json.resourceType  'FamilyMemberHistory'
 
+json.id resource.id unless resource.id.nil?
+
 json.identifier resource.identifier do |identifier|
   json.partial! 'fhir/base/identifier', identifier: identifier
 end unless resource.identifier.nil?
@@ -25,9 +27,9 @@ end unless resource.born_period.nil?
 json.bornDate         resource.born_date unless resource.born_date.nil?
 json.bornString       resource.born_string unless resource.born_string.nil?
 
-json.ageAge do
-  json.partial! 'fhir/base/age', age: resource.age_age
-end unless resource.age_age.nil?
+json.ageQuantity do
+  json.partial! 'fhir/base/quantity', age: resource.age_quantity
+end unless resource.age_quantity.nil?
 
 json.ageRange do
   json.partial! 'fhir/base/range', range: resource.age_range
@@ -37,9 +39,9 @@ json.ageString        resource.age_string unless resource.age_string.nil?
 
 json.deceasedBoolean  resource.deceased_boolean unless resource.deceased_boolean.nil?
 
-json.deceasedAge  do
-  json.partial! 'fhir/base/quantity', quantity: resource.deceased_age
-end unless resource.deceased_age.nil?
+json.deceasedQuantity  do
+  json.partial! 'fhir/base/quantity', quantity: resource.deceased_quantity
+end unless resource.deceased_quantity.nil?
 
 json.deceasedRange do
   json.partial! 'fhir/base/range', range: resource.deceased_range

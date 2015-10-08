@@ -1,4 +1,5 @@
 <FamilyMemberHistory xmlns="http://hl7.org/fhir">
+  <id value="446"/>
   <patient>
     <reference value="Patient/201"/>
     <display value="Roel"/>
@@ -31,10 +32,10 @@
         <display value="Inactive"/>
       </coding>
     </outcome>
-    <onsetAge>
+    <onsetQuantity>
       <value value="56"/>
       <unit value="a"/>
       <system value="http://unitsofmeasure.org"/>
-    </onsetAge>
+    </onsetQuantity>
   </condition>
 </FamilyMemberHistory>

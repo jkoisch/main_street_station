@@ -1,4 +1,5 @@
 <Device xmlns="http://hl7.org/fhir">
+  <id value="1009678"/>
   <identifier>
     <system value="http://goodcare.org/devices/id"/>
     <value value="345675"/>
@@ -6,10 +7,6 @@
   <identifier>
     <value value="AMID-342135-8464"/>
   </identifier>
-  <note>
-    <time value="2015-06-28T14:03:32+10:00"/>
-    <text value="QA Checked"/>
-  </note>
   <type>
     <coding>
       <system value="http://snomed.info/sct"/>
@@ -18,6 +15,10 @@
     </coding>
     <text value="ECG"/>
   </type>
+  <note>
+    <time value="2015-06-28T14:03:32+10:00"/>
+    <text value="QA Checked"/>
+  </note>
   <manufacturer value="Acme Devices, Inc"/>
   <model value="AB 45-J"/>
   <lotNumber value="43453424"/>

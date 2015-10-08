@@ -1,4 +1,5 @@
 --- !ruby/object:Fhir::FamilyMemberHistory
+  id: "446"
   patient: !ruby/object:Fhir::Types::Reference
     external: Patient/201
     display: Roel
@@ -27,7 +28,11 @@
             system: http://snomed.info/sct
             code: "419099112"
             display: Inactive
-      onset_age: !ruby/object:Fhir::Types::Quantity
+      onset: !ruby/object:Fhir::Types::Quantity
+        value: "56"
+        unit: a
+        system: http://unitsofmeasure.org
+      onset_quantity: !ruby/object:Fhir::Types::Quantity
         value: "56"
         unit: a
         system: http://unitsofmeasure.org
