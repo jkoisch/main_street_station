@@ -1,7 +1,7 @@
 module Fhir
   class Location < BaseResource
-    fhir_attribute :id
     fhir_attribute :identifier, list: Types::Identifier
+    fhir_attribute :status
     fhir_attribute :name
     fhir_attribute :description
     fhir_attribute :mode
@@ -12,6 +12,5 @@ module Fhir
     fhir_attribute :position, type: Fhir::LocationClasses::Position
     fhir_attribute :managing_organization, type: Types::Reference #Organization
     fhir_attribute :part_of, type: Types::Reference #Location
-    fhir_attribute :status
   end
 end

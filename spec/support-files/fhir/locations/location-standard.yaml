@@ -1,7 +1,9 @@
 --- !ruby/object:Fhir::Location
+  id: "45"
   identifier:
     - !ruby/object:Fhir::Types::Identifier
       value: "B1-S.F2"
+  status: active
   name: "South Wing, second floor"
   description: "Second floor of the Old South Wing, formerly in use by Psychiatry"
   type: !ruby/object:Fhir::Types::CodeableConcept
@@ -45,4 +47,3 @@
     altitude: 0
   managing_organization: !ruby/object:Fhir::Types::Reference
     external: Organization/f001
-  status: active

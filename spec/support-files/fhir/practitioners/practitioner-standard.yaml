@@ -1,4 +1,5 @@
 --- !ruby/object:Fhir::Practitioner
+  id: "876"
   identifier:
     - !ruby/object:Fhir::Types::Identifier
       use: official

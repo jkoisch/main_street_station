@@ -1,4 +1,5 @@
 <Practitioner xmlns="http://hl7.org/fhir">
+  <id value="876"/>
   <identifier>
     <use value="official"/>
     <system value="urn:oid:2.16.528.1.1007.3.1"/>
@@ -45,19 +46,19 @@
     <country value="NLD"/>
   </address>
   <gender value="male"/>
-  <birth_date value="1975-12-07"/>
-  <practitioner_role>
-    <managing_organization>
+  <birthDate value="1975-12-07"/>
+  <practitionerRole>
+    <managingOrganization>
       <reference value="Organization/f001"/>
       <display value="BMC"/>
-    </managing_organization>
+    </managingOrganization>
     <role>
       <coding>
         <system value="urn:oid:2.16.840.1.113883.2.4.15.111"/>
         <code value="01.018"/>
         <display value="Ear-, Nose and Throat"/>
       </coding>
-      <text value="specialization"/>
+      <text value="specialisation"/>
     </role>
     <specialty>
       <coding>
@@ -71,11 +72,11 @@
       <start value="2012-01-01"/>
       <end value="2012-03-31"/>
     </period>
-    <healthcare_service>
+    <healthcareService>
       <reference value="Organization/f001"/>
       <display value="BMC"/>
-    </healthcare_service>
-  </practitioner_role>
+    </healthcareService>
+  </practitionerRole>
   <qualification>
     <code>
       <coding>
@@ -92,6 +93,6 @@
       <code value="nl"/>
       <display value="Dutch"/>
     </coding>
-    <text value="Care role"/>
+    <text value="Care Role"/>
   </communication>
 </Practitioner>
