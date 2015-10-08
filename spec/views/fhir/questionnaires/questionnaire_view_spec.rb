@@ -1,29 +1,59 @@
 require 'rails_helper'
 require 'fhir/questionnaire'
+require 'builder'
 
 describe 'FHIR Questionnaire View', type: :view do
-  context 'general questionnaires' do
-    subject { 'fhir/questionnaires/questionnaire' }
+  before(:each) { controller.prepend_view_path 'app/views/fhir/questionnaires' }
+
+  context 'general' do
     let(:resource) { yaml_load('questionnaires/questionnaire-general.yaml') }
 
-    it {should produce_fhir_json_like(support_file('questionnaires/questionnaire-general.json')) }
-    it {should produce_fhir_xml_like(support_file('questionnaires/questionnaire-general.xml')) }
+    context 'JSON' do
+      subject { render(partial: 'questionnaire', formats: :json, locals: {resource: resource}) }
+
+      it {should match_fhir_json(support_file('questionnaires/questionnaire-general.json')) }
+    end
+
+    context 'XML' do
+      let(:builder) { Builder::XmlMarkup.new() }
+      subject { resource.to_xml(nil, builder, true) }
+
+      it {should match_fhir_xml(support_file('questionnaires/questionnaire-general.xml')) }
+    end
   end
 
-  context 'lifeline questionnaires' do
-    subject { 'fhir/questionnaires/questionnaire' }
+  context 'lifeline' do
     let(:resource) { yaml_load('questionnaires/questionnaire-lifelines.yaml') }
 
-    it {should produce_fhir_json_like(support_file('questionnaires/questionnaire-lifelines.json')) }
-    it {should produce_fhir_xml_like(support_file('questionnaires/questionnaire-lifelines.xml')) }
+    context 'JSON' do
+      subject { render(partial: 'questionnaire', formats: :json, locals: {resource: resource}) }
+
+      it {should match_fhir_json(support_file('questionnaires/questionnaire-lifelines.json')) }
+    end
+
+    context 'XML' do
+      let(:builder) { Builder::XmlMarkup.new() }
+      subject { resource.to_xml(nil, builder, true) }
+
+      it {should match_fhir_xml(support_file('questionnaires/questionnaire-lifelines.xml')) }
+    end
   end
 
 
-  context 'bluebook questionnaires' do
-    subject { 'fhir/questionnaires/questionnaire' }
+  context 'bluebook' do
     let(:resource) { yaml_load('questionnaires/questionnaire-bluebook.yaml') }
 
-    it {should produce_fhir_json_like(support_file('questionnaires/questionnaire-bluebook.json')) }
-    it {should produce_fhir_xml_like(support_file('questionnaires/questionnaire-bluebook.xml')) }
+    context 'JSON' do
+      subject { render(partial: 'questionnaire', formats: :json, locals: {resource: resource}) }
+
+      it {should match_fhir_json(support_file('questionnaires/questionnaire-bluebook.json')) }
+    end
+
+    context 'XML' do
+      let(:builder) { Builder::XmlMarkup.new() }
+      subject { resource.to_xml(nil, builder, true) }
+
+      it {should match_fhir_xml(support_file('questionnaires/questionnaire-bluebook.xml')) }
+    end
   end
 end

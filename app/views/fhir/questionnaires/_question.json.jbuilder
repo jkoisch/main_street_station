@@ -1,30 +1,21 @@
-json.name do
-  json.partial! 'fhir/base/codeable_concept', codeable_concept: question.name
-end unless question.name.nil?
+json.linkId question.link_id unless question.link_id.nil?
 
-json.text           question.text unless question.text.nil?
-json.answerDecimal  question.answer_decimal unless question.answer_decimal.nil?
-json.answerInteger  question.answer_integer unless question.answer_integer.nil?
-json.answerBoolean  question.answer_boolean unless question.answer_boolean.nil?
-json.answerDate     question.answer_date unless question.answer_date.nil?
-json.answerString   question.answer_string unless question.answer_string.nil?
-json.answerDatetime question.answer_datetime unless question.answer_datetime.nil?
-json.answerInstant  question.answer_instant unless question.answer_instant.nil?
+json.concept question.concept do |concept|
+  json.partial! 'fhir/base/coding', coding: concept
+end unless question.concept.nil?
 
-json.choice question.choice do |choice|
-  json.partial! 'fhir/base/coding', coding: choice
-end unless question.choice.nil?
+json.text     question.text unless question.text.nil?
+json.type     question.type unless question.type.nil?
+json.required question.required unless question.required.nil?
+json.repeats  question.repeats unless question.repeats.nil?
 
 json.options do
   json.partial! 'fhir/base/reference', reference: question.options
 end unless question.options.nil?
 
-json.dataInteger    question.data_integer unless question.data_integer.nil?
-json.dataDate       question.data_date unless question.data_date.nil?
-json.dataString     question.data_string unless question.data_string.nil?
-json.dataBoolean    question.data_boolean unless question.data_boolean.nil?
-
-json.remarks        question.remarks unless question.remarks.nil?
+json.option question.option do |option|
+  json.partial! 'fhir/base/coding', coding: option
+end unless question.option.nil?
 
 json.group question.group do |group|
     json.partial! 'group', group: group

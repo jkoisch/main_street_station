@@ -1,1 +1,50 @@
-{"resourceType":"Questionnaire","status":"completed","authored":"2013-06-18T00:00:00+01:00","name":{"coding":[{"system":"https://lifelines.nl","code":"VL 1-1, 18-65_1.2.2","display":"Lifelines Questionnaire 1 part 1"}]},"identifier":[{"use":"temp"}],"group":{"group":[{"question":[{"text":"Do you have allergies?","answerString":"I am allergic to house dust"}]},{"header":"General questions","question":[{"text":"What is your gender?","answerString":"Male"},{"name":{"text":"What is your date of birth?"},"answerDate":"1960-03-13"},{"name":{"text":"What is your country of birth?"},"answerString":"The Netherlands"},{"name":{"text":"What is your marital status?"},"answerString":"married"}]},{"header":"Intoxications","question":[{"text":"Do you smoke?","answerString":"No"},{"text":"Do you drink alchohol?","answerString":"No, but I used to drink"}]}]}}
+{
+  "resourceType":"Questionnaire",
+  "id": "11",
+  "status":"published",
+  "date":"2013-06-18T00:00:00+01:00",
+  "identifier":[
+    {
+      "use":"temp"
+    }
+  ],
+  "group":{
+    "group":[
+      {
+        "question":[
+          {
+            "text":"Do you have allergies?"
+          }
+        ]
+      },
+      {
+        "title":"General questions",
+        "question":[
+          {
+            "text":"What is your gender?"
+          },
+          {
+            "text":"What is your date of birth?"
+          },
+          {
+            "text":"What is your country of birth?"
+          },
+          {
+            "text":"What is your marital status?"
+          }
+        ]
+      },
+      {
+        "title":"Intoxications",
+        "question":[
+          {
+            "text":"Do you smoke?"
+          },
+          {
+            "text":"Do you drink alchohol?"
+          }
+        ]
+      }
+    ]
+  }
+}

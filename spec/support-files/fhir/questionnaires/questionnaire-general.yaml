@@ -1,120 +1,50 @@
 --- !ruby/object:Fhir::Questionnaire
-  status: completed
-  authored: "2013-02-19T14:15:00"
-  name: !ruby/object:Fhir::Types::CodeableConcept
-    coding:
-      - !ruby/object:Fhir::Types::Coding
-        system: https://lifelines.nl
-        code: VL 1-1, 18-65_1.2.2
-        display: Lifelines Questionnaire 1 part 1
-    text: Cancer Quality Forum Questionnaire 2012
+  id: "12"
+  status: draft
+  date: "2013-02-19T14:15:00"
   identifier:
     - !ruby/object:Fhir::Types::Identifier
       use: temp
-  subject: !ruby/object:Fhir::Types::Reference
-    external: Patient/f201
-    display: Roel
-  author: !ruby/object:Fhir::Types::Reference
-    external: Practitioner/f201
-  source: !ruby/object:Fhir::Types::Reference
-    external: Practitioner/f201
-  encounter: !ruby/object:Fhir::Types::Reference
-    external: Encounter/example
-    display: in progress
   group: !ruby/object:Fhir::QuestionnaireClasses::Group
     group:
       - !ruby/object:Fhir::QuestionnaireClasses::Group
-        name: !ruby/object:Fhir::Types::CodeableConcept
-          coding:
-            - !ruby/object:Fhir::Types::Coding
-              system: http://cancer.questionnaire.org/system/code/sections
-              code: COMORBIDITY
         question:
           - !ruby/object:Fhir::QuestionnaireClasses::Question
-            name: !ruby/object:Fhir::Types::CodeableConcept
-              coding:
-                - !ruby/object:Fhir::Types::Coding
-                  system: http://cancer.questionnaire.org/system/code/questions
-                  code: COMORB
-            choice:
+            option:
               - !ruby/object:Fhir::Types::Coding
                 system: http://cancer.questionnaire.org/system/code/yesno
                 code: "1"
                 display: "Yes"
             group:
               - !ruby/object:Fhir::QuestionnaireClasses::Group
-                name: !ruby/object:Fhir::Types::CodeableConcept
-                  coding:
-                    - !ruby/object:Fhir::Types::Coding
-                      system: http://cancer.questionnaire.org/system/code/sections
-                      code: CARDIAL
                 question:
                   - !ruby/object:Fhir::QuestionnaireClasses::Question
-                    name: !ruby/object:Fhir::Types::CodeableConcept
-                      coding:
-                        - !ruby/object:Fhir::Types::Coding
-                          system: http://cancer.questionnaire.org/system/code/questions
-                          code: COMORBCAR
-                    choice:
+                    option:
                       - !ruby/object:Fhir::Types::Coding
                         system: http://cancer.questionnaire.org/system/code/yesno
                         code: "1"
                   - !ruby/object:Fhir::QuestionnaireClasses::Question
-                    name: !ruby/object:Fhir::Types::CodeableConcept
-                      coding:
-                        - !ruby/object:Fhir::Types::Coding
-                          system: http://cancer.questionnaire.org/system/code/questions
-                          code: COMCAR00
-                          display: Angina Pectoris
-                        - !ruby/object:Fhir::Types::Coding
-                          system: http://snomed.info/sct
-                          code: "194828000"
-                          display: Angina (disorder)
-                    choice:
+                    text: Angina (disorder)
+                    option:
                       - !ruby/object:Fhir::Types::Coding
                         system: http://cancer.questionnaire.org/system/code/yesno
                         code: "1"
                   - !ruby/object:Fhir::QuestionnaireClasses::Question
-                    name: !ruby/object:Fhir::Types::CodeableConcept
-                      coding:
-                        - !ruby/object:Fhir::Types::Coding
-                          system: http://snomed.info/sct
-                          code: "22298006"
-                          display: Myocardial infarction (disorder)
-                    choice:
+                    text: Myocardial infarction (disorder)
+                    option:
                       - !ruby/object:Fhir::Types::Coding
                         system: http://cancer.questionnaire.org/system/code/yesno
                         code: "0"
               - !ruby/object:Fhir::QuestionnaireClasses::Group
-                name: !ruby/object:Fhir::Types::CodeableConcept
-                  coding:
-                    - !ruby/object:Fhir::Types::Coding
-                      system: http://cancer.questionnaire.org/system/code/sections
-                      code: VASCULAR
+                title: VASCULAR
       - !ruby/object:Fhir::QuestionnaireClasses::Group
-        name: !ruby/object:Fhir::Types::CodeableConcept
-          coding:
-            - !ruby/object:Fhir::Types::Coding
-              system: http://cancer.questionnaire.org/system/code/sections
-              code: HISTOPATHOLOGY
+        title: HISTOPATHOLOGY
         group:
           - !ruby/object:Fhir::QuestionnaireClasses::Group
-            name: !ruby/object:Fhir::Types::CodeableConcept
-              coding:
-                - !ruby/object:Fhir::Types::Coding
-                  system: http://cancer.questionnaire.org/system/code/sections
-                  code: ABDOMINAL
-            subject: !ruby/object:Fhir::Types::Reference
-              external: USCA/0302
-              display: general
+            title: ABDOMINAL
             question:
               - !ruby/object:Fhir::QuestionnaireClasses::Question
-                name: !ruby/object:Fhir::Types::CodeableConcept
-                  coding:
-                    - !ruby/object:Fhir::Types::Coding
-                      system: http://cancer.questionnaire.org/system/code/questions
-                      code: STADPT
-                      display: pT category
+                text: pT category
                 options: !ruby/object:Fhir::Types::Reference
                   external: http://spark.furore.com/fhir/ValueSet/bc299b13baff4405871b14b3a9346c04
                   display: SCTT 2006 Service Type

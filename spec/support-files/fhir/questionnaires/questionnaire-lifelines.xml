@@ -1,61 +1,39 @@
 <Questionnaire xmlns="http://hl7.org/fhir">
-  <status value="completed"/>
-  <authored value="2013-06-18T00:00:00+01:00"/>
-  <!--  Fictive, only the below answers are non-fictive  -->
-  <name>
-    <coding>
-      <system value="https://lifelines.nl"/>
-      <code value="VL 1-1, 18-65_1.2.2"/>
-      <display value="Lifelines Questionnaire 1 part 1"/>
-    </coding>
-  </name>
+  <id value="11"/>
   <identifier>
     <use value="temp"/>
   </identifier>
+  <status value="published"/>
+  <date value="2013-06-18T00:00:00+01:00"/>
   <group>
     <group>
       <question>
         <!--  Seperate answer  -->
         <text value="Do you have allergies?"/>
-        <answerString value="I am allergic to house dust"/>
       </question>
     </group>
     <group>
-      <!--  Answers to general questions  -->
-      <header value="General questions"/>
+      <title value="General questions"/>
       <question>
         <text value="What is your gender?"/>
-        <answerString value="Male"/>
       </question>
       <question>
-        <name>
-          <text value="What is your date of birth?"/>
-        </name>
-        <answerDate value="1960-03-13"/>
+        <text value="What is your date of birth?"/>
       </question>
       <question>
-        <name>
-          <text value="What is your country of birth?"/>
-        </name>
-        <answerString value="The Netherlands"/>
+        <text value="What is your country of birth?"/>
       </question>
       <question>
-        <name>
-          <text value="What is your marital status?"/>
-        </name>
-        <answerString value="married"/>
+        <text value="What is your marital status?"/>
       </question>
     </group>
     <group>
-      <!--  Answers to intoxications  -->
-      <header value="Intoxications"/>
+      <title value="Intoxications"/>
       <question>
         <text value="Do you smoke?"/>
-        <answerString value="No"/>
       </question>
       <question>
         <text value="Do you drink alchohol?"/>
-        <answerString value="No, but I used to drink"/>
       </question>
     </group>
   </group>
