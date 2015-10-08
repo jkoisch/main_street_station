@@ -1,10 +1,24 @@
 require 'rails_helper'
 require 'fhir/condition'
+require 'builder'
 
 describe 'FHIR Condition View', type: :view do
-  subject { 'fhir/conditions/condition' }
-  let(:resource) { yaml_load('conditions/condition-standard.yaml') }
+  before(:each) { controller.prepend_view_path 'app/views/fhir/conditions' }
 
-  it {should produce_fhir_json_like(support_file('conditions/condition-standard.json'))}
-  it {should produce_fhir_xml_like(support_file('conditions/condition-standard.xml')) }
+  context 'standard' do
+    let(:resource) { yaml_load('conditions/condition-standard.yaml') }
+
+    context 'JSON' do
+      subject { render(partial: 'condition', formats: :json, locals: {resource: resource}) }
+
+      it {should match_fhir_json(support_file('conditions/condition-standard.json')) }
+    end
+
+    context 'XML' do
+      let(:builder) { Builder::XmlMarkup.new() }
+      subject { resource.to_xml(nil, builder, true) }
+
+      it {should match_fhir_xml(support_file('conditions/condition-standard.xml')) }
+    end
+  end
 end

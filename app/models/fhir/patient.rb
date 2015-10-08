@@ -1,7 +1,7 @@
 module Fhir
   class Patient < BaseResource
-    fhir_attribute :id
     fhir_attribute :identifier, list: Types::Identifier
+    fhir_attribute :active
     fhir_attribute :name, list: Types::HumanName
     fhir_attribute :telecom, list: Types::ContactPoint
     fhir_attribute :gender
@@ -10,13 +10,12 @@ module Fhir
     fhir_attribute :address, list: Types::Address
     fhir_attribute :marital_status, type: Types::CodeableConcept
     fhir_attribute :multiple_birth, type_list: [Types::SimpleBoolean, Types::SimpleInteger]
-    # TODO: Should Photo attribute be added?
+    fhir_attribute :photo, list: Types::Attachment
     fhir_attribute :contact, list: PatientClasses::Contact
     fhir_attribute :communication, list: PatientClasses::Communication
     fhir_attribute :care_provider, list: Types::Reference #Organization/Practitioner
     fhir_attribute :managing_organization, type: Types::Reference
     fhir_attribute :link, list: PatientClasses::Link
-    fhir_attribute :active
 
     def self.search_patient(search_params)
       supported_params = [:name]

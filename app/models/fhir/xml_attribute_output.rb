@@ -6,7 +6,7 @@ module Fhir
         if (attr_definition && (attr_definition[:include] == :all || attr_definition[:include] == :xml)) ||
             attr_definition.nil?
           thing = self.send(fhir_attr)
-          if thing
+          unless thing.nil?
             if attr_definition && attr_definition[:type].is_a?(Array)
               klass = thing.class
               if klass.respond_to?(:simple_type?)
@@ -40,9 +40,20 @@ module Fhir
       end
     end
 
-    def __xml_tag(attr, definition,type=nil)
+    def __xml_tag(attr, definition, type=nil)
       if type
-        attr.to_s.camelize(:lower) + type.name.demodulize
+        if type == TrueClass || type == FalseClass
+          class_name = 'Boolean'
+        elsif type == Date
+          if definition[:type].is_a?(Array) && definition[:type].include?(Fhir::Types::SimpleDatetime)
+            class_name = 'DateTime'
+          else
+            class_name = type.name.demodulize
+          end
+        else
+          class_name = type.name.demodulize
+        end
+        attr.to_s.camelize(:lower) + class_name
       else
         attr.to_s.camelize(:lower)
       end

@@ -1,5 +1,5 @@
 <Patient xmlns="http://hl7.org/fhir">
-  <!--   MRN assigned by ACME healthcare on 6-May 2001   -->
+  <id value="2"/>
   <identifier>
     <use value="usual"/>
     <system value="urn:oid:1.2.36.146.595.217.0.1"/>
@@ -7,11 +7,8 @@
     <period>
       <start value="2001-05-06"/>
     </period>
-    <!--<assigner>
-      <display value="Acme Healthcare"/>
-    </assigner>-->
   </identifier>
-  <!--   Peter James Chalmers, but called &quot;Jim&quot;   -->
+  <active value="true"/>
   <name>
     <use value="official"/>
     <family value="Chalmers"/>
@@ -24,7 +21,6 @@
   </name>
   <telecom>
     <use value="home"/>
-    <!--   home communication details aren't known   -->
   </telecom>
   <telecom>
     <system value="phone"/>
@@ -32,14 +28,14 @@
     <use value="work"/>
   </telecom>
   <gender value="male"/>
-  <birth_date value="1974-12-25"/>
-  <deceased_boolean value="false"/>
+  <birthDate value="1974-12-25"/>
+  <deceasedBoolean value="false"/>
   <address>
     <use value="home"/>
     <line value="534 Erewhon St"/>
     <city value="PleasantVille"/>
     <state value="Vic"/>
-    <postal_code value="3999"/>
+    <postalCode value="3999"/>
   </address>
   <contact>
     <relationship>
@@ -50,10 +46,6 @@
     </relationship>
     <name>
       <family value="du">
-        <!--   the &quot;du&quot; part is a family name prefix (VV in iso 21090)   -->
-        <!--<extension url="http://hl7.org/fhir/Profile/iso-21090#qualifier">
-          <valueCode value="VV"/>
-        </extension>-->
       </family>
       <family value="Marché"/>
       <given value="Bénédicte"/>
@@ -62,12 +54,21 @@
       <system value="phone"/>
       <value value="+33 (237) 998327"/>
     </telecom>
+    <organization>
+      <reference value="Organization/1"/>
+      <display value="Walt Disney Corporation"/>
+    </organization>
   </contact>
-  <care_provider>
+  <careProvider>
     <reference value="Organization/1"/>
-  </care_provider>
-  <managing_organization>
+  </careProvider>
+  <managingOrganization>
     <reference value="Organization/1"/>
-  </managing_organization>
-  <active value="true"/>
+  </managingOrganization>
+  <link>
+    <other>
+      <reference value="Patient/pat2"/>
+    </other>
+    <type value="seealso"/>
+  </link>
 </Patient>

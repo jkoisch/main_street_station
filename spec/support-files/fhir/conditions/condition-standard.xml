@@ -1,4 +1,5 @@
 <Condition xmlns="http://hl7.org/fhir">
+  <id value="267"/>
   <identifier>
     <system value="http://goodcare.org/devices/id"/>
     <value value="345675"/>
@@ -28,7 +29,6 @@
       <code value="diagnosis"/>
       <display value="Diagnosis"/>
     </coding>
-    <!--   and also a SNOMED CT coding   -->
     <coding>
       <system value="http://snomed.info/sct"/>
       <code value="439401001"/>
@@ -44,7 +44,7 @@
       <display value="Severe"/>
     </coding>
   </severity>
-  <onsetDate value="2012-05-24"/>
+  <onsetDateTime value="2012-05-24"/>
   <stage>
     <summary>
       <coding>
@@ -56,7 +56,7 @@
     <assessment>
       <reference value="Procedure/f201"/>
     </assessment>
-  </stage>>
+  </stage>
   <evidence>
     <code>
       <coding>
@@ -77,4 +77,5 @@
       <display value="Superficial forearm vein"/>
     </coding>
   </bodySite>
+  <notes value="Something important to remember"/>
 </Condition>

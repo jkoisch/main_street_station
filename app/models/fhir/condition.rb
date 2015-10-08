@@ -1,7 +1,5 @@
 module Fhir
   class Condition < BaseResource
-    #attr_accessor :onset_date, :abatement_datetime, :abatement_boolean
-
     fhir_attribute :identifier, list: Fhir::Types::Identifier
     fhir_attribute :patient, type: Fhir::Types::Reference
     fhir_attribute :encounter, type: Fhir::Types::Reference

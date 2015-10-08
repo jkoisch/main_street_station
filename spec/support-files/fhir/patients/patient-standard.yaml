@@ -1,4 +1,5 @@
 --- !ruby/object:Fhir::Patient
+  id: "2"
   identifier:
     - !ruby/object:Fhir::Types::Identifier
       use: usual
@@ -18,6 +19,7 @@
       use: usual
       given:
         - Jim
+  active: "true"
   telecom:
     - !ruby/object:Fhir::Types::ContactPoint
       use: home
@@ -27,6 +29,7 @@
       use: work
   gender: male
   birth_date: 1974-12-25
+  deceased: false
   deceased_boolean: false
   address:
     - !ruby/object:Fhir::Types::Address
@@ -47,9 +50,9 @@
       name: !ruby/object:Fhir::Types::HumanName
         family:
           - du
-          - Marche
+          - Marché
         given:
-          - Benedicte
+          - Bénédicte
       telecom:
         - !ruby/object:Fhir::Types::ContactPoint
           system: phone
@@ -67,4 +70,3 @@
       other: !ruby/object:Fhir::Types::Reference
         external: Patient/pat2
       type: "seealso"
-  active: "true"
