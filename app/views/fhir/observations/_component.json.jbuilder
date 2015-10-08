@@ -1,3 +1,5 @@
+json.id   component.id unless component.id.nil?
+
 json.code do
   json.partial! 'fhir/base/codeable_concept', codeable_concept: component.code
 end unless component.code.nil?

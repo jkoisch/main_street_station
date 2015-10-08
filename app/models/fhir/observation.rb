@@ -1,8 +1,5 @@
 module Fhir
   class Observation < BaseResource
-    attr_accessor :effective_date
-
-    fhir_attribute :id
     fhir_attribute :identifier, list: Types::Identifier
     fhir_attribute :status
     fhir_attribute :category, type: Types::CodeableConcept

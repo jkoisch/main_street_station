@@ -1,4 +1,5 @@
 --- !ruby/object:Fhir::Observation
+  id: "301"
   identifier:
     - !ruby/object:Fhir::Types::Identifier
       use: official
@@ -11,10 +12,18 @@
         system: http://loinc.org
         code: 2339-0
         display: Glucose [Mass/volume] in Blood
+  effective: !ruby/object:Fhir::Types::Period
+    start: "2013-04-02T09:30:10+01:00"
+    end: "2013-04-05T09:30:10+01:00"
   effective_period: !ruby/object:Fhir::Types::Period
     start: "2013-04-02T09:30:10+01:00"
     end: "2013-04-05T09:30:10+01:00"
   issued: "2013-04-03T15:30:10+01:00"
+  value: !ruby/object:Fhir::Types::Quantity
+    value: "6.3"
+    unit: mmol/l
+    system: http://unitsofmeasure.org
+    code: mmol/l
   value_quantity: !ruby/object:Fhir::Types::Quantity
     value: "6.3"
     unit: mmol/l
@@ -40,6 +49,7 @@
         display: Injection to forearm
   reference_range:
     - !ruby/object:Fhir::ObservationClasses::ReferenceRange
+      id: "602"
       low: !ruby/object:Fhir::Types::Quantity
         value: "3.1"
         unit: mmol/l
