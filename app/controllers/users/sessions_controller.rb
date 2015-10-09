@@ -10,24 +10,29 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    if SessionService.authenticate(@user, params[:password])
-      # TODO Add successful log in message
-      logger.debug "#{@user.email} is trying to create a session"
-      root_path
+    if SessionService.authenticate(@user, user_params[:password])
+      logger.debug "#{@user.email} has created a session"
+      set_flash_message(:notice, :signed_in)
+      sign_in(resource_name, resource)
+      respond_with resource, location: after_sign_in_path_for(resource)
     else
-      logger.error "** Failure** Attempt to login as #{params[:user_name]} - rejected"
-      render text: 'Login failed', status: :unauthorized
+      logger.error "** Failure** Attempt to login as #{user_params[:email]} - rejected"
+      set_flash_message(:error, :invalid, authentication_keys: 'email')
+      respond_with(resource, serialize_options(resource))
     end
-
   end
 
-  # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
+  protected
+  def auth_options
+    { scope: resource_name, recall: "#{controller_path}#new" }
+  end
 
   private
   def set_user
-    @user = User.find_by(email: params[:email])
+    @user = User.find_by(email: user_params[:email])
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :password)
   end
 end

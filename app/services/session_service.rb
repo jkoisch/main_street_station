@@ -1,7 +1,7 @@
 class SessionService
   def self.authenticate(user, pw)
     if user && user.identity_authorities.local.count > 0  &&
-        user.identity_authorities.local[0].authenticate(pw)
+        user.identity_authorities.local.first.authenticate(pw)
 
       unless user.user_tokens.current.count > 0
         UserToken.create!(user: user)

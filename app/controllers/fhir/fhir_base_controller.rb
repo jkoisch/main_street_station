@@ -117,15 +117,14 @@ class Fhir::FhirBaseController < ApplicationController
 
   private
   def retrieve_file_resource(resource, list=false, id=nil)
-    if MainStreetStation::Application.config.respond_to?('gringotts_' + resource)
-      logger.debug "*** Retrieving resource #{resource} id: #{id} from file #{MainStreetStation::Application.config.send('gringotts_' + resource)}"
-      fixed_json = JSON.parse(File.read(MainStreetStation::Application.config.send('gringotts_' + resource)))
+    if LocalResource.is_resource_local?(resource)
+      logger.debug "*** Retrieving resource #{resource} id: #{id} from file"
+      fixed_json = LocalResource.get_local_resource_data(resource)
 
       if list
         GringottResponse.new(true, [ fixed_json ])
       elsif id
         if id.to_i == 1
-          logger.debug "*** display for #{resource} id:1 #{fixed_json}"
           GringottResponse.new(true, fixed_json)
         else
           resp = GringottResponse.new(false, nil)
@@ -142,8 +141,8 @@ class Fhir::FhirBaseController < ApplicationController
 
   def wrap_response(response)
     if response.is_a?(Net::HTTPSuccess)
-      logger.warn 'Success from Gringotts'
-      logger.warn response.body
+      logger.debug 'Success from Gringotts'
+      logger.debug response.body
       GringottResponse.new(true, JSON.parse(response.body))
     else
       logger.error "Gringotts ERROR #{response.code} #{response.message}"

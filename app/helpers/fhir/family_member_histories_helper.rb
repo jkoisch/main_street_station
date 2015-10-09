@@ -1,2 +1,0 @@
-module Fhir::FamilyMemberHistoriesHelper
-end

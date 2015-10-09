@@ -2,7 +2,8 @@
   <h4>Conformance Statement</h4>
   <small>
     <strong><%= @conformances[0].publisher %></strong> <%= @conformances[0].software.name %>:
-    <%= @conformances[0].version %>
+    <%= @conformances[0].version %> <br/>
+    FHIR v<%= @conformances[0].fhir_version %>
   </small>
   <table class="table table-hover">
     <thead>

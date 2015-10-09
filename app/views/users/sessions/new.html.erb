@@ -1,7 +1,7 @@
 <div class="border-form-div">
   <h2>Sign in</h2>
-  <%= form_for(resource, :as => resource_name, :url => user_login_path) do |f| %>
-    <%= f.email_field :email, :autofocus => true %>
+  <%= form_for(resource, as: resource_name, url: user_login_path) do |f| %>
+    <%= f.email_field :email, autofocus: true %>
     <%= f.password_field :password %>
     <% if devise_mapping.rememberable? -%>
       <div class="form-group">

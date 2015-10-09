@@ -33,7 +33,7 @@ guard :rspec, cmd: 'spring rspec', all_after_pass: true do
   watch(%r{^app/models/fhir/types/(keyed_)?base_.*\.rb}) { ['spec/models/fhir/types', 'spec/views/fhir/base'] }
   watch(%r{^app/models/fhir/types/(.+)\.rb$})         { |m| ["spec/models/fhir/types/#{m[1]}_spec.rb",
                                                              "spec/views/fhir/base/#{m[1]}_view_spec.rb" ] }
-  watch(%r{^app/(.*)(\.erb|\.haml|\.slim)$})          { |m| "spec/#{m[1]}#{m[2]}_spec.rb" }
+  watch(%r{^app/(.*)(\.erb|\.haml|\.slim)$})          { |m| "spec/#{m[1].gsub(/\./, '_')}_spec.rb" }
   watch(%r{^app/views/(.*)/_(.*)(\.xml.builder|\.json.jbuilder)$}) do |m|
     "spec/views/#{m[1]}/#{m[2]}_view_spec.rb"
   end
