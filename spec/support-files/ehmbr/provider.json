@@ -1,165 +1,167 @@
 {
-    "id": "1",
-    "resource_type": "Provider",
-    "text": null,
-    "identifier": [
-        {
-            "_id": 1,
-            "use": "official",
-            "type": null,
-            "system": "urn:oid:2.16.528.1.1007.3.1",
-            "value": "938273695",
-            "period": {
-                "start": "2001-05-06",
-                "end": null
-            },
-            "assigner": null
-        },
-        {
-            "_id": 2,
-            "use": "usual",
-            "type": null,
-            "system": "urn:oid:2.16.840.1.113883.2.4.6.3",
-            "value": "129IDH4OP733",
-            "period": {
-                "start": "2001-05-06",
-                "end": null
-            },
-            "assigner": null
-        }
-    ],
-    "active": true,
-    "name": {
-        "use": "official",
-        "text": null,
-        "family": [
-            "van den broek"
-        ],
-        "given": [
-            "Eric"
-        ],
-        "prefix": [
-        ],
-        "suffix": [
-            "MD"
-        ],
-        "period": null
+  "id": "1",
+  "resource_type": "Provider",
+  "text": null,
+  "identifier": [
+    {
+      "_id": 1,
+      "use": "official",
+      "type": null,
+      "system": "urn:oid:2.16.528.1.1007.3.1",
+      "value": "938273695",
+      "period": {
+        "start": "2001-05-06",
+        "end": null
+      },
+      "assigner": null
     },
-    "telecom": [
-        {
-            "_id": 1,
-            "system": "phone",
-            "value": "0205568263",
-            "use": "work",
-            "rank": null,
-            "period": null
-        },
-        {
-            "_id": 2,
-            "system": "email",
-            "value": "E.M.vandenbroek@bmc.nl",
-            "use": "work",
-            "rank": null,
-            "period": null
-        },
-        {
-            "_id": 3,
-            "system": "fax",
-            "value": "0205664440",
-            "use": "work",
-            "rank": null,
-            "period": null
-        }
+    {
+      "_id": 2,
+      "use": "usual",
+      "type": null,
+      "system": "urn:oid:2.16.840.1.113883.2.4.6.3",
+      "value": "129IDH4OP733",
+      "period": {
+        "start": "2001-05-06",
+        "end": null
+      },
+      "assigner": null
+    }
+  ],
+  "active": true,
+  "name": {
+    "use": "official",
+    "text": null,
+    "family": [
+      "van den broek"
     ],
-    "address": [{
-        "use": "work",
-        "type": null,
-        "text": null,
-        "line": [
-            "Galapagosweg 91"
+    "given": [
+      "Eric"
+    ],
+    "prefix": [
+    ],
+    "suffix": [
+      "MD"
+    ],
+    "period": null
+  },
+  "telecom": [
+    {
+      "_id": 1,
+      "system": "phone",
+      "value": "0205568263",
+      "use": "work",
+      "rank": null,
+      "period": null
+    },
+    {
+      "_id": 2,
+      "system": "email",
+      "value": "E.M.vandenbroek@bmc.nl",
+      "use": "work",
+      "rank": null,
+      "period": null
+    },
+    {
+      "_id": 3,
+      "system": "fax",
+      "value": "0205664440",
+      "use": "work",
+      "rank": null,
+      "period": null
+    }
+  ],
+  "address": [{
+    "use": "work",
+    "type": null,
+    "text": null,
+    "line": [
+      "Galapagosweg 91"
+    ],
+    "city": "Den Burg",
+    "district": null,
+    "state": null,
+    "postal_code": "9105 PZ",
+    "country": "NLD",
+    "period": null
+  }],
+  "gender": null,
+  "birth_date": null,
+  "practitioner_role": [
+    {
+      "id": 1,
+      "managing_organization": {
+        "local_type": "Organization",
+        "local_id": 33,
+        "display": null
+      },
+      "role":{
+        "coding": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
+            "code": "01.018",
+            "version": null,
+            "display": "Ear-, Nose and Throat",
+            "user_selected": null
+          }
         ],
-        "city": "Den Burg",
-        "district": null,
-        "state": null,
-        "postal_code": "9105 PZ",
-        "country": "NLD",
-        "period": null
-    }],
-    "gender": null,
-    "birth_date": null,
-    "practitioner_role": [
+        "text": "specialisation"
+      },
+      "specialty": [
         {
-            "managing_organization": {
-                "local_type": "Organization",
-                "local_id": 33,
-                "display": null
-            },
-            "role":{
-                    "coding": [
-                        {
-                            "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
-                            "code": "01.018",
-                            "version": null,
-                            "display": "Ear-, Nose and Throat",
-                            "user_selected": null
-                        }
-                    ],
-                    "text": "specialisation"
-                },
-            "specialty": [
-                {
-                    "coding": [
-                        {
-                            "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
-                            "code": "01.018",
-                            "version": null,
-                            "display": "Ear-, Nose and Throat",
-                            "user_selected": null
-                        }
-                    ],
-                    "text": "specialisation"
-                }
-            ],
-            "period": {
-                "start": "2012-01-01",
-                "end": "2012-03-31"
-            },
-            "location": [],
-            "healthcare_service": []
+          "coding": [
+            {
+              "system": "urn:oid:2.16.840.1.113883.2.4.15.111",
+              "code": "01.018",
+              "version": null,
+              "display": "Ear-, Nose and Throat",
+              "user_selected": null
+            }
+          ],
+          "text": "specialisation"
         }
-    ],
-    "qualification": [
+      ],
+      "period": {
+        "start": "2012-01-01",
+        "end": "2012-03-31"
+      },
+      "location": [],
+      "healthcare_service": []
+    }
+  ],
+  "qualification": [
+    {
+      "id": 1,
+      "identifier": [],
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "41672002",
+            "version": null,
+            "display": "Pulmonologist",
+            "user_selected": null
+          }
+        ],
+        "text": "Care role"
+      },
+      "period": null,
+      "issuer":null
+    }
+  ],
+  "communication": [
+    {
+      "_id": 2,
+      "coding": [
         {
-            "id": 1,
-            "identifier": [],
-            "code": {
-                "coding": [
-                    {
-                        "system": "http://snomed.info/sct",
-                        "code": "41672002",
-                        "version": null,
-                        "display": "Pulmonologist",
-                        "user_selected": null
-                    }
-                ],
-                "text": "Care role"
-            },
-            "period": null,
-            "issuer":null
+          "system": "urn:oid:2.16.840.1.113883.6.121",
+          "code": "nl",
+          "version": null,
+          "display": "Dutch",
+          "user_selected": null
         }
-    ],
-    "communication": [
-        {
-            "coding": [
-                {
-                    "system": "urn:oid:2.16.840.1.113883.6.121",
-                    "code": "nl",
-                    "version": null,
-                    "display": "Dutch",
-                    "user_selected": null
-                }
-            ],
-            "text": "Care role"
-        }
-    ]
+      ],
+      "text": "Care role"
+    }
+  ]
 }
