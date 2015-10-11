@@ -1,0 +1,11 @@
+--- !ruby/object:Fhir::ConditionClasses::Stage
+  summary: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: http://snomed.info/sct
+        code: "14803004"
+        display: Temporary
+  assessment:
+      - !ruby/object:Fhir::Types::Reference
+        external: Procedure/f201
+        display: "14"

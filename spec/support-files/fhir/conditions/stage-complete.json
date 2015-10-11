@@ -1,0 +1,18 @@
+{
+    "summary":
+    {
+        "coding":[
+            {
+                "system":"http://snomed.info/sct",
+                "code":"14803004",
+                "display":"Temporary"
+            }
+        ]
+    },
+    "assessment":[
+        {
+            "reference":"Procedure/f201",
+            "display": "14"
+        }
+    ]
+}

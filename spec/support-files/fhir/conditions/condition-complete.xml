@@ -1,0 +1,110 @@
+<Condition xmlns="http://hl7.org/fhir">
+  <id value="1"/>
+  <identifier>
+    <system value="http://goodcare.org/devices/id"/>
+    <value value="345675"/>
+  </identifier>
+  <identifier>
+    <system value="urn:ietf:rfc:3986"/>
+    <value value="187e0c12-8dd2-67e2-99b2-bf273c878281"/>
+  </identifier>
+  <patient>
+    <reference value="Patient/201"/>
+    <display value="Roel"/>
+  </patient>
+  <encounter>
+    <reference value="Encounter/574"/>
+  </encounter>
+  <asserter>
+    <reference value="Patient/42847"/>
+    <display value="Wainwright"/>
+  </asserter>
+  <dateRecorded value="2013-04-04"/>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="39065001"/>
+      <display value="Burn of ear"/>
+    </coding>
+    <text value="Burnt Ear"/>
+  </code>
+  <category>
+    <coding>
+      <system value="http://hl7.org/fhir/condition-category"/>
+      <code value="diagnosis"/>
+      <display value="Diagnosis"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="439401001"/>
+      <display value="Diagnosis"/>
+    </coding>
+  </category>
+  <clinicalStatus value="confirmed"/>
+  <verificationStatus value="confirmed"/>
+  <severity>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="24484000"/>
+      <display value="Severe"/>
+    </coding>
+  </severity>
+  <onsetAge>
+    <value value="52"/>
+    <unit value="years"/>
+    <system value="http://snomed.info/sct"/>
+    <code value="258707000"/>
+  </onsetAge>
+  <abatementDateTime value="2015-04-27"/>
+  <stage>
+    <summary>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="14803004"/>
+        <display value="Temporary"/>
+      </coding>
+    </summary>
+    <assessment>
+      <reference value="Observation/43382"/>
+    </assessment>
+  </stage>
+  <evidence>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="258710007"/>
+        <display value="degrees C"/>
+      </coding>
+    </code>
+    <detail>
+      <reference value="Observation/f202"/>
+      <display value="Temperature"/>
+    </detail>
+  </evidence>
+  <evidence>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="258710007"/>
+        <display value="degrees C"/>
+      </coding>
+    </code>
+    <detail>
+      <reference value="Observation/f202"/>
+      <display value="Temperature"/>
+    </detail>
+  </evidence>
+  <bodySite>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="308046002"/>
+    </coding>
+  </bodySite>
+  <bodySite>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="308046002"/>
+    </coding>
+  </bodySite>
+  <notes value="This is a general notes/comments entry for description of the Condition, its diagnosis and prognosis."/>
+</Condition>
