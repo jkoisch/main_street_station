@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Condition xmlns="http://hl7.org/fhir">
+  <id value="1"/>
+  <patient>
+    <reference value="Patient/201"/>
+    <display value="Roel"/>
+  </patient>
+  <asserter>
+    <reference value="Practitioner/201"/>
+  </asserter>
+  <dateRecorded value="2013-04-04"/>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="39065001"/>
+      <display value="Burn of ear"/>
+    </coding>
+    <text value="Burnt Ear"/>
+  </code>
+  <category>
+    <coding>
+      <system value="http://hl7.org/fhir/condition-category"/>
+      <code value="diagnosis"/>
+      <display value="Diagnosis"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="439401001"/>
+      <display value="Diagnosis"/>
+    </coding>
+  </category>
+  <clinicalStatus value="confirmed"/>
+  <verificationStatus value="confirmed"/>
+  <severity>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="24484000"/>
+      <display value="Severe"/>
+    </coding>
+  </severity>
+  <onsetDate value="2012-05-24"/>
+  <stage>
+    <summary>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="14803004"/>
+        <display value="Temporary"/>
+      </coding>
+    </summary>
+    <assessment>
+      <reference value="Observation/201"/>
+    </assessment>
+  </stage>>
+  <evidence>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="258710007"/>
+        <display value="degrees C"/>
+      </coding>
+    </code>
+    <detail>
+      <reference value="Observation/202"/>
+      <display value="Temperature"/>
+    </detail>
+  </evidence>
+  <bodySite>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="308046002"/>
+      <display value="Superficial forearm vein"/>
+    </coding>
+  </bodySite>
+</Condition>

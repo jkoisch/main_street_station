@@ -36,7 +36,11 @@ json.severity do
 end unless resource.severity.nil?
 
 json.onsetDateTime resource.onset_datetime unless resource.onset_datetime.nil?
-json.onsetAge resource.onset_age unless resource.onset_age.nil?
+
+json.onsetAge do
+  json.partial! 'fhir/base/quantity', quantity: resource.onset_age
+end unless resource.onset_age.nil?
+
 json.abatementDateTime resource.abatement_datetime unless resource.abatement_datetime.nil?
 json.abatementAge   resource.abatement_age unless resource.abatement_age.nil?
 json.abatementBoolean resource.abatement_boolean unless resource.abatement_boolean.nil?

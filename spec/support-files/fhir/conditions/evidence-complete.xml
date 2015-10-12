@@ -1,0 +1,13 @@
+<evidence>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="258710007"/>
+      <display value="degrees C"/>
+    </coding>
+  </code>
+  <detail>
+    <reference value="Observation/f202"/>
+    <display value="Temperature"/>
+  </detail>
+</evidence>
