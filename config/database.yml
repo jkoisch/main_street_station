@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: main_street
+  database: mainstreet-dev
   pool: 5
 
 # Warning: The database defined as "test" will be erased and
@@ -9,13 +9,18 @@ development:
 # Do not set this db to the same as development or production.
 test: &test
   adapter: postgresql
-  database: main_street_test
+  database: mainstreet-test
+  pool: 5
+
+dev_integration:
+  adapter: postgresql
+  database: mainstreet-integration
   pool: 5
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: main_street
+  database: mainstreet
   pool: 5
-  username: main_street_station
+  username: mainstreet-station
   password: admin
