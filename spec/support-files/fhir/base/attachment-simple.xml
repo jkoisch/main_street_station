@@ -1,0 +1,5 @@
+<picture>
+  <contentType value="jpeg"/>
+  <url value="http://somewhere.cdn.aws.com/thing.jpg"/>
+  <title value="A cool pic"/>
+</picture>

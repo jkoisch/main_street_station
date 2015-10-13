@@ -1,0 +1,3 @@
+--- !ruby/object:Fhir::Types::Extension
+  url: http://hl7.org/extensions/made-up
+  value: thing

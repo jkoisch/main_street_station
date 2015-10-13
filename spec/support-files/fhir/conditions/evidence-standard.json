@@ -1,0 +1,18 @@
+{
+    "code":
+    {
+        "coding":[
+            {
+                "system":"http://snomed.info/sct",
+                "code":"258710007",
+                "display":"degrees C"
+            }
+        ]
+    },
+    "detail":[
+        {
+            "reference":"Observation/f202",
+            "display":"Temperature"
+        }
+    ]
+}

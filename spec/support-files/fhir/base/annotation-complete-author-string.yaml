@@ -1,0 +1,5 @@
+--- !ruby/object:Fhir::Types::Annotation
+  author: Some Schmuck
+  author_string: Some Schmuck
+  time: 2015-06-07T12:30:30.0Z
+  text: Something intelligent

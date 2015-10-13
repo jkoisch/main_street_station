@@ -1,0 +1,3 @@
+<extension url="http://hl7.org/extensions/made-up">
+  <valueString value="thing"/>
+</extension>

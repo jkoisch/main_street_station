@@ -1,1 +1,66 @@
-{"resourceType":"Location","identifier":[{"value":"B1-S.F2"}],"name":"South Wing, second floor","description":"Second floor of the Old South Wing, formerly in use by Psychiatry","type":{"coding":[{"system":"http://hl7.org/fhir/v2/0078","code":"N","display":"Normal (applies to non-numeric results)"}]},"telecom":[{"system":"phone","value":"2328","use":"work"},{"system":"fax","value":"2329","use":"work"},{"system":"email","value":"second wing admissions"},{"system":"url","value":"http://sampleorg.com/southwing","use":"work"}],"address":{"use":"work","line":["Galapagosweg 91, Building A"],"city":"Den Burg","postalCode":"9105 PZ","country":"NLD"},"physicalType":{"coding":[{"system":"http://hl7.org/fhir/location-physical-type","code":"wi","display":"Wing"}]},"position":{"longitude":4.844614000123024,"latitude":52.37799399970903,"altitude":0},"managingOrganization":{"reference":"Organization/f001"},"status":"active"}
+{
+  "resourceType":"Location",
+  "id": "45",
+  "identifier":[
+    {
+      "value":"B1-S.F2"
+    }
+  ],
+  "status":"active",
+  "name":"South Wing, second floor",
+  "description":"Second floor of the Old South Wing, formerly in use by Psychiatry",
+  "type":{
+    "coding":[
+      {
+        "system":"http://hl7.org/fhir/v2/0078",
+        "code":"N",
+        "display":"Normal (applies to non-numeric results)"
+      }
+    ]
+  },
+  "telecom":[
+    {
+      "system":"phone",
+      "value":"2328",
+      "use":"work"
+    },
+    {
+      "system":"fax",
+      "value":"2329",
+      "use":"work"
+    },
+    {
+      "system":"email",
+      "value":"second wing admissions"
+    },
+    {
+      "system":"url",
+      "value":"http://sampleorg.com/southwing",
+      "use":"work"
+    }
+  ],
+  "address":{
+    "use":"work",
+    "line":[ "Galapagosweg 91, Building A" ],
+    "city":"Den Burg",
+    "postalCode":"9105 PZ",
+    "country":"NLD"
+  },
+  "physicalType":{
+    "coding":[
+      {
+        "system":"http://hl7.org/fhir/location-physical-type",
+        "code":"wi",
+        "display":"Wing"
+      }
+    ]
+  },
+  "position":{
+    "longitude":4.844614000123024,
+    "latitude":52.37799399970903,
+    "altitude":0
+  },
+  "managingOrganization":{
+    "reference":"Organization/f001"
+  }
+}

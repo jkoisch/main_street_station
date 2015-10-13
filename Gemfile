@@ -33,10 +33,13 @@ group :test, :development do
   gem 'mocha', require: 'mocha/api'
   gem 'thin'
   #gem 'taps'
-  gem 'dotenv-rails'
   gem 'equivalent-xml'
   gem 'nokogiri-pretty'
   gem 'rb-readline'
+end
+
+group :test, :development, :dev_integration do
+  gem 'dotenv-rails'
 end
 
 gem 'jquery-rails'

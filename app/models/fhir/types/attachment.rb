@@ -1,6 +1,6 @@
 module Fhir
   module Types
-    class Attachment < BaseType
+    class Attachment < KeyedBaseType
       fhir_attribute :content_type
       fhir_attribute :language
       fhir_attribute :data

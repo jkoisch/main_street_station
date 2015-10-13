@@ -1,0 +1,4 @@
+--- !ruby/object:Fhir::Types::Attachment
+  content_type: jpeg
+  url: http://somewhere.cdn.aws.com/thing.jpg
+  title: A cool pic

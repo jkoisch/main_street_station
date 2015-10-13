@@ -1,3 +1,5 @@
+json.id   reference_range.id unless reference_range.id.nil?
+
 json.low  do
   json.partial! 'fhir/base/quantity', quantity: reference_range.low
 end unless reference_range.low.nil?

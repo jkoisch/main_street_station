@@ -1,0 +1,16 @@
+<name id="2">
+  <use value="official"/>
+  <text value="I have a long name with many words"/>
+  <family value="Winnifred"/>
+  <family value="Jones"/>
+  <given value="Alfred"/>
+  <given value="Reginald"/>
+  <prefix value="Lt."/>
+  <prefix value="Sir"/>
+  <suffix value="Esq."/>
+  <suffix value="MD"/>
+  <period>
+    <start value="2000-01-11"/>
+    <end value="2015-05-26"/>
+  </period>
+</name>

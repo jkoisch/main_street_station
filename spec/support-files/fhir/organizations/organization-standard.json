@@ -1,1 +1,34 @@
-{"resourceType":"Organization","name":"Health Level Seven International","type":{"coding":[{"system":"urn:oid:2.16.840.1.113883.2.4.15.1060","code":"V6","display":"University Medical Hospital"}]},"telecom":[{"system":"phone","value":"(+1) 734-677-7777"},{"system":"fax","value":"(+1) 734-677-6622"},{"system":"email","value":"hq@HL7.org"}],"address":[{"line":["3300 Washtenaw Avenue, Suite 227"],"city":"Ann Arbor","state":"MI","postalCode":"48104","country":"USA"}],"partOf":{"reference":"Organization/1","display":"ACME Healthcare, Inc"},"active":"true"}
+{
+  "resourceType":"Organization",
+  "id": "3",
+  "active":"true",
+  "type":{
+    "coding":[
+      {
+        "system":"urn:oid:2.16.840.1.113883.2.4.15.1060",
+        "code":"V6",
+        "display":"University Medical Hospital"
+      }
+    ]
+  },
+  "name":"Health Level Seven International",
+  "telecom":[
+    {
+      "system":"phone",
+      "value":"(+1) 734-677-7777"
+    }
+  ],
+  "address":[
+    {
+      "line":[ "3300 Washtenaw Avenue, Suite 227" ],
+      "city":"Ann Arbor",
+      "state":"MI",
+      "postalCode":"48104",
+      "country":"USA"
+    }
+  ],
+  "partOf":{
+    "reference":"Organization/1",
+    "display":"ACME Healthcare, Inc"
+  }
+}

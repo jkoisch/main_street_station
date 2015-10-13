@@ -1,5 +1,5 @@
 json.code do
-  json.partial! 'fhir/base/coding', coding: event.code.severity
+  json.partial! 'fhir/base/coding', coding: event.code
 end unless event.code.nil?
 
 json.category event.category unless event.category.nil?

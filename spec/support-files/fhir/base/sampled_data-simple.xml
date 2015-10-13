@@ -1,0 +1,8 @@
+<sampledData>
+  <origin>
+    <unit value="g"/>
+  </origin>
+  <period value="20.0"/>
+  <dimensions value="5"/>
+  <data value="20 40 20 40"/>
+</sampledData>

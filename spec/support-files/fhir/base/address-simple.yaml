@@ -1,0 +1,7 @@
+--- !ruby/object:Fhir::Types::Address
+  use: home
+  line:
+    - 534 Erewhon St
+  city: PleasantVille
+  state: Vic
+  postal_code: 3999

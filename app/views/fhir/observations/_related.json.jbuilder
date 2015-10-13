@@ -1,4 +1,5 @@
-json.type  related.type unless related.type.nil?
+json.id   related.id unless related.id.nil?
+json.type related.type unless related.type.nil?
 
 json.target  do
   json.partial! 'fhir/base/reference', reference: related.target

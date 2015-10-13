@@ -1,5 +1,9 @@
 json.resourceType  'Location'
 
+json.id resource.id unless resource.id.nil?
+
+json.status resource.status unless resource.status.nil?
+
 json.identifier resource.identifier do |identifier|
   json.partial! 'fhir/base/identifier', identifier: identifier
 end unless resource.identifier.nil?
@@ -35,5 +39,3 @@ end unless resource.managing_organization.nil?
 json.partOf do
   json.partial! 'fhir/base/reference', reference: resource.part_of
 end unless resource.part_of.nil?
-
-json.status resource.status unless resource.status.nil?

@@ -1,0 +1,21 @@
+{
+  "resourceType":"Bundle",
+  "meta": {
+    "lastUpdated": "xxx"
+  },
+  "type":"searchset",
+  "total":1,
+  "entry": [
+    {
+      "fullUrl":"http://mainstreet.youcentric.com/fhir/BundleTest/1",
+      "resource": {
+        "resourceType":"BundleTest",
+        "name":"testing 1",
+        "category":"expert"
+      },
+      "search": {
+        "mode":"match"
+      }
+    }
+  ]
+}

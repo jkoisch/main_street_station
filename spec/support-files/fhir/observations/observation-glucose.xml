@@ -1,4 +1,5 @@
 <Observation xmlns="http://hl7.org/fhir">
+  <id value="301"/>
   <identifier>
     <use value="official"/>
     <system value="http://www.bmc.nl/zorgportal/identifiers/observations"/>
@@ -45,6 +46,7 @@
     </coding>
   </method>
   <referenceRange>
+    <id value="602"/>
     <low>
       <value value="3.1"/>
       <unit value="mmol/l"/>

@@ -1,0 +1,2 @@
+--- !ruby/object:Fhir::Types::Period
+  start: "2015-12-02"

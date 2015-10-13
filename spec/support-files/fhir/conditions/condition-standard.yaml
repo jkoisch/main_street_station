@@ -1,4 +1,5 @@
 --- !ruby/object:Fhir::Condition
+  id: "267"
   identifier:
      - !ruby/object:Fhir::Types::Identifier
        system: http://goodcare.org/devices/id
@@ -36,6 +37,7 @@
         system: http://snomed.info/sct
         code: '24484000'
         display: Severe
+  onset: 2012-05-24
   onset_datetime: 2012-05-24
   stage: !ruby/object:Fhir::ConditionClasses::Stage
     summary: !ruby/object:Fhir::Types::CodeableConcept
@@ -66,3 +68,4 @@
           system: http://snomed.info/sct
           code: "308046002"
           display: Superficial forearm vein
+  notes: Something important to remember

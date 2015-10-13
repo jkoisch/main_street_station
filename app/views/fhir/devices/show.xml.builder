@@ -1,4 +1,2 @@
 xml.instruct!
-xml.device do
-  xml << render(:partial => 'device', :locals => { :resource => @device})
-end
+@device.to_xml(nil, xml)

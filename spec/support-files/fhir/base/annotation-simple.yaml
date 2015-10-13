@@ -1,0 +1,2 @@
+--- !ruby/object:Fhir::Types::Annotation
+  text: Something intelligent

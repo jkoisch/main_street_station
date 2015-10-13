@@ -1,4 +1,2 @@
 xml.instruct!
-xml.condition do
-  xml << render(:partial => 'condition', :locals => { :resource => @condition})
-end
+@condition.to_xml(nil, xml, true)

@@ -1,0 +1,26 @@
+<contact>
+  <purpose>
+    <coding>
+      <system value="urn:oid:2.16.840.1.113883.4.642.1.229"/>
+      <code value="ADMIN"/>
+      <display value="Administrative"/>
+    </coding>
+  </purpose>
+  <name>
+    <use value="usual"/>
+    <given value="The Big Cheese"/>
+  </name>
+  <telecom>
+    <system value="phone"/>
+    <value value="(+1) 734-677-7777"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="hq@HL7.org"/>
+  </telecom>
+  <address>
+    <use value="work"/>
+    <line value="123 Somewhere St."/>
+    <city value="Edmonton"/>
+  </address>
+</contact>

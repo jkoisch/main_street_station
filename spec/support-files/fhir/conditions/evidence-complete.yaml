@@ -1,0 +1,11 @@
+--- !ruby/object:Fhir::ConditionClasses::Evidence
+  code: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: http://snomed.info/sct
+        code: '258710007'
+        display: degrees C
+  detail:
+    - !ruby/object:Fhir::Types::Reference
+      external: Observation/f202
+      display: Temperature

@@ -1,0 +1,58 @@
+local base_dir, gringotts_dir, mainstreet_dir
+set base_dir to "Documents/develop/Rails/"
+set gringotts_dir to base_dir & "gringotts"
+set mainstreet_dir to base_dir & "main_street_station"
+
+tell application "iTerm"
+	activate
+	set myterm to (make new terminal)
+	tell myterm
+		set console_session to (launch session "Default Session")
+		activate console_session
+		tell console_session
+			set name to "Gringotts console"
+			write text "cd " & gringotts_dir
+			write text "rails c"
+		end tell
+
+		set general_session to (launch session "Default Session")
+		activate general_session
+		tell general_session
+			set name to "gringotts"
+			write text "cd " & gringotts_dir
+			write text "mine ."
+		end tell
+
+		set pg_session to (launch session "Default Session")
+		activate pg_session
+		tell pg_session
+			set name to "PSQL"
+			write text "cd " & gringotts_dir
+			write text "psql gringotts-dev"
+		end tell
+
+		set guard_session to (launch session "Default Session")
+		activate guard_session
+		tell guard_session
+			set name to "guard-gringotts"
+			write text "cd " & gringotts_dir
+			write text "bundle exec guard"
+		end tell
+
+		set mainstreet_session to (launch session "Default Session")
+		activate mainstreet_session
+		tell mainstreet_session
+			set name to "mainstreet"
+			write text "cd " & mainstreet_dir
+			write text "mine ."
+		end tell
+
+		set ms_guard_session to (launch session "Default Session")
+		activate ms_guard_session
+		tell ms_guard_session
+			set name to "guard-mainstreet"
+			write text "cd " & mainstreet_dir
+			write text "bundle exec guard"
+		end tell
+	end tell
+end tell

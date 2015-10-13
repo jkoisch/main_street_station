@@ -1,0 +1,4 @@
+--- !ruby/object:Fhir::Types::HumanName
+  use: nickname
+  given:
+    - The Beast

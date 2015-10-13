@@ -1,0 +1,2 @@
+--- !ruby/object:Fhir::Types::CodeableConcept
+  text: A code value for something

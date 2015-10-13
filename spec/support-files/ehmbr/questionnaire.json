@@ -1,329 +1,170 @@
 {
-    "id": 1,
-    "resource_type": "Questionnaire",
-    "status": "completed",
-    "authored": "2013-02-19T14:15:00",
-    "subject": {
-        "external": "Patient/f201",
-        "display": "Roel"
-    },
-    "author": null,
-    "source": null,
-    "name": {
-        "coding": [
-            {
-                "system": "https://lifelines.nl",
-                "version": null,
-                "code": "VL 1-1, 18-65_1.2.2",
-                "display": "Lifelines Questionnaire 1 part 1",
-                "user_selected": null
-            }
-        ],
-        "text": null
-    },
-    "identifier": [
-        {
-            "_id": 1,
-            "use": "temp",
-            "type": null,
-            "system": null,
-            "value": null,
-            "period": null,
-            "assigner": null
-        }
-    ],
-    "encounter": null,
-    "group": {
-        "name": {
-            "coding": [],
-            "text": null
-        },
-        "header": null,
-        "text": null,
-        "subject": null,
-        "group": [
-            {
-                "name": {
-                    "coding": [
-                        {
-                            "system": "http://cancer.questionnaire.org/system/code/sections",
-                            "version": null,
-                            "code": "COMORBIDITY",
-                            "display": null,
-                            "user_selected": null
-                        }
-                    ],
-                    "text": null
-                },
-                "header": null,
-                "text": null,
-                "subject": null,
-                "question": [
-                    {
-                        "name": {
-                            "coding": [
-                                {
-                                    "system": "http://cancer.questionnaire.org/system/code/questions",
-                                    "version": null,
-                                    "code": "COMORB",
-                                    "display": null,
-                                    "user_selected": null
-                                }
-                            ],
-                            "text": null
-                        },
-                        "text": null,
-                        "answer_decimal": null,
-                        "answer_integer": null,
-                        "answer_boolean": null,
-                        "answer_date": null,
-                        "answer_string": null,
-                        "answer_datetime": null,
-                        "answer_instant": null,
-                        "choice": [
-                            {
-                                "system": "http://cancer.questionnaire.org/system/code/yesno",
-                                "version": null,
-                                "code": "1",
-                                "display": "Yes",
-                                "user_selected": null
-                            }
-                        ],
-                        "options": null,
-                        "data_integer": null,
-                        "data_date": null,
-                        "data_string": null,
-                        "data_boolean": null,
-                        "remarks": null,
-                        "group": [
-                            {
-                                "name": {
-                                    "coding": [
-                                        {
-                                            "system": "http://cancer.questionnaire.org/system/code/sections",
-                                            "version": null,
-                                            "code": "CARDIAL",
-                                            "display": null,
-                                            "user_selected": null
-                                        }
-                                    ],
-                                    "text": null
-                                },
-                                "header": null,
-                                "text": null,
-                                "subject": null,
-                                "group": [],
-                                "question": [
-                                    {
-                                        "name": {
-                                            "coding": [
-                                                {
-                                                    "system": "http://cancer.questionnaire.org/system/code/questions",
-                                                    "version": null,
-                                                    "code": "COMORBCAR",
-                                                    "display": null,
-                                                    "user_selected": null
-                                                }
-                                            ],
-                                            "text": null
-                                        },
-                                        "text": null,
-                                        "answer_decimal": null,
-                                        "answer_integer": null,
-                                        "answer_boolean": null,
-                                        "answer_date": null,
-                                        "answer_string": null,
-                                        "answer_datetime": null,
-                                        "answer_instant": null,
-                                        "choice": [
-                                            {
-                                                "system": "http://cancer.questionnaire.org/system/code/yesno",
-                                                "version": null,
-                                                "code": "1",
-                                                "display": null,
-                                                "user_selected": null
-                                            }
-                                        ],
-                                        "options": null,
-                                        "data_integer": null,
-                                        "data_date": null,
-                                        "data_string": null,
-                                        "data_boolean": null,
-                                        "remarks": null
-                                    },
-                                    {
-                                        "name": {
-                                            "coding": [
-                                                {
-                                                    "system": "http://cancer.questionnaire.org/system/code/questions",
-                                                    "version": null,
-                                                    "code": "COMCAR00",
-                                                    "display": "Angina Pectoris",
-                                                    "user_selected": null
-                                                },
-                                                {
-                                                    "system": "http://snomed.info/sct",
-                                                    "version": null,
-                                                    "code": "194828000",
-                                                    "display": "Angina (disorder)",
-                                                    "user_selected": null
-                                                }
-                                            ],
-                                            "text": null
-                                        },
-                                        "text": null,
-                                        "answer_decimal": null,
-                                        "answer_integer": null,
-                                        "answer_boolean": null,
-                                        "answer_date": null,
-                                        "answer_string": null,
-                                        "answer_datetime": null,
-                                        "answer_instant": null,
-                                        "choice": [
-                                            {
-                                                "system": "http://cancer.questionnaire.org/system/code/yesno",
-                                                "version": null,
-                                                "code": "1",
-                                                "display": null,
-                                                "user_selected": null
-                                            }
-                                        ],
-                                        "options": null,
-                                        "data_integer": null,
-                                        "data_date": null,
-                                        "data_string": null,
-                                        "data_boolean": null,
-                                        "remarks": null
-                                    },
-                                    {
-                                        "name": {
-                                            "coding": [
-                                                {
-                                                    "system": "http://snomed.info/sct",
-                                                    "version": null,
-                                                    "code": "22298006",
-                                                    "display": "Myocardial infarction (disorder)",
-                                                    "user_selected": null
-                                                }
-                                            ],
-                                            "text": null
-                                        },
-                                        "text": null,
-                                        "answer_decimal": null,
-                                        "answer_integer": null,
-                                        "answer_boolean": null,
-                                        "answer_date": null,
-                                        "answer_string": null,
-                                        "answer_datetime": null,
-                                        "answer_instant": null,
-                                        "choice": [
-                                            {
-                                                "system": "http://cancer.questionnaire.org/system/code/yesno",
-                                                "version": null,
-                                                "code": "0",
-                                                "display": null,
-                                                "user_selected": null
-                                            }
-                                        ],
-                                        "options": null,
-                                        "data_integer": null,
-                                        "data_date": null,
-                                        "data_string": null,
-                                        "data_boolean": null,
-                                        "remarks": null
-                                    }
-                                ]
-                            },
-                            {
-                                "name": {
-                                    "coding": [
-                                        {
-                                            "system": "http://cancer.questionnaire.org/system/code/sections",
-                                            "version": null,
-                                            "code": "VASCULAR",
-                                            "display": null,
-                                            "user_selected": null
-                                        }
-                                    ],
-                                    "text": null
-                                },
-                                "header": null,
-                                "text": null,
-                                "subject": null,
-                                "group": [],
-                                "question": []
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": {
-                    "coding": [
-                        {
-                            "system": "http://cancer.questionnaire.org/system/code/sections",
-                            "version": null,
-                            "code": "HISTOPATHOLOGY",
-                            "display": null,
-                            "user_selected": null
-                        }
-                    ],
-                    "text": null
-                },
-                "header": null,
-                "text": null,
-                "subject": null,
-                "group": [
-                    {
-                        "name": {
-                            "coding": [
-                                {
-                                    "system": "http://cancer.questionnaire.org/system/code/sections",
-                                    "version": null,
-                                    "code": "ABDOMINAL",
-                                    "display": null,
-                                    "user_selected": null
-                                }
-                            ],
-                            "text": null
-                        },
-                        "text": null,
-                        "subject": null,
-                        "group": [],
-                        "question": [
-                            {
-                                "name": {
-                                    "coding": [
-                                        {
-                                            "system": "http://cancer.questionnaire.org/system/code/questions",
-                                            "version": null,
-                                            "code": "STADPT",
-                                            "display": "pT category",
-                                            "user_selected": null
-                                        }
-                                    ],
-                                    "text": null
-                                },
-                                "text": null,
-                                "answer_decimal": null,
-                                "answer_integer": null,
-                                "answer_boolean": null,
-                                "answer_date": null,
-                                "answer_string": null,
-                                "answer_datetime": null,
-                                "answer_instant": null,
-                                "choice": [],
-                                "options": null,
-                                "data_integer": null,
-                                "data_date": null,
-                                "data_string": null,
-                                "data_boolean": null,
-                                "remarks": null
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
+  "id": 1,
+  "resource_type": "Questionnaire",
+  "identifier": [
+    {
+      "_id": 1,
+      "use": "temp",
+      "type": null,
+      "system": null,
+      "value": null,
+      "period": null,
+      "assigner": null
     }
+  ],
+  "version": null,
+  "status": "published",
+  "date": "2013-02-19T14:15:00",
+  "group": {
+    "link_id": null,
+    "title": null,
+    "concept": [],
+    "text": null,
+    "required": null,
+    "repeats": null,
+    "group": [
+      {
+        "link_id": null,
+        "title": null,
+        "concept": [],
+        "text": null,
+        "required": null,
+        "repeats": null,
+        "group": [],
+        "question": [
+          {
+            "link_id": null,
+            "concept": [],
+            "text": null,
+            "type": [],
+            "required": null,
+            "repeats": null,
+            "options": null,
+            "option": [
+              {
+                "system": "http://cancer.questionnaire.org/system/code/yesno",
+                "version": null,
+                "code": "1",
+                "display": "Yes",
+                "user_selected": null
+              }
+            ],
+            "group": [
+              {
+                "link_id": null,
+                "title": null,
+                "concept": [],
+                "text": null,
+                "required": null,
+                "repeats": null,
+                "group": [],
+                "question": [
+                  {
+                    "link_id": null,
+                    "concept": [],
+                    "text": null,
+                    "type": [],
+                    "required": null,
+                    "repeats": null,
+                    "options": null,
+                    "option": [
+                      {
+                        "system": "http://cancer.questionnaire.org/system/code/yesno",
+                        "version": null,
+                        "code": "1",
+                        "display": null,
+                        "user_selected": null
+                      }
+                    ],
+                    "group": []
+                  },
+                  {
+                    "link_id": null,
+                    "concept": [],
+                    "text": null,
+                    "type": [],
+                    "required": null,
+                    "repeats": null,
+                    "options": null,
+                    "option": [
+                      {
+                        "system": "http://cancer.questionnaire.org/system/code/yesno",
+                        "version": null,
+                        "code": "1",
+                        "display": null,
+                        "user_selected": null
+                      }
+                    ],
+                    "group": []
+                  },
+                  {
+                    "link_id": null,
+                    "concept": [],
+                    "text": null,
+                    "type": [],
+                    "required": null,
+                    "repeats": null,
+                    "options": null,
+                    "option": [
+                      {
+                        "system": "http://cancer.questionnaire.org/system/code/yesno",
+                        "version": null,
+                        "code": "0",
+                        "display": null,
+                        "user_selected": null
+                      }
+                    ],
+                    "group": []
+                  }
+                ]
+              },
+              {
+                "link_id": null,
+                "title": "Vascular",
+                "concept": [],
+                "text": null,
+                "required": null,
+                "repeats": null,
+                "group": [],
+                "question": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "link_id": null,
+        "title": null,
+        "concept": [],
+        "text": null,
+        "required": null,
+        "repeats": null,
+        "group": [
+          {
+            "link_id": null,
+            "title": null,
+            "concept": [],
+            "text": null,
+            "required": null,
+            "repeats": null,
+            "group": [],
+            "question": [
+              {
+                "link_id": null,
+                "concept": [],
+                "text": "pT category",
+                "type": [],
+                "required": null,
+                "repeats": null,
+                "options": null,
+                "option": [],
+                "group": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "question": []
+  }
 }

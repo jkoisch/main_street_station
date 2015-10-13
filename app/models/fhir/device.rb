@@ -1,6 +1,5 @@
 module Fhir
   class Device < BaseResource
-    fhir_attribute :id
     fhir_attribute :identifier, list: Types::Identifier
     fhir_attribute :type, type: Types::CodeableConcept
     fhir_attribute :note, list: Types::Annotation

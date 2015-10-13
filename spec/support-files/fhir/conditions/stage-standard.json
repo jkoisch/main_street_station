@@ -1,0 +1,18 @@
+{
+    "summary":
+    {
+        "coding":[
+            {
+                "system":"http://snomed.info/sct",
+                "code":"258219007",
+                "display":"stage II"
+            }
+        ]
+    },
+    "assessment":[
+        {
+            "reference":"Observation/201",
+            "display": "201"
+        }
+    ]
+}

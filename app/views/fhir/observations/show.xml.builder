@@ -1,4 +1,2 @@
 xml.instruct!
-xml.observation do
-  xml << render(:partial => 'observation', :locals => { :resource => @observation})
-end
+@observation.to_xml(nil, xml, true)

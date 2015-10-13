@@ -1,10 +1,24 @@
 require 'rails_helper'
 require 'fhir/patient'
+require 'builder'
 
 describe 'FHIR Patient View', type: :view do
-  subject { 'fhir/patients/patient' }
-  let(:resource) { YAML.load(File.read('spec/support-files/fhir/patients/patient-standard.yaml')) }
+  before(:each) { controller.prepend_view_path 'app/views/fhir/patients' }
 
-  it {should produce_fhir_json_like('spec/support-files/fhir/patients/patient-standard.json')}
-  it {should produce_fhir_xml_like('spec/support-files/fhir/patients/patient-standard.xml')}
+  context 'standard' do
+    let(:resource) { yaml_load('patients/patient-standard.yaml') }
+
+    context 'JSON' do
+      subject { render(partial: 'patient', formats: :json, locals: {resource: resource}) }
+
+      it {should match_fhir_json(support_file('patients/patient-standard.json')) }
+    end
+
+    context 'XML' do
+      let(:builder) { Builder::XmlMarkup.new() }
+      subject { resource.to_xml(nil, builder, true) }
+
+      it {should match_fhir_xml(support_file('patients/patient-standard.xml')) }
+    end
+  end
 end

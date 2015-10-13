@@ -1,0 +1,41 @@
+<FamilyMemberHistory xmlns="http://hl7.org/fhir">
+  <id value="446"/>
+  <patient>
+    <reference value="Patient/201"/>
+    <display value="Roel"/>
+  </patient>
+  <status value="completed"/>
+  <name value="Bob"/>
+  <relationship>
+    <coding>
+      <system value="http://hl7.org/fhir/familial-relationship"/>
+      <code value="brother"/>
+    </coding>
+  </relationship>
+  <note>
+    <time value="2015-07-14"/>
+    <text value="Both parents, both brothers and both children (twin) are still alive."/>
+  </note>
+  <condition>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="371041009"/>
+        <display value="Embolic Stroke"/>
+      </coding>
+      <text value="Stroke"/>
+    </code>
+    <outcome>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="419099112"/>
+        <display value="Inactive"/>
+      </coding>
+    </outcome>
+    <onsetQuantity>
+      <value value="56"/>
+      <unit value="a"/>
+      <system value="http://unitsofmeasure.org"/>
+    </onsetQuantity>
+  </condition>
+</FamilyMemberHistory>

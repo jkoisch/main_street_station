@@ -1,4 +1,5 @@
 --- !ruby/object:Fhir::Observation
+  id: "302"
   identifier:
     - !ruby/object:Fhir::Types::Identifier
       system: "urn:ietf:rfc:3986"
@@ -21,11 +22,15 @@
   subject: !ruby/object:Fhir::Types::Reference
     external: Patient/f001
     display: P. van de Heuvel
-  effective_date: "2012-09-17"
+  effective: 2012-09-17
+  effective_datetime: "2012-09-17"
   performer:
     - !ruby/object:Fhir::Types::Reference
       external: Practitioner/f005
       display: A. Langeveld
+  value: !ruby/object:Fhir::Types::Quantity
+    value: "107"
+    unit: "mm[Hg]"
   value_quantity: !ruby/object:Fhir::Types::Quantity
     value: "107"
     unit: "mm[Hg]"
@@ -40,7 +45,7 @@
     display: bp
   related:
     - !ruby/object:Fhir::ObservationClasses::Related
-      type: MBR
+      type: has-member
       target: !ruby/object:Fhir::Types::Reference
         external: Observation/f005
         display: JC May

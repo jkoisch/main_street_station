@@ -1,0 +1,100 @@
+--- !ruby/object:Fhir::Condition
+  id: "1"
+  identifier:
+     - !ruby/object:Fhir::Types::Identifier
+       system: http://goodcare.org/devices/id
+       value: 345675
+     - !ruby/object:Fhir::Types::Identifier
+       system: urn:ietf:rfc:3986
+       value: 187e0c12-8dd2-67e2-99b2-bf273c878281
+  patient: !ruby/object:Fhir::Types::Reference
+    external: "Patient/201"
+    display: "Roel"
+  encounter: !ruby/object:Fhir::Types::Reference
+    external: Encounter/574
+  asserter: !ruby/object:Fhir::Types::Reference
+    external: Patient/42847
+    display: Wainwright
+  date_recorded: 2013-04-04
+  code: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: http://snomed.info/sct
+        code: '39065001'
+        display: Burn of ear
+    text: Burnt Ear
+  category: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: http://hl7.org/fhir/condition-category
+        code: diagnosis
+        display: Diagnosis
+      - !ruby/object:Fhir::Types::Coding
+        system: http://snomed.info/sct
+        code: '439401001'
+        display: Diagnosis
+  clinical_status: confirmed
+  verification_status: confirmed
+  severity: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: http://snomed.info/sct
+        code: "24484000"
+        display: Severe
+  onset: !ruby/object:Fhir::Types::Age
+    value: "52"
+    unit: "years"
+    system: http://snomed.info/sct
+    code: '258707000'
+  onset_age: !ruby/object:Fhir::Types::Age
+    value: "52"
+    unit: "years"
+    system: http://snomed.info/sct
+    code: '258707000'
+  abatement: 2015-04-27
+  abatement_datetime: "2015-04-27"
+  stage: !ruby/object:Fhir::ConditionClasses::Stage
+    summary: !ruby/object:Fhir::Types::CodeableConcept
+      coding:
+        - !ruby/object:Fhir::Types::Coding
+          system: http://snomed.info/sct
+          code: '14803004'
+          display: Temporary
+    assessment:
+      - !ruby/object:Fhir::Types::Reference
+        external: Observation/43382
+  evidence:
+    - !ruby/object:Fhir::ConditionClasses::Evidence
+      code: !ruby/object:Fhir::Types::CodeableConcept
+        coding:
+          - !ruby/object:Fhir::Types::Coding
+            system: http://snomed.info/sct
+            code: '258710007'
+            display: degrees C
+      detail:
+        - !ruby/object:Fhir::Types::Reference
+          external: Observation/f202
+          display: Temperature
+    - !ruby/object:Fhir::ConditionClasses::Evidence
+      code: !ruby/object:Fhir::Types::CodeableConcept
+        coding:
+          - !ruby/object:Fhir::Types::Coding
+            system: http://snomed.info/sct
+            code: '258710007'
+            display: degrees C
+      detail:
+        - !ruby/object:Fhir::Types::Reference
+          external: Observation/f202
+          display: Temperature
+  body_site:
+    - !ruby/object:Fhir::Types::CodeableConcept
+      coding:
+        - !ruby/object:Fhir::Types::Coding
+          system: http://snomed.info/sct
+          code: "308046002"
+    - !ruby/object:Fhir::Types::CodeableConcept
+      coding:
+        - !ruby/object:Fhir::Types::Coding
+          system: http://snomed.info/sct
+          code: "308046002"
+  notes: This is a general notes/comments entry for description of the Condition, its diagnosis and prognosis.

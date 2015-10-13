@@ -1,0 +1,7 @@
+{
+  "denominator": {
+    "value": 43,
+    "unit": "g",
+    "system": "http://somewhere.com/measure"
+  }
+}

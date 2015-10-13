@@ -1,6 +1,6 @@
 module Fhir
   module Types
-    class CodeableConcept < BaseType
+    class CodeableConcept < KeyedBaseType
       fhir_attribute :coding, list: Coding
       fhir_attribute :text
     end

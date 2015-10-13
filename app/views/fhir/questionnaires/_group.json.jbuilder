@@ -1,13 +1,13 @@
-json.name do
-  json.partial! 'fhir/base/codeable_concept', codeable_concept: group.name
-end unless group.name.nil?
+json.linkId group.link_id unless group.link_id.nil?
+json.title  group.title unless group.title.nil?
 
-json.header   group.header unless group.header.nil?
+json.concept group.concept do |concept|
+  json.partial! 'fhir/base/coding', coding: concept
+end unless group.concept.nil?
+
 json.text     group.text unless group.text.nil?
-
-json.subject do
-  json.partial! 'fhir/base/reference', reference: group.subject
-end unless group.subject.nil?
+json.required group.required unless group.required.nil?
+json.repeats  group.repeats unless group.repeats.nil?
 
 json.group group.group do |group|
   json.partial! 'group', group: group

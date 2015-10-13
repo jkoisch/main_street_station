@@ -1,3 +1,4 @@
+json._id    human_name._id unless human_name._id.nil?
 json.use    human_name.use unless human_name.use.nil?
 json.text   human_name.text unless human_name.text.nil?
 json.family human_name.family unless human_name.family.nil?

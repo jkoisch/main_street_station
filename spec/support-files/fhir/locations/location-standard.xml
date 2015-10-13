@@ -1,7 +1,9 @@
 <Location xmlns="http://hl7.org/fhir">
+  <id value="45"/>
   <identifier>
     <value value="B1-S.F2"/>
   </identifier>
+  <status value="active"/>
   <name value="South Wing, second floor"/>
   <description value="Second floor of the Old South Wing, formerly in use by Psychiatry"/>
   <type>
@@ -52,5 +54,4 @@
   <managingOrganization>
     <reference value="Organization/f001"/>
   </managingOrganization>
-  <status value="active"/>
 </Location>

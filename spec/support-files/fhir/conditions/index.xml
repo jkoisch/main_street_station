@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Bundle xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="xxx"/>
+  </meta>
+  <type value="searchset"/>
+  <total value="2"/>
+  <entry>
+    <fullUrl value="http://mainstreet.youcentric.com/fhir/Condition/3"/>
+    <resource>
+      <Condition xmlns="http://hl7.org/fhir">
+        <id value="3"/>
+        <identifier>
+          <system value="http://goodcare.org/devices/id"/>
+          <value value="345675"/>
+        </identifier>
+        <patient>
+          <reference value="Patient/f201"/>
+          <display value="Roel"/>
+        </patient>
+        <encounter>
+          <reference value="Encounter/f201"/>
+        </encounter>
+        <asserter>
+          <reference value="Practitioner/f201"/>
+        </asserter>
+        <dateRecorded value="2013-04-04"/>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="39065001"/>
+            <display value="Burn of ear"/>
+          </coding>
+          <text value="Burnt Ear"/>
+        </code>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/condition-category"/>
+            <code value="diagnosis"/>
+            <display value="Diagnosis"/>
+          </coding>
+          <!--   and also a SNOMED CT coding   -->
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="439401001"/>
+            <display value="Diagnosis"/>
+          </coding>
+        </category>
+        <clinicalStatus value="confirmed"/>
+        <verificationStatus value="confirmed"/>
+        <severity>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="24484000"/>
+            <display value="Severe"/>
+          </coding>
+        </severity>
+        <onsetDate value="2012-05-24"/>
+        <stage>
+          <summary>
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="14803004"/>
+              <display value="Temporary"/>
+            </coding>
+          </summary>
+          <assessment>
+            <reference value="Procedure/f201"/>
+          </assessment>
+        </stage>>
+        <evidence>
+          <code>
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="258710007"/>
+              <display value="degrees C"/>
+            </coding>
+          </code>
+          <detail>
+            <reference value="Observation/f202"/>
+            <display value="Temperature"/>
+          </detail>
+        </evidence>
+        <bodySite>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="308046002"/>
+            <display value="Superficial forearm vein"/>
+          </coding>
+        </bodySite>
+      </Condition>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="http://mainstreet.youcentric.com/fhir/Condition/1"/>
+    <resource>
+      <Condition xmlns="http://hl7.org/fhir">
+        <id value="1"/>
+        <identifier>
+          <system value="http://goodcare.org/devices/id"/>
+          <value value="345675"/>
+        </identifier>
+        <dateRecorded value="2013-04-04"/>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="39065001"/>
+            <display value="Burn of ear"/>
+          </coding>
+          <text value="Burnt Ear"/>
+        </code>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/condition-category"/>
+            <code value="diagnosis"/>
+            <display value="Diagnosis"/>
+          </coding>
+          <!--   and also a SNOMED CT coding   -->
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="439401001"/>
+            <display value="Diagnosis"/>
+          </coding>
+        </category>
+        <clinicalStatus value="confirmed"/>
+        <verificationStatus value="confirmed"/>
+        <severity>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="24484000"/>
+            <display value="Severe"/>
+          </coding>
+        </severity>
+        <onsetDate value="2012-05-24"/>
+        <evidence>
+          <code>
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="258710007"/>
+              <display value="degrees C"/>
+            </coding>
+          </code>
+          <detail>
+            <reference value="Observation/f202"/>
+            <display value="Temperature"/>
+          </detail>
+        </evidence>
+        <bodySite>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="308046002"/>
+            <display value="Superficial forearm vein"/>
+          </coding>
+        </bodySite>
+      </Condition>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+</Bundle>

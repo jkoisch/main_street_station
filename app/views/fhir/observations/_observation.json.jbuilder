@@ -1,5 +1,7 @@
 json.resourceType 'Observation'
 
+json.id resource.id unless resource.id.nil?
+
 json.identifier resource.identifier do |identifier|
   json.partial! 'fhir/base/identifier', identifier: identifier
 end unless resource.identifier.nil?
@@ -22,7 +24,7 @@ json.encounter do
   json.partial! 'fhir/base/reference', reference: resource.encounter
 end unless resource.encounter.nil?
 
-json.effectiveDatetime  resource.effective_date unless resource.effective_date.nil?
+json.effectiveDateTime  resource.effective_datetime unless resource.effective_datetime.nil?
 
 json.effectivePeriod do
   json.partial! 'fhir/base/period', period: resource.effective_period

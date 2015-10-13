@@ -1,0 +1,96 @@
+{
+  "resourceType":"Conformance",
+  "url":"test-1",
+  "version":0.1,
+  "name":"test",
+  "status":"alpha",
+  "experimental":true,
+  "publisher":"YouCentric",
+  "contact":[
+    {
+      "name":"tech guy"
+    }
+  ],
+  "date":"2014-01-01",
+  "kind": "instance",
+  "software":{
+    "name":"Mainstreet",
+    "version":"0.00.010.0001",
+    "releaseDate":"2014-01-01"
+  },
+  "implementation":{
+    "description":"the main point",
+    "url":"http://mainstreet.youcentric.com"
+  },
+  "fhirVersion": "1.0.0",
+  "acceptUnknown": "extensions",
+  "format":[ "xml","json" ],
+  "rest":[
+    {
+      "mode":"server",
+      "documentation":"we serve things",
+      "security":{
+        "service":[
+          {
+            "text":"OAuth"
+          }
+        ],
+        "description":"We recommend that PHR servers use standard OAuth using a standard 3rd party provider. We are not testing the ability to provide an OAuth authentication/authorization service itself, and nor is providing any security required for the connectathon at all"
+      },
+      "resource":[
+        {
+          "type":"Patient",
+          "interaction":[
+            {
+              "code":"read"
+            },
+            {
+              "code":"create"
+            }
+          ],
+          "readHistory":"false",
+          "updateCreate":"false"
+        },
+        {
+          "type":"Conformance",
+          "interaction":[
+            {
+              "code":"read"
+            }
+          ],
+          "readHistory":"false",
+          "updateCreate":"false"
+        }
+      ]
+    }
+  ],
+  "messaging": [
+    {
+      "event": [
+        {
+          "code": {
+            "system": "http://hl7.org/fhir/message-type",
+            "code": "admin-notify"
+          },
+          "mode": "receiver",
+          "focus": "Patient",
+          "request": {
+            "reference": "Profile/001"
+          },
+          "response": {
+            "reference": "Profile/001"
+          }
+        }
+      ]
+    }
+  ],
+  "document": [
+    {
+      "mode": "consumer",
+      "documentation": "Basic rules for all documents in the system",
+      "profile": {
+        "reference": "StructureDefinition/3"
+      }
+    }
+  ]
+}

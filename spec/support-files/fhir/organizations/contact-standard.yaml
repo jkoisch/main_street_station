@@ -1,0 +1,8 @@
+--- !ruby/object:Fhir::OrganizationClasses::Contact
+  name: !ruby/object:Fhir::Types::HumanName
+    use: official
+    family:
+      - Chalmers
+    given:
+      - Peter
+      - James

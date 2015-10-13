@@ -1,5 +1,6 @@
 <Organization xmlns="http://hl7.org/fhir">
-  <name value="Health Level Seven International"/>
+  <id value="3"/>
+  <active value="true"/>
   <type>
     <coding>
       <system value="urn:oid:2.16.840.1.113883.2.4.15.1060"/>
@@ -7,17 +8,10 @@
       <display value="University Medical Hospital"/>
     </coding>
   </type>
+  <name value="Health Level Seven International"/>
   <telecom>
     <system value="phone"/>
     <value value="(+1) 734-677-7777"/>
-  </telecom>
-  <telecom>
-    <system value="fax"/>
-    <value value="(+1) 734-677-6622"/>
-  </telecom>
-  <telecom>
-    <system value="email"/>
-    <value value="hq@HL7.org"/>
   </telecom>
   <address>
     <line value="3300 Washtenaw Avenue, Suite 227"/>
@@ -30,5 +24,4 @@
     <reference value="Organization/1"/>
     <display value="ACME Healthcare, Inc"/>
   </partOf>
-  <active value="true"/>
 </Organization>

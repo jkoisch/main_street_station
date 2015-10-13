@@ -1,8 +1,12 @@
 json.resourceType  'Patient'
 
+json.id resource.id unless resource.id.nil?
+
 json.identifier resource.identifier do |id|
   json.partial! 'fhir/base/identifier', identifier: id
 end unless resource.identifier.nil?
+
+json.active resource.active unless resource.active.nil?
 
 json.name resource.name do |name|
   json.partial! 'fhir/base/human_name', human_name: name
@@ -15,6 +19,7 @@ end unless resource.telecom.nil?
 json.gender resource.gender unless resource.gender.nil?
 
 json.birthDate        resource.birth_date unless resource.birth_date.nil?
+
 json.deceasedBoolean  resource.deceased_boolean.to_s unless resource.deceased_boolean.nil?
 json.deceasedDatetime resource.deceased_datetime unless resource.deceased_datetime.nil?
 
@@ -48,5 +53,3 @@ end unless resource.managing_organization.nil?
 json.link resource.link do |link|
   json.partial! 'link', link: link
 end unless resource.link.nil?
-
-json.active resource.active unless resource.active.nil?

@@ -6,9 +6,9 @@ json.outcome do
   json.partial! 'fhir/base/codeable_concept', codeable_concept: condition.outcome
 end unless condition.outcome.nil?
 
-json.onsetAge do
-  json.partial! 'fhir/base/quantity', quantity: condition.onset_age
-end unless condition.onset_age.nil?
+json.onsetQuantity do
+  json.partial! 'fhir/base/quantity', quantity: condition.onset_quantity
+end unless condition.onset_quantity.nil?
 
 json.onsetRange do
   json.partial! 'fhir/base/range', range: condition.onset_range

@@ -1,4 +1,2 @@
 xml.instruct!
-xml.organization do
-  xml << render(:partial => 'organization', :locals => { :resource => @organization})
-end
+@organization.to_xml(nil, xml, true)

@@ -1,147 +1,51 @@
 <Questionnaire xmlns="http://hl7.org/fhir">
-  <status value="completed"/>
-  <authored value="2013-02-19T14:15:00"/>
-  <subject>
-    <reference value="Patient/f201" />
-    <display value="Roel" />
-  </subject>
-  <author>
-    <reference value="Practitioner/f201"/>
-  </author>
-  <source>
-    <reference value="Practitioner/f201"/>
-  </source>
-  <name>
-    <coding>
-      <system value="https://lifelines.nl"/>
-      <code value="VL 1-1, 18-65_1.2.2"/>
-      <display value="Lifelines Questionnaire 1 part 1"/>
-    </coding>
-    <text value="Cancer Quality Forum Questionnaire 2012"/>
-  </name>
+  <id value="12"/>
   <identifier>
     <use value="temp"/>
   </identifier>
-  <encounter>
-    <reference value="Encounter/example"/>
-    <display value="in progress"/>
-  </encounter>
+  <status value="draft"/>
+  <date value="2013-02-19T14:15:00"/>
   <group>
     <group>
-      <!--   COMORBIDITY   -->
-      <!--   First main section of the form, questions about comorbidity   -->
-      <name>
-        <coding>
-          <system value="http://cancer.questionnaire.org/system/code/sections"/>
-          <code value="COMORBIDITY"/>
-        </coding>
-      </name>
-      <!--   section contains one question: whether there is comorbidity   -->
       <question>
-        <name>
-          <coding>
-            <system value="http://cancer.questionnaire.org/system/code/questions"/>
-            <code value="COMORB"/>
-          </coding>
-        </name>
-        <choice>
+        <option>
           <system value="http://cancer.questionnaire.org/system/code/yesno"/>
           <code value="1"/>
           <display value="Yes"/>
-        </choice>
+        </option>
         <group>
-          <!--   COMORBIDITY/CARDIAL   -->
-          <!--   Subsection about specific comorbidity: cardial   -->
-          <name>
-            <coding>
-              <system value="http://cancer.questionnaire.org/system/code/sections"/>
-              <code value="CARDIAL"/>
-            </coding>
-          </name>
           <question>
-            <name>
-              <coding>
-                <system value="http://cancer.questionnaire.org/system/code/questions"/>
-                <code value="COMORBCAR"/>
-              </coding>
-            </name>
-            <choice>
+            <option>
               <system value="http://cancer.questionnaire.org/system/code/yesno"/>
               <code value="1"/>
-            </choice>
+            </option>
           </question>
           <question>
-            <!--   This answer carries both the questionnaire-specific name and an equivalent SNOMED CT
-             code   -->
-            <name>
-              <coding>
-                <system value="http://cancer.questionnaire.org/system/code/questions"/>
-                <code value="COMCAR00"/>
-                <display value="Angina Pectoris"/>
-              </coding>
-              <coding>
-                <system value="http://snomed.info/sct"/>
-                <code value="194828000"/>
-                <display value="Angina (disorder)"/>
-              </coding>
-            </name>
-            <choice>
+            <text value="Angina (disorder)"/>
+            <option>
               <system value="http://cancer.questionnaire.org/system/code/yesno"/>
               <code value="1"/>
-            </choice>
+            </option>
           </question>
           <question>
-            <name>
-              <coding>
-                <system value="http://snomed.info/sct"/>
-                <code value="22298006"/>
-                <display value="Myocardial infarction (disorder)"/>
-              </coding>
-            </name>
-            <choice>
+            <text value="Myocardial infarction (disorder)"/>
+            <option>
               <system value="http://cancer.questionnaire.org/system/code/yesno"/>
               <code value="0"/>
-            </choice>
+            </option>
           </question>
         </group>
         <group>
-          <!--   COMORBIDITY/VASCULAR   -->
-          <name>
-            <coding>
-              <system value="http://cancer.questionnaire.org/system/code/sections"/>
-              <code value="VASCULAR"/>
-            </coding>
-          </name>
+          <title value="VASCULAR"/>
         </group>
       </question>
     </group>
     <group>
-      <!--   HISTOPATHOLOGY   -->
-      <name>
-        <coding>
-          <system value="http://cancer.questionnaire.org/system/code/sections"/>
-          <code value="HISTOPATHOLOGY"/>
-        </coding>
-      </name>
+      <title value="HISTOPATHOLOGY"/>
       <group>
-        <name>
-          <coding>
-            <system value="http://cancer.questionnaire.org/system/code/sections"/>
-            <code value="ABDOMINAL"/>
-          </coding>
-        </name>
-        <subject>
-          <reference value="USCA/0302"/>
-          <display value="general"/>
-        </subject>
+        <title value="ABDOMINAL"/>
         <question>
-          <name>
-            <coding>
-              <system value="http://cancer.questionnaire.org/system/code/questions"/>
-              <code value="STADPT"/>
-              <display value="pT category"/>
-            </coding>
-          </name>
+          <text value="pT category"/>
           <options>
             <reference value="http://spark.furore.com/fhir/ValueSet/bc299b13baff4405871b14b3a9346c04"/>
             <display value="SCTT 2006 Service Type"/>

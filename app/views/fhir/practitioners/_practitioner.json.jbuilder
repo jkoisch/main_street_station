@@ -1,5 +1,7 @@
 json.resourceType  'Practitioner'
 
+json.id resource.id unless resource.id.nil?
+
 json.identifier resource.identifier do |id|
   json.partial! 'fhir/base/identifier', identifier: id
 end unless resource.identifier.nil?

@@ -24,7 +24,7 @@ MainStreetStation::Application.routes.draw do
               only: [:index, :show, :create, :update], defaults: {format: :json}
     resources :FamilyMemberHistory, controller: 'family_member_histories',
               only: [:index, :show, :create, :update], defaults: {format: :json}
-    resources :Location, controller: "locations",
+    resources :Location, controller: 'locations',
               only: [:index, :show, :create, :update], defaults: {format: :json}
     resources :Observation, controller: :observations,
               only: [:index, :show, :create, :update], defaults: {format: :json}
@@ -47,18 +47,18 @@ MainStreetStation::Application.routes.draw do
   end
 
   devise_scope :user do
-    get "/login" => "users/sessions#new"
-    delete '/logout', to: 'devise/sessions#destroy'
+    get '/login', to: 'users/sessions#new'
+    post '/user_login', to: 'users/sessions#create'
+    delete '/logout', to: 'users/sessions#destroy'
   end
 
-  post 'user_login', to: 'users/sessions#create'
   post 'login', to: 'sessions#create', defaults: {format: :json}
   post '/api_session', to: 'sessions#create', defaults: {format: :json}
   delete '/api_session', to: 'sessions#destroy'
 
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout' },
              controllers: {registrations: 'users/registrations',
-                           sessions: 'sessions',
+                           sessions: 'users/sessions',
                            omniauth_callbacks: 'omniauth_callbacks'}
 
   #root 'fhir/conformance#index' #controller: 'fhir::conformance', action: 'index',  to: 'fhir/conformance#index'

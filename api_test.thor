@@ -2,9 +2,10 @@ require 'rest-client'
 require 'json'
 require 'highline/import'
 
+HEROKU_Mainstreet = 'whispering-sierra-2314.herokuapp.com'
+HEROKU_Gringotts  = 'protected-garden-4145.herokuapp.com'
+
 class ApiTest < Thor
-  HEROKU_Mainstreet = 'whispering-sierra-2314.herokuapp.com'
-  HEROKU_Gringotts  = 'protected-garden-4145.herokuapp.com'
 
   desc 'simple_index RESOURCE', 'Run a simple index on a resource'
   option :port, type: :numeric, default: 3000, aliases: 'p'
@@ -36,6 +37,37 @@ class ApiTest < Thor
     puts '****** FAILURE ******'
     puts e
   end
+
+  desc 'smoke_test', 'Run a series of tests against the Heroku installed YouCentric apps to verify things are operational'
+  option :username, required: true, type: :string, aliases: 'u'
+  option :server, type: :string, aliases: 's', default: 'Heroku'
+  def smoke_test
+    if options[:server] =~ /heroku/i
+      server_name = 'Heroku'
+      server = HEROKU_Mainstreet
+    else
+      server_name = 'local integration'
+      server = 'localhost:8500'
+    end
+    puts "Testing YouCentric on #{server_name}... "
+    puts '   testing Mainstreet up'
+    open_test = ApiTester.new(server)
+    resp = open_test.index('metadata')
+    puts '         ...success'
+    puts '   testing Organization retrieve (login not required)'
+    resp = open_test.get('Organization')
+    raise 'Did not get Organization' unless JSON.parse(resp)['resourceType'] == 'Organization'
+    puts '         ...success'
+    puts '   testing Organization index'
+    resp = open_test.index('Organization')
+    raise 'Did not get a Bundle' unless JSON.parse(resp)['resourceType'] == 'Bundle'
+    puts '         ...success'
+    puts '   testing Organization index in XML'
+    resp = open_test.index_xml('Organization')
+    raise 'Did not retrieve XML got: ' + resp.headers[:content_type] unless resp.headers[:content_type] =~ /application\/xml/
+    puts '         ...success'
+  end
+
 
   desc 'heroku_smoke_test', 'Run a series of tests against the Heroku installed YouCentric apps to verify things are operational'
   option :username, required: true, type: :string, aliases: 'u'
@@ -87,7 +119,57 @@ class ApiTest < Thor
   end
 end
 
-# Token based login authentication
-#  1. Login
-#  2. get token on return
-#  3. use token as part of query
+class ApiTester
+  def initialize(interface, user=nil, password=nil)
+    @api = interface || HEROKU_Mainstreet
+    if user
+      resp = RestClient.post("http://#{@api}/api_session",
+                             {user_name: options[:username], password: pw}, {accept: :json})
+      token = 'Token token=' + JSON.parse(resp)['authentication_token']
+      puts '    ....login successful'
+      @headers = {Authorization: token}
+    else
+      @header = {}
+    end
+  end
+
+  def get(resource, id=1)
+    begin
+      RestClient.get "http://#{@api}/fhir/#{resource}/#{id}",  @header.merge({accept: :json})
+    rescue => e
+      puts '****** FAILURE ******'
+      puts e
+      raise 'processing halted'
+    end
+  end
+
+  def get_xml(resource, id=1)
+    begin
+      RestClient.get "http://#{@api}/fhir/#{resource}/#{id}",  @header.merge({accept: :xml})
+    rescue => e
+      puts '****** FAILURE ******'
+      puts e
+      raise 'processing halted'
+    end
+  end
+
+  def index(resource, filter=nil)
+    begin
+      RestClient.get "http://#{@api}/fhir/#{resource}",  @header.merge({accept: :json})
+    rescue => e
+      puts '****** FAILURE ******'
+      puts e
+      raise 'processing halted'
+    end
+  end
+
+  def index_xml(resource, filter=nil)
+    begin
+      RestClient.get "http://#{@api}/fhir/#{resource}",  @header.merge({accept: :xml})
+    rescue => e
+      puts '****** FAILURE ******'
+      puts e
+      raise 'processing halted'
+    end
+  end
+end

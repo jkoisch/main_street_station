@@ -1,0 +1,78 @@
+<Conformance xmlns="http://hl7.org/fhir">
+  <url value="test-1"/>
+  <version value="0.1"/>
+  <name value="test"/>
+  <status value="alpha"/>
+  <experimental value="true"/>
+  <publisher value="YouCentric"/>
+  <contact>
+    <name value="tech guy"/>
+  </contact>
+  <date value="2014-01-01"/>
+  <kind value="instance"/>
+  <software>
+    <name value="Mainstreet"/>
+    <version value="0.00.010.0001"/>
+    <releaseDate value="2014-01-01"/>
+  </software>
+  <implementation>
+    <description value="the main point"/>
+    <url value="http://mainstreet.youcentric.com"/>
+  </implementation>
+  <fhirVersion value="1.0.0"/>
+  <acceptUnknown value="extensions"/>
+  <format value="xml"/>
+  <format value="json"/>
+  <rest>
+    <mode value="server"/>
+    <documentation value="we serve things"/>
+    <security>
+      <service>
+        <text value="OAuth"/>
+      </service>
+      <description value="We recommend that PHR servers use standard OAuth using a standard 3rd party provider. We are not testing the ability to provide an OAuth authentication/authorization service itself, and nor is providing any security required for the connectathon at all"/>
+    </security>
+    <resource>
+      <type value="Patient"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <readHistory value="false"/>
+      <updateCreate value="false"/>
+    </resource>
+    <resource>
+      <type value="Conformance"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <readHistory value="false"/>
+      <updateCreate value="false"/>
+    </resource>
+  </rest>
+  <messaging>
+    <event>
+      <code>
+        <system value="http://hl7.org/fhir/message-type"/>
+        <code value="admin-notify"/>
+      </code>
+      <mode value="receiver"/>
+      <focus value="Patient"/>
+      <request>
+        <reference value="Profile/001"/>
+      </request>
+      <response>
+        <reference value="Profile/001"/>
+      </response>
+    </event>
+  </messaging>
+  <document>
+    <mode value="consumer"/>
+    <documentation value="Basic rules for all documents in the system"/>
+    <profile>
+      <reference value="StructureDefinition/3"/>
+    </profile>
+  </document>
+</Conformance>

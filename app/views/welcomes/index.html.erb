@@ -2,7 +2,7 @@
 <div class="center hero-unit">
   <h1>Welcome to Mainstreet Station</h1>
   <h2>
-    Youcentric FHIR<sup>&reg;</sup> v0.5.0 Implementation
+    Youcentric FHIR<sup>&reg;</sup> v<%= @conformance.fhir_version %> Implementation
   </h2>
   <% if not user_signed_in? %>
     <%= link_to 'Register', new_user_registration_path, class: "btn btn-medium btn-success" %>

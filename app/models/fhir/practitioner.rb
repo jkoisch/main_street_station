@@ -1,6 +1,5 @@
 module Fhir
   class Practitioner < BaseResource
-    fhir_attribute :id
     fhir_attribute :identifier, list: Types::Identifier
     fhir_attribute :active
     fhir_attribute :name, type: Types::HumanName
@@ -8,7 +7,7 @@ module Fhir
     fhir_attribute :address, list: Types::Address
     fhir_attribute :gender
     fhir_attribute :birth_date
-    #photo:
+    fhir_attribute :photo, list: Types::Attachment
     fhir_attribute :practitioner_role, list: PractitionerClasses::PractitionerRole
     fhir_attribute :qualification, list: PractitionerClasses::Qualification
     fhir_attribute :communication, list: Types::CodeableConcept
