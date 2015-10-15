@@ -7,6 +7,10 @@ json.target search_param.target do |target|
   json.target search_param.target
 end unless search_param.target.nil?
 
+json.modifier search_param.modifier do |modifier|
+  json.modifier search_param.modifier
+end unless search_param.modifier.nil?
+
 json.chain search_param.chain do |chain|
  json.chain search_param.chain
 end unless search_param.chain.nil?

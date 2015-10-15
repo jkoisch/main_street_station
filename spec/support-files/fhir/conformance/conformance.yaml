@@ -1,6 +1,6 @@
 --- !ruby/object:Fhir::Conformance
   url: test-1
-  version: 0.1
+  version: 0.00.100.0001
   name: test
   status: alpha
   publisher: YouCentric
@@ -18,7 +18,7 @@
     description: the main point
     url: http://mainstreet.youcentric.com
   fhir_version: 1.0.0
-  accept_unknown: extensions
+  accept_unknown: "no"
   format:
     - xml
     - json
