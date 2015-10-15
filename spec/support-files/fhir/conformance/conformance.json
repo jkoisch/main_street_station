@@ -1,7 +1,7 @@
 {
   "resourceType":"Conformance",
   "url":"test-1",
-  "version":0.1,
+  "version":"0.00.100.0001",
   "name":"test",
   "status":"alpha",
   "experimental":true,
@@ -23,7 +23,7 @@
     "url":"http://mainstreet.youcentric.com"
   },
   "fhirVersion": "1.0.0",
-  "acceptUnknown": "extensions",
+  "acceptUnknown": "no",
   "format":[ "xml","json" ],
   "rest":[
     {

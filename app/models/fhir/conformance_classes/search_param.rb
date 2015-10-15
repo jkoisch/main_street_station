@@ -6,6 +6,7 @@ module Fhir
       fhir_attribute :type
       fhir_attribute :documentation
       fhir_attribute :target, array: true
+      fhir_attribute :modifier, array: true
       fhir_attribute :chain, array: true
     end
   end

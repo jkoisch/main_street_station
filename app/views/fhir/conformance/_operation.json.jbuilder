@@ -1,2 +1,2 @@
-json.code           operation.code unless operation.code.nil?
-json.documentation  operation.documentation unless operation.documentation.nil?
+json.name           operation.name unless operation.name.nil?
+json.definition  operation.definition unless operation.definition.nil?
