@@ -5,20 +5,24 @@
         "status": "generated",
         "div":"<div><h5>HL7 FHIR Server<\/h5><p>The <a href=\"http://hl7.org/fhir\">HL7 FHIR Specification<\/a> Interface Server in Main Street supports the following RESTful transactions based on FHIR v.0.11.<br\/>Released: 2013-09-27 v.0.00.010.0001 supporting JSON and XML formats. <\/p><div class=\"span8\"><table class=\"table table-condensed\"><thead><tr class=\"success\"><td><b>FHIR Resource<\/b><\/td><td><b>Create<\/b><\/td><td><b>Read<\/b><\/td><td><b>Update<\/b><\/td><td><b>Search<\/b><\/td><\/tr><\/thead><tbody><tr><td><a href=\"http://www.hl7.org/implement/standards/fhir/patient.htm\">Patient<\/a><\/td><td><\/td><td class=\"text-center\">*<\/td><td class=\"text-center\">*<\/td><td><ul><li>Gender<\/li><li>Given Name<\/li><li>Family Name<\/li><li>Birthday - Before<\/li><li>Birthday - After<\/li><\/ul><\/td><\/tr><tr><td><a href=\"http://www.hl7.org/implement/standards/fhir/observation.htm\">Observation<\/a><\/td><td><\/td><td>*<\/td><td><\/td><td><\/td><\/tr><\/tbody><\/table><\/div><\/div>"
     },
-    "version": "0.00.050.0001",
+    "version": "0.00.100.0001",
     "name": "",
     "publisher": "YouCentric",
     "contact": [{
         "name": "email"
     }],
-    "date": "2015-03-29",
+    "date": "2015-10-11",
+    "kind": "instance",
     "software": {
         "name": "Mainstreet",
-        "version": "0.00.050.0006"
+        "version": "0.00.100.0001"
     },
-    "fhir_version": "0.5.0",
-    "accept_unknown": "true",
-    "format": [ "json" ],
+    "fhir_version": "1.0.x",
+    "accept_unknown": "no",
+    "format": [
+        "json",
+        "xml"
+    ],
     "rest": [
         {
             "mode": "server",
@@ -26,7 +30,8 @@
                 {
                     "type": "Condition",
                     "interaction": [
-                        {"code": "read"}
+                        {"code": "read"},
+                        {"code": "create"}
                     ],
                     "read_history": "false",
                     "search_param":[
@@ -59,7 +64,7 @@
                     "type": "Device",
                     "interaction": [
                         {"code": "read"},
-                      {"code": "create"}
+                        {"code": "create"}
                     ],
                     "read_history": "false",
                     "search_param":[
@@ -122,10 +127,8 @@
                 {
                     "type": "Observation",
                     "interaction": [
-                        {
-                          "code": "read",
-                          "documentation": "This resource has not been updated to FHIR 0.5.0 and returns in FHIR 0.4.0 format"
-                        }
+                        {"code": "read"},
+                        {"code": "create"}
                     ],
                     "read_history": "false",
                     "search_param":[

@@ -1,6 +1,6 @@
 <Conformance xmlns="http://hl7.org/fhir">
   <url value="test-1"/>
-  <version value="0.1"/>
+  <version value="0.00.100.0001"/>
   <name value="test"/>
   <status value="alpha"/>
   <experimental value="true"/>
@@ -20,7 +20,7 @@
     <url value="http://mainstreet.youcentric.com"/>
   </implementation>
   <fhirVersion value="1.0.0"/>
-  <acceptUnknown value="extensions"/>
+  <acceptUnknown value="no"/>
   <format value="xml"/>
   <format value="json"/>
   <rest>
