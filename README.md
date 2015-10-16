@@ -35,7 +35,7 @@ To execute the smoke-test, you should be in the root directory of your Mainstree
 Thor using the following command:
 
 ```
-$ thor api_test:heroku_smoke_test --username=<testing username>
+$ thor api_test:smoke_test --username=<testing username>
 ```
 
 When the smoke-test reaches the appropriate point, you will be prompted for the password for

@@ -4,6 +4,7 @@ require 'highline/import'
 
 HEROKU_Mainstreet = 'whispering-sierra-2314.herokuapp.com'
 HEROKU_Gringotts  = 'protected-garden-4145.herokuapp.com'
+LOCAL_INTEGRATION = 'localhost:8500'
 
 class ApiTest < Thor
 
@@ -40,6 +41,7 @@ class ApiTest < Thor
 
   desc 'smoke_test', 'Run a series of tests against the Heroku installed YouCentric apps to verify things are operational'
   option :username, required: true, type: :string, aliases: 'u'
+  option :password, type: :string, aliases: 'p'
   option :server, type: :string, aliases: 's', default: 'Heroku'
   def smoke_test
     if options[:server] =~ /heroku/i
@@ -47,75 +49,51 @@ class ApiTest < Thor
       server = HEROKU_Mainstreet
     else
       server_name = 'local integration'
-      server = 'localhost:8500'
+      server = LOCAL_INTEGRATION
     end
     puts "Testing YouCentric on #{server_name}... "
     puts '   testing Mainstreet up'
     open_test = ApiTester.new(server)
     resp = open_test.index('metadata')
     puts '         ...success'
+
     puts '   testing Organization retrieve (login not required)'
     resp = open_test.get('Organization')
     raise 'Did not get Organization' unless JSON.parse(resp)['resourceType'] == 'Organization'
     puts '         ...success'
+
     puts '   testing Organization index'
     resp = open_test.index('Organization')
     raise 'Did not get a Bundle' unless JSON.parse(resp)['resourceType'] == 'Bundle'
     puts '         ...success'
+
     puts '   testing Organization index in XML'
     resp = open_test.index_xml('Organization')
     raise 'Did not retrieve XML got: ' + resp.headers[:content_type] unless resp.headers[:content_type] =~ /application\/xml/
     puts '         ...success'
-  end
 
+    puts '   testing Patient needs authentication'
+    open_test.get_unauth('Patient')
+    puts '         ...success'
 
-  desc 'heroku_smoke_test', 'Run a series of tests against the Heroku installed YouCentric apps to verify things are operational'
-  option :username, required: true, type: :string, aliases: 'u'
-  def heroku_smoke_test
-    puts 'Testing YouCentric on Heroku... '
-    puts '   testing Mainstreet up'
-    begin
-      RestClient.get "http://#{HEROKU_Mainstreet}/fhir/metadata",  {accept: :json}
-      puts '         ...success'
-      puts '   testing Organization retrieve (login not required)'
-      begin
-        RestClient.get "http://#{HEROKU_Mainstreet}/fhir/Organization/1",  {accept: :json}
-        puts '         ...success'
-        puts '   testing Organization index'
-        begin
-          RestClient.get "http://#{HEROKU_Mainstreet}/fhir/Organization",  {accept: :json}
-          puts '         ...success'
-          puts '   testing API login'
-          begin
-            pw = ask("-->enter password for #{options[:username]}: ") { |q| q.echo = '@'}
-            resp = RestClient.post "http://#{HEROKU_Mainstreet}/api_session", {user_name: options[:username], password: pw}, {accept: :json}
-            token = 'Token token=' + JSON.parse(resp)['authentication_token']
-            puts '         ...success'
-            puts '   testing Patient retrieve (requires active session)'
-            begin
-              RestClient.get "http://#{HEROKU_Mainstreet}/fhir/Patient/1",  {accept: :json, Authorization: token}
-              puts '         ...success'
-            rescue => e
-              puts '****** FAILURE ******'
-              puts e
-            end
-          rescue => e
-            puts '****** FAILURE ******'
-            puts e
-          end
-        rescue => e
-          puts '****** FAILURE ******'
-          puts e
-        end
-      rescue => e
-        puts '****** FAILURE ******'
-        puts e
-      end
-      puts 'done'
-    rescue => e
-      puts '****** FAILURE ******'
-      puts e
+    puts '   testing API login'
+    if options[:password]
+      pw = options[:password]
+    else
+      pw = ask("-->enter password for #{options[:username]}: ") { |q| q.echo = '@'}
     end
+    secure_test = ApiTester.new(server, options[:username], pw)
+
+    puts '   testing Patient index'
+    resp = secure_test.index('Patient')
+    raise 'Did not get a Bundle' unless JSON.parse(resp)['resourceType'] == 'Bundle'
+    puts '         ...success'
+
+    puts '   testing Patient retrieve'
+    resp = secure_test.get('Patient')
+    raise 'Did not get a Patient' unless JSON.parse(resp)['resourceType'] == 'Patient'
+    puts '         ...success'
+    puts '**Smoke Test complete**'
   end
 end
 
@@ -124,10 +102,10 @@ class ApiTester
     @api = interface || HEROKU_Mainstreet
     if user
       resp = RestClient.post("http://#{@api}/api_session",
-                             {user_name: options[:username], password: pw}, {accept: :json})
+                             {user_name: user, password: password}, {accept: :json})
       token = 'Token token=' + JSON.parse(resp)['authentication_token']
-      puts '    ....login successful'
-      @headers = {Authorization: token}
+      puts '          ....login successful'
+      @header = {Authorization: token}
     else
       @header = {}
     end
@@ -136,6 +114,19 @@ class ApiTester
   def get(resource, id=1)
     begin
       RestClient.get "http://#{@api}/fhir/#{resource}/#{id}",  @header.merge({accept: :json})
+    rescue => e
+      puts '****** FAILURE ******'
+      puts e
+      raise 'processing halted'
+    end
+  end
+
+  def get_unauth(resource, id=1)
+    begin
+      RestClient.get "http://#{@api}/fhir/#{resource}/#{id}",  @header.merge({accept: :json})
+      raise 'Access should not be allowed'
+    rescue RestClient::Unauthorized
+      puts '         ....access denied, success'
     rescue => e
       puts '****** FAILURE ******'
       puts e
