@@ -1,0 +1,89 @@
+{
+    "resourceType":"FamilyMemberHistory",
+    "id": "1",
+    "identifier":[
+        {
+            "system":"http://goodcare.org/family_member_history/id",
+            "value":"345675"
+        },
+        {
+            "system": "http://somehealth.org/family_member_history/id",
+            "value": "AMID-342135-8464"
+        }
+    ],
+    "patient":{
+        "reference":"Patient/201",
+        "display":"Roel"
+    },
+    "date":"2011-03-18",
+    "status":"completed",
+    "name":"Bob",
+    "relationship":{
+        "coding":[
+            {
+                "system":"http://hl7.org/fhir/familial-relationship",
+                "code":"brother"
+            }
+        ]
+    },
+    "gender":"male",
+    "bornDate": "1950-02-01",
+    "ageQuantity":{
+        "value":"65",
+        "unit":"a",
+        "system":"http://unitsofmeasure.org"
+    },
+    "deceasedBoolean":"false",
+    "note":{
+        "time":"2015-07-14",
+        "text":"Both parents, both brothers and both children (twin) are still alive."
+    },
+    "condition":[
+        {
+            "code":{
+                "coding":[
+                    {
+                        "system":"http://snomed.info/sct",
+                        "code":"371041009",
+                        "display":"Embolic Stroke"
+                    }
+                ],
+                "text":"Stroke"
+            },
+            "outcome":{
+                "coding":[
+                    {
+                        "system":"http://snomed.info/sct",
+                        "code":"419099112",
+                        "display":"Inactive"
+                    }
+                ]
+            },
+            "onsetQuantity":{
+                "value":"56",
+                "unit":"a",
+                "system":"http://unitsofmeasure.org"
+            }
+        },
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "315619001",
+                        "display": "Myocardial Infarction"
+                    }
+                ],
+                "text": "Heart Attack"
+            },
+            "onsetQuantity": {
+                "value": "74",
+                "unit": "a",
+                "system": "http://unitsofmeasure.org"
+            },
+            "note": {
+                "text": "Was fishing at the time. At least he went doing something he loved."
+            }
+        }
+    ]
+}

@@ -1,9 +1,18 @@
 <FamilyMemberHistory xmlns="http://hl7.org/fhir">
-  <id value="3"/>
+  <id value="1"/>
+  <identifier>
+    <system value="http://goodcare.org/family_member_history/id"/>
+    <value value="345675"/>
+  </identifier>
+  <identifier>
+    <system value="http://somehealth.org/family_member_history/id"/>
+    <value value="AMID-342135-8464"/>
+  </identifier>
   <patient>
     <reference value="Patient/201"/>
     <display value="Roel"/>
   </patient>
+  <date value="2011-03-18"/>
   <status value="completed"/>
   <name value="Bob"/>
   <relationship>
@@ -12,6 +21,14 @@
       <code value="brother"/>
     </coding>
   </relationship>
+  <gender value="male"/>
+  <bornDate value="1950-02-01"/>
+  <ageQuantity>
+    <value value="65"/>
+    <unit value="a"/>
+    <system value="http://unitsofmeasure.org"/>
+  </ageQuantity>
+  <deceasedBoolean value="false"/>
   <note>
     <time value="2015-07-14"/>
     <text value="Both parents, both brothers and both children (twin) are still alive."/>
@@ -37,5 +54,23 @@
       <unit value="a"/>
       <system value="http://unitsofmeasure.org"/>
     </onsetQuantity>
+  </condition>
+  <condition>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="315619001"/>
+        <display value="Myocardial Infarction"/>
+      </coding>
+      <text value="Heart Attack"/>
+    </code>
+    <onsetQuantity>
+      <value value="74"/>
+      <unit value="a"/>
+      <system value="http://unitsofmeasure.org"/>
+    </onsetQuantity>
+    <note>
+      <text value="Was fishing at the time. At least he went doing something he loved."/>
+    </note>
   </condition>
 </FamilyMemberHistory>

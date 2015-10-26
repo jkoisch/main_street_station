@@ -1,0 +1,35 @@
+{
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "315619001",
+                "display": "Myocardial Infarction"
+            }
+        ],
+        "text": "Heart Attack"
+    },
+    "outcome":{
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "315619001",
+                "display": "Myocardial Infarction"
+            }
+        ],
+        "text": "Heart Attack"
+
+    },
+    "onsetQuantity": {
+        "value": "74",
+        "unit": "a",
+        "system": "http://unitsofmeasure.org"
+    },
+    "note": {
+        "authorReference":{
+            "reference": "Practitioner/xcda-author"
+        },
+        "time": "2015-06-28T14:03:32+10:00",
+        "text": "Was fishing at the time. At least he went doing something he loved."
+    }
+}
