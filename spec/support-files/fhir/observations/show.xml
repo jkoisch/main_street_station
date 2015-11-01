@@ -1,0 +1,59 @@
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="303"/>
+  <identifier>
+    <system value="urn:ietf:rfc:3986"/>
+    <value value="187e0c12-8dd2-67e2-99b2-bf273c878281"/>
+  </identifier>
+  <status value="final"/>
+  <code>
+    <!--   LOINC - always recommended to have a LOINC code   -->
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="8480-6"/>
+      <display value="Systolic blood pressure"/>
+    </coding>
+    <!--   SNOMED CT Codes - becoming more commonsysto   -->
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="271649006"/>
+      <display value="Systolic blood pressure"/>
+    </coding>
+    <!--   Also, a local code specific to the source system   -->
+    <coding>
+      <system value="http://acme.org/devices/clinical-codes"/>
+      <code value="bp-s"/>
+      <display value="Systolic Blood pressure"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/f001"/>
+    <display value="P. van de Heuvel"/>
+  </subject>
+  <effectiveDateTime value="2012-09-17"/>
+  <performer>
+    <reference value="Practitioner/f005"/>
+    <display value="A. Langeveld"/>
+  </performer>
+  <valueQuantity>
+    <value value="107"/>
+    <unit value="mm[Hg]"/>
+  </valueQuantity>
+  <interpretation>
+    <coding>
+      <system value="http://hl7.org/fhir/v2/0078"/>
+      <code value="N"/>
+      <display value="Normal (applies to non-numeric results)"/>
+    </coding>
+  </interpretation>
+  <specimen>
+    <reference value="Patient/f001"/>
+    <display value="bp"/>
+  </specimen>
+  <related>
+    <type value="has-member"/>
+    <target>
+      <reference value="Observation/f005"/>
+      <display value="JC May"/>
+    </target>
+  </related>
+</Observation>

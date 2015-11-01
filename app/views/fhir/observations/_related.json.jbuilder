@@ -1,4 +1,3 @@
-json.id   related.id unless related.id.nil?
 json.type related.type unless related.type.nil?
 
 json.target  do

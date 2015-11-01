@@ -1,6 +1,6 @@
 json.resourceType 'Observation'
 
-json.id resource.id unless resource.id.nil?
+json.id resource.id.to_s unless resource.id.nil?
 
 json.identifier resource.identifier do |identifier|
   json.partial! 'fhir/base/identifier', identifier: identifier
