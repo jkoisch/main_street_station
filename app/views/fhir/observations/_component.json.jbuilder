@@ -42,5 +42,5 @@ json.dataAbsentReason do
 end unless component.data_absent_reason.nil?
 
 json.referenceRange component.reference_range do |reference_range|
-  json.partial! 'reference_range', reference_range: reference_range
+  json.partial! 'fhir/observations/reference_range', reference_range: reference_range
 end unless component.reference_range.nil?
