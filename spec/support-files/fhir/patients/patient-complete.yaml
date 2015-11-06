@@ -1,0 +1,145 @@
+--- !ruby/object:Fhir::Patient
+  id: '487'
+  identifier:
+    - !ruby/object:Fhir::Types::Identifier
+      use: usual
+      system: urn:oid:1.2.36.146.595.217.0.1
+      value: 12345
+      period: !ruby/object:Fhir::Types::Period
+        start: 2001-05-06
+    - !ruby/object:Fhir::Types::Identifier
+      use: usual
+      type: !ruby/object:Fhir::Types::CodeableConcept
+        coding:
+          - !ruby/object:Fhir::Types::Coding
+            system: http://hl7.org/fhir/v2/0203
+            code: MR
+      system: urn:oid:0.1.2.3.4.5.6.7
+      value: 654321
+  active: true
+  name:
+    - !ruby/object:Fhir::Types::HumanName
+      use: official
+      family:
+        - Chalmers
+      given:
+        - Peter
+        - James
+    - !ruby/object:Fhir::Types::HumanName
+      use: usual
+      given:
+        - Jim
+  active: "true"
+  telecom:
+    - !ruby/object:Fhir::Types::ContactPoint
+      use: home
+    - !ruby/object:Fhir::Types::ContactPoint
+      system: phone
+      value: (03) 5555 6473
+      use: work
+  gender: male
+  birth_date: 1974-12-25
+  deceased: false
+  deceased_boolean: false
+  address:
+    - !ruby/object:Fhir::Types::Address
+      use: home
+      line:
+        - 534 Erewhon St
+      city: PleasantVille
+      state: Vic
+      postal_code: 3999
+    - !ruby/object:Fhir::Types::Address
+      use: work
+      line:
+        - 100 Main St
+      city: Metropolis
+      state: Il
+      postal_code: 44130
+      country: USA
+  marital_status: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: http://hl7.org/fhir/v3/MaritalStatus
+        code: M
+        display: Married
+    text: Getround
+  multiple_birth: true
+  multiple_birth_boolean: 'true'
+  contact:
+    - !ruby/object:Fhir::PatientClasses::Contact
+      relationship:
+        - !ruby/object:Fhir::Types::CodeableConcept
+          coding:
+            - !ruby/object:Fhir::Types::Coding
+              system: http://hl7.org/fhir/patient-contact-relationship
+              code: partner
+      name: !ruby/object:Fhir::Types::HumanName
+        family:
+          - du
+          - Marché
+        given:
+          - Bénédicte
+      telecom:
+        - !ruby/object:Fhir::Types::ContactPoint
+          system: phone
+          value: +33 (237) 998327
+      organization: !ruby/object:Fhir::Types::Reference
+        external: Organization/1
+        display: "Walt Disney Corporation"
+        contact:
+    - !ruby/object:Fhir::PatientClasses::Contact
+      relationship:
+        - !ruby/object:Fhir::Types::CodeableConcept
+          coding:
+            - !ruby/object:Fhir::Types::Coding
+              system: http://hl7.org/fhir/patient-contact-relationship
+              code: relative
+      name: !ruby/object:Fhir::Types::HumanName
+        use: usual
+        family:
+          - Abels
+        given:
+          - Sarah
+      telecom:
+        - !ruby/object:Fhir::Types::ContactPoint
+          system: phone
+          value: 0690383372
+          use: mobile
+  communication:
+    - !ruby/object:Fhir::PatientClasses::Communication
+      language:
+        - !ruby/object:Fhir::Types::CodeableConcept
+          coding:
+            - !ruby/object:Fhir::Types::Coding
+              system: urn:ietf:bcp:67
+              code: en
+              display: English
+          text: USA
+      preferred: false
+    - !ruby/object:Fhir::PatientClasses::Communication
+      language:
+        - !ruby/object:Fhir::Types::CodeableConcept
+          coding:
+            - !ruby/object:Fhir::Types::Coding
+              system: urn:ietf:bcp:47
+              code: nl
+              display: Dutch
+          text: Nederlands
+      preferred: true
+  care_provider:
+    - !ruby/object:Fhir::Types::Reference
+      external: Organization/1
+    - !ruby/object:Fhir::Types::Reference
+      external: Practitioner/23
+  managing_organization: !ruby/object:Fhir::Types::Reference
+    external: Organization/1
+  link:
+    - !ruby/object:Fhir::PatientClasses::Link
+      other: !ruby/object:Fhir::Types::Reference
+        external: Patient/pat2
+      type: "seealso"
+    - !ruby/object:Fhir::PatientClasses::Link
+      other: !ruby/object:Fhir::Types::Reference
+        external: Patient/45e5
+      type: "alias"
