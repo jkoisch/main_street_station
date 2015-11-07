@@ -1,0 +1,33 @@
+<contact>
+  <relationship>
+    <coding>
+      <system value="http://hl7.org/fhir/patient-contact-relationship"/>
+      <code value="partner"/>
+    </coding>
+  </relationship>
+  <name>
+    <family value="du">
+    </family>
+    <family value="Marché"/>
+    <given value="Bénédicte"/>
+  </name>
+  <telecom>
+    <system value="phone"/>
+    <value value="+33 (237) 998327"/>
+  </telecom>
+  <address>
+    <use value="home"/>
+    <line value="534 Erewhon St"/>
+    <city value="PleasantVille"/>
+    <state value="Vic"/>
+    <postalCode value="3999"/>
+  </address>
+  <gender value="male"/>
+  <organization>
+    <reference value="Organization/1"/>
+    <display value="Walt Disney Corporation"/>
+  </organization>
+  <period>
+    <start value="2001-05-06"/>
+  </period>
+</contact>

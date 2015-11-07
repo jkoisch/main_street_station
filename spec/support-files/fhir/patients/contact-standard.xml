@@ -1,0 +1,18 @@
+<contact>
+  <relationship>
+    <coding>
+      <system value="http://hl7.org/fhir/patient-contact-relationship"/>
+      <code value="partner"/>
+    </coding>
+  </relationship>
+  <name>
+    <family value="du">
+    </family>
+    <family value="Marché"/>
+    <given value="Bénédicte"/>
+  </name>
+  <telecom>
+    <system value="phone"/>
+    <value value="+33 (237) 998327"/>
+  </telecom>
+</contact>

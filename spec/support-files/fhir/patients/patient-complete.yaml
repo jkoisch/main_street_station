@@ -87,7 +87,6 @@
       organization: !ruby/object:Fhir::Types::Reference
         external: Organization/1
         display: "Walt Disney Corporation"
-        contact:
     - !ruby/object:Fhir::PatientClasses::Contact
       relationship:
         - !ruby/object:Fhir::Types::CodeableConcept

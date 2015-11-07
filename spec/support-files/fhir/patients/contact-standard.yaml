@@ -1,0 +1,17 @@
+--- !ruby/object:Fhir::PatientClasses::Contact
+  relationship:
+    - !ruby/object:Fhir::Types::CodeableConcept
+      coding:
+        - !ruby/object:Fhir::Types::Coding
+          system: http://hl7.org/fhir/patient-contact-relationship
+          code: partner
+  name: !ruby/object:Fhir::Types::HumanName
+    family:
+      - du
+      - Marché
+    given:
+      - Bénédicte
+  telecom:
+    - !ruby/object:Fhir::Types::ContactPoint
+      system: phone
+      value: +33 (237) 998327

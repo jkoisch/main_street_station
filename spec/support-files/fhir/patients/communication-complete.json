@@ -1,0 +1,15 @@
+{
+    "language": [
+        {
+            "coding": [
+                {
+                    "system": "urn:ietf:bcp:67",
+                    "code": "en",
+                    "display": "English"
+                }
+            ],
+            "text": "USA"
+        }
+    ],
+    "preferred": false
+}

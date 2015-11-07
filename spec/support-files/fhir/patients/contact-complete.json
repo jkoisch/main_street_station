@@ -1,0 +1,37 @@
+{
+    "relationship":[
+        {
+            "coding":[
+                {
+                    "system":"http://hl7.org/fhir/patient-contact-relationship",
+                    "code":"partner"
+                }
+            ]
+        }
+    ],
+    "name":{
+        "family":[ "du","Marché" ],
+        "given":[ "Bénédicte" ]
+    },
+    "telecom":[
+        {
+            "system":"phone",
+            "value":"+33 (237) 998327"
+        }
+    ],
+    "address": {
+        "use":"home",
+        "line":[ "534 Erewhon St" ],
+        "city":"PleasantVille",
+        "state":"Vic",
+        "postalCode":"3999"
+    },
+    "gender": "male",
+    "organization":{
+        "reference":"Organization/1",
+        "display":"Walt Disney Corporation"
+    },
+    "period":{
+        "start":"2001-05-06"
+    }
+}
