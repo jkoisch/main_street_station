@@ -1,0 +1,38 @@
+{
+    "managingOrganization":{
+        "reference":"Organization/f001",
+        "display":"BMC"
+    },
+    "role":{
+        "coding":[
+            {
+                "system":"urn:oid:2.16.840.1.113883.2.4.15.111",
+                "code":"01.018",
+                "display":"Ear-, Nose and Throat"
+            }
+        ],
+        "text":"specialisation"
+    },
+    "specialty":[
+        {
+            "coding":[
+                {
+                    "system":"urn:oid:2.16.840.1.113883.2.4.15.111",
+                    "code":"01.018",
+                    "display":"Ear-, Nose and Throat"
+                }
+            ],
+            "text":"specialisation"
+        }
+    ],
+    "period":{
+        "start":"2012-01-01",
+        "end":"2012-03-31"
+    },
+    "healthcareService":[
+        {
+            "reference":"Organization/f001",
+            "display":"BMC"
+        }
+    ]
+}

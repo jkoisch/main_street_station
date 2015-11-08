@@ -1,0 +1,8 @@
+--- !ruby/object:Fhir::PractitionerClasses::Qualification
+  code: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: http://snomed.info/sct
+        code: '41672002'
+        display: Pulmonologist
+    text: Care Role

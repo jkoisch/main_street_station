@@ -1,0 +1,26 @@
+<qualification>
+  <identifier>
+    <system value="http://example.org/UniversityIdentifier"/>
+    <value value="12345"/>
+  </identifier>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.2.4.6.3"/>
+    <value value="567IUI51C154"/>
+  </identifier>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="41672002"/>
+      <display value="Pulmonologist"/>
+    </coding>
+    <text value="Care Role"/>
+  </code>
+  <period>
+    <start value="1995"/>
+  </period>
+  <issuer>
+    <reference value="Organization/5483"/>
+    <display value="Example University"/>
+  </issuer>
+</qualification>
