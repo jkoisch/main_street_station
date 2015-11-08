@@ -1,4 +1,2 @@
 xml.instruct!
-xml.practitioner do
-  xml << render(:partial => 'practitioner', :locals => { :practitioner => @practitioner})
-end
+@practitioner.to_xml(nil, xml, true)

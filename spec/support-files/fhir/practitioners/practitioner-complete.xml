@@ -1,0 +1,98 @@
+<Practitioner xmlns="http://hl7.org/fhir">
+  <id value="8"/>
+  <identifier>
+    <use value="official"/>
+    <system value="urn:oid:2.16.528.1.1007.3.1"/>
+    <value value="938273695"/>
+    <period>
+      <start value="2001-05-06"/>
+    </period>
+  </identifier>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.2.4.6.3"/>
+    <value value="129IDH4OP733"/>
+    <period>
+      <start value="2001-05-06"/>
+    </period>
+  </identifier>
+  <active value="true"/>
+  <name>
+    <use value="official"/>
+    <family value="van den broek"/>
+    <given value="Eric"/>
+    <suffix value="MD"/>
+  </name>
+  <telecom>
+    <system value="phone"/>
+    <value value="0205568263"/>
+    <use value="work"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="E.M.vandenbroek@bmc.nl"/>
+    <use value="work"/>
+  </telecom>
+  <telecom>
+    <system value="fax"/>
+    <value value="0205664440"/>
+    <use value="work"/>
+  </telecom>
+  <address>
+    <use value="work"/>
+    <line value="Galapagosweg 91"/>
+    <city value="Den Burg"/>
+    <postalCode value="9105 PZ"/>
+    <country value="NLD"/>
+  </address>
+  <gender value="male"/>
+  <birthDate value="1975-12-07"/>
+  <practitionerRole>
+    <managingOrganization>
+      <reference value="Organization/f001"/>
+      <display value="BMC"/>
+    </managingOrganization>
+    <role>
+      <coding>
+        <system value="urn:oid:2.16.840.1.113883.2.4.15.111"/>
+        <code value="01.018"/>
+        <display value="Ear-, Nose and Throat"/>
+      </coding>
+      <text value="specialisation"/>
+    </role>
+    <specialty>
+      <coding>
+        <system value="urn:oid:2.16.840.1.113883.2.4.15.111"/>
+        <code value="01.018"/>
+        <display value="Ear-, Nose and Throat"/>
+      </coding>
+      <text value="specialisation"/>
+    </specialty>
+    <period>
+      <start value="2012-01-01"/>
+      <end value="2012-03-31"/>
+    </period>
+    <healthcareService>
+      <reference value="Organization/f001"/>
+      <display value="BMC"/>
+    </healthcareService>
+  </practitionerRole>
+  <qualification>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="41672002"/>
+        <display value="Pulmonologist"/>
+      </coding>
+      <text value="Care Role"/>
+    </code>
+  </qualification>
+  <communication>
+    <coding>
+      <system value="urn:oid:2.16.840.1.113883.6.121"/>
+      <code value="nl"/>
+      <display value="Dutch"/>
+    </coding>
+    <text value="Care Role"/>
+  </communication>
+</Practitioner>
