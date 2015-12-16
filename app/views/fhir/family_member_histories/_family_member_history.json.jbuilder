@@ -28,7 +28,7 @@ json.bornDate         resource.born_date unless resource.born_date.nil?
 json.bornString       resource.born_string unless resource.born_string.nil?
 
 json.ageQuantity do
-  json.partial! 'fhir/base/quantity', age: resource.age_quantity
+  json.partial! 'fhir/base/quantity', quantity: resource.age_quantity
 end unless resource.age_quantity.nil?
 
 json.ageRange do

@@ -1,0 +1,42 @@
+<practitioner_role>
+  <managingOrganization>
+    <reference value="Organization/f001"/>
+    <display value="BMC"/>
+  </managingOrganization>
+  <role>
+    <coding>
+      <system value="urn:oid:2.16.840.1.113883.2.4.15.111"/>
+      <code value="01.018"/>
+      <display value="Ear-, Nose and Throat"/>
+    </coding>
+    <text value="specialisation"/>
+  </role>
+  <specialty>
+    <coding>
+      <system value="urn:oid:2.16.840.1.113883.2.4.15.111"/>
+      <code value="01.018"/>
+      <display value="Ear-, Nose and Throat"/>
+    </coding>
+    <text value="specialisation"/>
+  </specialty>
+  <period>
+    <start value="2012-01-01"/>
+    <end value="2012-03-31"/>
+  </period>
+  <location>
+    <reference value="Location/12Kai"/>
+    <display value="Kaiowas 12"/>
+  </location>
+  <location>
+    <reference value="Location/67Mi"/>
+    <display value="Miami 67"/>
+  </location>
+  <healthcareService>
+    <reference value="HealthcareServices/f001"/>
+    <display value="BMC"/>
+  </healthcareService>
+  <healthcareService>
+    <reference value="HealthcareServices/x83ddk"/>
+    <display value="SMU"/>
+  </healthcareService>
+</practitioner_role>

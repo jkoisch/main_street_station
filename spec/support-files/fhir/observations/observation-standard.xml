@@ -1,5 +1,5 @@
 <Observation xmlns="http://hl7.org/fhir">
-  <id value="302"/>
+  <id value="303"/>
   <identifier>
     <system value="urn:ietf:rfc:3986"/>
     <value value="187e0c12-8dd2-67e2-99b2-bf273c878281"/>

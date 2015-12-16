@@ -1,0 +1,21 @@
+--- !ruby/object:Fhir::PractitionerClasses::Qualification
+  identifier:
+    - !ruby/object:Fhir::Types::Identifier
+      system: http://example.org/UniversityIdentifier
+      value: 12345
+    - !ruby/object:Fhir::Types::Identifier
+      use: usual
+      system: urn:oid:2.16.840.1.113883.2.4.6.3
+      value: 567IUI51C154
+  code: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: http://snomed.info/sct
+        code: '41672002'
+        display: Pulmonologist
+    text: Care Role
+  period: !ruby/object:Fhir::Types::Period
+    start: '1995'
+  issuer: !ruby/object:Fhir::Types::Reference
+    external: Organization/5483
+    display: Example University

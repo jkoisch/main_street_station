@@ -1,0 +1,6 @@
+<link>
+  <other>
+    <reference value="Patient/pat2"/>
+  </other>
+  <type value="seealso"/>
+</link>

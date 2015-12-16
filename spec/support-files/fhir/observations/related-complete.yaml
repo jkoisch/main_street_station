@@ -1,0 +1,5 @@
+--- !ruby/object:Fhir::ObservationClasses::Related
+  type: has-member
+  target: !ruby/object:Fhir::Types::Reference
+    external: Observation/f005
+    display: JC May

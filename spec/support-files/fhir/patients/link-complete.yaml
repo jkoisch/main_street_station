@@ -1,0 +1,4 @@
+--- !ruby/object:Fhir::PatientClasses::Link
+  other: !ruby/object:Fhir::Types::Reference
+    external: Patient/pat2
+  type: "seealso"

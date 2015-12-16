@@ -1,5 +1,5 @@
 json.identifier qualification.identifier do |identifier|
-  json.partial! 'fhir/base/identifier', identifier: qualification.identifier
+  json.partial! 'fhir/base/identifier', identifier: identifier
 end unless qualification.identifier.nil?
 
 json.code do

@@ -1,4 +1,4 @@
-xml.origin({value: sampled_data.origin}) unless sampled_data.origin.nil?
+xml.origin { |xml| xml << render('fhir/base/quantity', {quantity: sampled_data.origin}) } unless sampled_data.origin.nil?
 xml.period({value: sampled_data.period}) unless sampled_data.period.nil?
 xml.factor({value: sampled_data.factor}) unless sampled_data.factor.nil?
 xml.lower_limit({value: sampled_data.lower_limit}) unless sampled_data.lower_limit.nil?

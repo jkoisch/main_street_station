@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Bundle xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="xxx"/>
+  </meta>
+  <type value="searchset"/>
+  <total value="2"/>
+  <entry>
+    <fullUrl value="http://mainstreet.youcentric.com/fhir/Condition/3"/>
+    <resource>
+      <Device xmlns="http://hl7.org/fhir">
+        <id value="3"/>
+        <identifier>
+          <system value="http://goodcare.org/devices/id"/>
+          <value value="345675"/>
+        </identifier>
+        <identifier>
+          <value value="AMID-342135-8464"/>
+        </identifier>
+        <type>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="86184003"/>
+            <display value="Electrocardiographic monitor and recorder"/>
+          </coding>
+          <text value="ECG"/>
+        </type>
+        <note>
+          <time value="2015-06-28T14:03:32+10:00"/>
+          <text value="QA Checked"/>
+        </note>
+        <manufacturer value="Acme Devices, Inc"/>
+        <model value="AB 45-J"/>
+        <lotNumber value="43453424"/>
+        <owner>
+          <reference value="PTC/f201"/>
+          <display value="monitor"/>
+        </owner>
+        <location>
+          <reference value="Anaheim, CA"/>
+          <display value="USA"/>
+        </location>
+        <patient>
+          <reference value="Patient/14"/>
+          <display value="14"/>
+        </patient>
+        <contact>
+          <system value="phone"/>
+          <value value="ext 4352"/>
+        </contact>
+      </Device>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="http://mainstreet.youcentric.com/fhir/Condition/1"/>
+    <resource>
+      <Device xmlns="http://hl7.org/fhir">
+        <id value="1"/>
+        <identifier>
+          <system value="http://goodcare.org/devices/id"/>
+          <value value="345675"/>
+        </identifier>
+        <identifier>
+          <value value="AMID-342135-8464"/>
+        </identifier>
+        <type>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="86184003"/>
+            <display value="Electrocardiographic monitor and recorder"/>
+          </coding>
+          <text value="ECG"/>
+        </type>
+        <note>
+          <time value="2015-06-28T14:03:32+10:00"/>
+          <text value="QA Checked"/>
+        </note>
+        <manufacturer value="Acme Devices, Inc"/>
+        <model value="AB 45-J"/>
+        <lotNumber value="43453424"/>
+        <owner>
+          <reference value="PTC/f201"/>
+          <display value="monitor"/>
+        </owner>
+        <location>
+          <reference value="Anaheim, CA"/>
+          <display value="USA"/>
+        </location>
+        <patient>
+          <reference value="Patient/14"/>
+          <display value="14"/>
+        </patient>
+        <contact>
+          <system value="phone"/>
+          <value value="ext 4352"/>
+        </contact>
+      </Device>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+</Bundle>

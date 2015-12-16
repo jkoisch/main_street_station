@@ -21,4 +21,21 @@ describe 'FHIR Device View', type: :view do
       it {should match_fhir_xml(support_file('devices/device-standard.xml')) }
     end
   end
+
+  context 'complete' do
+    let(:resource) { yaml_load('devices/device-complete.yaml') }
+
+    context 'JSON' do
+      subject { render(partial: 'device', formats: :json, locals: {resource: resource}) }
+
+      it {should match_fhir_json(support_file('devices/device-complete.json')) }
+    end
+
+    context 'XML' do
+      let(:builder) { Builder::XmlMarkup.new() }
+      subject { resource.to_xml(nil, builder, true) }
+
+      it {should match_fhir_xml(support_file('devices/device-complete.xml')) }
+    end
+  end
 end

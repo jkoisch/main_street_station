@@ -1,0 +1,11 @@
+<communication>
+  <language>
+    <coding>
+      <system value="urn:ietf:bcp:67"/>
+      <code value="en"/>
+      <display value="English"/>
+    </coding>
+    <text value="USA"/>
+  </language>
+  <preferred value="false"/>
+</communication>

@@ -1,0 +1,11 @@
+--- !ruby/object:Fhir::ObservationClasses::ReferenceRange
+  low: !ruby/object:Fhir::Types::Quantity
+    value: "90"
+    unit: "%"
+    system: https://rtmms.nist.gov
+    code: "262688"
+  high: !ruby/object:Fhir::Types::Quantity
+    value: "99"
+    unit: "%"
+    system: https://rtmms.nist.gov
+    code: "262688"

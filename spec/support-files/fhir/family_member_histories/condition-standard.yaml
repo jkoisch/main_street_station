@@ -1,0 +1,18 @@
+--- !ruby/object:Fhir::FamilyMemberHistoryClasses::Condition
+  code: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: http://snomed.info/sct
+        code: '315619001'
+        display: Myocardial Infarction
+    text: Heart Attack
+  onset: !ruby/object:Fhir::Types::Quantity
+    value: "74"
+    unit: "a"
+    system: http://unitsofmeasure.org
+  onset_quantity: !ruby/object:Fhir::Types::Quantity
+    value: "74"
+    unit: "a"
+    system: http://unitsofmeasure.org
+  note: !ruby/object:Fhir::Types::Annotation
+    text: Was fishing at the time. At least he went doing something he loved.

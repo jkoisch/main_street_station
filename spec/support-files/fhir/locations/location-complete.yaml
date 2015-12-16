@@ -1,0 +1,52 @@
+--- !ruby/object:Fhir::Location
+  id: "45"
+  identifier:
+    - !ruby/object:Fhir::Types::Identifier
+      value: "B1-S.F2"
+  status: active
+  name: "South Wing, second floor"
+  description: "Second floor of the Old South Wing, formerly in use by Psychiatry"
+  mode: instance
+  type: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: http://hl7.org/fhir/v2/0078
+        code: N
+        display: Normal (applies to non-numeric results)
+  telecom:
+    - !ruby/object:Fhir::Types::ContactPoint
+      system: phone
+      value: '2328'
+      use: work
+    - !ruby/object:Fhir::Types::ContactPoint
+      system: fax
+      value: '2329'
+      use: work
+    - !ruby/object:Fhir::Types::ContactPoint
+      system: email
+      value: second wing admissions
+    - !ruby/object:Fhir::Types::ContactPoint
+      system: url
+      value: http://sampleorg.com/southwing
+      use: work
+  address: !ruby/object:Fhir::Types::Address
+    use: work
+    line:
+        - Galapagosweg 91, Building A
+    city: Den Burg
+    postal_code: 9105 PZ
+    country: NLD
+  physical_type: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+        - !ruby/object:Fhir::Types::Coding
+          system: http://hl7.org/fhir/location-physical-type
+          code: wi
+          display: Wing
+  position: !ruby/object:Fhir::LocationClasses::Position
+    longitude: 4.844614000123024
+    latitude: 52.37799399970903
+    altitude: 0
+  managing_organization: !ruby/object:Fhir::Types::Reference
+    external: Organization/f001
+  part_of: !ruby/object:Fhir::Types::Reference
+    external: Location/393

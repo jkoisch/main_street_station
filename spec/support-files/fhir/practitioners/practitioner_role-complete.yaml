@@ -1,0 +1,36 @@
+--- !ruby/object:Fhir::PractitionerClasses::PractitionerRole
+  managing_organization: !ruby/object:Fhir::Types::Reference
+      external: Organization/f001
+      display: BMC
+  role: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: urn:oid:2.16.840.1.113883.2.4.15.111
+        code: '01.018'
+        display: Ear-, Nose and Throat
+    text: specialisation
+  specialty:
+    - !ruby/object:Fhir::Types::CodeableConcept
+      coding:
+        - !ruby/object:Fhir::Types::Coding
+          system: urn:oid:2.16.840.1.113883.2.4.15.111
+          code: '01.018'
+          display: Ear-, Nose and Throat
+      text: specialisation
+  period: !ruby/object:Fhir::Types::Period
+    start: '2012-01-01'
+    end: '2012-03-31'
+  location:
+    - !ruby/object:Fhir::Types::Reference
+      external: Location/12Kai
+      display: Kaiowas 12
+    - !ruby/object:Fhir::Types::Reference
+      external: Location/67Mi
+      display: Miami 67
+  healthcare_service:
+    - !ruby/object:Fhir::Types::Reference
+      external: HealthcareServices/f001
+      display: BMC
+    - !ruby/object:Fhir::Types::Reference
+      external: HealthcareServices/x83ddk
+      display: SMU

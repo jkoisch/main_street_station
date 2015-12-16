@@ -21,5 +21,5 @@ json.organization do
 end unless contact.organization.nil?
 
 json.period do
-  json.partial! 'fhir/base/period', resource_reference: contact.period
+  json.partial! 'fhir/base/period', period: contact.period
 end unless contact.period.nil?
