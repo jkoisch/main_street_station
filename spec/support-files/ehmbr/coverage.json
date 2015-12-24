@@ -1,7 +1,6 @@
 {
   "id": 1,
   "resource_type": "Coverage",
-  "id": "9876B1",
   "text": {
     "status": "generated",
     "div": "<div>A human-readable rendering of the coverage</div>"
