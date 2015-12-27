@@ -5,7 +5,14 @@ class ExternalAuthority < IdentityAuthority
     Rails.logger.debug("--identity1: #{identity}")
     identity = ExternalAuthority.new(uid: auth.uid, provider: auth.provider, user_id: user.id) if identity.nil?
     #identity = create(uid: auth.uid, provider: auth.provider, user_id: user.id) if identity.nil?
-    identity.save
-    Rails.logger.debug("---identity: #{identity.uid} #{identity.type}")
+    if identity.save
+      identity
+    else
+      Rails.logger.error '**FAILURE: failed to save ExternalAuthority'
+      identity.errors.each do |error|
+        Rails.logger.error error
+      end
+      nil
+    end
   end
 end
