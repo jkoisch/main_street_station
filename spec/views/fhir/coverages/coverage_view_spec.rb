@@ -38,4 +38,39 @@ describe 'FHIR Coverage View', type: :view do
       it {should match_fhir_xml(support_file('coverages/coverage-complete.xml')) }
     end
   end
+
+  context 'show' do
+    before(:each) { @coverage = yaml_load('coverages/coverage-standard.yaml') }
+
+    context 'JSON' do
+      subject { render template: 'fhir/coverages/show', formats: :json }
+
+      it { should match_fhir_json(support_file('coverages/show.json')) }
+    end
+
+    context 'XML' do
+      subject { render template: 'fhir/coverages/show', formats: :xml }
+
+      it { should match_fhir_xml(support_file('coverages/show.xml')) }
+    end
+  end
+
+  context 'index' do
+    before(:each) { @coverages = [ yaml_load('coverages/coverage-standard.yaml'),
+                                   yaml_load('coverages/coverage-complete.yaml') ] }
+
+    context 'JSON' do
+      subject { render template: 'fhir/coverages/index', formats: :json }
+
+      it { should match_fhir_json(support_file('coverages/index.json'),
+                                  {'**/lastUpdated' => 'xxx'}) }
+    end
+
+    context 'XML' do
+      subject { render template: 'fhir/coverages/index', formats: :xml }
+
+      it { should match_fhir_xml(support_file('coverages/index.xml'),
+                                 {"//*[local-name()='lastUpdated']/@value" => 'xxx'}) }
+    end
+  end
 end
