@@ -1,5 +1,5 @@
 --- !ruby/object:Fhir::Coverage
-  id: 9876B1
+  id: '1'
   issuer: !ruby/object:Fhir::Types::Reference
     external: Organization/2
   bin: !ruby/object:Fhir::Types::Identifier

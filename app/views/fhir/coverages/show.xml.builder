@@ -1,2 +1,2 @@
 xml.instruct!
-@coverage.to_xml(nil, xml)
+@coverage.to_xml(nil, xml, true)

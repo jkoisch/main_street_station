@@ -1,5 +1,5 @@
 --- !ruby/object:Fhir::Coverage
-  id: 9876B1
+  id: "3"
   issuer: !ruby/object:Fhir::Types::Reference
     external: Organization/2
   period: !ruby/object:Fhir::Types::Period
@@ -14,7 +14,7 @@
       system: http://benefitsinc.com/certificate
       value: 12345
   plan: CBI35
-  sub_plan: '123'
+  sub_plan: "123"
   dependent: 1
   sequence: 1
   subscriber: !ruby/object:Fhir::Types::Reference

@@ -42,12 +42,16 @@
       }
     },
     {
-      "fullUrl": "http://mainstreet.youcentric.com/fhir/Coverage/9876",
+      "fullUrl": "http://mainstreet.youcentric.com/fhir/Coverage/1",
       "resource": {
         "resourceType": "Coverage",
-        "id": "9876",
+        "id": "1",
         "issuer": {
           "reference": "Organization/2"
+        },
+        "bin": {
+          "system": "http://benefitsinc.com/cerf",
+          "value": "344"
         },
         "period": {
           "start": "2011-05-23",
@@ -62,15 +66,32 @@
           {
             "system": "http://benefitsinc.com/certificate",
             "value": "12345"
+          },
+          {
+            "system": "http://benefitsinc.com/display",
+            "value": "9090"
           }
         ],
+        "group": "EXT9",
         "plan": "CBI35",
         "subPlan": "123",
         "dependent": 1,
         "sequence": 1,
         "subscriber": {
           "reference": "Patient/4"
-        }
+        },
+        "network": {
+          "system": "http://benefitsinc.com/bluesx",
+          "value": "544"
+        },
+        "contract": [
+          {
+            "reference": "Contract/383"
+          },
+          {
+            "reference": "Contract/3831"
+          }
+        ]
       },
       "search": {
         "mode": "match"
