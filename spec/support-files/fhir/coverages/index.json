@@ -1,0 +1,80 @@
+{
+  "resourceType": "Bundle",
+  "meta": {
+    "lastUpdated": "xxx"
+  },
+  "type": "searchset",
+  "total": 2,
+  "entry": [
+    {
+      "fullUrl": "http://mainstreet.youcentric.com/fhir/Coverage/3",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "3",
+        "issuer": {
+          "reference": "Organization/2"
+        },
+        "period": {
+          "start": "2011-05-23",
+          "end": "2012-05-23"
+        },
+        "type": {
+          "system": "http://hl7.org/fhir/v3/ActCode",
+          "code": "EHCPOL",
+          "display": "extended healthcare"
+        },
+        "identifier": [
+          {
+            "system": "http://benefitsinc.com/certificate",
+            "value": "12345"
+          }
+        ],
+        "plan": "CBI35",
+        "subPlan": "123",
+        "dependent": 1,
+        "sequence": 1,
+        "subscriber": {
+          "reference": "Patient/4"
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://mainstreet.youcentric.com/fhir/Coverage/9876",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "9876",
+        "issuer": {
+          "reference": "Organization/2"
+        },
+        "period": {
+          "start": "2011-05-23",
+          "end": "2012-05-23"
+        },
+        "type": {
+          "system": "http://hl7.org/fhir/v3/ActCode",
+          "code": "EHCPOL",
+          "display": "extended healthcare"
+        },
+        "identifier": [
+          {
+            "system": "http://benefitsinc.com/certificate",
+            "value": "12345"
+          }
+        ],
+        "plan": "CBI35",
+        "subPlan": "123",
+        "dependent": 1,
+        "sequence": 1,
+        "subscriber": {
+          "reference": "Patient/4"
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
+    }
+  ]
+}

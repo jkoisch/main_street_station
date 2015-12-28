@@ -14,34 +14,25 @@ class User < ActiveRecord::Base
 
   def self.from_omniauth(auth, signed_in_resource = nil)
 
-    identityAuth = IdentityAuthority.find_for_oauth(auth)
+    identity_auth = IdentityAuthority.find_for_oauth(auth)
 
-    #if identityAuth.nil?
-    #  user = find_user_by_email(auth)
-    #else
-    #  user = find_user_by_oauth(identityAuth)
-    #end
-
-    user = identityAuth.nil? ? find_user_by_email(auth) : find_user_by_oauth(identityAuth)
+    user = identity_auth.nil? ? find_user_by_email(auth) : find_user_by_oauth(identity_auth)
     user = create_user_by_oauth(auth) if user.nil?
 
-    identityAuth = IdentityAuthority.create_for_oauth(auth, user) if identityAuth.nil?
-    #user = signed_in_resource ? signed_in_resource : identityAuth.user
+    identity_auth = ExternalAuthority.create_for_oauth(auth, user) if identity_auth.nil?
 
-    v = UserToken.create_authentication_token auth
-
-    Rails.logger.debug("token created? #{v.nil?}")
-    if identityAuth.user != user
-      identityAuth.user = user
-      identityAuth.save!
+    if identity_auth && identity_auth.user != user
+      identity_auth.user = user
+      identity_auth.save!
     end
 
+    v = UserToken.create_authentication_token(user, auth.token)
     user
 
   end
 
-  def self.find_user_by_oauth(identityAuth)
-    find_by(id: identityAuth.user_id)
+  def self.find_user_by_oauth(identity_auth)
+    find_by(id: identity_auth.user_id)
   end
 
   def self.create_user_by_oauth(auth)

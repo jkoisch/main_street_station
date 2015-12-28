@@ -26,8 +26,9 @@ class UserToken < ActiveRecord::Base
     exists?(['refresh_token = ? and refresh_expiry > ?', token, Time.now])
   end
 
-  def self.create_authentication_token(auth)
-    create(user_id: auth.user_id, authentication_token: auth.token)
+  def self.create_authentication_token(user, token)
+    create(user: user,
+           authentication_token: token)
   end
 
   def authentication_active?

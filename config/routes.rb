@@ -20,6 +20,8 @@ MainStreetStation::Application.routes.draw do
               only: [:index, :show, :create, :update], defaults: {format: :json}
     resources :Conformance, controller: 'conformance', as: 'conformance',
               only: [:index, :show], defaults: {format: :json}
+    resources :Coverage, controller: 'coverages',
+              only: [:index, :show], defaults: {format: :json}
     resources :Device, controller: 'devices',
               only: [:index, :show, :create, :update], defaults: {format: :json}
     resources :FamilyMemberHistory, controller: 'family_member_histories',

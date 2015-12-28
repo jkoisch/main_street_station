@@ -18,17 +18,18 @@ To set up the new environments, perform the following steps:
 1. Navigate to gringotts
 2. rake db:drop
 3. rake db:create
-4. rake db:migrate
-5. rake db:migrate RAILS_ENV=test
-6. rake db:migrate RAILS_ENV=dev_integration
-7. rake db:csv:load
-8. rake db:csv:load RAILS_ENV=dev_integration
-9. Navigate to mainstreet
-10. rake db:drop
-11. rake db:create
-12. rake db:migrate
-13. rake db:migrate RAILS_ENV=test
-14. rake db:migrate RAILS_ENV=dev_integration
+4. rake db:create RAILS_ENV=dev_integration
+5. rake db:migrate
+6. rake db:migrate RAILS_ENV=test
+7. rake db:migrate RAILS_ENV=dev_integration
+8. rake db:csv:load
+9. rake db:csv:load RAILS_ENV=dev_integration
+10. Navigate to mainstreet
+11. rake db:drop
+12. rake db:create
+13. rake db:migrate
+14. rake db:migrate RAILS_ENV=test
+15. rake db:migrate RAILS_ENV=dev_integration
 
 
 The source for an AppleScript is provided to enable the startup of the integration run
