@@ -26,7 +26,11 @@
     {
       "_id": 1,
       "system": "http://benefitsinc.com/certificate",
-      "value": "12345"
+      "value": "12345",
+      "use": null,
+      "type": null,
+      "period": null,
+      "assigner": null
     }
   ],
   "group": null,
