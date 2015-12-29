@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <Condition xmlns="http://hl7.org/fhir">
-  <id value="1"/>
+  <id value="267"/>
+  <identifier>
+    <system value="http://goodcare.org/devices/id"/>
+    <value value="345675"/>
+  </identifier>
   <patient>
-    <reference value="Patient/201"/>
+    <reference value="Patient/f201"/>
     <display value="Roel"/>
   </patient>
+  <encounter>
+    <reference value="Encounter/f201"/>
+  </encounter>
   <asserter>
-    <reference value="Practitioner/201"/>
+    <reference value="Practitioner/f201"/>
   </asserter>
   <dateRecorded value="2013-04-04"/>
   <code>
@@ -38,7 +45,7 @@
       <display value="Severe"/>
     </coding>
   </severity>
-  <onsetDate value="2012-05-24"/>
+  <onsetDateTime value="2012-05-24"/>
   <stage>
     <summary>
       <coding>
@@ -48,9 +55,9 @@
       </coding>
     </summary>
     <assessment>
-      <reference value="Observation/201"/>
+      <reference value="Procedure/f201"/>
     </assessment>
-  </stage>>
+  </stage>
   <evidence>
     <code>
       <coding>
@@ -60,7 +67,7 @@
       </coding>
     </code>
     <detail>
-      <reference value="Observation/202"/>
+      <reference value="Observation/f202"/>
       <display value="Temperature"/>
     </detail>
   </evidence>
@@ -71,4 +78,5 @@
       <display value="Superficial forearm vein"/>
     </coding>
   </bodySite>
+  <notes value="Something important to remember"/>
 </Condition>
