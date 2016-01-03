@@ -1,5 +1,13 @@
-<Device xmlns="http://hl7.org/fhir">
-  <id value="2"/>
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Device xmlns='http://hl7.org/fhir'>
+  <id value="1009678"/>
+  <identifier>
+    <system value="http://goodcare.org/devices/id"/>
+    <value value="345675"/>
+  </identifier>
+  <identifier>
+    <value value="AMID-342135-8464"/>
+  </identifier>
   <type>
     <coding>
       <system value="http://snomed.info/sct"/>

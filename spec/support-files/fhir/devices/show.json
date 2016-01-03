@@ -1,6 +1,15 @@
 {
     "resourceType":"Device",
-    "id": "1",
+    "id": "1009678",
+    "identifier":[
+        {
+            "system":"http://goodcare.org/devices/id",
+            "value":"345675"
+        },
+        {
+            "value":"AMID-342135-8464"
+        }
+    ],
     "type":{
         "coding":[
             {

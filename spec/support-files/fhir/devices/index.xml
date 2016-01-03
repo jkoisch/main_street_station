@@ -6,10 +6,10 @@
   <type value="searchset"/>
   <total value="2"/>
   <entry>
-    <fullUrl value="http://mainstreet.youcentric.com/fhir/Condition/3"/>
+    <fullUrl value="http://mainstreet.youcentric.com/fhir/Device/1009678"/>
     <resource>
       <Device xmlns="http://hl7.org/fhir">
-        <id value="3"/>
+        <id value="1009678"/>
         <identifier>
           <system value="http://goodcare.org/devices/id"/>
           <value value="345675"/>
@@ -55,7 +55,7 @@
     </search>
   </entry>
   <entry>
-    <fullUrl value="http://mainstreet.youcentric.com/fhir/Condition/1"/>
+    <fullUrl value="http://mainstreet.youcentric.com/fhir/Device/1"/>
     <resource>
       <Device xmlns="http://hl7.org/fhir">
         <id value="1"/>
@@ -64,6 +64,7 @@
           <value value="345675"/>
         </identifier>
         <identifier>
+          <system value="http://somehealth.org/devices/id"/>
           <value value="AMID-342135-8464"/>
         </identifier>
         <type>
@@ -75,11 +76,26 @@
           <text value="ECG"/>
         </type>
         <note>
+          <authorReference>
+            <reference value="Practitioner/xcda-author"/>
+          </authorReference>
           <time value="2015-06-28T14:03:32+10:00"/>
           <text value="QA Checked"/>
         </note>
+        <note>
+          <authorReference>
+            <reference value="Practitioner/4"/>
+          </authorReference>
+          <time value="2015-07-22T14:03:32+10:00"/>
+          <text value="QA Checked v2"/>
+        </note>
+        <status value="available"/>
         <manufacturer value="Acme Devices, Inc"/>
         <model value="AB 45-J"/>
+        <version value="10.23-23423"/>
+        <manufactureDate value="2015-08-08"/>
+        <expiry value="2020-08-08"/>
+        <udi value="(01)00000123000017(10)ABC123(17)120415"/>
         <lotNumber value="43453424"/>
         <owner>
           <reference value="PTC/f201"/>
@@ -97,6 +113,11 @@
           <system value="phone"/>
           <value value="ext 4352"/>
         </contact>
+        <contact>
+          <system value="other"/>
+          <value value="http://acme.com"/>
+        </contact>
+        <url value="http://acme.com/goodhealth/ehr/"/>
       </Device>
     </resource>
     <search>

@@ -38,4 +38,39 @@ describe 'FHIR Device View', type: :view do
       it {should match_fhir_xml(support_file('devices/device-complete.xml')) }
     end
   end
+
+  context 'show' do
+    before(:each) { @device = yaml_load('devices/device-standard.yaml') }
+
+    context 'JSON' do
+      subject { render template: 'fhir/devices/show', formats: :json }
+
+      it { should match_fhir_json(support_file('devices/show.json')) }
+    end
+
+    context 'XML' do
+      subject { render template: 'fhir/devices/show', formats: :xml }
+
+      it { should match_fhir_xml(support_file('devices/show.xml')) }
+    end
+  end
+
+  context 'index' do
+    before(:each) { @devices = [ yaml_load('devices/device-standard.yaml'),
+                                   yaml_load('devices/device-complete.yaml') ] }
+
+    context 'JSON' do
+      subject { render template: 'fhir/devices/index', formats: :json }
+
+      it { should match_fhir_json(support_file('devices/index.json'),
+                                  {'**/lastUpdated' => 'xxx'}) }
+    end
+
+    context 'XML' do
+      subject { render template: 'fhir/devices/index', formats: :xml }
+
+      it { should match_fhir_xml(support_file('devices/index.xml'),
+                                 {"//*[local-name()='lastUpdated']/@value" => 'xxx'}) }
+    end
+  end
 end
