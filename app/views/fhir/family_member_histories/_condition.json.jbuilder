@@ -19,4 +19,7 @@ json.onsetPeriod do
 end unless condition.onset_period.nil?
 
 json.onsetString  condition.onset_string unless condition.onset_string.nil?
-json.note         condition.note unless condition.note.nil?
+
+json.note do
+  json.partial! 'fhir/base/annotation', annotation: condition.note
+end unless condition.note.nil?

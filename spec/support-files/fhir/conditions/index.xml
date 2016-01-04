@@ -6,10 +6,10 @@
   <type value="searchset"/>
   <total value="2"/>
   <entry>
-    <fullUrl value="http://mainstreet.youcentric.com/fhir/Condition/3"/>
+    <fullUrl value="http://mainstreet.youcentric.com/fhir/Condition/267"/>
     <resource>
       <Condition xmlns="http://hl7.org/fhir">
-        <id value="3"/>
+        <id value="267"/>
         <identifier>
           <system value="http://goodcare.org/devices/id"/>
           <value value="345675"/>
@@ -39,7 +39,6 @@
             <code value="diagnosis"/>
             <display value="Diagnosis"/>
           </coding>
-          <!--   and also a SNOMED CT coding   -->
           <coding>
             <system value="http://snomed.info/sct"/>
             <code value="439401001"/>
@@ -55,7 +54,7 @@
             <display value="Severe"/>
           </coding>
         </severity>
-        <onsetDate value="2012-05-24"/>
+        <onsetDateTime value="2012-05-24"/>
         <stage>
           <summary>
             <coding>
@@ -67,7 +66,7 @@
           <assessment>
             <reference value="Procedure/f201"/>
           </assessment>
-        </stage>>
+        </stage>
         <evidence>
           <code>
             <coding>
@@ -88,6 +87,7 @@
             <display value="Superficial forearm vein"/>
           </coding>
         </bodySite>
+        <notes value="Something important to remember"/>
       </Condition>
     </resource>
     <search>
@@ -103,6 +103,21 @@
           <system value="http://goodcare.org/devices/id"/>
           <value value="345675"/>
         </identifier>
+        <identifier>
+          <system value="urn:ietf:rfc:3986"/>
+          <value value="187e0c12-8dd2-67e2-99b2-bf273c878281"/>
+        </identifier>
+        <patient>
+          <reference value="Patient/201"/>
+          <display value="Roel"/>
+        </patient>
+        <encounter>
+          <reference value="Encounter/574"/>
+        </encounter>
+        <asserter>
+          <reference value="Patient/42847"/>
+          <display value="Wainwright"/>
+        </asserter>
         <dateRecorded value="2013-04-04"/>
         <code>
           <coding>
@@ -118,7 +133,6 @@
             <code value="diagnosis"/>
             <display value="Diagnosis"/>
           </coding>
-          <!--   and also a SNOMED CT coding   -->
           <coding>
             <system value="http://snomed.info/sct"/>
             <code value="439401001"/>
@@ -134,7 +148,38 @@
             <display value="Severe"/>
           </coding>
         </severity>
-        <onsetDate value="2012-05-24"/>
+        <onsetAge>
+          <value value="52"/>
+          <unit value="years"/>
+          <system value="http://snomed.info/sct"/>
+          <code value="258707000"/>
+        </onsetAge>
+        <abatementDateTime value="2015-04-27"/>
+        <stage>
+          <summary>
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="14803004"/>
+              <display value="Temporary"/>
+            </coding>
+          </summary>
+          <assessment>
+            <reference value="Observation/43382"/>
+          </assessment>
+        </stage>
+        <evidence>
+          <code>
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="258710007"/>
+              <display value="degrees C"/>
+            </coding>
+          </code>
+          <detail>
+            <reference value="Observation/f202"/>
+            <display value="Temperature"/>
+          </detail>
+        </evidence>
         <evidence>
           <code>
             <coding>
@@ -152,9 +197,15 @@
           <coding>
             <system value="http://snomed.info/sct"/>
             <code value="308046002"/>
-            <display value="Superficial forearm vein"/>
           </coding>
         </bodySite>
+        <bodySite>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="308046002"/>
+          </coding>
+        </bodySite>
+        <notes value="This is a general notes/comments entry for description of the Condition, its diagnosis and prognosis."/>
       </Condition>
     </resource>
     <search>

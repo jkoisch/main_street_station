@@ -1,0 +1,1 @@
+json.partial! 'coverage', resource: @coverage

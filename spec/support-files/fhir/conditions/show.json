@@ -1,18 +1,24 @@
 {
+    "id": "267",
     "resourceType":"Condition",
-    "id": "1",
-    "patient":
-    {
-        "reference":"Patient/201",
+    "identifier":[
+        {
+            "system":"http://goodcare.org/devices/id",
+            "value":"345675"
+        }
+    ],
+    "patient": {
+        "reference":"Patient/f201",
         "display":"Roel"
     },
-    "asserter":
-    {
-        "reference":"Practitioner/201"
+    "encounter": {
+        "reference": "Encounter/f201"
+    },
+    "asserter":{
+        "reference":"Practitioner/f201"
     },
     "dateRecorded":"2013-04-04",
-    "code":
-    {
+    "code":{
         "coding":[
             {
                 "system":"http://snomed.info/sct",
@@ -22,20 +28,23 @@
         ],
         "text":"Burnt Ear"
     },
-    "category":
-    {
+    "category":{
         "coding":[
             {
                 "system":"http://hl7.org/fhir/condition-category",
                 "code":"diagnosis",
+                "display":"Diagnosis"
+            },
+            {
+                "system":"http://snomed.info/sct",
+                "code":"439401001",
                 "display":"Diagnosis"
             }
         ]
     },
     "clinicalStatus":"confirmed",
     "verificationStatus":"confirmed",
-    "severity":
-    {
+    "severity":{
         "coding":[
             {
                 "system":"http://snomed.info/sct",
@@ -44,11 +53,9 @@
             }
         ]
     },
-    "onsetDatetime":"2012-05-24",
-    "stage":
-    {
-        "summary":
-        {
+    "onsetDateTime":"2012-05-24",
+    "stage":{
+        "summary":{
             "coding":[
                 {
                     "system":"http://snomed.info/sct",
@@ -59,14 +66,13 @@
         },
         "assessment":[
             {
-                "reference":"Observation/201"
+                "reference":"Procedure/f201"
             }
         ]
     },
     "evidence":[
         {
-            "code":
-            {
+            "code":{
                 "coding":[
                     {
                         "system":"http://snomed.info/sct",
@@ -77,7 +83,7 @@
             },
             "detail":[
                 {
-                    "reference":"Observation/202",
+                    "reference":"Observation/f202",
                     "display":"Temperature"
                 }
             ]
@@ -93,5 +99,6 @@
                 }
             ]
         }
-    ]
+    ],
+    "notes": "Something important to remember"
 }

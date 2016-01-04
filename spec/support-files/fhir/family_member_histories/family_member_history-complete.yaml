@@ -1,0 +1,77 @@
+--- !ruby/object:Fhir::FamilyMemberHistory
+  id: "1"
+  identifier:
+    - !ruby/object:Fhir::Types::Identifier
+      system: http://goodcare.org/family_member_history/id
+      value: 345675
+    - !ruby/object:Fhir::Types::Identifier
+      system: http://somehealth.org/family_member_history/id
+      value: AMID-342135-8464
+  patient: !ruby/object:Fhir::Types::Reference
+    external: Patient/201
+    display: Roel
+  date: '2011-03-18'
+  status: completed
+  name: Bob
+  relationship: !ruby/object:Fhir::Types::CodeableConcept
+    coding:
+      - !ruby/object:Fhir::Types::Coding
+        system: http://hl7.org/fhir/familial-relationship
+        code: brother
+  gender: male
+  born: 1950-02-01
+  born_date: '1950-02-01'
+  age_quantity: !ruby/object:Fhir::Types::Quantity
+    value: '65'
+    unit: a
+    system: http://unitsofmeasure.org
+  age: !ruby/object:Fhir::Types::Quantity
+    value: '65'
+    unit: a
+    system: http://unitsofmeasure.org
+  deceased: false
+  deceased_boolean: 'false'
+  note: !ruby/object:Fhir::Types::Annotation
+    time: "2015-07-14"
+    text: "Both parents, both brothers and both children (twin) are still alive."
+  condition:
+    - !ruby/object:Fhir::FamilyMemberHistoryClasses::Condition
+      code: !ruby/object:Fhir::Types::CodeableConcept
+        coding:
+          - !ruby/object:Fhir::Types::Coding
+            system: http://snomed.info/sct
+            code: "371041009"
+            display: Embolic Stroke
+        text: Stroke
+      outcome: !ruby/object:Fhir::Types::CodeableConcept
+        coding:
+          - !ruby/object:Fhir::Types::Coding
+            system: http://snomed.info/sct
+            code: "419099112"
+            display: Inactive
+      onset: !ruby/object:Fhir::Types::Quantity
+        value: "56"
+        unit: a
+        system: http://unitsofmeasure.org
+      onset_quantity: !ruby/object:Fhir::Types::Quantity
+        value: '56'
+        unit: a
+        system: http://unitsofmeasure.org
+    - !ruby/object:Fhir::FamilyMemberHistoryClasses::Condition
+      code: !ruby/object:Fhir::Types::CodeableConcept
+        coding:
+          - !ruby/object:Fhir::Types::Coding
+            system: http://snomed.info/sct
+            code: "315619001"
+            display: Myocardial Infarction
+        text: Heart Attack
+      onset: !ruby/object:Fhir::Types::Quantity
+        value: '74'
+        unit: a
+        system: http://unitsofmeasure.org
+      onset_quantity: !ruby/object:Fhir::Types::Quantity
+        value: '74'
+        unit: a
+        system: http://unitsofmeasure.org
+      note: !ruby/object:Fhir::Types::Annotation
+        text: Was fishing at the time. At least he went doing something he loved.

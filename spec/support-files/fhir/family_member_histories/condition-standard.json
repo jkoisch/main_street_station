@@ -1,0 +1,20 @@
+{
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "315619001",
+                "display": "Myocardial Infarction"
+            }
+        ],
+        "text": "Heart Attack"
+    },
+    "onsetQuantity": {
+        "value": "74",
+        "unit": "a",
+        "system": "http://unitsofmeasure.org"
+    },
+    "note": {
+        "text": "Was fishing at the time. At least he went doing something he loved."
+    }
+}

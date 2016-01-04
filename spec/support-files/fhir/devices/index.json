@@ -1,0 +1,145 @@
+{
+    "resourceType": "Bundle",
+    "meta": {
+        "lastUpdated": "xxx"
+    },
+    "type": "searchset",
+    "total": 2,
+    "entry": [
+        {
+            "fullUrl": "http://mainstreet.youcentric.com/fhir/Device/1009678",
+            "resource": {
+                "resourceType":"Device",
+                "id": "1009678",
+                "identifier":[
+                    {
+                        "system":"http://goodcare.org/devices/id",
+                        "value":"345675"
+                    },
+                    {
+                        "value":"AMID-342135-8464"
+                    }
+                ],
+                "type":{
+                    "coding":[
+                        {
+                            "system":"http://snomed.info/sct",
+                            "code":"86184003",
+                            "display":"Electrocardiographic monitor and recorder"
+                        }
+                    ],
+                    "text":"ECG"
+                },
+                "note":[
+                    {
+                        "authorReference":{
+                            "reference":"Practitioner/xcda-author"
+                        },
+                        "time":"2015-06-28T14:03:32+10:00",
+                        "text":"QA Checked"
+                    }
+                ],
+                "manufacturer":"Acme Devices, Inc",
+                "model":"AB 45-J",
+                "lotNumber":"43453424",
+                "owner":{
+                    "reference":"PTC/f201",
+                    "display":"monitor"
+                },
+                "location":{
+                    "reference":"Anaheim, CA",
+                    "display":"USA"
+                },
+                "patient":{
+                    "reference":"Patient/14",
+                    "display":"14"
+                },
+                "contact":[
+                    {
+                        "system":"phone",
+                        "value":"ext 4352"
+                    }
+                ]
+            },
+            "search": {
+                "mode": "match"
+            }
+        },
+        {
+            "fullUrl": "http://mainstreet.youcentric.com/fhir/Device/1",
+            "resource": {
+                "resourceType":"Device",
+                "id": "1",
+                "identifier":[
+                    {
+                        "system":"http://goodcare.org/devices/id",
+                        "value":"345675"
+                    },
+                    {
+                        "system": "http://somehealth.org/devices/id",
+                        "value": "AMID-342135-8464"
+                    }
+                ],
+                "type":{
+                    "coding":[
+                        {
+                            "system":"http://snomed.info/sct",
+                            "code":"86184003",
+                            "display":"Electrocardiographic monitor and recorder"
+                        }
+                    ],
+                    "text":"ECG"
+                },
+                "note":[
+                    {
+                        "authorReference":{
+                            "reference":"Practitioner/xcda-author"
+                        },
+                        "time":"2015-06-28T14:03:32+10:00",
+                        "text":"QA Checked"
+                    },{
+                        "authorReference":{
+                            "reference":"Practitioner/4"
+                        },
+                        "time":"2015-07-22T14:03:32+10:00",
+                        "text":"QA Checked v2"
+                    }
+                ],
+                "status":"available",
+                "manufacturer":"Acme Devices, Inc",
+                "model":"AB 45-J",
+                "version":"10.23-23423",
+                "manufactureDate":"2015-08-08",
+                "expiry":"2020-08-08",
+                "udi":"(01)00000123000017(10)ABC123(17)120415",
+                "lotNumber":"43453424",
+                "owner":{
+                    "reference":"PTC/f201",
+                    "display":"monitor"
+                },
+                "location":{
+                    "reference":"Anaheim, CA",
+                    "display":"USA"
+                },
+                "patient":{
+                    "reference":"Patient/14",
+                    "display":"14"
+                },
+                "contact":[
+                    {
+                        "system":"phone",
+                        "value":"ext 4352"
+                    },
+                    {
+                        "system": "other",
+                        "value": "http://acme.com"
+                    }
+                ],
+                "url":"http://acme.com/goodhealth/ehr/"
+            },
+            "search": {
+                "mode": "match"
+            }
+        }
+    ]
+}

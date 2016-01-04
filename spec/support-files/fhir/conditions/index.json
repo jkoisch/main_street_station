@@ -7,22 +7,22 @@
     "total": 2,
     "entry": [
         {
-            "fullUrl": "http://mainstreet.youcentric.com/fhir/Condition/3",
+            "fullUrl": "http://mainstreet.youcentric.com/fhir/Condition/267",
             "resource": {
+                "id": "267",
                 "resourceType":"Condition",
-                "id": "3",
                 "identifier":[
                     {
                         "system":"http://goodcare.org/devices/id",
                         "value":"345675"
                     }
                 ],
-                "patient":{
+                "patient": {
                     "reference":"Patient/f201",
                     "display":"Roel"
                 },
-                "encounter":{
-                    "reference":"Encounter/f201"
+                "encounter": {
+                    "reference": "Encounter/f201"
                 },
                 "asserter":{
                     "reference":"Practitioner/f201"
@@ -63,7 +63,7 @@
                         }
                     ]
                 },
-                "onsetDatetime":"2012-05-24",
+                "onsetDateTime":"2012-05-24",
                 "stage":{
                     "summary":{
                         "coding":[
@@ -109,7 +109,8 @@
                             }
                         ]
                     }
-                ]
+                ],
+                "notes": "Something important to remember"
             },
             "search": {
                 "mode": "match"
@@ -118,16 +119,32 @@
         {
             "fullUrl": "http://mainstreet.youcentric.com/fhir/Condition/1",
             "resource": {
-                "resourceType":"Condition",
+                "resourceType": "Condition",
                 "id": "1",
                 "identifier":[
                     {
                         "system":"http://goodcare.org/devices/id",
                         "value":"345675"
+                    },
+                    {
+                        "system": "urn:ietf:rfc:3986",
+                        "value": "187e0c12-8dd2-67e2-99b2-bf273c878281"
                     }
                 ],
+                "patient": {
+                    "reference": "Patient/201",
+                    "display":"Roel"
+                },
+                "encounter": {
+                    "reference": "Encounter/574"
+                },
+                "asserter":{
+                    "reference": "Patient/42847",
+                    "display": "Wainwright"
+                },
                 "dateRecorded":"2013-04-04",
-                "code":{
+                "code":
+                {
                     "coding":[
                         {
                             "system":"http://snomed.info/sct",
@@ -137,47 +154,86 @@
                     ],
                     "text":"Burnt Ear"
                 },
-                "category":{
-                    "coding":[
+                "category": {
+                    "coding": [
                         {
-                            "system":"http://hl7.org/fhir/condition-category",
-                            "code":"diagnosis",
-                            "display":"Diagnosis"
+                            "system": "http://hl7.org/fhir/condition-category",
+                            "code": "diagnosis",
+                            "display": "Diagnosis"
                         },
                         {
-                            "system":"http://snomed.info/sct",
-                            "code":"439401001",
-                            "display":"Diagnosis"
+                            "system": "http://snomed.info/sct",
+                            "code": "439401001",
+                            "display": "Diagnosis"
                         }
                     ]
                 },
-                "clinicalStatus":"confirmed",
-                "verificationStatus":"confirmed",
-                "severity":{
-                    "coding":[
+                "clinicalStatus": "confirmed",
+                "verificationStatus": "confirmed",
+                "severity": {
+                    "coding": [
                         {
-                            "system":"http://snomed.info/sct",
-                            "code":"24484000",
-                            "display":"Severe"
+                            "system": "http://snomed.info/sct",
+                            "code": "24484000",
+                            "display": "Severe"
                         }
                     ]
                 },
-                "onsetDatetime":"2012-05-24",
-                "evidence":[
+                "onsetAge": {
+                    "value": "52",
+                    "unit": "years",
+                    "system": "http://snomed.info/sct",
+                    "code": "258707000"
+                },
+                "abatementDateTime": "2015-04-27",
+                "stage": {
+                    "summary": {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "14803004",
+                                "display": "Temporary"
+                            }
+                        ]
+                    },
+                    "assessment": [
+                        {
+                            "reference": "Observation/43382"
+                        }
+                    ]
+                },
+                "evidence": [
                     {
-                        "code":{
-                            "coding":[
+                        "code": {
+                            "coding": [
                                 {
-                                    "system":"http://snomed.info/sct",
-                                    "code":"258710007",
-                                    "display":"degrees C"
+                                    "system": "http://snomed.info/sct",
+                                    "code": "258710007",
+                                    "display": "degrees C"
                                 }
                             ]
                         },
-                        "detail":[
+                        "detail": [
                             {
-                                "reference":"Observation/f202",
-                                "display":"Temperature"
+                                "reference": "Observation/f202",
+                                "display": "Temperature"
+                            }
+                        ]
+                    },
+                    {
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "code": "258710007",
+                                    "display": "degrees C"
+                                }
+                            ]
+                        },
+                        "detail": [
+                            {
+                                "reference": "Observation/f202",
+                                "display": "Temperature"
                             }
                         ]
                     }
@@ -186,13 +242,23 @@
                     {
                         "coding":[
                             {
-                                "system":"http://snomed.info/sct",
-                                "code":"308046002",
-                                "display":"Superficial forearm vein"
+                                "system": "http://snomed.info/sct",
+                                "code": "308046002"
+
+                            }
+                        ]
+                    },
+                    {
+                        "coding":[
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "308046002"
+
                             }
                         ]
                     }
-                ]
+                ],
+                "notes": "This is a general notes/comments entry for description of the Condition, its diagnosis and prognosis."
             },
             "search": {
                 "mode": "match"

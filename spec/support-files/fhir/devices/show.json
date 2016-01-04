@@ -1,0 +1,53 @@
+{
+    "resourceType":"Device",
+    "id": "1009678",
+    "identifier":[
+        {
+            "system":"http://goodcare.org/devices/id",
+            "value":"345675"
+        },
+        {
+            "value":"AMID-342135-8464"
+        }
+    ],
+    "type":{
+        "coding":[
+            {
+                "system":"http://snomed.info/sct",
+                "code":"86184003",
+                "display":"Electrocardiographic monitor and recorder"
+            }
+        ],
+        "text":"ECG"
+    },
+    "note":[
+        {
+            "authorReference":{
+                "reference":"Practitioner/xcda-author"
+            },
+            "time":"2015-06-28T14:03:32+10:00",
+            "text":"QA Checked"
+        }
+    ],
+    "manufacturer":"Acme Devices, Inc",
+    "model":"AB 45-J",
+    "lotNumber":"43453424",
+    "owner":{
+        "reference":"PTC/f201",
+        "display":"monitor"
+    },
+    "location":{
+        "reference":"Anaheim, CA",
+        "display":"USA"
+    },
+    "patient":{
+        "reference":"Patient/14",
+        "display":"14"
+    },
+    "contact":[
+        {
+            "system":"phone",
+            "value":"ext 4352"
+        }
+    ]
+}

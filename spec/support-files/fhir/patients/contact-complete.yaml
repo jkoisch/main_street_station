@@ -1,0 +1,30 @@
+--- !ruby/object:Fhir::PatientClasses::Contact
+  relationship:
+    - !ruby/object:Fhir::Types::CodeableConcept
+      coding:
+        - !ruby/object:Fhir::Types::Coding
+          system: http://hl7.org/fhir/patient-contact-relationship
+          code: partner
+  name: !ruby/object:Fhir::Types::HumanName
+    family:
+      - du
+      - Marché
+    given:
+      - Bénédicte
+  telecom:
+    - !ruby/object:Fhir::Types::ContactPoint
+      system: phone
+      value: +33 (237) 998327
+  address: !ruby/object:Fhir::Types::Address
+    use: home
+    line:
+      - 534 Erewhon St
+    city: PleasantVille
+    state: Vic
+    postal_code: 3999
+  gender: male
+  organization: !ruby/object:Fhir::Types::Reference
+    external: Organization/1
+    display: "Walt Disney Corporation"
+  period: !ruby/object:Fhir::Types::Period
+    start: "2001-05-06"

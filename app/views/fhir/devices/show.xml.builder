@@ -1,2 +1,2 @@
 xml.instruct!
-@device.to_xml(nil, xml)
+@device.to_xml(nil, xml, true)

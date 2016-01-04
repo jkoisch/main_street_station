@@ -1,5 +1,5 @@
 --- !ruby/object:Fhir::Observation
-  id: "302"
+  id: "303"
   identifier:
     - !ruby/object:Fhir::Types::Identifier
       system: "urn:ietf:rfc:3986"
@@ -49,4 +49,3 @@
       target: !ruby/object:Fhir::Types::Reference
         external: Observation/f005
         display: JC May
-

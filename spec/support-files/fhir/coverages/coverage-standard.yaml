@@ -1,0 +1,21 @@
+--- !ruby/object:Fhir::Coverage
+  id: "3"
+  issuer: !ruby/object:Fhir::Types::Reference
+    external: Organization/2
+  period: !ruby/object:Fhir::Types::Period
+    start: 2011-05-23
+    end: 2012-05-23
+  type: !ruby/object:Fhir::Types::Coding
+    system: http://hl7.org/fhir/v3/ActCode
+    code: EHCPOL
+    display: extended healthcare
+  identifier:
+    - !ruby/object:Fhir::Types::Identifier
+      system: http://benefitsinc.com/certificate
+      value: 12345
+  plan: CBI35
+  sub_plan: "123"
+  dependent: 1
+  sequence: 1
+  subscriber: !ruby/object:Fhir::Types::Reference
+    external: Patient/4

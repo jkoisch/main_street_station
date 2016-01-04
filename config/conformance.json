@@ -11,7 +11,7 @@
     "contact": [{
         "name": "email"
     }],
-    "date": "2015-10-11",
+    "date": "2015-12-28",
     "kind": "instance",
     "software": {
         "name": "Mainstreet",
@@ -55,6 +55,13 @@
                 },
                 {
                     "type": "Conformance",
+                    "interaction": [
+                        {"code": "read"}
+                    ],
+                    "read_history": "false"
+                },
+                {
+                    "type": "Coverage",
                     "interaction": [
                         {"code": "read"}
                     ],

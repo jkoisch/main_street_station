@@ -1,0 +1,14 @@
+{
+    "low": {
+        "value": "90",
+        "unit": "%",
+        "system": "https://rtmms.nist.gov",
+        "code": "262688"
+    },
+    "high": {
+        "value": "99",
+        "unit": "%",
+        "system": "https://rtmms.nist.gov",
+        "code": "262688"
+    }
+}

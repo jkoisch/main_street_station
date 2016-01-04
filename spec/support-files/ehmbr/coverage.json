@@ -1,0 +1,48 @@
+{
+  "id": 1,
+  "resource_type": "Coverage",
+  "text": {
+    "status": "generated",
+    "div": "<div>A human-readable rendering of the coverage</div>"
+  },
+  "issuer": {
+    "local_type": "Organization",
+    "local_id": 2,
+    "display": null
+  },
+  "bin": null,
+  "period": {
+    "start": "2011-05-23",
+    "end": "2012-05-23"
+  },
+  "type": {
+    "system": "http://hl7.org/fhir/v3/ActCode",
+    "version": null,
+    "code": "EHCPOL",
+    "display": "extended healthcare",
+    "user_selected": null
+  },
+  "identifier": [
+    {
+      "_id": 1,
+      "system": "http://benefitsinc.com/certificate",
+      "value": "12345",
+      "use": null,
+      "type": null,
+      "period": null,
+      "assigner": null
+    }
+  ],
+  "group": null,
+  "plan": "CBI35",
+  "sub_plan": "123",
+  "dependent": 1,
+  "sequence": 1,
+  "subscriber": {
+    "local_type": "Client",
+    "local_id": 4,
+    "display": null
+  },
+  "network": null,
+  "contract": []
+}

@@ -1,5 +1,5 @@
 --- !ruby/object:Fhir::Location
-  id: "45"
+  id: "3"
   identifier:
     - !ruby/object:Fhir::Types::Identifier
       value: "B1-S.F2"

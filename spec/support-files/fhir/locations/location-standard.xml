@@ -1,5 +1,5 @@
 <Location xmlns="http://hl7.org/fhir">
-  <id value="45"/>
+  <id value="3"/>
   <identifier>
     <value value="B1-S.F2"/>
   </identifier>

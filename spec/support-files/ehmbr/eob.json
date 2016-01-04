@@ -1,0 +1,147 @@
+{
+  "resourceType": "ExplanationOfBenefit",
+  "id": "EB3500",
+  "text": {
+    "status": "generated",
+    "div": "<div>A human-readable rendering of the ExplanationOfBenefit</div>"
+  },
+  "identifier": [
+    {
+      "_id": "1",
+      "system": "http://www.BenefitsInc.com/fhir/explanationofbenefit",
+      "value": "987654321",
+      "use": null,
+      "type": null,
+      "period": null,
+      "assigner": null
+    }
+  ],
+  "claim": {
+    "external": "http://here.com/Claim/100150",
+    "display": null
+  },
+  "claimResponse": {
+    "external": "http://here.com/ClaimResponse/R3500",
+    "display": null
+  },
+  "created": "2014-08-16",
+  "disposition": "Claim settled as per contract.",
+  "organization": {
+    "local_type": "Organization",
+    "local_id": "2",
+    "display": null
+  },
+  "patient": {
+    "local_type": "Client",
+    "local_id": "1001",
+    "display": null
+  },
+  "coverage": {
+    "coverage": {
+      "local_type": "Coverage",
+      "reference": "9876B1",
+      "display": null
+    },
+    "relationship": {
+      "system": "http://eob.example/relate",
+      "code": "self",
+      "version": null,
+      "display": null,
+      "user_selected": null
+    }
+  },
+  "item": [
+    {
+      "sequence": 1,
+      "type": {
+        "system": "http://eob.example/service",
+        "code": "service",
+        "version": null,
+        "display": null,
+        "user_selected": null
+      },
+      "provider": {
+        "external": "http://here.com/Practitioner/example",
+        "display": null
+      },
+      "service": {
+        "system": "http://hl7.org/fhir/ValueSet/service-uscls",
+        "code": "1200",
+        "version": null,
+        "display": null,
+        "user_selected": null
+      },
+      "servicedDate": "2014-08-16",
+      "unitPrice": {
+        "value": 135.57,
+        "comparator": null,
+        "unit": null,
+        "system": "urn:iso:std:iso:4217",
+        "code": "USD"
+      },
+      "net": {
+        "value": 135.57,
+        "comparator": null,
+        "unit": null,
+        "system": "urn:iso:std:iso:4217",
+        "code": "USD"
+      },
+      "adjudication": [
+        {
+          "category": {
+            "system": "http://eob.example/adjudication-category",
+            "code": "eligible",
+            "version": null,
+            "display": null,
+            "user_selected": null
+          },
+          "amount": {
+            "value": 120.00,
+            "system": "urn:iso:std:iso:4217",
+            "code": "USD"
+          }
+        },
+        {
+          "category": {
+            "system": "http://eob.example/adjudication-category",
+            "code": "eligpercent",
+            "version": null,
+            "display": null,
+            "user_selected": null
+          },
+          "value": 0.80
+        },
+        {
+          "category": {
+            "system": "http://eob.example/adjudication-category",
+            "code": "benefit",
+            "version": null,
+            "display": null,
+            "user_selected": null
+          },
+          "amount": {
+            "value": 96.00,
+            "comparator": null,
+            "unit": null,
+            "system": "urn:iso:std:iso:4217",
+            "code": "USD"
+          }
+        }
+      ]
+    }
+  ],
+  "claimTotal": {
+    "value": 135.57,
+    "comparator": null,
+    "unit": null,
+    "system": "urn:iso:std:iso:4217",
+    "code": "USD"
+  },
+  "totalBenefit": {
+    "value": 96.00,
+    "comparator": null,
+    "unit": null,
+    "system": "urn:iso:std:iso:4217",
+    "code": "USD"
+  }
+}

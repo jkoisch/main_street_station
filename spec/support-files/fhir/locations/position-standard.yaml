@@ -1,0 +1,4 @@
+--- !ruby/object:Fhir::LocationClasses::Position
+  longitude: 4.844614000123024
+  latitude: 52.37799399970903
+  altitude: 0

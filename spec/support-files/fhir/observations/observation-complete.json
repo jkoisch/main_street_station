@@ -1,0 +1,202 @@
+{
+    "resourceType":"Observation",
+    "id": "302",
+    "identifier":[
+        {
+            "use": "official",
+            "system": "http://www.bmc.nl/zorgportal/identifiers/observations",
+            "value": "6323"
+        },
+        {
+            "system":"urn:ietf:rfc:3986",
+            "value":"187e0c12-8dd2-67e2-99b2-bf273c878281"
+        }
+    ],
+    "status":"final",
+    "category": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+            }
+        ]
+    },
+    "code":{
+        "coding":[
+            {
+                "system":"http://loinc.org",
+                "code":"8480-6",
+                "display":"Systolic blood pressure"
+            },
+            {
+                "system":"http://snomed.info/sct",
+                "code":"271649006",
+                "display":"Systolic blood pressure"
+            },
+            {
+                "system":"http://acme.org/devices/clinical-codes",
+                "code":"bp-s",
+                "display":"Systolic Blood pressure"
+            }
+        ]
+    },
+    "subject":{
+        "reference":"Patient/f001",
+        "display":"P. van de Heuvel"
+    },
+    "effectiveDateTime":"2012-09-17",
+    "issued":"2013-04-03T15:30:10+01:00",
+    "performer":[
+        {
+            "reference":"Patient/f005",
+            "display":"A. Langeveld"
+        },
+        {
+            "reference":"Device/x938",
+            "display":"Acme"
+        }
+    ],
+    "valueQuantity":{
+        "value":"107",
+        "unit":"mm[Hg]",
+        "system":"http://unitsofmeasure.org",
+        "code":"mm[Hg]"
+    },
+    "dataAbsentReason":{
+        "coding":[
+            {
+                "system": "http://snomed.info/sct",
+                "code": "125154007",
+                "display": "Specimen unsatisfactory for evaluation"
+            }
+        ]
+    },
+    "interpretation":{
+        "coding":[
+            {
+                "system":"http://hl7.org/fhir/v2/0078",
+                "code":"N",
+                "display":"Normal (applies to non-numeric results)"
+            }
+        ]
+    },
+    "comments": "Tube broken in transit and sample leaked",
+    "bodySite":{
+        "coding":[
+            {
+                "system":"http://snomed.info/sct",
+                "code":"308046002",
+                "display":"Superficial forearm vein"
+            }
+        ]
+    },
+    "method":{
+        "coding":[
+            {
+                "system":"http://snomed.info/sct",
+                "code":"120220003",
+                "display":"Injection to forearm"
+            }
+        ]
+    },
+    "specimen":{
+        "reference":"Patient/f001",
+        "display":"bp"
+    },
+    "device": {
+        "reference": "DeviceMetric/example"
+    },
+    "referenceRange":[
+        {
+            "low":{
+                "value":"3.1",
+                "unit":"mmol/l",
+                "system":"http://unitsofmeasure.org",
+                "code":"mmol/l"
+            },
+            "high": {
+                "value":"6.2",
+                "unit":"mmol/l",
+                "system":"http://unitsofmeasure.org",
+                "code":"mmol/l"
+            }
+        },
+        {
+            "low": {
+                "value": "90",
+                "unit": "%",
+                "system": "https://rtmms.nist.gov",
+                "code": "262688"
+            },
+            "high": {
+                "value": "99",
+                "unit": "%",
+                "system": "https://rtmms.nist.gov",
+                "code": "262688"
+            }
+        }
+    ],
+    "related":[
+        {
+            "type":"has-member",
+            "target":{
+                "reference":"Observation/f005",
+                "display":"JC May"
+            }
+        },
+        {
+            "type": "derived-from",
+            "target": {
+                "reference": "QuestionnaireResponse/gcs",
+                "display": "GCS form results"
+            }
+        }
+    ],
+    "component": [
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "urn:oid:2.16.840.1.113883.6.24",
+                        "code": "131329",
+                        "display": "MDC_ECG_ELEC_POTL_I"
+                    }
+                ]
+            },
+            "valueSampledData": {
+                "origin": {
+                    "value": "2048"
+                },
+                "period": "10",
+                "factor": "1.612",
+                "lowerLimit": "-3300",
+                "upperLimit": "3300",
+                "dimensions": "1",
+                "data": "2041 2043 2037 2047 2060 2062 2051 2023 2014 2027 2034 2033 2040 2047 2047 2053 2058 2064 2059 2063 2061 2052 2053 2038 1966 1885 1884 2009 2129 2166 2137 2102 2086 2077 2067 2067 2060 2059 2062 2062 2060 2057 2045 2047 2057 2054 2042 2029 2027 2018 2007 1995 2001 2012 2024 2039 2068 2092 2111 2125 2131 2148 2137 2138 2128 2128 2115 2099 2097 2096 2101 2101 2091 2073 2076 2077 2084 2081 2088 2092 2070 2069 2074 2077 2075 2068 2064 2060 2062 2074 2075 2074 2075 2063 2058 2058 2064 2064 2070 2074 2067 2060 2062 2063 2061 2059 2048 2052 2049 2048 2051 2059 2059 2066 2077 2073"
+            }
+        },
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "urn:oid:2.16.840.1.113883.6.24",
+                        "code": "131330",
+                        "display": "MDC_ECG_ELEC_POTL_II"
+                    }
+                ]
+            },
+            "valueSampledData": {
+                "origin": {
+                    "value": "2048"
+                },
+                "period": "10",
+                "factor": "1.612",
+                "lowerLimit": "-3300",
+                "upperLimit": "3300",
+                "dimensions": "1",
+                "data": "2041 2043 2037 2047 2060 2062 2051 2023 2014 2027 2034 2033 2040 2047 2047 2053 2058 2064 2059 2063 2061 2052 2053 2038 1966 1885 1884 2009 2129 2166 2137 2102 2086 2077 2067 2067 2060 2059 2062 2062 2060 2057 2045 2047 2057 2054 2042 2029 2027 2018 2007 1995 2001 2012 2024 2039 2068 2092 2111 2125 2131 2148 2137 2138 2128 2128 2115 2099 2097 2096 2101 2101 2091 2073 2076 2077 2084 2081 2088 2092 2070 2069 2074 2077 2075 2068 2064 2060 2062 2074 2075 2074 2075 2063 2058 2058 2064 2064 2070 2074 2067 2060 2062 2063 2061 2059 2048 2052 2049 2048 2051 2059 2059 2066 2077 2073"
+            }
+        }
+    ]
+}

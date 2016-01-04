@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Bundle xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="xxx"/>
+  </meta>
+  <type value="searchset"/>
+  <total value="2"/>
+  <entry>
+    <fullUrl value="http://mainstreet.youcentric.com/fhir/Coverage/3"/>
+    <resource>
+      <Coverage xmlns="http://hl7.org/fhir">
+        <id value="3"/>
+        <issuer>
+          <reference value="Organization/2"/>
+        </issuer>
+        <period>
+          <start value="2011-05-23"/>
+          <end value="2012-05-23"/>
+        </period>
+        <type>
+          <system value="http://hl7.org/fhir/v3/ActCode"/>
+          <code value="EHCPOL"/>
+          <display value="extended healthcare"/>
+        </type>
+        <identifier>
+          <system value="http://benefitsinc.com/certificate"/>
+          <value value="12345"/>
+        </identifier>
+        <plan value="CBI35"/>
+        <subPlan value="123"/>
+        <dependent value="1"/>
+        <sequence value="1"/>
+        <subscriber>
+          <reference value="Patient/4"/>
+        </subscriber>
+      </Coverage>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="http://mainstreet.youcentric.com/fhir/Coverage/1"/>
+    <resource>
+      <Coverage xmlns="http://hl7.org/fhir">
+        <id value="1"/>
+        <issuer>
+          <reference value="Organization/2"/>
+        </issuer>
+        <bin>
+          <system value="http://benefitsinc.com/cerf"/>
+          <value value="344"/>
+        </bin>
+        <period>
+          <start value="2011-05-23"/>
+          <end value="2012-05-23"/>
+        </period>
+        <type>
+          <system value="http://hl7.org/fhir/v3/ActCode"/>
+          <code value="EHCPOL"/>
+          <display value="extended healthcare"/>
+        </type>
+        <identifier>
+          <system value="http://benefitsinc.com/certificate"/>
+          <value value="12345"/>
+        </identifier>
+        <identifier>
+          <system value="http://benefitsinc.com/display"/>
+          <value value="9090"/>
+        </identifier>
+        <group value="EXT9"/>
+        <plan value="CBI35"/>
+        <subPlan value="123"/>
+        <dependent value="1"/>
+        <sequence value="1"/>
+        <subscriber>
+          <reference value="Patient/4"/>
+        </subscriber>
+        <network>
+          <system value="http://benefitsinc.com/bluesx"/>
+          <value value="544"/>
+        </network>
+        <contract>
+          <reference value="Contract/383"/>
+        </contract>
+        <contract>
+          <reference value="Contract/3831"/>
+        </contract>
+      </Coverage>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+</Bundle>

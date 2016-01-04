@@ -1,0 +1,14 @@
+<reference_range>
+  <low>
+    <value value="90"/>
+    <unit value="%"/>
+    <system value="https://rtmms.nist.gov"/>
+    <code value="262688"/>
+  </low>
+  <high>
+    <value value="99"/>
+    <unit value="%"/>
+    <system value="https://rtmms.nist.gov"/>
+    <code value="262688"/>
+  </high>
+</reference_range>
