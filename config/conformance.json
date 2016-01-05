@@ -11,7 +11,7 @@
     "contact": [{
         "name": "email"
     }],
-    "date": "2015-12-28",
+    "date": "2016-01-04",
     "kind": "instance",
     "software": {
         "name": "Mainstreet",
@@ -65,7 +65,13 @@
                     "interaction": [
                         {"code": "read"}
                     ],
-                    "read_history": "false"
+                    "read_history": "false",
+                    "search_param":[
+                        {
+                            "name": "subscriber",
+                            "type": "reference"
+                        }
+                    ]
                 },
                 {
                     "type": "Device",

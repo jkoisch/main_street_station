@@ -14,6 +14,17 @@ describe Fhir::CoveragesController, type: :controller do
     end
   end
 
+  context 'for searches' do
+    before(:each) {Fhir::CoveragesController.any_instance.stubs(:retrieve_file_resource).returns(nil)}
+
+    it 'performs a coverage search for matching subscriber reference' do
+      stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
+      get :index, {format: :json, 'subscriber' => '23'}
+      expect(a_request(:get, 'gringotts.dev/coverages').
+          with(:query => hash_including({'query' => {'subscriber' => {'value' => '23'}}}))).to have_been_made
+    end
+  end
+
   describe '#show' do
     subject { get :show, id: 1, format: :json }
 
