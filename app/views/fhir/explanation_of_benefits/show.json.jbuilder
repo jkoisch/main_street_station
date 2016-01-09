@@ -1,0 +1,1 @@
+json.partial! 'explanation_of_benefit', resource: @explanation_of_benefit

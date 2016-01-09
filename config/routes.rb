@@ -24,6 +24,8 @@ MainStreetStation::Application.routes.draw do
               only: [:index, :show], defaults: {format: :json}
     resources :Device, controller: 'devices',
               only: [:index, :show, :create, :update], defaults: {format: :json}
+    resources :ExplanationOfBenefit, controller: 'explanation_of_benefits',
+              only: [:index, :show], defaults: {format: :json}
     resources :FamilyMemberHistory, controller: 'family_member_histories',
               only: [:index, :show, :create, :update], defaults: {format: :json}
     resources :Location, controller: 'locations',

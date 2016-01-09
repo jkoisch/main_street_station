@@ -1,5 +1,5 @@
 {
-  "resourceType": "ExplanationOfBenefit",
+  "resource_type": "ExplanationOfBenefit",
   "id": "EB3500",
   "text": {
     "status": "generated",
@@ -20,7 +20,7 @@
     "external": "http://here.com/Claim/100150",
     "display": null
   },
-  "claimResponse": {
+  "claim_response": {
     "external": "http://here.com/ClaimResponse/R3500",
     "display": null
   },
@@ -39,7 +39,7 @@
   "coverage": {
     "coverage": {
       "local_type": "Coverage",
-      "reference": "9876B1",
+      "local_id": "9876B1",
       "display": null
     },
     "relationship": {
@@ -71,8 +71,12 @@
         "display": null,
         "user_selected": null
       },
-      "servicedDate": "2014-08-16",
-      "unitPrice": {
+      "serviced": {
+        "_id": 1,
+        "_type": "SimpleDate",
+        "value": "2014-08-16"
+      },
+      "unit_price": {
         "value": 135.57,
         "comparator": null,
         "unit": null,
@@ -130,14 +134,14 @@
       ]
     }
   ],
-  "claimTotal": {
+  "claim_total": {
     "value": 135.57,
     "comparator": null,
     "unit": null,
     "system": "urn:iso:std:iso:4217",
     "code": "USD"
   },
-  "totalBenefit": {
+  "total_benefit": {
     "value": 96.00,
     "comparator": null,
     "unit": null,

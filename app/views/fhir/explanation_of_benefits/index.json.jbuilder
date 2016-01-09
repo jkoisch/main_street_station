@@ -1,0 +1,1 @@
+json_bundle(json, @explanation_of_benefits)

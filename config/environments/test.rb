@@ -40,6 +40,7 @@ MainStreetStation::Application.configure do
   config.gringotts_conformance = Rails.root + 'config/conformance.json'
   config.gringotts_coverage = Rails.root + 'spec/support-files/ehmbr/coverage.json'
   config.gringotts_device = Rails.root + 'spec/support-files/ehmbr/device.json'
+  config.gringotts_explanation_of_benefit = Rails.root + 'spec/support-files/ehmbr/eob.json'
   config.gringotts_family_member_history = Rails.root + 'spec/support-files/ehmbr/family-history.json'
   config.gringotts_location = Rails.root + 'spec/support-files/ehmbr/location.json'
   config.gringotts_observation = Rails.root + 'spec/support-files/ehmbr/observation.json'
