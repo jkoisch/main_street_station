@@ -1,0 +1,10 @@
+<coverage>
+  <coverage>
+    <reference value="Coverage/9876B1"/>
+  </coverage>
+  <relationship>
+    <code value="self"/>
+  </relationship>
+  <preAuthRef value="token_element"/>
+  <preAuthRef value="http://consent.com/yes"/>
+</coverage>

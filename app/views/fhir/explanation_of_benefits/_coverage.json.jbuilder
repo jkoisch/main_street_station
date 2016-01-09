@@ -6,6 +6,4 @@ json.relationship do
   json.partial! 'fhir/base/coding', coding: coverage.relationship
 end unless coverage.relationship.nil?
 
-json.preAuthRef coverage.pre_auth_ref do |ref|
-  ref
-end unless coverage.pre_auth_ref.nil?
+json.preAuthRef coverage.pre_auth_ref unless coverage.pre_auth_ref.nil?

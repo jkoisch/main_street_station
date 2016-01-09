@@ -1,0 +1,5 @@
+--- !ruby/object:Fhir::ExplanationOfBenefitClasses::Coverage
+  coverage: !ruby/object:Fhir::Types::Reference
+    external: Coverage/9876B1
+  relationship: !ruby/object:Fhir::Types::Coding
+    code: self

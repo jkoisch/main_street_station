@@ -1,0 +1,12 @@
+{
+  "coverage": {
+    "reference": "Coverage/9876B1"
+  },
+  "relationship": {
+    "code": "self"
+  },
+  "preAuthRef": [
+    "token_element",
+    "http://consent.com/yes"
+  ]
+}

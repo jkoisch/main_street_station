@@ -1,0 +1,8 @@
+--- !ruby/object:Fhir::ExplanationOfBenefitClasses::Coverage
+  coverage: !ruby/object:Fhir::Types::Reference
+    external: Coverage/9876B1
+  relationship: !ruby/object:Fhir::Types::Coding
+    code: self
+  pre_auth_ref:
+    - token_element
+    - http://consent.com/yes
