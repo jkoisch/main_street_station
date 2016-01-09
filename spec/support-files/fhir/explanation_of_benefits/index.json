@@ -1,0 +1,206 @@
+{
+  "resourceType": "Bundle",
+  "meta": {
+    "lastUpdated": "xxx"
+  },
+  "type": "searchset",
+  "total": 2,
+  "entry": [
+    {
+      "fullUrl": "http://mainstreet.youcentric.com/fhir/ExplanationOfBenefit/3",
+      "resource": {
+        "resourceType": "ExplanationOfBenefit",
+        "id": "3",
+        "identifier": [
+          {
+            "system": "http://www.BenefitsInc.com/fhir/explanationofbenefit",
+            "value": "987654321"
+          }
+        ],
+        "claim": {
+          "reference": "http://here.com/Claim/100150"
+        },
+        "claimResponse": {
+          "reference": "http://here.com/ClaimResponse/R3500"
+        },
+        "created": "2014-08-16",
+        "disposition": "Claim settled as per contract.",
+        "organization": {
+          "reference": "Organization/2"
+        },
+        "patient": {
+          "reference": "Client/1001"
+        },
+        "coverage": {
+          "coverage": {
+            "reference": "Coverage/9876B1"
+          },
+          "relationship": {
+            "system": "http://eob.example/relate",
+            "code": "self"
+          }
+        },
+        "item": [
+          {
+            "sequence": 1,
+            "type": {
+              "system": "http://eob.example/service",
+              "code": "service"
+            },
+            "provider": {
+              "reference": "http://here.com/Practitioner/example"
+            },
+            "service": {
+              "system": "http://hl7.org/fhir/ValueSet/service-uscls",
+              "code": "1200"
+            },
+            "servicedDate": "2014-08-16",
+            "unitPrice": {
+              "value": "135.57",
+              "system": "urn:iso:std:iso:4217",
+              "code": "USD"
+            },
+            "net": {
+              "value": "135.57",
+              "system": "urn:iso:std:iso:4217",
+              "code": "USD"
+            },
+            "adjudication": [
+              {
+                "category": {
+                  "system": "http://eob.example/adjudication-category",
+                  "code": "eligible"
+                },
+                "amount": {
+                  "value": "120.00",
+                  "system": "urn:iso:std:iso:4217",
+                  "code": "USD"
+                }
+              }
+            ]
+          }
+        ],
+        "claimTotal": {
+          "value": "135.57",
+          "system": "urn:iso:std:iso:4217",
+          "code": "USD"
+        },
+        "totalBenefit": {
+          "value": "96.00",
+          "system": "urn:iso:std:iso:4217",
+          "code": "USD"
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://mainstreet.youcentric.com/fhir/ExplanationOfBenefit/EB3500",
+      "resource": {
+        "resourceType": "ExplanationOfBenefit",
+        "id": "EB3500",
+        "identifier": [
+          {
+            "system": "http://www.BenefitsInc.com/fhir/explanationofbenefit",
+            "value": "987654321"
+          }
+        ],
+        "claim": {
+          "reference": "http://here.com/Claim/100150"
+        },
+        "claimResponse": {
+          "reference": "http://here.com/ClaimResponse/R3500"
+        },
+        "created": "2014-08-16",
+        "disposition": "Claim settled as per contract.",
+        "organization": {
+          "reference": "Organization/2"
+        },
+        "patient": {
+          "reference": "Client/1001"
+        },
+        "coverage": {
+          "coverage": {
+            "reference": "Coverage/9876B1"
+          },
+          "relationship": {
+            "system": "http://eob.example/relate",
+            "code": "self"
+          }
+        },
+        "item": [
+          {
+            "sequence": 1,
+            "type": {
+              "system": "http://eob.example/service",
+              "code": "service"
+            },
+            "provider": {
+              "reference": "http://here.com/Practitioner/example"
+            },
+            "service": {
+              "system": "http://hl7.org/fhir/ValueSet/service-uscls",
+              "code": "1200"
+            },
+            "servicedDate": "2014-08-16",
+            "unitPrice": {
+              "value": "135.57",
+              "system": "urn:iso:std:iso:4217",
+              "code": "USD"
+            },
+            "net": {
+              "value": "135.57",
+              "system": "urn:iso:std:iso:4217",
+              "code": "USD"
+            },
+            "adjudication": [
+              {
+                "category": {
+                  "system": "http://eob.example/adjudication-category",
+                  "code": "eligible"
+                },
+                "amount": {
+                  "value": "120.00",
+                  "system": "urn:iso:std:iso:4217",
+                  "code": "USD"
+                }
+              },
+              {
+                "category": {
+                  "system": "http://eob.example/adjudication-category",
+                  "code": "eligpercent"
+                },
+                "value": "0.80"
+              },
+              {
+                "category": {
+                  "system": "http://eob.example/adjudication-category",
+                  "code": "benefit"
+                },
+                "amount": {
+                  "value": "96.00",
+                  "system": "urn:iso:std:iso:4217",
+                  "code": "USD"
+                }
+              }
+            ]
+          }
+        ],
+        "claimTotal": {
+          "value": "135.57",
+          "system": "urn:iso:std:iso:4217",
+          "code": "USD"
+        },
+        "totalBenefit": {
+          "value": "96.00",
+          "system": "urn:iso:std:iso:4217",
+          "code": "USD"
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
+    }
+  ]
+}

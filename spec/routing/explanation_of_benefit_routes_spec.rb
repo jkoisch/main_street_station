@@ -19,8 +19,6 @@ describe 'FHIR ExplanationOfBenefit', type: :routing do
   end
 
   describe 'forbidden routes' do
-    # the following routes matches the show path, not testable
-    #specify { expect(get: '/FamilyHistory/new').not_to be_routable }
     specify { expect(get: '/fhir/ExplanationOfBenefits').not_to be_routable }
     specify { expect(get: '/fhir/explanationofbenefit').not_to be_routable }
     specify { expect(get: '/fhir/ExplanationOfBenefits/1').not_to be_routable }

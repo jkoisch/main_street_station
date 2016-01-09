@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Bundle xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="xxx"/>
+  </meta>
+  <type value="searchset"/>
+  <total value="2"/>
+  <entry>
+    <fullUrl value="http://mainstreet.youcentric.com/fhir/FamilyMemberHistory/3"/>
+    <resource>
+      <ExplanationOfBenefit xmlns="http://hl7.org/fhir">
+        <id value="3"/>
+        <identifier>
+          <system value="http://www.BenefitsInc.com/fhir/explanationofbenefit"/>
+          <value value="987654321"/>
+        </identifier>
+        <claim>
+          <reference value="http://here.com/Claim/100150"/>
+        </claim>
+        <claimResponse>
+          <reference value="http://here.com/ClaimResponse/R3500"/>
+        </claimResponse>
+        <created value="2014-08-16"/>
+        <disposition value="Claim settled as per contract."/>
+        <organization>
+          <reference value="Organization/2"/>
+        </organization>
+        <patient>
+          <reference value="Client/1001"/>
+        </patient>
+        <coverage>
+          <coverage>
+            <reference value="Coverage/9876B1"/>
+          </coverage>
+          <relationship>
+            <system value="http://eob.example/relate"/>
+            <code value="self"/>
+          </relationship>
+        </coverage>
+        <item>
+          <sequence value="1"/>
+          <type>
+            <system value="http://eob.example/service"/>
+            <code value="service"/>
+          </type>
+          <provider>
+            <reference value="http://here.com/Practitioner/example"/>
+          </provider>
+          <service>
+            <system value="http://hl7.org/fhir/ValueSet/service-uscls"/>
+            <code value="1200"/>
+          </service>
+          <servicedDate value="2014-08-16"/>
+          <unitPrice>
+            <value value="135.57"/>
+            <system value="urn:iso:std:iso:4217"/>
+            <code value="USD"/>
+          </unitPrice>
+          <net>
+            <value value="135.57"/>
+            <system value="urn:iso:std:iso:4217"/>
+            <code value="USD"/>
+          </net>
+          <adjudication>
+            <category>
+              <system value="http://eob.example/adjudication-category"/>
+              <code value="eligible"/>
+            </category>
+            <amount>
+              <value value="120.00"/>
+              <system value="urn:iso:std:iso:4217"/>
+              <code value="USD"/>
+            </amount>
+          </adjudication>
+        </item>
+        <claimTotal>
+          <value value="135.57"/>
+          <system value="urn:iso:std:iso:4217"/>
+          <code value="USD"/>
+        </claimTotal>
+        <totalBenefit>
+          <value value="96.00"/>
+          <system value="urn:iso:std:iso:4217"/>
+          <code value="USD"/>
+        </totalBenefit>
+      </ExplanationOfBenefit>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="http://mainstreet.youcentric.com/fhir/FamilyMemberHistory/EB3500"/>
+    <resource>
+      <ExplanationOfBenefit xmlns="http://hl7.org/fhir">
+        <id value="EB3500"/>
+        <identifier>
+          <system value="http://www.BenefitsInc.com/fhir/explanationofbenefit"/>
+          <value value="987654321"/>
+        </identifier>
+        <claim>
+          <reference value="http://here.com/Claim/100150"/>
+        </claim>
+        <claimResponse>
+          <reference value="http://here.com/ClaimResponse/R3500"/>
+        </claimResponse>
+        <created value="2014-08-16"/>
+        <disposition value="Claim settled as per contract."/>
+        <organization>
+          <reference value="Organization/2"/>
+        </organization>
+        <patient>
+          <reference value="Client/1001"/>
+        </patient>
+        <coverage>
+          <coverage>
+            <reference value="Coverage/9876B1"/>
+          </coverage>
+          <relationship>
+            <system value="http://eob.example/relate"/>
+            <code value="self"/>
+          </relationship>
+        </coverage>
+        <item>
+          <sequence value="1"/>
+          <type>
+            <system value="http://eob.example/service"/>
+            <code value="service"/>
+          </type>
+          <provider>
+            <reference value="http://here.com/Practitioner/example"/>
+          </provider>
+          <service>
+            <system value="http://hl7.org/fhir/ValueSet/service-uscls"/>
+            <code value="1200"/>
+          </service>
+          <servicedDate value="2014-08-16"/>
+          <unitPrice>
+            <value value="135.57"/>
+            <system value="urn:iso:std:iso:4217"/>
+            <code value="USD"/>
+          </unitPrice>
+          <net>
+            <value value="135.57"/>
+            <system value="urn:iso:std:iso:4217"/>
+            <code value="USD"/>
+          </net>
+          <adjudication>
+            <category>
+              <system value="http://eob.example/adjudication-category"/>
+              <code value="eligible"/>
+            </category>
+            <amount>
+              <value value="120.00"/>
+              <system value="urn:iso:std:iso:4217"/>
+              <code value="USD"/>
+            </amount>
+          </adjudication>
+          <adjudication>
+            <category>
+              <system value="http://eob.example/adjudication-category"/>
+              <code value="eligpercent"/>
+            </category>
+            <value value="0.80"/>
+          </adjudication>
+          <adjudication>
+            <category>
+              <system value="http://eob.example/adjudication-category"/>
+              <code value="benefit"/>
+            </category>
+            <amount>
+              <value value="96.00"/>
+              <system value="urn:iso:std:iso:4217"/>
+              <code value="USD"/>
+            </amount>
+          </adjudication>
+        </item>
+        <claimTotal>
+          <value value="135.57"/>
+          <system value="urn:iso:std:iso:4217"/>
+          <code value="USD"/>
+        </claimTotal>
+        <totalBenefit>
+          <value value="96.00"/>
+          <system value="urn:iso:std:iso:4217"/>
+          <code value="USD"/>
+        </totalBenefit>
+      </ExplanationOfBenefit>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+</Bundle>

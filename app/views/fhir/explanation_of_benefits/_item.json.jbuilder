@@ -58,5 +58,5 @@ json.modifier item.modifier do |modifier|
 end unless item.modifier.nil?
 
 json.adjudication item.adjudication do |adjudication|
-  json.partial! 'items/adjudication', adjudication: adjudication
+  json.partial! 'fhir/explanation_of_benefits/items/adjudication', adjudication: adjudication
 end unless item.adjudication.nil?

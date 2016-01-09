@@ -1,5 +1,5 @@
 --- !ruby/object:Fhir::ExplanationOfBenefit
-  id: "EB3500"
+  id: "3"
   identifier:
     - !ruby/object:Fhir::Types::Identifier
       system: http://www.BenefitsInc.com/fhir/explanationofbenefit
@@ -48,19 +48,6 @@
             code: 'eligible'
           amount: !ruby/object:Fhir::Types::Quantity
             value: '120.00'
-            system: 'urn:iso:std:iso:4217'
-            code: 'USD'
-        - !ruby/object:Fhir::ExplanationOfBenefitClasses::ItemClasses::Adjudication
-          category: !ruby/object:Fhir::Types::Coding
-            system: 'http://eob.example/adjudication-category'
-            code: 'eligpercent'
-          value: '0.80'
-        - !ruby/object:Fhir::ExplanationOfBenefitClasses::ItemClasses::Adjudication
-          category: !ruby/object:Fhir::Types::Coding
-            system: 'http://eob.example/adjudication-category'
-            code: 'benefit'
-          amount: !ruby/object:Fhir::Types::Quantity
-            value: '96.00'
             system: 'urn:iso:std:iso:4217'
             code: 'USD'
   claim_total: !ruby/object:Fhir::Types::Quantity
