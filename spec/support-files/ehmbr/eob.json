@@ -1,6 +1,6 @@
 {
   "resource_type": "ExplanationOfBenefit",
-  "id": "EB3500",
+  "id": "1",
   "text": {
     "status": "generated",
     "div": "<div>A human-readable rendering of the ExplanationOfBenefit</div>"
@@ -24,19 +24,32 @@
     "external": "http://here.com/ClaimResponse/R3500",
     "display": null
   },
+  "ruleset": null,
+  "original_ruleset": null,
   "created": "2014-08-16",
   "disposition": "Claim settled as per contract.",
+  "provider": null,
   "organization": {
     "local_type": "Organization",
     "local_id": "2",
     "display": null
   },
+  "facility": null,
+  "related_claim": [],
+  "prescription": null,
+  "original_prescription": null,
+  "payee": null,
+  "referral": null,
+  "diagnosis": [],
+  "special_condition": [],
   "patient": {
     "local_type": "Client",
     "local_id": "1001",
     "display": null
   },
+  "precedence": null,
   "coverage": {
+    "_id": "1",
     "coverage": {
       "local_type": "Coverage",
       "local_id": "9876B1",
@@ -48,10 +61,21 @@
       "version": null,
       "display": null,
       "user_selected": null
-    }
+    },
+    "pre_auth_ref": []
   },
+  "exception": [],
+  "school": null,
+  "accident_date": null,
+  "accident_type": null,
+  "accident_location": null,
+  "intervention_exception": [],
+  "onset": null,
+  "employment_impacted": null,
+  "hospitalization": null,
   "item": [
     {
+      "_id": "1",
       "sequence": 1,
       "type": {
         "system": "http://eob.example/service",
@@ -64,6 +88,7 @@
         "external": "http://here.com/Practitioner/example",
         "display": null
       },
+      "diagnosis_link_id": [],
       "service": {
         "system": "http://hl7.org/fhir/ValueSet/service-uscls",
         "code": "1200",
@@ -72,10 +97,11 @@
         "user_selected": null
       },
       "serviced": {
-        "_id": 1,
         "_type": "SimpleDate",
         "value": "2014-08-16"
       },
+      "place": null,
+      "quantity": null,
       "unit_price": {
         "value": 135.57,
         "comparator": null,
@@ -83,6 +109,8 @@
         "system": "urn:iso:std:iso:4217",
         "code": "USD"
       },
+      "factor": null,
+      "points": null,
       "net": {
         "value": 135.57,
         "comparator": null,
@@ -90,8 +118,14 @@
         "system": "urn:iso:std:iso:4217",
         "code": "USD"
       },
+      "udi": null,
+      "body_site": null,
+      "sub_site": [],
+      "modifier": [],
+      "note_number": [],
       "adjudication": [
         {
+          "_id": "1",
           "category": {
             "system": "http://eob.example/adjudication-category",
             "code": "eligible",
@@ -99,13 +133,18 @@
             "display": null,
             "user_selected": null
           },
+          "reason": null,
           "amount": {
-            "value": 120.00,
+            "value": 135.57,
+            "comparator": null,
+            "unit": null,
             "system": "urn:iso:std:iso:4217",
             "code": "USD"
-          }
+          },
+          "value": null
         },
         {
+          "_id": "1",
           "category": {
             "system": "http://eob.example/adjudication-category",
             "code": "eligpercent",
@@ -113,9 +152,12 @@
             "display": null,
             "user_selected": null
           },
+          "reason": null,
+          "amount": null,
           "value": 0.80
         },
         {
+          "_id": "1",
           "category": {
             "system": "http://eob.example/adjudication-category",
             "code": "benefit",
@@ -123,15 +165,19 @@
             "display": null,
             "user_selected": null
           },
+          "reason": null,
           "amount": {
             "value": 96.00,
             "comparator": null,
             "unit": null,
             "system": "urn:iso:std:iso:4217",
             "code": "USD"
-          }
+          },
+          "value": null
         }
-      ]
+      ],
+      "detail": [],
+      "prosthesis": null
     }
   ],
   "claim_total": {
@@ -141,11 +187,22 @@
     "system": "urn:iso:std:iso:4217",
     "code": "USD"
   },
+  "missing_teeth": [],
+  "unalloc_deductible": null,
   "total_benefit": {
     "value": 96.00,
     "comparator": null,
     "unit": null,
     "system": "urn:iso:std:iso:4217",
     "code": "USD"
-  }
+  },
+  "payment_adjustment": null,
+  "payment_adjustment_reason": null,
+  "payment_date": null,
+  "payment_amount": null,
+  "payment_ref": null,
+  "reserved": null,
+  "form": null,
+  "note": [],
+  "benefit_balance": []
 }
