@@ -1,0 +1,56 @@
+{
+  "sequence": "1",
+  "type": {
+    "system": "http://eob.example/service",
+    "code": "service"
+  },
+  "provider": {
+    "reference": "http://here.com/Practitioner/example"
+  },
+  "service": {
+    "system": "http://hl7.org/fhir/ValueSet/service-uscls",
+    "code": "1200"
+  },
+  "servicedDate": "2014-08-16",
+  "unitPrice": {
+    "value": "135.57",
+    "system": "urn:iso:std:iso:4217",
+    "code": "USD"
+  },
+  "net": {
+    "value": "135.57",
+    "system": "urn:iso:std:iso:4217",
+    "code": "USD"
+  },
+  "adjudication": [
+    {
+      "category": {
+        "system": "http://eob.example/adjudication-category",
+        "code": "eligible"
+      },
+      "amount": {
+        "value": "120.00",
+        "system": "urn:iso:std:iso:4217",
+        "code": "USD"
+      }
+    },
+    {
+      "category": {
+        "system": "http://eob.example/adjudication-category",
+        "code": "eligpercent"
+      },
+      "value": "0.80"
+    },
+    {
+      "category": {
+        "system": "http://eob.example/adjudication-category",
+        "code": "benefit"
+      },
+      "amount": {
+        "value": "96.00",
+        "system": "urn:iso:std:iso:4217",
+        "code": "USD"
+      }
+    }
+  ]
+}
