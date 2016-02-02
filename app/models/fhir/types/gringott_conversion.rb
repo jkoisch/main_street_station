@@ -6,6 +6,7 @@ module Fhir
           when /client/i then 'Patient'
           when /provider/i then 'Practitioner'
           when /familyhistory/i then 'FamilyMemberHistory'
+          when /eob/i then 'ExplanationOfBenefit'
           else
             gringott_type
         end
@@ -16,6 +17,7 @@ module Fhir
           when /patient/i then 'Client'
           when /practitioner/i then 'Provider'
           when /familymemberhistory/i then 'FamilyHistory'
+          when /explanationofbenefit/i then 'EOB'
           else
             if fhir_type
               fhir_type.capitalize

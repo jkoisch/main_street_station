@@ -4,7 +4,8 @@ module Fhir
   module Types
     CONVERSION_NAMES = {'Patient'      => 'Client',
                         'Practitioner' => 'Provider',
-                        'FamilyMemberHistory' => 'FamilyHistory'}
+                        'FamilyMemberHistory' => 'FamilyHistory',
+                        'ExplanationOfBenefit' => 'EOB'}
   end
 end
 

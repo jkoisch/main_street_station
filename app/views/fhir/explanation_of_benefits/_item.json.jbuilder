@@ -8,9 +8,7 @@ json.provider do
   json.partial! 'fhir/base/reference', reference: item.provider
 end unless item.provider.nil?
 
-json.diagnosisLinkId item.diagnosis_link_id do |diagnosis_link_id|
-  diagnosis_link_id
-end unless item.diagnosis_link_id.nil?
+json.diagnosisLinkId item.diagnosis_link_id unless item.diagnosis_link_id.nil?
 
 json.service do
   json.partial! 'fhir/base/coding', coding: item.service
@@ -57,6 +55,16 @@ json.modifier item.modifier do |modifier|
   json.partial! 'fhir/base/coding', coding: modifier
 end unless item.modifier.nil?
 
+json.noteNumber item.note_number unless item.note_number.nil?
+
 json.adjudication item.adjudication do |adjudication|
-  json.partial! 'fhir/explanation_of_benefits/items/adjudication', adjudication: adjudication
+  json.partial! 'fhir/explanation_of_benefits/adjudication', adjudication: adjudication
 end unless item.adjudication.nil?
+
+json.detail item.detail do |detail|
+  json.partial! 'item_detail', item_detail: detail
+end unless item.detail.nil?
+
+json.prosthesis do
+  json.partial! 'fhir/explanation_of_benefits/items/prosthesis', prosthesis: item.prosthesis
+end unless item.prosthesis.nil?

@@ -2,7 +2,7 @@ require 'net/http'
 
 module Fhir
   class ExplanationOfBenefitsController < FhirController
-    RESOURCE = 'explanation_of_benefit'
+    RESOURCE = 'eob'
 
     def index
       response = get_gringotts_resources(RESOURCE, build_search_params(params))
@@ -28,7 +28,7 @@ module Fhir
     def build_search_params(params)
       supported_params = { patient:  Fhir::ReferenceParameter,
                            created: Fhir::DateParameter
-                         }
+      }
 
       populate_search_parameters(supported_params, params)
     end

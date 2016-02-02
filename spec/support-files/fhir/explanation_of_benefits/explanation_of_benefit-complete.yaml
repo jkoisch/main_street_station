@@ -20,6 +20,46 @@
     relationship: !ruby/object:Fhir::Types::Coding
       system: 'http://eob.example/relate'
       code: 'self'
+  exception:
+    - !ruby/object:Fhir::Types::Coding
+      system: 'http://goback.com/fhir/'
+      display: some exception
+  school: MCV
+  accident_date: '2016-02-05'
+  accident_type: !ruby/object:Fhir::Types::Coding
+    system: "http://hl7.org/fhir/ValueSet/v3-ActIncidentCode"
+    version: '2014-03-26'
+  accident_location: !ruby/object:Fhir::Types::Address
+    use: home
+    line:
+      - 534 Erewhon St
+    city: PleasantVille
+    state: Vic
+    postal_code: 3999
+  accident_location_address: !ruby/object:Fhir::Types::Address
+    use: home
+    line:
+     - 534 Erewhon St
+    city: PleasantVille
+    state: Vic
+    postal_code: 3999
+  intervention_exception:
+    - !ruby/object:Fhir::Types::Coding
+      system: "http://hl7.org/fhir/StructureDefinition/valueset-oid"
+      version: 1.3.0
+      display: other
+  onset: !ruby/object:Fhir::Types::Period
+    start: '2015-10-22'
+    end: '2015-11-03'
+  onset_period: !ruby/object:Fhir::Types::Period
+    start: '2015-10-22'
+    end: '2015-11-03'
+  employment_impacted: !ruby/object:Fhir::Types::Period
+    start: '2015-10-22'
+    end: '2015-11-03'
+  hospitalization: !ruby/object:Fhir::Types::Period
+    start: '2015-10-22'
+    end: '2015-11-01'
   item:
     - !ruby/object:Fhir::ExplanationOfBenefitClasses::Item
       sequence: 1
@@ -42,7 +82,7 @@
         system: 'urn:iso:std:iso:4217'
         code: 'USD'
       adjudication:
-        - !ruby/object:Fhir::ExplanationOfBenefitClasses::ItemClasses::Adjudication
+        - !ruby/object:Fhir::ExplanationOfBenefitClasses::Adjudication
           category: !ruby/object:Fhir::Types::Coding
             system: 'http://eob.example/adjudication-category'
             code: 'eligible'
@@ -50,12 +90,12 @@
             value: '120.00'
             system: 'urn:iso:std:iso:4217'
             code: 'USD'
-        - !ruby/object:Fhir::ExplanationOfBenefitClasses::ItemClasses::Adjudication
+        - !ruby/object:Fhir::ExplanationOfBenefitClasses::Adjudication
           category: !ruby/object:Fhir::Types::Coding
             system: 'http://eob.example/adjudication-category'
             code: 'eligpercent'
-          value: '0.80'
-        - !ruby/object:Fhir::ExplanationOfBenefitClasses::ItemClasses::Adjudication
+            display: '0.80'
+        - !ruby/object:Fhir::ExplanationOfBenefitClasses::Adjudication
           category: !ruby/object:Fhir::Types::Coding
             system: 'http://eob.example/adjudication-category'
             code: 'benefit'
@@ -63,11 +103,143 @@
             value: '96.00'
             system: 'urn:iso:std:iso:4217'
             code: 'USD'
+  add_item:
+    - !ruby/object:Fhir::ExplanationOfBenefitClasses::AddItem
+      sequence_link_id:
+       -  '10'
+      service: !ruby/object:Fhir::Types::Coding
+        system: "http://hl7.org/fhir/ValueSet/service-uscls"
+        code: '1102'
+        display: Exam, comp, mixed
+      fee: !ruby/object:Fhir::Types::Quantity
+        value: '289.93'
+        system: 'urn:iso:std:iso:4217'
+        code: 'USD'
+      note_number_link_id:
+        - '32'
+        - '14'
+      adjudication:
+        - !ruby/object:Fhir::ExplanationOfBenefitClasses::Adjudication
+          category: !ruby/object:Fhir::Types::Coding
+            system: 'http://eob.example/adjudication-category'
+            code: 'benefit'
+          amount: !ruby/object:Fhir::Types::Quantity
+            value: '96.00'
+            system: 'urn:iso:std:iso:4217'
+            code: 'USD'
+      detail:
+        - !ruby/object:Fhir::ExplanationOfBenefitClasses::AddDetail
+          service: !ruby/object:Fhir::Types::Coding
+            system: "http://hl7.org/fhir/ValueSet/service-uscls"
+            code: '11104'
+            display: Polishing, 4 unit
+          fee: !ruby/object:Fhir::Types::Quantity
+            value: '289.93'
+            system: 'urn:iso:std:iso:4217'
+            code: 'USD'
+          adjudication:
+            - !ruby/object:Fhir::ExplanationOfBenefitClasses::Adjudication
+              category: !ruby/object:Fhir::Types::Coding
+                system: 'http://eob.example/adjudication-category'
+                code: 'benefit'
+              amount: !ruby/object:Fhir::Types::Quantity
+                value: '96.00'
+                system: 'urn:iso:std:iso:4217'
+                code: 'USD'
   claim_total: !ruby/object:Fhir::Types::Quantity
     value: '135.57'
     system: 'urn:iso:std:iso:4217'
     code: 'USD'
-  total_benefit: !ruby/object:Fhir::Types::Quantity
-    value: '96.00'
+  missing_teeth:
+    - !ruby/object:Fhir::ExplanationOfBenefitClasses::MissingTeeth
+      tooth: !ruby/object:Fhir::Types::Coding
+        system: "http://hl7.org/fhir/StructureDefinition/valueset-oid"
+        version: '1.3.0'
+        code: '11'
+        display: '11'
+  unalloc_deductible: !ruby/object:Fhir::Types::Quantity
+    value: '2016.12'
     system: 'urn:iso:std:iso:4217'
-    code: 'USD'
+    code: USD
+  total_benefit: !ruby/object:Fhir::Types::Quantity
+    value: '200.00'
+    system: 'urn:iso:std:iso:4217'
+    code: USD
+  payment_adjustment: !ruby/object:Fhir::Types::Quantity
+    value: '54.38'
+    system: 'urn:iso:std:iso:4217'
+    code: USD
+  payment_adjustment_reason: !ruby/object:Fhir::Types::Coding
+    system: "http://hl7.org/fhir/ValueSet/payment-adjustment-reason"
+    code: 'a001'
+  payment_date: '2016-01-23'
+  payment_amount:  !ruby/object:Fhir::Types::Quantity
+    value: '327.93'
+    system: 'urn:iso:std:iso:4217'
+    code: USD
+  payment_ref: !ruby/object:Fhir::Types::Identifier
+    system: "http://www.acmehosp.com/claim"
+    value: '44552'
+  reserved: !ruby/object:Fhir::Types::Coding
+    system: "http://hl7.org/fhir/ValueSet/fundsreserve"
+    code: "provider"
+  form: !ruby/object:Fhir::Types::Coding
+    system: "http://hl7.org/fhir/ValueSet/forms"
+    code: "1"
+  note:
+    - !ruby/object:Fhir::ExplanationOfBenefitClasses::Note
+      number: '299'
+      type: !ruby/object:Fhir::Types::Coding
+        system: "http://hl7.org/fhir/ValueSet/note-type"
+        code: 'print'
+        display: 'Print the note on the form'
+      text: "Contact EODMA for referral"
+  benefit_balance:
+    - !ruby/object:Fhir::ExplanationOfBenefitClasses::BenefitBalance
+      category: !ruby/object:Fhir::Types::Coding
+        system: "http://hl7.org/fhir/ValueSet/benefit-category"
+        code: "oral"
+        display: "Dental and Oral Health Coverage"
+      sub_category: !ruby/object:Fhir::Types::Coding
+        system: "http://hl7.org/fhir/ValueSet/benefit-subcategory"
+        code: "oral-basic"
+        display: "Dental: Basic Coverage"
+      network: !ruby/object:Fhir::Types::Coding
+        system: "http://hl7.org/fhir/ValueSet/benefit-network"
+        code: "in"
+        display: "In Network"
+      unit: !ruby/object:Fhir::Types::Coding
+        system: "http://hl7.org/fhir/ValueSet/benefit-unit"
+        code: "individual"
+        display: "Individual"
+      term: !ruby/object:Fhir::Types::Coding
+        system: "http://hl7.org/fhir/ValueSet/benefit-term"
+        code: "annual"
+        display: "Annual"
+      financial:
+        - !ruby/object:Fhir::ExplanationOfBenefitClasses::BenefitBalanceClasses::Financial
+          type: !ruby/object:Fhir::Types::Coding
+            system: "http://hl7.org/fhir/ValueSet/benefit-type"
+            code: "visit"
+            display: "Visit"
+          benefit: !ruby/object:Fhir::Types::Quantity
+            value: '99.38'
+            system: 'urn:iso:std:iso:4217'
+            code: USD
+          benefit_quantity: !ruby/object:Fhir::Types::Quantity
+            value: '99.38'
+            system: 'urn:iso:std:iso:4217'
+            code: USD
+          benefit_used: !ruby/object:Fhir::Types::Quantity
+            value: '56.29'
+            system: 'urn:iso:std:iso:4217'
+            code: USD
+          benefit_used_quantity: !ruby/object:Fhir::Types::Quantity
+            value: '56.29'
+            system: 'urn:iso:std:iso:4217'
+            code: USD
+
+
+
+
+

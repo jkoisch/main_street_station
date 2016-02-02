@@ -4,7 +4,7 @@ module Fhir
       fhir_attribute :sequence
       fhir_attribute :type, type: Fhir::Types::Coding
       fhir_attribute :provider, type: Fhir::Types::Reference
-      fhir_attribute :diagnosis_link_id, list: Fhir::Types::SimpleInteger
+      fhir_attribute :diagnosis_link_id, array: true
       fhir_attribute :service, type: Fhir::Types::Coding
       fhir_attribute :serviced, type_list: [Types::SimpleDate, Types::Period]
       fhir_attribute :place, type: Fhir::Types::Coding
@@ -17,8 +17,10 @@ module Fhir
       fhir_attribute :body_site, type: Fhir::Types::Coding
       fhir_attribute :sub_site, list: Fhir::Types::Coding
       fhir_attribute :modifier, list: Fhir::Types::Coding
-      fhir_attribute :note_number, list: Fhir::Types::SimpleInteger
-      fhir_attribute :adjudication, list: Fhir::ExplanationOfBenefitClasses::ItemClasses::Adjudication
+      fhir_attribute :note_number, array: true
+      fhir_attribute :adjudication, list: Fhir::ExplanationOfBenefitClasses::Adjudication
+      fhir_attribute :detail, list: Fhir::ExplanationOfBenefitClasses::ItemDetail
+      fhir_attribute :prosthesis, type: Fhir::ExplanationOfBenefitClasses::ItemClasses::Prosthesis
     end
   end
 end

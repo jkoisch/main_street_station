@@ -49,7 +49,7 @@
   },
   "precedence": null,
   "coverage": {
-    "_id": "1",
+    "id": 1,
     "coverage": {
       "local_type": "Coverage",
       "local_id": "9876B1",
@@ -75,7 +75,7 @@
   "hospitalization": null,
   "item": [
     {
-      "_id": "1",
+      "id": 1,
       "sequence": 1,
       "type": {
         "system": "http://eob.example/service",
@@ -125,7 +125,7 @@
       "note_number": [],
       "adjudication": [
         {
-          "_id": "1",
+          "id": "1",
           "category": {
             "system": "http://eob.example/adjudication-category",
             "code": "eligible",
@@ -144,7 +144,7 @@
           "value": null
         },
         {
-          "_id": "1",
+          "id": "1",
           "category": {
             "system": "http://eob.example/adjudication-category",
             "code": "eligpercent",
@@ -157,7 +157,7 @@
           "value": 0.80
         },
         {
-          "_id": "1",
+          "id": "1",
           "category": {
             "system": "http://eob.example/adjudication-category",
             "code": "benefit",

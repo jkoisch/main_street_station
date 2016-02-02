@@ -19,7 +19,7 @@
     system: 'urn:iso:std:iso:4217'
     code: 'USD'
   adjudication:
-    - !ruby/object:Fhir::ExplanationOfBenefitClasses::ItemClasses::Adjudication
+    - !ruby/object:Fhir::ExplanationOfBenefitClasses::Adjudication
       category: !ruby/object:Fhir::Types::Coding
         system: 'http://eob.example/adjudication-category'
         code: 'eligible'

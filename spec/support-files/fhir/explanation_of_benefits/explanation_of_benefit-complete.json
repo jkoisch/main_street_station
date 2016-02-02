@@ -30,6 +30,44 @@
       "code": "self"
     }
   },
+  "exception": [
+    {
+      "system": "http://goback.com/fhir/",
+      "display": "some exception"
+    }
+  ],
+  "school": "MCV",
+  "accidentDate": "2016-02-05",
+  "accidentType": {
+    "system": "http://hl7.org/fhir/ValueSet/v3-ActIncidentCode",
+    "version": "2014-03-26"
+  },
+  "accidentLocationAddress": {
+    "use":"home",
+    "line":[ "534 Erewhon St" ],
+    "city":"PleasantVille",
+    "state":"Vic",
+    "postalCode":"3999"
+  },
+  "interventionException": [
+    {
+      "system": "http://hl7.org/fhir/StructureDefinition/valueset-oid",
+      "version": "1.3.0",
+      "display": "other"
+    }
+  ],
+  "onsetPeriod": {
+    "start": "2015-10-22",
+    "end": "2015-11-03"
+  },
+  "employmentImpacted": {
+    "start": "2015-10-22",
+    "end": "2015-11-03"
+  },
+  "hospitalization": {
+    "start": "2015-10-22",
+    "end": "2015-11-01"
+  },
   "item": [
     {
       "sequence": 1,
@@ -70,9 +108,9 @@
         {
           "category": {
             "system": "http://eob.example/adjudication-category",
-            "code": "eligpercent"
-          },
-          "value": "0.80"
+            "code": "eligpercent",
+            "display": "0.80"
+          }
         },
         {
           "category": {
@@ -88,14 +126,171 @@
       ]
     }
   ],
+  "addItem": [
+    {
+      "sequenceLinkId": ["10"],
+      "service": {
+        "system": "http://hl7.org/fhir/ValueSet/service-uscls",
+        "code": "1102",
+        "display": "Exam, comp, mixed"
+      },
+      "fee": {
+        "value": "289.93",
+        "system": "urn:iso:std:iso:4217",
+        "code": "USD"
+      },
+      "noteNumberLinkId": ["32", "14"],
+      "adjudication": [
+        {
+          "category": {
+            "system": "http://eob.example/adjudication-category",
+            "code": "benefit"
+          },
+          "amount": {
+            "value": "96.00",
+            "system": "urn:iso:std:iso:4217",
+            "code": "USD"
+          }
+        }
+      ],
+      "detail": [
+        {
+          "service": {
+            "system": "http://hl7.org/fhir/ValueSet/service-uscls",
+            "code": "11104",
+            "display": "Polishing, 4 unit"
+          },
+          "fee": {
+            "value": "289.93",
+            "system": "urn:iso:std:iso:4217",
+            "code": "USD"
+          },
+          "adjudication": [
+            {
+              "category": {
+                "system": "http://eob.example/adjudication-category",
+                "code": "benefit"
+              },
+              "amount": {
+                "value": "96.00",
+                "system": "urn:iso:std:iso:4217",
+                "code": "USD"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "claimTotal": {
     "value": "135.57",
     "system": "urn:iso:std:iso:4217",
     "code": "USD"
   },
-  "totalBenefit": {
-    "value": "96.00",
+  "missingTeeth": [
+    {
+      "tooth": {
+        "system": "http://hl7.org/fhir/StructureDefinition/valueset-oid",
+        "version": "1.3.0",
+        "code": "11",
+        "display": "11"
+      }
+    }
+  ],
+  "unallocDeductible": {
+    "value": "2016.12",
     "system": "urn:iso:std:iso:4217",
     "code": "USD"
-  }
+  },
+  "totalBenefit": {
+    "value": "200.00",
+    "system": "urn:iso:std:iso:4217",
+    "code": "USD"
+  },
+  "paymentAdjustment": {
+    "value": "54.38",
+    "system": "urn:iso:std:iso:4217",
+    "code": "USD"
+  },
+  "paymentAdjustmentReason": {
+    "system": "http://hl7.org/fhir/ValueSet/payment-adjustment-reason",
+    "code": "a001"
+  },
+  "paymentDate": "2016-01-23",
+  "paymentAmount": {
+    "value": "327.93",
+    "system": "urn:iso:std:iso:4217",
+    "code": "USD"
+  },
+  "paymentRef": {
+    "system": "http://www.acmehosp.com/claim",
+    "value": "44552"
+  },
+  "reserved": {
+    "system": "http://hl7.org/fhir/ValueSet/fundsreserve",
+    "code": "provider"
+  },
+  "form": {
+    "system": "http://hl7.org/fhir/ValueSet/forms",
+    "code": "1"
+  },
+  "note": [
+    {
+      "number": "299",
+      "type": {
+        "system": "http://hl7.org/fhir/ValueSet/note-type",
+        "code": "print",
+        "display": "Print the note on the form"
+      },
+      "text": "Contact EODMA for referral"
+    }
+  ],
+  "benefitBalance": [
+    {
+      "category": {
+        "system": "http://hl7.org/fhir/ValueSet/benefit-category",
+        "code": "oral",
+        "display": "Dental and Oral Health Coverage"
+      },
+      "subCategory": {
+        "system": "http://hl7.org/fhir/ValueSet/benefit-subcategory",
+        "code": "oral-basic",
+        "display": "Dental: Basic Coverage"
+      },
+      "network": {
+        "system": "http://hl7.org/fhir/ValueSet/benefit-network",
+        "code": "in",
+        "display": "In Network"
+      },
+      "unit": {
+        "system": "http://hl7.org/fhir/ValueSet/benefit-unit",
+        "code": "individual",
+        "display": "Individual"
+      },
+      "term": {
+        "system": "http://hl7.org/fhir/ValueSet/benefit-term",
+        "code": "annual",
+        "display": "Annual"
+      },
+      "financial": [
+        {
+          "type": {
+            "system": "http://hl7.org/fhir/ValueSet/benefit-type",
+            "code": "visit",
+            "display": "Visit"
+          },
+          "benefitQuantity": {
+            "value": "99.38",
+            "system": "urn:iso:std:iso:4217",
+            "code": "USD"
+          },
+          "benefitUsedQuantity": {
+            "value": "56.29",
+            "system": "urn:iso:std:iso:4217",
+            "code": "USD"
+          }
+        }
+      ]
+    }
+  ]
 }
