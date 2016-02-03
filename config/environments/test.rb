@@ -41,11 +41,11 @@ MainStreetStation::Application.configure do
   config.gringotts_coverage = Rails.root + 'spec/support-files/ehmbr/coverage.json'
   config.gringotts_device = Rails.root + 'spec/support-files/ehmbr/device.json'
   config.gringotts_eob = Rails.root + 'spec/support-files/ehmbr/eob.json'
-  config.gringotts_family_member_history = Rails.root + 'spec/support-files/ehmbr/family-history.json'
+  config.gringotts_family_history = Rails.root + 'spec/support-files/ehmbr/family-history.json'
   config.gringotts_location = Rails.root + 'spec/support-files/ehmbr/location.json'
   config.gringotts_observation = Rails.root + 'spec/support-files/ehmbr/observation.json'
   config.gringotts_organization = Rails.root + 'spec/support-files/ehmbr/organization.json'
-  config.gringotts_practitioner = Rails.root + 'spec/support-files/ehmbr/provider.json'
+  config.gringotts_provider = Rails.root + 'spec/support-files/ehmbr/provider.json'
   config.gringotts_questionnaire = Rails.root + 'spec/support-files/ehmbr/questionnaire.json'
 
   config.fhir_enforce_security = false

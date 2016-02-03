@@ -2,7 +2,7 @@ require 'net/http'
 
 module Fhir
   class PractitionersController < FhirController
-    RESOURCE = 'practitioner'
+    RESOURCE = 'provider'
 
     def index
       response = get_gringotts_resources(RESOURCE, build_search_params(params))

@@ -20,7 +20,7 @@ describe Fhir::FamilyMemberHistoriesController, type: :controller do
     it 'performs a family member history search for matching patient' do
       stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
       get :index, {format: :json, 'patient' => '23'}
-      expect(a_request(:get, 'gringotts.dev/family_member_histories').
+      expect(a_request(:get, 'gringotts.dev/family_histories').
                  with(:query => hash_including({'query' => {'patient' => {'value' => '23'}}}))).to have_been_made
     end
 

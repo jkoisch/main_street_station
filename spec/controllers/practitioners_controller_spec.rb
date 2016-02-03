@@ -20,7 +20,7 @@ let(:json_headers) { { Accept: 'application/json', Content-Type => 'application/
     it 'performs a practitioner search for matching address' do
       stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
       get :index, {format: :json, address: 'Galapagosweg 91'}
-      expect(a_request(:get, 'gringotts.dev/practitioners').
+      expect(a_request(:get, 'gringotts.dev/providers').
                  with(:query => hash_including({'query' => {'address' => {'value' => 'Galapagosweg 91'}}}))).to have_been_made
     end
 
@@ -28,7 +28,7 @@ let(:json_headers) { { Accept: 'application/json', Content-Type => 'application/
       #pending 'awaiting final param parsing'
       stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
       get :index, {format: :json, communication: 'urn:oid:2.16.840.1.113883.6.121'}
-      expect(a_request(:get, 'gringotts.dev/practitioners').
+      expect(a_request(:get, 'gringotts.dev/providers').
                  with(:query => hash_including({'query' => {'communication' => {'code' => 'urn:oid:2.16.840.1.113883.6.121'}}}))).to have_been_made
     end
 
@@ -36,7 +36,7 @@ let(:json_headers) { { Accept: 'application/json', Content-Type => 'application/
       #pending 'awaiting final param parsing'
       stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
       get :index, {format: :json, identifier: '938273695'}
-      expect(a_request(:get, 'gringotts.dev/practitioners').
+      expect(a_request(:get, 'gringotts.dev/providers').
                  with(:query => hash_including({'query' => {'identifier' => {'code' => '938273695'}}}))).to have_been_made
     end
 

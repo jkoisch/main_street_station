@@ -2,7 +2,7 @@ require 'net/http'
 
 module Fhir
   class FamilyMemberHistoriesController < FhirController
-    RESOURCE = 'family_member_history'
+    RESOURCE = 'family_history'
 
     def index
       response = get_gringotts_resources(RESOURCE, build_search_params(params))
