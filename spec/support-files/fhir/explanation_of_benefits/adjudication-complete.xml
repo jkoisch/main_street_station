@@ -1,0 +1,16 @@
+<adjudication>
+  <category>
+    <system value="http://eob.example/adjudication-category"/>
+    <code value="eligible"/>
+  </category>
+  <reason>
+    <system value="http://hl7.org/fhir/adjudication-reason"/>
+    <code value="Not covered"/>
+  </reason>
+  <amount>
+    <value value="120.00"/>
+    <system value="urn:iso:std:iso:4217"/>
+    <code value="USD"/>
+  </amount>
+  <value value="67.898"/>
+</adjudication>

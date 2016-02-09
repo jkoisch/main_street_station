@@ -11,9 +11,9 @@ end unless add_item.fee.nil?
 json.noteNumberLinkId add_item.note_number_link_id unless add_item.note_number_link_id.nil?
 
 json.adjudication add_item.adjudication do |adjudication|
-  json.partial! 'adjudication', adjudication: adjudication
+  json.partial! 'fhir/explanation_of_benefits/adjudication', adjudication: adjudication
 end unless add_item.adjudication.nil?
 
 json.detail add_item.detail do |detail|
-  json.partial! 'add_detail', add_detail: detail
+  json.partial! 'fhir/explanation_of_benefits/add_detail', add_detail: detail
 end unless add_item.detail.nil?

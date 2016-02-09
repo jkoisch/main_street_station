@@ -1,0 +1,54 @@
+{
+  "sequenceLinkId": ["10"],
+  "service": {
+    "system": "http://hl7.org/fhir/ValueSet/service-uscls",
+    "code": "1102",
+    "display": "Exam, comp, mixed"
+  },
+  "fee": {
+    "value": "289.93",
+    "system": "urn:iso:std:iso:4217",
+    "code": "USD"
+  },
+  "noteNumberLinkId": ["32", "14"],
+  "adjudication": [
+    {
+      "category": {
+        "system": "http://eob.example/adjudication-category",
+        "code": "benefit"
+      },
+      "amount": {
+        "value": "96.00",
+        "system": "urn:iso:std:iso:4217",
+        "code": "USD"
+      }
+    }
+  ],
+  "detail": [
+    {
+      "service": {
+        "system": "http://hl7.org/fhir/ValueSet/service-uscls",
+        "code": "11104",
+        "display": "Polishing, 4 unit"
+      },
+      "fee": {
+        "value": "289.93",
+        "system": "urn:iso:std:iso:4217",
+        "code": "USD"
+      },
+      "adjudication": [
+        {
+          "category": {
+            "system": "http://eob.example/adjudication-category",
+            "code": "benefit"
+          },
+          "amount": {
+            "value": "96.00",
+            "system": "urn:iso:std:iso:4217",
+            "code": "USD"
+          }
+        }
+      ]
+    }
+  ]
+}

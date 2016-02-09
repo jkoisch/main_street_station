@@ -1,0 +1,12 @@
+--- !ruby/object:Fhir::ExplanationOfBenefitClasses::Adjudication
+  category: !ruby/object:Fhir::Types::Coding
+    system: 'http://eob.example/adjudication-category'
+    code: 'eligible'
+  reason: !ruby/object:Fhir::Types::Coding
+    system: 'http://hl7.org/fhir/adjudication-reason'
+    code: 'Not covered'
+  amount: !ruby/object:Fhir::Types::Quantity
+    value: '120.00'
+    system: 'urn:iso:std:iso:4217'
+    code: 'USD'
+  value: '67.898'

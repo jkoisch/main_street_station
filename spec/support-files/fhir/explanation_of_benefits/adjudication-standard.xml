@@ -1,0 +1,11 @@
+<adjudication>
+  <category>
+    <system value="http://eob.example/adjudication-category"/>
+    <code value="eligible"/>
+  </category>
+  <amount>
+    <value value="120.00"/>
+    <system value="urn:iso:std:iso:4217"/>
+    <code value="USD"/>
+  </amount>
+</adjudication>

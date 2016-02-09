@@ -1,0 +1,44 @@
+<benefit_balance>
+  <category>
+    <system value="http://hl7.org/fhir/ValueSet/benefit-category"/>
+    <code value="oral"/>
+    <display value="Dental and Oral Health Coverage"/>
+  </category>
+  <subCategory>
+    <system value="http://hl7.org/fhir/ValueSet/benefit-subcategory"/>
+    <code value="oral-basic"/>
+    <display value="Dental: Basic Coverage"/>
+  </subCategory>
+  <network>
+    <system value="http://hl7.org/fhir/ValueSet/benefit-network"/>
+    <code value="in"/>
+    <display value="In Network"/>
+  </network>
+  <unit>
+    <system value="http://hl7.org/fhir/ValueSet/benefit-unit"/>
+    <code value="individual"/>
+    <display value="Individual"/>
+  </unit>
+  <term>
+    <system value="http://hl7.org/fhir/ValueSet/benefit-term"/>
+    <code value="annual"/>
+    <display value="Annual"/>
+  </term>
+  <financial>
+    <type>
+      <system value="http://hl7.org/fhir/ValueSet/benefit-type"/>
+      <code value="visit"/>
+      <display value="Visit"/>
+    </type>
+    <benefitQuantity>
+      <value value="99.38"/>
+      <system value="urn:iso:std:iso:4217"/>
+      <code value="USD"/>
+    </benefitQuantity>
+    <benefitUsedQuantity>
+      <value value="56.29"/>
+      <system value="urn:iso:std:iso:4217"/>
+      <code value="USD"/>
+    </benefitUsedQuantity>
+  </financial>
+</benefit_balance>

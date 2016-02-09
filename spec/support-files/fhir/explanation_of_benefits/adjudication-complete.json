@@ -1,0 +1,16 @@
+{
+  "category": {
+    "system": "http://eob.example/adjudication-category",
+    "code": "eligible"
+  },
+  "reason": {
+    "system": "http://hl7.org/fhir/adjudication-reason",
+    "code": "Not covered"
+  },
+  "amount": {
+    "value": "120.00",
+    "system": "urn:iso:std:iso:4217",
+    "code": "USD"
+  },
+  "value": "67.898"
+}
