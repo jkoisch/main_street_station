@@ -1,0 +1,66 @@
+{
+  "sequence": "1",
+  "type": {
+    "system": "http://hl7.org/fhir/v3/ActCode",
+    "code": "_ActInvoiceGroupCode"
+  },
+  "service": {
+    "system": "http://hl7.org/fhir/ex-USCLS",
+    "code": "1101",
+    "display": "Exam, comp, primary"
+  },
+  "quantity": {
+    "value": "120.00",
+    "system": "urn:iso:std:iso:4217",
+    "code": "USD"
+  },
+  "unitPrice": {
+    "value": "120.00",
+    "system": "urn:iso:std:iso:4217",
+    "code": "USD"
+  },
+  "factor": "0.5",
+  "points": "1.0",
+  "net": {
+    "value": "120.00",
+    "system": "urn:iso:std:iso:4217",
+    "code": "USD"
+  },
+  "udi": {
+    "system": "http://hl7.org/fhir/ex-udi",
+    "code": "gudid",
+    "display": "GUDID (FDA)"
+  },
+  "adjudication": [
+      {
+      "category": {
+        "system": "http://eob.example/adjudication-category",
+        "code": "eligible"
+      },
+      "reason": {
+        "system": "http://hl7.org/fhir/adjudication-reason",
+        "code": "Not covered"
+      },
+      "amount": {
+        "value": "120.00",
+        "system": "urn:iso:std:iso:4217",
+        "code": "USD"
+      },
+      "value": "67.898"
+    }
+  ],
+  "subDetail": [
+    {
+      "sequence": "1",
+      "type": {
+        "system": "http://hl7.org/fhir/v3/ActCode",
+        "code": "_ActInvoiceGroupCode"
+      },
+      "service": {
+        "system": "http://hl7.org/fhir/ex-USCLS",
+        "code": "1101",
+        "display": "Exam, comp, primary"
+      }
+    }
+  ]
+}

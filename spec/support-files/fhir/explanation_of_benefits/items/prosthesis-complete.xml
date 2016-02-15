@@ -1,0 +1,9 @@
+<prosthesis>
+  <initial value="false"/>
+  <priorDate value="2012-07-19"/>
+  <priorMaterial>
+    <system value="http://hl7.org/fhir/ex-oralprostho"/>
+    <code value="1"/>
+    <display value="Fixed Bridge"/>
+  </priorMaterial>
+</prosthesis>

@@ -1,0 +1,7 @@
+--- !ruby/object:Fhir::ExplanationOfBenefitClasses::ItemClasses::Prosthesis
+  initial: 'false'
+  prior_date: 2012-07-19
+  prior_material: !ruby/object:Fhir::Types::Coding
+    system: http://hl7.org/fhir/ex-oralprostho
+    code: '1'
+    display: Fixed Bridge

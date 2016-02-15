@@ -1,0 +1,9 @@
+{
+  "initial": "false",
+  "priorDate": "2012-07-19",
+  "priorMaterial": {
+    "system": "http://hl7.org/fhir/ex-oralprostho",
+    "code": "1",
+    "display": "Fixed Bridge"
+  }
+}

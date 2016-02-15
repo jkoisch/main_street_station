@@ -1,0 +1,12 @@
+<item_detail>
+  <sequence value="1"/>
+  <type>
+    <system value="http://hl7.org/fhir/v3/ActCode"/>
+    <code value="_ActInvoiceGroupCode"/>
+  </type>
+  <service>
+    <system value="http://hl7.org/fhir/ex-USCLS"/>
+    <code value="1101"/>
+    <display value="Exam, comp, primary"/>
+  </service>
+</item_detail>

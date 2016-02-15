@@ -1,0 +1,50 @@
+<sub_detail>
+  <sequence value="1"/>
+  <type>
+    <system value="http://hl7.org/fhir/v3/ActCode"/>
+    <code value="_ActInvoiceGroupCode"/>
+  </type>
+  <service>
+    <system value="http://hl7.org/fhir/ex-USCLS"/>
+    <code value="1101"/>
+    <display value="Exam, comp, primary"/>
+  </service>
+  <quantity>
+    <value value="120.00"/>
+    <system value="urn:iso:std:iso:4217"/>
+    <code value="USD"/>
+  </quantity>
+  <unitPrice>
+    <value value="120.00"/>
+    <system value="urn:iso:std:iso:4217"/>
+    <code value="USD"/>
+  </unitPrice>
+  <factor value="0.5"/>
+  <points value="1.0"/>
+  <net>
+    <value value="120.00"/>
+    <system value="urn:iso:std:iso:4217"/>
+    <code value="USD"/>
+  </net>
+  <udi>
+    <system value="http://hl7.org/fhir/ex-udi"/>
+    <code value="gudid"/>
+    <display value="GUDID (FDA)"/>
+  </udi>
+  <adjudication>
+    <category>
+      <system value="http://eob.example/adjudication-category"/>
+      <code value="eligible"/>
+    </category>
+    <reason>
+      <system value="http://hl7.org/fhir/adjudication-reason"/>
+      <code value="Not covered"/>
+    </reason>
+    <amount>
+      <value value="120.00"/>
+      <system value="urn:iso:std:iso:4217"/>
+      <code value="USD"/>
+    </amount>
+    <value value="67.898"/>
+  </adjudication>
+</sub_detail>

@@ -1,4 +1,4 @@
-json.sequence detail.sequence unless detail.sequence.nil?
+json.sequence item_detail.sequence unless item_detail.sequence.nil?
 
 json.type do
   json.partial! 'fhir/base/coding', coding: item_detail.type
@@ -32,5 +32,5 @@ json.adjudication item_detail.adjudication do |adjudication|
 end unless item_detail.adjudication.nil?
 
 json.subDetail item_detail.sub_detail do |sub_detail|
-  json.partial! 'sub_detail', sub_detail: sub_detail
+  json.partial! 'fhir/explanation_of_benefits/sub_detail', sub_detail: sub_detail
 end unless item_detail.sub_detail.nil?

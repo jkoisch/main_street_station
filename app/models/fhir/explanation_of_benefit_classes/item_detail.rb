@@ -8,7 +8,7 @@ module Fhir
       fhir_attribute :unit_price, type: Types::Quantity
       fhir_attribute :factor
       fhir_attribute :points
-      fhir_attribute :net
+      fhir_attribute :net, type: Types::Quantity
       fhir_attribute :udi, type: Types::Coding
       fhir_attribute :adjudication, list: Fhir::ExplanationOfBenefitClasses::Adjudication
       fhir_attribute :sub_detail, list: Fhir::ExplanationOfBenefitClasses::SubDetail

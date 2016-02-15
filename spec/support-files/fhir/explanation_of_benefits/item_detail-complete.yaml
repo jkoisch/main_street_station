@@ -1,0 +1,50 @@
+--- !ruby/object:Fhir::ExplanationOfBenefitClasses::ItemDetail
+  sequence: '1'
+  type: !ruby/object:Fhir::Types::Coding
+    system: http://hl7.org/fhir/v3/ActCode
+    code: _ActInvoiceGroupCode
+  service: !ruby/object:Fhir::Types::Coding
+    system: http://hl7.org/fhir/ex-USCLS
+    code: '1101'
+    display: Exam, comp, primary
+  quantity: !ruby/object:Fhir::Types::Quantity
+    value: '120.00'
+    system: urn:iso:std:iso:4217
+    code: USD
+  unit_price: !ruby/object:Fhir::Types::Quantity
+    value: '120.00'
+    system: urn:iso:std:iso:4217
+    code: USD
+  factor: '0.5'
+  points: '1.0'
+  net: !ruby/object:Fhir::Types::Quantity
+    value: '120.00'
+    system: urn:iso:std:iso:4217
+    code: USD
+  udi: !ruby/object:Fhir::Types::Coding
+    system: http://hl7.org/fhir/ex-udi
+    code: gudid
+    display: GUDID (FDA)
+  adjudication:
+    - !ruby/object:Fhir::ExplanationOfBenefitClasses::Adjudication
+      category: !ruby/object:Fhir::Types::Coding
+        system: 'http://eob.example/adjudication-category'
+        code: 'eligible'
+      reason: !ruby/object:Fhir::Types::Coding
+        system: 'http://hl7.org/fhir/adjudication-reason'
+        code: 'Not covered'
+      amount: !ruby/object:Fhir::Types::Quantity
+        value: '120.00'
+        system: 'urn:iso:std:iso:4217'
+        code: 'USD'
+      value: '67.898'
+  sub_detail:
+    - !ruby/object:Fhir::ExplanationOfBenefitClasses::SubDetail
+      sequence: '1'
+      type: !ruby/object:Fhir::Types::Coding
+        system: http://hl7.org/fhir/v3/ActCode
+        code: _ActInvoiceGroupCode
+      service: !ruby/object:Fhir::Types::Coding
+        system: http://hl7.org/fhir/ex-USCLS
+        code: '1101'
+        display: Exam, comp, primary

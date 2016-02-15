@@ -1,0 +1,9 @@
+--- !ruby/object:Fhir::ExplanationOfBenefitClasses::SubDetail
+  sequence: '1'
+  type: !ruby/object:Fhir::Types::Coding
+    system: http://hl7.org/fhir/v3/ActCode
+    code: _ActInvoiceGroupCode
+  service: !ruby/object:Fhir::Types::Coding
+    system: http://hl7.org/fhir/ex-USCLS
+    code: '1101'
+    display: Exam, comp, primary
