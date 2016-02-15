@@ -1,42 +1,5 @@
 --- !ruby/object:Fhir::ExplanationOfBenefitClasses::AddItem
-  sequence_link_id:
-   -  '10'
   service: !ruby/object:Fhir::Types::Coding
     system: "http://hl7.org/fhir/ValueSet/service-uscls"
     code: '1102'
     display: Exam, comp, mixed
-  fee: !ruby/object:Fhir::Types::Quantity
-    value: '289.93'
-    system: 'urn:iso:std:iso:4217'
-    code: 'USD'
-  note_number_link_id:
-    - '32'
-    - '14'
-  adjudication:
-    - !ruby/object:Fhir::ExplanationOfBenefitClasses::Adjudication
-      category: !ruby/object:Fhir::Types::Coding
-        system: 'http://eob.example/adjudication-category'
-        code: 'benefit'
-      amount: !ruby/object:Fhir::Types::Quantity
-        value: '96.00'
-        system: 'urn:iso:std:iso:4217'
-        code: 'USD'
-  detail:
-    - !ruby/object:Fhir::ExplanationOfBenefitClasses::AddDetail
-      service: !ruby/object:Fhir::Types::Coding
-        system: "http://hl7.org/fhir/ValueSet/service-uscls"
-        code: '11104'
-        display: Polishing, 4 unit
-      fee: !ruby/object:Fhir::Types::Quantity
-        value: '289.93'
-        system: 'urn:iso:std:iso:4217'
-        code: 'USD'
-      adjudication:
-        - !ruby/object:Fhir::ExplanationOfBenefitClasses::Adjudication
-          category: !ruby/object:Fhir::Types::Coding
-            system: 'http://eob.example/adjudication-category'
-            code: 'benefit'
-          amount: !ruby/object:Fhir::Types::Quantity
-            value: '96.00'
-            system: 'urn:iso:std:iso:4217'
-            code: 'USD'

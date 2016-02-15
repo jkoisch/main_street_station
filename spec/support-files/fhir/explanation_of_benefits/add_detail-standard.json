@@ -3,23 +3,5 @@
     "system": "http://hl7.org/fhir/ValueSet/service-uscls",
     "code": "11104",
     "display": "Polishing, 4 unit"
-  },
-  "fee": {
-    "value": "289.93",
-    "system": "urn:iso:std:iso:4217",
-    "code": "USD"
-  },
-  "adjudication": [
-    {
-      "category": {
-        "system": "http://eob.example/adjudication-category",
-        "code": "benefit"
-      },
-      "amount": {
-        "value": "96.00",
-        "system": "urn:iso:std:iso:4217",
-        "code": "USD"
-      }
-    }
-  ]
+  }
 }

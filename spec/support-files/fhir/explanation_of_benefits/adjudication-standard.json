@@ -2,10 +2,5 @@
   "category": {
     "system": "http://eob.example/adjudication-category",
     "code": "eligible"
-  },
-  "amount": {
-    "value": "120.00",
-    "system": "urn:iso:std:iso:4217",
-    "code": "USD"
   }
 }

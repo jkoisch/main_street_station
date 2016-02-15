@@ -3,44 +3,5 @@
     "system": "http://hl7.org/fhir/ValueSet/benefit-category",
     "code": "oral",
     "display": "Dental and Oral Health Coverage"
-  },
-  "subCategory": {
-    "system": "http://hl7.org/fhir/ValueSet/benefit-subcategory",
-    "code": "oral-basic",
-    "display": "Dental: Basic Coverage"
-  },
-  "network": {
-    "system": "http://hl7.org/fhir/ValueSet/benefit-network",
-    "code": "in",
-    "display": "In Network"
-  },
-  "unit": {
-    "system": "http://hl7.org/fhir/ValueSet/benefit-unit",
-    "code": "individual",
-    "display": "Individual"
-  },
-  "term": {
-    "system": "http://hl7.org/fhir/ValueSet/benefit-term",
-    "code": "annual",
-    "display": "Annual"
-  },
-  "financial": [
-    {
-      "type": {
-        "system": "http://hl7.org/fhir/ValueSet/benefit-type",
-        "code": "visit",
-        "display": "Visit"
-      },
-      "benefitQuantity": {
-        "value": "99.38",
-        "system": "urn:iso:std:iso:4217",
-        "code": "USD"
-      },
-      "benefitUsedQuantity": {
-        "value": "56.29",
-        "system": "urn:iso:std:iso:4217",
-        "code": "USD"
-      }
-    }
-  ]
+  }
 }

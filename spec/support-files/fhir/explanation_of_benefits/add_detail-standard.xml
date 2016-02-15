@@ -4,20 +4,4 @@
     <code value="11104"/>
     <display value="Polishing, 4 unit"/>
   </service>
-  <fee>
-    <value value="289.93"/>
-    <system value="urn:iso:std:iso:4217"/>
-    <code value="USD"/>
-  </fee>
-  <adjudication>
-    <category>
-      <system value="http://eob.example/adjudication-category"/>
-      <code value="benefit"/>
-    </category>
-    <amount>
-      <value value="96.00"/>
-      <system value="urn:iso:std:iso:4217"/>
-      <code value="USD"/>
-    </amount>
-  </adjudication>
 </add_detail>

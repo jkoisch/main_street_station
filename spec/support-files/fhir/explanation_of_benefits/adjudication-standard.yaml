@@ -2,7 +2,3 @@
   category: !ruby/object:Fhir::Types::Coding
     system: 'http://eob.example/adjudication-category'
     code: 'eligible'
-  amount: !ruby/object:Fhir::Types::Quantity
-    value: '120.00'
-    system: 'urn:iso:std:iso:4217'
-    code: 'USD'
