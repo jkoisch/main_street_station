@@ -1,23 +1,6 @@
 {
   "resourceType": "ExplanationOfBenefit",
   "id": "3",
-  "identifier": [
-    {
-      "system": "http://www.BenefitsInc.com/fhir/explanationofbenefit",
-      "value": "987654321"
-    }
-  ],
-  "claim": {
-    "reference": "http://here.com/Claim/100150"
-  },
-  "claimResponse": {
-    "reference": "http://here.com/ClaimResponse/R3500"
-  },
-  "created": "2014-08-16",
-  "disposition": "Claim settled as per contract.",
-  "organization": {
-    "reference": "Organization/2"
-  },
   "patient": {
     "reference": "Client/1001"
   },

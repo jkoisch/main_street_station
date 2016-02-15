@@ -1,17 +1,5 @@
 --- !ruby/object:Fhir::ExplanationOfBenefit
   id: "3"
-  identifier:
-    - !ruby/object:Fhir::Types::Identifier
-      system: http://www.BenefitsInc.com/fhir/explanationofbenefit
-      value: '987654321'
-  claim: !ruby/object:Fhir::Types::Reference
-    external: http://here.com/Claim/100150
-  claim_response: !ruby/object:Fhir::Types::Reference
-    external: http://here.com/ClaimResponse/R3500
-  created: '2014-08-16'
-  disposition: Claim settled as per contract.
-  organization: !ruby/object:Fhir::Types::Reference
-    external: Organization/2
   patient: !ruby/object:Fhir::Types::Reference
     external: Client/1001
   coverage: !ruby/object:Fhir::ExplanationOfBenefitClasses::Coverage
