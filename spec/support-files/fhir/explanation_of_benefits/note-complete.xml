@@ -1,0 +1,9 @@
+<note>
+  <number value="1"/>
+  <type>
+    <system value="http://hl7.org/fhir/note-type"/>
+    <code value="print"/>
+    <display value="Print (Form)"/>
+  </type>
+  <text value="interior model"/>
+</note>

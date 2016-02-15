@@ -1,0 +1,5 @@
+--- !ruby/object:Fhir::ExplanationOfBenefitClasses::BenefitBalanceClasses::Financial
+  type: !ruby/object:Fhir::Types::Coding
+    system: "http://hl7.org/fhir/ValueSet/benefit-type"
+    code: "visit"
+    display: "Visit"

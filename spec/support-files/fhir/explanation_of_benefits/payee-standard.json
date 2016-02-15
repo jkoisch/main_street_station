@@ -1,0 +1,9 @@
+{
+  "type": {
+    "system": "http://hl7.org/fhir/payeetype",
+    "code": "provider"
+  },
+  "provider": {
+    "reference": "Provider/pro1"
+  }
+}

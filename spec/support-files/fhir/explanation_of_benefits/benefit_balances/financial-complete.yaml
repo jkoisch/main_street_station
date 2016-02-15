@@ -1,0 +1,21 @@
+--- !ruby/object:Fhir::ExplanationOfBenefitClasses::BenefitBalanceClasses::Financial
+  type: !ruby/object:Fhir::Types::Coding
+    system: "http://hl7.org/fhir/ValueSet/benefit-type"
+    code: "visit"
+    display: "Visit"
+  benefit: !ruby/object:Fhir::Types::Quantity
+    value: '99.38'
+    system: 'urn:iso:std:iso:4217'
+    code: USD
+  benefit_quantity: !ruby/object:Fhir::Types::Quantity
+    value: '99.38'
+    system: 'urn:iso:std:iso:4217'
+    code: USD
+  benefit_used: !ruby/object:Fhir::Types::Quantity
+    value: '56.29'
+    system: 'urn:iso:std:iso:4217'
+    code: USD
+  benefit_used_quantity: !ruby/object:Fhir::Types::Quantity
+    value: '56.29'
+    system: 'urn:iso:std:iso:4217'
+    code: USD

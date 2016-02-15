@@ -1,0 +1,6 @@
+--- !ruby/object:Fhir::ExplanationOfBenefitClasses::MissingTeeth
+  tooth: !ruby/object:Fhir::Types::Coding
+    system: "http://hl7.org/fhir/StructureDefinition/valueset-oid"
+    version: '1.3.0'
+    code: '11'
+    display: '11'

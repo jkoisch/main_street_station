@@ -1,0 +1,9 @@
+<payee>
+  <type>
+    <system value="http://hl7.org/fhir/payeetype"/>
+    <code value="provider"/>
+  </type>
+  <provider>
+    <reference value="Provider/pro1"/>
+  </provider>
+</payee>

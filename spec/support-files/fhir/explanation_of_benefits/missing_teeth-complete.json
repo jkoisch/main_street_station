@@ -1,0 +1,14 @@
+{
+  "tooth": {
+    "system": "http://hl7.org/fhir/StructureDefinition/valueset-oid",
+    "version": "1.3.0",
+    "code": "11",
+    "display": "11"
+  },
+  "reason": {
+    "system": "http://hl7.org/fhir/missingtoothreason",
+    "code": "E",
+    "display": "E"
+  },
+  "extractionDate": "2014-08-16"
+}

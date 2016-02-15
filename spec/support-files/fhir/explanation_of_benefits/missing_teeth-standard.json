@@ -1,0 +1,8 @@
+{
+  "tooth": {
+    "system": "http://hl7.org/fhir/StructureDefinition/valueset-oid",
+    "version": "1.3.0",
+    "code": "11",
+    "display": "11"
+  }
+}

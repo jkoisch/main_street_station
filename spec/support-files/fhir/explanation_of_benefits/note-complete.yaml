@@ -1,0 +1,7 @@
+--- !ruby/object:Fhir::ExplanationOfBenefitClasses::Note
+  number: '1'
+  type: !ruby/object:Fhir::Types::Coding
+    system: http://hl7.org/fhir/note-type
+    code: print
+    display: Print (Form)
+  text: interior model

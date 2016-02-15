@@ -1,0 +1,6 @@
+--- !ruby/object:Fhir::ExplanationOfBenefitClasses::Payee
+  type: !ruby/object:Fhir::Types::Coding
+    system: "http://hl7.org/fhir/payeetype"
+    code: "provider"
+  provider: !ruby/object:Fhir::Types::Reference
+    external: 'Provider/pro1'

@@ -1,0 +1,7 @@
+{
+  "type": {
+    "system": "http://hl7.org/fhir/ValueSet/benefit-type",
+    "code": "visit",
+    "display": "Visit"
+  }
+}

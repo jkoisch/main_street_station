@@ -1,0 +1,7 @@
+<financial>
+  <type>
+    <system value="http://hl7.org/fhir/ValueSet/benefit-type"/>
+    <code value="visit"/>
+    <display value="Visit"/>
+  </type>
+</financial>
