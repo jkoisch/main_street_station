@@ -1,3 +1,4 @@
+# This controller is for interactive Logins
 class Users::SessionsController < Devise::SessionsController
 # before_filter :configure_sign_in_params, only: [:create]
   before_action :set_user, only: [:create]
@@ -20,6 +21,12 @@ class Users::SessionsController < Devise::SessionsController
       set_flash_message(:error, :invalid, authentication_keys: 'email')
       respond_with(resource, serialize_options(resource))
     end
+  end
+
+  def destroy
+    logger.debug "Attempting User Logout"
+    SessionService.signout(current_user)
+    super
   end
 
   protected

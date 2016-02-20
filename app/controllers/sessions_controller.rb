@@ -1,3 +1,4 @@
+# This controller is for API Login
 class SessionsController < ApplicationController
   before_action :set_user, only: [:create]
   skip_before_action :verify_authenticity_token, only: [:create], if: :is_json_request?
@@ -5,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     if SessionService.authenticate(@user, params[:password])
       # TODO Add successful log in message
-      logger.debug "#{@user.email} is trying to create a session"
+      logger.debug "#{@user.email} is trying to create a API session"
       root_path
     else
       logger.error "** Failure** Attempt to login as #{params[:user_name]} - rejected"

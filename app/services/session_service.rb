@@ -22,6 +22,14 @@ class SessionService
     end
   end
 
+  def self.signout(user)
+    if user
+      logout_time = Time.now
+      UserToken.where(user: user).where('refresh_expiry > ?', Time.now).update_all(refresh_expiry: logout_time,
+                                                                                   authentication_expiry: logout_time)
+    end
+  end
+
   def self.cleanup(token)
     if ut = UserToken.find_by(authentication_token: token)
       user = ut.user
