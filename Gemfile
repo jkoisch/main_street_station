@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.2'
 
-gem 'rails', '4.1.8'
+gem 'rails', '4.2.6'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -23,8 +23,8 @@ group :test, :development do
   gem 'spring-commands-rspec'
   gem 'rest-client'
   gem 'guard'
-  gem 'guard-rspec', '4.4.2',  require: false
-  gem 'rspec-rails', '3.1.0'
+  gem 'guard-rspec', '4.6.4',  require: false
+  gem 'rspec-rails', '3.4.2'
   gem 'database_cleaner'
   gem 'faker'
   gem 'cucumber-rails', require: false #, '0.3.2'
@@ -55,6 +55,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'oauth2'
 gem 'omniauth-oauth2'
+gem 'httparty'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt'

@@ -40,12 +40,12 @@ describe 'Organization Request FHIR API', type: :request do
         before(:each) { GringottResponse.any_instance.stubs(:success?).returns(true) }
 
         it 'should return a FHIR Bundle' do
-          get 'fhir/Organization', {}, headers
+          get '/fhir/Organization', {}, headers
           expect(response).to return_FHIR_XML_bundle('Organization')
         end
 
         it 'should have success status (2xx)' do
-          get 'fhir/Organization', {}, headers
+          get '/fhir/Organization', {}, headers
           expect(response).to have_http_status(:success)
         end
       end
@@ -79,12 +79,12 @@ describe 'Organization Request FHIR API', type: :request do
 
       context 'success' do
         it 'should return a FHIR resource' do
-          get 'fhir/Organization/1', {}, headers
+          get '/fhir/Organization/1', {}, headers
           expect(response).to return_FHIR_XML_object('Organization')
         end
 
         it 'should have success status (2xx)' do
-          get 'fhir/Organization/1', {}, headers
+          get '/fhir/Organization/1', {}, headers
           expect(response).to have_http_status(:success)
         end
       end

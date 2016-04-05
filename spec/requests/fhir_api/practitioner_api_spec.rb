@@ -41,12 +41,12 @@ describe 'Practitioner Request FHIR API', type: :request do
         before(:each) { GringottResponse.any_instance.stubs(:success?).returns(true) }
 
         it 'should return a FHIR Bundle' do
-          get 'fhir/Practitioner', {}, headers
+          get '/fhir/Practitioner', {}, headers
           expect(response).to return_FHIR_XML_bundle('Practitioner')
         end
 
         it 'should return status success (2xx)' do
-          get 'fhir/Practitioner', {}, headers
+          get '/fhir/Practitioner', {}, headers
           expect(response).to have_http_status(:success)
         end
       end

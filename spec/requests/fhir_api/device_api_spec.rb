@@ -40,12 +40,12 @@ describe 'Device Request FHIR API', type: :request do
         before(:each) { GringottResponse.any_instance.stubs(:success?).returns(true) }
 
         it 'should return a FHIR Bundle' do
-          get 'fhir/Device', {}, headers
+          get '/fhir/Device', {}, headers
           expect(response).to return_FHIR_XML_bundle('Device')
         end
 
         it 'should have success status (2xx)' do
-          get 'fhir/Device', {}, headers
+          get '/fhir/Device', {}, headers
           expect(response).to have_http_status(:success)
         end
       end
@@ -79,12 +79,12 @@ describe 'Device Request FHIR API', type: :request do
 
       context 'success' do
         it 'should return a FHIR resource' do
-          get 'fhir/Device/1', {}, headers
+          get '/fhir/Device/1', {}, headers
           expect(response).to return_FHIR_XML_object('Device')
         end
 
         it 'should have success status (2xx)' do
-          get 'fhir/Device/1', {}, headers
+          get '/fhir/Device/1', {}, headers
           expect(response).to have_http_status(:success)
         end
       end

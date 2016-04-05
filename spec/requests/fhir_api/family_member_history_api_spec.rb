@@ -40,12 +40,12 @@ describe 'Family History Request FHIR API', type: :request do
         before(:each) { GringottResponse.any_instance.stubs(:success?).returns(true) }
 
         it 'should return a FHIR Bundle' do
-          get 'fhir/FamilyMemberHistory', {}, headers
+          get '/fhir/FamilyMemberHistory', {}, headers
           expect(response).to return_FHIR_XML_bundle('FamilyMemberHistory')
         end
 
         it 'should have success status (2xx)' do
-          get 'fhir/FamilyMemberHistory', {}, headers
+          get '/fhir/FamilyMemberHistory', {}, headers
           expect(response).to have_http_status(:success)
         end
       end
@@ -80,12 +80,12 @@ describe 'Family History Request FHIR API', type: :request do
 
       context 'success' do
         it 'should return a FHIR resource' do
-          get 'fhir/FamilyMemberHistory/1', {}, headers
+          get '/fhir/FamilyMemberHistory/1', {}, headers
           expect(response).to return_FHIR_XML_object('FamilyMemberHistory')
         end
 
         it 'should have success status (2xx)' do
-          get 'fhir/FamilyMemberHistory/1', {}, headers
+          get '/fhir/FamilyMemberHistory/1', {}, headers
           expect(response).to have_http_status(:success)
         end
       end

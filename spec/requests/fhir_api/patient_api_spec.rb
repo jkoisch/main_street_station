@@ -28,7 +28,7 @@ describe 'Patient Request FHIR API', type: :request do
         end
 
         it 'should render OperationOutcome' do
-          expect(get 'fhir/Patient').to render_template('fhir_base/operation_outcome')
+          expect(get '/fhir/Patient').to render_template('fhir_base/operation_outcome')
         end
       end
     end
@@ -40,12 +40,12 @@ describe 'Patient Request FHIR API', type: :request do
         before(:each) { GringottResponse.any_instance.stubs(:success).returns(true) }
 
         it 'should return a FHIR Bundle' do
-          get 'fhir/Patient', {}, headers
+          get '/fhir/Patient', {}, headers
           expect(response).to return_FHIR_XML_bundle('Patient')
         end
 
         it 'should have success status (2xx)' do
-          get 'fhir/Patient', {}, headers
+          get '/fhir/Patient', {}, headers
           expect(response).to have_http_status(:success)
         end
       end
@@ -54,12 +54,12 @@ describe 'Patient Request FHIR API', type: :request do
         before(:each) { GringottResponse.any_instance.stubs(:success?).returns(false) }
 
         it 'should return error status' do
-          get 'fhir/Patient', {}, headers
+          get '/fhir/Patient', {}, headers
           expect(response).to have_http_status(:error)
         end
 
         it 'should render OperationOutcome' do
-          get 'fhir/Patient', {}, headers
+          get '/fhir/Patient', {}, headers
           expect(response).to render_template('fhir_base/operation_outcome')
           expect(response.content_type).to eq :xml
 
@@ -79,12 +79,12 @@ describe 'Patient Request FHIR API', type: :request do
 
       context 'success' do
         it 'should return a FHIR resource' do
-          get 'fhir/Patient/1', {}, headers
+          get '/fhir/Patient/1', {}, headers
           expect(response).to return_FHIR_XML_object('Patient')
         end
 
         it 'should have success status (2xx)' do
-          get 'fhir/Patient/1', {}, headers
+          get '/fhir/Patient/1', {}, headers
           expect(response).to have_http_status(:success)
         end
       end
