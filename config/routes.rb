@@ -56,7 +56,13 @@ MainStreetStation::Application.routes.draw do
     delete '/logout', to: 'users/sessions#destroy'
   end
 
+  namespace :authenticate do
+    post 'facebook', to: 'facebook#create', defaults: {format: :json}
+    # post 'google', to: 'google#create'
+  end
+
   post 'login', to: 'sessions#create', defaults: {format: :json}
+
   post '/api_session', to: 'sessions#create', defaults: {format: :json}
   delete '/api_session', to: 'sessions#destroy'
 

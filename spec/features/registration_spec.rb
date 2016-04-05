@@ -8,7 +8,6 @@ describe 'User Registration', type: :feature do
       fill_in 'user_email', with: ' mathew123@test.com'
       fill_in 'user_password', with: 'mathew123'
       fill_in 'user_password_confirmation', with: 'mathew123'
-
       click_button 'Sign up'
     end
 
@@ -23,5 +22,6 @@ describe 'User Registration', type: :feature do
     it 'send email confirmation'
   end
 
-  context 'Google authentication'
+  context 'Google authentication' do
+  end
 end

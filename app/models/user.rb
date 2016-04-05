@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  devise :registerable, :omniauthable, :recoverable, :trackable,
+  devise :registerable, :omniauthable, :trackable, #:recoverable,
          :rememberable, :omniauth_providers => [:facebook, :google]
 
   has_many :user_tokens

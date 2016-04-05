@@ -3,7 +3,7 @@ FactoryGirl.define do
     email 'this@that.com'
 
     factory :local_user do
-      ignore do
+      transient do
         local_pw  '123test'
       end
 
