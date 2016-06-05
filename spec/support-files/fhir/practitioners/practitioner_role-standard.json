@@ -1,5 +1,5 @@
 {
-    "managingOrganization":{
+    "organization":{
         "reference":"Organization/f001",
         "display":"BMC"
     },
