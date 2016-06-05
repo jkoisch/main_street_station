@@ -137,33 +137,29 @@
     ],
     "communication": [
         {
-            "language": [
-                {
-                    "coding": [
-                        {
-                            "system": "urn:ietf:bcp:67",
-                            "code": "en",
-                            "display": "English"
-                        }
-                    ],
-                    "text": "USA"
-                }
-            ],
+            "language": {
+                "coding": [
+                    {
+                        "system": "urn:ietf:bcp:67",
+                        "code": "en",
+                        "display": "English"
+                    }
+                ],
+                "text": "USA"
+            },
             "preferred": false
         },
         {
-            "language": [
-                {
-                    "coding": [
-                        {
-                            "system": "urn:ietf:bcp:47",
-                            "code": "nl",
-                            "display": "Dutch"
-                        }
-                    ],
-                    "text": "Nederlands"
-                }
-            ],
+            "language": {
+                "coding": [
+                    {
+                        "system": "urn:ietf:bcp:47",
+                        "code": "nl",
+                        "display": "Dutch"
+                    }
+                ],
+                "text": "Nederlands"
+            },
             "preferred": true
         }
     ],
