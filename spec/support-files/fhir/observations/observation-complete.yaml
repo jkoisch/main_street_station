@@ -64,7 +64,7 @@
         system: http://hl7.org/fhir/v2/0078
         code: N
         display: Normal (applies to non-numeric results)
-  comments: Tube broken in transit and sample leaked
+  comment: Tube broken in transit and sample leaked
   body_site: !ruby/object:Fhir::Types::CodeableConcept
     coding:
       - !ruby/object:Fhir::Types::Coding

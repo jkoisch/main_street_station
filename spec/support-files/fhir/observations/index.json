@@ -164,7 +164,7 @@
                         }
                     ]
                 },
-                "comments": "Tube broken in transit and sample leaked",
+                "comment": "Tube broken in transit and sample leaked",
                 "bodySite":{
                     "coding":[
                         {

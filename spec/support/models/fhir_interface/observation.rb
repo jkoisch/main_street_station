@@ -3,7 +3,7 @@ module FhirInterface
     attr_accessor :identifier, :status, :category, :code, :subject, :encounter, :effectiveDatetime, :effectivePeriod,
                   :issued, :performer, :valueQuantity, :valueCodeableConcept, :valueString, :valueRange, :valueRatio,
                   :valueSampledData, :valueAttachment, :valueTime, :valueDatetime, :valuePeriod, :dataAbsentReason,
-                  :interpretation, :comments, :bodySite, :method, :specimen, :device
+                  :interpretation, :comment, :bodySite, :method, :specimen, :device
   end
 
 
