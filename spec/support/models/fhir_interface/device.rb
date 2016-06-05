@@ -1,6 +1,7 @@
 module FhirInterface
   class Device
-    attr_accessor :identifier, :type, :manufacturer, :model, :version, :expiry, :udi, :lotNumber, :owner,
-                  :location, :patient, :contactPoint, :url
+    attr_accessor :identifier, :udiCarrier, :status, :type, :lotNumber, :manufacturer,
+                  :manufactureDate, :expirationDate, :model, :version, :patient, :owner,
+                  :contact, :location, :url, :note
   end
 end

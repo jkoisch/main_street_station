@@ -30,6 +30,27 @@
                     ],
                     "text":"ECG"
                 },
+                "lotNumber":"43453424",
+                "manufacturer":"Acme Devices, Inc",
+                "model":"AB 45-J",
+                "patient":{
+                    "reference":"Patient/14",
+                    "display":"14"
+                },
+                "owner":{
+                    "reference":"PTC/f201",
+                    "display":"monitor"
+                },
+                "contact":[
+                    {
+                        "system":"phone",
+                        "value":"ext 4352"
+                    }
+                ],
+                "location":{
+                    "reference":"Anaheim, CA",
+                    "display":"USA"
+                },
                 "note":[
                     {
                         "authorReference":{
@@ -37,27 +58,6 @@
                         },
                         "time":"2015-06-28T14:03:32+10:00",
                         "text":"QA Checked"
-                    }
-                ],
-                "manufacturer":"Acme Devices, Inc",
-                "model":"AB 45-J",
-                "lotNumber":"43453424",
-                "owner":{
-                    "reference":"PTC/f201",
-                    "display":"monitor"
-                },
-                "location":{
-                    "reference":"Anaheim, CA",
-                    "display":"USA"
-                },
-                "patient":{
-                    "reference":"Patient/14",
-                    "display":"14"
-                },
-                "contact":[
-                    {
-                        "system":"phone",
-                        "value":"ext 4352"
                     }
                 ]
             },
@@ -80,6 +80,11 @@
                         "value": "AMID-342135-8464"
                     }
                 ],
+                "udiCarrier":{
+                    "system": "urn:oid:2.16.840.1.113883.3.3719",
+                    "value": "(01)00000123000017(10)ABC123(17)120415"
+                },
+                "status":"available",
                 "type":{
                     "coding":[
                         {
@@ -90,6 +95,35 @@
                     ],
                     "text":"ECG"
                 },
+                "lotNumber":"43453424",
+                "manufacturer":"Acme Devices, Inc",
+                "manufactureDate":"2015-08-08",
+                "expirationDate":"2020-08-08",
+                "model":"AB 45-J",
+                "version":"10.23-23423",
+                "patient":{
+                    "reference":"Patient/14",
+                    "display":"14"
+                },
+                "owner":{
+                    "reference":"PTC/f201",
+                    "display":"monitor"
+                },
+                "contact":[
+                    {
+                        "system":"phone",
+                        "value":"ext 4352"
+                    },
+                    {
+                        "system": "other",
+                        "value": "http://acme.com"
+                    }
+                ],
+                "location":{
+                    "reference":"Anaheim, CA",
+                    "display":"USA"
+                },
+                "url":"http://acme.com/goodhealth/ehr/",
                 "note":[
                     {
                         "authorReference":{
@@ -104,38 +138,7 @@
                         "time":"2015-07-22T14:03:32+10:00",
                         "text":"QA Checked v2"
                     }
-                ],
-                "status":"available",
-                "manufacturer":"Acme Devices, Inc",
-                "model":"AB 45-J",
-                "version":"10.23-23423",
-                "manufactureDate":"2015-08-08",
-                "expiry":"2020-08-08",
-                "udi":"(01)00000123000017(10)ABC123(17)120415",
-                "lotNumber":"43453424",
-                "owner":{
-                    "reference":"PTC/f201",
-                    "display":"monitor"
-                },
-                "location":{
-                    "reference":"Anaheim, CA",
-                    "display":"USA"
-                },
-                "patient":{
-                    "reference":"Patient/14",
-                    "display":"14"
-                },
-                "contact":[
-                    {
-                        "system":"phone",
-                        "value":"ext 4352"
-                    },
-                    {
-                        "system": "other",
-                        "value": "http://acme.com"
-                    }
-                ],
-                "url":"http://acme.com/goodhealth/ehr/"
+                ]
             },
             "search": {
                 "mode": "match"

@@ -51,12 +51,14 @@ describe Fhir::DevicesController, type: :controller do
                    with(:query => hash_including({'query' => {'type' => {'code' => '86184003'}}}))).to have_been_made
       end
 
+=begin
       it 'performs a device search for matching udi' do
         stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
         get :index, {format: :json, udi: 'xo98-s3'}
         expect(a_request(:get, 'gringotts.dev/devices').
                    with(:query => hash_including({'query' => {'udi' => {'value' => 'xo98-s3'}}}))).to have_been_made
       end
+=end
 
       it 'returns operation_outcome using invalid search criteria'
 

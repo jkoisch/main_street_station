@@ -7,6 +7,10 @@
     - !ruby/object:Fhir::Types::Identifier
       system: http://somehealth.org/devices/id
       value: AMID-342135-8464
+  udi_carrier: !ruby/object:Fhir::Types::Identifier
+    system: urn:oid:2.16.840.1.113883.3.3719
+    value: (01)00000123000017(10)ABC123(17)120415
+  status: available
   type: !ruby/object:Fhir::Types::CodeableConcept
     coding:
       - !ruby/object:Fhir::Types::Coding
@@ -14,6 +18,29 @@
         code: '86184003'
         display: Electrocardiographic monitor and recorder
     text: ECG
+  lot_number: '43453424'
+  manufacturer: Acme Devices, Inc
+  manufacture_date: 2015-08-08
+  expiration_date: 2020-08-08
+  model: AB 45-J
+  version: 10.23-23423
+  patient: !ruby/object:Fhir::Types::Reference
+    external: Patient/14
+    display: '14'
+  owner: !ruby/object:Fhir::Types::Reference
+    external: PTC/f201
+    display: monitor
+  contact:
+    - !ruby/object:Fhir::Types::ContactPoint
+      system: phone
+      value: ext 4352
+    - !ruby/object:Fhir::Types::ContactPoint
+      system: other
+      value: http://acme.com
+  location: !ruby/object:Fhir::Types::Reference
+    external: Anaheim, CA
+    display: USA
+  url: http://acme.com/goodhealth/ehr/
   note:
     - !ruby/object:Fhir::Types::Annotation
       author_reference: !ruby/object:Fhir::Types::Reference
@@ -29,28 +56,3 @@
         external: Practitioner/4
       time: '2015-07-22T14:03:32+10:00'
       text: QA Checked v2
-  status: available
-  manufacturer: Acme Devices, Inc
-  model: AB 45-J
-  version: 10.23-23423
-  manufacture_date: 2015-08-08
-  expiry: 2020-08-08
-  udi: (01)00000123000017(10)ABC123(17)120415
-  lot_number: '43453424'
-  owner: !ruby/object:Fhir::Types::Reference
-    external: PTC/f201
-    display: monitor
-  location: !ruby/object:Fhir::Types::Reference
-    external: Anaheim, CA
-    display: USA
-  patient: !ruby/object:Fhir::Types::Reference
-    external: Patient/14
-    display: '14'
-  contact:
-    - !ruby/object:Fhir::Types::ContactPoint
-      system: phone
-      value: ext 4352
-    - !ruby/object:Fhir::Types::ContactPoint
-      system: other
-      value: http://acme.com
-  url: http://acme.com/goodhealth/ehr/

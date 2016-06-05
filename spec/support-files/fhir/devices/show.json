@@ -20,6 +20,27 @@
         ],
         "text":"ECG"
     },
+    "lotNumber":"43453424",
+    "manufacturer":"Acme Devices, Inc",
+    "model":"AB 45-J",
+    "patient":{
+        "reference":"Patient/14",
+        "display":"14"
+    },
+    "owner":{
+        "reference":"PTC/f201",
+        "display":"monitor"
+    },
+    "contact":[
+        {
+            "system":"phone",
+            "value":"ext 4352"
+        }
+    ],
+    "location":{
+        "reference":"Anaheim, CA",
+        "display":"USA"
+    },
     "note":[
         {
             "authorReference":{
@@ -27,27 +48,6 @@
             },
             "time":"2015-06-28T14:03:32+10:00",
             "text":"QA Checked"
-        }
-    ],
-    "manufacturer":"Acme Devices, Inc",
-    "model":"AB 45-J",
-    "lotNumber":"43453424",
-    "owner":{
-        "reference":"PTC/f201",
-        "display":"monitor"
-    },
-    "location":{
-        "reference":"Anaheim, CA",
-        "display":"USA"
-    },
-    "patient":{
-        "reference":"Patient/14",
-        "display":"14"
-    },
-    "contact":[
-        {
-            "system":"phone",
-            "value":"ext 4352"
         }
     ]
 }
