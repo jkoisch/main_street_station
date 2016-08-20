@@ -1,7 +1,7 @@
 module Fhir
   module PractitionerClasses
     class PractitionerRole < BaseClass
-      fhir_attribute :managing_organization, type: Fhir::Types::Reference
+      fhir_attribute :organization, type: Fhir::Types::Reference
       fhir_attribute :role, type: Fhir::Types::CodeableConcept
       fhir_attribute :specialty, list: Fhir::Types::CodeableConcept
       fhir_attribute :period, type: Fhir::Types::Period

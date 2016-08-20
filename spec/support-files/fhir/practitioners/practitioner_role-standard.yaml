@@ -1,5 +1,5 @@
 --- !ruby/object:Fhir::PractitionerClasses::PractitionerRole
-  managing_organization: !ruby/object:Fhir::Types::Reference
+  organization: !ruby/object:Fhir::Types::Reference
       external: Organization/f001
       display: BMC
   role: !ruby/object:Fhir::Types::CodeableConcept

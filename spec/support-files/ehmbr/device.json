@@ -25,18 +25,15 @@
       "assigner": null
     }
   ],
-  "note": [
-    {
-      "_id": 1,
-      "author": {
-        "_type": "Reference",
-        "external": "Practitioner/xcda-author",
-        "display": null
-      },
-      "time": "2015-06-28T04:03:32.000Z",
-      "text": "QA Checked"
-    }
-  ],
+  "udi_carrier": {
+    "system": "urn:oid:2.16.840.1.113883.3.3719",
+    "value": "(01)00000123000017(10)ABC123(17)120415",
+    "use": null,
+    "type": null,
+    "period": null,
+    "assigner": null
+  },
+  "status": null,
   "type": {
     "coding": [
       {
@@ -49,14 +46,22 @@
     ],
     "text": "ECG"
   },
-  "status": null,
+  "lot_number": "43453424",
   "manufacturer": "Acme Devices, Inc",
+  "manufacture_date": null,
+  "expiration_date": "2020-08-08",
   "model": "AB 45-J",
   "version": null,
-  "manufacture_date": null,
-  "expiry": null,
-  "udi": null,
-  "lot_number": "43453424",
+  "patient":{
+    "_type": "Reference",
+    "external": "Patient/xcda-author",
+    "display": null
+  },
+  "owner":{
+    "_type": "Reference",
+    "external": "Organization/xcda-author",
+    "display": null
+  },
   "contact": [
     {
       "_id": 6,
@@ -67,5 +72,18 @@
       "period": null
     }
   ],
-  "url": null
+  "location": null,
+  "url": null,
+  "note": [
+    {
+      "_id": 1,
+      "author": {
+        "_type": "Reference",
+        "external": "Practitioner/xcda-author",
+        "display": null
+      },
+      "time": "2015-06-28T04:03:32.000Z",
+      "text": "QA Checked"
+    }
+  ]
 }

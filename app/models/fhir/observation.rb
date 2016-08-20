@@ -16,7 +16,7 @@ module Fhir
                                        Types::SimpleDatetime, Types::Period]
     fhir_attribute :data_absent_reason, type: Types::CodeableConcept
     fhir_attribute :interpretation, type: Types::CodeableConcept
-    fhir_attribute :comments
+    fhir_attribute :comment
     fhir_attribute :body_site, type: Types::CodeableConcept
     fhir_attribute :method, type: Types::CodeableConcept
     fhir_attribute :specimen, type: Types::Reference

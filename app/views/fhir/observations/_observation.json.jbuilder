@@ -79,7 +79,7 @@ json.interpretation do
   json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.interpretation
 end unless resource.interpretation.nil?
 
-json.comments         resource.comments unless resource.comments.nil?
+json.comment         resource.comment unless resource.comment.nil?
 
 json.bodySite do
   json.partial! 'fhir/base/codeable_concept', codeable_concept: resource.body_site

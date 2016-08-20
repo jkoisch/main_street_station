@@ -9,7 +9,7 @@ module FhirInterface
     end
 
     class PractitionerRole
-      attr_accessor :managingOrganization, :role, :specialty, :period, :location, :healthcareService
+      attr_accessor :organization, :role, :specialty, :period, :location, :healthcareService
     end
   end
 end

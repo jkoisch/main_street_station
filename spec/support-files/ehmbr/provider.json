@@ -90,7 +90,7 @@
   "practitioner_role": [
     {
       "id": 1,
-      "managing_organization": {
+      "organization": {
         "local_type": "Organization",
         "local_id": 33,
         "display": null

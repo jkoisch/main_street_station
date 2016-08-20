@@ -14,25 +14,25 @@
         code: "86184003"
         display: Electrocardiographic monitor and recorder
     text: ECG
+  lot_number: "43453424"
+  manufacturer: Acme Devices, Inc
+  model: AB 45-J
+  patient: !ruby/object:Fhir::Types::Reference
+    external: Patient/14
+    display: "14"
+  owner: !ruby/object:Fhir::Types::Reference
+    external: PTC/f201
+    display: monitor
+  contact:
+    - !ruby/object:Fhir::Types::ContactPoint
+      system: phone
+      value: ext 4352
+  location: !ruby/object:Fhir::Types::Reference
+    external: Anaheim, CA
+    display: USA
   note:
     - !ruby/object:Fhir::Types::Annotation
       author_reference: !ruby/object:Fhir::Types::Reference
         external: "Practitioner/xcda-author"
       time: "2015-06-28T14:03:32+10:00"
       text: "QA Checked"
-  manufacturer: Acme Devices, Inc
-  model: AB 45-J
-  lot_number: "43453424"
-  owner: !ruby/object:Fhir::Types::Reference
-    external: PTC/f201
-    display: monitor
-  location: !ruby/object:Fhir::Types::Reference
-    external: Anaheim, CA
-    display: USA
-  patient: !ruby/object:Fhir::Types::Reference
-    external: Patient/14
-    display: "14"
-  contact:
-    - !ruby/object:Fhir::Types::ContactPoint
-      system: phone
-      value: ext 4352

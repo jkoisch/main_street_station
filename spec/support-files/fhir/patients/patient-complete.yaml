@@ -107,24 +107,22 @@
           use: mobile
   communication:
     - !ruby/object:Fhir::PatientClasses::Communication
-      language:
-        - !ruby/object:Fhir::Types::CodeableConcept
-          coding:
-            - !ruby/object:Fhir::Types::Coding
-              system: urn:ietf:bcp:67
-              code: en
-              display: English
-          text: USA
+      language: !ruby/object:Fhir::Types::CodeableConcept
+        coding:
+          - !ruby/object:Fhir::Types::Coding
+            system: urn:ietf:bcp:67
+            code: en
+            display: English
+        text: USA
       preferred: false
     - !ruby/object:Fhir::PatientClasses::Communication
-      language:
-        - !ruby/object:Fhir::Types::CodeableConcept
-          coding:
-            - !ruby/object:Fhir::Types::Coding
-              system: urn:ietf:bcp:47
-              code: nl
-              display: Dutch
-          text: Nederlands
+      language: !ruby/object:Fhir::Types::CodeableConcept
+        coding:
+          - !ruby/object:Fhir::Types::Coding
+            system: urn:ietf:bcp:47
+            code: nl
+            display: Dutch
+        text: Nederlands
       preferred: true
   care_provider:
     - !ruby/object:Fhir::Types::Reference

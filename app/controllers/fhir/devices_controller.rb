@@ -93,8 +93,8 @@ module Fhir
                             manufacturer: Fhir::StringParameter,
                             model:        Fhir::StringParameter,
                             patient:      Fhir::ReferenceParameter,
-                            type:         Fhir::TokenParameter,
-                            udi:          Fhir::StringParameter
+                            type:         Fhir::TokenParameter
+                            # ,udi:          Fhir::StringParameter
                           }
       populate_search_parameters(supported_params, params)
     end

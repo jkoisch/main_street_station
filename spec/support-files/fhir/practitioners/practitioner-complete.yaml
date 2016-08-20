@@ -47,7 +47,7 @@
   birth_date: 1975-12-07
   practitioner_role:
     - !ruby/object:Fhir::PractitionerClasses::PractitionerRole
-      managing_organization: !ruby/object:Fhir::Types::Reference
+      organization: !ruby/object:Fhir::Types::Reference
           external: Organization/f001
           display: BMC
       role: !ruby/object:Fhir::Types::CodeableConcept

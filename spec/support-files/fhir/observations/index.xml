@@ -148,7 +148,7 @@
             <display value="Normal (applies to non-numeric results)"/>
           </coding>
         </interpretation>
-        <comments value="Tube broken in transit and sample leaked"/>
+        <comment value="Tube broken in transit and sample leaked"/>
         <bodySite>
           <coding>
             <system value="http://snomed.info/sct"/>

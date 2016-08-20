@@ -1,6 +1,6 @@
-json.managingOrganization do
-  json.partial! 'fhir/base/reference', reference: practitioner_role.managing_organization
-end unless practitioner_role.managing_organization.nil?
+json.organization do
+  json.partial! 'fhir/base/reference', reference: practitioner_role.organization
+end unless practitioner_role.organization.nil?
 
 json.role do
   json.partial! 'fhir/base/codeable_concept', codeable_concept: practitioner_role.role
