@@ -22,7 +22,6 @@ end
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
 begin
-  config.include Devise::TestHelpers, :type => :view
   config.include Capybara::DSL
 end
 # The settings below are suggested to provide a good initial experience

@@ -1,6 +1,8 @@
 module Fhir
   class FhirController < FhirBaseController
-    before_filter :api_or_interactive #, except: [ :index, :show_old ]
+    include WardenAuthenticate
+
+    #before_filter :api_or_interactive #, except: [ :index, :show_old ]
 
     private
     def api_or_interactive
@@ -28,7 +30,6 @@ module Fhir
           !db_token.nil? and db_token.authentication_expiry > Time.now
         end
       end
-
     end
   end
 end

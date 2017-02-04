@@ -1,17 +1,19 @@
 require 'rails_helper'
-include DeviseHelpers
 
-RSpec.describe 'users/sessions/new', type: :view do
-  before(:each) { render }
+RSpec.describe 'user/sessions/new', type: :view do
+  before(:each) do
+    assign(:user_sign_in, UserSignIn.new)
+    render
+  end
 
   it 'renders the new template' do
     expect(view).to render_template(:new)
     expect(view).to render_template('new')
-    expect(view).to render_template('users/sessions/new')
+    expect(view).to render_template('user/sessions/new')
   end
 
   it 'should have screen title' do
-    expect(rendered).to have_selector("h2:contains('Sign in')")
+    expect(rendered).to have_selector("h2:contains('Create Session')")
   end
 
   it 'should have a email address input field' do
@@ -23,11 +25,12 @@ RSpec.describe 'users/sessions/new', type: :view do
   end
 
   it 'should have a sign in button' do
-    expect(rendered).to have_button('Sign in')
+    expect(rendered).to have_button('Log in')
   end
 
-  it 'should have a sign up link' do
-    expect(rendered).to have_link('Sign up')
+  it 'should not have a sign in link' do
+    pending 'work out link'
+    expect(rendered).not_to have_link('Sign in')
   end
 
   it 'should have a link to forgotten password' do
@@ -35,10 +38,12 @@ RSpec.describe 'users/sessions/new', type: :view do
   end
 
   it 'should have a link to sign in with Facebook' do
+    pending 'more to come'
     expect(rendered).to have_link('Sign in with Facebook')
   end
 
   it 'should have a link to sign in with Google' do
+    pending 'more to come'
     expect(rendered).to have_link('Sign in with Google')
   end
 

@@ -7,12 +7,12 @@ RSpec.describe 'security page behavior', type: :feature do
     let(:user)      { FactoryGirl.create(:local_user, local_pw: valid_pw) }
 
     before(:each) do
-      visit '/login'
+      visit '/user/sessions/new'
 
-      fill_in 'user_email', with: user.email
-      fill_in 'user_password', with: valid_pw
+      fill_in 'user_sign_in_email', with: user.email
+      fill_in 'user_sign_in_password', with: valid_pw
 
-      click_button 'Sign in'
+      click_button 'Log in'
     end
 
     it 'returns to the main page on user sign in' do
@@ -27,7 +27,7 @@ RSpec.describe 'security page behavior', type: :feature do
       click_link 'Log out'
 
       expect(page).to have_content('Welcome to Mainstreet Station')
-      expect(page).to have_link('Log In')
+      expect(page).to have_link('Sign In')
       expect(page).to have_link('Register')
     end
   end

@@ -4,8 +4,9 @@
   <h2>
     Youcentric FHIR<sup>&reg;</sup> v<%= @conformance.fhir_version %> Implementation
   </h2>
-  <% if not user_signed_in? %>
+  <% unless user_signed_in? -%>
     <%= link_to 'Register', new_user_registration_path, class: "btn btn-medium btn-success" %>
-  <% end %>
+    <%= link_to 'Sign In', new_user_session_path, class: "btn btn-medium btn-success" %>
+  <% end -%>
   <%= link_to 'Conformance', fhir_conformance_index_path(format: :html), class: "btn btn-medium btn-success" %>
 </div>

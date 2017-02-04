@@ -1,0 +1,7 @@
+<%- if controller_name != 'sessions' %>
+  <%= link_to 'Sign in', new_user_session_path %><br />
+<% end -%>
+
+<%- if controller_name != 'passwords' %>
+  <%= link_to 'Forgot your password?', new_user_password_path %><br />
+<% end -%>

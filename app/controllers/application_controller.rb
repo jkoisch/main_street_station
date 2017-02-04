@@ -2,6 +2,20 @@ class ApplicationController < ActionController::Base
   #before_filter :https_redirect, except: [:index]
   protect_from_forgery
 
+  helper_method :current_user, :warden, :user_signed_in?
+
+  def current_user
+    warden.user
+  end
+
+  def warden
+    request.env['warden']
+  end
+
+  def user_signed_in?
+    !warden.nil? && !current_user.nil?
+  end
+
   #def current_user
   #  current_user ||= User.find_by(id: session[:user_id])
   #end
@@ -9,7 +23,7 @@ class ApplicationController < ActionController::Base
   #def signed_in?
   #  !!current_user
   #end
-  #helper_method :current_user, :signed_in?
+
   #
   #def current_user=(user)
   #  current_user = user

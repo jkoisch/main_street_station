@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
+ruby '2.1.2'
 
 gem 'rails', '4.2.6'
 
@@ -36,6 +36,7 @@ group :test, :development do
   gem 'equivalent-xml'
   gem 'nokogiri-pretty'
   gem 'rb-readline'
+  gem 'shoulda-matchers', require: false
 end
 
 group :test, :development, :dev_integration do
@@ -49,13 +50,10 @@ gem 'nifty-generators', group: :development
 gem 'quiet_assets', group: :development
 gem 'uuid'
 
-gem 'devise'
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
 gem 'oauth2'
 gem 'omniauth-oauth2'
 gem 'httparty'
+gem 'warden'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt'

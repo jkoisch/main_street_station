@@ -1,13 +1,15 @@
 require 'rails_helper'
-include DeviseHelpers
 
-RSpec.describe 'users/registrations/new', type: :view do
-  before(:each) { render }
+RSpec.describe 'user/registrations/new', type: :view do
+  before(:each) do
+    assign(:user, User.new)
+    render
+  end
 
   it 'renders the new template' do
     expect(view).to render_template(:new)
     expect(view).to render_template('new')
-    expect(view).to render_template('users/registrations/new')
+    expect(view).to render_template('user/registrations/new')
   end
 
   it 'should have title' do
@@ -39,10 +41,12 @@ RSpec.describe 'users/registrations/new', type: :view do
   end
 
   it 'should have a link to sign in with Facebook' do
+    pending
     expect(rendered).to have_link('Sign in with Facebook')
   end
 
   it 'should have a link to sign in with Google' do
+    pending
     expect(rendered).to have_link('Sign in with Google')
   end
 end

@@ -1,5 +1,3 @@
-#require 'yellow_pages'
-
 MainStreetStation::Application.routes.draw do
 
   #match 'auth/:provider/callback', to: 'omniauth_callbacks#create'
@@ -50,29 +48,27 @@ MainStreetStation::Application.routes.draw do
     get 'authentication/:id', to: 'authentication#show'
   end
 
-  devise_scope :user do
-    get '/login', to: 'users/sessions#new'
-    post '/user_login', to: 'users/sessions#create'
-    delete '/logout', to: 'users/sessions#destroy'
-  end
-
   namespace :authenticate do
     post 'facebook', to: 'facebook#create', defaults: {format: :json}
     # post 'google', to: 'google#create'
   end
 
+  namespace :user do
+    resources :registrations
+    resources :sessions, only: [:new, :create, :delete]
+    get 'sign_up', to: 'registrations#new'
+    resources :passwords
+    resources :oauth_sessions, only: [:new]
+  end
+
   post 'login', to: 'sessions#create', defaults: {format: :json}
+  delete 'logout', to: 'sessions#destroy'
 
   post '/api_session', to: 'sessions#create', defaults: {format: :json}
   delete '/api_session', to: 'sessions#destroy'
 
-  devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout' },
-             controllers: {registrations: 'users/registrations',
-                           sessions: 'users/sessions',
-                           omniauth_callbacks: 'omniauth_callbacks'}
-
-  #root 'fhir/conformance#index' #controller: 'fhir::conformance', action: 'index',  to: 'fhir/conformance#index'
   root 'welcomes#index'
+
 =begin
   namespace :registration do
     resources :whitelabel_groups
