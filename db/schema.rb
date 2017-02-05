@@ -76,10 +76,15 @@ ActiveRecord::Schema.define(version: 20150807000005) do
     t.string   "password_digest"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "identity_authorities", ["confirmation_token"], name: "index_identity_authorities_on_confirmation_token", using: :btree
+  add_index "identity_authorities", ["reset_password_token"], name: "index_identity_authorities_on_reset_password_token", using: :btree
   add_index "identity_authorities", ["user_id"], name: "index_identity_authorities_on_user_id", using: :btree
 
   create_table "information_categories", force: :cascade do |t|

@@ -21,7 +21,7 @@ class UserForm
 
   def initialize(attrs={})
     @user = User.new()
-    @authority = LocalAuthority.new(provider: "youcentric", uid: UUID.generate())
+    @authority = LocalAuthority.new(provider: 'youcentric', uid: UUID.generate())
 
     attrs.each do |name, value|
       send("#{name}=", value)
@@ -29,7 +29,7 @@ class UserForm
   end
 
   def save
-    @user.identity_authorities << LocalAuthority.new(provider: "youcentric", 
+    @user.identity_authorities << LocalAuthority.new(provider: 'youcentric',
                                                      uid: UUID.generate(), 
                                                      password: self.password, 
                                                      password_confirmation: self.password_confirmation)

@@ -6,7 +6,12 @@ namespace :db do
       email = ask('Please supply an email: ')
       pw = ask('enter password: ') { |q| q.echo = '@'}
       pw_confirm = ask('re-enter password (for confirmation) ') { |q| q.echo = '@' }
-      User.create!(email: email, password: pw, password_confirmation: pw_confirm)
+      user = User.new(email: email)
+      user.identity_authorities << LocalAuthority.new(provider: 'youcentric',
+                                                      uid: UUID.generate(),
+                                                      password: pw,
+                                                      password_confirmation: pw_confirm)
+      user.save!
     end
   end
 
