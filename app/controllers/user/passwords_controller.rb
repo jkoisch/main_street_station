@@ -1,4 +1,4 @@
-class Users::PasswordsController < ApplicationController
+class User::PasswordsController < ApplicationController
   # GET /resource/password/new
   # def new
   #   super

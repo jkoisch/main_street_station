@@ -57,6 +57,7 @@ RSpec.configure do |config|
   config.include Requests::XmlHelpers, type: :request
   config.include Requests::XmlHelpers, type: :view
   config.include Fhir::Spec::Helpers
+  config.include Warden::Test::ControllerHelpers, type: :controller
 end
 
 #WebMock.stub_request(:any, 'http://gringotts.dev/')

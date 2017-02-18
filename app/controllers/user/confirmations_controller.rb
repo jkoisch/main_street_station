@@ -1,4 +1,4 @@
-class Users::ConfirmationsController < ApplicationController
+class User::ConfirmationsController < ApplicationController
   # GET /resource/confirmation/new
   # def new
   #   super

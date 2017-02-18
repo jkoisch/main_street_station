@@ -1,4 +1,4 @@
-class Users::UnlocksController < ApplicationController
+class User::UnlocksController < ApplicationController
   # GET /resource/unlock/new
   # def new
   #   super
