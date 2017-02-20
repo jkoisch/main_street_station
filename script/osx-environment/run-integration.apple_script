@@ -2,41 +2,45 @@ local base_dir, gg_dir, ms_dir
 set base_dir to "Documents/develop/Rails/"
 set gg_dir to base_dir & "gringotts"
 set ms_dir to base_dir & "main_street_station"
+set title to "Gringotts"
+set set_directory to "cd " & gg_dir
+set title2 to "Mainstreet"
+set set_directory2 to "cd " & ms_dir
 
 tell application "iTerm"
 	activate
-	set myterm to (make new terminal)
+	set myterm to (create window with default profile)
 	tell myterm
-		set console_session to (launch session "Default Session")
-		activate console_session
-		tell console_session
-			set name to "Gringotts Server"
-			write text "cd " & gg_dir
-			write text "rails s -e dev_integration -p 9001"
+		tell current session
+			write text set_directory & "; rails s -e dev_integration -p 9001"
+			set name to title
 		end tell
 
-		set general_session to (launch session "Default Session")
-		activate general_session
-		tell general_session
-			set name to "Gringotts Log"
-			write text "cd " & gg_dir
-			write text "tail -f log/dev_integration.log"
+		create tab with default profile
+		tell second tab
+			select
+			tell current session
+				write text set_directory & "; tail -f log/dev_integration.log"
+				set name to title & " Logs"
+			end tell
 		end tell
 
-		set pg_session to (launch session "Default Session")
-		activate pg_session
-		tell pg_session
-			set name to "Mainstreet Server"
-			write text "cd " & ms_dir
-			write text "rails s -e dev_integration -p 8500"
+		create tab with default profile
+		tell third tab
+			select
+			tell current session
+				write text set_directory2 & "; rails s -e dev_integration -p 8500"
+				set name to title2
+			end tell
 		end tell
 
-		set guard_session to (launch session "Default Session")
-		activate guard_session
-		tell guard_session
-			set name to "Mainstreet Log"
-			write text "cd " & ms_dir
-			write text "tail -f log/dev_integration.log"
+		create tab with default profile
+		tell fourth tab
+			select
+			tell current session
+				write text set_directory2 & "; tail -f log/dev_integration.log"
+				set name to title2 & " Logs"
+			end tell
 		end tell
 	end tell
 end tell

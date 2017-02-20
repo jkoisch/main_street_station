@@ -2,57 +2,63 @@ local base_dir, gringotts_dir, mainstreet_dir
 set base_dir to "Documents/develop/Rails/"
 set gringotts_dir to base_dir & "gringotts"
 set mainstreet_dir to base_dir & "main_street_station"
+set title to "Gringott"
+set title2 to "MainStreet"
+set set_directory to "cd " & gringotts_dir
+set set_directory2 to "cd " & mainstreet_dir
 
 tell application "iTerm"
 	activate
-	set myterm to (make new terminal)
+	set myterm to (create window with default profile)
 	tell myterm
-		set console_session to (launch session "Default Session")
-		activate console_session
-		tell console_session
-			set name to "Gringotts console"
-			write text "cd " & gringotts_dir
-			write text "rails c"
+		tell current session
+			write text set_directory & "; rails c"
+			set name to title
 		end tell
 
-		set general_session to (launch session "Default Session")
-		activate general_session
-		tell general_session
-			set name to "gringotts"
-			write text "cd " & gringotts_dir
-			write text "mine ."
+		create tab with default profile
+		tell second tab
+			select
+			tell current session
+				write text set_directory & "; mine ."
+				set name to title
+			end tell
 		end tell
 
-		set pg_session to (launch session "Default Session")
-		activate pg_session
-		tell pg_session
-			set name to "PSQL"
-			write text "cd " & gringotts_dir
-			write text "psql gringotts-dev"
+		create tab with default profile
+		tell third tab
+			select
+			tell current session
+				write text set_directory & "; psql gringotts-dev"
+				set name to title
+			end tell
 		end tell
 
-		set guard_session to (launch session "Default Session")
-		activate guard_session
-		tell guard_session
-			set name to "guard-gringotts"
-			write text "cd " & gringotts_dir
-			write text "bundle exec guard"
+		create tab with default profile
+		tell fourth tab
+			select
+			tell current session
+				write text set_directory & "; bundle exec guard"
+				set name to title & " Guard"
+			end tell
 		end tell
 
-		set mainstreet_session to (launch session "Default Session")
-		activate mainstreet_session
-		tell mainstreet_session
-			set name to "mainstreet"
-			write text "cd " & mainstreet_dir
-			write text "mine ."
+		create tab with default profile
+		tell fifth tab
+			select
+			tell current session
+				write text set_directory2 & "; psql mainstreet-dev"
+				set name to title2
+			end tell
 		end tell
 
-		set ms_guard_session to (launch session "Default Session")
-		activate ms_guard_session
-		tell ms_guard_session
-			set name to "guard-mainstreet"
-			write text "cd " & mainstreet_dir
-			write text "bundle exec guard"
+		create tab with default profile
+		tell sixth tab
+			select
+			tell current session
+				write text set_directory2 & "; bundle exec guard"
+				set name to title2 & " Guard"
+			end tell
 		end tell
 	end tell
 end tell
