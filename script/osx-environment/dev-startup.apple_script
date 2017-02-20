@@ -2,7 +2,7 @@ local base_dir, gringotts_dir, mainstreet_dir
 set base_dir to "Documents/develop/Rails/"
 set gringotts_dir to base_dir & "gringotts"
 set mainstreet_dir to base_dir & "main_street_station"
-set title to "Gringott"
+set title to "Gringotts"
 set title2 to "MainStreet"
 set set_directory to "cd " & gringotts_dir
 set set_directory2 to "cd " & mainstreet_dir

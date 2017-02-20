@@ -1,0 +1,34 @@
+local base_dir, mainstreet_dir
+set base_dir to "Documents/develop/Rails/"
+set mainstreet_dir to base_dir & "main_street_station"
+set title to "MainStreet"
+set set_directory to "cd " & mainstreet_dir
+
+tell application "iTerm"
+	activate
+	set myterm to (create window with default profile)
+	tell myterm
+		tell current session
+			write text set_directory & "; mine ."
+			set name to title
+		end tell
+
+		create tab with default profile
+		tell second tab
+			select
+			tell current session
+				write text set_directory & "; psql mainstreet-dev"
+				set name to title
+			end tell
+		end tell
+
+		create tab with default profile
+		tell third tab
+			select
+			tell current session
+				write text set_directory & "; bundle exec guard"
+				set name to title & " Guard"
+			end tell
+		end tell
+	end tell
+end tell
