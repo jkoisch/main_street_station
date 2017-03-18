@@ -61,11 +61,11 @@ MainStreetStation::Application.routes.draw do
     resources :oauth_sessions, only: [:new]
   end
 
-  post 'login', to: 'sessions#create', defaults: {format: :json}
-  delete 'logout', to: 'sessions#destroy'
+  post 'login', to: 'user/api_sessions#create', defaults: {format: :json}
+  delete 'logout', to: 'user/api_sessions#destroy'
 
-  post '/api_session', to: 'sessions#create', defaults: {format: :json}
-  delete '/api_session', to: 'sessions#destroy'
+  post '/api_session', to: 'user/api_sessions#create', defaults: {format: :json}
+  delete '/api_session', to: 'user/api_sessions#destroy'
 
   root 'welcomes#index'
 

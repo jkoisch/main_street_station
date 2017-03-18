@@ -1,7 +1,7 @@
 # This controller is for API Login
-class SessionsController < ApplicationController
+class User::ApiSessionsController < ApplicationController
   before_action :set_user, only: [:create]
-  skip_before_action :verify_authenticity_token, only: [:create], if: :is_json_request?
+  # skip_before_action :verify_authenticity_token, only: [:create], if: :is_json_request?
 
   def create
     if SessionService.authenticate(@user, params[:password])
