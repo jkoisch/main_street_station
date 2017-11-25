@@ -15,6 +15,7 @@ class ApiTokenStrategy < ::Warden::Strategies::Base
 
     #puts "in mainstreet authenticate!"
     user_token = UserToken.find_by(authentication_token: auth_token_from_header)
+    # Look at using the custom Warden response
     return fail!(failure_message) unless user_token && user_token.authentication_expiry > Time.now
 
     return success!(user_token.user)

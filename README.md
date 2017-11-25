@@ -7,9 +7,9 @@ from external interface formats into the internal Ehmbr JSON format used by Grin
 
 ##Overview
 ###Base Software
-* Ruby 2.1.2
+* Ruby 2.4.2
 * PostgreSQL 9.3.5 (running 9.2.7 on Heroku)
-* Rails 4.1.8
+* Rails 4.2.9
 
 ##Interfaces
 ###FHIR

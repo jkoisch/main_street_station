@@ -7,7 +7,11 @@ module WardenAuthenticate
 
   def authenticate!
     if MainStreetStation::Application.config.fhir_enforce_security
-      warden.authenticate!
+      if json_request? || xml_request?
+        warden.authenticate! scope: :api
+      else
+        warden.authenticate! scope: :interactive
+      end
     else
       logger.warn '*** Authorization has been bypassed'
       true
