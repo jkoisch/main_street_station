@@ -14,8 +14,8 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
-FactoryGirl.definition_file_paths = %w(spec/support-files/factories)
-FactoryGirl.find_definitions
+FactoryBot.definition_file_paths = %w(spec/support-files/factories)
+FactoryBot.find_definitions
 
 RSpec.configure do |config|
   # noinspection RubyResolve
@@ -62,4 +62,4 @@ end
 
 #WebMock.stub_request(:any, 'http://gringotts.dev/')
 
-FactoryGirl.register_strategy(:json, JsonStrategy)
+FactoryBot.register_strategy(:json, JsonStrategy)

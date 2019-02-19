@@ -1,10 +1,10 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :user do
-    email 'this@that.com'
+    email { 'this@that.com' }
 
     factory :local_user do
       transient do
-        local_pw  '123test'
+        local_pw  { '123test' }
       end
 
       after(:create) do |user, evaluator|

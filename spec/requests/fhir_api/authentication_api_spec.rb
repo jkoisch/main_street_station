@@ -12,7 +12,7 @@ describe 'Authentication Request FHIR API', type: :request do
   describe '- user verification' do
     describe ' - internal' do
       let(:valid_pw) { '123test' }
-      let(:user) { FactoryGirl.create(:local_user, local_pw: valid_pw) }
+      let(:user) { FactoryBot.create(:local_user, local_pw: valid_pw) }
 
       it 'should allow a user to log in' do
         post '/api_session', {user_name: user.email, password: valid_pw}
@@ -52,7 +52,7 @@ describe 'Authentication Request FHIR API', type: :request do
 
   describe '- token validation' do
     let(:valid_pw) { '123test' }
-    let(:user) { FactoryGirl.create(:local_user, local_pw: valid_pw) }
+    let(:user) { FactoryBot.create(:local_user, local_pw: valid_pw) }
 
     it 'should fail with an invalid token' do
       get '/fhir/Observation', nil,

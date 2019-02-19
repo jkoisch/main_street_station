@@ -4,7 +4,7 @@ RSpec.describe 'security page behavior', type: :feature do
 
   context 'sign in, sign out' do
     let(:valid_pw)  { '123test' }
-    let(:user)      { FactoryGirl.create(:local_user, local_pw: valid_pw) }
+    let(:user)      { FactoryBot.create(:local_user, local_pw: valid_pw) }
 
     before(:each) do
       visit '/user/sessions/new'

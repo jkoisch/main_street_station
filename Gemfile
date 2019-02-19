@@ -28,7 +28,7 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'faker'
   gem 'cucumber-rails', require: false #, '0.3.2'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'terminal-notifier'
   gem 'mocha', require: 'mocha/api'
   gem 'thin'

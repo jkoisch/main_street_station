@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'UserToken' do
-  let(:user) { FactoryGirl.create(:user, email: Faker::Internet.email) }
+  let(:user) { FactoryBot.create(:user, email: Faker::Internet.email) }
 
   it 'should generate a new instance' do
     UserToken.create! do |ut|
