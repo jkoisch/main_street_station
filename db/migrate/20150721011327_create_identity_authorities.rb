@@ -22,7 +22,6 @@ class CreateIdentityAuthorities < ActiveRecord::Migration[5.0]
 
       t.timestamps
 
-      t.index :user_id
       t.index :confirmation_token
       t.index :reset_password_token
     end
