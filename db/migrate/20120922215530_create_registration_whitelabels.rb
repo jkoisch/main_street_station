@@ -1,4 +1,4 @@
-class CreateRegistrationWhitelabels < ActiveRecord::Migration
+class CreateRegistrationWhitelabels < ActiveRecord::Migration[5.0]
   def change
     create_table :registration_whitelabels do |t|
       t.string :name

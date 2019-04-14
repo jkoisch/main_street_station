@@ -7,7 +7,7 @@ describe 'FHIR base-type Period', type: :view do
     let(:object) { yaml_load('base/period-simple.yaml') }
 
     context 'JSON' do
-      subject      { render partial: 'fhir/base/period', formats: :json, locals: {period: object} }
+      subject      { render partial: 'fhir/base/period', formats: :fhirj, locals: {period: object} }
 
       it { should match_fhir_json(support_file('base/period-simple.json')) }
     end

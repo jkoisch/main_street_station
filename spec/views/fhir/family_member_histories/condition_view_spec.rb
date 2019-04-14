@@ -8,7 +8,7 @@ describe 'FHIR View FamilyMemberHistory Condition', type: :view do
       let(:object) { yaml_load('family_member_histories/condition-standard.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/family_member_histories/condition', formats: :json, locals: {condition: object} }
+        subject { render partial: 'fhir/family_member_histories/condition', formats: :fhirj, locals: {condition: object} }
 
         it { should match_fhir_json(support_file('family_member_histories/condition-standard.json')) }
       end
@@ -25,7 +25,7 @@ describe 'FHIR View FamilyMemberHistory Condition', type: :view do
       let(:object) { yaml_load('family_member_histories/condition-complete.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/family_member_histories/condition', formats: :json, locals: {condition: object} }
+        subject { render partial: 'fhir/family_member_histories/condition', formats: :fhirj, locals: {condition: object} }
 
         it { should match_fhir_json(support_file('family_member_histories/condition-complete.json')) }
       end

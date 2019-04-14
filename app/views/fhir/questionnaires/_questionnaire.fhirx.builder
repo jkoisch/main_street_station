@@ -1,4 +1,4 @@
-@questionnaire.to_xml(nil, xml)
+questionnaire.to_xml(nil, xml)
 # xml.status({value: resource.status}) unless resource.status.nil?
 # xml.authored({value: resource.authored}) unless resource.authored.nil?
 #

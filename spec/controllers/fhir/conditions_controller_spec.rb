@@ -1,15 +1,15 @@
 require 'rails_helper'
 
 describe Fhir::ConditionsController, type: :controller do
-  let(:json_headers) { { Accept: 'application/json', Content-Type => 'application/json' } }
+  before(:each) { request.headers['Accept'] = 'application/fhir+json' }
 
   context '#index' do
-    subject { get :index, format: :json }
+    subject { get :index }
 
     specify { should render_template(:index) }
 
     it 'assigns all conditions as @conditions' do
-      get :index, format: :json
+      get :index
       expect(assigns(:conditions).count).to eq(1)
     end
   end
@@ -19,35 +19,35 @@ describe Fhir::ConditionsController, type: :controller do
 
     it 'performs a condition search for matching asserter' do
       stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
-      get :index, {format: :json, 'asserter' => '23'}
+      get :index, params: {'asserter' => '23'}
       expect(a_request(:get, 'gringotts.dev/conditions').
                  with(:query => hash_including({'query' => {'asserter' => {'value' => '23'}}}))).to have_been_made
     end
 
     it 'performs a condition search for matching category' do
       stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
-      get :index, {format: :json, category: '439401001'}
+      get :index, params: {category: '439401001'}
       expect(a_request(:get, 'gringotts.dev/conditions').
             with(:query => hash_including({'query' => {'category' => {'code' => '439401001'}}}))).to have_been_made
     end
 
     it 'performs a condition search for matching code' do
       stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
-      get :index, {format: :json, code: '39065001'}
+      get :index, params: {code: '39065001'}
       expect(a_request(:get, 'gringotts.dev/conditions').
                  with(:query => hash_including({'query' => {'code' => {'code' => '39065001'}}}))).to have_been_made
     end
 
     it 'performs a condition search for matching onset date' do
       stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
-      get :index, {format: :json, 'onset' => '2012-05-24'}
+      get :index, params: {'onset' => '2012-05-24'}
       expect(a_request(:get, 'gringotts.dev/conditions').
                  with(:query => hash_including({'query' => {'onset' => {'value' => '2012-05-24'}}}))).to have_been_made
     end
 
     it 'performs a condition search for matching patient reference' do
       stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
-      get :index, {format: :json, 'patient' => '23'}
+      get :index, params: {'patient' => '23'}
       expect(a_request(:get, 'gringotts.dev/conditions').
                 with(:query => hash_including({'query' => {'patient' => {'value' => '23'}}}))).to have_been_made
     end
@@ -57,17 +57,17 @@ describe Fhir::ConditionsController, type: :controller do
 
   end
   describe '#show' do
-    subject { get :show, id: 1, format: :json }
+    subject { get :show, params: {id: 1} }
 
     specify { should render_template(:show) }
 
     it 'assigns the requested condition as @condition' do
-      get :show, id: 1, format: :json
+      get :show, params: {id: 1}
       expect(assigns(:condition)).to be_a(Fhir::Condition)
     end
 
     it 'assigns the operation_outcome' do
-      get :show, id: 2, format: :json
+      get :show, params: {id: 2}
       expect(assigns(:operation_outcome)).to be_a(Fhir::OperationOutcome)
     end
   end
@@ -82,12 +82,12 @@ describe Fhir::ConditionsController, type: :controller do
       end
 
       it 'should return a success' do
-        post :create, { format: :json }, { RAW_POST_DATA: :params }
+        post :create, params: { RAW_POST_DATA: :params }
         expect(response).to have_http_status(:created)
       end
 
       it 'should set the Location on the response' do
-        post :create, { format: :json }, { RAW_POST_DATA: :params }
+        post :create, params: { RAW_POST_DATA: :params }
         expect(response.location).to match /Condition\/1/
       end
 
@@ -100,12 +100,12 @@ describe Fhir::ConditionsController, type: :controller do
       end
 
       it 'should return a bad request' do
-        post :create, { format: :json }, { RAW_POST_DATA: :params }
+        post :create, params: { RAW_POST_DATA: :params }
         expect(response).to have_http_status(:bad_request)
       end
 
       it 'should return an OperationOutcome' do
-        post :create, { format: :json }, { RAW_POST_DATA: :params }
+        post :create, params: { RAW_POST_DATA: :params }
         expect(response).to render_template 'fhir/fhir_base/operation_outcome'
       end
     end
@@ -116,12 +116,12 @@ describe Fhir::ConditionsController, type: :controller do
       end
 
       it 'should return a service unavailable' do
-        post :create, { format: :json }, { RAW_POST_DATA: :params }
+        post :create, params: { RAW_POST_DATA: :params }
         expect(response).to have_http_status(:service_unavailable)
       end
 
       it 'should return an OperationOutcome' do
-        post :create, { format: :json }, { RAW_POST_DATA: :params }
+        post :create, params: { RAW_POST_DATA: :params }
         expect(response).to render_template 'fhir/fhir_base/operation_outcome'
       end
     end
@@ -137,7 +137,7 @@ describe Fhir::ConditionsController, type: :controller do
       end
 
       it 'should return a success' do
-        put :update, { format: :json, id: 1 }, { RAW_POST_DATA: :params }
+        put :update, params: {id: 1, RAW_POST_DATA: :params }
         expect(response).to have_http_status(:success)
       end
     end
@@ -149,12 +149,12 @@ describe Fhir::ConditionsController, type: :controller do
       end
 
       it 'should return a bad request' do
-        put :update, { format: :json, id: 1 }, { RAW_POST_DATA: :params }
+        put :update, params: {id: 1, RAW_POST_DATA: :params }
         expect(response).to have_http_status(:bad_request)
       end
 
       it 'should return an OperationOutcome' do
-        put :update, { format: :json, id: 1 }, { RAW_POST_DATA: :params }
+        put :update, params: {id: 1, RAW_POST_DATA: :params }
         expect(response).to render_template 'fhir/fhir_base/operation_outcome'
       end
     end
@@ -165,12 +165,12 @@ describe Fhir::ConditionsController, type: :controller do
       end
 
       it 'should return a service unavailable' do
-        put :update, { format: :json, id: 1 }, { RAW_POST_DATA: :params }
+        put :update, params: {id: 1, RAW_POST_DATA: :params }
         expect(response).to have_http_status(:service_unavailable)
       end
 
       it 'should return an OperationOutcome' do
-        put :update, { format: :json, id: 1 }, { RAW_POST_DATA: :params }
+        put :update, params: {id: 1, RAW_POST_DATA: :params }
         expect(response).to render_template 'fhir/fhir_base/operation_outcome'
       end
     end

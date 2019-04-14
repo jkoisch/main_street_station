@@ -9,7 +9,7 @@ describe 'FHIR Condition View', type: :view do
     let(:resource) { yaml_load('conditions/condition-standard.yaml') }
 
     context 'JSON' do
-      subject { render(partial: 'condition', formats: :json, locals: {resource: resource}) }
+      subject { render(partial: 'condition', formats: :fhirj, locals: {resource: resource}) }
 
       it {should match_fhir_json(support_file('conditions/condition-standard.json')) }
     end
@@ -26,7 +26,7 @@ describe 'FHIR Condition View', type: :view do
     let(:resource) { yaml_load('conditions/condition-complete.yaml') }
 
     context 'JSON' do
-      subject { render(partial: 'condition', formats: :json, locals: {resource: resource}) }
+      subject { render(partial: 'condition', formats: :fhirj, locals: {resource: resource}) }
 
       it {should match_fhir_json(support_file('conditions/condition-complete.json')) }
     end
@@ -43,13 +43,13 @@ describe 'FHIR Condition View', type: :view do
     before(:each) { @condition = yaml_load('conditions/condition-standard.yaml') }
 
     context 'JSON' do
-      subject { render template: 'fhir/conditions/show', formats: :json }
+      subject { render template: 'fhir/conditions/show', formats: :fhirj }
 
       it { should match_fhir_json(support_file('conditions/show.json')) }
     end
 
     context 'XML' do
-      subject { render template: 'fhir/conditions/show', formats: :xml }
+      subject { render template: 'fhir/conditions/show', formats: :fhirx }
 
       it { should match_fhir_xml(support_file('conditions/show.xml')) }
     end
@@ -60,14 +60,14 @@ describe 'FHIR Condition View', type: :view do
                                    yaml_load('conditions/condition-complete.yaml') ] }
 
     context 'JSON' do
-      subject { render template: 'fhir/conditions/index', formats: :json }
+      subject { render template: 'fhir/conditions/index', formats: :fhirj }
 
       it { should match_fhir_json(support_file('conditions/index.json'),
                                   {'**/lastUpdated' => 'xxx'}) }
     end
 
     context 'XML' do
-      subject { render template: 'fhir/conditions/index', formats: :xml }
+      subject { render template: 'fhir/conditions/index', formats: :fhirx }
 
       it { should match_fhir_xml(support_file('conditions/index.xml'),
                                  {"//*[local-name()='lastUpdated']/@value" => 'xxx'}) }

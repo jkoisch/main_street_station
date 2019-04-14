@@ -9,7 +9,7 @@ describe 'FHIR Device View', type: :view do
     let(:resource) { yaml_load('devices/device-standard.yaml') }
 
     context 'JSON' do
-      subject { render(partial: 'device', formats: :json, locals: {resource: resource}) }
+      subject { render(partial: 'device', formats: :fhirj, locals: {resource: resource}) }
 
       it {should match_fhir_json(support_file('devices/device-standard.json')) }
     end
@@ -26,7 +26,7 @@ describe 'FHIR Device View', type: :view do
     let(:resource) { yaml_load('devices/device-complete.yaml') }
 
     context 'JSON' do
-      subject { render(partial: 'device', formats: :json, locals: {resource: resource}) }
+      subject { render(partial: 'device', formats: :fhirj, locals: {resource: resource}) }
 
       it {should match_fhir_json(support_file('devices/device-complete.json')) }
     end
@@ -43,13 +43,13 @@ describe 'FHIR Device View', type: :view do
     before(:each) { @device = yaml_load('devices/device-standard.yaml') }
 
     context 'JSON' do
-      subject { render template: 'fhir/devices/show', formats: :json }
+      subject { render template: 'fhir/devices/show', formats: :fhirj }
 
       it { should match_fhir_json(support_file('devices/show.json')) }
     end
 
     context 'XML' do
-      subject { render template: 'fhir/devices/show', formats: :xml }
+      subject { render template: 'fhir/devices/show', formats: :fhirx }
 
       it { should match_fhir_xml(support_file('devices/show.xml')) }
     end
@@ -60,14 +60,14 @@ describe 'FHIR Device View', type: :view do
                                    yaml_load('devices/device-complete.yaml') ] }
 
     context 'JSON' do
-      subject { render template: 'fhir/devices/index', formats: :json }
+      subject { render template: 'fhir/devices/index', formats: :fhirj }
 
       it { should match_fhir_json(support_file('devices/index.json'),
                                   {'**/lastUpdated' => 'xxx'}) }
     end
 
     context 'XML' do
-      subject { render template: 'fhir/devices/index', formats: :xml }
+      subject { render template: 'fhir/devices/index', formats: :fhirx }
 
       it { should match_fhir_xml(support_file('devices/index.xml'),
                                  {"//*[local-name()='lastUpdated']/@value" => 'xxx'}) }

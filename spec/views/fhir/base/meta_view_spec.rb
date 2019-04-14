@@ -7,7 +7,7 @@ describe 'FHIR base-type Meta', type: :view do
     let(:object) { yaml_load('base/meta-simple.yaml') }
 
     context 'JSON' do
-      subject      { render partial: 'fhir/base/meta', formats: :json, locals: {meta: object} }
+      subject      { render partial: 'fhir/base/meta', formats: :fhirj, locals: {meta: object} }
 
       it { should match_fhir_json(support_file('base/meta-simple.json')) }
     end

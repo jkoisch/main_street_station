@@ -8,7 +8,7 @@ describe 'FHIR View Organization Contact', type: :view do
       let(:object) { yaml_load('organizations/contact-standard.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/organizations/contact', formats: :json, locals: {contact: object} }
+        subject { render partial: 'fhir/organizations/contact', formats: :fhirj, locals: {contact: object} }
 
         it { should match_fhir_json(support_file('organizations/contact-standard.json')) }
       end
@@ -25,7 +25,7 @@ describe 'FHIR View Organization Contact', type: :view do
       let(:object) { yaml_load('organizations/contact-complete.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/organizations/contact', formats: :json, locals: {contact: object} }
+        subject { render partial: 'fhir/organizations/contact', formats: :fhirj, locals: {contact: object} }
 
         it { should match_fhir_json(support_file('organizations/contact-complete.json')) }
       end

@@ -1,15 +1,15 @@
 require 'rails_helper'
 
 describe Fhir::CoveragesController, type: :controller do
-  let(:json_headers) { { Accept: 'application/json', Content-Type => 'application/json' } }
+  before(:each) { request.headers['Accept'] = 'application/fhir+json' }
 
   context '#index' do
-    subject { get :index, format: :json }
+    subject { get :index }
 
     specify { should render_template(:index) }
 
     it 'assigns all coverages as @coverages' do
-      get :index, format: :json
+      get :index
       expect(assigns(:coverages).count).to eq(1)
     end
   end
@@ -19,24 +19,24 @@ describe Fhir::CoveragesController, type: :controller do
 
     it 'performs a coverage search for matching subscriber reference' do
       stub_request(:any, /.gringotts.dev\/.*/).to_return(:body => '[]')
-      get :index, {format: :json, 'subscriber' => '23'}
+      get :index, params: {'subscriber' => '23'}
       expect(a_request(:get, 'gringotts.dev/coverages').
           with(:query => hash_including({'query' => {'subscriber' => {'value' => '23'}}}))).to have_been_made
     end
   end
 
   describe '#show' do
-    subject { get :show, id: 1, format: :json }
+    subject { get :show, params: {id: 1} }
 
     specify { should render_template(:show) }
 
     it 'assigns the requested coverage as @coverage' do
-      get :show, id: 1, format: :json
+      get :show, params: {id: 1}
       expect(assigns(:coverage)).to be_a(Fhir::Coverage)
     end
 
     it 'assigns the operation_outcome' do
-      get :show, id: 2, format: :json
+      get :show, params: {id: 2}
       expect(assigns(:operation_outcome)).to be_a(Fhir::OperationOutcome)
     end
   end

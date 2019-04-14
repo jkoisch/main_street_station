@@ -5,32 +5,32 @@ describe 'FHIR Condition', type: :routing do
 
     specify { expect(get: fhir_Condition_index_path).to route_to(controller: 'fhir/conditions',
                                                                    action:     'index',
-                                                                   format:     :json) }
+                                                                   format:     :fhirj) }
     specify { expect(get: '/fhir/Condition').to route_to(controller: 'fhir/conditions',
                                                            action:     'index',
-                                                           format:     :json) }
+                                                           format:     :fhirj) }
     specify { expect(get: fhir_Condition_path(1)).to route_to(controller: 'fhir/conditions',
                                                                 action:     'show',
                                                                 id:         '1',
-                                                                format:     :json) }
+                                                                format:     :fhirj) }
     specify { expect(get: '/fhir/Condition/1').to route_to(controller: 'fhir/conditions',
                                                              action:     'show',
                                                              id:         '1',
-                                                             format:     :json) }
+                                                             format:     :fhirj) }
     specify { expect(post: fhir_Condition_index_path).to route_to(controller: 'fhir/conditions',
                                                                     action:     'create',
-                                                                    format:     :json) }
+                                                                    format:     :fhirj) }
     specify { expect(post: '/fhir/Condition').to route_to(controller: 'fhir/conditions',
                                                             action:     'create',
-                                                            format:     :json) }
+                                                            format:     :fhirj) }
     specify { expect(put: fhir_Condition_path(1)).to route_to(controller: 'fhir/conditions',
                                                                 action:     'update',
                                                                 id:         '1',
-                                                                format:     :json) }
+                                                                format:     :fhirj) }
     specify { expect(put: '/fhir/Condition/1').to route_to(controller: 'fhir/conditions',
                                                              action:     'update',
                                                              id:         '1',
-                                                             format:     :json) }
+                                                             format:     :fhirj) }
   end
 
   describe 'forbidden routes' do

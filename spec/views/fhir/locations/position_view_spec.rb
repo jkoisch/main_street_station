@@ -9,7 +9,7 @@ describe 'FHIR View Location Position', type: :view do
       let(:object) { yaml_load('locations/position-standard.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/locations/position', formats: :json, locals: {position: object} }
+        subject { render partial: 'fhir/locations/position', formats: :fhirj, locals: {position: object} }
 
         it { should match_fhir_json(support_file('locations/position-standard.json')) }
       end
@@ -26,7 +26,7 @@ describe 'FHIR View Location Position', type: :view do
       let(:object) { yaml_load('locations/position-complete.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/locations/position', formats: :json, locals: {position: object} }
+        subject { render partial: 'fhir/locations/position', formats: :fhirj, locals: {position: object} }
 
         it { should match_fhir_json(support_file('locations/position-complete.json')) }
       end

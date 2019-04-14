@@ -4,32 +4,32 @@ describe 'FHIR Patient', type: :routing do
   describe 'provided routes' do
     specify { expect(get: fhir_Patient_index_path).to route_to(controller: 'fhir/patients',
                                                                action:     'index',
-                                                               format:     :json) }
+                                                               format:     :fhirj) }
     specify { expect(get: '/fhir/Patient').to route_to(controller: 'fhir/patients',
                                                        action:     'index',
-                                                       format:     :json) }
+                                                       format:     :fhirj) }
     specify { expect(get: fhir_Patient_path(1)).to route_to(controller: 'fhir/patients',
                                                             action:     'show',
                                                             id:         '1',
-                                                            format:     :json) }
+                                                            format:     :fhirj) }
     specify { expect(get: '/fhir/Patient/1').to route_to(controller: 'fhir/patients',
                                                          action:     'show',
                                                          id:         '1',
-                                                         format:     :json) }
+                                                         format:     :fhirj) }
     specify { expect(post: fhir_Patient_index_path).to route_to(controller: 'fhir/patients',
                                                                 action:     'create',
-                                                                format:     :json) }
+                                                                format:     :fhirj) }
     specify { expect(post: '/fhir/Patient').to route_to(controller: 'fhir/patients',
                                                         action:     'create',
-                                                        format:     :json) }
+                                                        format:     :fhirj) }
     specify { expect(put: fhir_Patient_path(1)).to route_to(controller: 'fhir/patients',
                                                             action:     'update',
                                                             id:         '1',
-                                                            format:     :json) }
+                                                            format:     :fhirj) }
     specify { expect(put: '/fhir/Patient/1').to route_to(controller: 'fhir/patients',
                                                          action:     'update',
                                                          id:         '1',
-                                                         format:     :json) }
+                                                         format:     :fhirj) }
   end
 
   describe 'forbidden routes' do

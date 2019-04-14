@@ -9,7 +9,7 @@ describe 'FHIR FamilyMemberHistory View', type: :view do
     let(:resource) { yaml_load('family_member_histories/family_member_history-standard.yaml') }
 
     context 'JSON' do
-      subject { render(partial: 'family_member_history', formats: :json, locals: {resource: resource}) }
+      subject { render(partial: 'family_member_history', formats: :fhirj, locals: {resource: resource}) }
 
       it {should match_fhir_json(support_file('family_member_histories/family_member_history-standard.json')) }
     end
@@ -26,7 +26,7 @@ describe 'FHIR FamilyMemberHistory View', type: :view do
     let(:resource) { yaml_load('family_member_histories/family_member_history-complete.yaml') }
 
     context 'JSON' do
-      subject { render(partial: 'family_member_history', formats: :json, locals: {resource: resource}) }
+      subject { render(partial: 'family_member_history', formats: :fhirj, locals: {resource: resource}) }
 
       it {should match_fhir_json(support_file('family_member_histories/family_member_history-complete.json')) }
     end
@@ -43,13 +43,13 @@ describe 'FHIR FamilyMemberHistory View', type: :view do
     before(:each) { @family_member_history = yaml_load('family_member_histories/family_member_history-standard.yaml') }
 
     context 'JSON' do
-      subject { render template: 'fhir/family_member_histories/show', formats: :json }
+      subject { render template: 'fhir/family_member_histories/show', formats: :fhirj }
 
       it { should match_fhir_json(support_file('family_member_histories/show.json')) }
     end
 
     context 'XML' do
-      subject { render template: 'fhir/family_member_histories/show', formats: :xml }
+      subject { render template: 'fhir/family_member_histories/show', formats: :fhirx }
 
       it { should match_fhir_xml(support_file('family_member_histories/show.xml')) }
     end
@@ -60,14 +60,14 @@ describe 'FHIR FamilyMemberHistory View', type: :view do
                                        yaml_load('family_member_histories/family_member_history-complete.yaml') ] }
 
     context 'JSON' do
-      subject { render template: 'fhir/family_member_histories/index', formats: :json }
+      subject { render template: 'fhir/family_member_histories/index', formats: :fhirj }
 
       it { should match_fhir_json(support_file('family_member_histories/index.json'),
                                   {'**/lastUpdated' => 'xxx'}) }
     end
 
     context 'XML' do
-      subject { render template: 'fhir/family_member_histories/index', formats: :xml }
+      subject { render template: 'fhir/family_member_histories/index', formats: :fhirx }
 
       it { should match_fhir_xml(support_file('family_member_histories/index.xml'),
                                  {"//*[local-name()='lastUpdated']/@value" => 'xxx'}) }

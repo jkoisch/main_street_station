@@ -8,7 +8,7 @@ describe 'FHIR View Observation Related', type: :view do
       let(:object) { yaml_load('observations/related-standard.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/observations/related', formats: :json, locals: {related: object} }
+        subject { render partial: 'fhir/observations/related', formats: :fhirj, locals: {related: object} }
 
         it { should match_fhir_json(support_file('observations/related-standard.json')) }
       end
@@ -25,7 +25,7 @@ describe 'FHIR View Observation Related', type: :view do
       let(:object) { yaml_load('observations/related-complete.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/observations/related', formats: :json, locals: {related: object} }
+        subject { render partial: 'fhir/observations/related', formats: :fhirj, locals: {related: object} }
 
         it { should match_fhir_json(support_file('observations/related-complete.json')) }
       end

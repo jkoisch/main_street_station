@@ -9,7 +9,7 @@ describe 'FHIR View ExplanationOfBenefit Adjudication', type: :view do
       let(:object) { yaml_load('explanation_of_benefits/adjudication-standard.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/explanation_of_benefits/adjudication', formats: :json, locals: {adjudication: object} }
+        subject { render partial: 'fhir/explanation_of_benefits/adjudication', formats: :fhirj, locals: {adjudication: object} }
 
         it { should match_fhir_json(support_file('explanation_of_benefits/adjudication-standard.json')) }
       end
@@ -26,7 +26,7 @@ describe 'FHIR View ExplanationOfBenefit Adjudication', type: :view do
       let(:object) { yaml_load('explanation_of_benefits/adjudication-complete.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/explanation_of_benefits/adjudication', formats: :json, locals: {adjudication: object} }
+        subject { render partial: 'fhir/explanation_of_benefits/adjudication', formats: :fhirj, locals: {adjudication: object} }
 
         it { should match_fhir_json(support_file('explanation_of_benefits/adjudication-complete.json')) }
       end

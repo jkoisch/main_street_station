@@ -4,32 +4,32 @@ describe 'FHIR Questionnaire', type: :routing do
   describe 'provided routes' do
     specify { expect(get: fhir_Questionnaire_index_path).to route_to(controller: 'fhir/questionnaires',
                                                                       action:     'index',
-                                                                      format:     :json) }
+                                                                      format:     :fhirj) }
     specify { expect(get: '/fhir/Questionnaire').to route_to(controller: 'fhir/questionnaires',
                                                               action:     'index',
-                                                              format:     :json) }
+                                                              format:     :fhirj) }
     specify { expect(get: fhir_Questionnaire_path(1)).to route_to(controller: 'fhir/questionnaires',
                                                                   action:     'show',
                                                                   id:         '1',
-                                                                  format:     :json) }
+                                                                  format:     :fhirj) }
     specify { expect(get: '/fhir/Questionnaire/1').to route_to(controller: 'fhir/questionnaires',
                                                                action:     'show',
                                                                id:         '1',
-                                                               format:     :json) }
+                                                               format:     :fhirj) }
     specify { expect(post: fhir_Questionnaire_index_path).to route_to(controller: 'fhir/questionnaires',
                                                                 action:     'create',
-                                                                format:     :json) }
+                                                                format:     :fhirj) }
     specify { expect(post: '/fhir/Questionnaire').to route_to(controller: 'fhir/questionnaires',
                                                           action:     'create',
-                                                          format:     :json) }
+                                                          format:     :fhirj) }
     specify { expect(put: fhir_Questionnaire_path(1)).to route_to(controller: 'fhir/questionnaires',
                                                                   action:     'update',
                                                                   id:         '1',
-                                                                  format:     :json) }
+                                                                  format:     :fhirj) }
     specify { expect(put: '/fhir/Questionnaire/1').to route_to(controller: 'fhir/questionnaires',
                                                                action:     'update',
                                                                id:         '1',
-                                                               format:     :json) }
+                                                               format:     :fhirj) }
   end
 
   describe 'forbidden routes' do

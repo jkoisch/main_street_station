@@ -9,7 +9,7 @@ describe 'FHIR View Observation Component', type: :view do
       let(:object) { yaml_load('observations/component-standard.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/observations/component', formats: :json, locals: {component: object} }
+        subject { render partial: 'fhir/observations/component', formats: :fhirj, locals: {component: object} }
 
         it { should match_fhir_json(support_file('observations/component-standard.json')) }
       end
@@ -26,7 +26,7 @@ describe 'FHIR View Observation Component', type: :view do
       let(:object) { yaml_load('observations/component-complete.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/observations/component', formats: :json, locals: {component: object} }
+        subject { render partial: 'fhir/observations/component', formats: :fhirj, locals: {component: object} }
 
         it { should match_fhir_json(support_file('observations/component-complete.json')) }
       end

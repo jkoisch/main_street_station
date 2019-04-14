@@ -9,7 +9,7 @@ describe 'FHIR View ExplanationOfBenefit MissingTeeth', type: :view do
       let(:object) { yaml_load('explanation_of_benefits/missing_teeth-standard.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/explanation_of_benefits/missing_teeth', formats: :json, locals: {missing_teeth: object} }
+        subject { render partial: 'fhir/explanation_of_benefits/missing_teeth', formats: :fhirj, locals: {missing_teeth: object} }
 
         it { should match_fhir_json(support_file('explanation_of_benefits/missing_teeth-standard.json')) }
       end
@@ -26,7 +26,7 @@ describe 'FHIR View ExplanationOfBenefit MissingTeeth', type: :view do
       let(:object) { yaml_load('explanation_of_benefits/missing_teeth-complete.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/explanation_of_benefits/missing_teeth', formats: :json, locals: {missing_teeth: object} }
+        subject { render partial: 'fhir/explanation_of_benefits/missing_teeth', formats: :fhirj, locals: {missing_teeth: object} }
 
         it { should match_fhir_json(support_file('explanation_of_benefits/missing_teeth-complete.json')) }
       end

@@ -8,7 +8,7 @@ describe 'FHIR View Condition Evidence', type: :view do
       let(:object) { yaml_load('conditions/evidence-standard.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/conditions/evidence', formats: :json, locals: {evidence: object} }
+        subject { render partial: 'fhir/conditions/evidence', formats: :fhirj, locals: {evidence: object} }
 
         it { should match_fhir_json(support_file('conditions/evidence-standard.json')) }
       end
@@ -25,7 +25,7 @@ describe 'FHIR View Condition Evidence', type: :view do
       let(:object) { yaml_load('conditions/evidence-complete.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/conditions/evidence', formats: :json, locals: {evidence: object} }
+        subject { render partial: 'fhir/conditions/evidence', formats: :fhirj, locals: {evidence: object} }
 
         it { should match_fhir_json(support_file('conditions/evidence-complete.json')) }
       end

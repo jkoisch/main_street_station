@@ -1,4 +1,4 @@
-class CreateServices < ActiveRecord::Migration
+class CreateServices < ActiveRecord::Migration[5.0]
   def up
     create_table :services do |t|
       t.integer :community_role_id

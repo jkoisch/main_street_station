@@ -1,4 +1,4 @@
-class CreateIdentityAuthorities < ActiveRecord::Migration
+class CreateIdentityAuthorities < ActiveRecord::Migration[5.0]
   def change
     create_table :identity_authorities do |t|
       t.references  :user,                    null: false

@@ -1,4 +1,4 @@
-class CreateRegistrationParties < ActiveRecord::Migration
+class CreateRegistrationParties < ActiveRecord::Migration[5.0]
   def change
     create_table :registration_parties do |t|
       t.integer     :community_role_id

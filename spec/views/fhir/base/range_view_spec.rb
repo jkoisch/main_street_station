@@ -8,7 +8,7 @@ describe 'FHIR base-type Range', type: :view do
     let(:object) { yaml_load('base/range-simple.yaml') }
 
     context 'JSON' do
-      subject      { render partial: 'fhir/base/range', formats: :json, locals: {range: object} }
+      subject      { render partial: 'fhir/base/range', formats: :fhirj, locals: {range: object} }
 
       it { should match_fhir_json(support_file('base/range-simple.json')) }
     end

@@ -9,7 +9,7 @@ describe 'FHIR View ExplanationOfBenefit Diagnosis', type: :view do
       let(:object) { yaml_load('explanation_of_benefits/diagnosis-standard.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/explanation_of_benefits/diagnosis', formats: :json, locals: {diagnosis: object} }
+        subject { render partial: 'fhir/explanation_of_benefits/diagnosis', formats: :fhirj, locals: {diagnosis: object} }
 
         it { should match_fhir_json(support_file('explanation_of_benefits/diagnosis-standard.json')) }
       end

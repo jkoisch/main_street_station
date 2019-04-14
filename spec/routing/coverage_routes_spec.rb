@@ -5,18 +5,18 @@ describe 'FHIR Coverage', type: :routing do
 
     specify { expect(get: fhir_Coverage_index_path).to route_to(controller: 'fhir/coverages',
                                                               action:     'index',
-                                                              format:     :json) }
+                                                              format:     :fhirj) }
     specify { expect(get: '/fhir/Coverage').to route_to(controller: 'fhir/coverages',
                                                       action:     'index',
-                                                      format:     :json) }
+                                                      format:     :fhirj) }
     specify { expect(get: fhir_Coverage_path(1)).to route_to(controller: 'fhir/coverages',
                                                            action:     'show',
                                                            id:         '1',
-                                                           format:     :json) }
+                                                           format:     :fhirj) }
     specify { expect(get: '/fhir/Coverage/1').to route_to(controller: 'fhir/coverages',
                                                         action:     'show',
                                                         id:         '1',
-                                                        format:     :json) }
+                                                        format:     :fhirj) }
   end
 
   describe 'forbidden routes' do

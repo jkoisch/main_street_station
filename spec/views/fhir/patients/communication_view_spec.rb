@@ -9,7 +9,7 @@ describe 'FHIR View Patient Communication', type: :view do
       let(:object) { yaml_load('patients/communication-standard.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/patients/communication', formats: :json, locals: {communication: object} }
+        subject { render partial: 'fhir/patients/communication', formats: :fhirj, locals: {communication: object} }
 
         it { should match_fhir_json(support_file('patients/communication-standard.json')) }
       end
@@ -26,7 +26,7 @@ describe 'FHIR View Patient Communication', type: :view do
       let(:object) { yaml_load('patients/communication-complete.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/patients/communication', formats: :json, locals: {communication: object} }
+        subject { render partial: 'fhir/patients/communication', formats: :fhirj, locals: {communication: object} }
 
         it { should match_fhir_json(support_file('patients/communication-complete.json')) }
       end

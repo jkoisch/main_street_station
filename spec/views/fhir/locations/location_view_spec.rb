@@ -9,7 +9,7 @@ describe 'FHIR Location View', type: :view do
     let(:resource) { yaml_load('locations/location-standard.yaml') }
 
     context 'JSON' do
-      subject { render(partial: 'location', formats: :json, locals: {resource: resource}) }
+      subject { render(partial: 'location', formats: :fhirj, locals: {resource: resource}) }
 
       it {should match_fhir_json(support_file('locations/location-standard.json')) }
     end
@@ -26,7 +26,7 @@ describe 'FHIR Location View', type: :view do
     let(:resource) { yaml_load('locations/location-complete.yaml') }
 
     context 'JSON' do
-      subject { render(partial: 'location', formats: :json, locals: {resource: resource}) }
+      subject { render(partial: 'location', formats: :fhirj, locals: {resource: resource}) }
 
       it {should match_fhir_json(support_file('locations/location-complete.json')) }
     end
@@ -43,13 +43,13 @@ describe 'FHIR Location View', type: :view do
     before(:each) { @location = yaml_load('locations/location-standard.yaml') }
 
     context 'JSON' do
-      subject { render template: 'fhir/locations/show', formats: :json }
+      subject { render template: 'fhir/locations/show', formats: :fhirj }
 
       it { should match_fhir_json(support_file('locations/show.json')) }
     end
 
     context 'XML' do
-      subject { render template: 'fhir/locations/show', formats: :xml }
+      subject { render template: 'fhir/locations/show', formats: :fhirx }
 
       it { should match_fhir_xml(support_file('locations/show.xml')) }
     end
@@ -60,14 +60,14 @@ describe 'FHIR Location View', type: :view do
                                        yaml_load('locations/location-complete.yaml') ] }
 
     context 'JSON' do
-      subject { render template: 'fhir/locations/index', formats: :json }
+      subject { render template: 'fhir/locations/index', formats: :fhirj }
 
       it { should match_fhir_json(support_file('locations/index.json'),
                                   {'**/lastUpdated' => 'xxx'}) }
     end
 
     context 'XML' do
-      subject { render template: 'fhir/locations/index', formats: :xml }
+      subject { render template: 'fhir/locations/index', formats: :fhirx }
 
       it { should match_fhir_xml(support_file('locations/index.xml'),
                                  {"//*[local-name()='lastUpdated']/@value" => 'xxx'}) }

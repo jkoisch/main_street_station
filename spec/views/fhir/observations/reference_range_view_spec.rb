@@ -8,7 +8,7 @@ describe 'FHIR View Observation ReferenceRange', type: :view do
       let(:object) { yaml_load('observations/reference_range-standard.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/observations/reference_range', formats: :json, locals: {reference_range: object} }
+        subject { render partial: 'fhir/observations/reference_range', formats: :fhirj, locals: {reference_range: object} }
 
         it { should match_fhir_json(support_file('observations/reference_range-standard.json')) }
       end
@@ -25,7 +25,7 @@ describe 'FHIR View Observation ReferenceRange', type: :view do
       let(:object) { yaml_load('observations/reference_range-complete.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/observations/reference_range', formats: :json, locals: {reference_range: object} }
+        subject { render partial: 'fhir/observations/reference_range', formats: :fhirj, locals: {reference_range: object} }
 
         it { should match_fhir_json(support_file('observations/reference_range-complete.json')) }
       end

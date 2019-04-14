@@ -8,7 +8,7 @@ describe 'FHIR base-type Ratio', type: :view do
     let(:object) { yaml_load('base/ratio-simple.yaml') }
 
     context 'JSON' do
-      subject      { render partial: 'fhir/base/ratio', formats: :json, locals: {ratio: object} }
+      subject      { render partial: 'fhir/base/ratio', formats: :fhirj, locals: {ratio: object} }
 
       it { should match_fhir_json(support_file('base/ratio-simple.json')) }
     end

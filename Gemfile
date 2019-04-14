@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.2'
 
-gem 'rails', '4.2.9'
+gem 'rails', '5.1.6'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -11,8 +11,8 @@ gem 'sinatra'
 gem 'twitter-bootstrap-rails'
 
 gem 'sass-rails'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'uglifier', '>= 1.0.3'
+gem 'coffee-rails'#, '~> 4.0.0'
+gem 'uglifier'#, '>= 1.0.3'
 
 gem 'simplecov', require: false, group: :test
 gem 'webmock', group: :test
@@ -23,8 +23,8 @@ group :test, :development do
   gem 'spring-commands-rspec'
   gem 'rest-client'
   gem 'guard'
-  gem 'guard-rspec', '4.6.4',  require: false
-  gem 'rspec-rails', '3.4.2'
+  gem 'guard-rspec', require: false #, '4.6.4'
+  gem 'rspec-rails'#, '3.4.2'
   gem 'database_cleaner'
   gem 'faker'
   gem 'cucumber-rails', require: false #, '0.3.2'
@@ -37,6 +37,7 @@ group :test, :development do
   gem 'nokogiri-pretty'
   gem 'rb-readline'
   gem 'shoulda-matchers', require: false
+  gem 'rails-controller-testing' # required for controller tests in Rails 5
 end
 
 group :test, :development, :dev_integration do
@@ -46,8 +47,6 @@ end
 gem 'jquery-rails'
 gem 'foreman'
 gem 'json'
-gem 'nifty-generators', group: :development
-gem 'quiet_assets', group: :development
 gem 'uuid'
 
 gem 'oauth2'

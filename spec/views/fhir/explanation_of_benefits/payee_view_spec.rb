@@ -8,7 +8,7 @@ describe 'FHIR View ExplanationOfBenefit Payee', type: :view do
       let(:object) { yaml_load('explanation_of_benefits/payee-standard.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/explanation_of_benefits/payee', formats: :json, locals: {payee: object} }
+        subject { render partial: 'fhir/explanation_of_benefits/payee', formats: :fhirj, locals: {payee: object} }
 
         it { should match_fhir_json(support_file('explanation_of_benefits/payee-standard.json')) }
       end
@@ -25,7 +25,7 @@ describe 'FHIR View ExplanationOfBenefit Payee', type: :view do
       let(:object) { yaml_load('explanation_of_benefits/payee-complete.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/explanation_of_benefits/payee', formats: :json, locals: {payee: object} }
+        subject { render partial: 'fhir/explanation_of_benefits/payee', formats: :fhirj, locals: {payee: object} }
 
         it { should match_fhir_json(support_file('explanation_of_benefits/payee-complete.json')) }
       end

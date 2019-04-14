@@ -7,7 +7,7 @@ describe 'FHIR base-type Extension', type: :view do
     let(:object) { yaml_load('base/extension-simple.yaml') }
 
     context 'JSON' do
-      subject      { render partial: 'fhir/base/extension', formats: :json, locals: {extension: object} }
+      subject      { render partial: 'fhir/base/extension', formats: :fhirj, locals: {extension: object} }
 
       it { should match_fhir_json(support_file('base/extension-simple.json')) }
     end

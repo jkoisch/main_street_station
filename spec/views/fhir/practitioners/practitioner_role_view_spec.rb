@@ -8,7 +8,7 @@ describe 'FHIR View Practitioner PractitionerRole', type: :view do
       let(:object) { yaml_load('practitioners/practitioner_role-standard.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/practitioners/practitioner_role', formats: :json, locals: {practitioner_role: object} }
+        subject { render partial: 'fhir/practitioners/practitioner_role', formats: :fhirj, locals: {practitioner_role: object} }
 
         it { should match_fhir_json(support_file('practitioners/practitioner_role-standard.json')) }
       end
@@ -25,7 +25,7 @@ describe 'FHIR View Practitioner PractitionerRole', type: :view do
       let(:object) { yaml_load('practitioners/practitioner_role-complete.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/practitioners/practitioner_role', formats: :json, locals: {practitioner_role: object} }
+        subject { render partial: 'fhir/practitioners/practitioner_role', formats: :fhirj, locals: {practitioner_role: object} }
 
         it { should match_fhir_json(support_file('practitioners/practitioner_role-complete.json')) }
       end

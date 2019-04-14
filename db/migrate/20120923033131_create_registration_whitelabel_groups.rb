@@ -1,4 +1,4 @@
-class CreateRegistrationWhitelabelGroups < ActiveRecord::Migration
+class CreateRegistrationWhitelabelGroups < ActiveRecord::Migration[5.0]
   def change
     create_table :registration_whitelabel_groups do |t|
       t.integer :whitelabel_id

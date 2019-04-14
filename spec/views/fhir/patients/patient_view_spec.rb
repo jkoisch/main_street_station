@@ -9,7 +9,7 @@ describe 'FHIR Patient View', type: :view do
     let(:resource) { yaml_load('patients/patient-standard.yaml') }
 
     context 'JSON' do
-      subject { render(partial: 'patient', formats: :json, locals: {resource: resource}) }
+      subject { render(partial: 'patient', formats: :fhirj, locals: {resource: resource}) }
 
       it {should match_fhir_json(support_file('patients/patient-standard.json')) }
     end
@@ -26,7 +26,7 @@ describe 'FHIR Patient View', type: :view do
     let(:resource) { yaml_load('patients/patient-complete.yaml') }
 
     context 'JSON' do
-      subject { render(partial: 'patient', formats: :json, locals: {resource: resource}) }
+      subject { render(partial: 'patient', formats: :fhirj, locals: {resource: resource}) }
 
       it {should match_fhir_json(support_file('patients/patient-complete.json')) }
     end
@@ -43,13 +43,13 @@ describe 'FHIR Patient View', type: :view do
     before(:each) { @patient = yaml_load('patients/patient-standard.yaml') }
 
     context 'JSON' do
-      subject { render template: 'fhir/patients/show', formats: :json }
+      subject { render template: 'fhir/patients/show', formats: :fhirj }
 
       it { should match_fhir_json(support_file('patients/show.json')) }
     end
 
     context 'XML' do
-      subject { render template: 'fhir/patients/show', formats: :xml }
+      subject { render template: 'fhir/patients/show', formats: :fhirx }
 
       it { should match_fhir_xml(support_file('patients/show.xml')) }
     end
@@ -60,14 +60,14 @@ describe 'FHIR Patient View', type: :view do
                                        yaml_load('patients/patient-complete.yaml') ] }
 
     context 'JSON' do
-      subject { render template: 'fhir/patients/index', formats: :json }
+      subject { render template: 'fhir/patients/index', formats: :fhirj }
 
       it { should match_fhir_json(support_file('patients/index.json'),
                                   {'**/lastUpdated' => 'xxx'}) }
     end
 
     context 'XML' do
-      subject { render template: 'fhir/patients/index', formats: :xml }
+      subject { render template: 'fhir/patients/index', formats: :fhirx }
 
       it { should match_fhir_xml(support_file('patients/index.xml'),
                                  {"//*[local-name()='lastUpdated']/@value" => 'xxx'}) }

@@ -1,4 +1,4 @@
-class AddUserTokens < ActiveRecord::Migration
+class AddUserTokens < ActiveRecord::Migration[5.0]
   def change
     create_table :user_tokens do |t|
       t.references :user, null: false

@@ -1,15 +1,15 @@
 require 'rails_helper'
 
 describe Fhir::PatientsController, type: :controller do
-  let(:json_headers) { { Accept: 'application/json', Content-Type => 'application/json'} }
+  before(:each) { request.headers['Accept'] = 'application/fhir+json' }
 
   context '#index' do
-    subject { get :index, format: :json }
+    subject { get :index }
 
     specify { should render_template(:index) }
 
     it 'assigns all patients as @patients' do
-      get :index, format: :json
+      get :index
       expect(assigns(:patients).count).to eq(1)
     end
 
@@ -18,28 +18,28 @@ describe Fhir::PatientsController, type: :controller do
 
       it 'returns patients using search criteria: active' do
         stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
-        get :index, {format: :json, active: 'true'}
+        get :index, params: {active: 'true'}
         expect(a_request(:get, 'gringotts.dev/clients').
                   with(:query => hash_including({'query' => {'active' => {'code' => 'true'}}}))).to have_been_made
       end
 
       it 'performs a patient search for matching address' do
         stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
-        get :index, {format: :json, address: '-40C Hoth St., Edmonton, AB'}
+        get :index, params: {address: '-40C Hoth St., Edmonton, AB'}
         expect(a_request(:get, 'gringotts.dev/clients').
                    with(:query => hash_including({'query' => {'address' => {'value' => '-40C Hoth St., Edmonton, AB'}}}))).to have_been_made
       end
 
       it 'performs a patient search for matching birthdate' do
         stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
-        get :index, {format: :json, birthdate: '1993-12-20'}
+        get :index, params: {birthdate: '1993-12-20'}
         expect(a_request(:get, 'gringotts.dev/clients').
                   with(:query => hash_including({'query' => {'birthdate' => {'value' => '1993-12-20'}}}))).to have_been_made
       end
 
       it 'performs a patient search for matching family' do
         stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
-        get :index, {format: :json, family: 'Skywalker'}
+        get :index, params: {family: 'Skywalker'}
         expect(a_request(:get, 'gringotts.dev/clients').
                   with(:query => hash_including({'query' => {'family' => {'value' => 'Skywalker'}}}))).to have_been_made
       end
@@ -47,14 +47,14 @@ describe Fhir::PatientsController, type: :controller do
       it 'performs a patient search for matching gender' do
         #pending 'awaiting final param parsing'
         stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
-        get :index, {format: :json, gender: 'male'}
+        get :index, params: {gender: 'male'}
         expect(a_request(:get, 'gringotts.dev/clients').
                    with(:query => hash_including({'query' => {'gender' => {'code' => 'male'}}}))).to have_been_made
       end
 
       it 'performs a patient search for matching given' do
         stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
-        get :index, {format: :json, given: 'Han'}
+        get :index, params: {given: 'Han'}
         expect(a_request(:get, 'gringotts.dev/clients').
                   with(:query => hash_including({'query' => {'given' => {'value' => 'Han'}}}))).to have_been_made
       end
@@ -62,50 +62,49 @@ describe Fhir::PatientsController, type: :controller do
       it 'performs a patient search for matching identifier' do
         #pending 'awaiting final param parsing'
         stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
-        get :index, {format: :json, identifier: '54-08976-23'}
+        get :index, params: {identifier: '54-08976-23'}
         expect(a_request(:get, 'gringotts.dev/clients').
                    with(:query => hash_including({'query' => {'identifier' => {'code' => '54-08976-23'}}}))).to have_been_made
       end
 
       it 'performs a patient search for matching name' do
         stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
-        get :index, {format: :json, name: 'Solo'}
+        get :index, params: {name: 'Solo'}
         expect(a_request(:get, 'gringotts.dev/clients').
                    with(:query => hash_including({'query' => {'name' => {'value' => 'Solo'}}}))).to have_been_made
       end
 
       it 'performs a patient search for matching telecom' do
         stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
-        get :index, {format: :json, telecom: '7809030885'}
+        get :index, params: {telecom: '7809030885'}
         expect(a_request(:get, 'gringotts.dev/clients').
                   with(:query => hash_including({'query' => {'telecom' => {'code' => '7809030885'}}}))).to have_been_made
       end
 
       it 'processes multiple search criteria for same parameter' do
         stub_request(:any, /.*gringotts.dev\/.*/).to_return(:body => '[]')
-        get :index, {format: :json, name: 'Solo', 'name:exact' => 'Han'}
+        get :index, params: {name: 'Solo', 'name:exact' => 'Han'}
         #expect(a_request(:get, 'gringotts.dev/clients').
         #           with(:query => hash_including({'query' => {'name' => [{'value' => 'Solo'},{'value' => 'Han'}]}}))).to have_been_made
       end
 
       it 'returns operation_outcome using invalid search criteria'
-
     end
 
   end
 
   describe '#show' do
-    subject { get :show, id: 1, format: :json }
+    subject { get :show, params: {id: 1} }
 
     specify { should render_template(:show) }
 
     it 'assigns the requested patient as @patient' do
-      get :show, id: 1, format: :json
+      get :show, params: {id: 1}
       expect(assigns(:patient)).to be_a(Fhir::Patient)
     end
 
     it 'assigns the operation_outcome' do
-      get :show, id: 2, format: :json
+      get :show, params: {id: 2}
       expect(assigns(:operation_outcome)).to be_a(Fhir::OperationOutcome)
     end
   end
@@ -120,12 +119,12 @@ describe Fhir::PatientsController, type: :controller do
       end
 
       it 'should return a success' do
-        post :create, {format: :json}, {RAW_POST_DATA: :params}
+        post :create, params: {RAW_POST_DATA: :params}
         expect(response).to have_http_status(:created)
       end
 
       it 'should set the Location on the response' do
-        post :create, {format: :json}, { RAW_POST_DATA: :params}
+        post :create, params: { RAW_POST_DATA: :params}
         expect(response.location).to match /Patient\/1/
       end
 
@@ -138,12 +137,12 @@ describe Fhir::PatientsController, type: :controller do
       end
 
       it 'should return a bad request' do
-        post :create, {format: :json}, {RAW_POST_DATA: :params}
+        post :create, params: {RAW_POST_DATA: :params}
         expect(response).to have_http_status(:bad_request)
       end
 
       it 'should return an OperationOutcome' do
-        post :create, {format: :json}, {RAW_POST_DATA: :params}
+        post :create, params: {RAW_POST_DATA: :params}
         expect(response).to render_template 'fhir/fhir_base/operation_outcome'
       end
     end
@@ -154,12 +153,12 @@ describe Fhir::PatientsController, type: :controller do
       end
 
       it 'should return a service unavailable' do
-        post :create, {format: :json}, {RAW_POST_DATA: :params}
+        post :create, params: {RAW_POST_DATA: :params}
         expect(response).to have_http_status(:service_unavailable)
       end
 
       it 'should return an OperationOutcome' do
-        post :create, {format: :json}, {RAW_POST_DATA: :params}
+        post :create, params: {RAW_POST_DATA: :params}
         expect(response).to render_template 'fhir/fhir_base/operation_outcome'
       end
     end
@@ -175,7 +174,7 @@ describe Fhir::PatientsController, type: :controller do
       end
 
       it 'should return a success' do
-        put :update, {id:1,format: :json}, {RAW_POST_DATA: :params}
+        put :update, params: {id:1, RAW_POST_DATA: :params}
         expect(response).to have_http_status(:success)
       end
     end
@@ -187,12 +186,12 @@ describe Fhir::PatientsController, type: :controller do
       end
 
       it 'should return a bad request' do
-        put :update, {id:1, format: :json}, {RAW_POST_DATA: :params}
+        put :update, params: {id:1, RAW_POST_DATA: :params}
         expect(response).to have_http_status(:bad_request)
       end
 
       it 'should return an OperationOutcome' do
-        put :update, {id:1, format: :json}, {RAW_POST_DATA: :params}
+        put :update, params: {id:1, RAW_POST_DATA: :params}
         expect(response).to render_template 'fhir/fhir_base/operation_outcome'
       end
     end
@@ -203,12 +202,12 @@ describe Fhir::PatientsController, type: :controller do
       end
 
       it 'should return a service unavailable' do
-        put :update, {id:1, format: :json}, {RAW_POST_DATA: :params}
+        put :update, params: {id:1, RAW_POST_DATA: :params}
         expect(response).to have_http_status(:service_unavailable)
       end
 
       it 'should return an OperationOutcome' do
-        put :update, {id:1, format: :json}, {RAW_POST_DATA: :params}
+        put :update, params: {id:1, RAW_POST_DATA: :params}
         expect(response).to render_template 'fhir/fhir_base/operation_outcome'
       end
     end

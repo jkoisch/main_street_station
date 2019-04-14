@@ -9,7 +9,7 @@ describe 'FHIR Organization View', type: :view do
     let(:resource) { yaml_load('organizations/organization-standard.yaml') }
 
     context 'JSON' do
-      subject { render(partial: 'organization', formats: :json, locals: {resource: resource}) }
+      subject { render(partial: 'organization', formats: :fhirj, locals: {resource: resource}) }
 
       it {should match_fhir_json(support_file('organizations/organization-standard.json')) }
     end
@@ -26,7 +26,7 @@ describe 'FHIR Organization View', type: :view do
     let(:resource) { yaml_load('organizations/organization-complete.yaml') }
 
     context 'JSON' do
-      subject { render(partial: 'organization', formats: :json, locals: {resource: resource}) }
+      subject { render(partial: 'organization', formats: :fhirj, locals: {resource: resource}) }
 
       it {should match_fhir_json(support_file('organizations/organization-complete.json')) }
     end
@@ -43,13 +43,13 @@ describe 'FHIR Organization View', type: :view do
     before(:each) { @organization = yaml_load('organizations/organization-standard.yaml') }
 
     context 'JSON' do
-      subject { render template: 'fhir/organizations/show', formats: :json }
+      subject { render template: 'fhir/organizations/show', formats: :fhirj }
 
       it { should match_fhir_json(support_file('organizations/show.json')) }
     end
 
     context 'XML' do
-      subject { render template: 'fhir/organizations/show', formats: :xml }
+      subject { render template: 'fhir/organizations/show', formats: :fhirx }
 
       it { should match_fhir_xml(support_file('organizations/show.xml')) }
     end
@@ -60,14 +60,14 @@ describe 'FHIR Organization View', type: :view do
                                        yaml_load('organizations/organization-complete.yaml') ] }
 
     context 'JSON' do
-      subject { render template: 'fhir/organizations/index', formats: :json }
+      subject { render template: 'fhir/organizations/index', formats: :fhirj }
 
       it { should match_fhir_json(support_file('organizations/index.json'),
                                   {'**/lastUpdated' => 'xxx'}) }
     end
 
     context 'XML' do
-      subject { render template: 'fhir/organizations/index', formats: :xml }
+      subject { render template: 'fhir/organizations/index', formats: :fhirx }
 
       it { should match_fhir_xml(support_file('organizations/index.xml'),
                                  {"//*[local-name()='lastUpdated']/@value" => 'xxx'}) }

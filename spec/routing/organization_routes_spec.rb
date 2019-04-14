@@ -4,32 +4,32 @@ describe 'FHIR Organization', type: :routing do
   describe 'provided routes' do
     specify { expect(get: fhir_Organization_index_path).to route_to(controller: 'fhir/organizations',
                                                                    action:     'index',
-                                                                   format:     :json) }
+                                                                   format:     :fhirj) }
     specify { expect(get: '/fhir/Organization').to route_to(controller: 'fhir/organizations',
                                                            action:     'index',
-                                                           format:     :json) }
+                                                           format:     :fhirj) }
     specify { expect(get: fhir_Organization_path(1)).to route_to(controller: 'fhir/organizations',
                                                                 action:     'show',
                                                                 id:         '1',
-                                                                format:     :json) }
+                                                                format:     :fhirj) }
     specify { expect(get: '/fhir/Organization/1').to route_to(controller: 'fhir/organizations',
                                                              action:     'show',
                                                              id:         '1',
-                                                             format:     :json) }
+                                                             format:     :fhirj) }
     specify { expect(post: fhir_Organization_index_path).to route_to(controller: 'fhir/organizations',
                                                                     action:     'create',
-                                                                    format:     :json) }
+                                                                    format:     :fhirj) }
     specify { expect(post: '/fhir/Organization').to route_to(controller: 'fhir/organizations',
                                                             action:     'create',
-                                                            format:     :json) }
+                                                            format:     :fhirj) }
     specify { expect(put: fhir_Organization_path(1)).to route_to(controller: 'fhir/organizations',
                                                                 action:     'update',
                                                                 id:         '1',
-                                                                format:     :json) }
+                                                                format:     :fhirj) }
     specify { expect(put: '/fhir/Organization/1').to route_to(controller: 'fhir/organizations',
                                                              action:     'update',
                                                              id:         '1',
-                                                             format:     :json) }
+                                                             format:     :fhirj) }
   end
 
   describe 'forbidden routes' do

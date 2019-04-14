@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'support/fhir_matchers'
 
 describe 'Practitioner Request FHIR API', type: :request do
   describe 'GET /fhir/Practitioner' do
@@ -35,18 +34,18 @@ describe 'Practitioner Request FHIR API', type: :request do
     end
 
     context 'XML' do
-      let(:headers) { {'Accept' => 'application/xml'} }
+      let(:headers) { {'Accept' => 'application/fhir+xml'} }
 
       context 'success' do
         before(:each) { GringottResponse.any_instance.stubs(:success?).returns(true) }
 
         it 'should return a FHIR Bundle' do
-          get '/fhir/Practitioner', {}, headers
+          get '/fhir/Practitioner', params: {}, headers: headers
           expect(response).to return_FHIR_XML_bundle('Practitioner')
         end
 
         it 'should return status success (2xx)' do
-          get '/fhir/Practitioner', {}, headers
+          get '/fhir/Practitioner', params: {}, headers: headers
           expect(response).to have_http_status(:success)
         end
       end
@@ -55,14 +54,14 @@ describe 'Practitioner Request FHIR API', type: :request do
         before(:each) { GringottResponse.any_instance.stubs(:success?).returns(false) }
 
         it 'should return error status' do
-          get '/fhir/Practitioner', {}, headers
+          get '/fhir/Practitioner', params: {}, headers: headers
           expect(response).to have_http_status(:error)
         end
 
         it 'should render OperationOutcome' do
-          get '/fhir/Practitioner', {}, headers
+          get '/fhir/Practitioner', params: {}, headers: headers
           expect(response).to render_template('fhir_base/operation_outcome')
-          expect(response.content_type).to eq :xml
+          expect(response.content_type).to eq Mime[:fhirx]
         end
       end
     end
@@ -73,20 +72,20 @@ describe 'Practitioner Request FHIR API', type: :request do
     context 'JSON' do
       it { should return_FHIR_JSON_object('Practitioner') }
 
-      it { should return_HTTP_success_for('Practitioner/1.json') }
+      it { should return_HTTP_success_for('Practitioner/1') }
     end
 
     context 'XML' do
-      let(:headers) { {'Accept' => 'application/xml'} }
+      let(:headers) { {'Accept' => 'application/fhir+xml'} }
 
       context 'success' do
         it 'should return a FHIR resource' do
-          get '/fhir/Practitioner/1', {}, headers
+          get '/fhir/Practitioner/1', params: {}, headers: headers
           expect(response).to return_FHIR_XML_object('Practitioner')
         end
 
         it 'should have a success status (2xx)' do
-          get '/fhir/Practitioner/1', {}, headers
+          get '/fhir/Practitioner/1', params: {}, headers: headers
           expect(response).to have_http_status(:success)
         end
       end

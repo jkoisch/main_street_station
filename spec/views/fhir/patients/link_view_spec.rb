@@ -8,7 +8,7 @@ describe 'FHIR View Patient Link', type: :view do
       let(:object) { yaml_load('patients/link-standard.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/patients/link', formats: :json, locals: {link: object} }
+        subject { render partial: 'fhir/patients/link', formats: :fhirj, locals: {link: object} }
 
         it { should match_fhir_json(support_file('patients/link-standard.json')) }
       end
@@ -25,7 +25,7 @@ describe 'FHIR View Patient Link', type: :view do
       let(:object) { yaml_load('patients/link-complete.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/patients/link', formats: :json, locals: {link: object} }
+        subject { render partial: 'fhir/patients/link', formats: :fhirj, locals: {link: object} }
 
         it { should match_fhir_json(support_file('patients/link-complete.json')) }
       end

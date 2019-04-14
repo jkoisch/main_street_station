@@ -10,7 +10,7 @@ describe 'FHIR Conformance View', type: :view do
     let(:resource) { yaml_load('conformance/conformance.yaml') }
 
     context 'JSON' do
-      subject { render(partial: 'conformance', formats: :json, locals: {resource: resource}) }
+      subject { render(partial: 'conformance', formats: :fhirj, locals: {resource: resource}) }
 
       it {should match_fhir_json(support_file('conformance/conformance.json')) }
     end

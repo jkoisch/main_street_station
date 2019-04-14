@@ -9,7 +9,7 @@ describe 'FHIR Practitioner View', type: :view do
     let(:resource) { yaml_load('practitioners/practitioner-standard.yaml') }
 
     context 'JSON' do
-      subject { render(partial: 'practitioner', formats: :json, locals: {resource: resource}) }
+      subject { render(partial: 'practitioner', formats: :fhirj, locals: {resource: resource}) }
 
       it {should match_fhir_json(support_file('practitioners/practitioner-standard.json')) }
     end
@@ -26,7 +26,7 @@ describe 'FHIR Practitioner View', type: :view do
     let(:resource) { yaml_load('practitioners/practitioner-complete.yaml') }
 
     context 'JSON' do
-      subject { render(partial: 'practitioner', formats: :json, locals: {resource: resource}) }
+      subject { render(partial: 'practitioner', formats: :fhirj, locals: {resource: resource}) }
 
       it {should match_fhir_json(support_file('practitioners/practitioner-complete.json')) }
     end
@@ -43,13 +43,13 @@ describe 'FHIR Practitioner View', type: :view do
     before(:each) { @practitioner = yaml_load('practitioners/practitioner-standard.yaml') }
 
     context 'JSON' do
-      subject { render template: 'fhir/practitioners/show', formats: :json }
+      subject { render template: 'fhir/practitioners/show', formats: :fhirj }
 
       it { should match_fhir_json(support_file('practitioners/show.json')) }
     end
 
     context 'XML' do
-      subject { render template: 'fhir/practitioners/show', formats: :xml }
+      subject { render template: 'fhir/practitioners/show', formats: :fhirx }
 
       it { should match_fhir_xml(support_file('practitioners/show.xml')) }
     end
@@ -60,14 +60,14 @@ describe 'FHIR Practitioner View', type: :view do
                                   yaml_load('practitioners/practitioner-complete.yaml') ] }
 
     context 'JSON' do
-      subject { render template: 'fhir/practitioners/index', formats: :json }
+      subject { render template: 'fhir/practitioners/index', formats: :fhirj }
 
       it { should match_fhir_json(support_file('practitioners/index.json'),
                                   {'**/lastUpdated' => 'xxx'}) }
     end
 
     context 'XML' do
-      subject { render template: 'fhir/practitioners/index', formats: :xml }
+      subject { render template: 'fhir/practitioners/index', formats: :fhirx }
 
       it { should match_fhir_xml(support_file('practitioners/index.xml'),
                                  {"//*[local-name()='lastUpdated']/@value" => 'xxx'}) }

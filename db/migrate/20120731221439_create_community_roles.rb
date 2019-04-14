@@ -1,4 +1,4 @@
-class CreateCommunityRoles < ActiveRecord::Migration
+class CreateCommunityRoles < ActiveRecord::Migration[5.0]
   def self.up
     create_table :community_roles do |t|
       t.text :name

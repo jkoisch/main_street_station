@@ -110,7 +110,8 @@ class Nc
           SizeResponder.new(example_count),
           SizeResponder.new(failure_count),
           SizeResponder.new(pending_count),
-          nil
+          nil,
+          0
       ).totals_line
     end
   end

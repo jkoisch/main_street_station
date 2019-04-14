@@ -8,7 +8,7 @@ describe 'FHIR View ExplanationOfBenefit BenefitBalance Financial', type: :view 
       let(:object) { yaml_load('explanation_of_benefits/benefit_balances/financial-standard.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/explanation_of_benefits/benefit_balances/financial', formats: :json, locals: {financial: object} }
+        subject { render partial: 'fhir/explanation_of_benefits/benefit_balances/financial', formats: :fhirj, locals: {financial: object} }
 
         it { should match_fhir_json(support_file('explanation_of_benefits/benefit_balances/financial-standard.json')) }
       end
@@ -25,7 +25,7 @@ describe 'FHIR View ExplanationOfBenefit BenefitBalance Financial', type: :view 
       let(:object) { yaml_load('explanation_of_benefits/benefit_balances/financial-complete.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/explanation_of_benefits/benefit_balances/financial', formats: :json, locals: {financial: object} }
+        subject { render partial: 'fhir/explanation_of_benefits/benefit_balances/financial', formats: :fhirj, locals: {financial: object} }
 
         it { should match_fhir_json(support_file('explanation_of_benefits/benefit_balances/financial-complete.json')) }
       end

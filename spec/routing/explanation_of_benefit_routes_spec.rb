@@ -4,18 +4,18 @@ describe 'FHIR ExplanationOfBenefit', type: :routing do
   describe 'provided routes' do
     specify { expect(get: fhir_ExplanationOfBenefit_index_path).to route_to(controller: 'fhir/explanation_of_benefits',
                                                                            action:     'index',
-                                                                           format:     :json) }
+                                                                           format:     :fhirj) }
     specify { expect(get: '/fhir/ExplanationOfBenefit').to route_to(controller: 'fhir/explanation_of_benefits',
                                                                    action:     'index',
-                                                                   format:     :json) }
+                                                                   format:     :fhirj) }
     specify { expect(get: fhir_ExplanationOfBenefit_path(1)).to route_to(controller: 'fhir/explanation_of_benefits',
                                                                         action:     'show',
                                                                         id:         '1',
-                                                                        format:     :json) }
+                                                                        format:     :fhirj) }
     specify { expect(get: '/fhir/ExplanationOfBenefit/1').to route_to(controller: 'fhir/explanation_of_benefits',
                                                                      action:     'show',
                                                                      id:         '1',
-                                                                     format:     :json) }
+                                                                     format:     :fhirj) }
   end
 
   describe 'forbidden routes' do

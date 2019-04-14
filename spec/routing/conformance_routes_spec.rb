@@ -4,21 +4,21 @@ describe 'FHIR Conformance', type: :routing do
   describe 'provided routes' do
     specify { expect(get: fhir_conformance_index_path).to route_to(controller: 'fhir/conformance',
                                                                    action:     'index',
-                                                                   format:     :json) }
+                                                                   format:     :fhirj) }
     specify { expect(get: '/fhir/Conformance').to route_to(controller: 'fhir/conformance',
                                                            action:     'index',
-                                                           format:     :json) }
+                                                           format:     :fhirj) }
     specify { expect(get: '/fhir/metadata').to route_to(controller: 'fhir/conformance',
                                                         action:     'show',
-                                                        format:     :json) }
+                                                        format:     :fhirj) }
     specify { expect(get: fhir_conformance_path(1)).to route_to(controller: 'fhir/conformance',
                                                                 action:     'show',
                                                                 id:         '1',
-                                                                format:     :json) }
+                                                                format:     :fhirj) }
     specify { expect(get: '/fhir/Conformance/1').to route_to(controller: 'fhir/conformance',
                                                              action:     'show',
                                                              id:         '1',
-                                                             format:     :json) }
+                                                             format:     :fhirj) }
   end
 
   describe 'forbidden routes' do

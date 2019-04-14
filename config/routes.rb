@@ -15,32 +15,32 @@ MainStreetStation::Application.routes.draw do
 
     #noinspection RailsParamDefResolve,RailsParamDefResolve
     resources :Condition, controller: 'conditions',
-              only: [:index, :show, :create, :update], defaults: {format: :json}
+              only: [:index, :show, :create, :update], defaults: {format: :fhirj}
     resources :Conformance, controller: 'conformance', as: 'conformance',
-              only: [:index, :show], defaults: {format: :json}
+              only: [:index, :show], defaults: {format: :fhirj}
     resources :Coverage, controller: 'coverages',
-              only: [:index, :show], defaults: {format: :json}
+              only: [:index, :show], defaults: {format: :fhirj}
     resources :Device, controller: 'devices',
-              only: [:index, :show, :create, :update], defaults: {format: :json}
+              only: [:index, :show, :create, :update], defaults: {format: :fhirj}
     resources :ExplanationOfBenefit, controller: 'explanation_of_benefits',
-              only: [:index, :show], defaults: {format: :json}
+              only: [:index, :show], defaults: {format: :fhirj}
     resources :FamilyMemberHistory, controller: 'family_member_histories',
-              only: [:index, :show, :create, :update], defaults: {format: :json}
+              only: [:index, :show, :create, :update], defaults: {format: :fhirj}
     resources :Location, controller: 'locations',
-              only: [:index, :show, :create, :update], defaults: {format: :json}
+              only: [:index, :show, :create, :update], defaults: {format: :fhirj}
     resources :Observation, controller: :observations,
-              only: [:index, :show, :create, :update], defaults: {format: :json}
+              only: [:index, :show, :create, :update], defaults: {format: :fhirj}
     resources :Organization, controller: 'organizations',
-              only: [:index, :show, :create, :update], defaults: {format: :json}
+              only: [:index, :show, :create, :update], defaults: {format: :fhirj}
     resources :Patient, controller: 'patients',
-              only: [:index, :show, :create, :update], defaults: {format: :json}
+              only: [:index, :show, :create, :update], defaults: {format: :fhirj}
     resources :Questionnaire, controller: 'questionnaires',
-              only: [:index, :show, :create, :update], defaults: {format: :json}
+              only: [:index, :show, :create, :update], defaults: {format: :fhirj}
     resources :Practitioner, controller: 'practitioners',
-              only: [:index, :show, :create, :update], defaults: {format: :json}
-    resources :operation_outcomes, only: [:show], defaults: {format: :json}
+              only: [:index, :show, :create, :update], defaults: {format: :fhirj}
+    resources :operation_outcomes, only: [:show], defaults: {format: :fhirj}
 
-    get 'metadata', to: 'conformance#show', defaults: {format: :json}
+    get 'metadata', to: 'conformance#show', defaults: {format: :fhirj}
   end
 
   namespace :trust do

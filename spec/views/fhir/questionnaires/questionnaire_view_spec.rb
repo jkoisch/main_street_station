@@ -9,7 +9,7 @@ describe 'FHIR Questionnaire View', type: :view do
     let(:resource) { yaml_load('questionnaires/questionnaire-general.yaml') }
 
     context 'JSON' do
-      subject { render(partial: 'questionnaire', formats: :json, locals: {resource: resource}) }
+      subject { render(partial: 'questionnaire', formats: :fhirj, locals: {resource: resource}) }
 
       it {should match_fhir_json(support_file('questionnaires/questionnaire-general.json')) }
     end
@@ -26,7 +26,7 @@ describe 'FHIR Questionnaire View', type: :view do
     let(:resource) { yaml_load('questionnaires/questionnaire-lifelines.yaml') }
 
     context 'JSON' do
-      subject { render(partial: 'questionnaire', formats: :json, locals: {resource: resource}) }
+      subject { render(partial: 'questionnaire', formats: :fhirj, locals: {resource: resource}) }
 
       it {should match_fhir_json(support_file('questionnaires/questionnaire-lifelines.json')) }
     end
@@ -44,7 +44,7 @@ describe 'FHIR Questionnaire View', type: :view do
     let(:resource) { yaml_load('questionnaires/questionnaire-bluebook.yaml') }
 
     context 'JSON' do
-      subject { render(partial: 'questionnaire', formats: :json, locals: {resource: resource}) }
+      subject { render(partial: 'questionnaire', formats: :fhirj, locals: {resource: resource}) }
 
       it {should match_fhir_json(support_file('questionnaires/questionnaire-bluebook.json')) }
     end

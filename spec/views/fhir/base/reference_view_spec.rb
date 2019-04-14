@@ -7,7 +7,7 @@ describe 'FHIR base-type Reference', type: :view do
     let(:object) { yaml_load('base/reference-local.yaml') }
 
     context 'JSON' do
-      subject      { render partial: 'fhir/base/reference', formats: :json, locals: {reference: object} }
+      subject      { render partial: 'fhir/base/reference', formats: :fhirj, locals: {reference: object} }
 
       it { should match_fhir_json(support_file('base/reference-local.json')) }
     end
@@ -24,7 +24,7 @@ describe 'FHIR base-type Reference', type: :view do
     let(:object) { yaml_load('base/reference-external.yaml') }
 
     context 'JSON' do
-      subject      { render partial: 'fhir/base/reference', formats: :json, locals: {reference: object} }
+      subject      { render partial: 'fhir/base/reference', formats: :fhirj, locals: {reference: object} }
 
       it { should match_fhir_json(support_file('base/reference-external.json')) }
     end
@@ -41,7 +41,7 @@ describe 'FHIR base-type Reference', type: :view do
     let(:object) { yaml_load('base/reference-complete.yaml') }
 
     context 'JSON' do
-      subject      { render partial: 'fhir/base/reference', formats: :json, locals: {reference: object} }
+      subject      { render partial: 'fhir/base/reference', formats: :fhirj, locals: {reference: object} }
 
       it { should match_fhir_json(support_file('base/reference-complete.json')) }
     end

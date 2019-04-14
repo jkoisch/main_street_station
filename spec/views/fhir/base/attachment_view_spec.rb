@@ -7,7 +7,7 @@ describe 'FHIR base-type Attachment', type: :view do
     let(:object) { yaml_load('base/attachment-simple.yaml') }
 
     context 'JSON' do
-      subject      { render partial: 'fhir/base/attachment', formats: :json, locals: {attachment: object} }
+      subject      { render partial: 'fhir/base/attachment', formats: :fhirj, locals: {attachment: object} }
 
       it { should match_fhir_json(support_file('base/attachment-simple.json')) }
     end

@@ -2,7 +2,7 @@ module Fhir
   class FhirController < FhirBaseController
     include WardenAuthenticate
 
-    #before_filter :api_or_interactive #, except: [ :index, :show_old ]
+    #before_action :api_or_interactive #, except: [ :index, :show_old ]
 
     private
     def api_or_interactive

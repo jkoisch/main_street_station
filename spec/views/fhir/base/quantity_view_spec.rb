@@ -7,7 +7,7 @@ describe 'FHIR base-type Quantity', type: :view do
     let(:object) { yaml_load('base/quantity-simple.yaml') }
 
     context 'JSON' do
-      subject      { render partial: 'fhir/base/quantity', formats: :json, locals: {quantity: object} }
+      subject      { render partial: 'fhir/base/quantity', formats: :fhirj, locals: {quantity: object} }
 
       it { should match_fhir_json(support_file('base/quantity-simple.json')) }
     end

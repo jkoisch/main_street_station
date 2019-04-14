@@ -7,7 +7,7 @@ describe 'FHIR base-type Coding', type: :view do
     let(:object) { yaml_load('base/coding-simple.yaml') }
 
     context 'JSON' do
-      subject      { render partial: 'fhir/base/coding', formats: :json, locals: {coding: object} }
+      subject      { render partial: 'fhir/base/coding', formats: :fhirj, locals: {coding: object} }
 
       it { should match_fhir_json(support_file('base/coding-simple.json')) }
     end

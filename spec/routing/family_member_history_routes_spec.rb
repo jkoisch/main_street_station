@@ -4,32 +4,32 @@ describe 'FHIR FamilyMemberHistory', type: :routing do
   describe 'provided routes' do
     specify { expect(get: fhir_FamilyMemberHistory_index_path).to route_to(controller: 'fhir/family_member_histories',
                                                                       action:     'index',
-                                                                      format:     :json) }
+                                                                      format:     :fhirj) }
     specify { expect(get: '/fhir/FamilyMemberHistory').to route_to(controller: 'fhir/family_member_histories',
                                                               action:     'index',
-                                                              format:     :json) }
+                                                              format:     :fhirj) }
     specify { expect(get: fhir_FamilyMemberHistory_path(1)).to route_to(controller: 'fhir/family_member_histories',
                                                                     action:     'show',
                                                                     id:         '1',
-                                                                    format:     :json) }
+                                                                    format:     :fhirj) }
     specify { expect(get: '/fhir/FamilyMemberHistory/1').to route_to(controller: 'fhir/family_member_histories',
                                                                 action:     'show',
                                                                 id:         '1',
-                                                                format:     :json) }
+                                                                format:     :fhirj) }
     specify { expect(post: fhir_FamilyMemberHistory_index_path).to route_to(controller: 'fhir/family_member_histories',
                                                                         action:     'create',
-                                                                        format:     :json) }
+                                                                        format:     :fhirj) }
     specify { expect(post: '/fhir/FamilyMemberHistory').to route_to(controller: 'fhir/family_member_histories',
                                                                 action:     'create',
-                                                                format:     :json) }
+                                                                format:     :fhirj) }
     specify { expect(put: fhir_FamilyMemberHistory_path(1)).to route_to(controller: 'fhir/family_member_histories',
                                                                     action:     'update',
                                                                     id:         '1',
-                                                                    format:     :json) }
+                                                                    format:     :fhirj) }
     specify { expect(put: '/fhir/FamilyMemberHistory/1').to route_to(controller: 'fhir/family_member_histories',
                                                                 action:     'update',
                                                                 id:         '1',
-                                                                format:     :json) }
+                                                                format:     :fhirj) }
   end
 
   describe 'forbidden routes' do

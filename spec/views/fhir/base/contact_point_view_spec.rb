@@ -7,7 +7,7 @@ describe 'FHIR base-type ContactPoint', type: :view do
     let(:object) { yaml_load('base/contact_point-simple.yaml') }
 
     context 'JSON' do
-      subject      { render partial: 'fhir/base/contact_point', formats: :json, locals: {contact_point: object} }
+      subject      { render partial: 'fhir/base/contact_point', formats: :fhirj, locals: {contact_point: object} }
 
       it { should match_fhir_json(support_file('base/contact_point-simple.json')) }
     end

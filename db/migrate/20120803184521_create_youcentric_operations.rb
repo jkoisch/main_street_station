@@ -1,4 +1,4 @@
-class CreateYoucentricOperations < ActiveRecord::Migration
+class CreateYoucentricOperations < ActiveRecord::Migration[5.0]
   def self.up
     create_table :youcentric_operations do |t|
       t.integer :service_id

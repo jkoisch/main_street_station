@@ -5,32 +5,32 @@ describe 'FHIR Device', type: :routing do
 
     specify { expect(get: fhir_Device_index_path).to route_to(controller: 'fhir/devices',
                                                                action:     'index',
-                                                               format:     :json) }
+                                                               format:     :fhirj) }
     specify { expect(get: '/fhir/Device').to route_to(controller: 'fhir/devices',
                                                        action:     'index',
-                                                       format:     :json) }
+                                                       format:     :fhirj) }
     specify { expect(get: fhir_Device_path(1)).to route_to(controller: 'fhir/devices',
                                                             action:     'show',
                                                             id:         '1',
-                                                            format:     :json) }
+                                                            format:     :fhirj) }
     specify { expect(get: '/fhir/Device/1').to route_to(controller: 'fhir/devices',
                                                          action:     'show',
                                                          id:         '1',
-                                                         format:     :json) }
+                                                         format:     :fhirj) }
     specify { expect(post: fhir_Device_index_path).to route_to(controller: 'fhir/devices',
                                                                 action:     'create',
-                                                                format:     :json) }
+                                                                format:     :fhirj) }
     specify { expect(post: '/fhir/Device').to route_to(controller: 'fhir/devices',
                                                         action:     'create',
-                                                        format:     :json) }
+                                                        format:     :fhirj) }
     specify { expect(put: fhir_Device_path(1)).to route_to(controller: 'fhir/devices',
                                                             action:     'update',
                                                             id:         '1',
-                                                            format:     :json) }
+                                                            format:     :fhirj) }
     specify { expect(put: '/fhir/Device/1').to route_to(controller: 'fhir/devices',
                                                          action:     'update',
                                                          id:         '1',
-                                                         format:     :json) }
+                                                         format:     :fhirj) }
   end
 
   describe 'forbidden routes' do

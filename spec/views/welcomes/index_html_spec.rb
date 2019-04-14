@@ -22,15 +22,15 @@ RSpec.describe "welcomes/index", :type => :view do
     end
 
     it 'renders a link to conformance' do
-      expect(rendered).to have_link 'Conformance', fhir_conformance_index_path
+      expect(rendered).to have_link 'Conformance', href: fhir_conformance_index_path(format: :html)
     end
 
     it 'renders a link to application registration' do
-      expect(rendered).to have_link 'Register', new_user_registration_path
+      expect(rendered).to have_link 'Register', href: new_user_registration_path
     end
 
     it 'renders a link to application sign in' do
-      expect(rendered).to have_link 'Sign In', new_user_session_path
+      expect(rendered).to have_link 'Sign In', href: new_user_session_path
     end
   end
 

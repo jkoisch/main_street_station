@@ -8,7 +8,7 @@ describe 'FHIR View Practitioner Qualification', type: :view do
       let(:object) { yaml_load('practitioners/qualification-standard.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/practitioners/qualification', formats: :json, locals: {qualification: object} }
+        subject { render partial: 'fhir/practitioners/qualification', formats: :fhirj, locals: {qualification: object} }
 
         it { should match_fhir_json(support_file('practitioners/qualification-standard.json')) }
       end
@@ -25,7 +25,7 @@ describe 'FHIR View Practitioner Qualification', type: :view do
       let(:object) { yaml_load('practitioners/qualification-complete.yaml') }
 
       context 'json' do
-        subject { render partial: 'fhir/practitioners/qualification', formats: :json, locals: {qualification: object} }
+        subject { render partial: 'fhir/practitioners/qualification', formats: :fhirj, locals: {qualification: object} }
 
         it { should match_fhir_json(support_file('practitioners/qualification-complete.json')) }
       end

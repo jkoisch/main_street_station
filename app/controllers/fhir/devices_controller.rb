@@ -43,7 +43,7 @@ module Fhir
     response = create_gringotts_resource(RESOURCE, params)
     if response
       if response.success?
-        render nothing: true, status: 201, location: "#{FHIR_LOCATION_ROOT}/Device/#{response.body[:id]}"
+        render body: nil, status: 201, location: "#{FHIR_LOCATION_ROOT}/Device/#{response.body[:id]}"
       else
         send_operation_outcome(response, 400)
       end
@@ -58,7 +58,7 @@ module Fhir
     response = update_gringotts_resource(RESOURCE, params)
     if response
       if response.success?
-        render nothing: true, status: 200
+        render body: nil, status: 200
       else
         send_operation_outcome(response, 400)
       end
